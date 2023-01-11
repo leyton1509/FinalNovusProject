@@ -1,8 +1,13 @@
 #include <SFML/Graphics.hpp>
+#include "Monster.cpp"
 using namespace sf;
 
 int main()
 {
+
+    Monster testMonser("Charizard", 100, 110, 70, 140, 80, 100, 1);
+
+
     RenderWindow window(sf::VideoMode(1200, 800), "SFML works!");
     CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
