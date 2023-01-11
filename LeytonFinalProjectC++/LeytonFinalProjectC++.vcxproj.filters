@@ -16,6 +16,9 @@
     <Filter Include="Source Files\Monsters">
       <UniqueIdentifier>{84ace7cc-504d-4770-94f5-928bd71f14ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{8193d061-5a54-483c-83ae-20861c5c29f9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">

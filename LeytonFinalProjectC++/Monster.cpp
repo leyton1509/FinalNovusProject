@@ -17,6 +17,14 @@ public:
 	int specialDefenceBase;
 	int speedBase;
 
+	int healthActual;
+	int physcialAttackActual;
+	int physicalDefenceActual;
+	int specialAttackActual;
+	int specialDefenceActual;
+	int speedActual;
+
+	int iv;
 	int level;
 	float experience;
 	float nextExperienceNeeded;
@@ -36,7 +44,37 @@ public:
 		specialDefenceBase = _specialDefenceBase;
 		speedBase = _speedBase;
 		level = _level;
+		iv = generateRandomIV();
+		calculateActualStatistics();
 	}
+
+	void calculateActualStatistics() {
+		healthActual = healthFormula(healthBase);
+		physcialAttackActual = otherStatisticFormula(physcialAttackBase);
+		physicalDefenceActual = otherStatisticFormula(physicalDefenceBase);
+		specialAttackActual = otherStatisticFormula(specialAttackBase);
+		specialDefenceActual = otherStatisticFormula(specialDefenceBase);
+		speedActual = otherStatisticFormula(speedBase);
+	}
+
+	int healthFormula(int stat) {
+		return floor(((((2* stat)+iv )* level) / 100) + level + 10);
+	}
+
+	int otherStatisticFormula(int stat) {
+		return floor(((((2 * stat) + iv) * level) / 100) + 5);
+	}
+
+	int generateRandomIV() {
+		return (rand() % 31) + 10;
+	}
+
+	
+
+
+
+
+
 
 
 
