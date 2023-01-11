@@ -1,11 +1,16 @@
 #include <SFML/Graphics.hpp>
-#include "Monster.cpp"
+#include "MonsterManager.cpp"
+#include <iostream>  
 using namespace sf;
 
 int main()
 {
 
-    Monster testMonser("Charizard", 100, 110, 70, 140, 80, 100, 1);
+   // MonsterManager availableMonsters;
+
+   // Monster charizard = availableMonsters.getDefaultMonster("Charizard");
+
+   // std::cout << charizard.monsterName << " " << charizard.physcialAttackBase << " " << charizard.healthBase << "\n";
 
 
     RenderWindow window(sf::VideoMode(1200, 800), "SFML works!");

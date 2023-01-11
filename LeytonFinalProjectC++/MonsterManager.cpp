@@ -1,4 +1,4 @@
-#include "MonsterManager.h"
+
 #include <map>
 #include <string>
 #include "Monster.cpp"
@@ -10,6 +10,18 @@ class MonsterManager
 
 public:
     map<string, Monster> defaultMonsterStorage = {};
+
+    Monster getDefaultMonster(string _monsterName) {
+
+        auto getter = defaultMonsterStorage.find(_monsterName);
+        
+        if (getter == defaultMonsterStorage.end()) {
+            return Monster();
+        }
+        else {
+            return getter->second;
+        }
+    }
 
     MonsterManager() {
         defaultMonsterStorage.insert({ "Charizard", Monster("Charizard", 100, 110, 70, 140, 80, 100, 1) });

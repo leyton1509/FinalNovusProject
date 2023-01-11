@@ -23,6 +23,10 @@ public:
 
 	Sprite monserSprite;
 
+	Monster() {
+
+	}
+
 	Monster(string _monsterName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level) {
 		monsterName = _monsterName;
 		healthBase = _healthBase;
