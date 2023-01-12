@@ -3,6 +3,7 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_image.h>
+#include <allegro5/allegro_primitives.h>
 
 #include "Pokemon/MonsterManager.cpp"
 #include <iostream>  
@@ -37,8 +38,10 @@ int main()
     ALLEGRO_DISPLAY* disp = al_create_display(1200, 800);
     must_init(disp, "display");
 
-    //ALLEGRO_FONT* font = al_create_builtin_font();
-    //must_init(font, "font");
+    must_init(al_init_primitives_addon(), "primitives");
+
+    ALLEGRO_FONT* font = al_create_builtin_font();
+    must_init(font, "font");
 
     must_init(al_init_image_addon(), "image addon");
     //ALLEGRO_BITMAP* mysha = al_load_bitmap("mysha.png");
@@ -79,6 +82,12 @@ int main()
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
 
             //al_draw_bitmap(mysha, 100, 100, 0);
+
+            al_draw_filled_triangle(35, 350, 85, 375, 35, 400, al_map_rgb_f(0, 1, 0));
+            al_draw_filled_rectangle(240, 260, 340, 340, al_map_rgba_f(0, 0, 0.5, 0.5));
+            al_draw_circle(450, 370, 30, al_map_rgb_f(1, 0, 1), 2);
+            al_draw_line(440, 110, 460, 210, al_map_rgb_f(1, 0, 0), 1);
+            al_draw_line(500, 220, 570, 200, al_map_rgb_f(1, 1, 0), 1);
 
             al_flip_display();
 
