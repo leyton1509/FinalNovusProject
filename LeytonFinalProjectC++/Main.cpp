@@ -1,4 +1,5 @@
-#include <SFML/Graphics.hpp>
+#include <allegro5/allegro5.h>
+#include <allegro5/allegro_font.h>
 #include "MonsterManager.cpp"
 #include <iostream>  
 using namespace sf;
@@ -6,30 +7,22 @@ using namespace sf;
 int main()
 {
 
-   // MonsterManager availableMonsters;
+  // MonsterManager availableMonsters;
 
-   // Monster charizard = availableMonsters.getDefaultMonster("Charizard");
+  //Monster charizard = availableMonsters.getDefaultMonster("Charizard");
+  //charizard.printMonsterDetails();
 
    // std::cout << charizard.monsterName << " " << charizard.physcialAttackBase << " " << charizard.healthBase << "\n";
 
+    // Sets up the bare essentials
+    al_init();
+    // Enables keyboard inputs
+    al_install_keyboard();
 
-    RenderWindow window(sf::VideoMode(1200, 800), "SFML works!");
-    CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    // Timer and event queue to make sure 
+    ALLEGRO_TIMER* timer = al_create_timer(1.0 / 30.0);
+    ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
 
     return 0;
 }
