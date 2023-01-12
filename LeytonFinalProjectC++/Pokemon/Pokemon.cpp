@@ -1,5 +1,7 @@
 #include <string>
 #include <iostream>
+
+
 using namespace std;
 
 
@@ -30,7 +32,7 @@ public:
 	double nextExperienceNeeded;
 
 
-	Pokemmon() {
+	Pokemon(){
 		pokemonName = "";
 		healthBase = 0;
 		physcialAttackBase = 0;
@@ -45,7 +47,7 @@ public:
 		calculateActualStatistics();
 	}
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level) {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
