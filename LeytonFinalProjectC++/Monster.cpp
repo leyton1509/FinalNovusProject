@@ -1,5 +1,6 @@
 #include <string>
 #include <SFML/Graphics.hpp>
+#include <iostream>
 using namespace std;
 using namespace sf;
 
@@ -45,7 +46,14 @@ public:
 		speedBase = _speedBase;
 		level = _level;
 		iv = generateRandomIV();
+		experience = 0;
+		calculateNextLevelExperienceNeeded();
+
 		calculateActualStatistics();
+	}
+
+	void calculateNextLevelExperienceNeeded() {
+		nextExperienceNeeded = ((6 / 5) * pow(level, 3)) - (15 * pow(level, 2)) + (100 * level) - 140;
 	}
 
 	void calculateActualStatistics() {
@@ -67,6 +75,11 @@ public:
 
 	int generateRandomIV() {
 		return (rand() % 31) + 10;
+	}
+
+	void printMonsterDetails() {
+		std::cout << monsterName << "";
+		printf("| Level : %d | Health : %d | Attack : %d | Defence : %d | Special Attack : %d | Speed : %d |", level, healthActual, physcialAttackActual, physicalDefenceActual, specialDefenceActual, speedActual);
 	}
 
 	
