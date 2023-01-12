@@ -1,8 +1,9 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
-#include "MonsterManager.cpp"
+#include <allegro5/allegro_image.h>
+
+#include "Pokemon/MonsterManager.cpp"
 #include <iostream>  
-using namespace sf;
 
 int main()
 {
@@ -37,6 +38,20 @@ int main()
 
 
     al_start_timer(timer);
+
+    if (!al_init_image_addon())
+    {
+        printf("couldn't initialize image addon\n");
+        return 1;
+    }
+
+    ALLEGRO_BITMAP* playerTest = al_load_bitmap("Assets/PlayerCharacterSpriteSheet.png");
+    if (!playerTest)
+    {
+        printf("couldn't load mysha\n");
+        return 1;
+    }
+
     while (1)
     {
 
@@ -51,6 +66,9 @@ int main()
             break;
 
 
+        
+
+
         if (redraw && al_is_event_queue_empty(queue))
         {
             // Sets screen to black
@@ -58,11 +76,14 @@ int main()
             // Draws tge text in top left 
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
             // Commits results
+            // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
+            al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100,100,0);
             al_flip_display();
             redraw = false;
         }
     }
 
+    al_destroy_bitmap(playerTest);
     //al_destroy_font(font);
     al_destroy_display(disp);
     al_destroy_timer(timer);

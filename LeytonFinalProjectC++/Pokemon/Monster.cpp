@@ -1,8 +1,7 @@
 #include <string>
-#include <SFML/Graphics.hpp>
 #include <iostream>
 using namespace std;
-using namespace sf;
+
 
 class Monster
 {
@@ -27,10 +26,9 @@ public:
 
 	int iv;
 	int level;
-	float experience;
-	float nextExperienceNeeded;
+	double experience;
+	double nextExperienceNeeded;
 
-	Sprite monserSprite;
 
 	Monster() {
 		monsterName = "";
