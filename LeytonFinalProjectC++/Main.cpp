@@ -23,6 +23,9 @@ int main()
     ALLEGRO_TIMER* timer = al_create_timer(1.0 / 30.0);
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
 
+    // Display with witdth * height
+    ALLEGRO_DISPLAY* disp = al_create_display(1200, 800);
+
 
     return 0;
 }
