@@ -5,7 +5,8 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 
-#include "Pokemon/MonsterManager.cpp"
+#include "Pokemon/PokemonManager.cpp"
+
 #include <iostream>  
 
 
@@ -26,6 +27,12 @@ void must_init(bool test, const char* description)
 
 int main()
 {
+   
+// charizard.printMonsterDetails();
+// The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
+//al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
+
+
     must_init(al_init(), "allegro");
     must_init(al_install_keyboard(), "keyboard");
     must_init(al_install_mouse(), "mouse");
