@@ -21,22 +21,10 @@
     <ClInclude Include="Main.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Monster.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MonsterManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonsterManager.cpp">
-      <Filter>Source Files\Monsters</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster.cpp">
-      <Filter>Source Files\Monsters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -44,9 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Image.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\PlayerSpriteSheet.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

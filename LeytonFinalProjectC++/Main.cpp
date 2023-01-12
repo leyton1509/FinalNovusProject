@@ -8,10 +8,10 @@
 int main()
 {
 
-  // MonsterManager availableMonsters;
+  MonsterManager availableMonsters;
 
-  //Monster charizard = availableMonsters.getDefaultMonster("Charizard");
-  //charizard.printMonsterDetails();
+  Monster charizard = availableMonsters.getDefaultMonster("Charizard");
+  charizard.printMonsterDetails();
 
    // std::cout << charizard.monsterName << " " << charizard.physcialAttackBase << " " << charizard.healthBase << "\n";
 
