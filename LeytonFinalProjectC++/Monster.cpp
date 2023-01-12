@@ -67,6 +67,10 @@ public:
 		}
 
 	}
+	int experienceUponKill() {
+		return floor((2 * level / 7));
+	}
+
 
 	void calculateActualStatistics() {
 		healthActual = healthFormula(healthBase);
