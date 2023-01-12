@@ -48,12 +48,24 @@ public:
 		iv = generateRandomIV();
 		experience = 0;
 		calculateNextLevelExperienceNeeded();
-
 		calculateActualStatistics();
 	}
 
 	void calculateNextLevelExperienceNeeded() {
 		nextExperienceNeeded = ((6 / 5) * pow(level, 3)) - (15 * pow(level, 2)) + (100 * level) - 140;
+	}
+
+	
+
+	void gainExperience(int _experiencedGained) {
+		experience = experience + _experiencedGained;
+
+		while(experience > nextExperienceNeeded){
+			level += 1;
+			// experience = 0;
+			calculateActualStatistics();
+		}
+
 	}
 
 	void calculateActualStatistics() {
