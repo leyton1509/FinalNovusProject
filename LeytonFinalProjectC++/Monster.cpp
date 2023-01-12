@@ -33,7 +33,18 @@ public:
 	Sprite monserSprite;
 
 	Monster() {
-
+		monsterName = "";
+		healthBase = 0;
+		physcialAttackBase = 0;
+		physicalDefenceBase = 0;
+		specialAttackBase = 0;
+		specialDefenceBase = 0;
+		speedBase = 0;
+		level = 0;
+		iv = generateRandomIV();
+		experience = 0;
+		calculateNextLevelExperienceNeeded();
+		calculateActualStatistics();
 	}
 
 	Monster(string _monsterName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level) {
