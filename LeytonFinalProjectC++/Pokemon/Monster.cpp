@@ -72,7 +72,7 @@ public:
 		while(experience > nextExperienceNeeded){
 			level += 1;
 			// experience = 0;
-			calculateActualStatistics();
+			calculateNextLevelExperienceNeeded();
 		}
 
 	}
