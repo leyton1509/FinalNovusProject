@@ -26,6 +26,14 @@ int main()
     // Display with witdth * height
     ALLEGRO_DISPLAY* disp = al_create_display(1200, 800);
 
+    // Changes font
+    ALLEGRO_FONT* font = al_create_builtin_font();
+
+
+    // Register what events im interested in
+    al_register_event_source(queue, al_get_keyboard_event_source());
+    al_register_event_source(queue, al_get_display_event_source(disp));
+    al_register_event_source(queue, al_get_timer_event_source(timer));
 
     return 0;
 }
