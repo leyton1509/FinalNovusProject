@@ -114,7 +114,7 @@
       <AdditionalIncludeDirectories>C:\Users\leyto\Desktop\SFML-2.5.1\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\Users\leyto\Desktop\SFML-2.5.1\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);</AdditionalDependencies>
@@ -144,6 +144,7 @@
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sprites\SpriteType.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
