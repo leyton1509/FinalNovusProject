@@ -6,6 +6,7 @@
 #include <allegro5/allegro_primitives.h>
 
 #include "Pokemon/PokemonManager.cpp"
+#include "Sprites/PlayerCharacter.cpp"
 
 #include <iostream>  
 
@@ -33,6 +34,7 @@ int main()
 //al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
 
+
     must_init(al_init(), "allegro");
     must_init(al_install_keyboard(), "keyboard");
     must_init(al_install_mouse(), "mouse");
@@ -52,7 +54,7 @@ int main()
     must_init(font, "font");
 
     must_init(al_init_image_addon(), "image addon");
-    //ALLEGRO_BITMAP* mysha = al_load_bitmap("mysha.png");
+    ALLEGRO_BITMAP* mysha = al_load_bitmap("Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png");
     //must_init(mysha, "mysha");
 
     al_register_event_source(queue, al_get_mouse_event_source());
@@ -66,6 +68,8 @@ int main()
 
     double xMousePosition = 0;
     double yMousePosition = 0;
+
+    PlayerCharacter player = PlayerCharacter();
 
     al_start_timer(timer);
     while (1)
@@ -115,6 +119,8 @@ int main()
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
 
             //al_draw_bitmap(mysha, 100, 100, 0);
+
+            player.drawSprite();
 
 
             al_flip_display();
