@@ -15,8 +15,11 @@ using namespace std;
 
 	 int xValueForStyleSheet;
 	 int yValueForStyleSheet;
-	 int moveBy = 8;
 	 int state = 0;
+	 int currentFrame = 0;
+	 float framerate = 60;
+	 float moveThisTurn = (64 * 2/framerate);
+
 
 	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 0, 0, 0, 0, 0, 0, 64, 64, "Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
 		xValueForStyleSheet = 0;
@@ -37,7 +40,6 @@ using namespace std;
 				state = 1;
 			}
 
-			yPosition -= moveBy;
 		}
 
 		else if (strcmp(keyPressed, "s") == 0 ){
@@ -50,7 +52,6 @@ using namespace std;
 			else {
 				state = 1;
 			}
-			yPosition += moveBy;
 		}
 
 		else if (strcmp(keyPressed, "a") == 0) {
@@ -63,7 +64,6 @@ using namespace std;
 			else {
 				state = 1;
 			}
-			xPosition -= moveBy;
 		}
 
 		else if (strcmp(keyPressed, "d") == 0) {
@@ -78,23 +78,73 @@ using namespace std;
 				state = 1;
 			}
 
-			xPosition += moveBy;
 		}
 
 	}
 
-
-
 	void drawSprite() {
-		al_draw_bitmap_region(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 0);
-		if (state!=0) {
-			if (state == 3) {
-				state = 0;
+
+
+
+		if (state != 0) {
+			if (currentFrame <= framerate / 6 && currentFrame >= 0) {
+				state = 1;
+				if (directionX == 1) {
+					xPosition += moveThisTurn;
+				}
+				else if (directionX == -1) {
+					xPosition -= moveThisTurn;
+				}
+				else if (directionY == -1) {
+					yPosition += moveThisTurn;
+				}
+				else if (directionY == 1) {
+					yPosition -= moveThisTurn;
+				}
+				currentFrame++;
 			}
-			else {
-				state++;
+			else if (currentFrame <= (framerate / 6 * 2) && currentFrame > framerate / 6) {
+				state = 2;
+				if (directionX == 1) {
+					xPosition += moveThisTurn;
+				}
+				else if (directionX == -1) {
+					xPosition -= moveThisTurn;
+				}
+				else if (directionY == -1) {
+					yPosition += moveThisTurn;
+				}
+				else if (directionY == 1) {
+					yPosition -= moveThisTurn;
+				}
+				currentFrame++;
+			}
+			else if (currentFrame <= (framerate / 6 * 3) && currentFrame > framerate / 6 * 2) {
+				state = 3;
+				if (directionX == 1) {
+					xPosition += moveThisTurn;
+				}
+				else if (directionX == -1) {
+					xPosition -= moveThisTurn;
+				}
+				else if (directionY == -1) {
+					yPosition += moveThisTurn;
+				}
+				else if (directionY == 1) {
+					yPosition -= moveThisTurn;
+				}
+				currentFrame++;
+			}
+		
+			else{
+				state = 0;
+				currentFrame = 0;
 			}
 		}
+
+		al_draw_bitmap_region(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 0);
+
+		
 		
 	}
 	
