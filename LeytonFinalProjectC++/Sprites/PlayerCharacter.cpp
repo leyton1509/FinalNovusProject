@@ -91,60 +91,39 @@ using namespace std;
 
 	}
 
+	void updatePosition() {
+		if (directionX == 1) {
+			xPosition += moveThisTurn;
+		}
+		else if (directionX == -1) {
+			xPosition -= moveThisTurn;
+		}
+		else if (directionY == -1) {
+			yPosition += moveThisTurn;
+		}
+		else if (directionY == 1) {
+			yPosition -= moveThisTurn;
+		}
+	}
+
 	void drawSprite() {
-
-
 
 		if (state != 0) {
 			if (currentFrame <= framerate / 6 && currentFrame >= 0) {
 				state = 1;
-				if (directionX == 1) {
-					xPosition += moveThisTurn;
-				}
-				else if (directionX == -1) {
-					xPosition -= moveThisTurn;
-				}
-				else if (directionY == -1) {
-					yPosition += moveThisTurn;
-				}
-				else if (directionY == 1) {
-					yPosition -= moveThisTurn;
-				}
+				updatePosition();
 				currentFrame++;
 			}
 			else if (currentFrame <= (framerate / 6 * 2) && currentFrame > framerate / 6) {
 				state = 2;
-				if (directionX == 1) {
-					xPosition += moveThisTurn;
-				}
-				else if (directionX == -1) {
-					xPosition -= moveThisTurn;
-				}
-				else if (directionY == -1) {
-					yPosition += moveThisTurn;
-				}
-				else if (directionY == 1) {
-					yPosition -= moveThisTurn;
-				}
+				updatePosition();
 				currentFrame++;
 			}
 			else if (currentFrame <= (framerate / 6 * 3) && currentFrame > framerate / 6 * 2) {
 				state = 3;
-				if (directionX == 1) {
-					xPosition += moveThisTurn;
-				}
-				else if (directionX == -1) {
-					xPosition -= moveThisTurn;
-				}
-				else if (directionY == -1) {
-					yPosition += moveThisTurn;
-				}
-				else if (directionY == 1) {
-					yPosition -= moveThisTurn;
-				}
+				updatePosition();
 				currentFrame++;
 			}
-		
 			else{
 				state = 0;
 				currentFrame = 0;
@@ -152,9 +131,6 @@ using namespace std;
 		}
 
 		al_draw_bitmap_region(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 0);
-
-		
-		
 	}
 	
 	
