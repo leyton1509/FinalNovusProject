@@ -83,31 +83,38 @@ int main()
             redraw = true;
             break;
 
-        // Handle mouse movement
+            // Handle mouse movement
         case ALLEGRO_EVENT_MOUSE_AXES:
             xMousePosition = event.mouse.x;
             yMousePosition = event.mouse.y;
             break;
 
-        // Handle mouse click
+            // Handle mouse click
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
             break;
-
-        // Handle key board input
-         ALLEGRO_KEYBOARD_STATE keyState;
-         al_get_keyboard_state(&keyState);
-
-         if (al_key_down(&keyState, ALLEGRO_KEY_W)) {
-             // Handles two buttons at once
-             if (al_key_down(&keyState, ALLEGRO_KEY_LCTRL)) {
-
-             }
-         }
 
 
         case ALLEGRO_EVENT_DISPLAY_CLOSE:
             done = true;
             break;
+
+
+        case ALLEGRO_EVENT_KEY_DOWN:
+            if (event.keyboard.keycode == ALLEGRO_KEY_W) {
+                player.moveCharacter("w");
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
+                player.moveCharacter("s");
+   
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
+                player.moveCharacter("a");
+     
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
+                player.moveCharacter("d");
+            
+            }
         }
 
         if (done)
@@ -115,6 +122,7 @@ int main()
 
         if (redraw && al_is_event_queue_empty(queue))
         {
+           
             al_clear_to_color(al_map_rgb(0, 0, 0));
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
 
@@ -122,13 +130,15 @@ int main()
 
             player.drawSprite();
 
-
             al_flip_display();
 
             redraw = false;
         }
+
     }
 
+
+    al_destroy_bitmap(player.spriteImage);
     al_uninstall_keyboard();
     //al_destroy_bitmap(mysha);
     al_destroy_font(font);
