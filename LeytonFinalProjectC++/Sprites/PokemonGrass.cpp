@@ -9,5 +9,10 @@ public:
 	}
 
 
+	void drawSprite() {
+		al_draw_bitmap(spriteImage, xPosition, yPosition, 0);
+	}
+
+
 
 };
