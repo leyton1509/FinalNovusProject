@@ -1,11 +1,13 @@
-#include "Sprite.cpp"
-
+#include "../Sprites/Spriteheader.h"
 
 class PokemonGrass : public Sprite {
 
 public:
 
-	PokemonGrass(float _startXPosition, float _startYPosition) : Sprite(SpriteType::SpriteTypes::Grass, _startXPosition, _startYPosition, 32, 32, "Sprites/MapSprites/PokemonGrass.png") {
+	PokemonGrass(float _startXPosition, float _startYPosition) : Sprite(SpriteType::SpriteTypes::Grass, _startXPosition, _startYPosition, 32, 32, "C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/PokemonGrass.png") {
+	}
+
+	PokemonGrass() : Sprite(SpriteType::SpriteTypes::Grass, 0, 0, 32, 32, "C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/PokemonGrass.png") {
 	}
 
 
