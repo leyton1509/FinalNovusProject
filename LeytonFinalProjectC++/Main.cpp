@@ -34,6 +34,8 @@ int main()
 // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
 //al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
+    int screenWidth = 700;
+    int screenHeight = 400;
 
 
     must_init(al_init(), "allegro");
@@ -46,7 +48,7 @@ int main()
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
     must_init(queue, "queue");
 
-    ALLEGRO_DISPLAY* disp = al_create_display(1200, 800);
+    ALLEGRO_DISPLAY* disp = al_create_display(screenWidth, screenHeight);
     must_init(disp, "display");
 
     must_init(al_init_primitives_addon(), "primitives");
@@ -72,7 +74,7 @@ int main()
 
     
     PlayerCharacter player = PlayerCharacter();
-    WorldMap worldMap = WorldMap();
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
 
     al_start_timer(timer);
     while (1)
@@ -131,7 +133,7 @@ int main()
 
             //al_draw_bitmap(mysha, 100, 100, 0);
 
-            worldMap.drawMap();
+            worldMap.drawMap(player.xPosition, player.yPosition);
 
             player.drawSprite();
 
