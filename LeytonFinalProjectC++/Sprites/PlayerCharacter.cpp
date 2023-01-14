@@ -1,8 +1,9 @@
-#include "Sprite.cpp"
+
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include "../Sprites/Spriteheader.h"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ using namespace std;
 	// The player character constructor
 	// Sets up the values for the variables in the class
 	// Passes the variables up to sprite, including the type of sprite, pos, vel, width height and image loc
-	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 0, 0, 0, 0, 0, 0, 64, 64, "Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
+	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 64, 64, "Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
 		xValueForStyleSheet = 0;
 		yValueForStyleSheet = 0;
 		state = 0;
