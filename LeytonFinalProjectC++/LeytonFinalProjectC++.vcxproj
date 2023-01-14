@@ -143,9 +143,16 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sprites\PokemonGrass.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
+    <ClCompile Include="WorldMap\WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="WorldMap\TextMaps\MapOne.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Sprites\SpriteHeader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
