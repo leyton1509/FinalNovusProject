@@ -60,5 +60,10 @@ public:
 		spriteImage = al_load_bitmap(filename);
 	}
 
+	void drawSprite() {
+		// draw sprite
+	}
+
+
 
 };
