@@ -137,13 +137,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Sprites\PlayerCharacter.cpp">
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Sprites\PokemonGrass.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
   </ItemGroup>
   <ItemGroup>
