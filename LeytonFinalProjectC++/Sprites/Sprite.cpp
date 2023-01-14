@@ -1,7 +1,7 @@
 #include <string>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
-#include "SpriteType.cpp";
+#include "../Sprites/Spriteheader.h"
 
 // Class to represent a sprite 
 class Sprite
