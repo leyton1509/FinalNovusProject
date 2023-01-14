@@ -9,8 +9,8 @@ class WorldMap {
 
 public:
 
-	ALLEGRO_BITMAP* mapBuffer = al_create_bitmap(1200, 800);
-	ALLEGRO_BITMAP* mapTiles[2];
+	ALLEGRO_BITMAP* mapBuffer;;
+	ALLEGRO_BITMAP* mapTiles[3];
 
 	int textMap[100][100];
 	int loadCounterX = 0;
@@ -19,10 +19,12 @@ public:
 	int mapSizeY = 0;
 	bool once = false;
 
-	WorldMap() {
+	WorldMap(int screenWidth, int screenHeight) {
+		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
 		PokemonGrass grass;
 		mapTiles[0] = al_load_bitmap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
-		mapTiles[1] = grass.spriteImage;
+		mapTiles[1] = al_load_bitmap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		mapTiles[2] = grass.spriteImage;
 		cout << grass.spriteImage << " ";
 		loadMap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
@@ -51,15 +53,32 @@ public:
 		}
 	}
 
-	void drawMap() {
-		for (int i = 0; i < mapSizeX; i++)
+	void drawMap(int xPositionOfPlayer, int yPositionOfPlayer) {
+
+		cout << "X:" << xPositionOfPlayer << " , Y:" << yPositionOfPlayer << " \n";
+
+		for (int i = xPositionOfPlayer - 50; i < xPositionOfPlayer + 50; i++)
 		{
-			for (int j = 0; j < mapSizeY; j++)
+			for (int j = yPositionOfPlayer - 25; j < yPositionOfPlayer + 25; j++)
 			{
-				al_draw_bitmap(mapTiles[textMap[i][j]], i*32, j*32, 0);
+				if (i > 0 && i < mapSizeX && j > 0 && j < mapSizeY) {
+
+					// al_draw_bitmap(mapTiles[textMap[i][j]],  i /32 * 32 , j / 32 * 32,0);
+					//al_draw_bitmap(mapTiles[1], i * 32, j * 32, 0);
+				}
+				
 			}
 
 		}
+
+
+		//for (int i = 0; i < mapSizeX; i++)
+		//{
+		//	for (int j = 0; j < mapSizeY; j++)
+		//	{
+		//		al_draw_bitmap(mapTiles[textMap[i][j]], i*32, j*32, 0);
+		//	}
+		//}
 	}
 
 
