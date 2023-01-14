@@ -9,6 +9,7 @@
 #include "Sprites/PlayerCharacter.cpp"
 
 #include <iostream>  
+#include "WorldMap/WorldMap.cpp"
 
 
 //MonsterManager availableMonsters;
@@ -54,7 +55,7 @@ int main()
     must_init(font, "font");
 
     must_init(al_init_image_addon(), "image addon");
-    ALLEGRO_BITMAP* mysha = al_load_bitmap("Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png");
+    //ALLEGRO_BITMAP* mysha = al_load_bitmap("Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png");
     //must_init(mysha, "mysha");
 
     al_register_event_source(queue, al_get_mouse_event_source());
@@ -69,7 +70,9 @@ int main()
     double xMousePosition = 0;
     double yMousePosition = 0;
 
+    
     PlayerCharacter player = PlayerCharacter();
+    WorldMap worldMap = WorldMap();
 
     al_start_timer(timer);
     while (1)
@@ -127,6 +130,8 @@ int main()
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
 
             //al_draw_bitmap(mysha, 100, 100, 0);
+
+            worldMap.drawMap();
 
             player.drawSprite();
 
