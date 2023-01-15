@@ -9,7 +9,7 @@ using namespace std;
 
 // Player Character class which represents the players overworld character
 // Inherits sprite so it has access to its methods
- class PlayerCharacter : public Sprite{
+class PlayerCharacter : public Sprite{
 
 // Public accessors
  public:
