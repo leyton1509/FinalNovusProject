@@ -6,10 +6,10 @@
 #include <allegro5/allegro_primitives.h>
 
 #include "Pokemon/PokemonManager.cpp"
-#include "Sprites/PlayerCharacter.cpp"
+#include "Sprites/PlayerCharacter.h"
 
 #include <iostream>  
-#include "WorldMap/WorldMap.cpp"
+#include "WorldMap/WorldMap.h"
 
 
 //MonsterManager availableMonsters;
@@ -65,6 +65,8 @@ int main()
     al_register_event_source(queue, al_get_display_event_source(disp));
     al_register_event_source(queue, al_get_timer_event_source(timer));
 
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+
     bool done = false;
     bool redraw = true;
     ALLEGRO_EVENT event;
@@ -72,9 +74,10 @@ int main()
     double xMousePosition = 0;
     double yMousePosition = 0;
 
-    
     PlayerCharacter player = PlayerCharacter();
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+    
+    
+   
 
     al_start_timer(timer);
     while (1)
@@ -133,8 +136,8 @@ int main()
 
             //al_draw_bitmap(mysha, 100, 100, 0);
 
-            worldMap.drawMap(player.xPosition, player.yPosition);
-
+            worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
+            player.shiftBackground = 0;
             player.drawSprite();
 
             al_flip_display();

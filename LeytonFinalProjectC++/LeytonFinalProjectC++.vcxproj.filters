@@ -44,5 +44,11 @@
     <ClInclude Include="Sprites\SpriteHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sprites\PlayerCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldMap\WorldMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
