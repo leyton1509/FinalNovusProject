@@ -22,18 +22,21 @@ public:
 	int mapSizeX = 0;
 	int mapSizeY = 0;
 	bool once = false;
-	int leftToStart = 0;
-	int rightToStart = 0;
+	int screenWidth;
+	int screenHeight;
 
-	WorldMap(int screenWidth, int screenHeight) {
-		cout << "Creating new world map";
+
+	WorldMap(int _screenWidth, int _screenHeight) {
+		cout << "Creating new world map\n";
+		screenWidth = _screenWidth;
+		screenHeight = _screenHeight;
 		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
 		PokemonGrass grass;
-		mapTiles[0] = al_load_bitmap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
-		mapTiles[1] = al_load_bitmap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		mapTiles[0] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		mapTiles[1] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
 		mapTiles[2] = grass.spriteImage;
-		cout << grass.spriteImage << " ";
-		loadMap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+		cout << grass.spriteImage << " Grass sprite \n";
+		loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
 	}
 
@@ -41,7 +44,6 @@ public:
 		cout << filename << "";
 		ifstream openfile(filename);
 		if (openfile.is_open()) {
-			cout << "file open \n";
 			while (!openfile.eof()) {
 				if (once == false) {
 					openfile >> mapSizeX >> mapSizeY;
@@ -75,11 +77,10 @@ public:
 			{
 				int column = floor(j / 32);
 
-				cout << x << " , " << y << " fixed \n";
+				// cout << x << " , " << y << " fixed \n";
 
 				if (row >= 0 && row < mapSizeX && column >= 0 && column < mapSizeY) {
-					// cout << textMap[i][j] << " at : " << row << " , " << column << " in fill \n";
-					
+					 cout << textMap[row][column] << " at : " << row << " , " << column << " in fill \n";
 					tempMap[x][y] = textMap[row][column];
 					
 				}
@@ -94,9 +95,9 @@ public:
 		}
 
 		cout << "\n";
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 10; i++)
 		{
-			for (int j = 0; j < 5; j++)
+			for (int j = 0; j < 10; j++)
 			{
 				cout << tempMap[i][j] << " ";
 			}
@@ -119,6 +120,27 @@ public:
 		} 
 
 		cout << "----\n";
+		
+		int x = 0;
+		int y = 0;
+
+		for (int i = xPosition - (xBorderSize * 32); i < xPosition + (xBorderSize * 32); i = i + 32)
+		{
+			int row = floor(i / 32);
+
+			for (int j = yPosition - (yBorderSize * 32); j < yPosition + (yBorderSize * 32); j = j + 32)
+			{
+				int column = floor(j / 32);
+
+				if (i >= 0 && i <= screenWidth && j >= 0 && j <= screenHeight) {
+					al_draw_bitmap(mapTiles[tempMap[x][y]], i, j, 0);
+				}
+				
+				y++;
+			}
+			x++;
+			y = 0;
+		}
 		
 		/*
 		
