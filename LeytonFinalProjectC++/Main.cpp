@@ -6,8 +6,10 @@
 #include <allegro5/allegro_primitives.h>
 
 #include "Pokemon/PokemonManager.cpp"
+#include "Sprites/PlayerCharacter.h"
 
 #include <iostream>  
+#include "WorldMap/WorldMap.h"
 
 
 //MonsterManager availableMonsters;
@@ -27,12 +29,6 @@ void must_init(bool test, const char* description)
 
 int main()
 {
-   
-// charizard.printMonsterDetails();
-// The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
-//al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
-
-
     must_init(al_init(), "allegro");
     must_init(al_install_keyboard(), "keyboard");
     must_init(al_install_mouse(), "mouse");
@@ -43,7 +39,7 @@ int main()
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
     must_init(queue, "queue");
 
-    ALLEGRO_DISPLAY* disp = al_create_display(1200, 800);
+    ALLEGRO_DISPLAY* disp = al_create_display(screenWidth, screenHeight);
     must_init(disp, "display");
 
     must_init(al_init_primitives_addon(), "primitives");
@@ -52,7 +48,7 @@ int main()
     must_init(font, "font");
 
     must_init(al_init_image_addon(), "image addon");
-    //ALLEGRO_BITMAP* mysha = al_load_bitmap("mysha.png");
+    //ALLEGRO_BITMAP* mysha = al_load_bitmap("Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png");
     //must_init(mysha, "mysha");
 
     al_register_event_source(queue, al_get_mouse_event_source());
@@ -60,12 +56,19 @@ int main()
     al_register_event_source(queue, al_get_display_event_source(disp));
     al_register_event_source(queue, al_get_timer_event_source(timer));
 
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+
     bool done = false;
     bool redraw = true;
     ALLEGRO_EVENT event;
 
     double xMousePosition = 0;
     double yMousePosition = 0;
+
+    PlayerCharacter player = PlayerCharacter();
+    
+    
+   
 
     al_start_timer(timer);
     while (1)
@@ -79,31 +82,38 @@ int main()
             redraw = true;
             break;
 
-        // Handle mouse movement
+            // Handle mouse movement
         case ALLEGRO_EVENT_MOUSE_AXES:
             xMousePosition = event.mouse.x;
             yMousePosition = event.mouse.y;
             break;
 
-        // Handle mouse click
+            // Handle mouse click
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
             break;
-
-        // Handle key board input
-         ALLEGRO_KEYBOARD_STATE keyState;
-         al_get_keyboard_state(&keyState);
-
-         if (al_key_down(&keyState, ALLEGRO_KEY_W)) {
-             // Handles two buttons at once
-             if (al_key_down(&keyState, ALLEGRO_KEY_LCTRL)) {
-
-             }
-         }
 
 
         case ALLEGRO_EVENT_DISPLAY_CLOSE:
             done = true;
             break;
+
+
+        case ALLEGRO_EVENT_KEY_DOWN:
+            if (event.keyboard.keycode == ALLEGRO_KEY_W) {
+                player.moveCharacter("w");
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
+                player.moveCharacter("s");
+   
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
+                player.moveCharacter("a");
+     
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
+                player.moveCharacter("d");
+            
+            }
         }
 
         if (done)
@@ -111,18 +121,25 @@ int main()
 
         if (redraw && al_is_event_queue_empty(queue))
         {
+           
             al_clear_to_color(al_map_rgb(0, 0, 0));
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
 
             //al_draw_bitmap(mysha, 100, 100, 0);
 
+            worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
+            player.shiftBackground = 0;
+            player.drawSprite();
 
             al_flip_display();
 
             redraw = false;
         }
+
     }
 
+
+    al_destroy_bitmap(player.spriteImage);
     al_uninstall_keyboard();
     //al_destroy_bitmap(mysha);
     al_destroy_font(font);

@@ -1,31 +1,38 @@
 #include <string>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
+#include "../Sprites/Spriteheader.h"
 
+// Class to represent a sprite 
 class Sprite
 {
 
+// Public accessors
 public:
-
-	enum SpriteType
-	{
-		Player, Pokemon, Building, Grass, Entrance
-	};
-
-	enum SpriteType typeOfSprite;
+	
+	// Enum of the type of sprite
+	enum SpriteType::SpriteTypes typeOfSprite;
+	// The x position of the sprite
 	float xPosition;
+	// The y position of the sprite
 	float yPosition;
+	// The x velocity of the sprite
 	float velocityX;
+	// The y velocity of the sprite
 	float velocityY;
+	// The x direction of the sprite
 	int directionX;
+	// The y direction of the sprite
 	int directionY;
-
+	// Width of sprite
 	int spritewidth;
+	// Height of sprite
 	int spriteHeight;
-
+	// Bit map image of sprite or spritesheet
 	ALLEGRO_BITMAP* spriteImage;
 
-	Sprite(SpriteType _typeOfSprite,float _startX, float _startY, float _velocityX, float _velocityY, int _directionX, int _directionY, int _spritewidth, int _spriteHeight, const char* filename) {
+	// Constructor for sprite with inputs for speed and direction
+	Sprite(SpriteType::SpriteTypes _typeOfSprite,float _startX, float _startY, float _velocityX, float _velocityY, int _directionX, int _directionY, int _spritewidth, int _spriteHeight, const char* filename) {
 		typeOfSprite = _typeOfSprite;
 		xPosition = _startX;
 		yPosition = _startY;
@@ -36,9 +43,11 @@ public:
 		spritewidth = _spritewidth;
 		spriteHeight = _spriteHeight;
 		spriteImage = al_load_bitmap(filename);
+
 	}
 
-	Sprite(SpriteType _typeOfSprite, float _startX, float _startY, int _spritewidth, int _spriteHeight, const char* filename) {
+	// Constructor for sprite without inputs for speed and direction
+	Sprite(SpriteType::SpriteTypes _typeOfSprite, float _startX, float _startY, int _spritewidth, int _spriteHeight, const char* filename) {
 		typeOfSprite = _typeOfSprite;
 		xPosition = _startX;
 		yPosition = _startY;
@@ -50,6 +59,11 @@ public:
 		spriteHeight = _spriteHeight;
 		spriteImage = al_load_bitmap(filename);
 	}
+
+	void drawSprite() {
+		// draw sprite
+	}
+
 
 
 };

@@ -1,0 +1,171 @@
+#include <fstream>
+#include <iostream>
+#include <allegro5/allegro5.h>
+#include <allegro5/allegro_image.h>
+#include "../Sprites/PokemonGrass.cpp"
+#include "../Sprites/PlayerCharacter.h"
+using namespace std;
+class WorldMap {
+
+
+public:
+
+	ALLEGRO_BITMAP* mapBuffer;;
+	ALLEGRO_BITMAP* mapTiles[3];
+
+	int textMap[100][100];
+	int xBorderSize = 5;
+	int yBorderSize = 5;
+	int tempMap[10][10];
+	int loadCounterX = 0;
+	int loadCounterY = 0;
+	int mapSizeX = 0;
+	int mapSizeY = 0;
+	bool once = false;
+	int leftToStart = 0;
+	int rightToStart = 0;
+
+	WorldMap(int screenWidth, int screenHeight) {
+		cout << "Creating new world map";
+		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
+		PokemonGrass grass;
+		mapTiles[0] = al_load_bitmap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		mapTiles[1] = al_load_bitmap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		mapTiles[2] = grass.spriteImage;
+		cout << grass.spriteImage << " ";
+		loadMap("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
+	}
+
+	void loadMap(const char * filename) {
+		cout << filename << "";
+		ifstream openfile(filename);
+		if (openfile.is_open()) {
+			cout << "file open \n";
+			while (!openfile.eof()) {
+				if (once == false) {
+					openfile >> mapSizeX >> mapSizeY;
+					once = true;
+				}
+				openfile >> textMap[loadCounterX][loadCounterY];
+				loadCounterX++;
+				if (loadCounterX >= mapSizeX) {
+					loadCounterX = 0;
+					loadCounterY++;
+				}
+			}
+		}
+		else {
+			cout << "\nfile not open\n";
+		}
+	}
+
+
+
+	void fillTempMap(float xPosition, float yPosition){
+
+		int x = 0;
+		int y = 0;
+
+		for (int i = xPosition - (xBorderSize * 32); i < xPosition + (xBorderSize * 32); i = i + 32)
+		{
+			int row = floor(i / 32);
+
+			for (int j = yPosition - (yBorderSize * 32); j < yPosition + (yBorderSize * 32); j = j + 32)
+			{
+				int column = floor(j / 32);
+
+				cout << x << " , " << y << " fixed \n";
+
+				if (row >= 0 && row < mapSizeX && column >= 0 && column < mapSizeY) {
+					// cout << textMap[i][j] << " at : " << row << " , " << column << " in fill \n";
+					
+					tempMap[x][y] = textMap[row][column];
+					
+				}
+				else {
+					cout << 0 << " at : " << row << " , " << column << " not in bounds \n";
+					tempMap[x][y] = 0;
+				}
+				y++;
+			}
+			x++;
+			y = 0;
+		}
+
+		cout << "\n";
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 5; j++)
+			{
+				cout << tempMap[i][j] << " ";
+			}
+			cout << "\n";
+
+		}
+		cout << "\n";
+	}
+
+
+	void drawMap(int shiftBackground, float xPosition, float yPosition) {
+
+		//cout << "X:" << player.xPosition << " , Y:" << player.yPosition << " \n";
+
+
+		if (shiftBackground != 0) {
+			//shiftBackground = 0;
+			cout << "Shifting background!";
+			fillTempMap(xPosition,  yPosition);
+		} 
+
+		cout << "----\n";
+		
+		/*
+		
+		for (int i = 0; i < xBorderSize; i++)
+		{
+			for (int j = 0; j < yBorderSize; j++)
+			{
+				cout << tempMap[i][j] << " at : " << i * 32 << " , " << j * 32 << "\n";
+				al_draw_bitmap(mapTiles[tempMap[i][j]], i * 32, j * 32, 0);
+			}
+
+		}
+		*/
+		cout << "----\n";
+
+
+		/*
+		for (int i = player.xPosition - (30*32); i < player.xPosition + (30*32); i = i + 32)
+		{
+
+			for (int j = player.yPosition - (30*32); j < player.yPosition + (30*32); j = j + 32)
+			{
+
+				int row = i / 32;
+				int column = j / 32;
+
+				if (row >= 0 && row < mapSizeX && column >= 0 && column < mapSizeY) {
+					al_draw_bitmap(mapTiles[textMap[row][column]], row * 32, column * 32, 0);
+				}
+
+			}
+
+		}
+		*/
+		
+		
+
+
+		//for (int i = 0; i < mapSizeX; i++)
+		//{
+		//	for (int j = 0; j < mapSizeY; j++)
+		//	{
+		//		al_draw_bitmap(mapTiles[textMap[i][j]], i*32, j*32, 0);
+		//	}
+		//}
+	}
+
+
+	
+};
