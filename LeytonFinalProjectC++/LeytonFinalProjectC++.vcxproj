@@ -146,15 +146,15 @@
     <ClCompile Include="WorldMap\WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
     <ClInclude Include="WorldMap\WorldMap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

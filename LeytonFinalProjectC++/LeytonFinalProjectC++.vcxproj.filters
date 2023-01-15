@@ -35,9 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -50,5 +47,8 @@
     <ClInclude Include="WorldMap\WorldMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
