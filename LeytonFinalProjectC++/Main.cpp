@@ -34,8 +34,8 @@ int main()
 // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
 //al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
-    int screenWidth = 700;
-    int screenHeight = 400;
+    int screenWidth = 900;
+    int screenHeight = 600;
 
 
     must_init(al_init(), "allegro");
@@ -65,7 +65,7 @@ int main()
     al_register_event_source(queue, al_get_display_event_source(disp));
     al_register_event_source(queue, al_get_timer_event_source(timer));
 
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+    
 
     bool done = false;
     bool redraw = true;
@@ -75,10 +75,9 @@ int main()
     double yMousePosition = 0;
 
     PlayerCharacter player = PlayerCharacter();
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
     
-    
-   
-
+  
     al_start_timer(timer);
     while (1)
     {

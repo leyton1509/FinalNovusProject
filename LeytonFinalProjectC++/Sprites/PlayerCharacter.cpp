@@ -33,7 +33,7 @@ using namespace std;
 	// The player character constructor
 	// Sets up the values for the variables in the class
 	// Passes the variables up to sprite, including the type of sprite, pos, vel, width height and image loc
-	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 64, 64, "C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
+	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 64, 64, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
 		xValueForStyleSheet = 0;
 		yValueForStyleSheet = 0;
 		state = 0;
@@ -41,6 +41,7 @@ using namespace std;
 		framerate = 60;
 		moveThisTurn = (32 * 2 / framerate);
 		shiftBackground = 1;
+		cout << spriteImage << " sprite \n";
 	}
 
 	// Moves the character based on the keypressed
@@ -55,12 +56,13 @@ using namespace std;
 				state = 0;
 				directionY = 1;
 				directionX = 0;
-				shiftBackground = 1;
 			}
 			// If the state is 0, then set the state to 1
 			else {
+				shiftBackground = 1;
 				if (state == 0) {
 					state = 1;
+					
 				}
 			}
 
@@ -72,11 +74,12 @@ using namespace std;
 				state = 0;
 				directionY = -1;
 				directionX = 0;		
-				shiftBackground = 2;
 			}
 			else {
+				shiftBackground = 2;
 				if (state == 0) {
 					state = 1;
+					
 				}
 			}
 		}
@@ -87,11 +90,12 @@ using namespace std;
 				state = 0;
 				directionX = -1;
 				directionY = 0;
-				shiftBackground = 3;
 			}
 			else {
+				shiftBackground = 3;
 				if (state == 0) {
 					state = 1;
+					
 				}
 				
 			}
@@ -104,9 +108,9 @@ using namespace std;
 				yValueForStyleSheet = 128;
 				directionX = 1;
 				directionY = 0;
-				shiftBackground = 4;
 			}
 			else {
+				shiftBackground = 4;
 				if (state == 0) {
 					state = 1;
 				}
