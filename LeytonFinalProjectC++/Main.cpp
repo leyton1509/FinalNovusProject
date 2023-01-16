@@ -115,106 +115,106 @@ int main()
 
     
 
+    TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
+    bool runTitleScreen = false;
+    bool runOverWorld = true;
 
     switch (currentScreen)
+
     {
-    case titleScreen:
+        case titleScreen:
 
-        TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
-        bool runTitleScreen = true;
+           
+            while (runTitleScreen) {
 
-        while (runTitleScreen) {
-
-        }
-
+            }
+            break;
 
 
+        case overWorld:
 
-        break;
+            while (runOverWorld) {
+
+                    al_wait_for_event(queue, &event);
+
+                    switch (event.type)
+                    {
+
+                    case ALLEGRO_EVENT_TIMER:
+                        // game logic goes here.
+                        redraw = true;
+                        break;
+
+                        // Handle mouse movement
+                    case ALLEGRO_EVENT_MOUSE_AXES:
+                        xMousePosition = event.mouse.x;
+                        yMousePosition = event.mouse.y;
+                        break;
+
+                        // Handle mouse click
+                    case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+                        break;
+
+
+                    case ALLEGRO_EVENT_DISPLAY_CLOSE:
+                        done = true;
+                        break;
+
+
+                    case ALLEGRO_EVENT_KEY_DOWN:
+                        if (event.keyboard.keycode == ALLEGRO_KEY_W) {
+                            int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                            player.moveCharacter("w");
+                        }
+                        else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
+                            int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                            player.moveCharacter("s");
+
+                        }
+                        else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
+                            int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                            player.moveCharacter("a");
+
+                        }
+                        else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
+                            int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                            player.moveCharacter("d");
+
+                        }
+                    }
+
+                    if (done)
+                        break;
+
+                    if (redraw && al_is_event_queue_empty(queue))
+                    {
+
+                        al_clear_to_color(al_map_rgb(0, 0, 0));
+
+                        worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
+                        player.drawSprite();
+
+
+
+                        cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
+                        al_identity_transform(&camera);
+                        al_translate_transform(&camera, -cameraPosition[0], -cameraPosition[1]);
+                        al_use_transform(&camera);
+
+                        al_flip_display();
+
+                        redraw = false;
+                    }
+            }
+
+
+            break;
+
     }
 
 
 
-    while (1)
-    {
-      
-       
-            al_wait_for_event(queue, &event);
 
-            switch (event.type)
-            {
-
-            case ALLEGRO_EVENT_TIMER:
-                // game logic goes here.
-                redraw = true;
-                break;
-
-                // Handle mouse movement
-            case ALLEGRO_EVENT_MOUSE_AXES:
-                xMousePosition = event.mouse.x;
-                yMousePosition = event.mouse.y;
-                break;
-
-                // Handle mouse click
-            case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-                break;
-
-
-            case ALLEGRO_EVENT_DISPLAY_CLOSE:
-                done = true;
-                break;
-
-
-            case ALLEGRO_EVENT_KEY_DOWN:
-                if (event.keyboard.keycode == ALLEGRO_KEY_W) {
-                    int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                    player.moveCharacter("w");
-                }
-                else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
-                    int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                    player.moveCharacter("s");
-
-                }
-                else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
-                    int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                    player.moveCharacter("a");
-
-                }
-                else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
-                    int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                    player.moveCharacter("d");
-
-                }
-            }
-
-            if (done)
-                break;
-
-            if (redraw && al_is_event_queue_empty(queue))
-            {
-
-                al_clear_to_color(al_map_rgb(0, 0, 0));
-
-                worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
-                player.drawSprite();
-
-
-
-                cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
-                al_identity_transform(&camera);
-                al_translate_transform(&camera, -cameraPosition[0], -cameraPosition[1]);
-                al_use_transform(&camera);
-
-                al_flip_display();
-
-                redraw = false;
-            }
-
-    
-
-        
-
-    }
 
 
     al_destroy_bitmap(player.spriteImage);
