@@ -29,6 +29,9 @@ class PlayerCharacter : public Sprite{
 
 	int shiftBackground;
 
+	int xTilePosition;
+	int yTilePosition;
+
 
 	// The player character constructor
 	// Sets up the values for the variables in the class
@@ -36,6 +39,8 @@ class PlayerCharacter : public Sprite{
 	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 64, 64, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
 		xValueForStyleSheet = 0;
 		yValueForStyleSheet = 0;
+		xTilePosition = 0;
+		yTilePosition = 0;
 		state = 0;
 		currentFrame = 0;
 		framerate = 60;
