@@ -108,7 +108,7 @@ int main()
 
     enum ScreenSelection {titleScreen, overWorld, battle, bag};
 
-    ScreenSelection currentScreen = overWorld;
+    ScreenSelection currentScreen = titleScreen;
 
     al_start_timer(timer);
 
@@ -120,10 +120,34 @@ int main()
         switch (currentScreen)
         {
         case titleScreen:
-            break;
-        case overWorld:
             al_wait_for_event(queue, &event);
 
+            switch (event.type)
+            {
+
+            case ALLEGRO_EVENT_TIMER:
+                // game logic goes here.
+                redraw = true;
+                break;
+
+                // Handle mouse movement
+            case ALLEGRO_EVENT_MOUSE_AXES:
+                xMousePosition = event.mouse.x;
+                yMousePosition = event.mouse.y;
+                break;
+
+                // Handle mouse click
+            case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+                break;
+
+
+            case ALLEGRO_EVENT_DISPLAY_CLOSE:
+                done = true;
+                break;
+            break;
+        case overWorld:
+
+            al_wait_for_event(queue, &event);
 
             switch (event.type)
             {
