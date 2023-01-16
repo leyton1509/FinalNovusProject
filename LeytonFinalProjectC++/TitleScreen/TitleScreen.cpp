@@ -25,9 +25,9 @@ public:
 	void drawFirstScreen() {
 		al_draw_bitmap(background, 0, 0, 0);
 
-		if (currentFrame >= 180) {
+		if (currentFrame >= 360) {
 			al_draw_bitmap(dialgaGlowing, 0, 0, 0);
-			if (currentFrame > 190) {
+			if (currentFrame > 390) {
 				currentFrame = 0;
 			}
 		
