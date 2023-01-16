@@ -30,14 +30,14 @@ public:
 		al_draw_bitmap(background, 0, 0, 0);
 
 		if (currentFrame >= 360) {
-			al_draw_bitmap(dialgaGlowing, _screenWidth * 0.6, 0, 0);
+			al_draw_bitmap(dialgaGlowing, screenWidth * 0.6, screenHeight *0.4, 0);
 			if (currentFrame > 390) {
 				currentFrame = 0;
 			}
 		
 		}
 		else {
-			al_draw_bitmap(dialgaBasic, 0, 0, 0);
+			al_draw_bitmap(dialgaBasic, screenWidth * 0.6, screenHeight * 0.4, 0);
 			currentFrame++;
 		}
 		
