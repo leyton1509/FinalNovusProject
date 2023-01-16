@@ -113,43 +113,32 @@ int main()
 
     al_start_timer(timer);
 
-    TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
+    
 
-   
+
+    switch (currentScreen)
+    {
+    case titleScreen:
+
+        TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
+        bool runTitleScreen = true;
+
+        while (runTitleScreen) {
+
+        }
+
+
+
+
+        break;
+    }
+
 
 
     while (1)
     {
-        switch (currentScreen)
-        {
-        case titleScreen:
-            al_wait_for_event(queue, &event);
-
-            switch (event.type)
-            {
-
-            case ALLEGRO_EVENT_TIMER:
-                // game logic goes here.
-                redraw = true;
-                break;
-
-                // Handle mouse movement
-            case ALLEGRO_EVENT_MOUSE_AXES:
-                xMousePosition = event.mouse.x;
-                yMousePosition = event.mouse.y;
-                break;
-
-                // Handle mouse click
-            case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-                break;
-
-
-            case ALLEGRO_EVENT_DISPLAY_CLOSE:
-                done = true;
-                break;
-            break;
-        case overWorld:
-
+      
+       
             al_wait_for_event(queue, &event);
 
             switch (event.type)
@@ -221,14 +210,7 @@ int main()
                 redraw = false;
             }
 
-            break;
-        case battle:
-            break;
-        case bag:
-            break;
-        default:
-            break;
-        }
+    
 
         
 
