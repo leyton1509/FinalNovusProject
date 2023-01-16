@@ -107,7 +107,7 @@ public:
 		cout << "\n";
 	}
 
-	void getWhatPlayerIsStandingOn(int xTile, int yTile) {
+	int getWhatPlayerIsStandingOn(int xTile, int yTile) {
 
 		int tempYTile = yTile + 1;
 		int tile = 0;
@@ -118,10 +118,10 @@ public:
 			tile = 0;
 		}
 		cout << "Player on : " << tile << "at : " << xTile << "," << yTile << " .\n";
-
-		
-
+		return tile;
 	}
+
+
 
 
 	void drawMap(int shiftBackground, float xPosition, float yPosition) {
