@@ -194,8 +194,8 @@ class PlayerCharacter : public Sprite{
 		}
 		
 
-		al_draw_bitmap_region(spriteImage, (64 * state) + 16, yValueForStyleSheet +12, 42, 48, xPosition, yPosition, 0);
-		//al_draw_scaled_bitmap(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 48,48, 0);
+		//al_draw_bitmap_region(spriteImage, (64 * state) + 16, yValueForStyleSheet +12, 42, 48, xPosition, yPosition, 0);
+		al_draw_scaled_bitmap(spriteImage, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48,48, 0);
 	}
 
 };
