@@ -17,11 +17,11 @@ public:
 
 	TitleScreen(int _screenWidth, int _screenHeight) {
 		name = "Pokemon Shattered Prism";
-		dialgaBasic = al_load_bitmap("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/Sprites/TitleScreenSprites/Dialga.png");
+		dialgaBasic = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/Dialga.png");
 		dialgaGlowing = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/DialgaPulse.png");
 		background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/BackgroundTitle.jpg");
 		screenWidth = _screenWidth;
-		screenHeight = _screenHeight;
+		screenHeight = _screenHeight; 
 	}
 
 	void drawFirstScreen() {
