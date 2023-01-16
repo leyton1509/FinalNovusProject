@@ -184,7 +184,6 @@ int main()
 
     al_destroy_bitmap(player.spriteImage);
     al_uninstall_keyboard();
-    //al_destroy_bitmap(mysha);
     al_destroy_font(font);
     al_ungrab_mouse();
     al_destroy_display(disp);
