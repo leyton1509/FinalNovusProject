@@ -35,7 +35,7 @@ class PlayerCharacter : public Sprite{
 	// The player character constructor
 	// Sets up the values for the variables in the class
 	// Passes the variables up to sprite, including the type of sprite, pos, vel, width height and image loc
-	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 32, 32, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
+	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 64, 64, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
 		xValueForStyleSheet = 0;
 		yValueForStyleSheet = 0;
 		xTilePosition = 0;
@@ -194,7 +194,8 @@ class PlayerCharacter : public Sprite{
 		}
 		
 
-		al_draw_bitmap_region(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 0);
+		al_draw_bitmap_region(spriteImage, (64 * state) + 16, yValueForStyleSheet +12, 42, 48, xPosition, yPosition, 0);
+		//al_draw_scaled_bitmap(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 48,48, 0);
 	}
 
 };
