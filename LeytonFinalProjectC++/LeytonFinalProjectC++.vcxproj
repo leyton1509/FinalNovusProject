@@ -143,6 +143,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sprites\PokemonGrass.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
+    <ClCompile Include="TitleScreen\TitleScreen.cpp" />
     <ClCompile Include="WorldMap\WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
   <ItemGroup>
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
+    <ClInclude Include="TitleScreen\TitleScreenHeader.h" />
     <ClInclude Include="WorldMap\WorldMap.h" />
   </ItemGroup>
   <ItemGroup>
