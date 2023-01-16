@@ -107,6 +107,10 @@ public:
 		cout << "\n";
 	}
 
+	void getWhatPlayerIsStandingOn(float xPosition, float yPosition) {
+
+	}
+
 
 	void drawMap(int shiftBackground, float xPosition, float yPosition) {
 
