@@ -83,8 +83,6 @@ int main()
     must_init(font, "font");
 
     must_init(al_init_image_addon(), "image addon");
-    //ALLEGRO_BITMAP* mysha = al_load_bitmap("Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png");
-    //must_init(mysha, "mysha");
 
     al_register_event_source(queue, al_get_mouse_event_source());
     al_register_event_source(queue, al_get_keyboard_event_source());
