@@ -13,6 +13,8 @@ public:
 	ALLEGRO_BITMAP * dialgaGlowing;
 	ALLEGRO_BITMAP * background;
 
+
+
 	TitleScreen(int _screenWidth, int _screenHeight) {
 		name = "Pokemon Shattered Prism";
 		dialgaBasic = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/Dialga.png");
@@ -21,6 +23,9 @@ public:
 	}
 
 	void drawFirstScreen() {
+		al_draw_bitmap(background, 0, 0, 0);
+		al_draw_bitmap(dialgaBasic, 0, 0, 0);
+		al_draw_bitmap(dialgaGlowing, 0, 0, 0);
 
 	}
 
