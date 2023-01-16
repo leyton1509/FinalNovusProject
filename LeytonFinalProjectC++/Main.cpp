@@ -102,11 +102,11 @@ int main()
     float cameraPosition[2] = { 0,0 };
 
     PlayerCharacter player = PlayerCharacter();
-    player.xPosition = screenWidth / 2;
-    player.yPosition = screenHeight / 2;
+    //player.xPosition = screenWidth / 2;
+    //player.yPosition = screenHeight / 2;
     WorldMap worldMap = WorldMap(screenWidth, screenHeight);
-    
-  
+
+ 
     al_start_timer(timer);
     while (1)
     {
@@ -168,6 +168,8 @@ int main()
             worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
             player.shiftBackground = 0;
             player.drawSprite();
+
+            worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
             al_identity_transform(&camera);
