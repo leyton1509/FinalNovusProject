@@ -106,14 +106,37 @@ int main()
     //player.yPosition = screenHeight / 2;
     WorldMap worldMap = WorldMap(screenWidth, screenHeight);
 
- 
+    enum ScreenSelection {titleScreen, overWorld, battle, bag};
+
+    ScreenSelection currentScreen = overWorld;
+
     al_start_timer(timer);
+
+   
+
+
     while (1)
     {
+        switch (currentScreen)
+        {
+        case titleScreen:
+            break;
+        case overWorld:
+            break;
+        case battle:
+            break;
+        case bag:
+            break;
+        default:
+            break;
+        }
+
         al_wait_for_event(queue, &event);
 
+        
         switch (event.type)
         {
+
         case ALLEGRO_EVENT_TIMER:
             // game logic goes here.
             redraw = true;
