@@ -109,14 +109,15 @@ public:
 
 	void getWhatPlayerIsStandingOn(int xTile, int yTile) {
 
-		if (xTile >= 0 && xTile <= screenWidth && yTile >= 0 && yTile <= screenHeight) {
-			int tile = textMap[xTile][yTile];
-			cout << "Player on : " << tile << "at : " << xTile << "," << yTile << " .\n";
+		int tempYTile = yTile + 1;
+		int tile = 0;
+		if (xTile >= 0 && xTile <= screenWidth && tempYTile >= 0 && tempYTile <= screenHeight) {
+			tile = textMap[xTile][tempYTile];
 		}
 		else {
-			int tile = 0;
-			cout << "Player on : " << tile << "at : " << xTile << "," << yTile << " .\n";
+			tile = 0;
 		}
+		cout << "Player on : " << tile << "at : " << xTile << "," << yTile << " .\n";
 
 		
 
