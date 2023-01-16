@@ -10,7 +10,7 @@ class WorldMap {
 
 public:
 
-	ALLEGRO_BITMAP* mapBuffer;;
+	ALLEGRO_BITMAP* mapBuffer;
 	ALLEGRO_BITMAP* mapTiles[3];
 
 	int textMap[100][100];
