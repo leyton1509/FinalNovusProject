@@ -11,20 +11,23 @@ public:
 	ALLEGRO_BITMAP * dialgaGlowing;
 	ALLEGRO_BITMAP * background;
 
-	int currentFrame = 0;
+	int currentFrame;
 	int screenWidth;
 	int screenHeight;
+	bool hasClicked;
 
 	TitleScreen(int _screenWidth, int _screenHeight) {
+		currentFrame = 0;
 		pokemonText = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/PokemonTitle.png");
 		dialgaBasic = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/Dialga.png");
 		dialgaGlowing = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/DialgaPulse.png");
 		background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/BackgroundTitle.jpg");
 		screenWidth = _screenWidth;
 		screenHeight = _screenHeight; 
+		hasClicked = false;
 	}
 
-	void drawFirstScreen() {
+	void drawScreen() {
 		al_draw_scaled_bitmap(background, 0, 0, 728, 410, 0,0, screenWidth, screenHeight, 0);
 		al_draw_scaled_bitmap(pokemonText, 0, 0, 493, 225, 0, 0, screenWidth * 0.8, screenHeight * 0.4, 0);
 
@@ -41,9 +44,6 @@ public:
 		
 	}
 
-	void drawSecondScreen() {
-
-	}
 
 
 
