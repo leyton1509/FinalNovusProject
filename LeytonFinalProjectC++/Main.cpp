@@ -116,8 +116,8 @@ int main()
     
 
     TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
-    bool runTitleScreen = false;
-    bool runOverWorld = true;
+    bool runTitleScreen = true;
+    bool runOverWorld = false;
 
     switch (currentScreen)
 
@@ -126,6 +126,43 @@ int main()
 
            
             while (runTitleScreen) {
+                al_wait_for_event(queue, &event);
+
+                switch (event.type)
+                {
+
+                case ALLEGRO_EVENT_TIMER:
+                    // game logic goes here.
+                    redraw = true;
+                    break;
+
+                    // Handle mouse movement
+                case ALLEGRO_EVENT_MOUSE_AXES:
+                    xMousePosition = event.mouse.x;
+                    yMousePosition = event.mouse.y;
+                    break;
+
+                    // Handle mouse click
+                case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+                    break;
+
+
+                case ALLEGRO_EVENT_DISPLAY_CLOSE:
+                    done = true;
+                    break;
+
+                }
+
+                if (done)
+                    break;
+
+                if (redraw && al_is_event_queue_empty(queue))
+                {
+                    gameTitleScreen.drawFirstScreen();
+
+                    al_flip_display();
+                    redraw = false;
+                }
 
             }
             break;
