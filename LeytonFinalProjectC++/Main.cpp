@@ -165,7 +165,7 @@ int main()
 
             //al_draw_bitmap(mysha, 100, 100, 0);
 
-            worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+            int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 
             worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
             player.drawSprite();
