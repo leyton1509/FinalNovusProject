@@ -161,9 +161,7 @@ int main()
             
            
             al_clear_to_color(al_map_rgb(0, 0, 0));
-            //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
 
-            //al_draw_bitmap(mysha, 100, 100, 0);
 
             int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 
