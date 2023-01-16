@@ -32,11 +32,10 @@ class PlayerCharacter : public Sprite{
 	int xTilePosition;
 	int yTilePosition;
 
-
 	// The player character constructor
 	// Sets up the values for the variables in the class
 	// Passes the variables up to sprite, including the type of sprite, pos, vel, width height and image loc
-	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 32, 64, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
+	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 32, 32, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
 		xValueForStyleSheet = 0;
 		yValueForStyleSheet = 0;
 		xTilePosition = 0;
@@ -125,9 +124,28 @@ class PlayerCharacter : public Sprite{
 
 	}
 
+	void updateTile() {
+		if (currentFrame == 0) {
+			if (directionX == 1) {
+				xTilePosition++;
+			}
+			else if (directionX == -1) {
+				xTilePosition--;
+			}
+			else if (directionY == -1) {
+				yTilePosition++;
+			}
+			else if (directionY == 1) {
+				yTilePosition--;
+			}
+		}
+	}
+
+
 
 	// Updates the correct position based on the direction of the character
 	void updatePosition() {
+		
 		if (directionX == 1) {
 			xPosition += moveThisTurn;
 		}
@@ -140,6 +158,7 @@ class PlayerCharacter : public Sprite{
 		else if (directionY == 1) {
 			yPosition -= moveThisTurn;
 		}
+	
 	}
 
 
@@ -148,6 +167,11 @@ class PlayerCharacter : public Sprite{
 	void drawSprite() {
 
 		if (state != 0) {
+
+			if (state == 1) {
+				updateTile();
+			}
+
 			if (currentFrame <= framerate / 6 && currentFrame >= 0) {
 				state = 1;
 				updatePosition();
@@ -168,6 +192,7 @@ class PlayerCharacter : public Sprite{
 				currentFrame = 0;
 			}
 		}
+		
 
 		al_draw_bitmap_region(spriteImage, (64 * state), yValueForStyleSheet, 64, 64, xPosition, yPosition, 0);
 	}
