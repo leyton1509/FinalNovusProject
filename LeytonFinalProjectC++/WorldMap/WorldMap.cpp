@@ -109,6 +109,12 @@ public:
 
 	void getWhatPlayerIsStandingOn(float xPosition, float yPosition) {
 
+		int xTile = xPosition / 32;
+		int yTile = yPosition / 32;
+
+		int tile = textMap[xTile][yTile];
+		cout << "Player on : " << tile << " .\n";
+
 	}
 
 
