@@ -14,8 +14,8 @@ public:
 	ALLEGRO_BITMAP* mapTiles[3];
 
 	int textMap[100][100];
-	int xBorderSize = 5;
-	int yBorderSize = 5;
+	int xBorderSize = 15;
+	int yBorderSize = 15;
 	int tempMap[10][10];
 	int loadCounterX = 0;
 	int loadCounterY = 0;
@@ -110,9 +110,36 @@ public:
 
 	void drawMap(int shiftBackground, float xPosition, float yPosition) {
 
+		
+
+		/*
+		
+		int x = 0;
+		int y = 0;
+
+		for (int i = xPosition - (xBorderSize * 32); i < xPosition + (xBorderSize * 32); i = i + 32)
+		{
+			int row = floor(i / 32);
+
+			for (int j = yPosition - (yBorderSize * 32); j < yPosition + (yBorderSize * 32); j = j + 32)
+			{
+				int column = floor(j / 32);
+
+				if (i >= 0 && i <= screenWidth && j >= 0 && j <= screenHeight) {
+					al_draw_bitmap(mapTiles[textMap[x][y]], i, j, 0);
+				}
+
+				y++;
+			}
+			x++;
+			y = 0;
+		}
+		*/
+
 		//cout << "X:" << player.xPosition << " , Y:" << player.yPosition << " \n";
 
-
+		/*
+		
 		if (shiftBackground != 0) {
 			//shiftBackground = 0;
 			cout << "Shifting background!";
@@ -141,6 +168,7 @@ public:
 			x++;
 			y = 0;
 		}
+		*/
 		
 		/*
 		
@@ -154,7 +182,7 @@ public:
 
 		}
 		*/
-		cout << "----\n";
+		// cout << "----\n";
 
 
 		/*
@@ -179,13 +207,13 @@ public:
 		
 
 
-		//for (int i = 0; i < mapSizeX; i++)
-		//{
-		//	for (int j = 0; j < mapSizeY; j++)
-		//	{
-		//		al_draw_bitmap(mapTiles[textMap[i][j]], i*32, j*32, 0);
-		//	}
-		//}
+		for (int i = 0; i < mapSizeX; i++)
+		{
+			for (int j = 0; j < mapSizeY; j++)
+			{
+				al_draw_bitmap(mapTiles[textMap[i][j]], i*32, j*32, 0);
+			}
+		}
 	}
 
 
