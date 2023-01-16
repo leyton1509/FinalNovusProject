@@ -10,6 +10,7 @@
 
 #include <iostream>  
 #include "WorldMap/WorldMap.h"
+#include "TitleScreen/TitleScreenHeader.h"
 
 int screenWidth = 900;
 int screenHeight = 600;
@@ -111,6 +112,8 @@ int main()
     ScreenSelection currentScreen = titleScreen;
 
     al_start_timer(timer);
+
+    TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
 
    
 
