@@ -14,19 +14,23 @@ public:
 	ALLEGRO_BITMAP * background;
 
 	int currentFrame = 0;
+	int screenWidth;
+	int screenHeight;
 
 	TitleScreen(int _screenWidth, int _screenHeight) {
 		name = "Pokemon Shattered Prism";
 		dialgaBasic = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/Dialga.png");
 		dialgaGlowing = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/DialgaPulse.png");
 		background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/BackgrondTitle.jpg");
+		screenWidth = _screenWidth;
+		screenHeight = _screenHeight;
 	}
 
 	void drawFirstScreen() {
 		al_draw_bitmap(background, 0, 0, 0);
 
 		if (currentFrame >= 360) {
-			al_draw_bitmap(dialgaGlowing, 0, 0, 0);
+			al_draw_bitmap(dialgaGlowing, _screenWidth * 0.6, 0, 0);
 			if (currentFrame > 390) {
 				currentFrame = 0;
 			}
