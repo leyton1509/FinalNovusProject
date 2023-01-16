@@ -144,6 +144,9 @@ int main()
 
                     // Handle mouse click
                 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+                    
+                    gameTitleScreen.hasClicked = true;
+                    cout << gameTitleScreen.hasClicked;
                     break;
 
 
@@ -158,7 +161,9 @@ int main()
 
                 if (redraw && al_is_event_queue_empty(queue))
                 {
-                    gameTitleScreen.drawFirstScreen();
+                    al_clear_to_color(al_map_rgb(0, 0, 0));
+
+                    gameTitleScreen.drawScreen();
 
                     al_flip_display();
                     redraw = false;
