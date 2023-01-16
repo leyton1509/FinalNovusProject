@@ -11,6 +11,9 @@
 #include <iostream>  
 #include "WorldMap/WorldMap.h"
 
+int screenWidth = 900;
+int screenHeight = 600;
+
 
 //MonsterManager availableMonsters;
 
@@ -27,6 +30,11 @@ void must_init(bool test, const char* description)
     exit(1);
 }
 
+void cameraUpdate(float * cameraPosition, float x, float y, int width, int height) {
+    cameraPosition[0] = -(screenWidth / 2) + (x + (width/2));
+    cameraPosition[1] = -(screenHeight / 2) + (y + (height/2));
+}
+
 int main()
 {
    
@@ -34,8 +42,7 @@ int main()
 // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
 //al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
-    int screenWidth = 900;
-    int screenHeight = 600;
+    
 
 
     must_init(al_init(), "allegro");
@@ -66,6 +73,7 @@ int main()
     al_register_event_source(queue, al_get_timer_event_source(timer));
 
     
+    ALLEGRO_TRANSFORM camera;
 
     bool done = false;
     bool redraw = true;
@@ -74,7 +82,11 @@ int main()
     double xMousePosition = 0;
     double yMousePosition = 0;
 
+    float cameraPosition[2] = { 0,0 };
+
     PlayerCharacter player = PlayerCharacter();
+    player.xPosition = screenWidth / 2;
+    player.yPosition = screenHeight / 2;
     WorldMap worldMap = WorldMap(screenWidth, screenHeight);
     
   
@@ -129,6 +141,7 @@ int main()
 
         if (redraw && al_is_event_queue_empty(queue))
         {
+            
            
             al_clear_to_color(al_map_rgb(0, 0, 0));
             //al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, "Hello world!");
@@ -138,6 +151,11 @@ int main()
             worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
             player.shiftBackground = 0;
             player.drawSprite();
+
+            cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
+            al_identity_transform(&camera);
+            al_translate_transform(&camera, -cameraPosition[0], -cameraPosition[1]);
+            al_use_transform(&camera);
 
             al_flip_display();
 
