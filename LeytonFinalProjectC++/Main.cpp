@@ -137,17 +137,21 @@ int main()
 
         case ALLEGRO_EVENT_KEY_DOWN:
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 player.moveCharacter("w");
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 player.moveCharacter("s");
    
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 player.moveCharacter("a");
      
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 player.moveCharacter("d");
             
             }
@@ -159,11 +163,7 @@ int main()
         if (redraw && al_is_event_queue_empty(queue))
         {
             
-           
             al_clear_to_color(al_map_rgb(0, 0, 0));
-
-
-            int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 
             worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
             player.drawSprite();
