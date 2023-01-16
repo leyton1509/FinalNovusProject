@@ -165,11 +165,12 @@ int main()
 
             //al_draw_bitmap(mysha, 100, 100, 0);
 
+            worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+
             worldMap.drawMap(player.shiftBackground, player.xPosition, player.yPosition);
-            player.shiftBackground = 0;
             player.drawSprite();
 
-            worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+            
 
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
             al_identity_transform(&camera);
