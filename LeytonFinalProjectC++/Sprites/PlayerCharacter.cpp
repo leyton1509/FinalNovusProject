@@ -26,9 +26,9 @@ class PlayerCharacter : public Sprite{
 	float framerate;
 	// How much to move each frame
 	float moveThisTurn;
-
-
+	// The x tile the player is on based on the text map
 	int xTilePosition;
+	// The y tile the player is on based on the text map
 	int yTilePosition;
 
 	// The player character constructor
