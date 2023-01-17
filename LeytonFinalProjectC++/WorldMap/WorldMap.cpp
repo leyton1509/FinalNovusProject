@@ -133,49 +133,6 @@ public:
 
 
 
-	void fillTempMap(float xPosition, float yPosition){
-
-		int x = 0;
-		int y = 0;
-
-		for (int i = xPosition - (xBorderSize * 32); i < xPosition + (xBorderSize * 32); i = i + 32)
-		{
-			int row = floor(i / 32);
-
-			for (int j = yPosition - (yBorderSize * 32); j < yPosition + (yBorderSize * 32); j = j + 32)
-			{
-				int column = floor(j / 32);
-
-				// cout << x << " , " << y << " fixed \n";
-
-				if (row >= 0 && row < mapSizeX && column >= 0 && column < mapSizeY) {
-					 cout << textMap[row][column] << " at : " << row << " , " << column << " in fill \n";
-					tempMap[x][y] = textMap[row][column];
-					
-				}
-				else {
-					cout << 0 << " at : " << row << " , " << column << " not in bounds \n";
-					tempMap[x][y] = 0;
-				}
-				y++;
-			}
-			x++;
-			y = 0;
-		}
-
-		cout << "\n";
-		for (int i = 0; i < 10; i++)
-		{
-			for (int j = 0; j < 10; j++)
-			{
-				cout << tempMap[i][j] << " ";
-			}
-			cout << "\n";
-
-		}
-		cout << "\n";
-	}
-
 	int getWhatPlayerIsStandingOn(int xTile, int yTile) {
 
 		int tempYTile = yTile + 1;
