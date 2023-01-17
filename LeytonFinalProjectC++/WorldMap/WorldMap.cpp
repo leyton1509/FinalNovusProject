@@ -48,8 +48,13 @@ public:
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
 
-				if () {
-
+				if (yTile - 1 >= 0) {
+					if (textMap[xTile][yTile-1] == 0) {
+						return 0;
+					}
+				}
+				else {
+					return 0;
 				}
 
 			}
@@ -57,22 +62,45 @@ public:
 		}
 
 		else if (strcmp(keyPressed, "s") == 0) {
-			if (directionY == -1) {
-
+			if (directionY == -1) 
+			{
+				if (yTile + 2 < mapSizeY) {
+					if (textMap[xTile][yTile + 2] == 0) {
+						return 0;
+					}
+				}
+				else {
+					return 0;
+				}
 			}
 			return 1;
 		}
 
 		else if (strcmp(keyPressed, "a") == 0) {
 			if (directionX == -1) {
-
+				if (xTile - 1 >= 0) {
+					if (textMap[xTile-1][yTile] == 0) {
+						return 0;
+					}
+				}
+				else {
+					return 0;
+				}
 			}
+			return 1;
 		}
 
 		else if (strcmp(keyPressed, "d") == 0) {
 
 			if (directionX == 1) {
-
+				if (xTile +1 < mapSizeX) {
+					if (textMap[xTile + 1][yTile] == 0) {
+						return 0;
+					}
+				}
+				else {
+					return 0;
+				}
 			}
 			return 1;
 
