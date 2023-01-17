@@ -265,7 +265,7 @@ int main()
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
                         if (encounterRan == 2) {
-                            InitiateBattle initiateBattle = InitiateBattle();
+                            InitiateBattle initiateBattle = InitiateBattle(player);
                         }
                         player.setNewEncounterLocation(); 
                     }
