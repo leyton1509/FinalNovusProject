@@ -178,6 +178,7 @@ int main()
     WorldMap worldMap = WorldMap(screenWidth, screenHeight);
     float cameraPosition[2] = { 0,0 };
 
+    int framecounter = 1;
 
     while (runOverWorld) {
 
@@ -215,7 +216,6 @@ int main()
                 if (canPlayerMove == 1) {
                     player.moveCharacter("w");
                 }
-               
                
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
@@ -258,7 +258,12 @@ int main()
             worldMap.drawMap(player.xPosition, player.yPosition);
             player.drawSprite();
 
-
+            if (framecounter == 3) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                if (tilePlayerIsStandingOn == 2) {
+                    cout << "Encounter!\n";
+                }
+            }
 
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
             al_identity_transform(&camera);
@@ -268,6 +273,13 @@ int main()
             al_flip_display();
 
             redraw = false;
+        }
+
+        if (framecounter == 60) {
+            framecounter = 1;
+        }
+        else {
+            framecounter++;
         }
 
         
