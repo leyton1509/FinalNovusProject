@@ -180,6 +180,8 @@ int main()
 
     }
 
+    gameTitleScreen.destroyAllSprites();
+
 
     ////////////////////////////////////////////////
 
