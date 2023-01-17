@@ -56,13 +56,13 @@ class PlayerCharacter : public Sprite{
 
 	}
 
-
+	// Sets the location of the previous encounter in the array
 	void setNewEncounterLocation() {
 		locationfOfLastEnounter[0] = xTilePosition;
 		locationfOfLastEnounter[1] = yTilePosition;
 	}
 
-
+	// Returns true if the players square is the same as the one theyre standing on
 	bool isTheSameSquareAsLastEncounter() {
 		if (xTilePosition == locationfOfLastEnounter[0] && yTilePosition == locationfOfLastEnounter[1]) {
 			return true;
