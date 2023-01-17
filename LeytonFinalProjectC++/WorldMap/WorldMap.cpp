@@ -44,11 +44,12 @@ public:
 		
 	}
 	int canPlayerMove(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
+		int tempYTile = yTile + 1;
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
 
-				if (yTile - 1 >= 0) {
-					if (textMap[xTile][yTile-1] == 0) {
+				if (tempYTile - 1 >= 0) {
+					if (textMap[xTile][tempYTile] == 0) {
 						return 0;
 					}
 				}
@@ -63,8 +64,8 @@ public:
 		else if (strcmp(keyPressed, "s") == 0) {
 			if (directionY == -1) 
 			{
-				if (yTile + 2 < mapSizeY) {
-					if (textMap[xTile][yTile + 2] == 0) {
+				if (tempYTile + 1 < mapSizeY) {
+					if (textMap[xTile][tempYTile + 1] == 0) {
 						return 0;
 					}
 				}
@@ -78,7 +79,7 @@ public:
 		else if (strcmp(keyPressed, "a") == 0) {
 			if (directionX == -1) {
 				if (xTile - 1 >= 0) {
-					if (textMap[xTile-1][yTile] == 0) {
+					if (textMap[xTile-1][tempYTile] == 0) {
 						return 0;
 					}
 				}
@@ -93,7 +94,7 @@ public:
 
 			if (directionX == 1) {
 				if (xTile +1 < mapSizeX) {
-					if (textMap[xTile + 1][yTile] == 0) {
+					if (textMap[xTile + 1][tempYTile] == 0) {
 						return 0;
 					}
 				}
