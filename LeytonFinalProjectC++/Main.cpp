@@ -252,30 +252,15 @@ int main()
 
             redraw = false;
         }
+
+        
     }
 
     //////////////////////////////////////////
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
-
-
-
+    worldMap.destroyAllSprites();
 
     al_destroy_bitmap(player.spriteImage);
     al_uninstall_keyboard();
