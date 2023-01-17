@@ -45,7 +45,6 @@ class PlayerCharacter : public Sprite{
 		currentFrame = 0;
 		framerate = 60;
 		moveThisTurn = (32 * 2 / framerate);
-		cout << spriteImage << " sprite \n";
 	}
 
 	// Sets all the positions for the player
