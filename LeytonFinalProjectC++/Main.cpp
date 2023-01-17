@@ -144,9 +144,22 @@ int main()
 
                     // Handle mouse click
                 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+                    if (gameTitleScreen.hasClicked = true) {
+                        int resultOfClick = gameTitleScreen.handleButtonClick(xMousePosition, yMousePosition);
+
+                        if (resultOfClick == 1) {
+                            cout << "Clicked :" << resultOfClick << " at " << xMousePosition << " " << yMousePosition << "\n";
+                        }
+                        else if (resultOfClick == 2) {
+                            cout << "Clicked :" << resultOfClick << " at " << xMousePosition << " " << yMousePosition << "\n";
+                        }
+                        
+
+                    }
                     
+               
                     gameTitleScreen.hasClicked = true;
-                    cout << gameTitleScreen.hasClicked;
+                    
                     break;
 
 
