@@ -211,7 +211,11 @@ int main()
         case ALLEGRO_EVENT_KEY_DOWN:
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                player.moveCharacter("w");
+                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY);
+                if (canPlayerMove == 1) {
+                    player.moveCharacter("w");
+                }
+               
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
