@@ -11,10 +11,14 @@ public:
 	ALLEGRO_BITMAP * dialgaGlowing;
 	ALLEGRO_BITMAP * background;
 
+	ALLEGRO_BITMAP* newGameButton;
+	ALLEGRO_BITMAP* loadGameButton;
+
 	int currentFrame;
 	int screenWidth;
 	int screenHeight;
 	bool hasClicked;
+	bool hasLoadedButtons;
 
 	TitleScreen(int _screenWidth, int _screenHeight) {
 		currentFrame = 0;
@@ -25,6 +29,7 @@ public:
 		screenWidth = _screenWidth;
 		screenHeight = _screenHeight; 
 		hasClicked = false;
+		hasLoadedButtons = false;
 	}
 
 	
@@ -47,7 +52,11 @@ public:
 			}
 		}
 		else {
-
+			if (hasLoadedButtons == false) {
+				newGameButton = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg");
+				loadGameButton = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/LoadGameButton.jpg");
+				hasLoadedButtons = true;
+			}
 
 
 		}
