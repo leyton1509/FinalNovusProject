@@ -74,8 +74,16 @@ public:
 		
 	}
 
-	void handleButtonClick(float mousePositionX, float mousePositionY) {
-
+	int handleButtonClick(float mousePositionX, float mousePositionY) {
+		if (hasLoadedButtons == true) {
+			if (newGameButton.hasBeenClicked(mousePositionX, mousePositionY)){
+				return 1;
+			}
+			if (loadGameButton.hasBeenClicked(mousePositionX, mousePositionY)) {
+				return 2;
+			}
+		}
+		return 0;
 	}
 
 
