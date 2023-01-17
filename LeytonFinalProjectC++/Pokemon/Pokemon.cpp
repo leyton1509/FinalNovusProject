@@ -52,6 +52,7 @@ public:
 		yPositionOnSpriteSheet = 0;
 	}
 
+
 	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
