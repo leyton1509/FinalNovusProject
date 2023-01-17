@@ -86,6 +86,12 @@ public:
 		return 0;
 	}
 
+	void destroyAllSprites() {
+		 al_destroy_bitmap(pokemonText);
+		 al_destroy_bitmap(background);
+		 al_destroy_bitmap(newGameButton.spriteImage);
+		 al_destroy_bitmap(loadGameButton.spriteImage);
+	}
 
 
 
