@@ -40,6 +40,11 @@ public:
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
 	}
 
+	void destroyAllSprites() {
+
+		
+	}
+
 	void loadMap(const char * filename) {
 		cout << filename << "";
 		ifstream openfile(filename);
