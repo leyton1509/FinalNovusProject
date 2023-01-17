@@ -31,6 +31,9 @@ public:
 	double experience;
 	double nextExperienceNeeded;
 
+	int xPositionOnSpriteSheet; 
+	int yPositionOnSpriteSheet;
+
 
 	Pokemon(){
 		pokemonName = "";
@@ -45,9 +48,11 @@ public:
 		experience = 0;
 		calculateNextLevelExperienceNeeded();
 		calculateActualStatistics();
+		xPositionOnSpriteSheet = 0;
+		yPositionOnSpriteSheet = 0;
 	}
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level)  {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
@@ -60,6 +65,8 @@ public:
 		experience = 0;
 		calculateNextLevelExperienceNeeded();
 		calculateActualStatistics();
+		xPositionOnSpriteSheet = _xPositionOnSpriteSheet;
+		yPositionOnSpriteSheet = _yPositionOnSpriteSheet;
 	}
 
 	void calculateNextLevelExperienceNeeded() {
