@@ -1,8 +1,10 @@
+#include "../Sprites/PlayerCharacter.h"
+
 class InitiateBattle {
 
 public:
 
-	InitiateBattle() {
+	InitiateBattle(PlayerCharacter player) {
 
 	}
 
