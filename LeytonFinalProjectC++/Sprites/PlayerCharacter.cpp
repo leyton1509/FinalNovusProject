@@ -46,6 +46,15 @@ class PlayerCharacter : public Sprite{
 		cout << spriteImage << " sprite \n";
 	}
 
+	// Sets all the positions for the player
+	void setAllPositions(int x, int y) {
+		xTilePosition = x;
+		yTilePosition = y;
+		xPosition = x;
+		yPosition = y;
+
+	}
+
 	// Moves the character based on the keypressed
 	void moveCharacter(const char * keyPressed) {
 
