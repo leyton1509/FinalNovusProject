@@ -16,7 +16,6 @@ public:
 	int textMap[100][100];
 	int xBorderSize = 15;
 	int yBorderSize = 15;
-	int tempMap[10][10];
 	int loadCounterX = 0;
 	int loadCounterY = 0;
 	int mapSizeX = 0;
