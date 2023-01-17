@@ -4,7 +4,7 @@ class InitiateBattle {
 
 public:
 
-	InitiateBattle(PlayerCharacter player) {
+	InitiateBattle(PlayerCharacter player, int locationNumber) {
 
 	}
 
