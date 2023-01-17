@@ -211,7 +211,7 @@ int main()
         case ALLEGRO_EVENT_KEY_DOWN:
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY);
+                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("w");
                 }
@@ -219,7 +219,7 @@ int main()
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY);
+                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("s");
                 }
@@ -227,7 +227,7 @@ int main()
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY);
+                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("a");
                 }
@@ -235,7 +235,7 @@ int main()
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY);
+                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("d");
                 }
