@@ -27,7 +27,6 @@ class PlayerCharacter : public Sprite{
 	// How much to move each frame
 	float moveThisTurn;
 
-	int shiftBackground;
 
 	int xTilePosition;
 	int yTilePosition;
@@ -44,7 +43,6 @@ class PlayerCharacter : public Sprite{
 		currentFrame = 0;
 		framerate = 60;
 		moveThisTurn = (32 * 2 / framerate);
-		shiftBackground = 1;
 		cout << spriteImage << " sprite \n";
 	}
 
@@ -63,7 +61,6 @@ class PlayerCharacter : public Sprite{
 			}
 			// If the state is 0, then set the state to 1
 			else {
-				shiftBackground = 1;
 				if (state == 0) {
 					state = 1;
 					
@@ -80,7 +77,6 @@ class PlayerCharacter : public Sprite{
 				directionX = 0;		
 			}
 			else {
-				shiftBackground = 2;
 				if (state == 0) {
 					state = 1;
 					
@@ -96,7 +92,6 @@ class PlayerCharacter : public Sprite{
 				directionY = 0;
 			}
 			else {
-				shiftBackground = 3;
 				if (state == 0) {
 					state = 1;
 					
@@ -114,7 +109,6 @@ class PlayerCharacter : public Sprite{
 				directionY = 0;
 			}
 			else {
-				shiftBackground = 4;
 				if (state == 0) {
 					state = 1;
 				}
