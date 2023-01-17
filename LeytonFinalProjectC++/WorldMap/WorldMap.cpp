@@ -44,6 +44,10 @@ public:
 
 		
 	}
+	int canPlayerMove(const char* keyPressed, int xDirection, int yDirection) {
+		return 1;
+	}
+
 
 	void loadMap(const char * filename) {
 		cout << filename << "";
