@@ -50,8 +50,8 @@ class PlayerCharacter : public Sprite{
 	void setAllPositions(int x, int y) {
 		xTilePosition = x;
 		yTilePosition = y;
-		xPosition = x;
-		yPosition = y;
+		xPosition = x * 32;
+		yPosition = y * 32;
 
 	}
 
