@@ -56,6 +56,9 @@
     <ClInclude Include="TitleScreen\TitleScreenHeader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sprites\Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

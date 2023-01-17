@@ -151,6 +151,7 @@
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Sprites\Button.h" />
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
     <ClInclude Include="TitleScreen\TitleScreenHeader.h" />
