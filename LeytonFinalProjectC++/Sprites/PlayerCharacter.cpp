@@ -30,7 +30,7 @@ class PlayerCharacter : public Sprite{
 	int xTilePosition;
 	// The y tile the player is on based on the text map
 	int yTilePosition;
-
+	// An array of the tile of the last encounter stops the repeated encounter in a square
 	int locationfOfLastEnounter[2] = {0,0};
 
 	// The player character constructor
