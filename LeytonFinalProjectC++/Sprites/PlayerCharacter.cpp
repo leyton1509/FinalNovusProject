@@ -57,6 +57,15 @@ class PlayerCharacter : public Sprite{
 
 	}
 
+
+
+	bool isTheSameSquareAsLastEncounter() {
+		if (xTilePosition == locationfOfLastEnounter[0] && yTilePosition == locationfOfLastEnounter[1]) {
+			return true;
+		}
+		return false;
+	}
+
 	// Moves the character based on the keypressed
 	void moveCharacter(const char * keyPressed) {
 
