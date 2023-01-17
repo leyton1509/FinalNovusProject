@@ -41,14 +41,14 @@ public:
 			al_draw_scaled_bitmap(pokemonText, 0, 0, 493, 225, screenWidth / 2 - screenWidth * 0.4, screenHeight * 0.1, screenWidth * 0.8, screenHeight * 0.4, 0);
 
 			if (currentFrame >= 200) {
-				al_draw_scaled_bitmap(dialgaGlowing, 0, 0, 600, 600, screenWidth * 0.3, screenHeight * 0.55, screenWidth / 1.9, screenHeight / 2, 0);
+				al_draw_scaled_bitmap(dialgaGlowing, 0, 0, 600, 600, screenWidth * 0.3, screenHeight * 0.5, screenWidth / 1.9, screenHeight / 2, 0);
 				currentFrame++;
 				if (currentFrame > 210) {
 					currentFrame = 0;
 				}
 			}
 			else {
-				al_draw_scaled_bitmap(dialgaBasic, 0, 0, 600, 600, screenWidth * 0.3, screenHeight * 0.55, screenWidth / 1.9, screenHeight / 2, 0);
+				al_draw_scaled_bitmap(dialgaBasic, 0, 0, 600, 600, screenWidth * 0.3, screenHeight * 0.5, screenWidth / 1.9, screenHeight / 2, 0);
 				currentFrame++;
 			}
 		}
