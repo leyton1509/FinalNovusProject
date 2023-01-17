@@ -216,29 +216,33 @@ int main()
                     player.moveCharacter("w");
                 }
                
+               
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("s");
                 }
+               
 
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("a");
                 }
+              
 
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("d");
                 }
+                
 
             }
         }
