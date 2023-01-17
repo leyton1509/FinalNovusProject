@@ -58,6 +58,9 @@ public:
 				hasLoadedButtons = true;
 			}
 
+			al_draw_scaled_bitmap(newGameButton, 0, 0, 281, 60, screenWidth * 0.5 - screenWidth * 0.35, screenHeight * 0.3, screenWidth * 0.7,  screenHeight * 0.2, 0);
+			al_draw_scaled_bitmap(loadGameButton, 0, 0, 281, 60, screenWidth * 0.5 - screenWidth * 0.35, screenHeight * 0.6, screenWidth * 0.7, screenHeight * 0.2, 0);
+
 
 		}
 		
