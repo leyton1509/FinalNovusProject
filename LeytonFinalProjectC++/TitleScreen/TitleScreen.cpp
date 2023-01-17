@@ -55,14 +55,15 @@ public:
 			if (hasLoadedButtons == false) {
 				newGameButton = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg");
 				loadGameButton = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/LoadGameButton.jpg");
+				background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/BackgroundTitle.jpg");
 				hasLoadedButtons = true;
 
 				al_destroy_bitmap(dialgaBasic);
 				al_destroy_bitmap(dialgaGlowing);
-				al_destroy_bitmap(background);
 				
 			}
 
+			al_draw_scaled_bitmap(background, 0, 0, 728, 410, 0, 0, screenWidth, screenHeight, 0);
 			al_draw_scaled_bitmap(newGameButton, 0, 0, 281, 60, screenWidth * 0.5 - screenWidth * 0.35, screenHeight * 0.3, screenWidth * 0.7,  screenHeight * 0.2, 0);
 			al_draw_scaled_bitmap(loadGameButton, 0, 0, 281, 60, screenWidth * 0.5 - screenWidth * 0.35, screenHeight * 0.6, screenWidth * 0.7, screenHeight * 0.2, 0);
 
