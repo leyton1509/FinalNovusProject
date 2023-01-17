@@ -104,10 +104,6 @@ int main()
 
   
 
-    enum ScreenSelection {titleScreen, overWorld, battle, bag};
-
-    ScreenSelection currentScreen = titleScreen;
-
     al_start_timer(timer);
 
     TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
