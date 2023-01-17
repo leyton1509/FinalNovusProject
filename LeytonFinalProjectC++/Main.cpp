@@ -102,11 +102,7 @@ int main()
 
     float cameraPosition[2] = { 0,0 };
 
-    PlayerCharacter player = PlayerCharacter();
-    //player.xPosition = screenWidth / 2;
-    //player.yPosition = screenHeight / 2;
-    player.setAllPositions(0,0);
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+  
 
     enum ScreenSelection {titleScreen, overWorld, battle, bag};
 
@@ -184,6 +180,12 @@ int main()
 
 
     ////////////////////////////////////////////////
+
+    PlayerCharacter player = PlayerCharacter();
+    //player.xPosition = screenWidth / 2;
+    //player.yPosition = screenHeight / 2;
+    player.setAllPositions(0, 0);
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
 
 
     while (runOverWorld) {
