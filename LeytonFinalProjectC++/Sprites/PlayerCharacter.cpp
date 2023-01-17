@@ -31,6 +31,8 @@ class PlayerCharacter : public Sprite{
 	// The y tile the player is on based on the text map
 	int yTilePosition;
 
+	int locationfOfLastEnounter[2] = {0,0};
+
 	// The player character constructor
 	// Sets up the values for the variables in the class
 	// Passes the variables up to sprite, including the type of sprite, pos, vel, width height and image loc
