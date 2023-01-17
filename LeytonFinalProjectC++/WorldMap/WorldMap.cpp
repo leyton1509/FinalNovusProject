@@ -49,12 +49,14 @@ public:
 			if (directionY == 1) {
 
 			}
+			return 1;
 		}
 
 		else if (strcmp(keyPressed, "s") == 0) {
 			if (directionY == -1) {
 
 			}
+			return 1;
 		}
 
 		else if (strcmp(keyPressed, "a") == 0) {
@@ -68,10 +70,10 @@ public:
 			if (directionX == 1) {
 
 			}
-
+			return 1;
 
 		}
-		return 1;
+
 	}
 
 
