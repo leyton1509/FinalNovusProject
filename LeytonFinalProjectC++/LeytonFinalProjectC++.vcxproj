@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Battle\InitiateBattle.cpp" />
     <ClCompile Include="Sprites\Button.cpp" />
     <ClCompile Include="Sprites\PlayerCharacter.cpp">
       <DeploymentContent>true</DeploymentContent>
@@ -151,6 +152,7 @@
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Battle\InitiateBattle.h" />
     <ClInclude Include="Sprites\Button.h" />
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />

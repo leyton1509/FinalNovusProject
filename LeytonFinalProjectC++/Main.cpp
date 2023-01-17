@@ -263,12 +263,9 @@ int main()
                 if (tilePlayerIsStandingOn == 2) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
-
                         if (encounterRan == 2) {
-                            cout << "Random encounter\n";
+                            
                         }
-
-
                         player.setNewEncounterLocation(); 
                     }
                     
