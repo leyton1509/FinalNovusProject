@@ -1,0 +1,9 @@
+class InitiateBattle {
+
+public:
+
+	InitiateBattle() {
+
+	}
+
+};
