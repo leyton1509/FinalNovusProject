@@ -23,6 +23,7 @@ public:
 	bool once = false;
 	int screenWidth;
 	int screenHeight;
+	int locationNumber = 0;
 
 
 	WorldMap(int _screenWidth, int _screenHeight) {
