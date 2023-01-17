@@ -58,6 +58,11 @@ class PlayerCharacter : public Sprite{
 	}
 
 
+	void setNewEncounterLocation() {
+		locationfOfLastEnounter[0] = xTilePosition;
+		locationfOfLastEnounter[1] = yTilePosition;
+	}
+
 
 	bool isTheSameSquareAsLastEncounter() {
 		if (xTilePosition == locationfOfLastEnounter[0] && yTilePosition == locationfOfLastEnounter[1]) {
