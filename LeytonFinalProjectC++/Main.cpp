@@ -11,6 +11,7 @@
 #include <iostream>  
 #include "WorldMap/WorldMap.h"
 #include "TitleScreen/TitleScreenHeader.h"
+#include "Battle/InitiateBattle.h"
 
 int screenWidth = 900;
 int screenHeight = 600;
@@ -264,7 +265,7 @@ int main()
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
                         if (encounterRan == 2) {
-                            
+                            InitiateBattle initiateBattle = InitiateBattle();
                         }
                         player.setNewEncounterLocation(); 
                     }
