@@ -97,22 +97,16 @@ int main()
     bool redraw = true;
     ALLEGRO_EVENT event;
 
+    TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
+
+    bool runTitleScreen = true;
+    bool runOverWorld = false;
+    bool newGame = false;
     double xMousePosition = 0;
     double yMousePosition = 0;
 
-    float cameraPosition[2] = { 0,0 };
-
-  
 
     al_start_timer(timer);
-
-    TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
-    bool runTitleScreen = true;
-    bool runOverWorld = false;
-
-    bool newGame = false;
-
-
     ////////////////////////////////////////////////
 
     while (runTitleScreen) {
@@ -182,6 +176,7 @@ int main()
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(0, 0);
     WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+    float cameraPosition[2] = { 0,0 };
 
 
     while (runOverWorld) {
