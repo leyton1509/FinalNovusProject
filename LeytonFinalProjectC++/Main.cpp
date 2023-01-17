@@ -261,7 +261,14 @@ int main()
             if (framecounter == 3) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 if (tilePlayerIsStandingOn == 2) {
-                    cout << "Encounter!\n";
+                    if (!player.isTheSameSquareAsLastEncounter()) {
+                        cout << "Encounter!\n";
+                        player.setNewEncounterLocation(); 
+                    }
+                    else {
+                        cout << "Alread had Encounter!\n";
+                    }
+                    
                 }
             }
 
