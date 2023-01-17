@@ -44,7 +44,34 @@ public:
 
 		
 	}
-	int canPlayerMove(const char* keyPressed, int xDirection, int yDirection) {
+	int canPlayerMove(const char* keyPressed, int directionX, int directionY) {
+		if (strcmp(keyPressed, "w") == 0) {
+			if (directionY != 1) {
+
+			}
+
+		}
+
+		else if (strcmp(keyPressed, "s") == 0) {
+			if (directionY != -1) {
+
+			}
+		}
+
+		else if (strcmp(keyPressed, "a") == 0) {
+			if (directionX != -1) {
+
+			}
+		}
+
+		else if (strcmp(keyPressed, "d") == 0) {
+
+			if (directionX != 1) {
+
+			}
+
+
+		}
 		return 1;
 	}
 
