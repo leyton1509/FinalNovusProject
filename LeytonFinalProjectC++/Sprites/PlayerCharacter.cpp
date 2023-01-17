@@ -176,7 +176,7 @@ class PlayerCharacter : public Sprite{
 				updatePosition();
 				currentFrame++;
 			}
-			else if (currentFrame <= (framerate / 6 * 3) && currentFrame > framerate / 6 * 2) {
+			else if (currentFrame < (framerate / 6 * 3) && currentFrame > framerate / 6 * 2) {
 				state = 3;
 				updatePosition();
 				currentFrame++;
