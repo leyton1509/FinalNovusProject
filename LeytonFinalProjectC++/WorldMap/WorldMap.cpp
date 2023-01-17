@@ -44,9 +44,13 @@ public:
 
 		
 	}
-	int canPlayerMove(const char* keyPressed, int directionX, int directionY) {
+	int canPlayerMove(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
+
+				if () {
+
+				}
 
 			}
 			return 1;
