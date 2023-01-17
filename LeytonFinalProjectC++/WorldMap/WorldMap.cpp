@@ -124,7 +124,7 @@ public:
 
 
 
-	void drawMap(int shiftBackground, float xPosition, float yPosition) {
+	void drawMap(float xPosition, float yPosition) {
 
 		
 
