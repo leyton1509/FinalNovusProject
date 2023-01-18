@@ -101,6 +101,12 @@ public:
         moveStorage.insert({ 74, Move(74,	"Growth",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 75, Move(75,	"Razor Leaf",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Physical, 25	,55	,100) });
 
+        moveStorage.insert({ 76, Move(76,	"Solar Beam",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 5	,120	,100) });
+        moveStorage.insert({ 77, Move(77,	"Poison Powder",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Status, 25	,0	,75) });
+        moveStorage.insert({ 78, Move(78,	"Stun Spore",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 25	,0	,75) });
+        moveStorage.insert({ 79, Move(79,	"Sleep Powder",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 80, Move(80,	"Petal Dance",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 10	,120	,100) });
+
     }
 
 };
