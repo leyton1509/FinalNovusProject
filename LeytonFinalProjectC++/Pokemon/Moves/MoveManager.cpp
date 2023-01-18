@@ -44,6 +44,11 @@ public:
         moveStorage.insert({ 18, Move(18,	"Whirlwind",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 19, Move(19,	"Fly",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 15	,90	,95) });
         moveStorage.insert({ 20, Move(20,	"Bind",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,15	,85) });
+        moveStorage.insert({ 21, Move(21,	"Slam",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,80	,75) });
+        moveStorage.insert({ 22, Move(22,	"Vine Whip",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Physical, 25	,45	,100) });
+        moveStorage.insert({ 23, Move(23,	"Stomp",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,65	,100) });
+        moveStorage.insert({ 24, Move(24,	"Double Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 30	,60	,100) });
+        moveStorage.insert({ 25, Move(25,	"Jump Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 10	,100	,95) });
     }
 
 };
