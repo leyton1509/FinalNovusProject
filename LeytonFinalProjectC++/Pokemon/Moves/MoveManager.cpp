@@ -79,6 +79,13 @@ public:
         moveStorage.insert({ 53, Move(53,	"Flamethrower",	PokemonType::PokemonTypes::Fire,	MoveCategory::Categories::Special, 15	,90	,100) });
         moveStorage.insert({ 54, Move(54,	"Mist",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Status, 30	,0	,100) });
         moveStorage.insert({ 55, Move(55,	"Water Gun",	PokemonType::PokemonTypes::Water,	MoveCategory::Categories::Special, 25	,40	,100) });
+        moveStorage.insert({ 56, Move(56,	"Hydro Pump",	PokemonType::PokemonTypes::Water,	MoveCategory::Categories::Special, 5	,110	,80) });
+        moveStorage.insert({ 57, Move(57,	"Surf",	PokemonType::PokemonTypes::Water,	MoveCategory::Categories::Special, 15	,90	,100) });
+        moveStorage.insert({ 58, Move(58,	"Ice Beam",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Special, 10	,90	,100) });
+        moveStorage.insert({ 59, Move(59,	"Blizzard",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Special, 5	,110	,70) });
+        moveStorage.insert({ 60, Move(60,	"Psybeam",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Special, 20	,65	,100) });
+        moveStorage.insert({ 61, Move(61,	"Bubble Beam",	PokemonType::PokemonTypes::Water,	MoveCategory::Categories::Special, 20	,65	,100) });
+
 
     }
 
