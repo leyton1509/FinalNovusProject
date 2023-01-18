@@ -49,13 +49,18 @@ public:
         moveStorage.insert({ 23, Move(23,	"Stomp",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,65	,100) });
         moveStorage.insert({ 24, Move(24,	"Double Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 30	,60	,100) });
         moveStorage.insert({ 25, Move(25,	"Mega Kick",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 5	,120	,80) });
-
         moveStorage.insert({ 26, Move(26,	"Jump Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 10	,100	,95) });
         moveStorage.insert({ 27, Move(27,	"Rolling Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 15	,60	,85) });
         moveStorage.insert({ 28, Move(28,	"Sand Attack",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Status, 15	,0	,100) });
         moveStorage.insert({ 29, Move(29,	"Headbutt",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 15	,70	,100) });
         moveStorage.insert({ 30, Move(30,	"Horn Attack",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 25	,65	,100) });
 
+        moveStorage.insert({ 31, Move(31,	"Fury Attack",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,75	,85) });
+        moveStorage.insert({ 32, Move(32,	"Horn Drill",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 5	,400	,30) });
+        moveStorage.insert({ 33, Move(33,	"Tackle",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 35	,40	,100) });
+        moveStorage.insert({ 34, Move(34,	"Body Slam",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 15	,85	,100) });
+        moveStorage.insert({ 30, Move(30,	"Wrap",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 25	,15	,90) });
+        moveStorage.insert({ 36, Move(36,	"Take Down",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,90	,85) });
 
 
     }
