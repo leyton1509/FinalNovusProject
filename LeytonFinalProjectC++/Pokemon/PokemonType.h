@@ -1,3 +1,3 @@
 #pragma once
-#include "../Pokemon/PokemonType.h";
+#include "../Pokemon/PokemonType.cpp";
 
