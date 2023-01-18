@@ -162,6 +162,7 @@
     <ClInclude Include="Pokemon\Moves\Move.h" />
     <ClInclude Include="Pokemon\Moves\MoveManager.h" />
     <ClInclude Include="Pokemon\Pokemon.h" />
+    <ClInclude Include="Pokemon\PokemonManager.h" />
     <ClInclude Include="Pokemon\PokemonTypeChart.h" />
     <ClInclude Include="Pokemon\PokemonType.h" />
     <ClInclude Include="Sprites\Button.h" />
