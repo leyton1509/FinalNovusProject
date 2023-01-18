@@ -45,6 +45,9 @@
     <ClCompile Include="Pokemon\PokemonType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pokemon\PokemonTypeChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pokemon\PokemonType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokemon\PokemonTypeChart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
