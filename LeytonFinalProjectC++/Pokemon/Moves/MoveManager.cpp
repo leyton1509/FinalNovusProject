@@ -69,7 +69,11 @@ public:
         moveStorage.insert({ 43, Move(43,	"Leer",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 30	,0	,100) });
         moveStorage.insert({ 44, Move(44,	"Bite",	PokemonType::PokemonTypes::Dark,	MoveCategory::Categories::Physical, 25	,60	,100) });
         moveStorage.insert({ 45, Move(45,	"Growl",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 40	,0	,100) });
-
+        moveStorage.insert({ 46, Move(46,	"Roar",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 47, Move(47,	"Sing",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 15	,0	,55) });
+        moveStorage.insert({ 48, Move(48,	"Supersonic",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,55) });
+        moveStorage.insert({ 49, Move(49,	"Sonic Boom",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Special, 40	,40	,90) });
+        moveStorage.insert({ 50, Move(50,	"Disable",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
     }
 
 };
