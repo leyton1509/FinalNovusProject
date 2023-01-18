@@ -95,6 +95,9 @@
     <ClInclude Include="Pokemon\Moves\MoveManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pokemon\Pokemon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
