@@ -74,6 +74,12 @@ public:
         moveStorage.insert({ 48, Move(48,	"Supersonic",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,55) });
         moveStorage.insert({ 49, Move(49,	"Sonic Boom",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Special, 40	,40	,90) });
         moveStorage.insert({ 50, Move(50,	"Disable",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 51, Move(51,	"Acid",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Special, 30	,40	,100) });
+        moveStorage.insert({ 52, Move(52,	"Ember",	PokemonType::PokemonTypes::Fire,	MoveCategory::Categories::Special, 25	,40	,100) });
+        moveStorage.insert({ 53, Move(53,	"Flamethrower",	PokemonType::PokemonTypes::Fire,	MoveCategory::Categories::Special, 15	,90	,100) });
+        moveStorage.insert({ 54, Move(54,	"Mist",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Status, 30	,0	,100) });
+        moveStorage.insert({ 55, Move(55,	"Water Gun",	PokemonType::PokemonTypes::Water,	MoveCategory::Categories::Special, 25	,40	,100) });
+
     }
 
 };
