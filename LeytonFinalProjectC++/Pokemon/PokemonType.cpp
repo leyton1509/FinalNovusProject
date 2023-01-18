@@ -22,7 +22,8 @@ class PokemonType {
 			Dark,
 			Dragon,
 			Steel,
-			Fairy
+			Fairy,
+			None
 		};
 
 };
