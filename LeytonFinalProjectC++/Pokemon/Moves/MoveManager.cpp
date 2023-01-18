@@ -85,8 +85,10 @@ public:
         moveStorage.insert({ 59, Move(59,	"Blizzard",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Special, 5	,110	,70) });
         moveStorage.insert({ 60, Move(60,	"Psybeam",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Special, 20	,65	,100) });
         moveStorage.insert({ 61, Move(61,	"Bubble Beam",	PokemonType::PokemonTypes::Water,	MoveCategory::Categories::Special, 20	,65	,100) });
-
-
+        moveStorage.insert({ 62, Move(62,	"Aurora Beam",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Special, 20	,65	,100) });
+        moveStorage.insert({ 63, Move(63,	"Hyper Beam",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Special, 5	,150	,100) });
+        moveStorage.insert({ 64, Move(64,	"Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 35	,35	,100) });
+        moveStorage.insert({ 65, Move(64,	"Drill Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 20	,80	,100) });
     }
 
 };
