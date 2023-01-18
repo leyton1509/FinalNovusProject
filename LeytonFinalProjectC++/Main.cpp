@@ -5,9 +5,9 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 
-#include "Pokemon/PokemonManager.cpp"
+#include "Pokemon/PokemonManager.h"
 #include "Sprites/PlayerCharacter.h"
-
+#include "Pokemon/Moves/MoveManager.h"
 #include <iostream>  
 #include "WorldMap/WorldMap.h"
 #include "TitleScreen/TitleScreenHeader.h"
