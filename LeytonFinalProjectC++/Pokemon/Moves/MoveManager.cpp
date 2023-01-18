@@ -54,14 +54,16 @@ public:
         moveStorage.insert({ 28, Move(28,	"Sand Attack",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Status, 15	,0	,100) });
         moveStorage.insert({ 29, Move(29,	"Headbutt",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 15	,70	,100) });
         moveStorage.insert({ 30, Move(30,	"Horn Attack",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 25	,65	,100) });
-
         moveStorage.insert({ 31, Move(31,	"Fury Attack",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,75	,85) });
         moveStorage.insert({ 32, Move(32,	"Horn Drill",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 5	,400	,30) });
         moveStorage.insert({ 33, Move(33,	"Tackle",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 35	,40	,100) });
         moveStorage.insert({ 34, Move(34,	"Body Slam",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 15	,85	,100) });
         moveStorage.insert({ 30, Move(30,	"Wrap",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 25	,15	,90) });
         moveStorage.insert({ 36, Move(36,	"Take Down",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,90	,85) });
-
+        moveStorage.insert({ 37, Move(37,	"Thrash",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,120	,100) });
+        moveStorage.insert({ 38, Move(38,	"Double Edge",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 15	,120	,85) });
+        moveStorage.insert({ 39, Move(39,	"Tail Whip",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 30	,0	,100) });
+        moveStorage.insert({ 40, Move(40,	"Poison Sting",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Physical, 35	,15	,100) });
 
     }
 
