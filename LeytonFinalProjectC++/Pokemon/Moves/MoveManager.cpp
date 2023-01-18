@@ -94,18 +94,22 @@ public:
         moveStorage.insert({ 68, Move(68,	"Counter",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,100	,100) });
         moveStorage.insert({ 69, Move(69,	"Seismic Toss",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,50	,100) });
         moveStorage.insert({ 70, Move(70,	"Strength",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,80	,100) });
-
         moveStorage.insert({ 71, Move(71,	"Absorb",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 25	,20	,100) });
         moveStorage.insert({ 72, Move(72,	"Mega Drain",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 25	,40	,100) });
         moveStorage.insert({ 73, Move(73,	"Leech Seed",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 10	,0	,100) });
         moveStorage.insert({ 74, Move(74,	"Growth",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 75, Move(75,	"Razor Leaf",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Physical, 25	,55	,100) });
-
         moveStorage.insert({ 76, Move(76,	"Solar Beam",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 5	,120	,100) });
         moveStorage.insert({ 77, Move(77,	"Poison Powder",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Status, 25	,0	,75) });
         moveStorage.insert({ 78, Move(78,	"Stun Spore",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 25	,0	,75) });
         moveStorage.insert({ 79, Move(79,	"Sleep Powder",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 80, Move(80,	"Petal Dance",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 10	,120	,100) });
+
+        moveStorage.insert({ 81, Move(81,	"String Shot",	PokemonType::PokemonTypes::Bug,	MoveCategory::Categories::Status, 40	,0	,100) });
+        moveStorage.insert({ 82, Move(82,	"Dragon Rage",	PokemonType::PokemonTypes::Dragon,	MoveCategory::Categories::Physical, 40	,0	,100) });
+        moveStorage.insert({ 83, Move(83,	"Fire Spin",	PokemonType::PokemonTypes::Fire,	MoveCategory::Categories::Special, 15	,35	,85) });
+        moveStorage.insert({ 84, Move(84,	"Thunder Shock",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Special, 30	,40	,100) });
+        moveStorage.insert({ 85, Move(85,	"Thunderbolt",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Special, 15	,90	,100) });
 
     }
 
