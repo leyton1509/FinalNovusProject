@@ -119,7 +119,7 @@ public:
         moveStorage.insert({ 92, Move(92,	"Toxic",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Status, 10	,0	,90) });
         moveStorage.insert({ 93, Move(93,	"Confusion",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Special, 25	,50	,100) });
         moveStorage.insert({ 94, Move(94,	"Psychic",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Special, 10	,90	,100) });
-        moveStorage.insert({ 95, Move(95,	"Hypnosis",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 20	,0	,16000) });
+        moveStorage.insert({ 95, Move(95,	"Hypnosis",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 96, Move(96,	"Meditate",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 97, Move(97,	"Agillity",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 10	,0	,100) });
         moveStorage.insert({ 98, Move(98,	"Quick Attack",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,40	,100) });
