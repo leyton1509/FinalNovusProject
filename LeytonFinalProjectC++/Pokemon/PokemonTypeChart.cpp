@@ -685,6 +685,65 @@ public:
 			}
 			break;
 		case PokemonType::Bug:
+			switch (typeOfPokemon)
+			{
+			case PokemonType::Normal:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::Fire:
+				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::Water:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::Grass:
+				effectiveness = effectiveness * 2;
+				break;
+			case PokemonType::Electric:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::Ice:
+				effectiveness = effectiveness * 2;
+				break;
+			case PokemonType::Fighting:
+				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::Poison:
+				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::Ground:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::Flying:
+				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::Psychic:
+				effectiveness = effectiveness * 2;
+				break;
+			case PokemonType::Bug:
+				effectiveness = effectiveness * 2;
+				break;
+			case PokemonType::Rock:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::Ghost:
+				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::Dark:
+				effectiveness = effectiveness * 2;
+				break;
+			case PokemonType::Dragon:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::Steel:
+				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::Fairy:
+				effectiveness = effectiveness * 0.5;
+				break;
+			default:
+				break;
+			}
 			break;
 		case PokemonType::Rock:
 			break;
