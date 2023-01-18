@@ -111,6 +111,12 @@ public:
         moveStorage.insert({ 84, Move(84,	"Thunder Shock",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Special, 30	,40	,100) });
         moveStorage.insert({ 85, Move(85,	"Thunderbolt",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Special, 15	,90	,100) });
 
+        moveStorage.insert({ 86, Move(86,	"Thunder Wave",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Status, 20	,0	,90) });
+        moveStorage.insert({ 87, Move(87,	"Thunder",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Physical, 10	,110	,70) });
+        moveStorage.insert({ 88, Move(88,	"Rock Throw",	PokemonType::PokemonTypes::Rock,	MoveCategory::Categories::Special, 15	,50	,90) });
+        moveStorage.insert({ 89, Move(89,	"Earthquake",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Special, 10	,100	,100) });
+        moveStorage.insert({ 90, Move(90,	"Fissure",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Special, 5	,400	,30) });
+
     }
 
 };
