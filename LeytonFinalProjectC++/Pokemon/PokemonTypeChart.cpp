@@ -5,9 +5,9 @@ class PokemonTypeChart {
 
 public:
 
-	int returnEffectiveNessOfMove(PokemonType::PokemonTypes typeOfMove, PokemonType::PokemonTypes typeOfPokemon) {
+	double returnEffectiveNessOfMove(PokemonType::PokemonTypes typeOfMove, PokemonType::PokemonTypes typeOfPokemon) {
 
-		int effectiveness = 1;
+		double effectiveness = 1;
 
 		switch (typeOfMove)
 		{
