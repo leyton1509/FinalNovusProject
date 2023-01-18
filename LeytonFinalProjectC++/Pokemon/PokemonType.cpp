@@ -1,1 +1,14 @@
-#include "PokemonType.h"
+
+class PokemonType {
+
+	public:
+
+		enum PokemonTypes
+		{
+			
+		};
+}
+};
+
+
+
