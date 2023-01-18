@@ -48,7 +48,10 @@
     <ClCompile Include="Pokemon\PokemonTypeChart.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pokemon\Move.cpp">
+    <ClCompile Include="Pokemon\Moves\Move.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pokemon\Moves\MoveCategory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +83,10 @@
     <ClInclude Include="Pokemon\PokemonTypeChart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pokemon\Move.h">
+    <ClInclude Include="Pokemon\Moves\Move.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokemon\Moves\MoveCategory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
