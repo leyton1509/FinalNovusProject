@@ -24,7 +24,13 @@ public:
 	}
 
 	Move() {
-
+		moveID = -1;
+		moveName = "";
+		typeOfMove = MoveCategory::Categories::Status;
+		pokemonTypeOfMove = PokemonType::PokemonTypes::None;
+		powerpoints = 0;
+		power = 0;
+		accuracy = 0;
 	}
 
 };
