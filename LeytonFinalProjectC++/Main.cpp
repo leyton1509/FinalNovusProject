@@ -12,6 +12,7 @@
 #include "WorldMap/WorldMap.h"
 #include "TitleScreen/TitleScreenHeader.h"
 #include "Battle/InitiateBattle.h"
+#include "Pokemon/PokemonTypeChart.h"
 
 int screenWidth = 900;
 int screenHeight = 600;
@@ -63,6 +64,12 @@ int main()
 // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
 //al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
+    
+
+    //PokemonTypeChart ptc = PokemonTypeChart();
+    //double val = ptc.returnEffectiveNessOfMove(PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Water);
+    //std::cout << val << " effectiveness";
+    
     
 
 
