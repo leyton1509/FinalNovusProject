@@ -89,12 +89,17 @@ public:
         moveStorage.insert({ 63, Move(63,	"Hyper Beam",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Special, 5	,150	,100) });
         moveStorage.insert({ 64, Move(64,	"Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 35	,35	,100) });
         moveStorage.insert({ 65, Move(65,	"Drill Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 20	,80	,100) });
-
         moveStorage.insert({ 66, Move(66,	"Submission",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,80	,80) });
         moveStorage.insert({ 67, Move(67,	"Low Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,80	,100) });
         moveStorage.insert({ 68, Move(68,	"Counter",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,100	,100) });
         moveStorage.insert({ 69, Move(69,	"Seismic Toss",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,50	,100) });
         moveStorage.insert({ 70, Move(70,	"Strength",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,80	,100) });
+
+        moveStorage.insert({ 71, Move(71,	"Absorb",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 25	,20	,100) });
+        moveStorage.insert({ 72, Move(72,	"Mega Drain",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 25	,40	,100) });
+        moveStorage.insert({ 73, Move(73,	"Leech Seed",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 10	,0	,100) });
+        moveStorage.insert({ 74, Move(74,	"Growth",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 75, Move(75,	"Razor Leaf",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Physical, 25	,55	,100) });
 
     }
 
