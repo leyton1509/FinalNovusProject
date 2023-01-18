@@ -1,7 +1,7 @@
 
 #include <map>
 #include <string>
-#include "../Pokemon/Pokemon.cpp"
+#include "../Pokemon/Pokemon.h"
 
 using namespace std;
 
