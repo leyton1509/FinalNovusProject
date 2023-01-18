@@ -70,6 +70,10 @@ int main()
    // double val = ptc.returnEffectiveNessOfMove(PokemonType::PokemonTypes::Fighting, PokemonType::PokemonTypes::Flying, PokemonType::PokemonTypes::Poison);
     //std::cout << val << " effectiveness";
     
+   // MoveManager mm = MoveManager();
+   // Move m = mm.getMoveDetails(1);
+    //m.printMove();
+    
     
 
 
