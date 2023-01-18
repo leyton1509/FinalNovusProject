@@ -64,6 +64,11 @@ public:
         moveStorage.insert({ 38, Move(38,	"Double Edge",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 15	,120	,85) });
         moveStorage.insert({ 39, Move(39,	"Tail Whip",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 30	,0	,100) });
         moveStorage.insert({ 40, Move(40,	"Poison Sting",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Physical, 35	,15	,100) });
+        moveStorage.insert({ 41, Move(41,	"Twin Needle",	PokemonType::PokemonTypes::Bug,	MoveCategory::Categories::Physical, 20	,50	,100) });
+        moveStorage.insert({ 42, Move(42,	"Pin Missle",	PokemonType::PokemonTypes::Bug,	MoveCategory::Categories::Physical, 20	,75	,100) });
+        moveStorage.insert({ 43, Move(43,	"Leer",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 30	,0	,100) });
+        moveStorage.insert({ 44, Move(44,	"Bite",	PokemonType::PokemonTypes::Dark,	MoveCategory::Categories::Physical, 25	,60	,100) });
+        moveStorage.insert({ 45, Move(45,	"Growl",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 40	,0	,100) });
 
     }
 
