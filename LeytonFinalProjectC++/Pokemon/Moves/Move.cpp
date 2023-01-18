@@ -1,5 +1,6 @@
 #include "../../Pokemon/PokemonType.h"
 #include "../../Pokemon/Moves/MoveCategory.h"
+#include <iostream>
 
 class Move {
 
@@ -31,6 +32,10 @@ public:
 		powerpoints = 0;
 		power = 0;
 		accuracy = 0;
+	}
+
+	void printMove() {
+		std::cout << moveName << " " << pokemonTypeOfMove << " " << typeOfMove << " " << power << " " << accuracy << " \n";
 	}
 
 };
