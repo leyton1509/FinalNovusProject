@@ -54,6 +54,9 @@
     <ClCompile Include="Pokemon\Moves\MoveCategory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pokemon\Moves\MoveManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -87,6 +90,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pokemon\Moves\MoveCategory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pokemon\Moves\MoveManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
