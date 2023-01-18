@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include "../Pokemon/PokemonType.h"
+#include <list>
 
 using namespace std;
 
@@ -34,8 +35,12 @@ public:
 	int xPositionOnSpriteSheet; 
 	int yPositionOnSpriteSheet;
 
+	list<int[2]> levelUpMoveList;
+
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
+
+
 
 
 	Pokemon(){
@@ -59,7 +64,7 @@ public:
 	}
 
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo)  {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, list<int[2]> _levelUpMoveList)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
@@ -76,7 +81,7 @@ public:
 		yPositionOnSpriteSheet = _yPositionOnSpriteSheet;
 		pokemonTypeOne = _pokemonTypeOne;
 		pokemonTypeTwo = _pokemonTypeTwo;
-
+		levelUpMoveList = _levelUpMoveList;
 	}
 
 	void calculateNextLevelExperienceNeeded() {

@@ -141,7 +141,6 @@
     <ClCompile Include="Pokemon\Moves\MoveCategory.cpp" />
     <ClCompile Include="Pokemon\Moves\Move.cpp" />
     <ClCompile Include="Pokemon\Moves\MoveManager.cpp" />
-    <ClCompile Include="Pokemon\Moves\MoveSet.cpp" />
     <ClCompile Include="Pokemon\PokemonTypeChart.cpp" />
     <ClCompile Include="Pokemon\PokemonType.cpp" />
     <ClCompile Include="Sprites\Button.cpp" />
