@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 class MoveManager
 {
 
@@ -104,18 +105,26 @@ public:
         moveStorage.insert({ 78, Move(78,	"Stun Spore",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 25	,0	,75) });
         moveStorage.insert({ 79, Move(79,	"Sleep Powder",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Status, 20	,0	,100) });
         moveStorage.insert({ 80, Move(80,	"Petal Dance",	PokemonType::PokemonTypes::Grass,	MoveCategory::Categories::Special, 10	,120	,100) });
-
         moveStorage.insert({ 81, Move(81,	"String Shot",	PokemonType::PokemonTypes::Bug,	MoveCategory::Categories::Status, 40	,0	,100) });
         moveStorage.insert({ 82, Move(82,	"Dragon Rage",	PokemonType::PokemonTypes::Dragon,	MoveCategory::Categories::Physical, 40	,0	,100) });
         moveStorage.insert({ 83, Move(83,	"Fire Spin",	PokemonType::PokemonTypes::Fire,	MoveCategory::Categories::Special, 15	,35	,85) });
         moveStorage.insert({ 84, Move(84,	"Thunder Shock",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Special, 30	,40	,100) });
         moveStorage.insert({ 85, Move(85,	"Thunderbolt",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Special, 15	,90	,100) });
-
         moveStorage.insert({ 86, Move(86,	"Thunder Wave",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Status, 20	,0	,90) });
         moveStorage.insert({ 87, Move(87,	"Thunder",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Physical, 10	,110	,70) });
         moveStorage.insert({ 88, Move(88,	"Rock Throw",	PokemonType::PokemonTypes::Rock,	MoveCategory::Categories::Special, 15	,50	,90) });
         moveStorage.insert({ 89, Move(89,	"Earthquake",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Special, 10	,100	,100) });
         moveStorage.insert({ 90, Move(90,	"Fissure",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Special, 5	,400	,30) });
+        moveStorage.insert({ 91, Move(91,	"Dig",	PokemonType::PokemonTypes::Ground,	MoveCategory::Categories::Physical, 10	,80	,100) });
+        moveStorage.insert({ 92, Move(92,	"Toxic",	PokemonType::PokemonTypes::Poison,	MoveCategory::Categories::Status, 10	,0	,90) });
+        moveStorage.insert({ 93, Move(93,	"Confusion",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Special, 25	,50	,100) });
+        moveStorage.insert({ 94, Move(94,	"Psychic",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Special, 10	,90	,100) });
+        moveStorage.insert({ 95, Move(95,	"Hypnosis",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 20	,0	,16000) });
+        moveStorage.insert({ 96, Move(96,	"Meditate",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 97, Move(97,	"Agillity",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 10	,0	,100) });
+        moveStorage.insert({ 98, Move(98,	"Quick Attack",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,40	,100) });
+        moveStorage.insert({ 99, Move(99,	"Rage",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 40	,40	,100) });
+        moveStorage.insert({ 100, Move(100,	"Teleport",	PokemonType::PokemonTypes::Psychic,	MoveCategory::Categories::Status, 10	,0	,100) });
 
     }
 
