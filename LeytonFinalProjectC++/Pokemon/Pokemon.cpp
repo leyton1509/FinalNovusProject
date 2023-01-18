@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-
+#include "../Pokemon/PokemonType.h"
 
 using namespace std;
 
@@ -34,6 +34,9 @@ public:
 	int xPositionOnSpriteSheet; 
 	int yPositionOnSpriteSheet;
 
+	PokemonType::PokemonTypes pokemonTypeOne;
+	PokemonType::PokemonTypes pokemonTypeTwo;
+
 
 	Pokemon(){
 		pokemonName = "";
@@ -50,10 +53,13 @@ public:
 		calculateActualStatistics();
 		xPositionOnSpriteSheet = 0;
 		yPositionOnSpriteSheet = 0;
+		pokemonTypeOne = PokemonType::PokemonTypes::Normal;
+		pokemonTypeTwo = PokemonType::PokemonTypes::None;
+
 	}
 
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet)  {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
@@ -68,6 +74,9 @@ public:
 		calculateActualStatistics();
 		xPositionOnSpriteSheet = _xPositionOnSpriteSheet;
 		yPositionOnSpriteSheet = _yPositionOnSpriteSheet;
+		pokemonTypeOne = _pokemonTypeOne;
+		pokemonTypeTwo = _pokemonTypeTwo;
+
 	}
 
 	void calculateNextLevelExperienceNeeded() {
