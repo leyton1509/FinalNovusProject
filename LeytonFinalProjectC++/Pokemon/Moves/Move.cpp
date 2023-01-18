@@ -23,5 +23,8 @@ public:
 		accuracy = _accuracy;
 	}
 
+	Move() {
+
+	}
 
 };
