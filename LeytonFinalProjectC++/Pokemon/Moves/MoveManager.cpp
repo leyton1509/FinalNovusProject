@@ -88,7 +88,14 @@ public:
         moveStorage.insert({ 62, Move(62,	"Aurora Beam",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Special, 20	,65	,100) });
         moveStorage.insert({ 63, Move(63,	"Hyper Beam",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Special, 5	,150	,100) });
         moveStorage.insert({ 64, Move(64,	"Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 35	,35	,100) });
-        moveStorage.insert({ 65, Move(64,	"Drill Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 20	,80	,100) });
+        moveStorage.insert({ 65, Move(65,	"Drill Peck",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 20	,80	,100) });
+
+        moveStorage.insert({ 66, Move(66,	"Submission",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,80	,80) });
+        moveStorage.insert({ 67, Move(67,	"Low Kick",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,80	,100) });
+        moveStorage.insert({ 68, Move(68,	"Counter",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,100	,100) });
+        moveStorage.insert({ 69, Move(69,	"Seismic Toss",	PokemonType::PokemonTypes::Fighting,	MoveCategory::Categories::Physical, 20	,50	,100) });
+        moveStorage.insert({ 70, Move(70,	"Strength",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,80	,100) });
+
     }
 
 };
