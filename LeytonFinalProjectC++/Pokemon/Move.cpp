@@ -8,6 +8,10 @@ public:
 	const char* moveName;
 	PokemonType::PokemonTypes typeOfMove;
 
+	int powerpoints;
+	int power;
+	int accuracy;
+
 
 
 };
