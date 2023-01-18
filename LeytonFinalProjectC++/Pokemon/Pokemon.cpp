@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include "../Pokemon/PokemonType.h"
+#include "../Pokemon/Moves/Move.h"
 #include <list>
 
 using namespace std;
@@ -39,8 +40,6 @@ public:
 
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
-
-
 
 
 	Pokemon(){

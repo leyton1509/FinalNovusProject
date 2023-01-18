@@ -25,9 +25,7 @@ public:
     }
 
     PokemonManager() {
-        defaultPokemonStorage.insert({ "Charizard", Pokemon("Charizard", 100, 110, 70, 140, 80, 100, 1, 0,0,PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Flying)});
-        //defaultPokemonStorage.insert({ "Blastoise", Pokemon("Blastoise", 120, 70, 100, 120, 120, 70, 1, 0,0)});
-        //defaultPokemonStorage.insert({ "Venasaur", Pokemon("Venasaur", 140, 50, 90, 100, 110, 60, 1, 0,0) });
+        defaultPokemonStorage.insert({ "Bulbasaur", Pokemon("Charizard", 100, 110, 70, 140, 80, 100, 1, 0,0,PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Flying, {{1, 1}, {4, 6}}) });
     }
 
 };
