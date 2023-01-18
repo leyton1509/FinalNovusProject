@@ -66,9 +66,9 @@ int main()
 
     
 
-    PokemonTypeChart ptc = PokemonTypeChart();
-    double val = ptc.returnEffectiveNessOfMove(PokemonType::PokemonTypes::Fighting, PokemonType::PokemonTypes::Flying, PokemonType::PokemonTypes::Poison);
-    std::cout << val << " effectiveness";
+    //PokemonTypeChart ptc = PokemonTypeChart();
+   // double val = ptc.returnEffectiveNessOfMove(PokemonType::PokemonTypes::Fighting, PokemonType::PokemonTypes::Flying, PokemonType::PokemonTypes::Poison);
+    //std::cout << val << " effectiveness";
     
     
 
