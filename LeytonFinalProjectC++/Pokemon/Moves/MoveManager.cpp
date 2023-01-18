@@ -34,19 +34,16 @@ public:
         moveStorage.insert({ 8, Move(8,	"Ice Punch",	PokemonType::PokemonTypes::Ice,	MoveCategory::Categories::Physical, 15	,75	,100) });
         moveStorage.insert({ 9, Move(9,	"Thunder Punch",	PokemonType::PokemonTypes::Electric,	MoveCategory::Categories::Physical, 15	,75	,100) });
         moveStorage.insert({ 10, Move(10,	"Sratch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 35	,40	,100) });
-
-
-
-
-        moveStorage.insert({ 11, Move(11,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 12, Move(12,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 13, Move(13,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 14, Move(14,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 15, Move(15,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 16, Move(16,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 17, Move(17,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 18, Move(18,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
-        moveStorage.insert({ 19, Move(19,	"Comet Punch",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,18	,85) });
+        moveStorage.insert({ 11, Move(11,	"Vise Grip",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 30	,55	,100) });
+        moveStorage.insert({ 12, Move(12,	"Guillotine",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 5	,400	,30) });
+        moveStorage.insert({ 13, Move(13,	"Razor Wind",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Special, 10	,80	,85) });
+        moveStorage.insert({ 14, Move(14,	"Swords Dance",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 15, Move(15,	"Cut",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 30	,50	,100) });
+        moveStorage.insert({ 16, Move(16,	"Gust",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Special, 35	,40	,100) });
+        moveStorage.insert({ 17, Move(17,	"Wing Attack",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 35	,60	,100) });
+        moveStorage.insert({ 18, Move(18,	"Whirlwind",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Status, 20	,0	,100) });
+        moveStorage.insert({ 19, Move(19,	"Fly",	PokemonType::PokemonTypes::Flying,	MoveCategory::Categories::Physical, 15	,90	,95) });
+        moveStorage.insert({ 20, Move(20,	"Bind",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 20	,15	,85) });
     }
 
 };
