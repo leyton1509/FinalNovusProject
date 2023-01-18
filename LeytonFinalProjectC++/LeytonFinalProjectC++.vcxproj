@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Battle\InitiateBattle.cpp" />
+    <ClCompile Include="Pokemon\Move.cpp" />
     <ClCompile Include="Pokemon\PokemonTypeChart.cpp" />
     <ClCompile Include="Pokemon\PokemonType.cpp" />
     <ClCompile Include="Sprites\Button.cpp" />
@@ -155,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle\InitiateBattle.h" />
+    <ClInclude Include="Pokemon\Move.h" />
     <ClInclude Include="Pokemon\PokemonTypeChart.h" />
     <ClInclude Include="Pokemon\PokemonType.h" />
     <ClInclude Include="Sprites\Button.h" />
