@@ -29,7 +29,7 @@ public:
 
         CSVFileManager csvm = CSVFileManager();
 
-        std::vector<std::vector<std::string> > cs = csvm.parseCSV("PokemonMoves.csv");
+        std::vector<std::vector<std::string> > cs = csvm.parseCSV("../../Pokemon/Moves/PokemonMoves.csv");
         cout << cs.size() << "\n";
         for (int i = 0; i < cs.size(); i++) {
             cout << cs.at(i)[2] << "\n";
