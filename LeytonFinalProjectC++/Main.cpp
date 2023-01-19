@@ -36,7 +36,7 @@ void must_init(bool test, const char* description)
     exit(1);
 }
 
-void cameraUpdate(float * cameraPosition, float x, float y, int width, int height) {
+void cameraUpdate(float* cameraPosition, float x, float y, int width, int height) {
     /*
 
     if (x > screenWidth * 0.7) {
@@ -52,12 +52,12 @@ void cameraUpdate(float * cameraPosition, float x, float y, int width, int heigh
         cameraPosition[1] = -(cameraPosition[1] -y- (height));
     }
     */
-    
-        
-     cameraPosition[0] = -(screenWidth / 2) + (x + (width / 2));
-     cameraPosition[1] = -(screenHeight / 2) + (y + (height / 2));
-    
-   
+
+
+    cameraPosition[0] = -(screenWidth / 2) + (x + (width / 2));
+    cameraPosition[1] = -(screenHeight / 2) + (y + (height / 2));
+
+}
 
 
 int main()
