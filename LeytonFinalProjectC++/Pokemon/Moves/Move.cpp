@@ -13,15 +13,17 @@ public:
 	int powerpoints;
 	int power;
 	int accuracy;
+	int hasSpecialEffect;
 
-	Move(int _moveID, const char* _moveName, PokemonType::PokemonTypes _pokemonTypeOfMove, MoveCategory::Categories _typeOfMove, int _powerpoints, int _power, int _accuracy) {
+	Move(int _moveID, const char* _moveName, PokemonType::PokemonTypes _pokemonTypeOfMove, MoveCategory::Categories _typeOfMove, int _powerpoints, int _power, int _accuracy, int _hasSpecialEffect) {
 		moveID = _moveID;
 		moveName = _moveName;
-		pokemonTypeOfMove = _pokemonTypeOfMove;
+		pokemonTypeOfMove = _pokemonTypeOfMove;;
 		typeOfMove = _typeOfMove;
 		powerpoints = _powerpoints;
 		power = _power;
 		accuracy = _accuracy;
+		hasSpecialEffect = _hasSpecialEffect;
 	}
 
 	Move() {
@@ -32,6 +34,7 @@ public:
 		powerpoints = 0;
 		power = 0;
 		accuracy = 0;
+		hasSpecialEffect = 0;
 	}
 
 	void printMove() {
