@@ -111,7 +111,7 @@ public:
             int accuracy = std::stoi(cs.at(i)[6]);
             int hasSpecialEffect = std::stoi(cs.at(i)[7]);
             cout << cs.at(i)[0] << " | " << cs.at(i)[1] << " | " << cs.at(i)[2] << " | " << cs.at(i)[3] << " | " << cs.at(i)[4] << " | " << cs.at(i)[5] << " | " <<  "\n";
-            moveStorage.insert({ moveID, Move(moveID,	moveName, type ,moveC,	powerpoints,	power, accuracy) });
+            moveStorage.insert({ moveID, Move(moveID,	moveName, type ,moveC,	powerpoints,	power, accuracy, hasSpecialEffect) });
 
 
         }
