@@ -25,6 +25,13 @@ public:
     }
 
     MoveManager() {
+
+
+
+
+
+
+
         moveStorage.insert({ 1, Move(1,	"Pound", PokemonType::PokemonTypes::Normal ,MoveCategory::Categories::Physical,	35,	40, 100)});
         moveStorage.insert({ 2, Move(2,	"Karate Chop", PokemonType::PokemonTypes::Fighting ,MoveCategory::Categories::Physical,	25,	50, 100)});
         moveStorage.insert({ 3, Move(3,	"Double Slap",	PokemonType::PokemonTypes::Normal,	MoveCategory::Categories::Physical, 10	,15	,85 )});
