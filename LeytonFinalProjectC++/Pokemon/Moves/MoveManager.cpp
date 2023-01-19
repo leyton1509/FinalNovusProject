@@ -1,6 +1,7 @@
 
 #include <map>
 #include "Move.h"
+#include "../../File/CSVFileManager.h";
 
 using namespace std;
 
@@ -26,7 +27,15 @@ public:
 
     MoveManager() {
 
+        CSVFileManager csvm = CSVFileManager();
 
+        std::vector<std::vector<std::string> > cs = csvm.parseCSV("");
+        cout << cs.size() << "\n";
+        for (int i = 0; i < cs.size(); i++) {
+            //cout << cs.at(i)[2] << "\n";
+        }
+
+        cout << "\n----";
 
 
 
