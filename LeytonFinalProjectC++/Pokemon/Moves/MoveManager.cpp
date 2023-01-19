@@ -25,7 +25,7 @@ public:
         }
     }
 
-    PokemonType::PokemonTypes getEnumFromString(string typeString) {
+    PokemonType::PokemonTypes getEnumFromStringMove(string typeString) {
         if (typeString.compare("Normal") == 0) {
 
         }
@@ -82,6 +82,18 @@ public:
         }
     }
 
+    MoveCategory::Categories getEnumFromStringCategory(string moveString) {
+        if (moveString.compare("Physical") == 0) {
+            return MoveCategory::Categories::Physical;
+        }
+        else if (moveString.compare("Special") == 0) {
+            return MoveCategory::Categories::Special;
+        }
+        else if (moveString.compare("Status") == 0) {
+            return MoveCategory::Categories::Status;
+        }
+    }
+
     MoveManager() {
 
         CSVFileManager csvm = CSVFileManager();
@@ -91,10 +103,17 @@ public:
         for (int i = 0; i < cs.size(); i++) {
 
             int moveID = std::stoi(cs.at(i)[0]);
-            string moveName = cs.at(i)[1];
-            PokemonType::PokemonTypes type = getEnumFromString(cs.at(i)[2]);
+            const char* moveName = cs.at(i)[1].c_str();
+            PokemonType::PokemonTypes type = getEnumFromStringMove(cs.at(i)[2]);
+            MoveCategory::Categories moveC = getEnumFromStringCategory(cs.at(i)[3]);
+            int powerpoints = std::stoi(cs.at(i)[4]);
+            int power = std::stoi(cs.at(i)[5]);
+            int accuracy = std::stoi(cs.at(i)[6]);
+            int hasSpecialEffect = std::stoi(cs.at(i)[7]);
+            cout << cs.at(i)[0] << " | " << cs.at(i)[1] << " | " << cs.at(i)[2] << " | " << cs.at(i)[3] << " | " << cs.at(i)[4] << " | " << cs.at(i)[5] << " | " <<  "\n";
+            moveStorage.insert({ moveID, Move(moveID,	moveName, type ,moveC,	powerpoints,	power, accuracy) });
 
-            cout << cs.at(i)[2] << "\n";
+
         }
 
         cout << "\n----";
