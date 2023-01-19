@@ -104,6 +104,9 @@
     <ClInclude Include="Pokemon\PokemonManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="File\CSVFileManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle\InitiateBattle.h" />
+    <ClInclude Include="File\CSVFileManager.h" />
     <ClInclude Include="Pokemon\Moves\MoveCategory.h" />
     <ClInclude Include="Pokemon\Moves\Move.h" />
     <ClInclude Include="Pokemon\Moves\MoveManager.h" />
