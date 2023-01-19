@@ -98,7 +98,7 @@ public:
 
         CSVFileManager csvm = CSVFileManager();
 
-        std::vector<std::vector<std::string> > cs = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/Pokemon/Moves/PokemonMoves.csv");
+        std::vector<std::vector<std::string> > cs = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonMoves.csv");
         
         for (int i = 0; i < cs.size(); i++) {
 
