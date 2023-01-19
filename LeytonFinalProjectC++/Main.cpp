@@ -58,46 +58,20 @@ void cameraUpdate(float * cameraPosition, float x, float y, int width, int heigh
      cameraPosition[1] = -(screenHeight / 2) + (y + (height / 2));
     
    
-}
 
-#include <fstream>
-#include <vector>
-#include <sstream> 
-
-std::vector<std::vector<std::string> > parseCSV()
-{
-    std::ifstream  data("c:/Users/leyto/Downloads/Test.csv");
-    std::string line;
-    std::vector<std::vector<std::string> > parsedCsv;
-    while (std::getline(data, line))
-    {
-        std::stringstream lineStream(line);
-        std::string cell;
-        std::vector<std::string> parsedRow;
-        while (std::getline(lineStream, cell, ','))
-        {
-            parsedRow.push_back(cell);
-        }
-
-        parsedCsv.push_back(parsedRow);
-    }
-    return parsedCsv;
-};
 
 int main()
 {
 
     //std::vector<std::pair<std::string, std::vector<int>>> csvInfo = read_csv("c:/Users/leyto/Downloads/Test.csv");
 
-    std::vector<std::vector<std::string> > cs = parseCSV();
-    cout << cs.size() << "\n";
-    for (int i = 0; i < cs.size(); i++) {
-        cout << cs.at(i)[2] << "\n";
+    //std::vector<std::vector<std::string> > cs = parseCSV();
+    //cout << cs.size() << "\n";
+    //for (int i = 0; i < cs.size(); i++) {
+        //cout << cs.at(i)[2] << "\n";
+    //}
 
-       
-    }
-
-    cout << "\n----";
+    //cout << "\n----";
 
     
        
