@@ -40,7 +40,7 @@ public:
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
 
-	
+	map<int, int> levelUpMoveSet;
 
 
 	Pokemon(){
@@ -64,7 +64,7 @@ public:
 	}
 
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo)  {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
@@ -81,6 +81,7 @@ public:
 		yPositionOnSpriteSheet = _yPositionOnSpriteSheet;
 		pokemonTypeOne = _pokemonTypeOne;
 		pokemonTypeTwo = _pokemonTypeTwo;
+		levelUpMoveSet = _levelUpMoveSet;
 	}
 
 	void calculateNextLevelExperienceNeeded() {
