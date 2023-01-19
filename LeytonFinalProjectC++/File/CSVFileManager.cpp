@@ -6,11 +6,9 @@ class CSVFileManager {
 
 	public:
 
-
-
-        std::vector<std::vector<std::string> > parseCSV()
+        std::vector<std::vector<std::string> > parseCSV(const char * filename)
         {
-            std::ifstream  data("c:/Users/leyto/Downloads/Test.csv");
+            std::ifstream  data(filename);
             std::string line;
             std::vector<std::vector<std::string> > parsedCsv;
             while (std::getline(data, line))
@@ -27,8 +25,6 @@ class CSVFileManager {
             }
             return parsedCsv;
         };
-
-
 };
 
 	
