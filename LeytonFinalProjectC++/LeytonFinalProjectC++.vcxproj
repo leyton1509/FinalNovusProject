@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Battle\InitiateBattle.cpp" />
+    <ClCompile Include="File\CSVFileManager.cpp" />
     <ClCompile Include="Pokemon\Moves\MoveCategory.cpp" />
     <ClCompile Include="Pokemon\Moves\Move.cpp" />
     <ClCompile Include="Pokemon\Moves\MoveManager.cpp" />
