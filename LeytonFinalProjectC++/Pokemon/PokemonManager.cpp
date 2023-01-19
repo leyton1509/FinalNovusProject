@@ -25,8 +25,8 @@ public:
     }
 
     PokemonManager() {
-
-        defaultPokemonStorage.insert({ "Bulbasaur", Pokemon("Charizard", 100, 110, 70, 140, 80, 100, 1, 0,0,PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Flying) });
+        map<int, int >levelUpMoveSet = { {1,1}, {2,7} };
+        defaultPokemonStorage.insert({ "Bulbasaur", Pokemon("Charizard", 100, 110, 70, 140, 80, 100, 1, 0,0,PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Flying, levelUpMoveSet) });
     }
 
 };
