@@ -109,13 +109,6 @@ public:
 				}
 			}
 		}
-
-		
-
-	//Move m = mm.getMoveDetails(1);
-	//cout << m.moveID << "\n";
-	//m.printMove();
-
 	}
 
 	void calculateNextLevelExperienceNeeded() {
