@@ -75,7 +75,7 @@ int main()
 
     
        
-    //PokemonManager pm = pm.instance();
+    PokemonManager pm = pm.instance();
     //cout << "Finised creating pm 1";
     //PokemonManager pm2 = pm.instance();
     //cout << "Finised creating pm 2";
@@ -211,6 +211,7 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
+    player.addPokemon(pm.getDefaultPokemon("Manaphy"));
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(0, 0);
@@ -331,8 +332,7 @@ int main()
                         }
                         player.setNewEncounterLocation(); 
                     }
-                    
-                    
+
                 }
             }
 
