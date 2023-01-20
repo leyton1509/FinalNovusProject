@@ -27,6 +27,52 @@ class PokemonType {
 			None
 		};
 
+        std::string getStringFromEnumType(PokemonType::PokemonTypes type) {
+            switch (type)
+            {
+            case PokemonType::Normal:
+                return "Normal";
+            case PokemonType::Fire:
+                return "Fire";
+            case PokemonType::Water:
+                return "Water";
+            case PokemonType::Grass:
+                return "Grass";
+            case PokemonType::Electric:
+                return "Electric";
+            case PokemonType::Ice:
+                return "Ice";
+            case PokemonType::Fighting:
+                return "Fighting";
+            case PokemonType::Poison:
+                return "Poison";
+            case PokemonType::Ground:
+                return "Ground";
+            case PokemonType::Flying:
+                return "Flying";
+            case PokemonType::Psychic:
+                return "Psychic";
+            case PokemonType::Bug:
+                return "Bug";
+            case PokemonType::Rock:
+                return "Rock";
+            case PokemonType::Ghost:
+                return "Ghost";
+            case PokemonType::Dark:
+                return "Dark";
+            case PokemonType::Dragon:
+                return "Dragon";
+            case PokemonType::Steel:
+                return "Steel";
+            case PokemonType::Fairy:
+                return "Fairy";
+            case PokemonType::None:
+                return "";
+            default:
+                return "";
+            }
+        }
+
         PokemonType::PokemonTypes getEnumFromStringMove(std::string typeString) {
             if (typeString.compare("Normal") == 0) {
                 return PokemonType::PokemonTypes::Normal;
