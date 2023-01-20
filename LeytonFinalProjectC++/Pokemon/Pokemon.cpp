@@ -40,6 +40,8 @@ public:
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
 
+	Move pokemonsMoves[4];
+
 	map<int, int> levelUpMoveSet;
 
 
@@ -60,6 +62,7 @@ public:
 		yPositionOnSpriteSheet = 0;
 		pokemonTypeOne = PokemonType::PokemonTypes::Normal;
 		pokemonTypeTwo = PokemonType::PokemonTypes::None;
+		Move pokemonsMoves[4] = {Move()};
 
 	}
 
@@ -82,6 +85,12 @@ public:
 		pokemonTypeOne = _pokemonTypeOne;
 		pokemonTypeTwo = _pokemonTypeTwo;
 		levelUpMoveSet = _levelUpMoveSet;
+	}
+
+	void createMovesFromMoveSet() {
+		int numberOfMoves = 0;
+
+
 	}
 
 	void calculateNextLevelExperienceNeeded() {
@@ -128,6 +137,7 @@ public:
 
 	void printMonsterDetails() {
 		PokemonType pt = PokemonType();
+		std::cout << "|---------------------------------------------------------------------------------;\n";
 		std::cout << "| Pokemon Name :" << pokemonName << " |\n";
 		std::cout << "| Health :" << healthActual << " |\n";
 		std::cout << "| Attack :" << physcialAttackActual << " |\n";
@@ -136,20 +146,24 @@ public:
 		std::cout << "| Special Defence :" << specialDefenceActual << " |\n";
 		std::cout << "| Speed :" << speedActual << " |\n";
 		std::cout << "| level :" << level << " |\n";
-		std::cout << "| Type :" << level << " |\n";
+		std::cout << "| Type :" << pt.getStringFromEnumType(pokemonTypeOne) << " " << pt.getStringFromEnumType(pokemonTypeTwo) << " |\n";
+		int counter = 0;
+		std::cout << "| MoveSet : \n|";
+		for (const pair<int, int>& p : levelUpMoveSet) {
+			if (counter == 7) {
+				std::cout << p.first << " " << p.second << "|\n|";
+				counter = 0;
+			}
+			else {
+				std::cout << p.first << " " << p.second << "  ";
+				counter++;
+			}
+			
+		}
+		std::cout << " |\n";
+		std::cout << "|---------------------------------------------------------------------------------;";
 
 	}
-
-	
-
-
-
-
-
-
-
-
-
 
 };
 
