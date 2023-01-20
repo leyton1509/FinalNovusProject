@@ -34,11 +34,14 @@ public:
         CSVFileManager csvm = CSVFileManager();
         std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/Pokemon.csv");
 
-        //std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSets.csv");
+        std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSets.csv");
         PokemonType pt = PokemonType();
         MoveCategory mc = MoveCategory();
 
         int currentPlaceInMoveListFile = 0;
+        int numberOfPokemon = pokemonList.size();
+        int numberOfMoves = pokemonMoveList.size();
+        int loopPokemon = 0;
 
         for (int i = 0; i < pokemonList.size(); i++) {
 
@@ -54,7 +57,45 @@ public:
             int speedStat = std::stoi(pokemonList.at(i)[9]);
             int xTilePosition = std::stoi(pokemonList.at(i)[11]);
             int yTilePosition = std::stoi(pokemonList.at(i)[12]);
-            cout << pokemonName << " "  << healthStat << " "  << attackStat << " " << defenceStat <<  " "  << specialAttackStat << " " << specialDefenceStat << " " << speedStat << " " << xTilePosition << " " << yTilePosition << " \n";
+            // cout << pokemonName << " "  << healthStat << " "  << attackStat << " " << defenceStat <<  " "  << specialAttackStat << " " << specialDefenceStat << " " << speedStat << " " << xTilePosition << " " << yTilePosition << " \n";
+
+            map<int, int >levelUpMoveSet = {};
+
+            bool moveNextIsForThisPokemon = true;
+            
+            while (moveNextIsForThisPokemon) {
+                if (loopPokemon != numberOfPokemon) {
+                    if (currentPlaceInMoveListFile < numberOfMoves) {
+                        int pokemonIDForMove = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[0]);
+                        if (pokemonIDForMove == pokemonID) {
+                            int levelOfMove = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[3]);
+                            int moveID = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[1]);
+                            levelUpMoveSet.insert({ moveID, levelOfMove });
+                            currentPlaceInMoveListFile++;
+                        }
+                        else {
+                            moveNextIsForThisPokemon = false;
+                        }
+                    }
+                    else {
+                        moveNextIsForThisPokemon = false;
+                    }
+                    
+                }
+                else {
+                    moveNextIsForThisPokemon = false;
+                }
+                
+            }
+            loopPokemon++;
+            
+            cout << "Beinning move set for : " << pokemonName << " \n";
+
+            for (const pair<int, int>& p : levelUpMoveSet) {
+                std::cout << p.first << " " << p.second << std::endl << "\n";
+            }
+
+            cout << "Finished move set for : " << pokemonName << " \n";
         }
 
 
