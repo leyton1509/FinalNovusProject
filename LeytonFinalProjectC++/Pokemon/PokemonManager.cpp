@@ -25,7 +25,19 @@ public:
             return Pokemon();
         }
         else {
-            return getter->second;
+            Pokemon returnedPokemon = getter->second;
+
+            // The reason for doing this is that each pokemon returned needs to be a unique object
+            // This storage is just for holding all pokemon in the game ready to be returned
+
+            Pokemon newPokemon = Pokemon(returnedPokemon.pokemonName, returnedPokemon.healthBase, 
+                returnedPokemon.physcialAttackBase, returnedPokemon.physicalDefenceBase, 
+                returnedPokemon.specialAttackBase, returnedPokemon.specialDefenceBase, 
+                returnedPokemon.speedBase,1, returnedPokemon.xPositionOnSpriteSheet, 
+                returnedPokemon.yPositionOnSpriteSheet, returnedPokemon.pokemonTypeOne, 
+                returnedPokemon.pokemonTypeTwo, returnedPokemon.levelUpMoveSet);
+
+            return newPokemon;
         }
     }
 
