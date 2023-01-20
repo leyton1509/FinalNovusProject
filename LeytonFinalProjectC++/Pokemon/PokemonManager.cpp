@@ -34,8 +34,13 @@ public:
 
         std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSets.csv");
 
-
         int currentPlaceInMoveListFile = 0;
+
+        for (int i = 0; i < pokemonList.size(); i++) {
+
+            int pokemonID = std::stoi(pokemonList.at(i)[0]);
+        }
+
 
         map<int, int >levelUpMoveSet = { {1,1}, {2,7} };
         defaultPokemonStorage.insert({ "Bulbasaur", Pokemon("Charizard", 100, 110, 70, 140, 80, 100, 1, 0,0,PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Flying, levelUpMoveSet) });
