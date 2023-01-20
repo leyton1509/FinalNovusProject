@@ -35,6 +35,9 @@ class PlayerCharacter : public Sprite{
 
 	int numberOfPokemonInParty = 0;
 	Pokemon trainersParty[6];
+	int numberOfPokemonInBox = 0;
+	Pokemon box[30];
+
 
 	// The player character constructor
 	// Sets up the values for the variables in the class
@@ -48,6 +51,11 @@ class PlayerCharacter : public Sprite{
 		currentFrame = 0;
 		framerate = 60;
 		moveThisTurn = (32 * 2 / framerate);
+	}
+
+
+	void addPokemon(Pokemon pokemonToAdd) {
+
 	}
 
 	// Sets all the positions for the player
