@@ -323,7 +323,7 @@ int main()
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
                         if (encounterRan == 2) {
-                            InitiateBattle initiateBattle = InitiateBattle(player, worldMap.locationNumber, 0);
+                            InitiateBattle initiateBattle = InitiateBattle(queue, player, worldMap.locationNumber, 0);
                         }
                         player.setNewEncounterLocation(); 
                     }
