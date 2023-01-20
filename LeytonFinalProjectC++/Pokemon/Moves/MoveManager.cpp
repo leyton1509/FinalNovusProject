@@ -103,7 +103,7 @@ public:
         for (int i = 0; i < cs.size(); i++) {
 
             int moveID = std::stoi(cs.at(i)[0]);
-            const char* moveName = cs.at(i)[1].c_str();
+            string moveName = cs.at(i)[1];
             PokemonType::PokemonTypes type = getEnumFromStringMove(cs.at(i)[2]);
             MoveCategory::Categories moveC = getEnumFromStringCategory(cs.at(i)[3]);
             int powerpoints = std::stoi(cs.at(i)[4]);
