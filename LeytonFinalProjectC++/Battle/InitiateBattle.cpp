@@ -19,8 +19,8 @@ public:
 		al_use_transform(&trans);
 		al_draw_bitmap(background, 0, 0, 0);
 
-		ALLEGRO_BITMAP* otherPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
-		ALLEGRO_BITMAP* trainsersPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
+		ALLEGRO_BITMAP * otherPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+		ALLEGRO_BITMAP * trainsersPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		bool battleFinished = false;
 
