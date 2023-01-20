@@ -219,6 +219,8 @@ int main()
 
     int framecounter = 1;
 
+    bool keys[4] = {false, false ,false ,false};
+
     while (runOverWorld) {
 
         al_wait_for_event(queue, &event);
@@ -247,42 +249,32 @@ int main()
             runOverWorld = false;
             break;
 
-
-        case ALLEGRO_EVENT_KEY_DOWN:
+        case ALLEGRO_EVENT_KEY_UP:
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
-                if (canPlayerMove == 1) {
-                    player.moveCharacter("w");
-                }
-               
+                keys[0] = false;
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
-                if (canPlayerMove == 1) {
-                    player.moveCharacter("s");
-                }
-               
-
+                keys[1] = false;
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
-                if (canPlayerMove == 1) {
-                    player.moveCharacter("a");
-                }
-              
-
+                keys[2] = false;
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                int canPlayerMove = worldMap.canPlayerMove("d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
-                if (canPlayerMove == 1) {
-                    player.moveCharacter("d");
-                }
-                
-
+                keys[3] = false;
+            }
+            break;
+        case ALLEGRO_EVENT_KEY_DOWN:
+            if (event.keyboard.keycode == ALLEGRO_KEY_W) {
+                keys[0] = true;
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
+                keys[1] = true;
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
+                keys[2] = true;
+            }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
+                keys[3] = true;
             }
         }
 
@@ -291,6 +283,34 @@ int main()
 
         if (redraw && al_is_event_queue_empty(queue))
         {
+
+            if (keys[0] && !keys[1] && !keys[2] && !keys[3]) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                if (canPlayerMove == 1) {
+                    player.moveCharacter("w");
+                }
+            } else if (keys[1] && !keys[0] && !keys[2] && !keys[3]) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                if (canPlayerMove == 1) {
+                    player.moveCharacter("s");
+                }
+            }
+            else if (keys[2] && !keys[1] && !keys[0] && !keys[3]) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                if (canPlayerMove == 1) {
+                    player.moveCharacter("a");
+                }
+            }
+            else if (keys[3] && !keys[1] && !keys[2] && !keys[0]) {
+                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+                int canPlayerMove = worldMap.canPlayerMove("d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                if (canPlayerMove == 1) {
+                    player.moveCharacter("d");
+                }
+            }
 
             al_clear_to_color(al_map_rgb(0, 0, 0));
 
