@@ -1,13 +1,15 @@
 #include "../../Pokemon/PokemonType.h"
 #include "../../Pokemon/Moves/MoveCategory.h"
 #include <iostream>
+#include <string>
+
 
 class Move {
 
 public:
 
 	int moveID;
-	const char* moveName;
+	std::string moveName;
 	PokemonType::PokemonTypes pokemonTypeOfMove;
 	MoveCategory::Categories typeOfMove;
 	int powerpoints;
@@ -15,7 +17,7 @@ public:
 	int accuracy;
 	int hasSpecialEffect;
 
-	Move(int _moveID, const char* _moveName, PokemonType::PokemonTypes _pokemonTypeOfMove, MoveCategory::Categories _typeOfMove, int _powerpoints, int _power, int _accuracy, int _hasSpecialEffect) {
+	Move(int _moveID, std::string _moveName, PokemonType::PokemonTypes _pokemonTypeOfMove, MoveCategory::Categories _typeOfMove, int _powerpoints, int _power, int _accuracy, int _hasSpecialEffect) {
 		moveID = _moveID;
 		moveName = _moveName;
 		pokemonTypeOfMove = _pokemonTypeOfMove;;
