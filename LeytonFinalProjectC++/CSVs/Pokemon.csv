@@ -445,7 +445,7 @@
 445,Garchomp,Dragon,Ground,108,130,95,80,85,102,False,24,15
 446,Munchlax,Normal,None,135,85,40,40,85,5,False,25,15
 447,Riolu,Fighting,None,40,70,40,35,40,60,False,26,15
-448,Lucario,Fighting,Steel,70,110,70,115,70,90,False,,15
+448,Lucario,Fighting,Steel,70,110,70,115,70,90,False,27,15
 449,Hippopotas,Ground,None,68,72,78,38,42,32,False,0,16
 450,Hippowdon,Ground,None,108,112,118,68,72,47,False,1,16
 451,Skorupi,Poison,Bug,40,50,90,30,55,65,False,2,16
@@ -473,7 +473,7 @@
 473,Mamoswine,Ice,Ground,110,130,80,70,60,80,False,24,16
 474,Porygon-Z,Normal,None,85,80,70,135,75,90,False,25,16
 475,Gallade,Psychic,Fighting,68,125,65,65,115,80,False,26,16
-476,Probopass,Rock,Steel,60,55,145,75,150,40,False,,16
+476,Probopass,Rock,Steel,60,55,145,75,150,40,False,27,16
 477,Dusknoir,Ghost,None,45,100,135,65,135,45,False,0,17
 478,Froslass,Ice,Ghost,70,80,70,80,70,110,False,1,17
 479,Rotom,Electric,Ghost,50,50,77,95,77,91,False,2,17
