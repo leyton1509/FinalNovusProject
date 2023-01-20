@@ -219,9 +219,6 @@ int main()
 
     int framecounter = 1;
 
-    bool keys[4] = { false , false, false, false};
-
-
     while (runOverWorld) {
 
         al_wait_for_event(queue, &event);
@@ -250,18 +247,9 @@ int main()
             runOverWorld = false;
             break;
 
-        case ALLEGRO_EVENT_KEY_UP:
-            keys[0] = false;
-            keys[1] = false;
-            keys[2] = false;
-            keys[3] = false;
-            break;
-
 
         case ALLEGRO_EVENT_KEY_DOWN:
-            keys[0] = true;
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
-                keys[0] = true;
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
@@ -270,7 +258,6 @@ int main()
                
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_S) {
-                keys[1] = true;
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
@@ -280,7 +267,6 @@ int main()
 
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_A) {
-                keys[2] = true;
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
@@ -290,12 +276,13 @@ int main()
 
             }
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
-                keys[3] = true;
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("d");
                 }
+                
+
             }
         }
 
