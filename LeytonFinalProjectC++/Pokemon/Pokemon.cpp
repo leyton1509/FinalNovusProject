@@ -2,6 +2,7 @@
 #include <iostream>
 #include "../Pokemon/PokemonType.h"
 #include "../Pokemon/Moves/Move.h"
+#include "../Pokemon/Moves/MoveManager.h"
 #include <map>
 
 
@@ -39,6 +40,8 @@ public:
 
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
+
+	int numberOfLastStoredMove = 0;
 
 	Move pokemonsMoves[4];
 
@@ -85,11 +88,33 @@ public:
 		pokemonTypeOne = _pokemonTypeOne;
 		pokemonTypeTwo = _pokemonTypeTwo;
 		levelUpMoveSet = _levelUpMoveSet;
+		updateMoveSet();
 	}
 
-	void createMovesFromMoveSet() {
+	void updateMoveSet() {
 		int numberOfMoves = 0;
+		MoveManager mm = mm.instance();
+		for (const pair<int, int>& p : levelUpMoveSet) {
 
+			if (p.second != 0 ){
+				if (p.second <= level){
+					if (numberOfLastStoredMove < 4) {
+						pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
+						numberOfLastStoredMove++;
+					}
+					else {
+						numberOfLastStoredMove = 0;
+						pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
+					}
+				}
+			}
+		}
+
+		
+
+	//Move m = mm.getMoveDetails(1);
+	//cout << m.moveID << "\n";
+	//m.printMove();
 
 	}
 
