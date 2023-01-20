@@ -127,8 +127,17 @@ public:
 	}
 
 	void printMonsterDetails() {
-		std::cout << pokemonName << "";
-		printf("| Level : %d | Health : %d | Attack : %d | Defence : %d | Special Attack : %d | Speed : %d |", level, healthActual, physcialAttackActual, physicalDefenceActual, specialDefenceActual, speedActual);
+		PokemonType pt = PokemonType();
+		std::cout << "| Pokemon Name :" << pokemonName << " |\n";
+		std::cout << "| Health :" << healthActual << " |\n";
+		std::cout << "| Attack :" << physcialAttackActual << " |\n";
+		std::cout << "| Defence :" << physicalDefenceActual << " |\n";
+		std::cout << "| Special Attack :" << specialAttackActual << " |\n";
+		std::cout << "| Special Defence :" << specialDefenceActual << " |\n";
+		std::cout << "| Speed :" << speedActual << " |\n";
+		std::cout << "| level :" << level << " |\n";
+		std::cout << "| Type :" << level << " |\n";
+
 	}
 
 	
