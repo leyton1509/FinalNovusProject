@@ -2,7 +2,8 @@
 #include <map>
 #include "Move.h"
 #include "../../File/CSVFileManager.h";
-
+#include "../../Pokemon/PokemonType.h";
+#include "../../Pokemon/Moves/MoveCategory.h";
 using namespace std;
 
 
