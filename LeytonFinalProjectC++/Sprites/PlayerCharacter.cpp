@@ -55,7 +55,16 @@ class PlayerCharacter : public Sprite{
 
 
 	void addPokemon(Pokemon pokemonToAdd) {
-
+		if (numberOfPokemonInParty < 6) {
+			trainersParty[numberOfPokemonInParty] = pokemonToAdd;
+			numberOfPokemonInParty++;
+		}
+		else {
+			if (numberOfPokemonInBox < 30) {
+				box[numberOfPokemonInBox] = pokemonToAdd;
+				numberOfPokemonInBox++;
+			}
+		}
 	}
 
 	// Sets all the positions for the player
