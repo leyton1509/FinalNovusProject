@@ -13,36 +13,8 @@ using namespace std;
 class PokemonManager
 {
 
-public:
-
-    map<string, Pokemon> defaultPokemonStorage = {};
-
-    Pokemon getDefaultPokemon(string _pokemonName) {
-
-        auto getter = defaultPokemonStorage.find(_pokemonName);
-        
-        if (getter == defaultPokemonStorage.end()) {
-            return Pokemon();
-        }
-        else {
-            Pokemon returnedPokemon = getter->second;
-
-            // The reason for doing this is that each pokemon returned needs to be a unique object
-            // This storage is just for holding all pokemon in the game ready to be returned
-
-            Pokemon newPokemon = Pokemon(returnedPokemon.pokemonName, returnedPokemon.healthBase, 
-                returnedPokemon.physcialAttackBase, returnedPokemon.physicalDefenceBase, 
-                returnedPokemon.specialAttackBase, returnedPokemon.specialDefenceBase, 
-                returnedPokemon.speedBase,1, returnedPokemon.xPositionOnSpriteSheet, 
-                returnedPokemon.yPositionOnSpriteSheet, returnedPokemon.pokemonTypeOne, 
-                returnedPokemon.pokemonTypeTwo, returnedPokemon.levelUpMoveSet);
-
-            return newPokemon;
-        }
-    }
-
+private:
     PokemonManager() {
-        
         CSVFileManager csvm = CSVFileManager();
         std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/Pokemon.csv");
 
@@ -74,7 +46,7 @@ public:
             map<int, int >levelUpMoveSet = {};
 
             bool moveNextIsForThisPokemon = true;
-            
+
             while (moveNextIsForThisPokemon) {
                 if (loopPokemon != numberOfPokemon) {
                     if (currentPlaceInMoveListFile < numberOfMoves) {
@@ -92,29 +64,62 @@ public:
                     else {
                         moveNextIsForThisPokemon = false;
                     }
-                    
+
                 }
                 else {
                     moveNextIsForThisPokemon = false;
                 }
-                
+
             }
             loopPokemon++;
-            
+
+            /*
             cout << "Beinning move set for : " << pokemonName << " \n";
 
             for (const pair<int, int>& p : levelUpMoveSet) {
                 std::cout << p.first << " " << p.second << std::endl << "\n";
-            }
+           }
 
-            cout << "Finished move set for : " << pokemonName << " \n";
+           cout << "Finished move set for : " << pokemonName << " \n";
+            */
+            
 
             defaultPokemonStorage.insert({ pokemonName, Pokemon(pokemonName, healthStat, attackStat, defenceStat, specialAttackStat, specialDefenceStat, speedStat, 1, xTilePosition,yTilePosition,typeOne, typeTwo, levelUpMoveSet) });
         }
-
-
-        //map<int, int >levelUpMoveSet = { {1,1}, {2,7} };
-       // defaultPokemonStorage.insert({ "Bulbasaur", Pokemon("Charizard", 100, 110, 70, 140, 80, 100, 1, 0,0,PokemonType::PokemonTypes::Fire, PokemonType::PokemonTypes::Flying, levelUpMoveSet) });
     }
 
+
+public:
+    
+    static PokemonManager& instance()
+    {
+        static PokemonManager INSTANCE;
+        return INSTANCE;
+    }
+
+    map<string, Pokemon> defaultPokemonStorage = {};
+
+    Pokemon getDefaultPokemon(string _pokemonName) {
+
+        auto getter = defaultPokemonStorage.find(_pokemonName);
+        
+        if (getter == defaultPokemonStorage.end()) {
+            return Pokemon();
+        }
+        else {
+            Pokemon returnedPokemon = getter->second;
+
+            // The reason for doing this is that each pokemon returned needs to be a unique object
+            // This storage is just for holding all pokemon in the game ready to be returned
+
+            Pokemon newPokemon = Pokemon(returnedPokemon.pokemonName, returnedPokemon.healthBase, 
+                returnedPokemon.physcialAttackBase, returnedPokemon.physicalDefenceBase, 
+                returnedPokemon.specialAttackBase, returnedPokemon.specialDefenceBase, 
+                returnedPokemon.speedBase,1, returnedPokemon.xPositionOnSpriteSheet, 
+                returnedPokemon.yPositionOnSpriteSheet, returnedPokemon.pokemonTypeOne, 
+                returnedPokemon.pokemonTypeTwo, returnedPokemon.levelUpMoveSet);
+
+            return newPokemon;
+        }
+    }
 };
