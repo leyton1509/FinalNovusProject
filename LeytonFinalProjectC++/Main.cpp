@@ -19,7 +19,7 @@
 
 int screenWidth = 900;
 int screenHeight = 600;
-
+bool initalisedCamera = false;
 
 //MonsterManager availableMonsters;
 
@@ -37,25 +37,36 @@ void must_init(bool test, const char* description)
 }
 
 void cameraUpdate(float* cameraPosition, float x, float y, int width, int height) {
+    
+    if (!initalisedCamera) {
+        cameraPosition[0] = -(screenWidth / 2) + (x + (width / 2));
+        cameraPosition[1] = -(screenHeight / 2) + (y + (height / 2));
+        initalisedCamera = true;
+        cout << "in\n";
+    }
     /*
+    
+    if (x > screenWidth * 0.8) {
+        cameraPosition[0] = -(screenWidth / 2) + (x +32);
+    }
+    else if (x < screenWidth * 0.2) {
+        cameraPosition[0] = -(screenWidth / 2) + (x-32);
+    }
 
-    if (x > screenWidth * 0.7) {
-        cameraPosition[0] = -(cameraPosition[0] + x + (width));
+    if (y < screenHeight * 0.2) {
+        cameraPosition[1] = -(screenHeight / 2) + (y + 32);
     }
-    else if (x < screenWidth * 0.3) {
-        cameraPosition[0] = -(cameraPosition[0] - x -(width));
+    else if (y > screenHeight * 0.2) {
+        cameraPosition[1] = -(screenHeight / 2) + (y -32);
     }
-    else if (y < screenHeight * 0.3) {
-        cameraPosition[1] = -(cameraPosition[1] + y + (height));
-    }
-    else if (y > screenHeight * 0.7) {
-        cameraPosition[1] = -(cameraPosition[1] -y- (height));
-    }
-    */
-
 
     cameraPosition[0] = -(screenWidth / 2) + (x + (width / 2));
     cameraPosition[1] = -(screenHeight / 2) + (y + (height / 2));
+    */
+
+
+    //cameraPosition[0] = -(screenWidth / 2) + (x + (width / 2));
+    //cameraPosition[1] = -(screenHeight / 2) + (y + (height / 2));
 
 }
 
