@@ -1,4 +1,5 @@
 #include "../Sprites/PlayerCharacter.h"
+#include "../Pokemon/PokemonManager.h"
 
 class InitiateBattle {
 
@@ -19,8 +20,11 @@ public:
 		al_use_transform(&trans);
 		al_draw_bitmap(background, 0, 0, 0);
 
-		ALLEGRO_BITMAP * otherPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
-		ALLEGRO_BITMAP * trainsersPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+
+		PokemonManager pm = pm.instance();
+		Pokemon otherPokemon = pm.getDefaultPokemon("Darkrai");
 
 		bool battleFinished = false;
 
@@ -38,7 +42,7 @@ public:
 					redraw = true;
 					break;
 
-
+				
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
 					done = true;
 					battleFinished = true;
@@ -52,10 +56,7 @@ public:
 				{
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
-
-
-
-					//al_draw_scaled_bitmap(, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, 100, 200, 240, 240, 0);
 
 					al_flip_display();
 					redraw = false;
@@ -71,8 +72,8 @@ public:
 		}
 
 		al_destroy_bitmap(background);
-		al_destroy_bitmap(otherPokemon);
-		al_destroy_bitmap(trainsersPokemon);
+		al_destroy_bitmap(otherPokemonSprite);
+		al_destroy_bitmap(trainsersPokemonSprite);
 	}
 
 };
