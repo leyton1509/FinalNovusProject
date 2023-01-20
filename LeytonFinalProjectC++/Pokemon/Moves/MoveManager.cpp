@@ -27,18 +27,6 @@ public:
 
    
 
-    MoveCategory::Categories getEnumFromStringCategory(string moveString) {
-        if (moveString.compare("Physical") == 0) {
-            return MoveCategory::Categories::Physical;
-        }
-        else if (moveString.compare("Special") == 0) {
-            return MoveCategory::Categories::Special;
-        }
-        else if (moveString.compare("Status") == 0) {
-            return MoveCategory::Categories::Status;
-        }
-    }
-
     MoveManager() {
 
         CSVFileManager csvm = CSVFileManager();
@@ -48,11 +36,12 @@ public:
         for (int i = 0; i < cs.size(); i++) {
 
             PokemonType pt = PokemonType();
+            MoveCategory mc = MoveCategory();
 
             int moveID = std::stoi(cs.at(i)[0]);
             string moveName = cs.at(i)[1];
             PokemonType::PokemonTypes type = pt.getEnumFromStringMove(cs.at(i)[2]);
-            MoveCategory::Categories moveC = getEnumFromStringCategory(cs.at(i)[3]);
+            MoveCategory::Categories moveC = mc.getEnumFromStringCategory(cs.at(i)[3]);
             int powerpoints = std::stoi(cs.at(i)[4]);
             int power = std::stoi(cs.at(i)[5]);
             int accuracy = std::stoi(cs.at(i)[6]);
