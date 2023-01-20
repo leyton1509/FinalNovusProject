@@ -36,6 +36,17 @@ public:
 				if (redraw && al_is_event_queue_empty(queue))
 				{
 					al_clear_to_color(al_map_rgb(0, 0, 0));
+					
+
+
+
+
+
+
+
+
+
+
 
 					al_flip_display();
 					redraw = false;
