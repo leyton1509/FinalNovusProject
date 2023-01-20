@@ -75,7 +75,14 @@ int main()
 
     
        
-        
+    // pm = pm.instance();
+    //cout << "Finised creating pm 1";
+    //PokemonManager pm2 = pm.instance();
+    //cout << "Finised creating pm 2";
+    //PokemonManager pm3 = pm.instance();
+    //cout << "Finised creating pm 3";
+    //Pokemon p = pm3.getDefaultPokemon("Sceptile");
+    //p.printMonsterDetails();
    
 // charizard.printMonsterDetails();
 // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
@@ -87,9 +94,11 @@ int main()
    // double val = ptc.returnEffectiveNessOfMove(PokemonType::PokemonTypes::Fighting, PokemonType::PokemonTypes::Flying, PokemonType::PokemonTypes::Poison);
     //std::cout << val << " effectiveness";
     
-    //MoveManager mm = MoveManager();
+    MoveManager mm = mm.instance();
+
     //cout << "////";
-    //Move m = mm.getMoveDetails(4);
+    Move m = mm.getMoveDetails(1);
+    cout << m.moveID << "\n";
     //m.printMove();
    
     
