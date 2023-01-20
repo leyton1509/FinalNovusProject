@@ -30,13 +30,14 @@ public:
     MoveManager() {
 
         CSVFileManager csvm = CSVFileManager();
+        PokemonType pt = PokemonType();
+        MoveCategory mc = MoveCategory();
 
         std::vector<std::vector<std::string> > cs = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonMoves.csv");
         
         for (int i = 0; i < cs.size(); i++) {
 
-            PokemonType pt = PokemonType();
-            MoveCategory mc = MoveCategory();
+            
 
             int moveID = std::stoi(cs.at(i)[0]);
             string moveName = cs.at(i)[1];
