@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string>
 #include "../Sprites/Spriteheader.h"
-
+#include "../Pokemon/Pokemon.h"
 using namespace std;
 
 // Player Character class which represents the players overworld character
@@ -32,6 +32,9 @@ class PlayerCharacter : public Sprite{
 	int yTilePosition;
 	// An array of the tile of the last encounter stops the repeated encounter in a square
 	int locationfOfLastEnounter[2] = {0,0};
+
+	int numberOfPokemonInParty = 0;
+	Pokemon trainersParty[6];
 
 	// The player character constructor
 	// Sets up the values for the variables in the class
