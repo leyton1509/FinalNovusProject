@@ -19,6 +19,9 @@ public:
 		al_use_transform(&trans);
 		al_draw_bitmap(background, 0, 0, 0);
 
+		ALLEGRO_BITMAP* otherPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
+		ALLEGRO_BITMAP* trainsersPokemon = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
+
 		bool battleFinished = false;
 
 		if (battleType == 0) {
@@ -50,6 +53,10 @@ public:
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 
+
+
+					//al_draw_scaled_bitmap(, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
+
 					al_flip_display();
 					redraw = false;
 				}
@@ -64,7 +71,8 @@ public:
 		}
 
 		al_destroy_bitmap(background);
-
+		al_destroy_bitmap(otherPokemon);
+		al_destroy_bitmap(trainsersPokemon);
 	}
 
 };
