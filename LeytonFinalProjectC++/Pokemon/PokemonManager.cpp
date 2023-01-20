@@ -39,6 +39,7 @@ public:
         for (int i = 0; i < pokemonList.size(); i++) {
 
             int pokemonID = std::stoi(pokemonList.at(i)[0]);
+            string pokemonName = pokemonList.at(i)[1];
         }
 
 
