@@ -48,7 +48,7 @@ public:
             int pokemonID = std::stoi(pokemonList.at(i)[0]);
             string pokemonName = pokemonList.at(i)[1];
             PokemonType::PokemonTypes typeOne = pt.getEnumFromStringMove(pokemonList.at(i)[2]);
-            PokemonType::PokemonTypes type = pt.getEnumFromStringMove(pokemonList.at(i)[3]);
+            PokemonType::PokemonTypes typeTwo = pt.getEnumFromStringMove(pokemonList.at(i)[3]);
             int healthStat = std::stoi(pokemonList.at(i)[4]);
             int attackStat = std::stoi(pokemonList.at(i)[5]);
             int defenceStat = std::stoi(pokemonList.at(i)[6]);
@@ -96,6 +96,8 @@ public:
             }
 
             cout << "Finished move set for : " << pokemonName << " \n";
+
+            defaultPokemonStorage.insert({ pokemonName, Pokemon(pokemonName, healthStat, attackStat, defenceStat, specialAttackStat, specialDefenceStat, speedStat, 1, xTilePosition,yTilePosition,typeOne, typeTwo, levelUpMoveSet) });
         }
 
 
