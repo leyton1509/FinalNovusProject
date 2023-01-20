@@ -3,6 +3,8 @@
 #include <string>
 #include "../Pokemon/Pokemon.h"
 #include "../Pokemon/PokemonManager.h"
+#include "../Pokemon/PokemonType.h";
+#include "../Pokemon/Moves/MoveCategory.h";
 #include "../File/CSVFileManager.h";
 
 
@@ -33,6 +35,8 @@ public:
         std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/Pokemon.csv");
 
         std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSets.csv");
+        PokemonType pt = PokemonType();
+        MoveCategory mc = MoveCategory();
 
         int currentPlaceInMoveListFile = 0;
 
