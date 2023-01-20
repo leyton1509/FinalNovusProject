@@ -13,7 +13,7 @@ public:
 
 		
 
-		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
+		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Underwater.jpg");
 
 		ALLEGRO_TRANSFORM trans;
 		al_identity_transform(&trans);
@@ -24,7 +24,8 @@ public:
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		PokemonManager pm = pm.instance();
-		Pokemon otherPokemon = pm.getDefaultPokemon("Darkrai");
+		Pokemon otherPokemon = pm.getDefaultPokemon("Kyogre");
+		Pokemon playerPokemon = player.trainersParty[0];
 
 		bool battleFinished = false;
 
@@ -56,7 +57,8 @@ public:
 				{
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
-					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, 100, 200, 240, 240, 0);
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    550, 100, 280, 280, 0);
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80,    100, 325, 280, 280, 0);
 
 					al_flip_display();
 					redraw = false;
