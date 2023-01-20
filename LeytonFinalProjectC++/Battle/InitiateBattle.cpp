@@ -21,6 +21,10 @@ public:
 
 				switch (event.type)
 				{
+				case ALLEGRO_EVENT_TIMER:
+					// game logic goes here.
+					redraw = true;
+					break;
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
 					done = true;
 					break;
