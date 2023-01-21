@@ -13,7 +13,7 @@ public:
 
 		
 
-		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Underwater.jpg");
+		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Graveyard.jpg");
 
 		ALLEGRO_TRANSFORM trans;
 		al_identity_transform(&trans);
@@ -24,7 +24,7 @@ public:
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		PokemonManager pm = pm.instance();
-		Pokemon otherPokemon = pm.getDefaultPokemon("Kyogre");
+		Pokemon otherPokemon = pm.getDefaultPokemon("Psyduck");
 		Pokemon playerPokemon = player.trainersParty[0];
 
 		bool battleFinished = false;
