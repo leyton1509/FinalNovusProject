@@ -28,14 +28,16 @@ public:
 		Pokemon otherPokemon = pm.getDefaultPokemon("Bulbasaur");
 		Pokemon playerPokemon = player.trainersParty[0];
 
+
 		Button attackButton1 = Button(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		Button attackButton2 = Button(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		Button attackButton3 = Button(128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		Button attackButton4 = Button(128, 64, 160, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
-		Button healPokemonButton = Button(64, 64, 295, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
-		Button switchPokemonButton = Button(64, 64, 365, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
-		Button catchPokemonButton = Button(64, 64, 435, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
+		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
+		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
+		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
+		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
 		bool battleFinished = false;
 
@@ -76,6 +78,7 @@ public:
 					healPokemonButton.drawSprite();
 					switchPokemonButton.drawSprite();
 					catchPokemonButton.drawSprite();
+					runPokemonButton.drawSprite();
 					al_flip_display();
 					redraw = false;
 				}
