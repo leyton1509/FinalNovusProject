@@ -1,5 +1,6 @@
 #include "../Sprites/PlayerCharacter.h"
 #include "../Pokemon/PokemonManager.h"
+#include "../Sprites/Button.h"
 
 class InitiateBattle {
 
@@ -26,6 +27,9 @@ public:
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Torterra");
 		Pokemon playerPokemon = player.trainersParty[0];
+
+		Button attackButton1 = Button(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		Button attackButton2 = Button(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
 		bool battleFinished = false;
 
@@ -59,7 +63,8 @@ public:
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.22, screenWidth * 0.22, 0);
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.4, screenWidth * 0.25, screenWidth * 0.25, 0);
-
+					attackButton1.drawSprite();
+					attackButton2.drawSprite();
 					al_flip_display();
 					redraw = false;
 				}
