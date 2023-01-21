@@ -52,6 +52,7 @@ void cameraUpdate(float* cameraPosition, float x, float y, int width, int height
     else if (x < screenWidth * 0.2) {
         cameraPosition[0] = -(screenWidth / 2) + (x-32);
     }
+    }
 
     if (y < screenHeight * 0.2) {
         cameraPosition[1] = -(screenHeight / 2) + (y + 32);
@@ -222,7 +223,7 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
-    player.addPokemon(pm.getDefaultPokemon("Manaphy"));
+    player.addPokemon(pm.getDefaultPokemon("Rayquaza"));
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(0, 0);
@@ -331,7 +332,7 @@ int main()
 
             if (framecounter == 3) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                if (tilePlayerIsStandingOn == 2) {
+                if (tilePlayerIsStandingOn == 5 || tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
                         if (encounterRan == 2) {
