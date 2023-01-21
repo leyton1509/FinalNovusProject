@@ -30,6 +30,8 @@ public:
 
 		Button attackButton1 = Button(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		Button attackButton2 = Button(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		Button attackButton3 = Button(128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		Button attackButton4 = Button(128, 64, 160, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
 		bool battleFinished = false;
 
@@ -65,6 +67,8 @@ public:
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.4, screenWidth * 0.25, screenWidth * 0.25, 0);
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
+					attackButton3.drawSprite();
+					attackButton4.drawSprite();
 					al_flip_display();
 					redraw = false;
 				}
