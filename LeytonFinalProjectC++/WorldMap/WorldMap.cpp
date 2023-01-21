@@ -64,6 +64,9 @@ public:
 					}else if (textMap[xTile][tempYTile-1] == 1) {
 						return 0;
 					}
+					else if (textMap[xTile][tempYTile - 1] == 10) {
+						return 0;
+					}
 				}
 				else {
 					return 0;
@@ -83,6 +86,9 @@ public:
 					else if (textMap[xTile][tempYTile+1] == 1) {
 						return 0;
 					}
+					else if (textMap[xTile][tempYTile + 1] == 10) {
+						return 0;
+					}
 				}
 				else {
 					return 0;
@@ -100,6 +106,9 @@ public:
 					else if (textMap[xTile - 1][tempYTile] == 1) {
 						return 0;
 					}
+					else if (textMap[xTile - 1][tempYTile] == 10) {
+						return 0;
+					}
 				}
 				else {
 					return 0;
@@ -115,6 +124,9 @@ public:
 					if (textMap[xTile + 1][tempYTile] == 0 ) {
 						return 0;
 					}else if (textMap[xTile + 1][tempYTile] == 1 ) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 10) {
 						return 0;
 					}
 				}
