@@ -11,7 +11,7 @@ class WorldMap {
 public:
 
 	ALLEGRO_BITMAP* mapBuffer;
-	ALLEGRO_BITMAP* mapTiles[10];
+	ALLEGRO_BITMAP* mapTiles[15];
 
 	int textMap[100][100];
 	int xBorderSize = 15;
@@ -42,6 +42,7 @@ public:
 		mapTiles[7] = grass.spriteImage;
 		mapTiles[8] = grass.spriteImage;
 		mapTiles[9] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		mapTiles[10] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokemonCentre.png");
 		cout << grass.spriteImage << " Grass sprite \n";
 		loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
@@ -177,6 +178,8 @@ public:
 			{
 				if (textMap[i][j] == 1 || textMap[i][j] == 2 || textMap[i][j] == 0 || textMap[i][j] == 9) {
 
+				}else if (textMap[i][j] == 10){
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 85, 82, i*32, j *32, i * 32 * 5, j * 32 * 4, 0);
 				}
 				else {
 					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
