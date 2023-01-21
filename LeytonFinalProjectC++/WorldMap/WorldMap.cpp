@@ -11,7 +11,7 @@ class WorldMap {
 public:
 
 	ALLEGRO_BITMAP* mapBuffer;
-	ALLEGRO_BITMAP* mapTiles[3];
+	ALLEGRO_BITMAP* mapTiles[10];
 
 	int textMap[100][100];
 	int xBorderSize = 15;
@@ -31,10 +31,16 @@ public:
 		screenWidth = _screenWidth;
 		screenHeight = _screenHeight;
 		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
-		PokemonGrass grass;
+		PokemonGrass grass = PokemonGrass();
 		mapTiles[0] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
-		mapTiles[1] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
-		mapTiles[2] = grass.spriteImage;
+		mapTiles[1] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		mapTiles[2] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		mapTiles[3] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		mapTiles[4] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		mapTiles[5] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		mapTiles[6] = grass.spriteImage;
+		mapTiles[7] = grass.spriteImage;
+		mapTiles[8] = grass.spriteImage;
 		cout << grass.spriteImage << " Grass sprite \n";
 		loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
@@ -46,11 +52,14 @@ public:
 	}
 	int canPlayerMove(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
 		int tempYTile = yTile + 1;
+		
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
 
 				if (tempYTile - 1 >= 0) {
-					if (textMap[xTile][tempYTile] == 0) {
+					if (textMap[xTile][tempYTile-1] == 0) {
+						return 0;
+					}else if (textMap[xTile][tempYTile-1] == 1) {
 						return 0;
 					}
 				}
@@ -66,7 +75,10 @@ public:
 			if (directionY == -1) 
 			{
 				if (tempYTile + 1 < mapSizeY) {
-					if (textMap[xTile][tempYTile + 1] == 0) {
+					if (textMap[xTile][tempYTile + 1] == 0 ) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile+1] == 1) {
 						return 0;
 					}
 				}
@@ -83,6 +95,9 @@ public:
 					if (textMap[xTile-1][tempYTile] == 0) {
 						return 0;
 					}
+					else if (textMap[xTile - 1][tempYTile] == 1) {
+						return 0;
+					}
 				}
 				else {
 					return 0;
@@ -95,7 +110,9 @@ public:
 
 			if (directionX == 1) {
 				if (xTile +1 < mapSizeX) {
-					if (textMap[xTile + 1][tempYTile] == 0) {
+					if (textMap[xTile + 1][tempYTile] == 0 ) {
+						return 0;
+					}else if (textMap[xTile + 1][tempYTile] == 1 ) {
 						return 0;
 					}
 				}
@@ -157,7 +174,13 @@ public:
 		{
 			for (int j = 0; j < mapSizeY; j++)
 			{
-				al_draw_bitmap(mapTiles[textMap[i][j]], i*32, j*32, 0);
+				if (textMap[i][j] == 1 || textMap[i][j] == 2 || textMap[i][j] == 0) {
+
+				}
+				else {
+					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
+				}
+				
 			}
 		}
 	}
