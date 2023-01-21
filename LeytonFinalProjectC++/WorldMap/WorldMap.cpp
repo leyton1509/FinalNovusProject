@@ -41,6 +41,7 @@ public:
 		mapTiles[6] = grass.spriteImage;
 		mapTiles[7] = grass.spriteImage;
 		mapTiles[8] = grass.spriteImage;
+		mapTiles[9] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		cout << grass.spriteImage << " Grass sprite \n";
 		loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
@@ -174,7 +175,7 @@ public:
 		{
 			for (int j = 0; j < mapSizeY; j++)
 			{
-				if (textMap[i][j] == 1 || textMap[i][j] == 2 || textMap[i][j] == 0) {
+				if (textMap[i][j] == 1 || textMap[i][j] == 2 || textMap[i][j] == 0 || textMap[i][j] == 9) {
 
 				}
 				else {
