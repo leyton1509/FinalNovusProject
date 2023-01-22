@@ -30,7 +30,7 @@ public:
 			stab = 1.5;
 		}
 		//int ranModifier = ((rand()%85) + 100);
-		int damage = (((2 * attackingPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove * stab;
+		int damage = ((((2 * attackingPokemon.level)/5) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove * stab;
 		cout << "\nPokemon Attacking : |"<< attackingPokemon.pokemonName << " Damage:" << damage << " Effectiveness:" << effectivenessOfMove << "\n";
 		return damage;
 	}
