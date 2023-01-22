@@ -10,6 +10,7 @@ public:
 	int originalSizeX;
 	int originalSizeY;
 	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 28, NULL);
+	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 	float x;
 	float y;
 
@@ -33,12 +34,14 @@ public:
 		al_draw_text(font, al_map_rgb(255, 255, 255), (x + 15), (y + 5), 0, (representedPokemon.pokemonName + "   Lvl. " + std::to_string(representedPokemon.level)).c_str());
 		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + 285), (y + 45), al_map_rgba(0, 0, 0, 0.3));
 		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + (representedPokemon.currentHealth / representedPokemon.healthActual) * 285), (y + 45), al_map_rgba(255, 0, 0, 0.3));
+		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (x + 15), (y + 50), 0, ("HP: " + std::to_string(representedPokemon.currentHealth) + "/" + std::to_string(representedPokemon.healthActual)).c_str());
 
 	}
 
 	void destroySprites() {
 		al_destroy_bitmap(spriteImage);
 		al_destroy_font(font);
+		al_destroy_font(fontSmaller);
 	}
 
 
