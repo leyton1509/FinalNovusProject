@@ -24,7 +24,13 @@ public:
 		PokemonTypeChart ptc = PokemonTypeChart();
 		int effectivenessOfMove = ptc.returnEffectivenessOfMove(playerMoveUsed.pokemonTypeOfMove, otherPokemon.pokemonTypeOne, otherPokemon.pokemonTypeTwo);
 
-		int damage = (((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove;
+		int stab = 1;
+
+		if (playersPokemon.pokemonTypeOne == playerMoveUsed.pokemonTypeOfMove || playersPokemon.pokemonTypeTwo == playerMoveUsed.pokemonTypeOfMove) {
+			stab = 1.5;
+		}
+
+		int damage = (((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove * stab;
 
 	}
 
