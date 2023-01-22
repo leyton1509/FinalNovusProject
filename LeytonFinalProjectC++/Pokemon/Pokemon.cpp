@@ -49,6 +49,8 @@ public:
 
 	map<int, int> levelUpMoveSet;
 
+	bool isPokemonDead = false;
+
 
 	Pokemon(){
 		pokemonName = "";
@@ -103,6 +105,7 @@ public:
 		}
 		else {
 			currentHealth = 0;
+			isPokemonDead = true;
 			return true;
 		}
 	}
