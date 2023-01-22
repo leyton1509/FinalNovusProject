@@ -52,11 +52,14 @@ public:
 			int numberOfMoves = otherPokemon.numberOfMoves - 1;
 			for (int i = 0; i <= numberOfMoves; i++)
 			{
-				int dam = calcDamageOfMove(otherPokemon, playersPokemon, otherPokemon.pokemonsMoves[i]);
-				if (dam > highestDamage) {
-					highestDamage = dam;
-					moveToReturn = otherPokemon.pokemonsMoves[i];
+				if (otherPokemon.pokemonsMoves[i].typeOfMove != MoveCategory::Status) {
+					int dam = calcDamageOfMove(otherPokemon, playersPokemon, otherPokemon.pokemonsMoves[i]);
+					if (dam > highestDamage) {
+						highestDamage = dam;
+						moveToReturn = otherPokemon.pokemonsMoves[i];
+					}
 				}
+				
 			}
 			return moveToReturn;
 		}
