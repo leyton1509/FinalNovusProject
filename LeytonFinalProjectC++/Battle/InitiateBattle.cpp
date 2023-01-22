@@ -1,6 +1,7 @@
 #include "../Sprites/PlayerCharacter.h"
 #include "../Pokemon/PokemonManager.h"
 #include "../Sprites/Button.h"
+#include "../Sprites/PokemonStatBox.h"
 
 class InitiateBattle {
 
@@ -24,8 +25,8 @@ public:
 		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
-		ALLEGRO_BITMAP* otherPokemonStatBoxSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		ALLEGRO_BITMAP* trainsersPokemonStatBoxSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
