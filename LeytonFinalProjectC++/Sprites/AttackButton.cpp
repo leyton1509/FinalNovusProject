@@ -26,6 +26,7 @@ public:
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 5), 0, (pokemonMove.moveName).c_str());
 		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 25), 0, ("PP: " + std::to_string(pokemonMove.currentPowerPoints) + "/" + std::to_string(pokemonMove.powerpoints)).c_str());
+		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 45), 0, ("POW: " + std::to_string(pokemonMove.power) + " ACC: " + std::to_string(pokemonMove.accuracy)).c_str());
 
 	}
 
