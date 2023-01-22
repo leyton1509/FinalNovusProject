@@ -31,8 +31,9 @@ public:
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		al_draw_text(font, al_map_rgb(255, 255, 255), (x + 15), (y + 5), 0, (representedPokemon.pokemonName + "   Lvl. " + std::to_string(representedPokemon.level)).c_str());
-		al_draw_filled_rectangle((x + 15), (y + 35), (x + 300), (y + 45), al_map_rgba(0, 0, 0, 0.3));
-		al_draw_filled_rectangle((x + 15), (y + 35), (x + 300), (y + 45), al_map_rgba(255, 0, 0, 0.3));
+		float barPosition = (representedPokemon.currentHealth / representedPokemon.healthActual) * 285;
+		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + 285), (y + 45), al_map_rgba(0, 0, 0, 0.3));
+		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + barPosition), (y + 45), al_map_rgba(255, 0, 0, 0.3));
 
 	}
 
