@@ -24,6 +24,9 @@ public:
 		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
+		ALLEGRO_BITMAP* otherPokemonStatBoxSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		ALLEGRO_BITMAP* trainsersPokemonStatBoxSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
 		Pokemon playerPokemon = player.trainersParty[0];
