@@ -6,6 +6,7 @@ public:
 
 	int originalSizeX;
 	int originalSizeY;
+	bool isDisplayed = true;
 
 	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char * _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
@@ -18,13 +19,16 @@ public:
 	}
 
 	void drawSprite() {
-		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+		if (isDisplayed) {
+			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+		}
 	}
 
 	bool hasBeenClicked(double xMousePosition, double yMousePosition){
-		
-		if (xMousePosition > xPosition && xMousePosition < xPosition + spritewidth && yMousePosition > yPosition && yMousePosition <  yPosition + spriteHeight) {
-			return true;
+		if (isDisplayed) {
+			if (xMousePosition > xPosition && xMousePosition < xPosition + spritewidth && yMousePosition > yPosition && yMousePosition < yPosition + spriteHeight) {
+				return true;
+			}
 		}
 		return false;
 	}
