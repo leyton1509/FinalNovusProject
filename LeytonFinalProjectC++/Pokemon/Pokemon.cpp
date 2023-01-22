@@ -95,6 +95,18 @@ public:
 		currentHealth = healthActual;
 	}
 
+	// returns true if pokemon is dead
+	bool decreasePokemonHealth(int amountToDecreaseBy) {
+		if (currentHealth - amountToDecreaseBy > 0) {
+			currentHealth = currentHealth - amountToDecreaseBy;
+			return false;
+		}
+		else {
+			currentHealth = 0;
+			return true;
+		}
+	}
+
 	void updateMoveSet() {
 		int numberOfMoves = 0;
 		MoveManager mm = mm.instance();
