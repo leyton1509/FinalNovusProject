@@ -59,52 +59,7 @@ public:
 
 	}
 
-	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon, Move& playerMoveUsed) 
-	{
-
-		// First of all, check who goes first
-
-		if (playersPokemon.speedActual >= otherPokemon.speedActual) {
-			int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
-			otherPokemon.decreasePokemonHealth(damageOfMove);
-			if (otherPokemon.currentHealth != 0) {
-
-				if (otherPokemon.level > 15) {
-					Move enemyMove = getEnemyMoveUsed( playersPokemon, otherPokemon, 1);
-					int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
-					playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
-				}
-				else {
-					Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
-					int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
-					playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
-				}
-			}
-		}
-		else {
-			if(otherPokemon.level > 15) {
-				Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
-				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
-				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
-			}
-			else {
-				Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
-				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
-				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
-			}
-
-			if (playersPokemon.currentHealth != 0) {
-				int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
-				otherPokemon.decreasePokemonHealth(damageOfMove);
-			}
-		}
-	
-
-
-
-	}
-
-	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon) {
+	void enemyAttack(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		if (otherPokemon.level > 15) {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
 			int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
@@ -115,6 +70,32 @@ public:
 			int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
 			playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
 		}
+	}
+
+	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon, Move& playerMoveUsed) 
+	{
+		// First of all, check who goes first
+
+		if (playersPokemon.speedActual >= otherPokemon.speedActual) {
+			int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
+			otherPokemon.decreasePokemonHealth(damageOfMove);
+			if (otherPokemon.currentHealth != 0) {
+				enemyAttack(playersPokemon, otherPokemon);
+			}
+		}
+		else {
+			enemyAttack(playersPokemon, otherPokemon);
+
+			if (playersPokemon.currentHealth != 0) {
+				int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
+				otherPokemon.decreasePokemonHealth(damageOfMove);
+			}
+		}
+
+	}
+
+	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon) {
+		enemyAttack(playersPokemon, otherPokemon);
 	}
 
 };
