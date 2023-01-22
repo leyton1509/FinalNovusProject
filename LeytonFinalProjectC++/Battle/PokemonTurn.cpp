@@ -6,9 +6,6 @@ class PokemonTurn {
 public:
 
 	int calcDamageOfMove(Pokemon attackingPokemon, Pokemon DefendingPokemon, Move playerMoveUsed) {
-
-
-
 		int attack = 0;
 		int defence = 0;
 
@@ -24,36 +21,13 @@ public:
 		PokemonTypeChart ptc = PokemonTypeChart();
 		double effectivenessOfMove = ptc.returnEffectivenessOfMove(playerMoveUsed.pokemonTypeOfMove, DefendingPokemon.pokemonTypeOne, DefendingPokemon.pokemonTypeTwo);
 
-		cout << "Effec : " << ptc.returnEffectivenessOfMove(PokemonType::Steel, PokemonType::Fire, PokemonType::Flying) << " \n";
-		cout << "Test " << 0.5 * 1 << "\n";
 		int stab = 1;
 
 		if (attackingPokemon.pokemonTypeOne == playerMoveUsed.pokemonTypeOfMove || attackingPokemon.pokemonTypeTwo == playerMoveUsed.pokemonTypeOfMove) {
 			stab = 1.5;
 		}
 		//int ranModifier = ((rand()%85) + 100);
-		cout << attackingPokemon.pokemonName << " Move used : " << playerMoveUsed.moveName << " \n";
-		float damage = 2 * attackingPokemon.level;
-		cout << "Dam 1 : " << damage << " \n";
-		damage = damage / 5;
-		cout << "Dam 2 : " << damage << " \n";
-		damage = damage + 2;
-		cout << "Dam 3 : " << damage << " \n";
-		damage = damage * playerMoveUsed.power;
-		cout << "Dam 4 : " << damage << " \n";
-		damage = damage * attack;
-		cout << "Dam 5 : " << damage << " \n";
-		damage = damage / defence;
-		cout << "Dam 6 : " << damage << " \n";
-		damage = damage / 50;
-		cout << "Dam 7 : " << damage << " \n";
-		damage = damage + 2;
-		cout << "Dam 8 : " << damage << " \n";
-		damage = damage * stab;
-		cout << "Dam 9 : " << damage << " Effectiveness : "<<effectivenessOfMove << "\n";
-		damage = static_cast<float>(damage * effectivenessOfMove);
-		cout << "Dam 10 : " << damage << " \n";
-		//cout << "\nPokemon Attacking : |"<< attackingPokemon.pokemonName << " Damage:" << damage << " Effectiveness:" << effectivenessOfMove << "\n";
+		float damage = ((((((static_cast<float>(2) * attackingPokemon.level) / 5) + 2) * playerMoveUsed.power * attack / defence) / 50) + 2) * stab * effectivenessOfMove;
 		return damage;
 	}
 
