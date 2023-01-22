@@ -155,6 +155,7 @@ public:
 	void setPokemonsLevel(int newLevel) {
 		level = newLevel;
 		calculateActualStatistics();
+		currentHealth = healthActual;
 		updateMoveSet();
 	}
 	
