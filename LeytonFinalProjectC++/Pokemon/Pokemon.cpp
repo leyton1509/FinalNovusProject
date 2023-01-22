@@ -97,6 +97,11 @@ public:
 		currentHealth = healthActual;
 	}
 
+	void healPokemonToFull() {
+		currentHealth = healthActual;
+		isPokemonDead = false;
+	}
+
 	// returns true if pokemon is dead
 	bool decreasePokemonHealth(int amountToDecreaseBy) {
 		if (currentHealth - amountToDecreaseBy > 0) {
