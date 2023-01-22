@@ -21,13 +21,6 @@ public:
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 	}
 
-	bool hasBeenClicked(double xMousePosition, double yMousePosition) {
-
-		if (xMousePosition > xPosition && xMousePosition < xPosition + spritewidth && yMousePosition > yPosition && yMousePosition < yPosition + spriteHeight) {
-			return true;
-		}
-		return false;
-	}
 
 
 
