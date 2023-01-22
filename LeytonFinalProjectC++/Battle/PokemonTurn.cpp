@@ -31,7 +31,7 @@ public:
 		}
 
 		int damage = (((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove * stab;
-
+		return damage;
 	}
 
 	Move getEnemyMoveUsed(Pokemon playersPokemon, Pokemon otherPokemon, int aiLevel) {
