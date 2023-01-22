@@ -24,10 +24,14 @@ public:
 
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
-		drawRectangleForColourOfMove();
-		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 5), 0, (pokemonMove.moveName).c_str());
-		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 25), 0, ("PP: " + std::to_string(pokemonMove.currentPowerPoints) + "/" + std::to_string(pokemonMove.powerpoints)).c_str());
-		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 45), 0, ("POW: " + std::to_string(pokemonMove.power) + " ACC: " + std::to_string(pokemonMove.accuracy)).c_str());
+		// Can use powerpoints as check as its never altered from the default, currentPP is edited so this is fine
+		if (pokemonMove.powerpoints != 0) {
+			drawRectangleForColourOfMove();
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 5), 0, (pokemonMove.moveName).c_str());
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 25), 0, ("PP: " + std::to_string(pokemonMove.currentPowerPoints) + "/" + std::to_string(pokemonMove.powerpoints)).c_str());
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (xPosition + 5), (yPosition + 45), 0, ("POW: " + std::to_string(pokemonMove.power) + " ACC: " + std::to_string(pokemonMove.accuracy)).c_str());
+		}
+		
 
 	}
 
