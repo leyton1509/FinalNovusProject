@@ -13,8 +13,6 @@ public:
 		bool redraw = true;
 		ALLEGRO_EVENT event;
 
-		
-
 		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
 
 		ALLEGRO_TRANSFORM trans;
@@ -32,7 +30,7 @@ public:
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
-		Button backBox = Button(256, 128, 5, 435, 445, 170, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
+		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 
 		Button attackButton1 = Button(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		Button attackButton2 = Button(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
