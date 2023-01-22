@@ -76,6 +76,9 @@ public:
 				case PokemonType::Fairy:
 					effectiveness = effectiveness * 1;
 					break;
+				case PokemonType::None:
+					effectiveness = effectiveness * 1;
+					break;
 				default:
 					break;
 				}
@@ -136,6 +139,9 @@ public:
 				effectiveness = effectiveness * 2;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
@@ -199,6 +205,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 1;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -258,6 +267,9 @@ public:
 				effectiveness = effectiveness * 0.5;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
@@ -321,6 +333,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 1;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -380,6 +395,9 @@ public:
 				effectiveness = effectiveness * 0.5;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
@@ -443,6 +461,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 0.5;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -504,6 +525,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 2;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -563,6 +587,9 @@ public:
 				effectiveness = effectiveness * 2;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
@@ -626,6 +653,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 1;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -685,6 +715,9 @@ public:
 				effectiveness = effectiveness * 0.5;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
@@ -748,6 +781,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 0.5;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -807,6 +843,9 @@ public:
 				effectiveness = effectiveness * 0.5;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
@@ -870,6 +909,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 1;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -930,6 +972,9 @@ public:
 				break;
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 0.5;
+				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
 				break;
 			default:
 				break;
@@ -992,6 +1037,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 0;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -1053,6 +1101,9 @@ public:
 			case PokemonType::Fairy:
 				effectiveness = effectiveness * 2;
 				break;
+			case PokemonType::None:
+				effectiveness = effectiveness * 1;
+				break;
 			default:
 				break;
 			}
@@ -1112,6 +1163,9 @@ public:
 				effectiveness = effectiveness * 0.5;
 				break;
 			case PokemonType::Fairy:
+				effectiveness = effectiveness * 1;
+				break;
+			case PokemonType::None:
 				effectiveness = effectiveness * 1;
 				break;
 			default:
