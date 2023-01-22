@@ -215,6 +215,7 @@ public:
 			
 		}
 		std::cout << " |\n";
+		std::cout << "| Current Moves : " << pokemonsMoves[0].moveName << " | " << pokemonsMoves[1].moveName << " | " << pokemonsMoves[2].moveName << " | " << pokemonsMoves[3].moveName << " |\n";
 		std::cout << "|---------------------------------------------------------------------------------;";
 
 	}
