@@ -1,5 +1,6 @@
 #include "../Pokemon/Pokemon.h"
 #include "../Pokemon/Moves/MoveCategory.h"
+#include "../Pokemon/PokemonTypeChart.h"
 class PokemonTurn {
 	
 public:
