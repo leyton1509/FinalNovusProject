@@ -13,8 +13,12 @@ public:
 			attack = playersPokemon.specialAttackActual;
 			defence = otherPokemon.specialDefenceActual;
 		}
+		else if (playerMoveUsed.typeOfMove == MoveCategory::Physical) {
+			attack = playersPokemon.physcialAttackActual;
+			defence = otherPokemon.physicalDefenceActual;
+		}
 
-		int damage = ((2 * playersPokemon.level) + 2) * playerMoveUsed.power * ()
+		int damage = ((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence);
 
 	}
 
