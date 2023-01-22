@@ -9,7 +9,7 @@ class InitiateBattle {
 
 public:
 
-	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter player, int locationNumber, int battleType) {
+	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int battleType) {
 
 		double xMousePosition = 0;
 		double yMousePosition = 0;
@@ -29,7 +29,7 @@ public:
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		PokemonManager pm = pm.instance();
-		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
+		Pokemon otherPokemon = pm.getDefaultPokemon("Palkia");
 		Pokemon playerPokemon = player.trainersParty[0];
 
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
@@ -70,7 +70,7 @@ public:
 					break;
 				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 					if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
-						if (attackButton1.pokemonMove.powerpoints!=0) {
+						if (attackButton1.pokemonMove.powerpoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton1.pokemonMove);
 						}
 					}
@@ -106,8 +106,8 @@ public:
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
 
-					otherPokemonStatBox.drawSprite();
-					trainersPokemonStatBox.drawSprite();
+					otherPokemonStatBox.drawSprite(otherPokemon);
+					trainersPokemonStatBox.drawSprite(playerPokemon);
 					backBox.drawSprite();
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
