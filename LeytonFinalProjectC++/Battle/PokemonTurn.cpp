@@ -105,7 +105,16 @@ public:
 	}
 
 	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon) {
-
+		if (otherPokemon.level > 15) {
+			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
+			int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
+			playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
+		}
+		else {
+			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
+			int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
+			playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
+		}
 	}
 
 };
