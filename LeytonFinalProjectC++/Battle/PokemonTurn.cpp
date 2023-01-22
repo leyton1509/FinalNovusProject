@@ -29,8 +29,8 @@ public:
 		if (playersPokemon.pokemonTypeOne == playerMoveUsed.pokemonTypeOfMove || playersPokemon.pokemonTypeTwo == playerMoveUsed.pokemonTypeOfMove) {
 			stab = 1.5;
 		}
-
-		int damage = (((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove * stab;
+		int ranModifier = ((rand()%85) + 100);
+		int damage = (((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove * stab * ranModifier;
 		return damage;
 	}
 
