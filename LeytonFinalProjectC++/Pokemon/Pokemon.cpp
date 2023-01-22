@@ -151,6 +151,12 @@ public:
 		nextExperienceNeeded = ((6 / 5) * pow(level, 3)) - (15 * pow(level, 2)) + (100 * level) - 140;
 	}
 
+	// This code should be used either for setting trainers or wild pokemon or testing
+	void setPokemonsLevel(int newLevel) {
+		level = newLevel;
+		calculateActualStatistics();
+		updateMoveSet();
+	}
 	
 
 	void gainExperience(int _experiencedGained) {
