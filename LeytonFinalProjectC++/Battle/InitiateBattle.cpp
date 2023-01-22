@@ -25,8 +25,8 @@ public:
 		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(128, 96, 40, 20, 128, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(128, 96, 560, 20, 128, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
@@ -77,6 +77,8 @@ public:
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.4, screenWidth * 0.25, screenWidth * 0.25, 0);
 
+					otherPokemonStatBox.drawSprite();
+					trainsersPokemonStatBox.drawSprite();
 					backBox.drawSprite();
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
