@@ -1,6 +1,7 @@
 #include "../Sprites/PlayerCharacter.h"
 #include "../Pokemon/PokemonManager.h"
 #include "../Sprites/Button.h"
+#include "../Sprites/AttackButton.h"
 #include "../Sprites/PokemonStatBox.h"
 
 class InitiateBattle {
@@ -32,10 +33,10 @@ public:
 
 		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 
-		Button attackButton1 = Button(128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
-		Button attackButton2 = Button(128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
-		Button attackButton3 = Button(128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
-		Button attackButton4 = Button(128, 64, 160, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton1 = AttackButton(playerPokemon.pokemonsMoves[0], 128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton2 = AttackButton(playerPokemon.pokemonsMoves[1],128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton3 = AttackButton(playerPokemon.pokemonsMoves[2],128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton4 = AttackButton(playerPokemon.pokemonsMoves[3],128, 64, 160, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
