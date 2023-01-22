@@ -16,6 +16,7 @@ public:
 	int power;
 	int accuracy;
 	int hasSpecialEffect;
+	int currentPowerPoints;
 
 	Move(int _moveID, std::string _moveName, PokemonType::PokemonTypes _pokemonTypeOfMove, MoveCategory::Categories _typeOfMove, int _powerpoints, int _power, int _accuracy, int _hasSpecialEffect) {
 		moveID = _moveID;
@@ -23,6 +24,7 @@ public:
 		pokemonTypeOfMove = _pokemonTypeOfMove;;
 		typeOfMove = _typeOfMove;
 		powerpoints = _powerpoints;
+		currentPowerPoints = _powerpoints;
 		power = _power;
 		accuracy = _accuracy;
 		hasSpecialEffect = _hasSpecialEffect;
@@ -37,6 +39,7 @@ public:
 		power = 0;
 		accuracy = 0;
 		hasSpecialEffect = 0;
+		currentPowerPoints = 0;
 	}
 
 	void printMove() {
