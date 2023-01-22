@@ -32,6 +32,10 @@ public:
 		Pokemon otherPokemon = pm.getDefaultPokemon("Charizard");
 		Pokemon playerPokemon = player.trainersParty[0];
 
+		otherPokemon.setPokemonsLevel(50);
+		playerPokemon.setPokemonsLevel(50);
+
+
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
