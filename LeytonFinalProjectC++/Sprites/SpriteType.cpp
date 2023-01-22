@@ -4,7 +4,7 @@ public:
 
 	enum SpriteTypes
 	{
-		Player, Pokemon, Building, Grass, Entrance, Button
+		Player, Pokemon, Building, Grass, Entrance, Button, PokemonStatBox
 	};
 
 };
