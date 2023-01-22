@@ -59,12 +59,6 @@ public:
 				{
 				case ALLEGRO_EVENT_TIMER:
 
-					//if (attackButton1.hasBeenClicked()) {
-
-					//}
-
-
-
 					// game logic goes here.
 					redraw = true;
 					break;
@@ -73,7 +67,20 @@ public:
 					xMousePosition = event.mouse.x;
 					yMousePosition = event.mouse.y;
 					break;
-				
+				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+					if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButton1.pokemonMove.printMove();
+					}
+					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButton2.pokemonMove.printMove();
+					}
+					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButton3.pokemonMove.printMove();
+					}
+					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButton4.pokemonMove.printMove();
+					}
+					break;
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
 					done = true;
 					battleFinished = true;
