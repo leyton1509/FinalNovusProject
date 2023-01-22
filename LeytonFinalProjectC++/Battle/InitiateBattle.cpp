@@ -29,8 +29,8 @@ public:
 		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
 		Pokemon playerPokemon = player.trainersParty[0];
 
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 70, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		Button backBox = Button(256, 128, 5, 435, 445, 170, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 
