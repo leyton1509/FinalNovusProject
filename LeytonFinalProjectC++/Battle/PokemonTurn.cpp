@@ -34,13 +34,29 @@ public:
 
 	}
 
+	Move getEnemyMoveUsed(Pokemon otherPokemon, int aiLevel) {
+
+	}
+
 	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon, Move& playerMoveUsed) 
 	{
 
 		// First of all, check who goes first
 
 		if (playersPokemon.speedActual >= otherPokemon.speedActual) {
+			int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
+			otherPokemon.decreasePokemonHealth(damageOfMove);
+			if (otherPokemon.currentHealth != 0) {
 
+				if (otherPokemon.level > 15) {
+					Move enemyMove = getEnemyMoveUsed(otherPokemon, 1);
+				}
+				else {
+					Move enemyMove = getEnemyMoveUsed(otherPokemon, 0);
+				}
+
+				
+			}
 
 
 		}
