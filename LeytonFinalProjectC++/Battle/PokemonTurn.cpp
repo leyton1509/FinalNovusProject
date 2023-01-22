@@ -34,7 +34,7 @@ public:
 
 	}
 
-	Move getEnemyMoveUsed(Pokemon otherPokemon, int aiLevel) {
+	Move getEnemyMoveUsed(Pokemon playersPokemon, Pokemon otherPokemon, int aiLevel) {
 
 		if (aiLevel == 0) {
 			int numberOfMoves = otherPokemon.numberOfMoves-1;
@@ -42,8 +42,20 @@ public:
 			return otherPokemon.pokemonsMoves[ran];
 		}
 		else if (aiLevel == 1) {
-
+			int highestDamage = 0;
+			Move moveToReturn;
+			int numberOfMoves = otherPokemon.numberOfMoves - 1;
+			for (int i = 0; i <= numberOfMoves; i++)
+			{
+				int dam = calcDamageOfMove(otherPokemon, playersPokemon, otherPokemon.pokemonsMoves[i]);
+				if (dam > highestDamage) {
+					highestDamage = dam;
+					moveToReturn = otherPokemon.pokemonsMoves[i];
+				}
+			}
+			return moveToReturn;
 		}
+		return otherPokemon.pokemonsMoves[0];
 
 	}
 
@@ -58,10 +70,10 @@ public:
 			if (otherPokemon.currentHealth != 0) {
 
 				if (otherPokemon.level > 15) {
-					Move enemyMove = getEnemyMoveUsed(otherPokemon, 1);
+					Move enemyMove = getEnemyMoveUsed( playersPokemon, otherPokemon, 1);
 				}
 				else {
-					Move enemyMove = getEnemyMoveUsed(otherPokemon, 0);
+					Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
 				}
 
 				
