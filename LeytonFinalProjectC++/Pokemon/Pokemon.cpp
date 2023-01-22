@@ -107,6 +107,15 @@ public:
 		}
 	}
 
+	void increasePokemonHealth(int amountToIncreaseBy) {
+		if (currentHealth + amountToIncreaseBy > healthActual) {
+			currentHealth = healthActual;
+		}
+		else {
+			currentHealth = currentHealth + amountToIncreaseBy;
+		}
+	}
+
 	void updateMoveSet() {
 		int numberOfMoves = 0;
 		MoveManager mm = mm.instance();
