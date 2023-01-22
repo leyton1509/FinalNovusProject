@@ -42,6 +42,10 @@ public:
 		currentPowerPoints = 0;
 	}
 
+	void resetPP() {
+		currentPowerPoints = powerpoints;
+	}
+
 	void printMove() {
 		std::cout << moveName << " " << pokemonTypeOfMove << " " << typeOfMove << " " << power << " " << accuracy << " \n";
 	}
