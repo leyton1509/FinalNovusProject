@@ -69,6 +69,10 @@ public:
 					redraw = true;
 					break;
 
+				case ALLEGRO_EVENT_MOUSE_AXES:
+					xMousePosition = event.mouse.x;
+					yMousePosition = event.mouse.y;
+					break;
 				
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
 					done = true;
