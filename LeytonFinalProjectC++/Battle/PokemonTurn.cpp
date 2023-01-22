@@ -79,14 +79,24 @@ public:
 					int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
 					playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
 				}
-
-				
 			}
-
-
 		}
 		else {
+			if(otherPokemon.level > 15) {
+				Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
+				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
+				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
+			}
+			else {
+				Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
+				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
+				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
+			}
 
+			if (playersPokemon.currentHealth != 0) {
+				int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
+				otherPokemon.decreasePokemonHealth(damageOfMove);
+			}
 		}
 	
 
