@@ -16,6 +16,8 @@ public:
 
 	string pokemonName;
 
+	int currentHealth;
+
 	int healthBase;
 	int physcialAttackBase;
 	int physicalDefenceBase;
@@ -66,6 +68,7 @@ public:
 		pokemonTypeOne = PokemonType::PokemonTypes::Normal;
 		pokemonTypeTwo = PokemonType::PokemonTypes::None;
 		Move pokemonsMoves[4] = {Move()};
+		currentHealth = healthActual;
 
 	}
 
@@ -89,6 +92,7 @@ public:
 		pokemonTypeTwo = _pokemonTypeTwo;
 		levelUpMoveSet = _levelUpMoveSet;
 		updateMoveSet();
+		currentHealth = healthActual;
 	}
 
 	void updateMoveSet() {
