@@ -3,6 +3,7 @@
 #include "../Sprites/Button.h"
 #include "../Sprites/AttackButton.h"
 #include "../Sprites/PokemonStatBox.h"
+#include "../Battle/PokemonTurn.h"
 
 class InitiateBattle {
 
@@ -69,16 +70,24 @@ public:
 					break;
 				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 					if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButton1.pokemonMove.printMove();
+						if (attackButton1.pokemonMove.powerpoints!=0) {
+							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton1.pokemonMove);
+						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButton2.pokemonMove.printMove();
+						if (attackButton2.pokemonMove.powerpoints != 0) {
+							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton2.pokemonMove);
+						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButton3.pokemonMove.printMove();
+						if (attackButton3.pokemonMove.powerpoints != 0) {
+							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton3.pokemonMove);
+						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButton4.pokemonMove.printMove();
+						if (attackButton4.pokemonMove.powerpoints != 0) {
+							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton4.pokemonMove);
+						}
 					}
 					break;
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
