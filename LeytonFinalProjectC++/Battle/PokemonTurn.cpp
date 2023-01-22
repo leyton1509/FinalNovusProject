@@ -7,6 +7,8 @@ public:
 
 	int calcDamageOfMove(Pokemon playersPokemon, Pokemon otherPokemon, Move playerMoveUsed) {
 
+
+
 		int attack = 0;
 		int defence = 0;
 
@@ -19,7 +21,10 @@ public:
 			defence = otherPokemon.physicalDefenceActual;
 		}
 
-		int damage = ((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence);
+		PokemonTypeChart ptc = PokemonTypeChart();
+		int effectivenessOfMove = ptc.returnEffectivenessOfMove(playerMoveUsed.pokemonTypeOfMove, otherPokemon.pokemonTypeOne, otherPokemon.pokemonTypeTwo);
+
+		int damage = (((2 * playersPokemon.level) + 2) * playerMoveUsed.power * (attack / defence) / 50) * effectivenessOfMove;
 
 	}
 
