@@ -30,7 +30,7 @@ public:
 		Pokemon playerPokemon = player.trainersParty[0];
 
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 70, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 510, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 510, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		Button backBox = Button(256, 128, 5, 435, 445, 170, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 
@@ -78,7 +78,7 @@ public:
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.4, screenWidth * 0.25, screenWidth * 0.25, 0);
 
 					otherPokemonStatBox.drawSprite();
-					trainsersPokemonStatBox.drawSprite();
+					trainersPokemonStatBox.drawSprite();
 					backBox.drawSprite();
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
