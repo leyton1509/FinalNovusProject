@@ -42,6 +42,10 @@ public:
 		currentPowerPoints = 0;
 	}
 
+	void useMove() {
+		currentPowerPoints--;
+	}
+
 	void resetPP() {
 		currentPowerPoints = powerpoints;
 	}
