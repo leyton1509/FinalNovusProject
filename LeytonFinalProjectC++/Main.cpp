@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 
@@ -134,6 +135,10 @@ int main()
     ALLEGRO_FONT* font = al_create_builtin_font();
     must_init(font, "font");
 
+    must_init(al_init_font_addon(), "fonts");
+
+    must_init(al_init_ttf_addon(), "ttfs");
+
     must_init(al_init_image_addon(), "image addon");
 
     al_register_event_source(queue, al_get_mouse_event_source());
@@ -223,7 +228,7 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
-    player.addPokemon(pm.getDefaultPokemon("Rayquaza"));
+    player.addPokemon(pm.getDefaultPokemon("Bagon"));
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(0, 0);
