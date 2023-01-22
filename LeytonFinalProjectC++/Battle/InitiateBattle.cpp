@@ -15,7 +15,7 @@ public:
 
 		
 
-		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Graveyard.jpg");
+		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
 
 		ALLEGRO_TRANSFORM trans;
 		al_identity_transform(&trans);
@@ -25,8 +25,8 @@ public:
 		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(128, 96, 40, 20, 128, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(128, 96, 560, 20, 128, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
