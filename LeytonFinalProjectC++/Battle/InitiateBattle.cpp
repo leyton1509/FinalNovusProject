@@ -10,6 +10,9 @@ public:
 
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter player, int locationNumber, int battleType) {
 
+		double xMousePosition = 0;
+		double yMousePosition = 0;
+
 		bool done = false;
 		bool redraw = true;
 		ALLEGRO_EVENT event;
@@ -55,6 +58,13 @@ public:
 				switch (event.type)
 				{
 				case ALLEGRO_EVENT_TIMER:
+
+					//if (attackButton1.hasBeenClicked()) {
+
+					//}
+
+
+
 					// game logic goes here.
 					redraw = true;
 					break;
