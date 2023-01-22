@@ -7,6 +7,10 @@ public:
 
 	}
 
+	PokemonTurn(Pokemon playersPokemon, Pokemon otherPokemon) {
+
+	}
+
 };
 
 	
