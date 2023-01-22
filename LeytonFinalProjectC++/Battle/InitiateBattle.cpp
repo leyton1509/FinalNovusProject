@@ -101,8 +101,8 @@ public:
 
 		}
 
-		al_destroy_bitmap(otherPokemonStatBox.spriteImage);
-		al_destroy_bitmap(trainersPokemonStatBox.spriteImage);
+		otherPokemonStatBox.destroySprites();
+		trainersPokemonStatBox.destroySprites();
 		al_destroy_bitmap(background);
 		al_destroy_bitmap(otherPokemonSprite);
 		al_destroy_bitmap(trainsersPokemonSprite);
