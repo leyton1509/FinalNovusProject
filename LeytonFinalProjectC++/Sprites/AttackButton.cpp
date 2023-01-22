@@ -1,10 +1,12 @@
 #include "../Sprites/Button.h"
 #include "../Pokemon/Moves/Move.h"
+#include <allegro5/allegro_font.h>
 
 class AttackButton : public Button {
 
 public:
 
+	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 	int originalSizeX;
 	int originalSizeY;
 	Move pokemonMove;
