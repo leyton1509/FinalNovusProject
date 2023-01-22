@@ -44,6 +44,7 @@ public:
 	PokemonType::PokemonTypes pokemonTypeTwo;
 
 	int numberOfLastStoredMove = 0;
+	int numberOfMoves = 0;
 
 	Move pokemonsMoves[4];
 
@@ -125,7 +126,6 @@ public:
 	}
 
 	void updateMoveSet() {
-		int numberOfMoves = 0;
 		MoveManager mm = mm.instance();
 		for (const pair<int, int>& p : levelUpMoveSet) {
 
@@ -134,6 +134,9 @@ public:
 					if (numberOfLastStoredMove < 4) {
 						pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
 						numberOfLastStoredMove++;
+						if (numberOfMoves < 4) {
+							numberOfMoves++;
+						}
 					}
 					else {
 						numberOfLastStoredMove = 0;
