@@ -6,7 +6,6 @@ class PokemonStatBox : public Sprite {
 
 public:
 
-	Pokemon representedPokemon;
 	int originalSizeX;
 	int originalSizeY;
 	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 28, NULL);
@@ -14,10 +13,9 @@ public:
 	float x;
 	float y;
 
-	PokemonStatBox(Pokemon _pokemonToRepresent, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
+	PokemonStatBox(Pokemon& _pokemonToRepresent, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
-		representedPokemon = _pokemonToRepresent;
 		x = _xStart;
 		y = _yStart;
 	}
@@ -25,15 +23,14 @@ public:
 	PokemonStatBox() : Sprite(SpriteType::SpriteTypes::PokemonStatBox, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png") {
 		originalSizeX = 0;
 		originalSizeY = 0;
-		representedPokemon = Pokemon();
 		x, y = 0;
 	}
 
-	void drawSprite() {
+	void drawSprite(Pokemon& representedPokemon) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		al_draw_text(font, al_map_rgb(255, 255, 255), (x + 15), (y + 5), 0, (representedPokemon.pokemonName + "   Lvl. " + std::to_string(representedPokemon.level)).c_str());
 		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + 285), (y + 45), al_map_rgba(0, 0, 0, 0.3));
-		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + (representedPokemon.currentHealth / representedPokemon.healthActual) * 285), (y + 45), al_map_rgba(255, 0, 0, 0.3));
+		al_draw_filled_rectangle((x + 15), (y + 35), (x + 15 + (static_cast<float>(representedPokemon.currentHealth) / static_cast<float>(representedPokemon.healthActual) * static_cast<float>(285))), (y + 45), al_map_rgba(255, 0, 0, 0.3));
 		al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (x + 15), (y + 50), 0, ("HP: " + std::to_string(representedPokemon.currentHealth) + "/" + std::to_string(representedPokemon.healthActual)).c_str());
 
 	}
