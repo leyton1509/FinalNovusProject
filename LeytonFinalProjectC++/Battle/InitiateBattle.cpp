@@ -29,7 +29,7 @@ public:
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		PokemonManager pm = pm.instance();
-		Pokemon otherPokemon = pm.getDefaultPokemon("Palkia");
+		Pokemon otherPokemon = pm.getDefaultPokemon("Charizard");
 		Pokemon playerPokemon = player.trainersParty[0];
 
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
