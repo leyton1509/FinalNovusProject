@@ -36,6 +36,15 @@ public:
 
 	Move getEnemyMoveUsed(Pokemon otherPokemon, int aiLevel) {
 
+		if (aiLevel == 0) {
+			int numberOfMoves = otherPokemon.numberOfMoves-1;
+			int ran = ((rand()) + numberOfMoves-1);
+			return otherPokemon.pokemonsMoves[ran];
+		}
+		else if (aiLevel == 1) {
+
+		}
+
 	}
 
 	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon, Move& playerMoveUsed) 
