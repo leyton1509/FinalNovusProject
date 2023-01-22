@@ -98,6 +98,17 @@ public:
 		al_destroy_bitmap(background);
 		al_destroy_bitmap(otherPokemonSprite);
 		al_destroy_bitmap(trainsersPokemonSprite);
+		al_destroy_bitmap(backBox.spriteImage);
+		al_destroy_bitmap(attackButton1.spriteImage);
+		al_destroy_bitmap(attackButton2.spriteImage);
+		al_destroy_bitmap(attackButton3.spriteImage);
+		al_destroy_bitmap(attackButton4.spriteImage);
+		al_destroy_bitmap(runPokemonButton.spriteImage);
+		al_destroy_bitmap(healPokemonButton.spriteImage);
+		al_destroy_bitmap(catchPokemonButton.spriteImage);
+		al_destroy_bitmap(switchPokemonButton.spriteImage);
+
+
 	}
 
 };
