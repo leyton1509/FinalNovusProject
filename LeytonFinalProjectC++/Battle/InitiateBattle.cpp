@@ -25,12 +25,12 @@ public:
 		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Dialga");
 		Pokemon playerPokemon = player.trainersParty[0];
+
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 70, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainsersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 510, 20, 320, 96, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		Button backBox = Button(256, 128, 5, 435, 445, 170, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 
