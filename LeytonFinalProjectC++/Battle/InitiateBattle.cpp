@@ -30,21 +30,22 @@ public:
 
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
-		Pokemon playerPokemon = player.trainersParty[0];
+
+		int currentPokemon = 0;
 
 		otherPokemon.setPokemonsLevel(50);
-		playerPokemon.setPokemonsLevel(50);
+		//playerPokemon.setPokemonsLevel(50);
 
 
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(playerPokemon, 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
 		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 
-		AttackButton attackButton1 = AttackButton(playerPokemon.pokemonsMoves[0], 128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
-		AttackButton attackButton2 = AttackButton(playerPokemon.pokemonsMoves[1],128, 64, 160, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
-		AttackButton attackButton3 = AttackButton(playerPokemon.pokemonsMoves[2],128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
-		AttackButton attackButton4 = AttackButton(playerPokemon.pokemonsMoves[3],128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1],128, 64, 160, 450, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2],128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
+		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3],128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
@@ -64,7 +65,7 @@ public:
 				{
 				case ALLEGRO_EVENT_TIMER:
 
-					// game logic goes here.
+					
 					redraw = true;
 					break;
 
@@ -75,24 +76,46 @@ public:
 				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 					if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (attackButton1.pokemonMove.powerpoints != 0) {
-							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton1.pokemonMove);
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
+
+							if (otherPokemon.currentHealth <= 0) {
+								int expGained = otherPokemon.experienceUponKill();
+								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
 						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (attackButton2.pokemonMove.powerpoints != 0) {
-							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton2.pokemonMove);
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton2.pokemonMove);
+							if (otherPokemon.currentHealth <= 0) {
+								int expGained = otherPokemon.experienceUponKill();
+								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
 						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (attackButton3.pokemonMove.powerpoints != 0) {
-							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton3.pokemonMove);
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton3.pokemonMove);
+							if (otherPokemon.currentHealth <= 0) {
+								int expGained = otherPokemon.experienceUponKill();
+								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
 						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (attackButton4.pokemonMove.powerpoints != 0) {
-							PokemonTurn doTurn = PokemonTurn(playerPokemon, otherPokemon, attackButton4.pokemonMove);
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton4.pokemonMove);
+							if (otherPokemon.currentHealth <= 0) {
+								int expGained = otherPokemon.experienceUponKill();
+								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
 						}
 					}
+					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
 					break;
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
 					done = true;
@@ -108,10 +131,10 @@ public:
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * playerPokemon.xPositionOnSpriteSheet), (80 * playerPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
 
 					otherPokemonStatBox.drawSprite(otherPokemon);
-					trainersPokemonStatBox.drawSprite(playerPokemon);
+					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
 					backBox.drawSprite();
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
