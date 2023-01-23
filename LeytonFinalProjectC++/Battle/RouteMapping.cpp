@@ -7,6 +7,10 @@ public:
 
 	}
 
+	Pokemon getTeanmOfPokemonFromRoute(int routeNumber) {
+
+	}
+
 };
 
 	
