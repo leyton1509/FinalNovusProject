@@ -83,6 +83,9 @@ public:
 								player.trainersParty[currentPokemon].gainExperience(expGained);
 								battleFinished = true;
 							}
+							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+								battleFinished = true;
+							}
 						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -91,6 +94,9 @@ public:
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
 								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
+							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 								battleFinished = true;
 							}
 						}
@@ -103,6 +109,9 @@ public:
 								player.trainersParty[currentPokemon].gainExperience(expGained);
 								battleFinished = true;
 							}
+							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+								battleFinished = true;
+							}
 						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -111,6 +120,9 @@ public:
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
 								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
+							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 								battleFinished = true;
 							}
 						}
