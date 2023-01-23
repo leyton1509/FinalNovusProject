@@ -67,6 +67,21 @@ class PlayerCharacter : public Sprite{
 		}
 	}
 
+	// method for checking if all pokemon in the party are dead
+	// returns true if all dead
+	bool isAllPokemonInPartyDead() {
+		if (numberOfPokemonInParty - 1 < 0){
+			return true;
+		}
+		for (int i = 0; i < numberOfPokemonInParty-1; i++)
+		{
+			if (trainersParty[i].currentHealth > 0) {
+				return false;;
+			}
+		}
+		return true;
+	}
+
 	// Sets all the positions for the player
 	void setAllPositions(int x, int y) {
 		xTilePosition = x;
