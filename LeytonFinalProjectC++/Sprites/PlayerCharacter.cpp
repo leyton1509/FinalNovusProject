@@ -177,6 +177,7 @@ class PlayerCharacter : public Sprite{
 
 	}
 
+	// Updates the tile based on the players moving direction
 	void updateTile() {
 		if (currentFrame == 0) {
 			if (directionX == 1) {
