@@ -121,6 +121,12 @@ public:
 							player.trainersParty[currentPokemon].pokemonsMoves[0].useMove();
 							attackButton1.pokemonMove.useMove();
 						}
+						else {
+							textForTextBox[0] = attackButton1.pokemonMove.moveName + " is out of PP!";
+							textForTextBox[1] = "";
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
+						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (player.trainersParty[currentPokemon].pokemonsMoves[1].currentPowerPoints != 0) {
@@ -140,6 +146,12 @@ public:
 
 							player.trainersParty[currentPokemon].pokemonsMoves[1].useMove();
 							attackButton2.pokemonMove.useMove();
+						}
+						else {
+							textForTextBox[0] = attackButton2.pokemonMove.moveName + " is out of PP!";
+							textForTextBox[1] = "";
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
 						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -161,6 +173,12 @@ public:
 							player.trainersParty[currentPokemon].pokemonsMoves[2].useMove();
 							attackButton3.pokemonMove.useMove();
 						}
+						else {
+							textForTextBox[0] = attackButton3.pokemonMove.moveName + " is out of PP!";
+							textForTextBox[1] = "";
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
+						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (player.trainersParty[currentPokemon].pokemonsMoves[3].currentPowerPoints != 0) {
@@ -180,6 +198,12 @@ public:
 
 							player.trainersParty[currentPokemon].pokemonsMoves[3].useMove();
 							attackButton4.pokemonMove.useMove();
+						}
+						else {
+							textForTextBox[0] = attackButton4.pokemonMove.moveName + " is out of PP!";
+							textForTextBox[1] = "";
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
 						}
 					}
 
