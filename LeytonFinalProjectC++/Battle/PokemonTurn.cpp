@@ -76,6 +76,14 @@ public:
 	void enemyAttack(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		if (otherPokemon.level > 15) {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
+
+			if (strcmp(textForTextBox[1].c_str(), "")) {
+				textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
+			}
+			else {
+				textForTextBox[1] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
+			}
+
 			if (enemyMove.typeOfMove == MoveCategory::Status) {
 				statusMove(otherPokemon, playersPokemon, enemyMove);
 			}
@@ -87,6 +95,14 @@ public:
 		}
 		else {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
+
+			if (strcmp(textForTextBox[1].c_str(), "")) {
+				textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
+			}
+			else {
+				textForTextBox[1] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
+			}
+
 			if (enemyMove.typeOfMove == MoveCategory::Status) {
 				statusMove(otherPokemon, playersPokemon, enemyMove);
 			}
@@ -109,6 +125,7 @@ public:
 		otherPokemon.printMonsterDetails();
 
 		if (playersPokemon.speedActual >= otherPokemon.speedActual) {
+			textForTextBox[0] = playersPokemon.pokemonName + " used " + playerMoveUsed.moveName + "!";
 			if (playerMoveUsed.typeOfMove == MoveCategory::Status) {
 				statusMove(otherPokemon, playersPokemon, playerMoveUsed);
 			}
@@ -120,11 +137,15 @@ public:
 			if (otherPokemon.currentHealth != 0) {
 				enemyAttack(playersPokemon, otherPokemon);
 			}
+			else {
+				textForTextBox[1] = otherPokemon.pokemonName + " fainted!";
+			}
 		}
 		else {
 			enemyAttack(playersPokemon, otherPokemon);
 
 			if (playersPokemon.currentHealth != 0) {
+				textForTextBox[1] = playersPokemon.pokemonName + " used " + playerMoveUsed.moveName + "!";
 				if (playerMoveUsed.typeOfMove == MoveCategory::Status) {
 					statusMove(otherPokemon, playersPokemon, playerMoveUsed);
 				}
@@ -132,6 +153,9 @@ public:
 					int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
 					otherPokemon.decreasePokemonHealth(damageOfMove);
 				}
+			}
+			else {
+				textForTextBox[1] = playersPokemon.pokemonName + " fainted!";
 			}
 		}
 
