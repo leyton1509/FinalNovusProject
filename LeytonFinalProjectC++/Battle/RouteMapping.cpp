@@ -28,11 +28,28 @@ public:
 
 	}
 
-	Pokemon *  getTeamOfPokemonFromRoute(int routeNumber) {
+	Pokemon *  getTeamOfPokemonFromRoute(int routeNumber, int numberInTeam) {
+
+		const int numberOfTeam = random(1, 6);
+		Pokemon team[6];
+
+		for (int i = 0; i < numberOfTeam; i++)
+		{
+			team[i] = getSinglePokemonFromRoute(1);
+		}
+		return team;
 
 	}
 
 	Pokemon *  getTeamOfPokemonForTrainer(string trainerName) {
+		Pokemon team[6];
+		if (strcmp(trainerName.c_str(), "Test") == 0) {
+			string availablePokemon[5] = { "Bulbasaur", "Charmander", "Squirtle" };
+			team[0] = getPokemon(availablePokemon[0], 8);
+			team[0] = getPokemon(availablePokemon[1], 9);
+			team[0] = getPokemon(availablePokemon[2], 10);
+		}
+		return team;
 
 	}
 
