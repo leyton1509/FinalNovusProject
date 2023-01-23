@@ -117,6 +117,9 @@ public:
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = doTurn.textForTextBox[2];
 							textForTextBox[3] = doTurn.textForTextBox[3];
+
+							player.trainersParty[currentPokemon].pokemonsMoves[0].useMove();
+							attackButton1.pokemonMove.useMove();
 						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -134,6 +137,9 @@ public:
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = doTurn.textForTextBox[2];
 							textForTextBox[3] = doTurn.textForTextBox[3];
+
+							player.trainersParty[currentPokemon].pokemonsMoves[1].useMove();
+							attackButton2.pokemonMove.useMove();
 						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -151,6 +157,9 @@ public:
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = doTurn.textForTextBox[2];
 							textForTextBox[3] = doTurn.textForTextBox[3];
+
+							player.trainersParty[currentPokemon].pokemonsMoves[2].useMove();
+							attackButton3.pokemonMove.useMove();
 						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -168,6 +177,9 @@ public:
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = doTurn.textForTextBox[2];
 							textForTextBox[3] = doTurn.textForTextBox[3];
+
+							player.trainersParty[currentPokemon].pokemonsMoves[3].useMove();
+							attackButton4.pokemonMove.useMove();
 						}
 					}
 
