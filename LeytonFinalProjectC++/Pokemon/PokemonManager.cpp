@@ -42,7 +42,7 @@ private:
             int xTilePosition = std::stoi(pokemonList.at(i)[11]);
             int yTilePosition = std::stoi(pokemonList.at(i)[12]);
             int evolutionLevel = std::stoi(pokemonList.at(i)[13]);
-            string evolutionLevel = pokemonList.at(i)[14];
+            string evolutionName = pokemonList.at(i)[14];
             // cout << pokemonName << " "  << healthStat << " "  << attackStat << " " << defenceStat <<  " "  << specialAttackStat << " " << specialDefenceStat << " " << speedStat << " " << xTilePosition << " " << yTilePosition << " \n";
 
             map<int, int >levelUpMoveSet = {};
