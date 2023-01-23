@@ -228,7 +228,7 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
-    player.addPokemon(pm.getDefaultPokemon("Totodile"));
+    player.addPokemon(pm.getDefaultPokemon("Ho-oh"));
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(0, 0);

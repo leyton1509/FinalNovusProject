@@ -69,6 +69,9 @@
     <ClCompile Include="Battle\PokemonTurn.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Battle\RouteMapping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -123,6 +126,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Battle\PokemonTurn.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Battle\RouteMapping.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
