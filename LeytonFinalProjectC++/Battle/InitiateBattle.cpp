@@ -96,6 +96,11 @@ public:
 					yMousePosition = event.mouse.y;
 					break;
 				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+
+					if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						battleFinished = true;
+					}
+
 					if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (attackButton1.pokemonMove.powerpoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
