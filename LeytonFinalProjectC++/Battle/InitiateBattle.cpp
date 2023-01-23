@@ -4,6 +4,7 @@
 #include "../Sprites/AttackButton.h"
 #include "../Sprites/PokemonStatBox.h"
 #include "../Battle/PokemonTurn.h"
+#include "../Battle/RouteMapping.h"
 
 // Class when a pokemon battke is needed
 class InitiateBattle {
@@ -38,6 +39,9 @@ public:
 		// Get the pokemon to fight against
 		// Needs changing to a routing map
 		PokemonManager pm = pm.instance();
+
+		RouteMapping routeMapping = RouteMapping();
+
 		Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
 		// The number of the pokemon to use
