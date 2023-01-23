@@ -41,13 +41,14 @@ public:
 		PokemonManager pm = pm.instance();
 
 		RouteMapping routeMapping = RouteMapping();
+		Pokemon otherPokemon = routeMapping.getSinglePokemonFromRoute(1);
 
-		Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
+		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
 		// The number of the pokemon to use
 		int currentPokemon = 0;
 
-		otherPokemon.setPokemonsLevel(50);
+		//otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
 
 		// Gets all the gui info
