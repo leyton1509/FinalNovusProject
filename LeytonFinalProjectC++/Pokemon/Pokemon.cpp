@@ -75,11 +75,12 @@ public:
 		pokemonTypeTwo = PokemonType::PokemonTypes::None;
 		Move pokemonsMoves[4] = {Move()};
 		currentHealth = healthActual;
-
+		evolutionLevel = 0;
+		evolutionName = "";
 	}
 
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string nameOfEvolution)  {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string _evolutionName)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
@@ -99,6 +100,8 @@ public:
 		levelUpMoveSet = _levelUpMoveSet;
 		updateMoveSet();
 		currentHealth = healthActual;
+		evolutionLevel = _evolutionLevel;
+		evolutionName = _evolutionName;
 	}
 
 	void healPokemonToFull() {
