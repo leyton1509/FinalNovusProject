@@ -40,6 +40,7 @@ public:
 
 	}
 
+	// Returns a pointer to an array of a random pokemon team off that route
 	Pokemon *  getTeamOfPokemonFromRoute(int routeNumber, int numberInTeam) {
 
 		const int numberOfTeam = random(1, 6);
@@ -53,6 +54,7 @@ public:
 
 	}
 
+	// Gets a trainers team depending on the name, returns a pointer to team
 	Pokemon *  getTeamOfPokemonForTrainer(string trainerName) {
 		Pokemon team[6];
 		if (strcmp(trainerName.c_str(), "Test") == 0) {
@@ -60,6 +62,10 @@ public:
 			team[0] = getPokemon(availablePokemon[0], 8);
 			team[0] = getPokemon(availablePokemon[1], 9);
 			team[0] = getPokemon(availablePokemon[2], 10);
+
+		}else {
+			string availablePokemon[5] = { "Chimchar"};
+			team[0] = getPokemon(availablePokemon[0], 8);
 		}
 		return team;
 
