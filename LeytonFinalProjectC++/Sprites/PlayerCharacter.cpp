@@ -32,10 +32,13 @@ class PlayerCharacter : public Sprite{
 	int yTilePosition;
 	// An array of the tile of the last encounter stops the repeated encounter in a square
 	int locationfOfLastEnounter[2] = {0,0};
-
+	// Tracks the number of pokemon in the party
 	int numberOfPokemonInParty = 0;
+	// The pokemon in the party
 	Pokemon trainersParty[6];
+	// The number of pokemon in the box
 	int numberOfPokemonInBox = 0;
+	// The box of pokemon
 	Pokemon box[30];
 
 
