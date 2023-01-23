@@ -15,7 +15,7 @@ public:
 
 	}
 
-	Pokemon *  getTeanmOfPokemonFromRoute(int routeNumber) {
+	Pokemon *  getTeamOfPokemonFromRoute(int routeNumber) {
 
 	}
 
