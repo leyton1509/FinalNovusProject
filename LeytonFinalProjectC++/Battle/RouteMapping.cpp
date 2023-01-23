@@ -11,7 +11,17 @@ public:
 		return p;
 	}
 
+	int random(int from, int to) {
+		return rand() % (to - from + 1) + from;
+	}
+
 	Pokemon getSinglePokemonFromRoute(int routeNumber) {
+
+		if (routeNumber == 1) {
+			string availablePokemon[5] = {"Bulbasaur", "Pidgey", "Bidoof", "Charmander", "Squirtle"};
+			int levelRange[2] = { 3,7 };
+
+		}
 
 	}
 
