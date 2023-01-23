@@ -7,7 +7,11 @@ public:
 
 	}
 
-	Pokemon getTeanmOfPokemonFromRoute(int routeNumber) {
+	Pokemon *  getTeanmOfPokemonFromRoute(int routeNumber) {
+
+	}
+
+	Pokemon *  getTeamOfPokemonForTrainer(int routeNumber) {
 
 	}
 
