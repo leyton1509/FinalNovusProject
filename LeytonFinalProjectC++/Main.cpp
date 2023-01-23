@@ -229,6 +229,7 @@ int main()
 
     PlayerCharacter player = PlayerCharacter();
     player.addPokemon(pm.getDefaultPokemon("Ho-oh"));
+    player.trainersParty[0].setPokemonsLevel(30);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(0, 0);
