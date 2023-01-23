@@ -5,6 +5,8 @@ class PokemonTurn {
 	
 public:
 
+	string textForTextBox[4] = { "", "", "", "" };
+
 	int calcDamageOfMove(Pokemon attackingPokemon, Pokemon DefendingPokemon, Move playerMoveUsed) {
 		int attack = 0;
 		int defence = 0;
