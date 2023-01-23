@@ -31,6 +31,13 @@ public:
 			return getPokemon(pokemonName, level);
 		}
 
+		string availablePokemon[5] = { "Bulbasaur", "Pidgey", "Bidoof", "Charmander", "Squirtle" };
+		int levelRange[2] = { 3,7 };
+		int nameLoc = random(0, (sizeof(availablePokemon) / sizeof(availablePokemon[0]) - 1));
+		string pokemonName = availablePokemon[nameLoc];
+		int level = random(levelRange[0], levelRange[1]);
+		return getPokemon(pokemonName, level);
+
 	}
 
 	Pokemon *  getTeamOfPokemonFromRoute(int routeNumber, int numberInTeam) {
