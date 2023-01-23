@@ -1,9 +1,12 @@
 #include "../Pokemon/Pokemon.h"
 #include "../Pokemon/PokemonManager.h"
+
+// Class which handles getting the pokemon on routes/ for trainers
 class RouteMapping {
 
 public:
 
+	// Gets the pokemon from the manager and sets the level
 	Pokemon getPokemon(string pokemonName, int level) {
 		PokemonManager mm = mm.instance();
 		Pokemon p = mm.getDefaultPokemon(pokemonName);
@@ -11,10 +14,12 @@ public:
 		return p;
 	}
 
+	// Generates a random number
 	int random(int from, int to) {
 		return rand() % (to - from + 1) + from;
 	}
 
+	// Gets a single pokemon based on the route number
 	Pokemon getSinglePokemonFromRoute(int routeNumber) {
 
 		if (routeNumber == 1) {
