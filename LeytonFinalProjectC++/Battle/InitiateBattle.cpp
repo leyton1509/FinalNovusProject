@@ -5,38 +5,50 @@
 #include "../Sprites/PokemonStatBox.h"
 #include "../Battle/PokemonTurn.h"
 
+// Class when a pokemon battke is needed
 class InitiateBattle {
 
 public:
 
+	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int battleType) {
 
+		// Mouse positions
 		double xMousePosition = 0;
 		double yMousePosition = 0;
 
+		// GUI info
 		bool done = false;
 		bool redraw = true;
 		ALLEGRO_EVENT event;
 
+		// BG sprite
 		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
 
+		// Reset the camera
 		ALLEGRO_TRANSFORM trans;
 		al_identity_transform(&trans);
 		al_use_transform(&trans);
 		al_draw_bitmap(background, 0, 0, 0);
 
+		// Sprites for the pokemon
 		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
+		// Get the pokemon to fight against
+		// Needs changing to a routing map
 		PokemonManager pm = pm.instance();
 		Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
+		// The number of the pokemon to use
 		int currentPokemon = 0;
 
 		otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
 
-
+		// Gets all the gui info
+		// The hp bars
+		// The buttons on screen
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
 
