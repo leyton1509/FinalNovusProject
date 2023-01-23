@@ -19,7 +19,7 @@ public:
 
 	}
 
-	Pokemon *  getTeamOfPokemonForTrainer(int routeNumber) {
+	Pokemon *  getTeamOfPokemonForTrainer(string trainerName) {
 
 	}
 
