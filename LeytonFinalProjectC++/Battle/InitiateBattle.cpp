@@ -29,7 +29,7 @@ public:
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		PokemonManager pm = pm.instance();
-		Pokemon otherPokemon = pm.getDefaultPokemon("Charizard");
+		Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 		Pokemon playerPokemon = player.trainersParty[0];
 
 		otherPokemon.setPokemonsLevel(50);
