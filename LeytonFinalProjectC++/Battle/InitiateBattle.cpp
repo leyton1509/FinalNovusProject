@@ -108,6 +108,10 @@ public:
 							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 								battleFinished = true;
 							}
+							textForTextBox[0] = doTurn.textForTextBox[0];
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = doTurn.textForTextBox[2];
+							textForTextBox[3] = doTurn.textForTextBox[3];
 						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -121,6 +125,10 @@ public:
 							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 								battleFinished = true;
 							}
+							textForTextBox[0] = doTurn.textForTextBox[0];
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = doTurn.textForTextBox[2];
+							textForTextBox[3] = doTurn.textForTextBox[3];
 						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -134,6 +142,10 @@ public:
 							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 								battleFinished = true;
 							}
+							textForTextBox[0] = doTurn.textForTextBox[0];
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = doTurn.textForTextBox[2];
+							textForTextBox[3] = doTurn.textForTextBox[3];
 						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -147,8 +159,13 @@ public:
 							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 								battleFinished = true;
 							}
+							textForTextBox[0] = doTurn.textForTextBox[0];
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = doTurn.textForTextBox[2];
+							textForTextBox[3] = doTurn.textForTextBox[3];
 						}
 					}
+
 					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
 					break;
 				case ALLEGRO_EVENT_DISPLAY_CLOSE:
