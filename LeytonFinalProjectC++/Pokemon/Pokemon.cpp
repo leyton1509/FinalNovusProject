@@ -43,6 +43,9 @@ public:
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
 
+	int evolutionLevel;
+	string evolutionName;
+
 	int numberOfLastStoredMove = 0;
 	int numberOfMoves = 0;
 
@@ -76,7 +79,7 @@ public:
 	}
 
 
-	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet)  {
+	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string nameOfEvolution)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
 		physcialAttackBase = _physcialAttackBase;
