@@ -154,13 +154,14 @@ public:
 	}
 
 	void calculateNextLevelExperienceNeeded() {
-		nextExperienceNeeded = ((6 / 5) * pow(level, 3)) - (15 * pow(level, 2)) + (100 * level) - 140;
+		nextExperienceNeeded = pow(level, 3);
 	}
 
 	// This code should be used either for setting trainers or wild pokemon or testing
 	void setPokemonsLevel(int newLevel) {
 		level = newLevel;
 		calculateActualStatistics();
+		calculateNextLevelExperienceNeeded();
 		currentHealth = healthActual;
 		updateMoveSet();
 	}
