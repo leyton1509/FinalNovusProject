@@ -41,6 +41,8 @@ private:
             int speedStat = std::stoi(pokemonList.at(i)[9]);
             int xTilePosition = std::stoi(pokemonList.at(i)[11]);
             int yTilePosition = std::stoi(pokemonList.at(i)[12]);
+            int evolutionLevel = std::stoi(pokemonList.at(i)[13]);
+            string evolutionLevel = pokemonList.at(i)[14];
             // cout << pokemonName << " "  << healthStat << " "  << attackStat << " " << defenceStat <<  " "  << specialAttackStat << " " << specialDefenceStat << " " << speedStat << " " << xTilePosition << " " << yTilePosition << " \n";
 
             map<int, int >levelUpMoveSet = {};
@@ -84,7 +86,7 @@ private:
             */
             
 
-            defaultPokemonStorage.insert({ pokemonName, Pokemon(pokemonName, healthStat, attackStat, defenceStat, specialAttackStat, specialDefenceStat, speedStat, 1, xTilePosition,yTilePosition,typeOne, typeTwo, levelUpMoveSet) });
+            defaultPokemonStorage.insert({ pokemonName, Pokemon(pokemonName, healthStat, attackStat, defenceStat, specialAttackStat, specialDefenceStat, speedStat, 1, xTilePosition,yTilePosition,typeOne, typeTwo, levelUpMoveSet, evolutionLevel, evolutionName) });
         }
     }
 
@@ -117,7 +119,7 @@ public:
                 returnedPokemon.specialAttackBase, returnedPokemon.specialDefenceBase, 
                 returnedPokemon.speedBase,1, returnedPokemon.xPositionOnSpriteSheet, 
                 returnedPokemon.yPositionOnSpriteSheet, returnedPokemon.pokemonTypeOne, 
-                returnedPokemon.pokemonTypeTwo, returnedPokemon.levelUpMoveSet);
+                returnedPokemon.pokemonTypeTwo, returnedPokemon.levelUpMoveSet, returnedPokemon.evolutionLevel, returnedPokemon.evolutionName);
 
             return newPokemon;
         }
