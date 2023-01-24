@@ -107,16 +107,6 @@ private:
             // Increase loop count
             loopPokemon++;
 
-            /*
-            cout << "Beinning move set for : " << pokemonName << " \n";
-
-            for (const pair<int, int>& p : levelUpMoveSet) {
-                std::cout << p.first << " " << p.second << std::endl << "\n";
-           }
-
-           cout << "Finished move set for : " << pokemonName << " \n";
-            */
-            
             // Insert the pokemon into storage
             defaultPokemonStorage.insert({ pokemonName, Pokemon(pokemonName, healthStat, attackStat, defenceStat, specialAttackStat, specialDefenceStat, speedStat, 1, xTilePosition,yTilePosition,typeOne, typeTwo, levelUpMoveSet, evolutionLevel, evolutionName) });
         }
