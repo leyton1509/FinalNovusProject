@@ -1,9 +1,11 @@
 #include <string>
 
+// Contains information about the different pokemon types
 class PokemonType {
 
 	public:
 
+        // An enum for the different types
 		enum PokemonTypes
 		{
 			Normal,
@@ -27,6 +29,7 @@ class PokemonType {
 			None
 		};
 
+        // Converts the enum to string
         std::string getStringFromEnumType(PokemonType::PokemonTypes type) {
             switch (type)
             {
@@ -73,6 +76,7 @@ class PokemonType {
             }
         }
 
+        // Converts the string to enum
         PokemonType::PokemonTypes getEnumFromStringMove(std::string typeString) {
             if (typeString.compare("Normal") == 0) {
                 return PokemonType::PokemonTypes::Normal;
