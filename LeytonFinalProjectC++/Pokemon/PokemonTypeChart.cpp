@@ -1,10 +1,16 @@
 #include "../Pokemon/PokemonType.h"
 
-
+// Class to handle the effectiveness of moves on different types
 class PokemonTypeChart {
 
 public:
 
+	// Returns the effectiveness of a move depending on both of the types of a pokemon
+	// * 4 if its really weak to the move
+	// * 2 if its weak to the move
+	// * 1 if its not weak or strong
+	// * 0.5 if its resistent to the move
+	// * 0.25 if its really resistent to the move
 	double returnEffectivenessOfMove(PokemonType::PokemonTypes typeOfMove, PokemonType::PokemonTypes typeOfPokemon, PokemonType::PokemonTypes type2OfPokemon) {
 		double effectiveness = 1;
 		effectiveness = effectiveness * returnEffectivenessOfMove(typeOfMove, typeOfPokemon);
@@ -12,6 +18,7 @@ public:
 		return effectiveness;
 	}
 
+	// Calculates the effectiveness on a single type
 	double returnEffectivenessOfMove(PokemonType::PokemonTypes typeOfMove, PokemonType::PokemonTypes typeOfPokemon) {
 
 		double effectiveness = 1;
