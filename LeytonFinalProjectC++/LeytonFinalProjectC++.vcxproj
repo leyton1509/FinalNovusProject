@@ -156,6 +156,7 @@
     <ClCompile Include="Sprites\PokemonStatBox.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
     <ClCompile Include="TitleScreen\TitleScreen.cpp" />
+    <ClCompile Include="WorldMap\Interactable.cpp" />
     <ClCompile Include="WorldMap\WorldMap.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +180,7 @@
     <ClInclude Include="Sprites\PokemonStatBox.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
     <ClInclude Include="TitleScreen\TitleScreenHeader.h" />
+    <ClInclude Include="WorldMap\Interactable.h" />
     <ClInclude Include="WorldMap\WorldMap.h" />
   </ItemGroup>
   <ItemGroup>
