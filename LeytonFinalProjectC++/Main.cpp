@@ -229,10 +229,10 @@ int main()
 
     PlayerCharacter player = PlayerCharacter();
     player.addPokemon(pm.getDefaultPokemon("Ho-oh"));
-    player.trainersParty[0].setPokemonsLevel(30);
+    player.trainersParty[0].setPokemonsLevel(7);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
-    player.setAllPositions(0, 0);
+    player.setAllPositions(14, 10);
     WorldMap worldMap = WorldMap(screenWidth, screenHeight);
     float cameraPosition[2] = { 0,0 };
 
