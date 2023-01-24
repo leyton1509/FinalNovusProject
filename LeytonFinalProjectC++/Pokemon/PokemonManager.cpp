@@ -136,6 +136,8 @@ public:
         else {
             Pokemon returnedPokemon = getter->second;
 
+
+            // SEE IF THIS IS NECCASRY
             // The reason for doing this is that each pokemon returned needs to be a unique object
             // This storage is just for holding all pokemon in the game ready to be returned
 
