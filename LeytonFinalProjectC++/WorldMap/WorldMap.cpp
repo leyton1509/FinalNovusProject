@@ -45,6 +45,7 @@ public:
 		mapTiles[10] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokemonCentre.png");
 		mapTiles[11] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokeMart.png");
 		mapTiles[12] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Tree.png");
+		mapTiles[12] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Fence.png");
 		cout << grass.spriteImage << " Grass sprite \n";
 		loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
