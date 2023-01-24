@@ -2,26 +2,37 @@
 #include "../Pokemon/Moves/Move.h"
 #include <allegro5/allegro_font.h>
 
+// A specific attack button
+// Inherits from Button which inherits from Sprite
 class AttackButton : public Button {
 
 public:
 
+	// The font to draw with
 	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
+	// The original x size of button image
 	int originalSizeX;
+	// The original y size of button image
 	int originalSizeY;
+	// The move attatched to this button
 	Move pokemonMove;
 
+	// Connstructor with the move to be used and the positioning parameters
 	AttackButton(Move& _move, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Button( _originalSizeX,  _originalSizeY,  _xStart,  _yStart,  _width,  _height,  _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 		pokemonMove = _move;
 	}
 
+	// Empty const
 	AttackButton() : Button() {
 		originalSizeX = 0;
 		originalSizeY = 0;
 	}
 
+	// Draws all the info related to the move
+	// Draws the red rectangle and if the move is vald
+	// Will draw the move details
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		// Can use powerpoints as check as its never altered from the default, currentPP is edited so this is fine
