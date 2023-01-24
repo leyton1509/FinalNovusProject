@@ -41,8 +41,7 @@ class PlayerCharacter : public Sprite{
 	// The box of pokemon
 	Pokemon box[30];
 
-
-	// The player character constructor
+// The player character constructor
 	// Sets up the values for the variables in the class
 	// Passes the variables up to sprite, including the type of sprite, pos, vel, width height and image loc
 	PlayerCharacter() : Sprite(SpriteType::SpriteTypes::Player, 8, 0, 0, 0, 0, 0, 64, 64, "../LeytonFinalProjectC++/Sprites/PlayerSprites/PlayerCharacterSpriteSheet.png") {
