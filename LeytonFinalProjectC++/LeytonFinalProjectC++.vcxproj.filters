@@ -72,7 +72,7 @@
     <ClCompile Include="Battle\RouteMapping.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WorldMap\Interactable.cpp">
+    <ClCompile Include="Sprites\Interactable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,7 +134,7 @@
     <ClInclude Include="Battle\RouteMapping.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WorldMap\Interactable.h">
+    <ClInclude Include="Sprites\Interactable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
