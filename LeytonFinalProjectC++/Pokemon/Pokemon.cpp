@@ -164,21 +164,21 @@ public:
 		calculateNextLevelExperienceNeeded();
 		currentHealth = healthActual;
 		updateMoveSet();
+
 	}
 	
 
 	void gainExperience(int _experiencedGained) {
 		experience = experience + _experiencedGained;
-
+		cout << "\n\nGained:" << _experiencedGained  << "Experience Total:" << experience << " nextExperienceNeeded : " << nextExperienceNeeded << "\n\n";
 		while(experience > nextExperienceNeeded){
 			level += 1;
-			// experience = 0;
 			calculateNextLevelExperienceNeeded();
 		}
-
+		calculateActualStatistics();
 	}
 	int experienceUponKill() {
-		return floor((2 * level / 7));
+		return floor((pow(level, 3)) + 2);
 	}
 
 
