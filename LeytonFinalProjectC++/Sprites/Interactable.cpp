@@ -25,4 +25,8 @@ public:
 		}
 	}
 
+	bool hasBeenInteractedWith(const char* keyPressed, int xTilePosition, int yTilePosition, int xDirection, int yDirection) {
+
+	}
+
 };
