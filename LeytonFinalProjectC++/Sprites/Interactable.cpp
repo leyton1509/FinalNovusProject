@@ -25,8 +25,19 @@ public:
 		}
 	}
 
-	bool hasBeenInteractedWith(const char* keyPressed, int xTile, int yTile, int xDirection, int yDirection) {
+	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY) {
 		int tempYTile = yTile + 1;
+		if (strcmp(keyPressed, "w") == 0) {
+			if (directionY == 1) {
+				if (tempYTile - 1 >= 0) {
+					if (xTile == xPosition && ((tempYTile - 1) == yPosition)) {
+						return 1;
+					}
+				}
+			}
+		}
+
+		return 0;
 	}
 
 };
