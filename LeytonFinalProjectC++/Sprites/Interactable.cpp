@@ -25,7 +25,15 @@ public:
 	// Draws the sprite at the correct position if it is displayed
 	void drawSprite() {
 		if (isDisplayed) {
-			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+			if (dissapeaarWhenInteractedWith) {
+				if (!alreadyInteractedWith) {
+					al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+				}
+			}
+			else {
+				al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+
+			}
 		}
 	}
 
@@ -106,10 +114,6 @@ public:
 				return 0;
 			}
 		}
-
-
-
-
 
 		return 0;
 	}
