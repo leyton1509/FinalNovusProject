@@ -1,2 +1,2 @@
 #pragma once
-#include "../../Pokemon/Moves/MoveManager.cpp";
+#include "../../Pokemon/Moves/MoveManager.cpp"
