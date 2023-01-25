@@ -6,7 +6,6 @@
 #include "../Sprites/PlayerCharacter.h"
 #include "../Sprites/Interactable.h"
 #include <list>
-
 using namespace std;
 class WorldMap {
 
@@ -169,7 +168,7 @@ public:
 			return 1;
 
 		}
-
+		return 0;
 	}
 
 
