@@ -23,7 +23,9 @@ public:
 	}
 
 	Interactable() : Sprite(SpriteType::SpriteTypes::Button, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
-
+		originalSizeX = 0;
+		originalSizeY = 0;
+		dissapeaarWhenInteractedWith = false;
 	}
 
 	// Draws the sprite at the correct position if it is displayed
