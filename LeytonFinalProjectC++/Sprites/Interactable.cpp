@@ -84,6 +84,25 @@ public:
 			}
 		}
 
+		else if (strcmp(keyPressed, "d") == 0) {
+			if (directionX == 1) {
+				if (xTile + 1 < mapSizeX) {
+					if ((xTile + 1) == xPosition && ((tempYTile) == yPosition)) {
+						return 1;
+					}
+					else {
+						return 0;
+					}
+				}
+				else {
+					return 0;
+				}
+			}
+			else {
+				return 0;
+			}
+		}
+
 
 
 
