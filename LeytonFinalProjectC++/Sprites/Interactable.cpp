@@ -65,6 +65,27 @@ public:
 			}
 		}
 
+		else if (strcmp(keyPressed, "a") == 0) {
+			if (directionY == -1) {
+				if (tempYTile + 1 < mapSizeY) {
+					if (xTile -1 == xPosition && ((tempYTile) == yPosition)) {
+						return 1;
+					}
+					else {
+						return 0;
+					}
+				}
+				else {
+					return 0;
+				}
+			}
+			else {
+				return 0;
+			}
+		}
+
+
+
 		return 0;
 	}
 
