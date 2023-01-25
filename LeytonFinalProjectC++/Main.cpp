@@ -233,7 +233,7 @@ int main()
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(14, 10);
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight);
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
     float cameraPosition[2] = { 0,0 };
 
     int framecounter = 1;
