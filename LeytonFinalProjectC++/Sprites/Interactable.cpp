@@ -25,8 +25,8 @@ public:
 		}
 	}
 
-	bool hasBeenInteractedWith(const char* keyPressed, int xTilePosition, int yTilePosition, int xDirection, int yDirection) {
-
+	bool hasBeenInteractedWith(const char* keyPressed, int xTile, int yTile, int xDirection, int yDirection) {
+		int tempYTile = yTile + 1;
 	}
 
 };
