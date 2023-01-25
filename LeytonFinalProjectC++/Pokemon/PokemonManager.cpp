@@ -2,9 +2,9 @@
 #include <string>
 #include "../Pokemon/Pokemon.h"
 #include "../Pokemon/PokemonManager.h"
-#include "../Pokemon/PokemonType.h";
-#include "../Pokemon/Moves/MoveCategory.h";
-#include "../File/CSVFileManager.h";
+#include "../Pokemon/PokemonType.h"
+#include "../Pokemon/Moves/MoveCategory.h"
+#include "../File/CSVFileManager.h"
 using namespace std;
 
 // Handles the loading in of pokemon from the file
