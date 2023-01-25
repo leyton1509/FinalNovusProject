@@ -4,7 +4,7 @@
 #include <allegro5/allegro_image.h>
 #include "../Sprites/PokemonGrass.cpp"
 #include "../Sprites/PlayerCharacter.h"
-#include "../Sprites/Interactable.h"
+#include "../Sprites/InteractablesForMaps.h"
 #include <list>
 using namespace std;
 class WorldMap {
@@ -15,7 +15,7 @@ public:
 	ALLEGRO_BITMAP* mapBuffer;
 	ALLEGRO_BITMAP* mapTiles[15];
 
-	std::list<Interactable> interactbles;
+	std::list<Interactable> interactablesForMap;
 
 	int textMap[100][100];
 	int xBorderSize = 15;
@@ -28,9 +28,10 @@ public:
 	int screenWidth;
 	int screenHeight;
 	int locationNumber = 0;
+	int mapNumber;
 
 
-	WorldMap(int _screenWidth, int _screenHeight) {
+	WorldMap(int _screenWidth, int _screenHeight, const char * mapFP, int _mapNumber) {
 		cout << "Creating new world map\n";
 		screenWidth = _screenWidth;
 		screenHeight = _screenHeight;
@@ -51,7 +52,13 @@ public:
 		mapTiles[12] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Tree.png");
 		mapTiles[13] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Fence.png");
 		cout << grass.spriteImage << " Grass sprite \n";
-		loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+		mapNumber = mapNumber;
+		InteractablesForMaps im;
+		interactablesForMap = im.getInteractablesForMap(_mapNumber);
+		loadMap(mapFP);
+		
+
+
 		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
 	}
 
@@ -236,6 +243,18 @@ public:
 				
 			}
 		}
+
+		std::list<Interactable>::reverse_iterator revIt;
+		// Make iterate point to begining and incerement it one by one till it reaches the end of list.
+		for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+		{
+			revIt->drawSprite();
+
+		}
+
+		
+		
+		
 	}
 
 
