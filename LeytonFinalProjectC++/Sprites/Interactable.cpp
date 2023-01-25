@@ -119,4 +119,9 @@ public:
 		return 0;
 	}
 
+	// Method to be overidden for what the object does when interated
+	void interact() {
+
+	}
+
 };
