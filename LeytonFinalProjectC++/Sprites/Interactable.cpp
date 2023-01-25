@@ -25,12 +25,31 @@ public:
 		}
 	}
 
-	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY) {
+	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY, int mapSizeX, int mapSizeY) {
 		int tempYTile = yTile + 1;
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
 				if (tempYTile - 1 >= 0) {
 					if (xTile == xPosition && ((tempYTile - 1) == yPosition)) {
+						return 1;
+					}
+					else {
+						return 0;
+					}
+				}
+				else {
+					return 0;
+				}
+			}
+			else {
+				return 0;
+			}
+		} 
+
+		else if (strcmp(keyPressed, "s") == 0) {
+			if (directionY == -1) {
+				if (tempYTile + 1 < mapSizeY) {
+					if (xTile == xPosition && ((tempYTile + 1) == yPosition)) {
 						return 1;
 					}
 					else {
