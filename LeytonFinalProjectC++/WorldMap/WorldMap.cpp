@@ -87,6 +87,15 @@ public:
 					else if (textMap[xTile][tempYTile - 1] == 13) {
 						return 0;
 					}
+					std::list<Interactable>::reverse_iterator revIt;
+					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
+
 				}
 				else {
 					return 0;
@@ -115,6 +124,14 @@ public:
 					else if (textMap[xTile][tempYTile + 1] == 13) {
 						return 0;
 					}
+					std::list<Interactable>::reverse_iterator revIt;
+					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
 				}
 				else {
 					return 0;
@@ -141,6 +158,14 @@ public:
 					else if (textMap[xTile - 1][tempYTile] == 13) {
 						return 0;
 					}
+					std::list<Interactable>::reverse_iterator revIt;
+					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
 				}
 				else {
 					return 0;
@@ -166,6 +191,14 @@ public:
 					}
 					else if (textMap[xTile + 1][tempYTile] == 13) {
 						return 0;
+					}
+					std::list<Interactable>::reverse_iterator revIt;
+					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
 					}
 				}
 				else {
@@ -213,7 +246,7 @@ public:
 		else {
 			tile = 0;
 		}
-		cout << "Player on : " << tile << "at : " << xTile << "," << yTile << " .\n";
+		// cout << "Player on : " << tile << "at : " << xTile << "," << yTile << " .\n";
 		return tile;
 	}
 
@@ -245,7 +278,6 @@ public:
 		}
 
 		std::list<Interactable>::reverse_iterator revIt;
-		// Make iterate point to begining and incerement it one by one till it reaches the end of list.
 		for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
 		{
 			revIt->drawSprite();
