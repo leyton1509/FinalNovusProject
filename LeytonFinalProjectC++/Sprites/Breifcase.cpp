@@ -8,4 +8,8 @@ public:
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 	}
+
+	void interact() {
+
+	}
 };
