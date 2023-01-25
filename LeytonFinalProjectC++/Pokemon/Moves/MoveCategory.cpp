@@ -20,6 +20,9 @@ public:
         else if (moveString.compare("Status") == 0) {
             return MoveCategory::Categories::Status;
         }
+        else {
+            return MoveCategory::Categories::Status;
+        }
     }
 
 };
