@@ -10,7 +10,10 @@ public:
 		std::list<Interactable> interactbles;
 
 		if (mapNumber == 1) {
-			//Breifcase bf = Breifcase(220, 165, );
+			Breifcase bf = Breifcase(220, 165, 14, 20, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Case.png");
+			interactbles.push_front(bf);
+
+			return interactbles;
 		}
 
 		return  interactbles;
