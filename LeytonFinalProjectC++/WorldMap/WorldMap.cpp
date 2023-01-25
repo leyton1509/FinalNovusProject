@@ -4,6 +4,9 @@
 #include <allegro5/allegro_image.h>
 #include "../Sprites/PokemonGrass.cpp"
 #include "../Sprites/PlayerCharacter.h"
+#include "../Sprites/Interactable.h"
+#include <list>
+
 using namespace std;
 class WorldMap {
 
@@ -12,6 +15,8 @@ public:
 
 	ALLEGRO_BITMAP* mapBuffer;
 	ALLEGRO_BITMAP* mapTiles[15];
+
+	std::list<Interactable> interactbles;
 
 	int textMap[100][100];
 	int xBorderSize = 15;
