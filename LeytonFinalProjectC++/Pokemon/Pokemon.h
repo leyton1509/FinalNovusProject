@@ -1,2 +1,2 @@
 #pragma once
-#include "../Pokemon/Pokemon.cpp";
+#include "../Pokemon/Pokemon.cpp"
