@@ -110,7 +110,7 @@ public:
 				cout << "\nUsed : " << enemyMove.moveName << "\n";
 				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
 				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
-				cout << "\Player health : " << playersPokemon.currentHealth << " taken " << damageOfEnemyMove << "\n";
+				cout << "\nPlayer health : " << playersPokemon.currentHealth << " taken " << damageOfEnemyMove << "\n";
 			}
 
 			
