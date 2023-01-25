@@ -33,7 +33,16 @@ public:
 					if (xTile == xPosition && ((tempYTile - 1) == yPosition)) {
 						return 1;
 					}
+					else {
+						return 0;
+					}
 				}
+				else {
+					return 0;
+				}
+			}
+			else {
+				return 0;
 			}
 		}
 
