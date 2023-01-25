@@ -78,6 +78,9 @@
     <ClCompile Include="Sprites\Breifcase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sprites\InteractablesForMaps.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -141,6 +144,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprites\Breifcase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites\InteractablesForMaps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
