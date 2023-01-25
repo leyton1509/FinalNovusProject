@@ -37,6 +37,7 @@ public:
 		}
 	}
 
+	// Checks the locaions to see if the character is interacting with the current object
 	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY, int mapSizeX, int mapSizeY) {
 		int tempYTile = yTile + 1;
 		if (strcmp(keyPressed, "w") == 0) {
