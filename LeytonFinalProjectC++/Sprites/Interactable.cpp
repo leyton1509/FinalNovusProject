@@ -66,9 +66,9 @@ public:
 		}
 
 		else if (strcmp(keyPressed, "a") == 0) {
-			if (directionY == -1) {
-				if (tempYTile + 1 < mapSizeY) {
-					if (xTile -1 == xPosition && ((tempYTile) == yPosition)) {
+			if (directionX == -1) {
+				if (xTile - 1 >= 0) {
+					if ((xTile -1) == xPosition && ((tempYTile) == yPosition)) {
 						return 1;
 					}
 					else {
@@ -83,6 +83,8 @@ public:
 				return 0;
 			}
 		}
+
+
 
 
 
