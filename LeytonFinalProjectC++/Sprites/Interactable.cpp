@@ -1,4 +1,5 @@
 #include "../Sprites/Spriteheader.h"
+#include <iostream>
 
 
 class Interactable : public Sprite {
@@ -45,15 +46,17 @@ public:
 
 	// Checks the locaions to see if the character is interacting with the current object
 	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY, int mapSizeX, int mapSizeY) {
+		// std::cout << "Current X : " << xTile << " Current Y: " << yTile << " X : " << xPosition / 32 << " Y :" << yPosition / 32 << " \n";
+	
 		int tempYTile = yTile + 1;
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
 				if (tempYTile - 1 >= 0) {
-					if (xTile == xPosition && ((tempYTile - 1) == yPosition)) {
+					if (xTile == (xPosition / 32) && ((tempYTile - 1) == (yPosition / 32))) {
 						return 1;
 					}
 					else {
-						return 0;
+						return 0; 
 					}
 				}
 				else {
@@ -68,7 +71,7 @@ public:
 		else if (strcmp(keyPressed, "s") == 0) {
 			if (directionY == -1) {
 				if (tempYTile + 1 < mapSizeY) {
-					if (xTile == xPosition && ((tempYTile + 1) == yPosition)) {
+					if (xTile == (xPosition / 32) && ((tempYTile + 1) == (yPosition / 32))) {
 						return 1;
 					}
 					else {
@@ -87,7 +90,7 @@ public:
 		else if (strcmp(keyPressed, "a") == 0) {
 			if (directionX == -1) {
 				if (xTile - 1 >= 0) {
-					if ((xTile -1) == xPosition && ((tempYTile) == yPosition)) {
+					if ((xTile -1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
 						return 1;
 					}
 					else {
@@ -106,7 +109,7 @@ public:
 		else if (strcmp(keyPressed, "d") == 0) {
 			if (directionX == 1) {
 				if (xTile + 1 < mapSizeX) {
-					if ((xTile + 1) == xPosition && ((tempYTile) == yPosition)) {
+					if ((xTile + 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
 						return 1;
 					}
 					else {
