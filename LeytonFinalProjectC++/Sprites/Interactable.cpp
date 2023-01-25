@@ -22,6 +22,10 @@ public:
 		dissapeaarWhenInteractedWith = _dissapeaarWhenInteractedWith;
 	}
 
+	Interactable() : Sprite(SpriteType::SpriteTypes::Button, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
+
+	}
+
 	// Draws the sprite at the correct position if it is displayed
 	void drawSprite() {
 		if (isDisplayed) {
