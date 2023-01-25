@@ -18,4 +18,11 @@ public:
 		originalSizeY = _originalSizeY;
 	}
 
+	// Draws the sprite at the correct position if it is displayed
+	void drawSprite() {
+		if (isDisplayed) {
+			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+		}
+	}
+
 };
