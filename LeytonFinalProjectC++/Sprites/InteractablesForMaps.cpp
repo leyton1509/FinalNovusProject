@@ -1,0 +1,9 @@
+class InteractablesForMaps {
+
+public:
+
+	InteractablesForMaps() {
+
+	}
+
+};
