@@ -65,7 +65,7 @@ public:
 		mapTiles[13] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Fence.png");
 		// Basic house tile
 		mapTiles[14] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse.png");
-		// Basic house tile
+		// Basic house inside tile
 		mapTiles[15] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse1F.png");
 		mapNumber = mapNumber;
 		InteractablesForMaps im;
@@ -96,6 +96,14 @@ public:
 		}
 
 
+	}
+
+	void checkToChangeMaps(int xTile, int yTile) {
+		int tile = getWhatPlayerIsStandingOn(xTile, yTile);
+		if (tile == 9) {
+			cout << "Load new map\n";
+			// loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+		}
 	}
 
 
