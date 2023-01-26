@@ -52,31 +52,36 @@ public:
 	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY, int mapSizeX, int mapSizeY) {
 		// std::cout << "Current X : " << xTile << " Current Y: " << yTile << " X : " << xPosition / 32 << " Y :" << yPosition / 32 << " \n";
 	
-		int tempYTile = yTile + 1;
-		if (strcmp(keyPressed, "w") == 0) {
-			if (directionY == 1) {
-				if (tempYTile - 1 >= 0) {
-					if (xTile == (xPosition / 32) && ((tempYTile - 1) == (yPosition / 32))) {
-						return 1;
+		if (isDisplayed) {
+			int tempYTile = yTile + 1;
+			if (strcmp(keyPressed, "w") == 0) {
+				if (directionY == 1) {
+					if (tempYTile - 1 >= 0) {
+						if (xTile == (xPosition / 32) && ((tempYTile - 1) == (yPosition / 32))) {
+							return 1;
+						}
+						else {
+							return 0; 
+						}
 					}
 					else {
-						return 0; 
+						return 0;
 					}
 				}
 				else {
 					return 0;
 				}
-			}
-			else {
-				return 0;
-			}
-		} 
+			} 
 
-		else if (strcmp(keyPressed, "s") == 0) {
-			if (directionY == -1) {
-				if (tempYTile + 1 < mapSizeY) {
-					if (xTile == (xPosition / 32) && ((tempYTile + 1) == (yPosition / 32))) {
-						return 1;
+			else if (strcmp(keyPressed, "s") == 0) {
+				if (directionY == -1) {
+					if (tempYTile + 1 < mapSizeY) {
+						if (xTile == (xPosition / 32) && ((tempYTile + 1) == (yPosition / 32))) {
+							return 1;
+						}
+						else {
+							return 0;
+						}
 					}
 					else {
 						return 0;
@@ -86,16 +91,16 @@ public:
 					return 0;
 				}
 			}
-			else {
-				return 0;
-			}
-		}
 
-		else if (strcmp(keyPressed, "a") == 0) {
-			if (directionX == -1) {
-				if (xTile - 1 >= 0) {
-					if ((xTile -1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
-						return 1;
+			else if (strcmp(keyPressed, "a") == 0) {
+				if (directionX == -1) {
+					if (xTile - 1 >= 0) {
+						if ((xTile -1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
+							return 1;
+						}
+						else {
+							return 0;
+						}
 					}
 					else {
 						return 0;
@@ -105,16 +110,16 @@ public:
 					return 0;
 				}
 			}
-			else {
-				return 0;
-			}
-		}
 
-		else if (strcmp(keyPressed, "d") == 0) {
-			if (directionX == 1) {
-				if (xTile + 1 < mapSizeX) {
-					if ((xTile + 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
-						return 1;
+			else if (strcmp(keyPressed, "d") == 0) {
+				if (directionX == 1) {
+					if (xTile + 1 < mapSizeX) {
+						if ((xTile + 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
+							return 1;
+						}
+						else {
+							return 0;
+						}
 					}
 					else {
 						return 0;
@@ -123,9 +128,6 @@ public:
 				else {
 					return 0;
 				}
-			}
-			else {
-				return 0;
 			}
 		}
 
@@ -135,8 +137,12 @@ public:
 	// Method to be overidden for what the object does when interated
 	 void interact() {
 		if (idOfInteractable == 1) {
+
 			std::cout << "Interacting";
+			isDisplayed = false;
 		}
+
+		alreadyInteractedWith = true;
 	}
 
 };
