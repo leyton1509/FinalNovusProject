@@ -51,6 +51,7 @@ public:
 		mapTiles[11] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokeMart.png");
 		mapTiles[12] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Tree.png");
 		mapTiles[13] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Fence.png");
+		mapTiles[14] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse.png");
 		cout << grass.spriteImage << " Grass sprite \n";
 		mapNumber = mapNumber;
 		InteractablesForMaps im;
