@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
+    <Text Include="WorldMap\TextMaps\BasicHouseMap.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sprites\SpriteHeader.h">
