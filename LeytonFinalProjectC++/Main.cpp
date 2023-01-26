@@ -237,8 +237,8 @@ int main()
     float cameraPosition[2] = { 0,0 };
 
     int framecounter = 1;
-
-    bool keys[4] = {false, false ,false ,false};
+    // w a s d e
+    bool keys[5] = {false, false ,false ,false, false};
 
     while (runOverWorld) {
 
@@ -281,6 +281,9 @@ int main()
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
                 keys[3] = false;
             }
+            else if (event.keyboard.keycode == ALLEGRO_KEY_E) {
+                keys[4] = false;
+            }
             break;
         case ALLEGRO_EVENT_KEY_DOWN:
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
@@ -295,6 +298,11 @@ int main()
             else if (event.keyboard.keycode == ALLEGRO_KEY_D) {
                 keys[3] = true;
             }
+
+            else if (event.keyboard.keycode == ALLEGRO_KEY_E) {
+                keys[4] = true;
+
+            }
         }
 
         if (done)
@@ -303,7 +311,23 @@ int main()
         if (redraw && al_is_event_queue_empty(queue))
         {
 
-            if (keys[0] && !keys[1] && !keys[2] && !keys[3]) {
+            if (keys[4]) {
+                
+                if (player.directionY == 1) {
+                    worldMap.interact("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                }
+                else if (player.directionY == -1) {
+                    worldMap.interact("s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                }
+                else if (player.directionX == -1) {
+                    worldMap.interact("a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                }
+                else if (player.directionX == 1) {
+                    worldMap.interact("d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                }
+            }
+
+            else if (keys[0] && !keys[1] && !keys[2] && !keys[3]) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
@@ -346,6 +370,7 @@ int main()
                             keys[1] = false;
                             keys[2] = false;
                             keys[3] = false;
+                            keys[4] = false;
                             InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, worldMap.locationNumber, 0);
                         }
                         player.setNewEncounterLocation(); 
