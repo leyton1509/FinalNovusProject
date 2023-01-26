@@ -108,7 +108,7 @@ public:
 			loadCounterX = 0;
 			loadCounterY = 0;
 			previousTileLocation[0] = xTile;
-			previousTileLocation[1] = yTile;
+			previousTileLocation[1] = yTile+1;
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
