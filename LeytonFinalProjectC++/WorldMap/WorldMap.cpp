@@ -18,8 +18,6 @@ public:
 	std::list<Interactable> interactablesForMap;
 
 	int textMap[100][100];
-	int xBorderSize = 15; 
-	int yBorderSize = 15;
 	int loadCounterX = 0;
 	int loadCounterY = 0;
 	int mapSizeX = 0;
@@ -74,9 +72,6 @@ public:
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		loadMap(mapFP);
 		
-
-
-		cout << mapSizeX << " " << mapSizeY << " \nloaded map\n";
 	}
 
 	void destroyAllSprites() {
