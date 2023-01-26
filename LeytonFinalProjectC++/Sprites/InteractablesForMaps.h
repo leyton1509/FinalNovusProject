@@ -1,2 +1,2 @@
 #pragma once
-#include "../Sprites/InteractablesForMaps.cpp";
+#include "../Sprites/InteractablesForMaps.cpp"
