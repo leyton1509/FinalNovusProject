@@ -6,6 +6,8 @@ class Interactable : public Sprite {
 
 public:
 
+	int idOfInteractable;
+
 	// The original x size of image
 	int originalSizeX;
 	// The original y size of image
@@ -17,9 +19,10 @@ public:
 	// Boolean if the object should disappear when interacted with
 	bool dissapeaarWhenInteractedWith;
 	// Constructor with the size and position parameters
-	Interactable(bool _dissapeaarWhenInteractedWith, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
+	Interactable(int _idOfInteractable, bool _dissapeaarWhenInteractedWith, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
+		idOfInteractable = _idOfInteractable;
 		dissapeaarWhenInteractedWith = _dissapeaarWhenInteractedWith;
 	}
 
@@ -27,6 +30,7 @@ public:
 		originalSizeX = 0;
 		originalSizeY = 0;
 		dissapeaarWhenInteractedWith = false;
+		idOfInteractable = 0;
 	}
 
 	// Draws the sprite at the correct position if it is displayed
@@ -129,8 +133,10 @@ public:
 	}
 
 	// Method to be overidden for what the object does when interated
-	void interact() {
-
+	 void interact() {
+		if (idOfInteractable == 1) {
+			std::cout << "Interacting";
+		}
 	}
 
 };
