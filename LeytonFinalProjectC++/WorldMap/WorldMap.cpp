@@ -27,6 +27,7 @@ public:
 	int screenHeight;
 	int locationNumber = 0;
 	int mapNumber;
+	int previousTileLocation[2];
 
 
 	WorldMap(int _screenWidth, int _screenHeight, const char * mapFP, int _mapNumber) {
@@ -101,7 +102,10 @@ public:
 	void checkToChangeMaps(int xTile, int yTile) {
 		int tile = getWhatPlayerIsStandingOn(xTile, yTile);
 		if (tile == 9) {
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
 	}
@@ -268,7 +272,6 @@ public:
 
 
 	void loadMap(const char * filename) {
-		cout << filename << "";
 		ifstream openfile(filename);
 		if (openfile.is_open()) {
 			while (!openfile.eof()) {
@@ -327,6 +330,9 @@ public:
 				}
 				else if (textMap[i][j] == 14) {
 					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 73, 80, (i * 32), (j * 32), (32 * 5), (32 * 4), 0);
+				}
+				else if (textMap[i][j] == 15) {
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 176, 135, (i * 5), (j * 5), (32 * 16), (32 * 12), 0);
 				}
 				else {
 					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
