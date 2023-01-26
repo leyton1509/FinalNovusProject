@@ -18,7 +18,7 @@ public:
 	std::list<Interactable> interactablesForMap;
 
 	int textMap[100][100];
-	int xBorderSize = 15;
+	int xBorderSize = 15; 
 	int yBorderSize = 15;
 	int loadCounterX = 0;
 	int loadCounterY = 0;
@@ -66,6 +66,29 @@ public:
 
 		
 	}
+
+
+
+	void interact(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
+
+		for (Interactable& inter : interactablesForMap)
+		{
+			if (inter.idOfInteractable == 1) {
+
+				if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+					inter.interact();
+				}
+
+			}
+
+		}
+
+
+	}
+
+
+
+
 	int canPlayerMove(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
 		int tempYTile = yTile + 1;
 		
