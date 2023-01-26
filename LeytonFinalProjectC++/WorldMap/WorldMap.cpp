@@ -69,14 +69,14 @@ public:
 
 
 
-	void interact(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
+	void interact(PlayerCharacter& player, const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
 
 		for (Interactable& inter : interactablesForMap)
 		{
 			if (inter.idOfInteractable == 1) {
 
 				if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
-					inter.interact();
+					inter.interact(player);
 				}
 
 			}
