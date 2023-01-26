@@ -101,14 +101,14 @@ public:
 
 	}
 
-	void checkToChangeMaps(PlayerCharacter& player,int xTile, int yTile) {
-		int tile = getWhatPlayerIsStandingOn(xTile, yTile);
+	void checkToChangeMaps(PlayerCharacter& player) {
+		int tile = getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 		if (tile == 9) {
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
-			previousTileLocation[0] = xTile;
-			previousTileLocation[1] = yTile+1;
+			previousTileLocation[0] = player.xTilePosition;
+			previousTileLocation[1] = (player.yTilePosition) +1;
 			player.setAllPositions(7, 13);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
