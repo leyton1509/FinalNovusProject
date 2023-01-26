@@ -13,7 +13,7 @@ class WorldMap {
 public:
 
 	ALLEGRO_BITMAP* mapBuffer;
-	ALLEGRO_BITMAP* mapTiles[15];
+	ALLEGRO_BITMAP* mapTiles[16];
 
 	std::list<Interactable> interactablesForMap;
 
@@ -67,6 +67,8 @@ public:
 		mapTiles[13] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Fence.png");
 		// Basic house tile
 		mapTiles[14] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse.png");
+		// Basic house tile
+		mapTiles[15] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse1F.png");
 		mapNumber = mapNumber;
 		InteractablesForMaps im;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
