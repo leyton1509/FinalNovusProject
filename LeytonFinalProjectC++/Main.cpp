@@ -232,7 +232,7 @@ int main()
     player.trainersParty[0].setPokemonsLevel(7);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
-    player.setAllPositions(14, 10);
+    player.setAllPositions(15, 10);
     WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
     float cameraPosition[2] = { 0,0 };
 
@@ -359,6 +359,7 @@ int main()
 
             worldMap.drawMap(player.xPosition, player.yPosition);
             player.drawSprite();
+            worldMap.checkToChangeMaps(player.xTilePosition, player.yTilePosition);
 
             if (framecounter == 3) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
