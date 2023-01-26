@@ -37,22 +37,36 @@ public:
 		screenHeight = _screenHeight;
 		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
 		PokemonGrass grass = PokemonGrass();
+		// Unwalkable black square
 		mapTiles[0] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		// Walkable black square
 		mapTiles[1] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		// Reserved
 		mapTiles[2] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		// Green tile
 		mapTiles[3] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		// Reserved for other colour tile
 		mapTiles[4] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		// Reserved for other colour tile
 		mapTiles[5] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		// Pokemon Grass
 		mapTiles[6] = grass.spriteImage;
+		// Pokemon Grass reserved for different sprite
 		mapTiles[7] = grass.spriteImage;
+		// Pokemon Grass reserved for different sprite
 		mapTiles[8] = grass.spriteImage;
+		// Entrance to small building
 		mapTiles[9] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		// Poke centre draw tile
 		mapTiles[10] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokemonCentre.png");
+		// Poke mart draw tile
 		mapTiles[11] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokeMart.png");
+		// Tree draw tile
 		mapTiles[12] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Tree.png");
+		// Fence draw tile
 		mapTiles[13] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/Fence.png");
+		// Basic house tile
 		mapTiles[14] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse.png");
-		cout << grass.spriteImage << " Grass sprite \n";
 		mapNumber = mapNumber;
 		InteractablesForMaps im;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
