@@ -1,5 +1,6 @@
 #include "../Sprites/Spriteheader.h"
 #include <iostream>
+#include "../Sprites/PlayerCharacter.h"
 
 
 class Interactable : public Sprite {
@@ -135,7 +136,7 @@ public:
 	}
 
 	// Method to be overidden for what the object does when interated
-	 void interact() {
+	 void interact(PlayerCharacter &player) {
 		if (idOfInteractable == 1) {
 
 			std::cout << "Interacting";
