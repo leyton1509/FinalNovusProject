@@ -9,7 +9,7 @@ public:
 		originalSizeY = _originalSizeY;
 	}
 
-	void interact() override {
+	void interact() {
 		std::cout << "Interacting!";
 	}
 };
