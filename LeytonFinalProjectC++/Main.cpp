@@ -359,7 +359,7 @@ int main()
 
             worldMap.drawMap(player.xPosition, player.yPosition);
             player.drawSprite();
-            worldMap.checkToChangeMaps(player.xTilePosition, player.yTilePosition);
+            worldMap.checkToChangeMaps(player);
 
             if (framecounter == 3) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
