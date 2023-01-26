@@ -69,6 +69,8 @@ public:
 		// Basic house inside tile
 		mapTiles[15] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse1F.png");
 		mapNumber = mapNumber;
+		previousTileLocation[0] = 0;
+		previousTileLocation[1] = 0;
 		InteractablesForMaps im;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		loadMap(mapFP);
@@ -105,6 +107,8 @@ public:
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
+			previousTileLocation[0] = xTile;
+			previousTileLocation[1] = yTile;
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
