@@ -101,8 +101,8 @@ public:
 	void checkToChangeMaps(int xTile, int yTile) {
 		int tile = getWhatPlayerIsStandingOn(xTile, yTile);
 		if (tile == 9) {
-			cout << "Load new map\n";
-			// loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			mapNumber = 10;
 		}
 	}
 
