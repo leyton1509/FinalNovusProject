@@ -75,9 +75,6 @@
     <ClCompile Include="Sprites\Interactable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprites\Breifcase.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sprites\InteractablesForMaps.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -141,9 +138,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprites\Interactable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Sprites\Breifcase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprites\InteractablesForMaps.h">
