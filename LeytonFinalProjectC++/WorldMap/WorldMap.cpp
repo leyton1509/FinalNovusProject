@@ -317,6 +317,8 @@ public:
 
 	void drawMap(float xPosition, float yPosition) {
 
+		cout << "X : " << xPosition << " Y : " << yPosition << "\n";
+
 		for (int i = 0; i < mapSizeX; i++)
 		{
 			for (int j = 0; j < mapSizeY; j++)
