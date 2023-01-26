@@ -101,7 +101,7 @@ public:
 
 	}
 
-	void checkToChangeMaps(int xTile, int yTile) {
+	void checkToChangeMaps(PlayerCharacter& player,int xTile, int yTile) {
 		int tile = getWhatPlayerIsStandingOn(xTile, yTile);
 		if (tile == 9) {
 			once = false;
