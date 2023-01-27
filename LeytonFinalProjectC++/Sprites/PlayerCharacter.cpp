@@ -52,7 +52,7 @@ class PlayerCharacter : public Sprite{
 		state = 0;
 		currentFrame = 0;
 		framerate = 60;
-		moveThisTurn = (32 * 2 / framerate);
+		moveThisTurn = 1;
 	}
 
 
@@ -217,6 +217,12 @@ class PlayerCharacter : public Sprite{
 	
 	}
 
+	void resetPlayer(int x, int y) {
+		state = 0;
+		currentFrame = 0;
+		setAllPositions(x, y);
+	} 
+
 
 
 	// Draws the sprite based on the state of the sprite
@@ -238,7 +244,7 @@ class PlayerCharacter : public Sprite{
 				updatePosition();
 				currentFrame++;
 			}
-			else if (currentFrame < (framerate / 6 * 3) && currentFrame > framerate / 6 * 2) {
+			else if (currentFrame < (framerate / 6 * 3)+2 && currentFrame > framerate / 6 * 2) {
 				state = 3;
 				updatePosition();
 				currentFrame++;
