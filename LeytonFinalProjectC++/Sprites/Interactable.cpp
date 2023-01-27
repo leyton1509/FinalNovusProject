@@ -138,12 +138,20 @@ public:
 	// Method to be overidden for what the object does when interated
 	 void interact(PlayerCharacter &player) {
 		if (idOfInteractable == 1) {
-
-			std::cout << "Interacting";
+			choosePokemon(player);
 			isDisplayed = false;
 		}
 
 		alreadyInteractedWith = true;
 	}
+
+
+
+	 void choosePokemon(PlayerCharacter& player) {
+
+	 }
+
+
+
 
 };
