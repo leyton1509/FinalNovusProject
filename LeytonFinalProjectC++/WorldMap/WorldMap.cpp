@@ -86,14 +86,14 @@ public:
 
 
 
-	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
+	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, const char* keyPressed, int directionX, int directionY, int xTile, int yTile, int screenWidth, int screenHeight) {
 
 		for (Interactable& inter : interactablesForMap)
 		{
 			if (inter.idOfInteractable == 1) {
 
 				if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
-					inter.interact(player, queue);
+					inter.interact(player, queue,  screenWidth,  screenHeight);
 				}
 
 			}
