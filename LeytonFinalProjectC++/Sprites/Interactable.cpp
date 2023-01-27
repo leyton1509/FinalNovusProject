@@ -180,6 +180,12 @@ public:
 		 ChoosePokemonButton pokemonTwoButton = ChoosePokemonButton(pokemon2, 128, 128, 100, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 		 ChoosePokemonButton pokemonThreeButton = ChoosePokemonButton(pokemon3, 128, 128, 100, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 			 
+
+		 bool chosenPokemon = false;
+
+		 while (!chosenPokemon) {
+
+		 }
 			
 	 }
 
