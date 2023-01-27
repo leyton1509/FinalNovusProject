@@ -148,7 +148,22 @@ public:
 
 
 	 void choosePokemon(PlayerCharacter& player) {
+		 double xMousePosition = 0;
+		 double yMousePosition = 0;
 
+		 // GUI info
+		 bool done = false;
+		 bool redraw = true;
+		 ALLEGRO_EVENT event;
+
+		 // BG sprite
+		 ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
+
+		 // Reset the camera
+		 ALLEGRO_TRANSFORM trans;
+		 al_identity_transform(&trans);
+		 al_use_transform(&trans);
+		 al_draw_bitmap(background, 0, 0, 0);
 	 }
 
 
