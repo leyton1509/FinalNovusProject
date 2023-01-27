@@ -137,9 +137,9 @@ public:
 	}
 
 	// Method to be overidden for what the object does when interated
-	 void interact(PlayerCharacter &player, ALLEGRO_EVENT_QUEUE* queue) {
+	 void interact(PlayerCharacter &player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 		if (idOfInteractable == 1) {
-			choosePokemon(player, queue);
+			choosePokemon(player, queue, screenWidth, screenHeight);
 			isDisplayed = false;
 		}
 
@@ -148,7 +148,7 @@ public:
 
 
 
-	 void choosePokemon(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue) {
+	 void choosePokemon(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 		 double xMousePosition = 0;
 		 double yMousePosition = 0;
 
@@ -220,6 +220,7 @@ public:
 			 }
 			 if (redraw && al_is_event_queue_empty(queue))
 			 {
+				 al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 
 			 }
 
