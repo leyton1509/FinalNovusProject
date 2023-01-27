@@ -165,6 +165,20 @@ public:
 		 al_identity_transform(&trans);
 		 al_use_transform(&trans);
 		 al_draw_bitmap(background, 0, 0, 0);
+
+		 PokemonManager pm = pm.instance();
+
+		 Pokemon pokemon1 = pm.getDefaultPokemon("Gible");
+		 pokemon1.setPokemonsLevel(5);
+		 Pokemon pokemon2 = pm.getDefaultPokemon("Dratini");
+		 pokemon2.setPokemonsLevel(5);
+		 Pokemon pokemon3 = pm.getDefaultPokemon("Bagon");
+		 pokemon3.setPokemonsLevel(5);
+
+
+		 ChoosePokemonButton pokemoOneButton = ChoosePokemonButton(pokemon1, 128, 128, 8, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
+			 
+			
 	 }
 
 
