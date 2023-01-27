@@ -13,7 +13,7 @@ class WorldMap {
 public:
 
 	ALLEGRO_BITMAP* mapBuffer;
-	ALLEGRO_BITMAP* mapTiles[16];
+	ALLEGRO_BITMAP* mapTiles[17];
 
 	std::list<Interactable> interactablesForMap;
 
@@ -68,6 +68,8 @@ public:
 		mapTiles[14] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse.png");
 		// Basic house inside tile
 		mapTiles[15] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BasicHouse1F.png");
+		// Entrance to overworld at last position
+		mapTiles[16] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
@@ -110,7 +112,7 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) +1;
-			player.resetPlayer(0, 1);
+			player.resetPlayer(7, 10);
 			cout << player.state << "\n";
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
@@ -320,7 +322,7 @@ public:
 
 	void drawMap(float xPosition, float yPosition) {
 
-		cout << "X : " << xPosition / 32 << " Y : " << yPosition / 32 << "\n";
+		cout << "X : " << xPosition / 32 << " Y : " << yPosition / 32 << " Tile N : " << getWhatPlayerIsStandingOn(xPosition / 32, yPosition / 32) << "\n";
 
 		for (int i = 0; i < mapSizeX; i++)
 		{
