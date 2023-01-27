@@ -200,6 +200,17 @@ public:
 				 yMousePosition = event.mouse.y;
 				 break;
 			 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+				 if (pokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					
+					 chosenPokemon = true;
+				 }else if (pokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+
+					 chosenPokemon = true;
+				 }
+				 if (pokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+
+					 chosenPokemon = true;
+				 }
 
 				 break;
 
