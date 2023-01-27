@@ -8,6 +8,8 @@ class ChoosePokemonButton : public Button {
 
 public:
 
+	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+
 	// The font to draw with
 	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 	// The original x size of button image
