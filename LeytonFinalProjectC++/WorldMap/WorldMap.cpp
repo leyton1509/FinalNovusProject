@@ -107,13 +107,11 @@ public:
 		int tile = getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 		if (tile == 9) {
 			once = false;
-
 			loadCounterX = 0;
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) +1;
 			player.resetPlayer(7, 10);
-			cout << player.state << "\n";
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
@@ -122,7 +120,6 @@ public:
 			loadCounterX = 0;
 			loadCounterY = 0;
 			player.resetPlayer(previousTileLocation[0], previousTileLocation[1]);
-			cout << player.state << "\n";
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 			mapNumber = 1;
 		}
