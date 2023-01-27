@@ -105,11 +105,15 @@ public:
 		int tile = getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 		if (tile == 9) {
 			once = false;
+
 			loadCounterX = 0;
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) +1;
-			player.setAllPositions(7, 13);
+			player.currentFrame = 0;
+			player.state = 0;
+			player.setAllPositions(0, 1);
+			cout << player.state << "\n";
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
@@ -318,7 +322,7 @@ public:
 
 	void drawMap(float xPosition, float yPosition) {
 
-		cout << "X : " << xPosition << " Y : " << yPosition << "\n";
+		cout << "X : " << xPosition / 32 << " Y : " << yPosition / 32 << "\n";
 
 		for (int i = 0; i < mapSizeX; i++)
 		{
@@ -339,7 +343,7 @@ public:
 					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 73, 80, (i * 32), (j * 32), (32 * 5), (32 * 4), 0);
 				}
 				else if (textMap[i][j] == 15) {
-					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 176, 135, (i * 5), (j * 5), (32 * 16), (32 * 12), 0);
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 176, 135, (0), (0), (32 * 16), (32 * 12), 0);
 				}
 				else {
 					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
