@@ -148,6 +148,7 @@
     <ClCompile Include="Battle\RouteMapping.cpp" />
     <ClCompile Include="Sprites\AttackButton.cpp" />
     <ClCompile Include="Sprites\Button.cpp" />
+    <ClCompile Include="Sprites\ChoosePokemonButton.cpp" />
     <ClCompile Include="Sprites\InteractablesForMaps.cpp" />
     <ClCompile Include="Sprites\PlayerCharacter.cpp">
       <DeploymentContent>true</DeploymentContent>
@@ -178,6 +179,7 @@
     <ClInclude Include="Battle\RouteMapping.h" />
     <ClInclude Include="Sprites\AttackButton.h" />
     <ClInclude Include="Sprites\Button.h" />
+    <ClInclude Include="Sprites\ChoosePokemonButton.h" />
     <ClInclude Include="Sprites\InteractablesForMaps.h" />
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\PokemonStatBox.h" />
