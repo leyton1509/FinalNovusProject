@@ -213,6 +213,13 @@ public:
 				 }
 
 				 break;
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				chosenPokemon = true;
+				break;
+			 }
+			 if (redraw && al_is_event_queue_empty(queue))
+			 {
 
 			 }
 
