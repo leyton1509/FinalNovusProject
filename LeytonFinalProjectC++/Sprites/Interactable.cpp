@@ -137,7 +137,7 @@ public:
 	}
 
 	// Method to be overidden for what the object does when interated
-	 void interact(PlayerCharacter &player) {
+	 void interact(PlayerCharacter &player, ALLEGRO_EVENT_QUEUE* queue) {
 		if (idOfInteractable == 1) {
 			choosePokemon(player);
 			isDisplayed = false;
@@ -148,7 +148,7 @@ public:
 
 
 
-	 void choosePokemon(PlayerCharacter& player) {
+	 void choosePokemon(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue) {
 		 double xMousePosition = 0;
 		 double yMousePosition = 0;
 
@@ -184,6 +184,26 @@ public:
 		 bool chosenPokemon = false;
 
 		 while (!chosenPokemon) {
+
+			 al_wait_for_event(queue, &event);
+
+			 switch (event.type)
+			 {
+			 case ALLEGRO_EVENT_TIMER:
+
+
+				 redraw = true;
+				 break;
+
+			 case ALLEGRO_EVENT_MOUSE_AXES:
+				 xMousePosition = event.mouse.x;
+				 yMousePosition = event.mouse.y;
+				 break;
+			 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+
+				 break;
+
+			 }
 
 		 }
 			
