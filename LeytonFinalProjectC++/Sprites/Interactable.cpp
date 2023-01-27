@@ -1,7 +1,8 @@
 #include "../Sprites/Spriteheader.h"
 #include <iostream>
 #include "../Sprites/PlayerCharacter.h"
-
+#include "../Sprites/ChoosePokemonButton.h"
+#include "../Pokemon/PokemonManager.h"
 
 class Interactable : public Sprite {
 
