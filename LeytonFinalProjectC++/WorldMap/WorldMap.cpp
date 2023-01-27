@@ -117,6 +117,15 @@ public:
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
+		else if (tile == 16) {
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			player.resetPlayer(previousTileLocation[0], previousTileLocation[1]);
+			cout << player.state << "\n";
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			mapNumber = 1;
+		}
 	}
 
 
