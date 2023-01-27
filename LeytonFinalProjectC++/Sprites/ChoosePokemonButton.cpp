@@ -36,9 +36,6 @@ public:
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + (xPosition * 0.1), yPosition + (yPosition * 0.1), spritewidth * 0.8, spriteHeight * 0.8, 0);
-
-
-
 	}
 
 
