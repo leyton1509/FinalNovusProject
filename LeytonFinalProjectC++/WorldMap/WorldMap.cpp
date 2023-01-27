@@ -110,9 +110,7 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) +1;
-			player.currentFrame = 0;
-			player.state = 0;
-			player.setAllPositions(0, 1);
+			player.resetPlayer(0, 1);
 			cout << player.state << "\n";
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
