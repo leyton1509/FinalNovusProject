@@ -157,7 +157,7 @@ public:
 		 ALLEGRO_EVENT event;
 
 		 // BG sprite
-		 ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
+		 ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/StarterBG.jpg");
 
 		 // Reset the camera
 		 ALLEGRO_TRANSFORM trans;
