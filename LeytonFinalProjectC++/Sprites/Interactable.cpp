@@ -139,7 +139,7 @@ public:
 	// Method to be overidden for what the object does when interated
 	 void interact(PlayerCharacter &player, ALLEGRO_EVENT_QUEUE* queue) {
 		if (idOfInteractable == 1) {
-			choosePokemon(player);
+			choosePokemon(player, queue);
 			isDisplayed = false;
 		}
 
