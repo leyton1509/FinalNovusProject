@@ -315,15 +315,20 @@ int main()
                 
                 if (player.directionY == 1) {
                     worldMap.interact(player, queue, "w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    keys[4] = false;
                 }
                 else if (player.directionY == -1) {
                     worldMap.interact(player, queue, "s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    keys[4] = false;
                 }
+
                 else if (player.directionX == -1) {
                     worldMap.interact(player, queue, "a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    keys[4] = false;
                 }
                 else if (player.directionX == 1) {
                     worldMap.interact(player, queue, "d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    keys[4] = false;
                 }
             }
 
