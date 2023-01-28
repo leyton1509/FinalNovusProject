@@ -200,7 +200,14 @@ public:
 				 redraw = true;
 				 break;
 
-			 }
+			 case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				 done = true;
+				 chosenPokemon = true;
+				 break;
+			  }
+	
+			 if (done)
+				 break;
 
 			 if (redraw && al_is_event_queue_empty(queue))
 			 {
