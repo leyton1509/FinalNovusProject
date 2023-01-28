@@ -102,7 +102,13 @@ public:
 					}
 
 					else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						textBox.isDisplayed = false;
+						if (textBox.isDisplayed) {
+							textBox.isDisplayed = false;
+						}
+						else {
+							textBox.isDisplayed = true;
+						}
+						
 
 
 
