@@ -162,6 +162,7 @@ int main()
     double yMousePosition = 0;
 
 
+
     al_start_timer(timer);
     ////////////////////////////////////////////////
 
@@ -312,21 +313,46 @@ int main()
             if (keys[4]) {
                 
                 if (player.directionY == 1) {
-                    worldMap.interact(player, queue, "w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    int interacted = worldMap.interact(player, queue, "w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                     keys[4] = false;
+                    if (interacted) {
+                        keys[0] = false;
+                        keys[1] = false;
+                        keys[2] = false;
+                        keys[3] = false;
+                        keys[4] = false;
+                    }
                 }
                 else if (player.directionY == -1) {
-                    worldMap.interact(player, queue, "s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    int interacted = worldMap.interact(player, queue, "s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                     keys[4] = false;
+                    if (interacted) {
+                        keys[0] = false;
+                        keys[1] = false;
+                        keys[2] = false;
+                        keys[3] = false;
+
                 }
 
                 else if (player.directionX == -1) {
-                    worldMap.interact(player, queue, "a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                   int interacted = worldMap.interact(player, queue, "a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                     keys[4] = false;
+                    if (interacted) {
+                        keys[0] = false;
+                        keys[1] = false;
+                        keys[2] = false;
+                        keys[3] = false;
+
                 }
                 else if (player.directionX == 1) {
-                    worldMap.interact(player, queue, "d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
+                    int interacted = worldMap.interact(player, queue, "d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                     keys[4] = false;
+                    if (interacted) {
+                        keys[0] = false;
+                        keys[1] = false;
+                        keys[2] = false;
+                        keys[3] = false;
+
                 }
             }
 
