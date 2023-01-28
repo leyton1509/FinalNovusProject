@@ -314,16 +314,16 @@ int main()
             if (keys[4]) {
                 
                 if (player.directionY == 1) {
-                    worldMap.interact(player, queue, "w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                    worldMap.interact(player, queue, "w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                 }
                 else if (player.directionY == -1) {
-                    worldMap.interact(player, queue, "s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                    worldMap.interact(player, queue, "s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                 }
                 else if (player.directionX == -1) {
-                    worldMap.interact(player, queue, "a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                    worldMap.interact(player, queue, "a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                 }
                 else if (player.directionX == 1) {
-                    worldMap.interact(player, queue, "d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
+                    worldMap.interact(player, queue, "d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                 }
             }
 
