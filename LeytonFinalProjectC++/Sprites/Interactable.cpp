@@ -160,11 +160,11 @@ public:
 		 // BG sprite
 		 ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/StarterBG.jpg");
 
-		 // Reset the camera
+		  //Reset the camera
 		 ALLEGRO_TRANSFORM trans;
 		 al_identity_transform(&trans);
 		 al_use_transform(&trans);
-		 al_draw_bitmap(background, 0, 0, 0);
+		 //al_draw_bitmap(background, 0, 0, 0);
 
 		 PokemonManager pm = pm.instance();
 
@@ -180,6 +180,7 @@ public:
 		 ChoosePokemonButton pokemonTwoButton = ChoosePokemonButton(pokemon2, 128, 128, 100, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 		 ChoosePokemonButton pokemonThreeButton = ChoosePokemonButton(pokemon3, 128, 128, 100, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 			 
+		
 
 		 bool chosenPokemon = false;
 
@@ -189,42 +190,33 @@ public:
 
 			 switch (event.type)
 			 {
+			 case ALLEGRO_EVENT_MOUSE_AXES:
+				 xMousePosition = event.mouse.x;
+				 yMousePosition = event.mouse.y;
+				 break;
 			 case ALLEGRO_EVENT_TIMER:
 
 
 				 redraw = true;
 				 break;
 
-			 case ALLEGRO_EVENT_MOUSE_AXES:
-				 xMousePosition = event.mouse.x;
-				 yMousePosition = event.mouse.y;
-				 break;
-			 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-				 if (pokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					
-					 chosenPokemon = true;
-				 }else if (pokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-
-					 chosenPokemon = true;
-				 }
-				 if (pokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-
-					 chosenPokemon = true;
-				 }
-
-				 break;
-			case ALLEGRO_EVENT_DISPLAY_CLOSE:
-				done = true;
-				chosenPokemon = true;
-				break;
 			 }
+
 			 if (redraw && al_is_event_queue_empty(queue))
 			 {
-				 al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+				 cout << screenWidth << " " << screenHeight << " \n";
+				 al_clear_to_color(al_map_rgb(0, 0, 0));
+
+				 al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
+
+				
+				 al_flip_display();
 
 			 }
+			 
 
 		 }
+		 
 			
 	 }
 
