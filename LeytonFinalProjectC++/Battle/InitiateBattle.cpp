@@ -52,6 +52,11 @@ public:
 		//otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
 
+		player.addPokemon(pm.getDefaultPokemon("Charizard"));
+		player.addPokemon(pm.getDefaultPokemon("Blastoise"));
+		player.addPokemon(pm.getDefaultPokemon("Darkrai"));
+
+
 		// Gets all the gui info
 		// The hp bars
 		// The buttons on screen
@@ -70,9 +75,11 @@ public:
 		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2],128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3],128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
-		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(player.trainersParty[0], 64, 64, 500, 470, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
-
+		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(player.trainersParty[0], 64, 64, 500, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonOneButton.isDisplayed = false;
+
+		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(player.trainersParty[1], 64, 64, 590, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		switchPokemonTwoButton.isDisplayed = false;
 
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
@@ -110,12 +117,14 @@ public:
 						if (textBox.isDisplayed) {
 							textBox.isDisplayed = false;
 							switchPokemonOneButton.isDisplayed = true;
+							switchPokemonTwoButton.isDisplayed = true;
 
 
 						}
 						else {
 							textBox.isDisplayed = true;
 							switchPokemonOneButton.isDisplayed = false;
+							switchPokemonTwoButton.isDisplayed = false;
 						}
 						
 
@@ -268,6 +277,7 @@ public:
 
 					if (switchPokemonOneButton.isDisplayed) {
 						switchPokemonOneButton.drawSprite();
+						switchPokemonTwoButton.drawSprite();
 					}
 					
 					al_flip_display();
