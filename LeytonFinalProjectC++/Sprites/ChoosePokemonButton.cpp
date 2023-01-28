@@ -38,6 +38,12 @@ public:
 		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 7, yPosition + 5, spritewidth * 0.9, spriteHeight * 0.9, 0);
 	}
 
+	void destroySprite() {
+		al_destroy_bitmap(spriteImage);
+		al_destroy_bitmap(otherPokemonSprite);
+		al_destroy_font(fontSmaller);
+	}
+
 
 
 
