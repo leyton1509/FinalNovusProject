@@ -204,6 +204,22 @@ public:
 				 done = true;
 				 chosenPokemon = true;
 				 break;
+			 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+
+				 if (pokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					 done = true;
+					 player.addPokemon(pokemon1);
+					 chosenPokemon = true;
+				 }
+				 else if (pokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					 done = true;
+					 player.addPokemon(pokemon2);
+					 chosenPokemon = true;
+				 } else if (pokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					 done = true;
+					 player.addPokemon(pokemon3);
+					 chosenPokemon = true;
+				 }
 			  }
 	
 			 if (done)
@@ -221,6 +237,7 @@ public:
 				 pokemonThreeButton.drawSprite();
 
 				 al_flip_display();
+				 
 
 			 }
 			 
