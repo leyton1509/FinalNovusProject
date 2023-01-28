@@ -81,6 +81,9 @@ public:
 		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(player.trainersParty[1], 64, 64, 590, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonTwoButton.isDisplayed = false;
 
+		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(player.trainersParty[1], 64, 64, 680, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		switchPokemonThreeButton.isDisplayed = false;
+
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
@@ -118,13 +121,14 @@ public:
 							textBox.isDisplayed = false;
 							switchPokemonOneButton.isDisplayed = true;
 							switchPokemonTwoButton.isDisplayed = true;
-
+							switchPokemonThreeButton.isDisplayed = true;
 
 						}
 						else {
 							textBox.isDisplayed = true;
 							switchPokemonOneButton.isDisplayed = false;
 							switchPokemonTwoButton.isDisplayed = false;
+							switchPokemonThreeButton.isDisplayed = false;
 						}
 						
 
@@ -278,6 +282,7 @@ public:
 					if (switchPokemonOneButton.isDisplayed) {
 						switchPokemonOneButton.drawSprite();
 						switchPokemonTwoButton.drawSprite();
+						switchPokemonThreeButton.drawSprite();
 					}
 					
 					al_flip_display();
