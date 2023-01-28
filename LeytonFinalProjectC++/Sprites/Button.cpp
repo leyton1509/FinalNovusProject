@@ -42,6 +42,10 @@ public:
 		return false;
 	}
 
+	void destroySprite() {
+		al_destroy_bitmap(spriteImage);
+	}
+
 
 
 };
