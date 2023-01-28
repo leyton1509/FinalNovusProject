@@ -176,9 +176,9 @@ public:
 		 pokemon3.setPokemonsLevel(5);
 
 
-		 ChoosePokemonButton pokemonOneButton = ChoosePokemonButton(pokemon1, 128, 128, 8, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
-		 ChoosePokemonButton pokemonTwoButton = ChoosePokemonButton(pokemon2, 128, 128, 100, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
-		 ChoosePokemonButton pokemonThreeButton = ChoosePokemonButton(pokemon3, 128, 128, 100, 8, 64, 64, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
+		 ChoosePokemonButton pokemonOneButton = ChoosePokemonButton(pokemon1, 128, 128, 200, 30, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
+		 ChoosePokemonButton pokemonTwoButton = ChoosePokemonButton(pokemon2, 128, 128, 385, 100, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
+		 ChoosePokemonButton pokemonThreeButton = ChoosePokemonButton(pokemon3, 128, 128, 565, 30, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 			 
 		
 
