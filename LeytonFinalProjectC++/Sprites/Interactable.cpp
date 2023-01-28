@@ -209,7 +209,10 @@ public:
 
 				 al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
 
-				
+				 pokemonOneButton.drawSprite();
+				 pokemonTwoButton.drawSprite();
+				 pokemonThreeButton.drawSprite();
+
 				 al_flip_display();
 
 			 }
