@@ -331,6 +331,7 @@ int main()
                         keys[1] = false;
                         keys[2] = false;
                         keys[3] = false;
+                    }
 
                 }
 
@@ -342,6 +343,7 @@ int main()
                         keys[1] = false;
                         keys[2] = false;
                         keys[3] = false;
+                    }
 
                 }
                 else if (player.directionX == 1) {
@@ -352,6 +354,7 @@ int main()
                         keys[1] = false;
                         keys[2] = false;
                         keys[3] = false;
+                    }
 
                 }
             }
