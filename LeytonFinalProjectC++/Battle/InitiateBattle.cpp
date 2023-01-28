@@ -101,7 +101,7 @@ public:
 						battleFinished = true;
 					}
 
-					if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (player.trainersParty[currentPokemon].pokemonsMoves[0].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
 
