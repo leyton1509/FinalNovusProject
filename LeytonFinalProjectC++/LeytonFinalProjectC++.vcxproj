@@ -157,6 +157,7 @@
     <ClCompile Include="Sprites\PokemonGrass.cpp" />
     <ClCompile Include="Sprites\PokemonStatBox.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
+    <ClCompile Include="Sprites\SwitchPokemonButton.cpp" />
     <ClCompile Include="TitleScreen\TitleScreen.cpp" />
     <ClCompile Include="Sprites\Interactable.cpp" />
     <ClCompile Include="WorldMap\WorldMap.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\PokemonStatBox.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
+    <ClInclude Include="Sprites\SwitchPokemonButton.h" />
     <ClInclude Include="TitleScreen\TitleScreenHeader.h" />
     <ClInclude Include="Sprites\Interactable.h" />
     <ClInclude Include="WorldMap\WorldMap.h" />
