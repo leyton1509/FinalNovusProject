@@ -35,7 +35,7 @@ public:
 	// Draws the button and pokemon attacthed to it
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
-		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 12, yPosition + 15, spritewidth * 0.8, spriteHeight * 0.8, 0);
+		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 7, yPosition + 5, spritewidth * 0.9, spriteHeight * 0.9, 0);
 	}
 
 
