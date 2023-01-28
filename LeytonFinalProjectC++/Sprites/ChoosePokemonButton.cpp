@@ -10,8 +10,6 @@ public:
 
 	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
-	// The font to draw with
-	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 	// The original x size of button image
 	int originalSizeX;
 	// The original y size of button image
@@ -41,7 +39,6 @@ public:
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
 		al_destroy_bitmap(otherPokemonSprite);
-		al_destroy_font(fontSmaller);
 	}
 
 
