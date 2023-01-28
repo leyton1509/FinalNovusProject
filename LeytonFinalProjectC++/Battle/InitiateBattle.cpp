@@ -5,6 +5,7 @@
 #include "../Sprites/PokemonStatBox.h"
 #include "../Battle/PokemonTurn.h"
 #include "../Battle/RouteMapping.h"
+#include "../Sprites/SwitchPokemonButton.h"
 
 // Class when a pokemon battke is needed
 class InitiateBattle {
@@ -69,6 +70,8 @@ public:
 		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2],128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3],128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
+		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(player.trainersParty[0], 64, 64, 500, 470, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
@@ -104,6 +107,9 @@ public:
 					else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (textBox.isDisplayed) {
 							textBox.isDisplayed = false;
+
+
+
 						}
 						else {
 							textBox.isDisplayed = true;
