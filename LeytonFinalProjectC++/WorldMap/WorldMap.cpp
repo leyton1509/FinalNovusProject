@@ -86,7 +86,7 @@ public:
 
 
 
-	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, const char* keyPressed, int directionX, int directionY, int xTile, int yTile, int screenWidth, int screenHeight) {
+	int interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, const char* keyPressed, int directionX, int directionY, int xTile, int yTile, int screenWidth, int screenHeight) {
 
 		for (Interactable& inter : interactablesForMap)
 		{
@@ -94,13 +94,14 @@ public:
 
 				if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 					inter.interact(player, queue,  screenWidth,  screenHeight);
+					return 1;
 				}
 
 			}
 
 		}
 
-
+		return 0;
 	}
 
 	void checkToChangeMaps(PlayerCharacter& player) {
