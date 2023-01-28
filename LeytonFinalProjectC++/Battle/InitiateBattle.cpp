@@ -72,6 +72,8 @@ public:
 
 		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(player.trainersParty[0], 64, 64, 500, 470, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 
+		switchPokemonOneButton.isDisplayed = false;
+
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
@@ -107,7 +109,7 @@ public:
 					else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (textBox.isDisplayed) {
 							textBox.isDisplayed = false;
-
+							switchPokemonOneButton.isDisplayed = true;
 
 
 						}
@@ -261,6 +263,10 @@ public:
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+					}
+
+					if (switchPokemonOneButton.isDisplayed) {
+						switchPokemonOneButton.drawSprite();
 					}
 					
 					al_flip_display();
