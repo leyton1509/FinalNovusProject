@@ -115,6 +115,7 @@ public:
 						}
 						else {
 							textBox.isDisplayed = true;
+							switchPokemonOneButton.isDisplayed = false;
 						}
 						
 
