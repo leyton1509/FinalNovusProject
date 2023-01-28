@@ -243,6 +243,10 @@ public:
 			 
 
 		 }
+
+		 pokemonOneButton.destroySprite();
+		 pokemonTwoButton.destroySprite();
+		 pokemonThreeButton.destroySprite();
 		 
 			
 	 }
