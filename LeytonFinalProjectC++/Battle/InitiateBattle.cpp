@@ -101,6 +101,14 @@ public:
 						battleFinished = true;
 					}
 
+					else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						textBox.isDisplayed = false;
+
+
+
+
+					}
+
 					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (player.trainersParty[currentPokemon].pokemonsMoves[0].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
@@ -236,10 +244,13 @@ public:
 					switchPokemonButton.drawSprite();
 					catchPokemonButton.drawSprite();
 					runPokemonButton.drawSprite();
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+					if (textBox.isDisplayed) {
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+					}
+					
 					al_flip_display();
 					redraw = false;
 				}
