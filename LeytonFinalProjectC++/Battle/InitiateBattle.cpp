@@ -190,6 +190,20 @@ public:
 						}
 					}
 
+					else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						if (!(strcmp(player.trainersParty[3].pokemonName.c_str(), "") == 0)) {
+							if (currentPokemon != 3) {
+								if (player.trainersParty[3].currentHealth != 0) {
+									currentPokemon = 3;
+									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+								}
+							}
+						}
+					}
+
 					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (player.trainersParty[currentPokemon].pokemonsMoves[0].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
