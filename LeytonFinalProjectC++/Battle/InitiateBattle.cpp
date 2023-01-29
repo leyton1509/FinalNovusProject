@@ -158,6 +158,16 @@ public:
 						}
 					}
 
+					else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						if (!(strcmp(player.trainersParty[1].pokemonName.c_str(), "") == 0)) {
+							if (currentPokemon != 1) {
+								if (player.trainersParty[1].currentHealth != 0) {
+									currentPokemon = 1;
+								}
+							}
+						}
+					}
+
 					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (player.trainersParty[currentPokemon].pokemonsMoves[0].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
