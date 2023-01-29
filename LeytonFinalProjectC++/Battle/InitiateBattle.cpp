@@ -148,7 +148,7 @@ public:
 
 					}
 
-					if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (!(strcmp(player.trainersParty[0].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 0) {
 								if (player.trainersParty[0].currentHealth != 0) {
