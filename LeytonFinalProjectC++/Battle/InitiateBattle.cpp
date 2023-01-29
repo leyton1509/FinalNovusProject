@@ -12,6 +12,9 @@ class InitiateBattle {
 
 public:
 
+
+
+
 	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int battleType) {
 
@@ -217,6 +220,7 @@ public:
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
 									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
 									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								}
 							}
 						}
@@ -231,6 +235,7 @@ public:
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
 									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
 									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								}
 							}
 						}
