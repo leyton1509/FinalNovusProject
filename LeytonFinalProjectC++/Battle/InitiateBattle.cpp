@@ -145,11 +145,17 @@ public:
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
 						}
-						
 
+					}
 
-
-
+					if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						if (!(strcmp(player.trainersParty[0].pokemonName.c_str(), "") == 0)) {
+							if (currentPokemon != 0) {
+								if (player.trainersParty[0].currentHealth != 0) {
+									currentPokemon = 0;
+								}
+							}
+						}
 					}
 
 					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
