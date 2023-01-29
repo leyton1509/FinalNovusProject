@@ -35,8 +35,11 @@ public:
 	// Draws the button and pokemon attacthed to it
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
-		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition + 3, spritewidth * 0.9, spriteHeight * 0.9, 0);
-		//al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 7, yPosition+15, 0, string(pokemon.currentHealth + "/" + pokemon.healthActual).c_str());
+		if (!(strcmp(pokemon.pokemonName.c_str(), "") == 0)) {
+			al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition + 3, spritewidth * 0.9, spriteHeight * 0.9, 0);
+			//al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 7, yPosition+15, 0, string(pokemon.currentHealth + "/" + pokemon.healthActual).c_str());
+		}
+		
 
 	}
 
