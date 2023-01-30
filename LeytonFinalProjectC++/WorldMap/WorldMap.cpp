@@ -75,6 +75,10 @@ public:
 		mapTiles[17] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		// Entrance to Pokemart
 		mapTiles[18] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		// Pokecentre draw inside
+		mapTiles[19] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/InsidePokeCentre.png");
+		// Pokemart draw inside
+		mapTiles[20] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/InsidePokeMart.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
