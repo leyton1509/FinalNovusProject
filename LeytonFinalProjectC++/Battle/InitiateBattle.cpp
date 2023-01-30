@@ -299,6 +299,11 @@ public:
 						switchPokemonButtonClicked = 0;
 					}
 
+					else if (attackButtonClicked!=0) {
+
+						attackButtonClicked = 0;
+					}
+
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 						pokemonDeadNeedsToSwitch = true;
 					}
