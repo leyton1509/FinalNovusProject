@@ -69,6 +69,8 @@ class PlayerCharacter : public Sprite{
 		}
 	}
 
+	// Returns the integer of the first pokemon alive
+	// Returns -1 if none are alive
 	int getFirstAlivePokemon() {
 
 		for (int i = 0; i < numberOfPokemonInParty; i++)
