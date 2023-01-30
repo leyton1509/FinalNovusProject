@@ -178,31 +178,6 @@ public:
 
 					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 						attackButtonClicked = 1;
-						if (player.trainersParty[currentPokemon].pokemonsMoves[0].currentPowerPoints != 0) {
-							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
-
-							if (otherPokemon.currentHealth <= 0) {
-								int expGained = otherPokemon.experienceUponKill();
-								player.trainersParty[currentPokemon].gainExperience(expGained);
-								battleFinished = true;
-							}
-							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-								battleFinished = true;
-							}
-							textForTextBox[0] = doTurn.textForTextBox[0];
-							textForTextBox[1] = doTurn.textForTextBox[1];
-							textForTextBox[2] = doTurn.textForTextBox[2];
-							textForTextBox[3] = doTurn.textForTextBox[3];
-
-							player.trainersParty[currentPokemon].pokemonsMoves[0].useMove();
-							attackButton1.pokemonMove.useMove();
-						}
-						else {
-							textForTextBox[0] = attackButton1.pokemonMove.moveName + " is out of PP!";
-							textForTextBox[1] = "";
-							textForTextBox[2] = "";
-							textForTextBox[3] = "";
-						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
 						attackButtonClicked = 2;
