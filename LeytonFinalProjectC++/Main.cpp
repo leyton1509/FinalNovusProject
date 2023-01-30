@@ -410,8 +410,11 @@ int main()
                                 worldMap.returnPlayerToClosestHeal(player);
                                 player.resetPlayer(player.xTilePosition, player.yTilePosition);
                             }
+                            else {
+                                player.setNewEncounterLocation();
+                            }
                         }
-                        player.setNewEncounterLocation(); 
+                        
                     }
 
                 }
