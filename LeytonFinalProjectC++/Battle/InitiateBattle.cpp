@@ -100,7 +100,6 @@ public:
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
 		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
-		bool pokemonDeadNeedsToSwitch = false;
 
 		bool battleFinished = false;
 		int attackButtonClicked = 0;
@@ -246,7 +245,7 @@ public:
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-						pokemonDeadNeedsToSwitch = true;
+						
 					}
 
 					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
