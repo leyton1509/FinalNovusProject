@@ -247,6 +247,9 @@ public:
 					else if (textMap[xTile - 1][tempYTile] == 10) {
 						return 0;
 					}
+					else if (textMap[xTile - 1][tempYTile] == 11) {
+						return 0;
+					}
 					else if (textMap[xTile - 1][tempYTile] == 12) {
 						return 0;
 					}
