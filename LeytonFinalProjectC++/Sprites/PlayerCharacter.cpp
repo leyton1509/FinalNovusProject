@@ -88,7 +88,6 @@ class PlayerCharacter : public Sprite{
 		{
 			if (strcmp(trainersParty[i].pokemonName.c_str(), "")!=0) {
 				if (trainersParty[i].currentHealth > 0) {
-					cout << trainersParty[i].pokemonName << " is alive\n";
 					return false;;
 				}
 			}
