@@ -189,18 +189,6 @@ public:
 
 					else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						switchPokemonButtonClicked = 3;
-						if (!(strcmp(player.trainersParty[2].pokemonName.c_str(), "") == 0)) {
-							if (currentPokemon != 2) {
-								if (player.trainersParty[2].currentHealth != 0) {
-									currentPokemon = 2;
-									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
-									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
-									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
-									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
-								}
-							}
-						}
 					}
 
 					else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
