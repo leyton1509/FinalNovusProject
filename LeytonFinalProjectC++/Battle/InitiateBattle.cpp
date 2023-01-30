@@ -208,6 +208,10 @@ public:
 									switchPokemonFiveButton.isDisplayed = false;
 									switchPokemonSixButton.isDisplayed = false;
 
+									if (pokemonIsDead) {
+										pokemonIsDead = false;
+									}
+
 
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								}
