@@ -199,6 +199,10 @@ public:
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
 									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
 									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+
+
+
+
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								}
 							}
@@ -247,6 +251,13 @@ public:
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 						pokemonIsDead = true;
+						textBox.isDisplayed = false;
+						switchPokemonOneButton.isDisplayed = true;
+						switchPokemonTwoButton.isDisplayed = true;
+						switchPokemonThreeButton.isDisplayed = true;
+						switchPokemonFourButton.isDisplayed = true;
+						switchPokemonFiveButton.isDisplayed = true;
+						switchPokemonSixButton.isDisplayed = true;
 					}
 
 					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
