@@ -229,6 +229,7 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
+    player.addPokemon(pm.getDefaultPokemon("Blaziken"));
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(15, 20);
