@@ -331,9 +331,9 @@ public:
 
 
 
-	void drawMap(float xPosition, float yPosition) {
+	void drawMap() {
 
-		cout << "X : " << xPosition / 32 << " Y : " << yPosition / 32 << " Tile N : " << getWhatPlayerIsStandingOn(xPosition / 32, yPosition / 32) << "\n";
+		// cout << "X : " << xPosition / 32 << " Y : " << yPosition / 32 << " Tile N : " << getWhatPlayerIsStandingOn(xPosition / 32, yPosition / 32) << "\n";
 
 		for (int i = 0; i < mapSizeX; i++)
 		{
