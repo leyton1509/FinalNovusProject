@@ -71,25 +71,26 @@ class PlayerCharacter : public Sprite{
 
 	int getFirstAlivePokemon() {
 
-		for (int i = 0; i < numberOfPokemonInParty - 1; i++)
+		for (int i = 0; i < numberOfPokemonInParty; i++)
 		{
 			if (trainersParty[i].currentHealth > 0) {
-				return i;;
+				return i;
 			}
 		}
-		return 0;
+		return -1;
 	}
 
 	// method for checking if all pokemon in the party are dead
 	// returns true if all dead
 	bool isAllPokemonInPartyDead() {
-		if (numberOfPokemonInParty - 1 < 0){
-			return true;
-		}
-		for (int i = 0; i < numberOfPokemonInParty-1; i++)
+		
+		for (int i = 0; i < numberOfPokemonInParty; i++)
 		{
-			if (trainersParty[i].currentHealth > 0) {
-				return false;;
+			if (strcmp(trainersParty[i].pokemonName.c_str(), "")!=0) {
+				if (trainersParty[i].currentHealth > 0) {
+					cout << trainersParty[i].pokemonName << " is alive\n";
+					return false;;
+				}
 			}
 		}
 		return true;
