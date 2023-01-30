@@ -113,6 +113,7 @@ public:
 
 	void checkToChangeMaps(PlayerCharacter& player) {
 		int tile = getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
+		// Entrance to basic house
 		if (tile == 9) {
 			once = false;
 			loadCounterX = 0;
@@ -123,6 +124,18 @@ public:
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
 		}
+		// Entrance to poke centre
+		else if (tile == 17) {
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			previousTileLocation[0] = player.xTilePosition;
+			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.resetPlayer(7, 10);
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
+			mapNumber = 11;
+		}
+
 		else if (tile == 16) {
 			once = false;
 			loadCounterX = 0;
