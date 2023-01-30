@@ -140,6 +140,17 @@ public:
 			mapNumber = 11;
 		}
 
+		else if (tile == 18) {
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			previousTileLocation[0] = player.xTilePosition;
+			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.resetPlayer(7, 10);
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
+			mapNumber = 11;
+		}
+
 		else if (tile == 16) {
 			once = false;
 			loadCounterX = 0;
