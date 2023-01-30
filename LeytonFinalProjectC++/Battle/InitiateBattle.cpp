@@ -103,6 +103,7 @@ public:
 		bool pokemonDeadNeedsToSwitch = false;
 
 		bool battleFinished = false;
+		int attackButtonClicked = 0;
 
 		if (battleType == 0) {
 			// Wild encounter
