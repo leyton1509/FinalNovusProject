@@ -28,6 +28,7 @@ public:
 	int locationNumber = 0;
 	int mapNumber;
 	int previousTileLocation[2];
+	int closestHealLocation[2];
 
 
 	WorldMap(int _screenWidth, int _screenHeight, const char * mapFP, int _mapNumber) {
