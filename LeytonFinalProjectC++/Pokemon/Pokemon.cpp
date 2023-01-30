@@ -106,6 +106,10 @@ public:
 
 	void healPokemonToFull() {
 		currentHealth = healthActual;
+		for (int i = 0; i < numberOfMoves; i++)
+		{
+			pokemonsMoves[i].currentPowerPoints = pokemonsMoves[i].powerpoints;
+		}
 		isPokemonDead = false;
 	}
 
