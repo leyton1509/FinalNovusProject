@@ -206,30 +206,6 @@ public:
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
 						attackButtonClicked = 2;
-						if (player.trainersParty[currentPokemon].pokemonsMoves[1].currentPowerPoints != 0) {
-							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton2.pokemonMove);
-							if (otherPokemon.currentHealth <= 0) {
-								int expGained = otherPokemon.experienceUponKill();
-								player.trainersParty[currentPokemon].gainExperience(expGained);
-								battleFinished = true;
-							}
-							if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-								battleFinished = true;
-							}
-							textForTextBox[0] = doTurn.textForTextBox[0];
-							textForTextBox[1] = doTurn.textForTextBox[1];
-							textForTextBox[2] = doTurn.textForTextBox[2];
-							textForTextBox[3] = doTurn.textForTextBox[3];
-
-							player.trainersParty[currentPokemon].pokemonsMoves[1].useMove();
-							attackButton2.pokemonMove.useMove();
-						}
-						else {
-							textForTextBox[0] = attackButton2.pokemonMove.moveName + " is out of PP!";
-							textForTextBox[1] = "";
-							textForTextBox[2] = "";
-							textForTextBox[3] = "";
-						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
 						attackButtonClicked = 3;
