@@ -12,19 +12,18 @@ class InitiateBattle {
 
 public:
 
+	// Mouse positions
+	double xMousePosition = 0;
+	double yMousePosition = 0;
 
-
+	// GUI info
+	bool done = false;
+	bool redraw = true;
 
 	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int battleType) {
 
-		// Mouse positions
-		double xMousePosition = 0;
-		double yMousePosition = 0;
-
-		// GUI info
-		bool done = false;
-		bool redraw = true;
+		
 		ALLEGRO_EVENT event;
 
 		// BG sprite
