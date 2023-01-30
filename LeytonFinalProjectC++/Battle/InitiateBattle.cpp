@@ -49,7 +49,9 @@ public:
 		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
 		// The number of the pokemon to use
-		int currentPokemon = 0;
+		int currentPokemon = player.getFirstAlivePokemon();
+
+		
 
 		//otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
