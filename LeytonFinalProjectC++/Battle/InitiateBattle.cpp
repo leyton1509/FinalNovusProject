@@ -177,6 +177,7 @@ public:
 					}
 
 					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButtonClicked = 1;
 						if (player.trainersParty[currentPokemon].pokemonsMoves[0].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton1.pokemonMove);
 
@@ -204,6 +205,7 @@ public:
 						}
 					}
 					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButtonClicked = 2;
 						if (player.trainersParty[currentPokemon].pokemonsMoves[1].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton2.pokemonMove);
 							if (otherPokemon.currentHealth <= 0) {
@@ -230,6 +232,7 @@ public:
 						}
 					}
 					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButtonClicked = 3;
 						if (player.trainersParty[currentPokemon].pokemonsMoves[2].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton3.pokemonMove);
 							if (otherPokemon.currentHealth <= 0) {
@@ -256,6 +259,7 @@ public:
 						}
 					}
 					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
+						attackButtonClicked = 4;
 						if (player.trainersParty[currentPokemon].pokemonsMoves[3].currentPowerPoints != 0) {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, attackButton4.pokemonMove);
 							if (otherPokemon.currentHealth <= 0) {
