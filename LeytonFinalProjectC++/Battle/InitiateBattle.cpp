@@ -153,9 +153,11 @@ public:
 					}
 
 					else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						switchPokemonButtonClicked = 1;
 						if (!(strcmp(player.trainersParty[0].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 0) {
 								if (player.trainersParty[0].currentHealth != 0) {
+
 									currentPokemon = 0;
 									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
@@ -170,6 +172,7 @@ public:
 					}
 
 					else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						switchPokemonButtonClicked = 2;
 						if (!(strcmp(player.trainersParty[1].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 1) {
 								if (player.trainersParty[1].currentHealth != 0) {
@@ -185,6 +188,7 @@ public:
 					}
 
 					else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						switchPokemonButtonClicked = 3;
 						if (!(strcmp(player.trainersParty[2].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 2) {
 								if (player.trainersParty[2].currentHealth != 0) {
@@ -200,6 +204,7 @@ public:
 					}
 
 					else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						switchPokemonButtonClicked = 4;
 						if (!(strcmp(player.trainersParty[3].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 3) {
 								if (player.trainersParty[3].currentHealth != 0) {
@@ -215,6 +220,7 @@ public:
 					}
 
 					else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						switchPokemonButtonClicked = 5;
 						if (!(strcmp(player.trainersParty[4].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 4) {
 								if (player.trainersParty[4].currentHealth != 0) {
@@ -230,6 +236,7 @@ public:
 					}
 
 					else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						switchPokemonButtonClicked = 6;
 						if (!(strcmp(player.trainersParty[5].pokemonName.c_str(), "") == 0)) {
 							if (currentPokemon != 5) {
 								if (player.trainersParty[5].currentHealth != 0) {
@@ -348,6 +355,10 @@ public:
 							textForTextBox[2] = "";
 							textForTextBox[3] = "";
 						}
+					}
+
+					if (switchPokemonButtonClicked!=0) {
+
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
