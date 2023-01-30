@@ -312,6 +312,10 @@ public:
 		}
 	}
 
+	void returnPlayerToClosestHeal(PlayerCharacter &player) {
+
+	}
+
 
 
 	int getWhatPlayerIsStandingOn(int xTile, int yTile) {
