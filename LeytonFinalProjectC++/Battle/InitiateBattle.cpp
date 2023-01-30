@@ -114,6 +114,8 @@ public:
 				case ALLEGRO_EVENT_TIMER:
 
 					
+
+					
 					redraw = true;
 					break;
 
@@ -160,6 +162,10 @@ public:
 									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
 									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+
+									if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+
+									}
 								}
 							}
 						}
