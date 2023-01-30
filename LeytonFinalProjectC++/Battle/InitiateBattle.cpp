@@ -23,7 +23,8 @@ public:
 	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int battleType) {
 
-		
+		bool battleFinished = false;
+
 		ALLEGRO_EVENT event;
 
 		// BG sprite
@@ -49,17 +50,19 @@ public:
 		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
 		// The number of the pokemon to use
-		int currentPokemon = player.getFirstAlivePokemon();
+		int currentPokemon = 0;
 
+		if (!player.isAllPokemonInPartyDead()) {
+			currentPokemon = player.getFirstAlivePokemon();
+			
+		}
+		else {
+			return;
+		}
 		
 
 		//otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
-
-		player.addPokemon(pm.getDefaultPokemon("Charizard"));
-		player.addPokemon(pm.getDefaultPokemon("Blastoise"));
-		player.addPokemon(pm.getDefaultPokemon("Darkrai"));
-
 
 		// Gets all the gui info
 		// The hp bars
@@ -103,7 +106,7 @@ public:
 		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
 
-		bool battleFinished = false;
+
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
 		bool pokemonIsDead = false;
@@ -266,6 +269,12 @@ public:
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+
+						if (player.isAllPokemonInPartyDead()) {
+							// Add teleporting to nearest heal
+							cout << "All pokemon dead\n";
+							battleFinished = true;
+						}
 						pokemonIsDead = true;
 						textBox.isDisplayed = false;
 						switchPokemonOneButton.isDisplayed = true;
