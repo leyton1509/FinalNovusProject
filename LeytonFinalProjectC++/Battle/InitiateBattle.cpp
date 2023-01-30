@@ -165,9 +165,7 @@ public:
 									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 
-									if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-
-									}
+									
 								}
 							}
 						}
@@ -352,6 +350,10 @@ public:
 							textForTextBox[2] = "";
 							textForTextBox[3] = "";
 						}
+					}
+
+					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+						pokemonDeadNeedsToSwitch = true;
 					}
 
 					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
