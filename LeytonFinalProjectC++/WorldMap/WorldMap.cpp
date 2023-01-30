@@ -78,6 +78,8 @@ public:
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
+		closestHealLocation[0] = 15;
+		closestHealLocation[1] = 10;
 		InteractablesForMaps im;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		loadMap(mapFP);
