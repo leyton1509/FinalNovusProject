@@ -304,7 +304,41 @@ public:
 					}
 
 					else if (attackButtonClicked!=0) {
+						int attackButtonN = attackButtonClicked - 1;
+						if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
 
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
+							if (otherPokemon.currentHealth <= 0) {
+								int expGained = otherPokemon.experienceUponKill();
+								player.trainersParty[currentPokemon].gainExperience(expGained);
+								battleFinished = true;
+							}
+							
+							textForTextBox[0] = doTurn.textForTextBox[0];
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = doTurn.textForTextBox[2];
+							textForTextBox[3] = doTurn.textForTextBox[3];
+
+							player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].useMove();
+							
+							
+							if (attackButtonClicked == 1) {
+								attackButton1.pokemonMove.useMove();
+							}else if (attackButtonClicked == 2) {
+								attackButton2.pokemonMove.useMove();
+							}else if (attackButtonClicked == 3) {
+								attackButton3.pokemonMove.useMove();
+							}
+							else if (attackButtonClicked == 4) {
+								attackButton4.pokemonMove.useMove();
+							}
+						}
+						else {
+							textForTextBox[0] = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveName + " is out of PP!";
+							textForTextBox[1] = "";
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
+						}
 						attackButtonClicked = 0;
 					}
 
