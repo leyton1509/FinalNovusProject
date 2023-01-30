@@ -69,6 +69,17 @@ class PlayerCharacter : public Sprite{
 		}
 	}
 
+	int getFirstAlivePokemon() {
+
+		for (int i = 0; i < numberOfPokemonInParty - 1; i++)
+		{
+			if (trainersParty[i].currentHealth > 0) {
+				return i;;
+			}
+		}
+		return 0;
+	}
+
 	// method for checking if all pokemon in the party are dead
 	// returns true if all dead
 	bool isAllPokemonInPartyDead() {
