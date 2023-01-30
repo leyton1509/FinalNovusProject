@@ -104,6 +104,7 @@ public:
 
 		bool battleFinished = false;
 		int attackButtonClicked = 0;
+		int switchButtonClicked = 0;
 
 		if (battleType == 0) {
 			// Wild encounter
@@ -115,10 +116,6 @@ public:
 				switch (event.type)
 				{
 				case ALLEGRO_EVENT_TIMER:
-
-					
-
-					
 					redraw = true;
 					break;
 
