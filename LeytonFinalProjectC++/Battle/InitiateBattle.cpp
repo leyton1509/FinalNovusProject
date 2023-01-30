@@ -358,8 +358,19 @@ public:
 					}
 
 					if (switchPokemonButtonClicked!=0) {
-
-
+						int pokemonNinArray = switchPokemonButtonClicked - 1;
+						if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
+							if (currentPokemon != pokemonNinArray) {
+								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									currentPokemon = pokemonNinArray;
+									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								}
+							}
+						}
 						switchPokemonButtonClicked = 0;
 					}
 
