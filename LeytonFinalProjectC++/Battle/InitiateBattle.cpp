@@ -104,6 +104,7 @@ public:
 		bool battleFinished = false;
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
+		bool pokemonIsDead = false;
 
 		if (battleType == 0) {
 			// Wild encounter
@@ -245,7 +246,7 @@ public:
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-						
+						pokemonIsDead = true;
 					}
 
 					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
@@ -264,7 +265,9 @@ public:
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight*0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					if (!pokemonIsDead) {
+						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					}
 					otherPokemonStatBox.drawSprite(otherPokemon);
 					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
 					backBox.drawSprite();
