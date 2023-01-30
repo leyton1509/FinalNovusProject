@@ -316,7 +316,7 @@ public:
 	}
 
 	void returnPlayerToClosestHeal(PlayerCharacter &player) {
-
+		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
 
