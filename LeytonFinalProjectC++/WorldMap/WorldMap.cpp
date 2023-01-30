@@ -316,6 +316,10 @@ public:
 	}
 
 	void returnPlayerToClosestHeal(PlayerCharacter &player) {
+		for (int i = 0; i < player.numberOfPokemonInParty; i++)
+		{
+			player.trainersParty[i].healPokemonToFull();
+		}
 		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
