@@ -359,6 +359,8 @@ public:
 
 					if (switchPokemonButtonClicked!=0) {
 
+
+						switchPokemonButtonClicked = 0;
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
