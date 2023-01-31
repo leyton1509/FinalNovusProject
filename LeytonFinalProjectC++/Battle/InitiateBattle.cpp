@@ -106,13 +106,13 @@ public:
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
 		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
-		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton("PokeBall", 64, 64, 540, 435, 80,80);
+		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80,80);
 		pokeballButtonOne.isDisplayed = false;
 
-		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton("GreatBall", 64, 64, 630, 435, 80, 80);
+		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
 		pokeballButtonTwo.isDisplayed = false;
 
-		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton("UltraBall", 64, 64, 720, 435, 80, 80);
+		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
 		pokeballButtonThree.isDisplayed = false;
 
 
