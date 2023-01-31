@@ -1,6 +1,7 @@
 #include <map>
 #include <string>
 #include "../../Sprites/Items/Potion.h"
+#include "../../Pokemon/Pokemon.h"
 
 class ItemManager {
 
@@ -31,10 +32,10 @@ public:
 		}
 	}
 
-	void usePotion(std::string potionName) {
+	void usePotion(Pokemon & pokemon, std::string potionName) {
 		Potion potion = Potion(potionName);
 		if (getAmountOfItem(potion.inividualItemID) > 0) {
-
+			potion.useItem(pokemon);
 		}
 	}
 
