@@ -1,6 +1,7 @@
 #include "../../Sprites/Items/Item.h"
 #include <string>
 #include "../../Pokemon/Pokemon.h"
+#include "../../Sprites/PlayerCharacter.h"
 
 using namespace std;
 
@@ -34,7 +35,7 @@ public:
 		return rand() % (to - from + 1) + from;
 	}
 
-	void catchPokemon(Pokemon & pokemon) {
+	void catchPokemon(PlayerCharacter player, Pokemon & pokemon) {
 		int n = random(1, catchRate);
 		int max = pokemon.healthActual + n;
 		int min = pokemon.currentHealth;
