@@ -7,7 +7,7 @@ public:
 	// Each sprite option
 	enum SpriteTypes
 	{
-		Player, Pokemon, Building, Grass, Entrance, Button, PokemonStatBox
+		Player, Pokemon, Building, Grass, Entrance, Button, PokemonStatBox, Item
 	};
 
 };
