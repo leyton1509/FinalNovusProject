@@ -7,6 +7,7 @@
 #include "../Battle/RouteMapping.h"
 #include "../Sprites/SwitchPokemonButton.h"
 #include "../Sprites/ItemPokeBallButton.h"
+#include "../Sprites/ItemPotionButton.h"
 
 // Class when a pokemon battke is needed
 class InitiateBattle {
