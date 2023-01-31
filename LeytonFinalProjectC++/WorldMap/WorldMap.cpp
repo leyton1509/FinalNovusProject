@@ -135,7 +135,7 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
-			player.setAllPositions(6, 9);
+			player.setAllPositions(6, 7);
 			player.resetPlayer(6, 7);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
 			mapNumber = 11;
