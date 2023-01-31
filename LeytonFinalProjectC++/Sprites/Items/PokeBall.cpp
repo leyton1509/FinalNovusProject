@@ -6,7 +6,7 @@
 
 using namespace std;
 
-class PokeBall : Item{
+class PokeBall : public Item{
 
 
 public:
@@ -52,6 +52,8 @@ public:
 	int random(int from, int to) {
 		return rand() % (to - from + 1) + from;
 	}
+
+
 
 	
 	
