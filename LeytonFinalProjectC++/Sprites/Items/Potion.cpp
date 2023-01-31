@@ -6,7 +6,11 @@ using namespace std;
 class Potion : Item {
 
 public:
-	Potion(): Item(2){
+
+	string potionName;
+	int healPokemonBy;
+	Potion(string _potionName): Item(2){
+		potionName = _potionName;
 
 	}
 
