@@ -15,21 +15,28 @@ public:
 	int catchRate;
 	int inividualItemID;
 
-	PokeBall(string _pokeballName) : Item(1) {
+	PokeBall(string _pokeballName) : Item(1, 0, 0,0,0) {
 
 		pokeballName = _pokeballName;
 
 		if (strcmp(pokeballName.c_str(), "PokeBall")) {
 			catchRate = 255;
 			inividualItemID = 1;
+			xTile = 3;
+			yTile = 0;
 		}
 		else if (strcmp(pokeballName.c_str(), "GreatBall")) {
 			catchRate = 200;
 			inividualItemID = 2;
+			xTile = 2;
+			yTile = 0;
+
 		}
 		else if (strcmp(pokeballName.c_str(), "UltraBall")) {
 			catchRate = 150;
 			inividualItemID = 3;
+			xTile = 1;
+			yTile = 0;
 		}
 		else {
 			catchRate = 255;
