@@ -16,9 +16,8 @@ public:
 	PokeBall pokeball;
 
 	// ItemPokeBallButton with the pokemon to add to the players party
-	ItemPokeBallButton(string _itemName, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
-		itemName = _itemName;
-		pokeball = PokeBall(_itemName);
+	ItemPokeBallButton(int pokeBallID, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
+		pokeball = PokeBall(pokeBallID);
 		pokeball.xPosition = _xStart;
 		pokeball.yPosition = _yStart;
 		pokeball.spritewidth = _width;
