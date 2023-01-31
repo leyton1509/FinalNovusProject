@@ -29,6 +29,9 @@ public:
 		}
 	}
 
+	int random(int from, int to) {
+		return rand() % (to - from + 1) + from;
+	}
 
 	void catchPokemon() {
 
