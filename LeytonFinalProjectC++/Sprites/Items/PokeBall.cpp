@@ -20,15 +20,19 @@ public:
 
 		if (strcmp(pokeballName.c_str(), "PokeBall")) {
 			catchRate = 255;
+			inividualItemID = 1;
 		}
 		else if (strcmp(pokeballName.c_str(), "GreatBall")) {
 			catchRate = 200;
+			inividualItemID = 2;
 		}
 		else if (strcmp(pokeballName.c_str(), "UltraBall")) {
 			catchRate = 150;
+			inividualItemID = 3;
 		}
 		else {
 			catchRate = 255;
+			inividualItemID = 0;
 		}
 	}
 
