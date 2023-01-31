@@ -14,6 +14,11 @@ public:
 		yTile = _yTile;
 	}
 
+	void drawSprite() {
+		al_draw_scaled_bitmap(spriteImage, (32 * xTile), (32 * yTile), 32, 32, xPosition,yPosition, spritewidth, spriteHeight, 0);
+
+	}
+
 	void useItem() {
 
 	}
