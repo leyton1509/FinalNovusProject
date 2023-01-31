@@ -16,16 +16,16 @@ public:
 		pokeballName = _pokeballName;
 
 		if (strcmp(pokeballName.c_str(), "PokeBall")) {
-			catchRate = 5;
+			catchRate = 255;
 		}
 		else if (strcmp(pokeballName.c_str(), "GreatBall")) {
-			catchRate = 10;
+			catchRate = 200;
 		}
 		else if (strcmp(pokeballName.c_str(), "UltraBall")) {
-			catchRate = 15;
+			catchRate = 150;
 		}
 		else {
-			catchRate = 0;
+			catchRate = 255;
 		}
 	}
 
