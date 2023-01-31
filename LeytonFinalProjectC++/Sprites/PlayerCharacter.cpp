@@ -42,6 +42,8 @@ class PlayerCharacter : public Sprite{
 	int numberOfPokemonInBox = 0;
 	// The box of pokemon
 	Pokemon box[30];
+	// Handles all the items
+	ItemManager itemManager = ItemManager();
 
 
 // The player character constructor
