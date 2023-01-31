@@ -39,7 +39,7 @@ public:
 			al_draw_text(fontSmaller, al_map_rgb(220, 20, 60), xPosition + 28, yPosition + 64, 0, ("x " + std::to_string(amountOfItem)).c_str());
 		}
 		else {
-			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 28, yPosition + 64, 0, ("x " + std::to_string(amountOfItem)).c_str());
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 35, yPosition + 64, 0, ("x " + std::to_string(amountOfItem)).c_str());
 		}
 
 
