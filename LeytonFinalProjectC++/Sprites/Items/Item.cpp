@@ -1,6 +1,6 @@
 #include "../../Sprites/SpriteHeader.h"
 
-class Item : Sprite  {
+class Item : public Sprite  {
 public:
 
 	int idOfItem;
