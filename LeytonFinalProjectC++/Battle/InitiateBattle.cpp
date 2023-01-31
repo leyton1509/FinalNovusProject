@@ -358,6 +358,10 @@ public:
 						switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
 						switchPokemonSixButton.drawSprite(player.trainersParty[5]);
 					}
+
+					if (pokeballButtonOne.isDisplayed) {
+						pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
+					}
 					
 					al_flip_display();
 					redraw = false;
