@@ -1,4 +1,6 @@
 #include <map>
+#include <string>
+#include "../../Sprites/Items/Potion.h"
 
 class ItemManager {
 
@@ -29,8 +31,9 @@ public:
 		}
 	}
 
-	void usePotion() {
-
+	void usePotion(std::string potionName) {
+		Potion potion = Potion(potionName);
+		
 	}
 
 	void usePokeball() {
