@@ -1,6 +1,7 @@
 #include <map>
 #include <string>
 #include "../../Sprites/Items/Potion.h"
+#include "../../Sprites/Items/PokeBall.h"
 #include "../../Pokemon/Pokemon.h"
 
 class ItemManager {
