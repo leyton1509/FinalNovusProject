@@ -28,6 +28,7 @@ public:
 	}
 
 	void useItem(Pokemon & pokemon) {
+		pokemon.increasePokemonHealth(healPokemonBy);
 		
 	}
 };
