@@ -96,7 +96,7 @@
     <ClCompile Include="Sprites\Items\ItemManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprites\ItemButton.cpp">
+    <ClCompile Include="Sprites\ItemPokeBallButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -183,7 +183,7 @@
     <ClInclude Include="Sprites\Items\ItemManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sprites\ItemButton.h">
+    <ClInclude Include="Sprites\ItemPokeBallButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
