@@ -5,8 +5,6 @@
 #include <string>
 #include "../Sprites/Spriteheader.h"
 #include "../Pokemon/Pokemon.h"
-#include "../Sprites/Items/PokeBall.h"
-#include "../Sprites/Items/Potion.h"
 
 using namespace std;
 
@@ -44,7 +42,6 @@ class PlayerCharacter : public Sprite{
 	// The box of pokemon
 	Pokemon box[30];
 
-	
 
 // The player character constructor
 	// Sets up the values for the variables in the class
