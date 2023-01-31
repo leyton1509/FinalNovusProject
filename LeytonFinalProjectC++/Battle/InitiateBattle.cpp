@@ -390,6 +390,26 @@ public:
 					}
 					else if (healItemButtonClicked != 0) {
 
+						int potionID = -1;
+
+						if (healItemButtonClicked == 1) {
+							if (player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID) > 0) {
+								potionID = potionButtonOne.potion.inividualItemID;
+							}
+
+						}
+						else if (healItemButtonClicked == 2) {
+							if (player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID) > 0) {
+								potionID = potionButtonTwo.potion.inividualItemID;
+							}
+
+						}
+						else if (healItemButtonClicked == 3) {
+							if (player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID) > 0) {
+								potionID = potionButtonThree.potion.inividualItemID;
+							}
+						}
+
 						healItemButtonClicked = 0;
 					}
 
