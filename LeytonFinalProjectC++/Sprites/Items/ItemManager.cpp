@@ -1,8 +1,7 @@
 #include <map>
 #include <string>
-#include "../../Sprites/Items/Potion.h"
-#include "../../Sprites/Items/PokeBall.h"
-#include "../../Pokemon/Pokemon.h"
+//#include "../../Sprites/Items/Potion.h"
+//#include "../../Sprites/Items/PokeBall.h"
 
 // A class to manage a players items
 class ItemManager {
@@ -46,8 +45,13 @@ public:
 		
 	}
 
+	
+
+	/*
+	
+	
 	// Uses the potion on the pokemon if the player has one to use
-	void usePotion(Pokemon & pokemon, std::string potionName) {
+	void usePotion(Pokemon& pokemon, std::string potionName) {
 		Potion potion = Potion(potionName);
 		int cAmount = getAmountOfItem(potion.inividualItemID);
 		if (cAmount > 0) {
@@ -57,7 +61,7 @@ public:
 	}
 
 	// Uses the pokeball if the player has a pokeball
-	void usePokeball(PlayerCharacter & player, Pokemon & pokemon, string pokeballName) {
+	void usePokeball(PlayerCharacter& player, Pokemon& pokemon, string pokeballName) {
 		PokeBall pokeball = PokeBall(pokeballName);
 		int cAmount = getAmountOfItem(pokeball.inividualItemID);
 		if (cAmount > 0) {
@@ -65,8 +69,7 @@ public:
 			setAmountOfItem(pokeball.inividualItemID, (cAmount - 1));
 		}
 	}
-
-
+	*/
 
 
 };
