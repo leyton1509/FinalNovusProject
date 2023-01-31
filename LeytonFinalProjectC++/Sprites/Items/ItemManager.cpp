@@ -21,8 +21,8 @@ public:
 		itemAmounts.insert({ 6, 1 });	
 	}
 
-	int getAmountOfItem(int indivualID) {
-		auto getter = itemAmounts.find(indivualID);
+	int getAmountOfItem(int individualID) {
+		auto getter = itemAmounts.find(individualID);
 
 		if (getter == itemAmounts.end()) {
 			return 0;
@@ -32,8 +32,8 @@ public:
 		}
 	}
 
-	void setAmountOfItem(int indivualID, int newAmount ) {
-		auto getter = itemAmounts.find(indivualID);
+	void setAmountOfItem(int individualID, int newAmount ) {
+		auto getter = itemAmounts.find(individualID);
 
 		if (getter != itemAmounts.end()) {
 			getter->second = newAmount;
