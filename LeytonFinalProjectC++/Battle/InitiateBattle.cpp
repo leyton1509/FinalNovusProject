@@ -311,22 +311,22 @@ public:
 
 						if (catchItemButtonClicked == 1) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID) > 0) {
-
+								int pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
+								bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
 							}
-							int pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
-							bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
+							
 						}
 						else if (catchItemButtonClicked == 2) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID) > 0) {
 
 							}
-							int pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
+							
 						}
 						else if (catchItemButtonClicked == 3) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID) > 0) {
 
 							}
-							int pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
+			
 						}
 
 						
