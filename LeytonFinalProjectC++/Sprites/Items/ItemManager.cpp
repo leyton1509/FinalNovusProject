@@ -52,8 +52,8 @@ public:
 	
 	
 	// Uses the potion on the pokemon if the player has one to use
-	void usePotion(Pokemon& pokemon, std::string potionName) {
-		Potion potion = Potion(potionName);
+	void usePotion(Pokemon& pokemon, int potioniD) {
+		Potion potion = Potion(potioniD);
 		int cAmount = getAmountOfItem(potion.inividualItemID);
 		if (cAmount > 0) {
 			potion.useItem(pokemon);
