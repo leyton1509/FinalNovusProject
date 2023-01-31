@@ -1,5 +1,6 @@
 #include "../../Sprites/Items/Item.h"
 #include <string>
+#include "../../Pokemon/Pokemon.h"
 // #include "../../Pokemon/Pokemon.h"
 
 using namespace std;
@@ -35,12 +36,12 @@ public:
 	}
 	
 	
-	/*
+	
 	
 	void useItem(Pokemon & pokemon) {
 		pokemon.increasePokemonHealth(healPokemonBy);
 		
 	}
-	*/
+	
 	
 };
