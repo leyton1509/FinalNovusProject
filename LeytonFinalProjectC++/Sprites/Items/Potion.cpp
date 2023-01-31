@@ -4,7 +4,7 @@
 // #include "../../Pokemon/Pokemon.h"
 
 using namespace std;
-class Potion : Item {
+class Potion : public Item {
 
 public:
 
