@@ -110,7 +110,10 @@ public:
 		pokeballButtonOne.isDisplayed = false;
 
 		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton("GreatBall", 64, 64, 630, 435, 80, 80);
-		pokeballButtonOne.isDisplayed = false;
+		pokeballButtonTwo.isDisplayed = false;
+
+		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton("UltraBall", 64, 64, 630, 435, 80, 80);
+		pokeballButtonThree.isDisplayed = false;
 
 
 		int attackButtonClicked = 0;
