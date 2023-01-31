@@ -5,6 +5,9 @@
 #include <string>
 #include "../Sprites/Spriteheader.h"
 #include "../Pokemon/Pokemon.h"
+#include "../Sprites/Items/PokeBall.h"
+#include "../Sprites/Items/Potion.h"
+
 using namespace std;
 
 // Player Character class which represents the players overworld character
@@ -40,6 +43,8 @@ class PlayerCharacter : public Sprite{
 	int numberOfPokemonInBox = 0;
 	// The box of pokemon
 	Pokemon box[30];
+
+	
 
 // The player character constructor
 	// Sets up the values for the variables in the class
