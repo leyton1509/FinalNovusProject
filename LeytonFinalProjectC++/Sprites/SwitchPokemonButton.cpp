@@ -19,7 +19,7 @@ public:
 
 
 	// Connstructor with the pokemon to add to the players party
-	SwitchPokemonButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, _filepath) {
+	SwitchPokemonButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 	}
