@@ -95,6 +95,16 @@ public:
 		
 	}
 
+	void resetMapToZeros() {
+		for (int i = 0; i < 100; i++)
+		{
+			for (int j = 0; j < 100; j++)
+			{
+				textMap[i][j] = 0;
+			}
+		}
+	}
+
 
 
 	int interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, const char* keyPressed, int directionX, int directionY, int xTile, int yTile, int screenWidth, int screenHeight) {
@@ -136,7 +146,8 @@ public:
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			player.setAllPositions(6, 8);
-			player.resetPlayer(6, 8);
+			player.resetPlayer(6, 8); 
+			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
 			mapNumber = 11;
 		}
@@ -149,6 +160,7 @@ public:
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			player.setAllPositions(0, 0);
 			player.resetPlayer(7, 10);
+			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
 			mapNumber = 12;
 		}
