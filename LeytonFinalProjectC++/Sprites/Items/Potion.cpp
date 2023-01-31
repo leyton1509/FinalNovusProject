@@ -12,6 +12,11 @@ public:
 	int healPokemonBy;
 	int inividualItemID;
 
+	Potion() : Item(2, 0, 0, 0, 0) {
+		healPokemonBy = 0;
+		inividualItemID = 0;
+	}
+
 	Potion(int id): Item(2,0, 0, 0, 0){
 
 		if (id == 4) {
