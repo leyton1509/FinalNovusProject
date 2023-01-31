@@ -177,6 +177,22 @@ public:
 
 					}
 
+					else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						if (textBox.isDisplayed) {
+							textBox.isDisplayed = false;
+							potionButtonOne.isDisplayed = true;
+							potionButtonTwo.isDisplayed = true;
+							potionButtonThree.isDisplayed = true;
+						}
+						else {
+							textBox.isDisplayed = true;
+							potionButtonOne.isDisplayed = false;
+							potionButtonTwo.isDisplayed = false;
+							potionButtonThree.isDisplayed = false;
+						}
+
+					}
+
 					else if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						if (textBox.isDisplayed) {
 							textBox.isDisplayed = false;
