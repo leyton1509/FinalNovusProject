@@ -307,7 +307,8 @@ public:
 						
 					}
 					else if (catchItemButtonClicked!=0) {
-						
+						int pokeBallID = 0;
+						bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
