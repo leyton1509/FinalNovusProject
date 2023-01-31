@@ -5,6 +5,7 @@
 #include <string>
 #include "../Sprites/Spriteheader.h"
 #include "../Pokemon/Pokemon.h"
+#include "../Sprites/Items/ItemManager.h"
 
 using namespace std;
 
