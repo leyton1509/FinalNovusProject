@@ -308,35 +308,40 @@ public:
 					}
 					else if (catchItemButtonClicked!=0) {
 
+						int pokeBallID = -1;
+
 						if (catchItemButtonClicked == 1) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID) > 0) {
-								int pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
-								bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
-								if (caughtPokemon) {
-									player.addPokemon(otherPokemon);
-									battleFinished = true;
-								}
-								else {
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
-									textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
-									textForTextBox[1] = doTurn.textForTextBox[1];
-									textForTextBox[2] = "";
-									textForTextBox[3] = "";
-								}
+							    pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
 							}
 							
 						}
 						else if (catchItemButtonClicked == 2) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID) > 0) {
-
+								int pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
 							}
 							
 						}
 						else if (catchItemButtonClicked == 3) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID) > 0) {
-
+								int pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
 							}
 			
+						}
+
+						if (pokeBallID!=-1) {
+							bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
+							if (caughtPokemon) {
+								player.addPokemon(otherPokemon);
+								battleFinished = true;
+							}
+							else {
+								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
+								textForTextBox[1] = doTurn.textForTextBox[1];
+								textForTextBox[2] = "";
+								textForTextBox[3] = "";
+							}
 						}
 
 						textBox.isDisplayed = true;
