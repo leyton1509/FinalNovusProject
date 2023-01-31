@@ -184,6 +184,16 @@ public:
 
 					}
 
+					else if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+						healItemButtonClicked = 1;
+					}
+					else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+						healItemButtonClicked = 2;
+					}
+					else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+						healItemButtonClicked = 3;
+					}
+
 					else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						switchPokemonButtonClicked = 1;
 					}
