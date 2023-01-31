@@ -1,0 +1,8 @@
+class ItemManager {
+
+public:
+
+	ItemManager() {
+
+	}
+};
