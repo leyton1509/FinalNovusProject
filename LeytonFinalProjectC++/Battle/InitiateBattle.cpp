@@ -82,22 +82,22 @@ public:
 		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2],128, 64, 20, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3],128, 64, 160, 520, 128, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/AttackButton.png");
 
-		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(player.trainersParty[0], 64, 64, 540, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton( 64, 64, 540, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonOneButton.isDisplayed = false;
 
-		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(player.trainersParty[1], 64, 64, 630, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonTwoButton.isDisplayed = false;
 
-		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(player.trainersParty[2], 64, 64, 720, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonThreeButton.isDisplayed = false;
 
-		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(player.trainersParty[3], 64, 64, 540, 520, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonFourButton.isDisplayed = false;
 
-		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(player.trainersParty[4], 64, 64, 630, 520, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonFiveButton.isDisplayed = false;
 
-		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(player.trainersParty[5], 64, 64, 720, 520, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
+		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png");
 		switchPokemonSixButton.isDisplayed = false;
 
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
@@ -324,12 +324,12 @@ public:
 					}
 
 					if (switchPokemonOneButton.isDisplayed) {
-						switchPokemonOneButton.drawSprite();
-						switchPokemonTwoButton.drawSprite();
-						switchPokemonThreeButton.drawSprite();
-						switchPokemonFourButton.drawSprite();
-						switchPokemonFiveButton.drawSprite();
-						switchPokemonSixButton.drawSprite();
+						switchPokemonOneButton.drawSprite(player.trainersParty[0]);
+						switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
+						switchPokemonThreeButton.drawSprite(player.trainersParty[2]);
+						switchPokemonFourButton.drawSprite(player.trainersParty[3]);
+						switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
+						switchPokemonSixButton.drawSprite(player.trainersParty[5]);
 					}
 					
 					al_flip_display();
