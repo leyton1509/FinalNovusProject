@@ -39,6 +39,9 @@ public:
 			if (pokemon.currentHealth == 0) {
 				al_draw_text(fontSmaller, al_map_rgb(220, 20, 60), xPosition + 28, yPosition + 64, 0, txt.c_str());
 			}
+			else if (pokemon.currentHealth == pokemon.healthActual){
+				al_draw_text(fontSmaller, al_map_rgb(0, 100, 0), xPosition + 28, yPosition + 64, 0, txt.c_str());
+			}
 			else {
 				al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 28, yPosition + 64, 0, txt.c_str());
 			}
