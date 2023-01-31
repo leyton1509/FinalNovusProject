@@ -426,7 +426,7 @@ public:
 					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 254, 189, (0), (0), (32 * 13), (32 * 10), 0);
 				}
 				else if (textMap[i][j] == 20) {
-					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 159, 145, (0), (0), (32 * 13), (32 * 10), 0);
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 159, 145, (0), (0), (32 * 12), (32 * 8), 0);
 				}
 				else {
 					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
