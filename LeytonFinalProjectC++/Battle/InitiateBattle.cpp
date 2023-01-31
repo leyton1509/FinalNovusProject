@@ -308,6 +308,16 @@ public:
 					}
 					else if (catchItemButtonClicked!=0) {
 						int pokeBallID = 0;
+
+						if (catchItemButtonClicked == 1) {
+							pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
+						}
+						else if (catchItemButtonClicked == 2) {
+							pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
+						}
+						if (catchItemButtonClicked == 3) {
+							pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
+						}
 						bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
 					}
 
