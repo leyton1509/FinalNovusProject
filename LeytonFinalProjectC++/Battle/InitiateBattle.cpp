@@ -380,6 +380,10 @@ public:
 								textForTextBox[3] = "";
 							}
 						}
+						else if (healItemButtonClicked !=0) {
+
+							healItemButtonClicked = 0;
+						}
 
 						textBox.isDisplayed = true;
 						pokeballButtonOne.isDisplayed = false;
