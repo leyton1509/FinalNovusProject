@@ -68,8 +68,8 @@ public:
 		// Gets all the gui info
 		// The hp bars
 		// The buttons on screen
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png");
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(otherPokemon, 256, 96, 510, 20, 320, 75);
+		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75);
 
 		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
 		Button textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
