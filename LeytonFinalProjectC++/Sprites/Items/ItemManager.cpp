@@ -4,6 +4,7 @@
 #include "../../Sprites/Items/PokeBall.h"
 #include "../../Pokemon/Pokemon.h"
 
+// A class to manage a players items
 class ItemManager {
 
 public:
