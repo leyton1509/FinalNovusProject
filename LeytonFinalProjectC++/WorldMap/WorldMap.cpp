@@ -390,7 +390,7 @@ public:
 		{
 			for (int j = 0; j < mapSizeY; j++)
 			{
-				if (textMap[i][j] == 1 || textMap[i][j] == 2 || textMap[i][j] == 0 || textMap[i][j] == 9) {
+				if (textMap[i][j] == 1 || textMap[i][j] == 2 || textMap[i][j] == 0 || textMap[i][j] == 9 || textMap[i][j] == 17) {
 
 				}else if (textMap[i][j] == 10){
 					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 85, 82, (i*32), (j *32), (32 * 5), (32 * 4), 0);
