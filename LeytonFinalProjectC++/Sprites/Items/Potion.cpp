@@ -2,10 +2,12 @@
 #include <string>
 
 using namespace std;
-class Potion {
+class Potion : Item {
 
 public:
-	Potion() {
+	Potion(): Item(2){
 
 	}
+
+
 };
