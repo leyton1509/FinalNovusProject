@@ -18,4 +18,19 @@ public:
 		itemAmounts.insert({ 6, 1 });
 		
 	}
+
+	int getAmountOfItem(int indivualID) {
+		auto getter = itemAmounts.find(indivualID);
+
+		if (getter == itemAmounts.end()) {
+			return 0;
+		}
+		else {
+			return getter->second;
+		}
+	}
+
+
+
+
 };
