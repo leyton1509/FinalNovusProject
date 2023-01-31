@@ -109,6 +109,9 @@ public:
 		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton("PokeBall", 64, 64, 540, 435, 80,80);
 		pokeballButtonOne.isDisplayed = false;
 
+		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton("GreatBall", 64, 64, 630, 435, 80, 80);
+		pokeballButtonOne.isDisplayed = false;
+
 
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
