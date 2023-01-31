@@ -16,16 +16,20 @@ public:
 
 		if (strcmp(potionName.c_str(), "Potion")) {
 			healPokemonBy = 20;
+			inividualItemID = 4;
 
 		}
 		else if (strcmp(potionName.c_str(), "SuperPotion")) {
 			healPokemonBy = 50;
+			inividualItemID = 5;
 		}
 		else if (strcmp(potionName.c_str(), "HyperPotion")) {
 			healPokemonBy = 200;
+			inividualItemID = 6;
 		}
 		else {
 			healPokemonBy = 0;
+			inividualItemID = 0;
 		}
 
 	}
