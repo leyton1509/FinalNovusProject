@@ -7,18 +7,20 @@
 class ItemPokeBallButton : public Button {
 
 public:
-
+	// Name of item
+	string itemName;
 	// The font to draw with
 	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
 	// ItemPokeBallButton with the pokemon to add to the players party
-	ItemPokeBallButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
-
+	ItemPokeBallButton(string _itemName, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
+		itemName = _itemName;
 	}
 
 	// Empty const
 	ItemPokeBallButton() : Button() {
 		originalSizeX = 0;
+		itemName = "";
 		originalSizeY = 0;
 	}
 
