@@ -1,10 +1,17 @@
 #include "../../Sprites/Items/Item.h"
+#include <string>
+
+using namespace std;
 
 class PokeBall : Item{
 
+
+
 public:
 
-	PokeBall() : Item(1) {
+	string pokeballName;
+
+	PokeBall(string _pokeballName) : Item(1) {
 
 	}
 
