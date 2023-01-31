@@ -42,9 +42,7 @@ public:
 		int willCatch = random(min, max);
 
 		if (willCatch <= (max * 0.3) && willCatch > min) {
-
-
-
+			player.addPokemon(pokemon);
 		}
 		
 	}
