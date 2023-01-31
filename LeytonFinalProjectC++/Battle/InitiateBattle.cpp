@@ -186,16 +186,13 @@ public:
 
 					else if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
 						catchItemButtonClicked = 1;
-						cout << "One : " << pokeballButtonOne.pokeball.xTile << " , " << pokeballButtonOne.pokeball.yTile << "\n";
 					}
 					else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
 						catchItemButtonClicked = 2;
-						cout << "Two : " << pokeballButtonTwo.pokeball.xTile << " , " << pokeballButtonTwo.pokeball.yTile << "\n";
 
 					}
 					else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
 						catchItemButtonClicked = 3;
-						cout << "Three : " << pokeballButtonThree.pokeball.xTile << " , " << pokeballButtonThree.pokeball.yTile << "\n";
 
 					}
 
