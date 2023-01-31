@@ -1,7 +1,8 @@
 #include <map>
 #include <string>
-//#include "../../Sprites/Items/Potion.h"
-//#include "../../Sprites/Items/PokeBall.h"
+#include "../../Sprites/Items/Potion.h"
+#include "../../Sprites/Items/PokeBall.h"
+#include "../../Pokemon/Pokemon.h"
 
 // A class to manage a players items
 class ItemManager {
@@ -47,7 +48,7 @@ public:
 
 	
 
-	/*
+	
 	
 	
 	// Uses the potion on the pokemon if the player has one to use
@@ -59,6 +60,8 @@ public:
 			setAmountOfItem(potion.inividualItemID, (cAmount - 1));
 		}
 	}
+
+	/*
 
 	// Uses the pokeball if the player has a pokeball
 	void usePokeball(PlayerCharacter& player, Pokemon& pokemon, string pokeballName) {
