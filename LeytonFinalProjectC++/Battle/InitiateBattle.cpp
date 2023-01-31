@@ -318,15 +318,14 @@ public:
 						}
 						else if (catchItemButtonClicked == 2) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID) > 0) {
-								int pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
+							    pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
 							}
 							
 						}
 						else if (catchItemButtonClicked == 3) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID) > 0) {
-								int pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
+							    pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
 							}
-			
 						}
 
 						if (pokeBallID!=-1) {
