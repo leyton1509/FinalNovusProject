@@ -26,23 +26,23 @@ public:
 			pokeballName = "Poke Ball";
 			catchRate = 255;
 			inividualItemID = 1;
-			xTile = 3;
-			yTile = 0;
+			xTileForSpriteSheet = 3;
+			yTileForSpriteSheet = 0;
 		}
 		else if (id == 2) {
 			pokeballName = "Great Ball";
 			catchRate = 200;
 			inividualItemID = 2;
-			xTile =2;
-			yTile = 0;
+			xTileForSpriteSheet =2;
+			yTileForSpriteSheet = 0;
 
 		}
 		else if (id==3) {
 			pokeballName = "Ultra Ball";
 			catchRate = 150;
 			inividualItemID = 3;
-			xTile = 1;
-			yTile = 0;
+			xTileForSpriteSheet = 1;
+			yTileForSpriteSheet = 0;
 		}
 		else {
 			cout << "Test \n";
