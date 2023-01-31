@@ -1,16 +1,12 @@
+#include <map>
+
 class ItemManager {
 
 public:
 
-	int numberOfPotions;
-	int numberOfSuperPotions;
-	int numberOfHyperPotions;
+	// Maps an item id to the amount
+	std::map<int, int> itemAmounts = {};
 
-	int numberOfPokeBalls;
-	int numberOfGreatPokeBalls;
-	int numberOfUltraPokeBalls;
-
-	ItemManager() {
-
+	ItemManager(){
 	}
 };
