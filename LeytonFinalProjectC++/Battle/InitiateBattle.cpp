@@ -308,7 +308,6 @@ public:
 					}
 					else if (catchItemButtonClicked!=0) {
 
-
 						if (catchItemButtonClicked == 1) {
 							if (player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID) > 0) {
 								int pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
@@ -340,6 +339,10 @@ public:
 			
 						}
 
+						textBox.isDisplayed = true;
+						pokeballButtonOne.isDisplayed = false;
+						pokeballButtonTwo.isDisplayed = false;
+						pokeballButtonThree.isDisplayed = false;
 						catchItemButtonClicked = 0;
 						
 					}
