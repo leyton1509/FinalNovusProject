@@ -112,7 +112,7 @@ public:
 		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton("GreatBall", 64, 64, 630, 435, 80, 80);
 		pokeballButtonTwo.isDisplayed = false;
 
-		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton("UltraBall", 64, 64, 630, 435, 80, 80);
+		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton("UltraBall", 64, 64, 720, 435, 80, 80);
 		pokeballButtonThree.isDisplayed = false;
 
 
