@@ -20,30 +20,32 @@ public:
 		inividualItemID = 0;
 	}
 
-	PokeBall(string _pokeballName) : Item(1, 0, 0,0,0) {
+	PokeBall(int id) : Item(1, 0, 0,0,0) {
 
-		pokeballName = _pokeballName;
-
-		if (strcmp(pokeballName.c_str(), "PokeBall")) {
+		if (id == 1) {
+			pokeballName = "Poke Ball";
 			catchRate = 255;
 			inividualItemID = 1;
-			xTile = 0;
+			xTile = 3;
 			yTile = 0;
 		}
-		else if (strcmp(pokeballName.c_str(), "GreatBall")) {
+		else if (id == 2) {
+			pokeballName = "Great Ball";
 			catchRate = 200;
 			inividualItemID = 2;
-			xTile = 1;
+			xTile =2;
 			yTile = 0;
 
 		}
-		else if (strcmp(pokeballName.c_str(), "UltraBall")) {
+		else if (id==3) {
+			pokeballName = "Ultra Ball";
 			catchRate = 150;
 			inividualItemID = 3;
-			xTile = 0;
+			xTile = 1;
 			yTile = 0;
 		}
 		else {
+			cout << "Test \n";
 			catchRate = 255;
 			inividualItemID = 0;
 		}
