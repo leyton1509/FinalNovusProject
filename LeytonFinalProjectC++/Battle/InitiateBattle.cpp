@@ -314,12 +314,12 @@ public:
 								int pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
 								bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
 								if (caughtPokemon) {
-									cout << "Caught pokemon!";
+									cout << "Caught pokemon!\n";
 									player.addPokemon(otherPokemon);
 									battleFinished = true;
 								}
 								else {
-									cout << "Pokemon got free!";
+									cout << "Pokemon got free!\n";
 								}
 							}
 							
