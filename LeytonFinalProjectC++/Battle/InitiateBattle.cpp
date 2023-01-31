@@ -106,6 +106,10 @@ public:
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
 		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
+		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton("PokeBall", 64, 64, 540, 435, 80,80);
+		pokeballButtonOne.isDisplayed = false;
+
+
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
 		int healItemButtonClicked = 0;
