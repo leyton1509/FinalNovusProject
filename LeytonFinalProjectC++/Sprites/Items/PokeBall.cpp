@@ -10,6 +10,7 @@ class PokeBall : Item{
 public:
 
 	string pokeballName;
+	int catchRate;
 
 	PokeBall(string _pokeballName) : Item(1) {
 
