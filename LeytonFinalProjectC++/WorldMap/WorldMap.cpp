@@ -158,8 +158,8 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
-			player.setAllPositions(0, 0);
-			player.resetPlayer(7, 10);
+			player.setAllPositions(2, 6);
+			player.resetPlayer(2, 6);
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
 			mapNumber = 12;
