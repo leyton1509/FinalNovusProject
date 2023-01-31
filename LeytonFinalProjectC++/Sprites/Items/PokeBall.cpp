@@ -35,13 +35,15 @@ public:
 		return rand() % (to - from + 1) + from;
 	}
 
-	void catchPokemon(PlayerCharacter player, Pokemon & pokemon) {
+	void catchPokemon(PlayerCharacter&  player, Pokemon & pokemon) {
 		int n = random(1, catchRate);
 		int max = pokemon.healthActual + n;
 		int min = pokemon.currentHealth;
 		int willCatch = random(min, max);
 
 		if (willCatch <= (max * 0.3) && willCatch > min) {
+
+
 
 		}
 		
