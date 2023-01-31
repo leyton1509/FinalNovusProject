@@ -33,7 +33,9 @@ public:
 
 	void usePotion(std::string potionName) {
 		Potion potion = Potion(potionName);
-		
+		if (getAmountOfItem(potion.inividualItemID) > 0) {
+
+		}
 	}
 
 	void usePokeball() {
