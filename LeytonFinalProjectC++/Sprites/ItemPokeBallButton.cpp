@@ -32,10 +32,16 @@ public:
 		originalSizeY = 0;
 	}
 
-	// Draws the button and pokemon attacthed to it
-	void drawSprite(Pokemon& pokemon) {
+	// Draws the button 
+	void drawSprite(int amountOfItem) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		pokeball.drawSprite();
+		if (amountOfItem == 0) {
+			al_draw_text(fontSmaller, al_map_rgb(220, 20, 60), xPosition + 28, yPosition + 64, 0, std::to_string(amountOfItem).c_str());
+		}
+		else {
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 28, yPosition + 64, 0, std::to_string(amountOfItem).c_str());
+		}
 
 
 	}
