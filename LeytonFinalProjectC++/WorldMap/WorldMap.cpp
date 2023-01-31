@@ -135,6 +135,7 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.setAllPositions(0, 0);
 			player.resetPlayer(0, 0);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
 			mapNumber = 11;
@@ -146,6 +147,7 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.setAllPositions(0, 0);
 			player.resetPlayer(7, 10);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
 			mapNumber = 12;
@@ -409,10 +411,10 @@ public:
 					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 176, 135, (0), (0), (32 * 16), (32 * 12), 0);
 				}
 				else if (textMap[i][j] == 19) {
-					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 254, 189, (0), (0), (32 * 13), (32 * 9), 0);
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 254, 189, (0), (0), (32 * 13), (32 * 10), 0);
 				}
 				else if (textMap[i][j] == 20) {
-					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 159, 145, (0), (0), (32 * 13), (32 * 9), 0);
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 159, 145, (0), (0), (32 * 13), (32 * 10), 0);
 				}
 				else {
 					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
