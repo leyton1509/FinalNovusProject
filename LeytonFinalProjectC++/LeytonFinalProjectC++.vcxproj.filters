@@ -99,6 +99,9 @@
     <ClCompile Include="Sprites\ItemPokeBallButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sprites\ItemPotionButton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -184,6 +187,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprites\ItemPokeBallButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites\ItemPotionButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

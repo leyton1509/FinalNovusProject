@@ -151,6 +151,7 @@
     <ClCompile Include="Sprites\ChoosePokemonButton.cpp" />
     <ClCompile Include="Sprites\InteractablesForMaps.cpp" />
     <ClCompile Include="Sprites\ItemPokeBallButton.cpp" />
+    <ClCompile Include="Sprites\ItemPotionButton.cpp" />
     <ClCompile Include="Sprites\Items\Item.cpp" />
     <ClCompile Include="Sprites\Items\ItemManager.cpp" />
     <ClCompile Include="Sprites\Items\PokeBall.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Sprites\ChoosePokemonButton.h" />
     <ClInclude Include="Sprites\InteractablesForMaps.h" />
     <ClInclude Include="Sprites\ItemPokeBallButton.h" />
+    <ClInclude Include="Sprites\ItemPotionButton.h" />
     <ClInclude Include="Sprites\Items\Item.h" />
     <ClInclude Include="Sprites\Items\ItemManager.h" />
     <ClInclude Include="Sprites\Items\PokeBall.h" />
