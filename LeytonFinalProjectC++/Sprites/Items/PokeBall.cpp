@@ -27,7 +27,10 @@ public:
 		else {
 			catchRate = 0;
 		}
+	}
 
+
+	void catchPokemon() {
 
 	}
 
