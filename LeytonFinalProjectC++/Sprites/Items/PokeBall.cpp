@@ -34,7 +34,7 @@ public:
 	}
 
 	void catchPokemon() {
-
+		int n = random(0, catchRate);
 	}
 
 };
