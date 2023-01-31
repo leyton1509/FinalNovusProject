@@ -64,13 +64,15 @@ public:
 	
 
 	// Uses the pokeball if the player has a pokeball
-	void usePokeball( Pokemon& pokemon, string pokeballName) {
+	bool usePokeball( Pokemon& pokemon, string pokeballName) {
 		PokeBall pokeball = PokeBall(pokeballName);
 		int cAmount = getAmountOfItem(pokeball.inividualItemID);
 		if (cAmount > 0) {
-			pokeball.catchPokemon(pokemon);
+			bool catchP = pokeball.catchPokemon(pokemon);
 			setAmountOfItem(pokeball.inividualItemID, (cAmount - 1));
+			return catchP;
 		}
+		return false;
 	}
 	
 
