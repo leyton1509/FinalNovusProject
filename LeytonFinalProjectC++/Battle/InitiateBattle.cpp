@@ -122,6 +122,9 @@ public:
 		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
 		potionButtonTwo.isDisplayed = false;
 
+		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
+		potionButtonThree.isDisplayed = false;
+
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
 		int healItemButtonClicked = 0;
