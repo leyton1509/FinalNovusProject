@@ -43,9 +43,10 @@ public:
 
 	void usePotion(Pokemon & pokemon, std::string potionName) {
 		Potion potion = Potion(potionName);
-		if (getAmountOfItem(potion.inividualItemID) > 0) {
+		int cAmount = getAmountOfItem(potion.inividualItemID);
+		if (cAmount > 0) {
 			potion.useItem(pokemon);
-
+			setAmountOfItem(potion.inividualItemID, (cAmount - 1));
 		}
 	}
 
