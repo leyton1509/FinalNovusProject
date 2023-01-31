@@ -15,8 +15,7 @@ public:
 		itemAmounts.insert({ 3, 1 });
 		itemAmounts.insert({ 4, 1 });
 		itemAmounts.insert({ 5, 1 });
-		itemAmounts.insert({ 6, 1 });
-		
+		itemAmounts.insert({ 6, 1 });	
 	}
 
 	int getAmountOfItem(int indivualID) {
@@ -28,6 +27,14 @@ public:
 		else {
 			return getter->second;
 		}
+	}
+
+	void usePotion() {
+
+	}
+
+	void usePokeball() {
+
 	}
 
 
