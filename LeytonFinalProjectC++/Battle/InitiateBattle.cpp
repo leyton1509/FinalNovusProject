@@ -380,10 +380,6 @@ public:
 								textForTextBox[3] = "";
 							}
 						}
-						else if (healItemButtonClicked !=0) {
-
-							healItemButtonClicked = 0;
-						}
 
 						textBox.isDisplayed = true;
 						pokeballButtonOne.isDisplayed = false;
@@ -392,6 +388,11 @@ public:
 						catchItemButtonClicked = 0;
 						
 					}
+					else if (healItemButtonClicked != 0) {
+
+						healItemButtonClicked = 0;
+					}
+
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 
