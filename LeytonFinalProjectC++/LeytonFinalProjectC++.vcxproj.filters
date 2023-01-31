@@ -84,7 +84,7 @@
     <ClCompile Include="Sprites\SwitchPokemonButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprites\Item.cpp">
+    <ClCompile Include="Sprites\Items\Item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -159,7 +159,7 @@
     <ClInclude Include="Sprites\SwitchPokemonButton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Sprites\Item.h">
+    <ClInclude Include="Sprites\Items\Item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
