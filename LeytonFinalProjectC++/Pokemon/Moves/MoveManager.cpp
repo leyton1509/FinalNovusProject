@@ -16,7 +16,8 @@ private:
         PokemonType pt = PokemonType();
         MoveCategory mc = MoveCategory();
 
-        std::vector<std::vector<std::string> > cs = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonMoves.csv");
+        // std::vector<std::vector<std::string> > cs = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonMoves.csv");
+        std::vector<std::vector<std::string> > cs = csvm.parseCSV("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/CSVs/PokemonMoves.csv");
 
         for (int i = 0; i < cs.size(); i++) {
             int moveID = std::stoi(cs.at(i)[0]);
