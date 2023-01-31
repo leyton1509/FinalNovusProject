@@ -1,5 +1,6 @@
 #include "../../Sprites/Items/Item.h"
 #include <string>
+#include "../../Pokemon/Pokemon.h"
 
 using namespace std;
 
@@ -33,7 +34,7 @@ public:
 		return rand() % (to - from + 1) + from;
 	}
 
-	void catchPokemon() {
+	void catchPokemon(Pokemon & pokemon) {
 		int n = random(0, catchRate);
 	}
 
