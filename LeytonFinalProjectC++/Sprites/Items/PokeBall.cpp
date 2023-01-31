@@ -35,7 +35,15 @@ public:
 	}
 
 	void catchPokemon(Pokemon & pokemon) {
-		int n = random(0, catchRate);
+		int n = random(1, catchRate);
+		int max = pokemon.healthActual + n;
+		int min = pokemon.currentHealth;
+		int willCatch = random(min, max);
+
+		if (willCatch <= (max * 0.3) && willCatch > min) {
+
+		}
+		
 	}
 
 };
