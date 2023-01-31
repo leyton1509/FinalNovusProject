@@ -410,6 +410,11 @@ public:
 							}
 						}
 
+
+						textBox.isDisplayed = true;
+						potionButtonOne.isDisplayed = false;
+						potionButtonTwo.isDisplayed = false;
+						potionButtonThree.isDisplayed = false;
 						healItemButtonClicked = 0;
 					}
 
