@@ -110,6 +110,7 @@ public:
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
 		int healItemButtonClicked = 0;
+		int catchItemButtonClicked = 0;
 		bool pokemonIsDead = false;
 
 		if (battleType == 0) {
