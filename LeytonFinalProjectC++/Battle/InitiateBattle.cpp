@@ -315,10 +315,11 @@ public:
 						else if (catchItemButtonClicked == 2) {
 							pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
 						}
-						if (catchItemButtonClicked == 3) {
+						else if (catchItemButtonClicked == 3) {
 							pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
 						}
 						bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
+						
 					}
 
 					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
