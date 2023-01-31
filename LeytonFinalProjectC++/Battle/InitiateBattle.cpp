@@ -307,18 +307,21 @@ public:
 						
 					}
 					else if (catchItemButtonClicked!=0) {
-						int pokeBallID = 0;
+
 
 						if (catchItemButtonClicked == 1) {
-							pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
+							player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID);
+							int pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
+							bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
 						}
 						else if (catchItemButtonClicked == 2) {
-							pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
+							int pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
 						}
 						else if (catchItemButtonClicked == 3) {
-							pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
+							int pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
 						}
-						bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
+
+						
 						
 					}
 
