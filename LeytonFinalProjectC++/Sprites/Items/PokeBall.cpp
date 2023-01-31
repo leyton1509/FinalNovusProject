@@ -1,5 +1,6 @@
 #include "../../Sprites/Items/Item.h"
 #include <string>
+#include "../../Pokemon/Pokemon.h"
 // #include "../../Pokemon/Pokemon.h"
 // #include "../../Sprites/PlayerCharacter.h"
 
@@ -41,19 +42,19 @@ public:
 	}
 
 	
-	/*
 	
-	void catchPokemon(PlayerCharacter&  player, Pokemon& pokemon) {
+	
+	bool catchPokemon(Pokemon& pokemon) {
 		int n = random(1, catchRate);
 		int max = pokemon.healthActual + n;
 		int min = pokemon.currentHealth;
 		int willCatch = random(min, max);
 
 		if (willCatch <= (max * 0.3) && willCatch > min) {
-			player.addPokemon(pokemon);
+			return true;
 		}
+		return false;
 		
 	}
-	*/
 	
 };
