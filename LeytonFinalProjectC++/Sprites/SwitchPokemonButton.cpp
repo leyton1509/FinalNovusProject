@@ -36,8 +36,9 @@ public:
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		if (!(strcmp(pokemon.pokemonName.c_str(), "") == 0)) {
-			al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition + 3, spritewidth * 0.9, spriteHeight * 0.9, 0);
-			//al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 7, yPosition+15, 0, string(pokemon.currentHealth + "/" + pokemon.healthActual).c_str());
+			al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition-2, spritewidth * 0.9, spriteHeight * 0.9, 0);
+			string txt = std::to_string(pokemon.currentHealth) + "/" + std::to_string(pokemon.healthActual);
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 28, yPosition+64, 0, txt.c_str());
 		}
 		
 
