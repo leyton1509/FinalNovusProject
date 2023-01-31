@@ -51,7 +51,7 @@ public:
 		}
 	}
 
-	void usePokeball() {
+	void usePokeball(PlayerCharacter * player, Pokemon & pokemon, string pokeballName) {
 
 	}
 
