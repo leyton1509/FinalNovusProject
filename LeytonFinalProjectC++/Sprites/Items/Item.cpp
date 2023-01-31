@@ -8,7 +8,7 @@ public:
 	int yTile;
 
 
-	Item(int _idOfItem, int _xStart, int _yStart, int _xTile, int _yTile) : Sprite(SpriteType::SpriteTypes::Item, _xStart, _yStart, 32, 32, "../../Sprites/Items/Items.png") {
+	Item(int _idOfItem, int _xStart, int _yStart, int _xTile, int _yTile) : Sprite(SpriteType::SpriteTypes::Item, _xStart, _yStart, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png") {
 		idOfItem = _idOfItem;
 		xTile = _xTile;
 		yTile = _yTile;
