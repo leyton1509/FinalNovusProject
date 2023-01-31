@@ -135,7 +135,7 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
-			player.resetPlayer(7, 10);
+			player.resetPlayer(0, 0);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
 			mapNumber = 11;
 		}
@@ -166,6 +166,9 @@ public:
 
 	int canPlayerMove(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
 		int tempYTile = yTile + 1;
+
+		cout << "X : " <<xTile << " Y : " << yTile << " Tile N : " << getWhatPlayerIsStandingOn(xTile, yTile) << "\n";
+
 		
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
@@ -383,8 +386,6 @@ public:
 
 
 	void drawMap() {
-
-		// cout << "X : " << xPosition / 32 << " Y : " << yPosition / 32 << " Tile N : " << getWhatPlayerIsStandingOn(xPosition / 32, yPosition / 32) << "\n";
 
 		for (int i = 0; i < mapSizeX; i++)
 		{
