@@ -7,7 +7,7 @@ public:
 		idOfItem = _idOfItem;
 	}
 
-	void interact() {
+	void useItem() {
 
 	}
 
