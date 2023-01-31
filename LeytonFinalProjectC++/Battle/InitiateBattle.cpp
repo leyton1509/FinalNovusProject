@@ -168,6 +168,22 @@ public:
 
 					}
 
+					else if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+						if (textBox.isDisplayed) {
+							textBox.isDisplayed = false;
+							pokeballButtonOne.isDisplayed = true;
+							pokeballButtonTwo.isDisplayed = true;
+							pokeballButtonThree.isDisplayed = true;
+						}
+						else {
+							textBox.isDisplayed = true;
+							pokeballButtonOne.isDisplayed = false;
+							pokeballButtonTwo.isDisplayed = false;
+							pokeballButtonThree.isDisplayed = false;
+						}
+
+					}
+
 					else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 						switchPokemonButtonClicked = 1;
 					}
