@@ -11,6 +11,7 @@ public:
 	// Maps an item id to the amount
 	std::map<int, int> itemAmounts = {};
 
+	// Constructor for the items, sets the amount for each ID
 	ItemManager(){
 		// 1 Pokeball | 2 GreatBall | 3 UltraBall 
 		// 4 Potion | 5 SuperPotion | 6 HyperPotion
@@ -22,6 +23,7 @@ public:
 		itemAmounts.insert({ 6, 1 });	
 	}
 
+	// Gets the amount of item from the id
 	int getAmountOfItem(int individualID) {
 		auto getter = itemAmounts.find(individualID);
 
@@ -33,6 +35,7 @@ public:
 		}
 	}
 
+	// Sets the amount of the item to the new amount
 	void setAmountOfItem(int individualID, int newAmount ) {
 		auto getter = itemAmounts.find(individualID);
 
@@ -42,6 +45,7 @@ public:
 		
 	}
 
+	// Uses the potion on the pokemon if the player has one to use
 	void usePotion(Pokemon & pokemon, std::string potionName) {
 		Potion potion = Potion(potionName);
 		int cAmount = getAmountOfItem(potion.inividualItemID);
@@ -51,6 +55,7 @@ public:
 		}
 	}
 
+	// Uses the pokeball if the player has a pokeball
 	void usePokeball(PlayerCharacter & player, Pokemon & pokemon, string pokeballName) {
 		PokeBall pokeball = PokeBall(pokeballName);
 		int cAmount = getAmountOfItem(pokeball.inividualItemID);
