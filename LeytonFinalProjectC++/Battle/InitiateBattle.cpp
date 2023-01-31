@@ -329,7 +329,7 @@ public:
 			
 						}
 
-						
+						catchItemButtonClicked = 0;
 						
 					}
 
