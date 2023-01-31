@@ -15,6 +15,10 @@ public:
 	int catchRate;
 	int inividualItemID;
 
+	PokeBall() : Item(1,0,0,0,0){
+
+	}
+
 	PokeBall(string _pokeballName) : Item(1, 0, 0,0,0) {
 
 		pokeballName = _pokeballName;
