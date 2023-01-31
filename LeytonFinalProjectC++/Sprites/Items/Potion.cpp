@@ -12,22 +12,24 @@ public:
 	int healPokemonBy;
 	int inividualItemID;
 
-	Potion(string _potionName): Item(2,0, 0, 0, 0){
-		potionName = _potionName;
+	Potion(int id): Item(2,0, 0, 0, 0){
 
-		if (strcmp(potionName.c_str(), "Potion")) {
+		if (id == 4) {
+			potionName = "Potion";
 			healPokemonBy = 20;
 			inividualItemID = 4;
 			xTile = 3;
 			yTile = 0;
 		}
-		else if (strcmp(potionName.c_str(), "SuperPotion")) {
+		else if (id == 5) {
+			potionName = "Super Potion";
 			healPokemonBy = 50;
 			inividualItemID = 5;
 			xTile = 12;
 			yTile = 1;
 		}
-		else if (strcmp(potionName.c_str(), "HyperPotion")) {
+		else if (id == 6) {
+			potionName = "Hyper Potion";
 			healPokemonBy = 200;
 			inividualItemID = 6;
 			xTile = 11;
