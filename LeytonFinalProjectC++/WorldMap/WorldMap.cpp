@@ -148,7 +148,7 @@ public:
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			player.resetPlayer(7, 10);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
-			mapNumber = 11;
+			mapNumber = 12;
 		}
 
 		else if (tile == 16) {
