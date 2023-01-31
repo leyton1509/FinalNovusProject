@@ -183,6 +183,7 @@
     <ClInclude Include="Sprites\Button.h" />
     <ClInclude Include="Sprites\ChoosePokemonButton.h" />
     <ClInclude Include="Sprites\InteractablesForMaps.h" />
+    <ClInclude Include="Sprites\Item.h" />
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Sprites\PokemonStatBox.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
