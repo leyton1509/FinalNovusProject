@@ -150,6 +150,7 @@
     <ClCompile Include="Sprites\Button.cpp" />
     <ClCompile Include="Sprites\ChoosePokemonButton.cpp" />
     <ClCompile Include="Sprites\InteractablesForMaps.cpp" />
+    <ClCompile Include="Sprites\Item.cpp" />
     <ClCompile Include="Sprites\PlayerCharacter.cpp">
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
