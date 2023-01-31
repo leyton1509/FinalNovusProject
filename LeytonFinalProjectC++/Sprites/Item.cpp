@@ -1,8 +1,10 @@
 class Item {
 public:
 
-	Item() {
+	int idOfItem;
 
+	Item(int _idOfItem) {
+		idOfItem = _idOfItem;
 	}
 
 };
