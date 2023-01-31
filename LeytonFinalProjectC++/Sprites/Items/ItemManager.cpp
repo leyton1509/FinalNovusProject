@@ -61,18 +61,18 @@ public:
 		}
 	}
 
-	/*
+	
 
 	// Uses the pokeball if the player has a pokeball
-	void usePokeball(PlayerCharacter& player, Pokemon& pokemon, string pokeballName) {
+	void usePokeball( Pokemon& pokemon, string pokeballName) {
 		PokeBall pokeball = PokeBall(pokeballName);
 		int cAmount = getAmountOfItem(pokeball.inividualItemID);
 		if (cAmount > 0) {
-			pokeball.catchPokemon(player, pokemon);
+			pokeball.catchPokemon(pokemon);
 			setAmountOfItem(pokeball.inividualItemID, (cAmount - 1));
 		}
 	}
-	*/
+	
 
 
 };
