@@ -32,10 +32,20 @@ public:
 		}
 	}
 
+	void setAmountOfItem(int indivualID, int newAmount ) {
+		auto getter = itemAmounts.find(indivualID);
+
+		if (getter != itemAmounts.end()) {
+			getter->second = newAmount;
+		}
+		
+	}
+
 	void usePotion(Pokemon & pokemon, std::string potionName) {
 		Potion potion = Potion(potionName);
 		if (getAmountOfItem(potion.inividualItemID) > 0) {
 			potion.useItem(pokemon);
+
 		}
 	}
 
