@@ -176,9 +176,7 @@ public:
 							switchPokemonSixButton.isDisplayed = false;
 
 						}
-						pokeballButtonOne.isDisplayed = false;
-						pokeballButtonTwo.isDisplayed = false;
-						pokeballButtonThree.isDisplayed = false;
+
 
 					}
 
@@ -200,9 +198,6 @@ public:
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
 						}
-						pokeballButtonOne.isDisplayed = false;
-						pokeballButtonTwo.isDisplayed = false;
-						pokeballButtonThree.isDisplayed = false;
 
 					}
 
