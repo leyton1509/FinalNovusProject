@@ -18,8 +18,8 @@ public:
 			//Interactable superPotion = Interactable(3, true, 15 * 32, 20 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 24, 0);
 			//interactbles.push_front(superPotion);
 
-			Interactable pokeball = Interactable(5, true, 15 * 32, 20 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
-			interactbles.push_front(pokeball);
+			//Interactable pokeball = Interactable(5, true, 15 * 32, 20 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			//interactbles.push_front(pokeball);
 
 			return interactbles;
 		}
