@@ -151,35 +151,35 @@ public:
 		}
 
 		// Super Potion
-		else if (idOfInteractable == 2) {
+		else if (idOfInteractable == 3) {
 			int amount = player.itemManager.getAmountOfItem(5) + 1;
 			player.itemManager.setAmountOfItem(5, amount);
 			isDisplayed = false;
 		}
 
 		// Hyper Potion
-		else if (idOfInteractable == 2) {
+		else if (idOfInteractable == 4) {
 			int amount = player.itemManager.getAmountOfItem(6) + 1;
 			player.itemManager.setAmountOfItem(6, amount);
 			isDisplayed = false;
 		}
 
 		// Poke ball
-		else if (idOfInteractable == 2) {
+		else if (idOfInteractable == 5) {
 			int amount = player.itemManager.getAmountOfItem(1) + 1;
 			player.itemManager.setAmountOfItem(1, amount);
 			isDisplayed = false;
 		}
 
 		// Great ball
-		else if (idOfInteractable == 2) {
+		else if (idOfInteractable == 6) {
 			int amount = player.itemManager.getAmountOfItem(2) + 1;
 			player.itemManager.setAmountOfItem(2, amount);
 			isDisplayed = false;
 		}
 
 		// Ultra ball
-		else if (idOfInteractable == 2) {
+		else if (idOfInteractable == 7) {
 			int amount = player.itemManager.getAmountOfItem(3) + 1;
 			player.itemManager.setAmountOfItem(3, amount);
 			isDisplayed = false;
