@@ -410,13 +410,13 @@ public:
 							}
 						}
 
-						textBox.isDisplayed = true;
-						potionButtonOne.isDisplayed = false;
-						potionButtonTwo.isDisplayed = false;
-						potionButtonThree.isDisplayed = false;
+						
 
 						if (potionID!=-1) {
-
+							textBox.isDisplayed = true;
+							potionButtonOne.isDisplayed = false;
+							potionButtonTwo.isDisplayed = false;
+							potionButtonThree.isDisplayed = false;
 						}
 
 
