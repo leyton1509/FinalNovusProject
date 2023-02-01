@@ -13,6 +13,7 @@ public :
 	std::map<int, Trainer> trainers = {};
 
 	TrainerManager() {
-
+		// const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet
+		trainers.insert({ 1, Trainer("Elm", 10, 10, trainerStyleSheet, 0, 0) });
 	}
 };
