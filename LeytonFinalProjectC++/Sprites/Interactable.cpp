@@ -157,6 +157,13 @@ public:
 			isDisplayed = false;
 		}
 
+		// Hyper Potion
+		else if (idOfInteractable == 2) {
+			int amount = player.itemManager.getAmountOfItem(6) + 1;
+			player.itemManager.setAmountOfItem(6, amount);
+			isDisplayed = false;
+		}
+
 		alreadyInteractedWith = true;
 	}
 
