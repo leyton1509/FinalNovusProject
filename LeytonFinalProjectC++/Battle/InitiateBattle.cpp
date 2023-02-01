@@ -164,9 +164,11 @@ public:
 							switchPokemonFourButton.isDisplayed = true;
 							switchPokemonFiveButton.isDisplayed = true;
 							switchPokemonSixButton.isDisplayed = true;
+							
 
 						}
-						else {
+						else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
+							shouldHealInSwitch = -1;
 							textBox.isDisplayed = true;
 							switchPokemonOneButton.isDisplayed = false;
 							switchPokemonTwoButton.isDisplayed = false;
