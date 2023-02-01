@@ -15,8 +15,8 @@ public :
 
 	std::list<Trainer> getTrainersForMap(int mapNumber) {
 		std::list<Trainer> trainerList = {};
-		//Trainer t1 = ;
-		//trainerList.push_front();
+		Trainer t1 = ;
+		trainerList.push_front();
 
 		return trainerList;
 	}
@@ -26,7 +26,7 @@ public :
 		trainers.insert({ 1, Trainer("Elm", 10, 10, trainerStyleSheet, 0, 0) });
 	}
 
-	Trainer getDefaultPokemon(int trainerNum) {
+	Trainer getTrainer(int trainerNum) {
 
 		auto getter = trainers.find(trainerNum);
 
