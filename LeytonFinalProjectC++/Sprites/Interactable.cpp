@@ -164,6 +164,22 @@ public:
 			isDisplayed = false;
 		}
 
+		// Poke ball
+		else if (idOfInteractable == 2) {
+			int amount = player.itemManager.getAmountOfItem(1) + 1;
+			player.itemManager.setAmountOfItem(1, amount);
+			isDisplayed = false;
+		}
+
+		// Great ball
+		else if (idOfInteractable == 2) {
+			int amount = player.itemManager.getAmountOfItem(2) + 1;
+			player.itemManager.setAmountOfItem(2, amount);
+			isDisplayed = false;
+		}
+
+
+
 		alreadyInteractedWith = true;
 	}
 
