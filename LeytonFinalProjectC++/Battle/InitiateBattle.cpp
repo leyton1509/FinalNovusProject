@@ -277,11 +277,9 @@ public:
 						if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
 							if (shouldHealInSwitch!=-1) {
 								if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
-
+									player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
+									shouldHealInSwitch = -1;
 								}
-
-								shouldHealInSwitch = -1;
-							}
 							else {
 								if (currentPokemon != pokemonNinArray) {
 									if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
