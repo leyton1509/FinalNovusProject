@@ -193,6 +193,9 @@ public:
 							potionButtonOne.isDisplayed = false;
 							potionButtonOne.isDisplayed = false;
 							potionButtonOne.isDisplayed = false;
+							switchPokemonOneButton.isDisplayed = false;
+							switchPokemonTwoButton.isDisplayed = false;
+							switchPokemonThreeButton.isDisplayed = false;
 							switchPokemonFourButton.isDisplayed = false;
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
