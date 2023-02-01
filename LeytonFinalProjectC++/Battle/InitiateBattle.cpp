@@ -280,32 +280,31 @@ public:
 								shouldHealInSwitch = -1;
 							}
 							else {
+								if (currentPokemon != pokemonNinArray) {
+									if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+										currentPokemon = pokemonNinArray;
+										attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+										attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+										attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+										attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
 
-							}
+										textBox.isDisplayed = true;
+										switchPokemonOneButton.isDisplayed = false;
+										switchPokemonTwoButton.isDisplayed = false;
+										switchPokemonThreeButton.isDisplayed = false;
+										switchPokemonFourButton.isDisplayed = false;
+										switchPokemonFiveButton.isDisplayed = false;
+										switchPokemonSixButton.isDisplayed = false;
 
-							if (currentPokemon != pokemonNinArray) {
-								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
-									currentPokemon = pokemonNinArray;
-									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
-									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
-									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
-									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+										if (pokemonIsDead) {
+											pokemonIsDead = false;
+										}
 
-									textBox.isDisplayed = true;
-									switchPokemonOneButton.isDisplayed = false;
-									switchPokemonTwoButton.isDisplayed = false;
-									switchPokemonThreeButton.isDisplayed = false;
-									switchPokemonFourButton.isDisplayed = false;
-									switchPokemonFiveButton.isDisplayed = false;
-									switchPokemonSixButton.isDisplayed = false;
-
-									if (pokemonIsDead) {
-										pokemonIsDead = false;
+										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 									}
-
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								}
 							}
+
 						}
 						switchPokemonButtonClicked = 0;
 					}
