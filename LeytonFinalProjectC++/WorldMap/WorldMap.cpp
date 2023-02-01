@@ -117,15 +117,17 @@ public:
 
 		for (Interactable& inter : interactablesForMap)
 		{
-			
-
 			if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 				inter.interact(player, queue,  screenWidth,  screenHeight);
 				return 1;
 			}
-
-			
-
+		}
+		for (Trainer& trainer : trainersForMap)
+		{
+			if (trainer.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+				trainer.interact(player, queue, screenWidth, screenHeight);
+				return 1;
+			}
 		}
 
 		return 0;
