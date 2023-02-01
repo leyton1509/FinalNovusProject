@@ -45,7 +45,9 @@ public:
 
 	// Draws the current sprite
 	void drawSprite() {
-		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition, yPosition, spritewidth, spriteHeight, 0);
+		//al_draw_scaled_bitmap(spriteImage, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
+
+		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet) + 6, (32 * yTileForSpriteSheet) +6, 32, 32, xPosition, yPosition, 64, 64, 0);
 	}
 
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
