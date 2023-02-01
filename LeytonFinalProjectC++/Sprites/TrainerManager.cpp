@@ -3,6 +3,7 @@
 #include "../Sprites/Spriteheader.h"
 #include <map>
 #include "../Sprites/Trainer.h"
+#include <list>
 
 class TrainerManager{
 
@@ -12,12 +13,28 @@ public :
 
 	std::map<int, Trainer> trainers = {};
 
-	std::initializer_list<Trainer> getTrainersForMap(int mapNumber) {
-		std::initializer_list<Trainer> list = {};
+	std::list<Trainer> getTrainersForMap(int mapNumber) {
+		std::list<Trainer> trainerList = {};
+		//Trainer t1 = ;
+		//trainerList.push_front();
+
+		return trainerList;
 	}
 
 	TrainerManager() {
 		// const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet
 		trainers.insert({ 1, Trainer("Elm", 10, 10, trainerStyleSheet, 0, 0) });
+	}
+
+	Trainer getDefaultPokemon(int trainerNum) {
+
+		auto getter = trainers.find(trainerNum);
+
+		if (getter == trainers.end()) {
+			return;
+		}
+		else {
+			return getter->second;
+		}
 	}
 };
