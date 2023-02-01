@@ -188,12 +188,11 @@ public:
 							potionButtonThree.isDisplayed = true;
 
 						}
-						else {
+						else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
 							textBox.isDisplayed = true;
-
-							switchPokemonOneButton.isDisplayed = false;
-							switchPokemonTwoButton.isDisplayed = false;
-							switchPokemonThreeButton.isDisplayed = false;
+							potionButtonOne.isDisplayed = false;
+							potionButtonOne.isDisplayed = false;
+							potionButtonOne.isDisplayed = false;
 							switchPokemonFourButton.isDisplayed = false;
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
