@@ -37,7 +37,7 @@ public :
 		auto getter = trainers.find(trainerNum);
 
 		if (getter == trainers.end()) {
-			return;
+			return Trainer();
 		}
 		else {
 			return getter->second;
