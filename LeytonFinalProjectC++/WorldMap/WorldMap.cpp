@@ -225,6 +225,15 @@ public:
 
 					}
 
+					std::list<Trainer>::reverse_iterator revIt;
+					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
+
 				}
 				else {
 					return 0;
@@ -261,6 +270,15 @@ public:
 					}
 					std::list<Interactable>::reverse_iterator revIt;
 					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
+
+					std::list<Trainer>::reverse_iterator revIt;
+					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
 					{
 						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 							return 0;
@@ -307,6 +325,15 @@ public:
 						}
 
 					}
+
+					std::list<Trainer>::reverse_iterator revIt;
+					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
 				}
 				else {
 					return 0;
@@ -341,6 +368,15 @@ public:
 					}
 					std::list<Interactable>::reverse_iterator revIt;
 					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
+					{
+						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+							return 0;
+						}
+
+					}
+
+					std::list<Trainer>::reverse_iterator revIt;
+					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
 					{
 						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 							return 0;
