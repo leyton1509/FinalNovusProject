@@ -164,9 +164,6 @@ public:
 							switchPokemonFourButton.isDisplayed = true;
 							switchPokemonFiveButton.isDisplayed = true;
 							switchPokemonSixButton.isDisplayed = true;
-							pokeballButtonOne.isDisplayed = false;
-							pokeballButtonTwo.isDisplayed = false;
-							pokeballButtonThree.isDisplayed = false;
 
 						}
 						else {
@@ -179,6 +176,9 @@ public:
 							switchPokemonSixButton.isDisplayed = false;
 
 						}
+						pokeballButtonOne.isDisplayed = false;
+						pokeballButtonTwo.isDisplayed = false;
+						pokeballButtonThree.isDisplayed = false;
 
 					}
 
@@ -188,24 +188,21 @@ public:
 							potionButtonOne.isDisplayed = true;
 							potionButtonTwo.isDisplayed = true;
 							potionButtonThree.isDisplayed = true;
-							pokeballButtonOne.isDisplayed = false;
-							pokeballButtonTwo.isDisplayed = false;
-							pokeballButtonThree.isDisplayed = false;
 
 						}
 						else {
 							textBox.isDisplayed = true;
-							potionButtonOne.isDisplayed = false;
-							potionButtonTwo.isDisplayed = false;
-							potionButtonThree.isDisplayed = false;
+
 							switchPokemonOneButton.isDisplayed = false;
 							switchPokemonTwoButton.isDisplayed = false;
 							switchPokemonThreeButton.isDisplayed = false;
 							switchPokemonFourButton.isDisplayed = false;
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
-
 						}
+						pokeballButtonOne.isDisplayed = false;
+						pokeballButtonTwo.isDisplayed = false;
+						pokeballButtonThree.isDisplayed = false;
 
 					}
 
@@ -216,7 +213,7 @@ public:
 							pokeballButtonTwo.isDisplayed = true;
 							pokeballButtonThree.isDisplayed = true;
 						}
-						else {
+						else if(!textBox.isDisplayed && pokeballButtonOne.isDisplayed) {
 							textBox.isDisplayed = true;
 							pokeballButtonOne.isDisplayed = false;
 							pokeballButtonTwo.isDisplayed = false;
