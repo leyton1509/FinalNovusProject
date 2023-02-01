@@ -27,9 +27,6 @@ public:
 		yTileForSpriteSheet = _yTileForSpriteSheet;
 	}
 
-	Trainer() : Sprite(SpriteType::SpriteTypes::Player, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg"){
-
-	}
 
 	// Draws the current sprite
 	void drawSprite() {
