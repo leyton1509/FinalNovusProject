@@ -184,12 +184,19 @@ public:
 							potionButtonOne.isDisplayed = true;
 							potionButtonTwo.isDisplayed = true;
 							potionButtonThree.isDisplayed = true;
+
 						}
 						else {
 							textBox.isDisplayed = true;
 							potionButtonOne.isDisplayed = false;
 							potionButtonTwo.isDisplayed = false;
 							potionButtonThree.isDisplayed = false;
+							switchPokemonOneButton.isDisplayed = false;
+							switchPokemonTwoButton.isDisplayed = false;
+							switchPokemonThreeButton.isDisplayed = false;
+							switchPokemonFourButton.isDisplayed = false;
+							switchPokemonFiveButton.isDisplayed = false;
+							switchPokemonSixButton.isDisplayed = false;
 						}
 
 					}
