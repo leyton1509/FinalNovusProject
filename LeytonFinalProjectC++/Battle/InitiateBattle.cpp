@@ -276,6 +276,9 @@ public:
 						int pokemonNinArray = switchPokemonButtonClicked - 1;
 						if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
 							if (shouldHealInSwitch!=-1) {
+								if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
+
+								}
 
 								shouldHealInSwitch = -1;
 							}
