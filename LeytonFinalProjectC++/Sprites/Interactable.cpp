@@ -150,6 +150,13 @@ public:
 			isDisplayed = false;
 		}
 
+		// Super Potion
+		else if (idOfInteractable == 2) {
+			int amount = player.itemManager.getAmountOfItem(5) + 1;
+			player.itemManager.setAmountOfItem(5, amount);
+			isDisplayed = false;
+		}
+
 		alreadyInteractedWith = true;
 	}
 
