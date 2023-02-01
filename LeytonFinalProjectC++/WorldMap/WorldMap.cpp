@@ -6,6 +6,7 @@
 #include "../Sprites/PlayerCharacter.h"
 #include "../Sprites/InteractablesForMaps.h"
 #include <list>
+#include "../Sprites/TrainerManager.h"
 using namespace std;
 class WorldMap {
 
@@ -16,6 +17,8 @@ public:
 	ALLEGRO_BITMAP* mapTiles[25];
 
 	std::list<Interactable> interactablesForMap;
+	std::list<Trainer> trainersForMap;
+
 
 	int textMap[100][100];
 	int loadCounterX = 0;
@@ -29,6 +32,8 @@ public:
 	int mapNumber;
 	int previousTileLocation[2];
 	int closestHealLocation[2];
+
+	TrainerManager trainerManager;
 
 
 	WorldMap(int _screenWidth, int _screenHeight, const char * mapFP, int _mapNumber) {
