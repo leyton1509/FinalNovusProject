@@ -138,8 +138,15 @@ public:
 
 	// Method to be overidden for what the object does when interated
 	 void interact(PlayerCharacter &player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
+		 // Breifcase
 		if (idOfInteractable == 1) {
 			choosePokemon(player, queue, screenWidth, screenHeight);
+			isDisplayed = false;
+		}
+		// Normal Potion
+		else if (idOfInteractable == 2) {
+			int amount = player.itemManager.getAmountOfItem(4) +1;
+			player.itemManager.setAmountOfItem(4, amount);
 			isDisplayed = false;
 		}
 
