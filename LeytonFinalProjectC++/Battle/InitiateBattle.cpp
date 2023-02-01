@@ -164,6 +164,9 @@ public:
 							switchPokemonFourButton.isDisplayed = true;
 							switchPokemonFiveButton.isDisplayed = true;
 							switchPokemonSixButton.isDisplayed = true;
+							pokeballButtonOne.isDisplayed = false;
+							pokeballButtonTwo.isDisplayed = false;
+							pokeballButtonThree.isDisplayed = false;
 
 						}
 						else {
@@ -174,6 +177,7 @@ public:
 							switchPokemonFourButton.isDisplayed = false;
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
+
 						}
 
 					}
@@ -184,6 +188,9 @@ public:
 							potionButtonOne.isDisplayed = true;
 							potionButtonTwo.isDisplayed = true;
 							potionButtonThree.isDisplayed = true;
+							pokeballButtonOne.isDisplayed = false;
+							pokeballButtonTwo.isDisplayed = false;
+							pokeballButtonThree.isDisplayed = false;
 
 						}
 						else {
@@ -197,6 +204,7 @@ public:
 							switchPokemonFourButton.isDisplayed = false;
 							switchPokemonFiveButton.isDisplayed = false;
 							switchPokemonSixButton.isDisplayed = false;
+
 						}
 
 					}
