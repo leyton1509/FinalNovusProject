@@ -1,0 +1,8 @@
+class TrainerManager {
+
+public :
+
+	TrainerManager() {
+
+	}
+};
