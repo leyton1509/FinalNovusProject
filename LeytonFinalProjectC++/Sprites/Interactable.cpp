@@ -77,6 +77,7 @@ public:
 					}
 				}
 				else {
+					al_draw_scaled_bitmap(spriteImage, (64 * xTileStyleSheet), (64 * yTileStyleSheet), 64, 64, xPosition, yPosition, spritewidth, spriteHeight, 0);
 
 				}
 
