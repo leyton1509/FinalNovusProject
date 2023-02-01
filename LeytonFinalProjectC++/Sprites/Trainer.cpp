@@ -35,6 +35,14 @@ public:
 		yTileForSpriteSheet = 0;
 	}
 
+	void setPositions(int _xTile, int _yTile) {
+		xTile = _xTile;
+		yTile = _yTile;
+		xPosition = xTile * 32;
+		yPosition = yTile * 32;
+
+	}
+
 	// Draws the current sprite
 	void drawSprite() {
 		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition, yPosition, spritewidth, spriteHeight, 0);
