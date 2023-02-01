@@ -280,6 +280,13 @@ public:
 									player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
 									shouldHealInSwitch = -1;
 
+									textBox.isDisplayed = true;
+									switchPokemonOneButton.isDisplayed = false;
+									switchPokemonTwoButton.isDisplayed = false;
+									switchPokemonThreeButton.isDisplayed = false;
+									switchPokemonFourButton.isDisplayed = false;
+									switchPokemonFiveButton.isDisplayed = false;
+									switchPokemonSixButton.isDisplayed = false;
 
 								}
 							}
