@@ -46,6 +46,21 @@ public:
 
 	}
 
+	// Constructor for sprite with inputs for speed and direction and a style sheet pointer
+	Sprite(SpriteType::SpriteTypes _typeOfSprite, float _startX, float _startY, float _velocityX, float _velocityY, int _directionX, int _directionY, int _spritewidth, int _spriteHeight, ALLEGRO_BITMAP * stylesheet) {
+		typeOfSprite = _typeOfSprite;
+		xPosition = _startX;
+		yPosition = _startY;
+		velocityX = _velocityX;
+		velocityY = _velocityY;
+		directionX = _directionX;
+		directionY = _directionY;
+		spritewidth = _spritewidth;
+		spriteHeight = _spriteHeight;
+		spriteImage = stylesheet;
+
+	}
+
 	// Constructor for sprite without inputs for speed and direction
 	Sprite(SpriteType::SpriteTypes _typeOfSprite, float _startX, float _startY, int _spritewidth, int _spriteHeight, const char* filename) {
 		typeOfSprite = _typeOfSprite;
