@@ -111,14 +111,14 @@ public:
 
 		for (Interactable& inter : interactablesForMap)
 		{
-			if (inter.idOfInteractable == 1) {
+			
 
-				if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
-					inter.interact(player, queue,  screenWidth,  screenHeight);
-					return 1;
-				}
-
+			if (inter.isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+				inter.interact(player, queue,  screenWidth,  screenHeight);
+				return 1;
 			}
+
+			
 
 		}
 
