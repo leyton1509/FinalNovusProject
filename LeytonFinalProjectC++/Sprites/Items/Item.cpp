@@ -15,7 +15,7 @@ public:
 	}
 
 	void drawSprite() {
-		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition,yPosition, spritewidth, spriteHeight, 0);
+		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition+20,yPosition+15, spritewidth /2, spriteHeight/2, 0);
 
 	}
 
