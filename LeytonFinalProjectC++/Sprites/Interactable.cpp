@@ -58,13 +58,19 @@ public:
 	// Draws the sprite at the correct position if it is displayed
 	void drawSprite() {
 		if (isDisplayed) {
-			if (dissapeaarWhenInteractedWith) {
-				if (!alreadyInteractedWith) {
+			if (xTileStyleSheet == -1) {
+				if (dissapeaarWhenInteractedWith) {
+					if (!alreadyInteractedWith) {
+						al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+					}
+				}
+				else {
 					al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+
 				}
 			}
 			else {
-				al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+
 
 			}
 		}
