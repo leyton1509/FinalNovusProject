@@ -178,6 +178,13 @@ public:
 			isDisplayed = false;
 		}
 
+		// Ultra ball
+		else if (idOfInteractable == 2) {
+			int amount = player.itemManager.getAmountOfItem(3) + 1;
+			player.itemManager.setAmountOfItem(3, amount);
+			isDisplayed = false;
+		}
+
 
 
 		alreadyInteractedWith = true;
