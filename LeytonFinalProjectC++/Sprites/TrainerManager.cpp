@@ -14,9 +14,15 @@ public :
 	std::map<int, Trainer> trainers = {};
 
 	std::list<Trainer> getTrainersForMap(int mapNumber) {
+
 		std::list<Trainer> trainerList = {};
-		Trainer t1 = ;
-		trainerList.push_front();
+		if (mapNumber==1) {
+			Trainer t1 = getTrainer(1);
+
+
+			trainerList.push_front(t1);
+		}
+		
 
 		return trainerList;
 	}
