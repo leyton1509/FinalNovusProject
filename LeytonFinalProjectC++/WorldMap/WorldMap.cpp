@@ -225,10 +225,10 @@ public:
 
 					}
 
-					std::list<Trainer>::reverse_iterator revIt;
-					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+					std::list<Trainer>::reverse_iterator revItTrainer;
+					for (revItTrainer = trainersForMap.rbegin(); revItTrainer != trainersForMap.rend(); revItTrainer++)
 					{
-						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+						if (revItTrainer->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 							return 0;
 						}
 
@@ -277,10 +277,10 @@ public:
 
 					}
 
-					std::list<Trainer>::reverse_iterator revIt;
-					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+					std::list<Trainer>::reverse_iterator revItTrainer;
+					for (revItTrainer = trainersForMap.rbegin(); revItTrainer != trainersForMap.rend(); revItTrainer++)
 					{
-						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+						if (revItTrainer->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 							return 0;
 						}
 
@@ -326,10 +326,10 @@ public:
 
 					}
 
-					std::list<Trainer>::reverse_iterator revIt;
-					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+					std::list<Trainer>::reverse_iterator revItTrainer;
+					for (revItTrainer = trainersForMap.rbegin(); revItTrainer != trainersForMap.rend(); revItTrainer++)
 					{
-						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+						if (revItTrainer->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 							return 0;
 						}
 
@@ -375,10 +375,10 @@ public:
 
 					}
 
-					std::list<Trainer>::reverse_iterator revIt;
-					for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+					std::list<Trainer>::reverse_iterator revItTrainer;
+					for (revItTrainer = trainersForMap.rbegin(); revItTrainer != trainersForMap.rend(); revItTrainer++)
 					{
-						if (revIt->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
+						if (revItTrainer->isInteracting(keyPressed, xTile, yTile, directionX, directionY, mapSizeX, mapSizeY)) {
 							return 0;
 						}
 
@@ -483,6 +483,13 @@ public:
 		for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
 		{
 			revIt->drawSprite();
+
+		}
+
+		std::list<Trainer>::reverse_iterator revItTrainer;
+		for (revItTrainer = trainersForMap.rbegin(); revItTrainer != trainersForMap.rend(); revItTrainer++)
+		{
+			revItTrainer->drawSprite();
 
 		}
 
