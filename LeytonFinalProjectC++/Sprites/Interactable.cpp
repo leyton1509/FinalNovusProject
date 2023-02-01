@@ -37,9 +37,9 @@ public:
 	}
 
 	// Constructor with the size and position parameters and x tile y tile params
-	Interactable(int _idOfInteractable, bool _dissapeaarWhenInteractedWith, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, int _xTileStyleSheet, int _yTileStyleSheet) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
-		originalSizeX = _originalSizeX;
-		originalSizeY = _originalSizeY;
+	Interactable(int _idOfInteractable, bool _dissapeaarWhenInteractedWith, float _xStart, float _yStart, float _width, float _height, const char* _filepath, int _xTileStyleSheet, int _yTileStyleSheet) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
+		originalSizeX = -1;
+		originalSizeY = -1;
 		idOfInteractable = _idOfInteractable;
 		dissapeaarWhenInteractedWith = _dissapeaarWhenInteractedWith;
 		xTileStyleSheet = _xTileStyleSheet;
@@ -174,6 +174,7 @@ public:
 	// Method to be overidden for what the object does when interated
 	 void interact(PlayerCharacter &player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 		 // Breifcase
+		 
 		if (idOfInteractable == 1) {
 			choosePokemon(player, queue, screenWidth, screenHeight);
 			isDisplayed = false;
