@@ -12,6 +12,10 @@ public :
 
 	std::map<int, Trainer> trainers = {};
 
+	std::initializer_list<Trainer> getTrainersForMap(int mapNumber) {
+		std::initializer_list<Trainer> list = {};
+	}
+
 	TrainerManager() {
 		// const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet
 		trainers.insert({ 1, Trainer("Elm", 10, 10, trainerStyleSheet, 0, 0) });
