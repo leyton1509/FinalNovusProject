@@ -417,7 +417,14 @@ public:
 							potionButtonOne.isDisplayed = false;
 							potionButtonTwo.isDisplayed = false;
 							potionButtonThree.isDisplayed = false;
-							shouldHealInSwitch = true;
+							shouldHealInSwitch = potionID;
+
+							switchPokemonOneButton.isDisplayed = true;
+							switchPokemonTwoButton.isDisplayed = true;
+							switchPokemonThreeButton.isDisplayed = true;
+							switchPokemonFourButton.isDisplayed = true;
+							switchPokemonFiveButton.isDisplayed = true;
+							switchPokemonSixButton.isDisplayed = true;
 						}
 
 
