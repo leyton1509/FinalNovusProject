@@ -23,22 +23,22 @@ public:
 			potionName = "Potion";
 			healPokemonBy = 20;
 			inividualItemID = 4;
-			xTileForSpriteSheet = 3;
+			xTileForSpriteSheet = 15;
 			yTileForSpriteSheet = 0;
 		}
 		else if (id == 5) {
 			potionName = "Super Potion";
 			healPokemonBy = 50;
 			inividualItemID = 5;
-			xTileForSpriteSheet = 12;
-			yTileForSpriteSheet = 1;
+			xTileForSpriteSheet = 24;
+			yTileForSpriteSheet = 0;
 		}
 		else if (id == 6) {
 			potionName = "Hyper Potion";
 			healPokemonBy = 200;
 			inividualItemID = 6;
-			xTileForSpriteSheet = 11;
-			yTileForSpriteSheet = 1;
+			xTileForSpriteSheet = 23;
+			yTileForSpriteSheet = 0;
 		}
 		else {
 			healPokemonBy = 0;
