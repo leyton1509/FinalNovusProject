@@ -379,12 +379,13 @@ public:
 								textForTextBox[2] = "";
 								textForTextBox[3] = "";
 							}
+							textBox.isDisplayed = true;
+							pokeballButtonOne.isDisplayed = false;
+							pokeballButtonTwo.isDisplayed = false;
+							pokeballButtonThree.isDisplayed = false;
 						}
 
-						textBox.isDisplayed = true;
-						pokeballButtonOne.isDisplayed = false;
-						pokeballButtonTwo.isDisplayed = false;
-						pokeballButtonThree.isDisplayed = false;
+						
 						catchItemButtonClicked = 0;
 						
 					}
