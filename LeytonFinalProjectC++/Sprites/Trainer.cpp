@@ -25,5 +25,10 @@ public:
 
 	}
 
+	// Draws the current sprite
+	void drawSprite() {
+		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition, yPosition, spritewidth, spriteHeight, 0);
+	}
+
 	
 };
