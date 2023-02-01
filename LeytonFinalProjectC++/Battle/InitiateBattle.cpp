@@ -130,6 +130,7 @@ public:
 		int healItemButtonClicked = 0;
 		int catchItemButtonClicked = 0;
 		bool pokemonIsDead = false;
+		bool shouldHealInSwitch = false;
 
 		if (battleType == 0) {
 			// Wild encounter
