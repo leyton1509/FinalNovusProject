@@ -20,12 +20,30 @@ public:
 	bool alreadyInteractedWith = false;
 	// Boolean if the object should disappear when interacted with
 	bool dissapeaarWhenInteractedWith;
+	
+	// If using a style sheet, x pos
+	int xTileStyleSheet;
+	// If using a style sheet, y pos
+	int yTileStyleSheet;
+
 	// Constructor with the size and position parameters
 	Interactable(int _idOfInteractable, bool _dissapeaarWhenInteractedWith, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 		idOfInteractable = _idOfInteractable;
 		dissapeaarWhenInteractedWith = _dissapeaarWhenInteractedWith;
+		xTileStyleSheet = -1;
+		yTileStyleSheet = -1;
+	}
+
+	// Constructor with the size and position parameters and x tile y tile params
+	Interactable(int _idOfInteractable, bool _dissapeaarWhenInteractedWith, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, int _xTileStyleSheet, int _yTileStyleSheet) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
+		originalSizeX = _originalSizeX;
+		originalSizeY = _originalSizeY;
+		idOfInteractable = _idOfInteractable;
+		dissapeaarWhenInteractedWith = _dissapeaarWhenInteractedWith;
+		xTileStyleSheet = _xTileStyleSheet;
+		yTileStyleSheet = _yTileStyleSheet;
 	}
 
 	Interactable() : Sprite(SpriteType::SpriteTypes::Button, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
@@ -33,6 +51,8 @@ public:
 		originalSizeY = 0;
 		dissapeaarWhenInteractedWith = false;
 		idOfInteractable = 0;
+		xTileStyleSheet = -1;
+		yTileStyleSheet = -1;
 	}
 
 	// Draws the sprite at the correct position if it is displayed
