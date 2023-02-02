@@ -25,7 +25,7 @@ public:
 		}
 	}
 
-	PokemonPC(PlayerCharacter & player, int screenWidth, int screenHeight) {
+	PokemonPC(PlayerCharacter & player, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
 		int startXPositon = 10;
 		int startYPosition = 10;
@@ -43,6 +43,10 @@ public:
 			}
 
 		}
+
+
+
+		
 
 	}
 };
