@@ -7,6 +7,7 @@
 #include "../Sprites/InteractablesForMaps.h"
 #include <list>
 #include "../Sprites/TrainerManager.h"
+#include "../Battle/InitiateBattle.h"
 using namespace std;
 class WorldMap {
 
@@ -430,7 +431,7 @@ public:
 		{
 			if (trainer.isInLineOfSight(player.xTilePosition, player.yTilePosition)) {
 
-				InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, trainer.locationNumber, trainer);
+				InitiateBattle initiateBattle = InitiateBattle(trainer, screenWidth, screenHeight, queue, player, trainer.locationNumber);
 				trainer.hasBeenFought = true;
 				
 
