@@ -92,6 +92,10 @@ public:
 							boxButtons[i].isHighlighted = true;
 							highlightedPokemon = i;
 						}
+						else if (highlightedPokemon == i) {
+							boxButtons[i].isHighlighted = false;
+							highlightedPokemon = -1;
+						}
 					}
 				}
 
