@@ -424,6 +424,15 @@ public:
 		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
+	int checkForTrainerBattle(PlayerCharacter& player){
+		std::list<Trainer>::reverse_iterator revIt;
+		for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
+		{
+			revIt->isInLineOfSight(player.xTilePosition, player.yTilePosition);
+
+		}
+	}
+
 
 
 	int getWhatPlayerIsStandingOn(int xTile, int yTile) {
