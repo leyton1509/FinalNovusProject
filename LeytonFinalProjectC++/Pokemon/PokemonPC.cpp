@@ -98,6 +98,10 @@ public:
 						}
 						else {
 							Pokemon tempPokemon = player.box[i];
+
+							player.box[highlightedPokemon] = player.box[i];
+							player.box[i] = tempPokemon;
+
 							highlightedPokemon = -1;
 						}
 					}
