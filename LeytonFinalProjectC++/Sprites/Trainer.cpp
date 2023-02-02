@@ -26,8 +26,8 @@ public:
 	// Main constructor for loading a character 
 	Trainer(const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet) : Sprite(SpriteType::SpriteTypes::Player, _xTile * 32, _yTile * 32,0,0, 0,0, 32,32, stylesheet) {
 		name = _name;
-		xTileOriginal = _xTile;
-		yTileForOriginal = _yTile;
+		xTileOriginal = _xTileForSpriteSheet;
+		yTileForOriginal = _yTileForSpriteSheet;
 		xTile = _xTile;
 		yTile = _yTile;
 		xTileForSpriteSheet = _xTileForSpriteSheet;
@@ -74,6 +74,8 @@ public:
 			xTileForSpriteSheet = xTileOriginal+2;
 			yTileForSpriteSheet = yTileForOriginal+1;
 		}
+		cout << "X " << xTileForSpriteSheet << " Y " << yTileForSpriteSheet<< "";
+		cout << "X " << xTileOriginal << " Y " << yTileForOriginal << " \n";
 
 	}
 
@@ -81,7 +83,7 @@ public:
 	void drawSprite() {
 		//al_draw_scaled_bitmap(spriteImage, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
 
-		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet) + 6, (32 * yTileForSpriteSheet) +6, 32, 32, xPosition, yPosition, 64, 64, 0);
+		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition, yPosition, 64, 64, 0);
 	}
 
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
