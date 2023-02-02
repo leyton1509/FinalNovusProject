@@ -58,8 +58,15 @@ public:
 		if (directionX == -1) {
 			xTileForSpriteSheet = xTileOriginal;
 			yTileForSpriteSheet = yTileForOriginal + 2;
-		}else if (directionX == 1) {
+		}
+		
+		else if (directionX == 1) {
 			xTileForSpriteSheet = xTileOriginal+ 1;
+			yTileForSpriteSheet = yTileForOriginal;
+		}
+
+		else if (directionY == 1) {
+			xTileForSpriteSheet = xTileOriginal;
 			yTileForSpriteSheet = yTileForOriginal;
 		}
 
