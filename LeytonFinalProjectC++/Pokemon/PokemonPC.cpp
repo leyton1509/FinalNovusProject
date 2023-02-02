@@ -82,6 +82,12 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
+				for (int i = 0; i < 30; i++)
+				{
+					boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
+				}
+
+
 				break;
 			}
 
