@@ -95,6 +95,17 @@ public:
 
 		int currentPokemonOpponent = 0;
 
+		// The number of the pokemon to use
+		int currentPokemon = 0;
+
+		if (!player.isAllPokemonInPartyDead()) {
+			currentPokemon = player.getFirstAlivePokemon();
+
+		}
+		else {
+			return;
+		}
+
 
 
 		
