@@ -277,6 +277,56 @@ public:
 				// Add code for when the buttons are clicked
 
 
+				if (switchPokemonButtonClicked != 0) {
+					int pokemonNinArray = switchPokemonButtonClicked - 1;
+					if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
+						if (shouldHealInSwitch != -1) {
+							if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
+								player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
+								shouldHealInSwitch = -1;
+
+								textBox.isDisplayed = true;
+								switchPokemonOneButton.isDisplayed = false;
+								switchPokemonTwoButton.isDisplayed = false;
+								switchPokemonThreeButton.isDisplayed = false;
+								switchPokemonFourButton.isDisplayed = false;
+								switchPokemonFiveButton.isDisplayed = false;
+								switchPokemonSixButton.isDisplayed = false;
+
+								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+
+
+							}
+						}
+						else {
+							if (currentPokemon != pokemonNinArray) {
+								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									currentPokemon = pokemonNinArray;
+									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+
+									textBox.isDisplayed = true;
+									switchPokemonOneButton.isDisplayed = false;
+									switchPokemonTwoButton.isDisplayed = false;
+									switchPokemonThreeButton.isDisplayed = false;
+									switchPokemonFourButton.isDisplayed = false;
+									switchPokemonFiveButton.isDisplayed = false;
+									switchPokemonSixButton.isDisplayed = false;
+
+									if (pokemonIsDead) {
+										pokemonIsDead = false;
+									}
+
+									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								}
+							}
+						}
+
+					}
+					switchPokemonButtonClicked = 0;
+				}
 				break;
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				done = true;
