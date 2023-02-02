@@ -115,7 +115,7 @@ public:
 				{
 					bool hasBeenClicked = boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
 					if (hasBeenClicked) {
-						if (highlightedPokemonPC == -1 ) {
+						if (highlightedPokemonPC == -1) {
 							boxButtons[i].isHighlighted = true;
 							highlightedPokemonPC = i;
 						}
@@ -123,17 +123,17 @@ public:
 							boxButtons[i].isHighlighted = false;
 							highlightedPokemonPC = -1;
 						}
-						/*
 						
-						else {
-							Pokemon tempPokemon = player.box[highlightedPokemon];
-							boxButtons[highlightedPokemon].isHighlighted = false;
-							player.box[highlightedPokemon] = player.box[i];
+						
+						else if(highlightedPokemonPC != i){
+							Pokemon tempPokemon = player.box[highlightedPokemonPC];
+							boxButtons[highlightedPokemonPC].isHighlighted = false;
+							player.box[highlightedPokemonPC] = player.box[i];
 							player.box[i] = tempPokemon;
 
-							highlightedPokemon = -1;
+							highlightedPokemonPC = -1;
 						}
-						*/
+						
 					}
 				}
 
