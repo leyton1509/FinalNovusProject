@@ -44,12 +44,13 @@ public:
 		yTileForSpriteSheet = 0;
 	}
 
-	void setPositions(int _xTile, int _yTile) {
+	void setPositions(int _xTile, int _yTile, int _directonX, int _directonY) {
 		xTile = _xTile;
 		yTile = _yTile;
 		xPosition = xTile * 32;
 		yPosition = yTile * 32;
-
+		directionX = _directonX;
+		directionY = _directonY;
 	}
 
 	void mapDirectonToSpriteSheet() {
