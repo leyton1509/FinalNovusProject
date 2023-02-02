@@ -8,9 +8,30 @@ public:
 
 	string textForTextBox[4] = { "", "", "", "" };
 
-	int getNextPokemonForOpponent(Trainer trainer, int currentPokemon, Pokemon playersPokemon) {
+	int getNextPokemonForOpponent(Trainer& trainer, int currentPokemon, Pokemon playersPokemon) {
 
-		return 0;
+		PokemonTypeChart ptc = PokemonTypeChart();
+		double highestEffectiveness = -1;
+		int numberToChoose = 0;
+
+		for (int i = 0; i < trainer.numberOfPokemonInParty; i++)
+		{
+			if (i != currentPokemon) {
+				if (strcmp(trainer.trainersTeam[i].pokemonName.c_str(), "") != 0) {
+					if (trainer.trainersTeam[i].currentHealth > 0) {
+						double effectiveness = ptc.returnEffectivenessOfMove(trainer.trainersTeam[i].pokemonTypeOne, playersPokemon.pokemonTypeOne, playersPokemon.pokemonTypeTwo);
+						effectiveness = effectiveness * ptc.returnEffectivenessOfMove(trainer.trainersTeam[i].pokemonTypeTwo, playersPokemon.pokemonTypeOne, playersPokemon.pokemonTypeTwo);
+
+						if (effectiveness > highestEffectiveness) {
+							numberToChoose = i;
+							highestEffectiveness = effectiveness;
+						}
+					}
+				}
+			}
+			
+		}
+		return numberToChoose;
 	}
 
 	int calcDamageOfMove(Pokemon attackingPokemon, Pokemon DefendingPokemon, Move playerMoveUsed) {
