@@ -18,7 +18,7 @@ public:
 
 		for (int i = 0; i < 6; i++)
 		{
-			boxButtons[i].drawSprite(playersParty[i]);
+			currentPokemon[i].drawSprite(playersParty[i]);
 		}
 
 		
@@ -39,8 +39,8 @@ public:
 		int startYPosition = 10;
 		int counter = 0;
 
-		int startXCurrentPokemo = 600;
-		int startYCurrentPokemo = 200;
+		int startXCurrentPokemon = 600;
+		int startYCurrentPokemon = 200;
 
 		// BG sprite
 		ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/Background.png");
@@ -62,7 +62,7 @@ public:
 		{
 			for (int j = 0; j < 2; j++)
 			{
-				currentPokemon[playerCounter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				currentPokemon[playerCounter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXCurrentPokemon + (i * 90), startYCurrentPokemon + (j * 90), 80, 80);
 				playerCounter++;
 			}
 
@@ -115,7 +115,7 @@ public:
 				{
 					bool hasBeenClicked = boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
 					if (hasBeenClicked) {
-						if (highlightedPokemonPC == -1) {
+						if (highlightedPokemonPC == -1 ) {
 							boxButtons[i].isHighlighted = true;
 							highlightedPokemonPC = i;
 						}
@@ -149,6 +149,7 @@ public:
 							currentPokemon[i].isHighlighted = false;
 							highlightedPokemonParty = -1;
 						}
+					}
 
 				}
 
