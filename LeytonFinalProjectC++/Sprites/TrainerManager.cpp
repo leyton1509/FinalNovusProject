@@ -16,9 +16,14 @@ public :
 
 	std::list<Trainer> getTrainersForMap(int mapNumber) {
 
+		PokemonManager pm = pm.instance();
+
 		std::list<Trainer> trainerList = {};
 		if (mapNumber==1) {
-			Trainer t1 = getTrainer(11);
+			Trainer t1 = getTrainer(1);
+			Pokemon p1 = pm.getDefaultPokemon("Chimchar");
+			p1.setPokemonsLevel(5);
+			t1.addPokemon(p1);
 			t1.setPositions(15, 12, 0, 1);
 			trainerList.push_front(t1);
 		}
