@@ -228,6 +228,17 @@ public:
 					}
 
 				}
+				else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+					healItemButtonClicked = 1;
+				}
+				else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+					healItemButtonClicked = 2;
+
+				}
+				else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+					healItemButtonClicked = 3;
+				}
+
 
 				break;
 			}
