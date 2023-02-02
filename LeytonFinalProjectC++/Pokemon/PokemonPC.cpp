@@ -8,6 +8,15 @@ class PokemonPC {
 
 public:
 
+	void destroySprites() {
+
+
+		for (int i = 0; i < 30; i++)
+		{			
+			boxButtons[i].destroySprite();
+		}
+	}
+
 	PokemonPC(PlayerCharacter & player, int screenWidth, int screenHeight) {
 
 		int startXPositon = 10;
