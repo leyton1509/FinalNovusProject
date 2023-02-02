@@ -421,7 +421,14 @@ int main()
                 
             }
             else if (framecounter == 19 || framecounter == 39 || framecounter == 59) {
-                worldMap.checkForTrainerBattle(player, queue);
+               bool battleHappened = worldMap.checkForTrainerBattle(player, queue);
+               if (battleHappened) {
+                   keys[0] = false;
+                   keys[1] = false;
+                   keys[2] = false;
+                   keys[3] = false;
+                   keys[4] = false;
+               }
             }
 
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
