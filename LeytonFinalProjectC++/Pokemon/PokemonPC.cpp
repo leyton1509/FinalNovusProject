@@ -58,7 +58,15 @@ public:
 
 		int playerCounter = 0;
 
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				boxButtons[playerCounter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				playerCounter++;
+			}
 
+		}
 
 		double xMousePosition = 0;
 		double yMousePosition = 0;
