@@ -4,7 +4,7 @@
 
 class PokemonPC {
 
-	SwitchPokemonButton boxButtons[30];
+	SwitchPokemonButton boxButtons[6][5];
 
 public:
 
@@ -17,7 +17,8 @@ public:
 		{
 			for (int j = 0; j < 5; j++)
 			{
-				
+
+				boxButtons[i][j] = SwitchPokemonButton(64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 804);
 
 			}
 
