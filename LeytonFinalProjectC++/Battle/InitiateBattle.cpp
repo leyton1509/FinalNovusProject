@@ -168,6 +168,33 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
+				if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					if (textBox.isDisplayed) {
+						textBox.isDisplayed = false;
+						switchPokemonOneButton.isDisplayed = true;
+						switchPokemonTwoButton.isDisplayed = true;
+						switchPokemonThreeButton.isDisplayed = true;
+						switchPokemonFourButton.isDisplayed = true;
+						switchPokemonFiveButton.isDisplayed = true;
+						switchPokemonSixButton.isDisplayed = true;
+
+
+					}
+					else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
+						shouldHealInSwitch = -1;
+						textBox.isDisplayed = true;
+						switchPokemonOneButton.isDisplayed = false;
+						switchPokemonTwoButton.isDisplayed = false;
+						switchPokemonThreeButton.isDisplayed = false;
+						switchPokemonFourButton.isDisplayed = false;
+						switchPokemonFiveButton.isDisplayed = false;
+						switchPokemonSixButton.isDisplayed = false;
+
+					}
+
+
+				}
+
 				break;
 			}
 
