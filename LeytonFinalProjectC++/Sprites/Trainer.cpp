@@ -54,7 +54,7 @@ public:
 		cout << "hi\n";
 	}
 
-	bool isInLineOfSight(int xTile, int yTile) {
+	bool isInLineOfSight(int xTilePlayer, int yTilePlayer) {
 
 		// Facing left
 		if (directionX == -1) {
