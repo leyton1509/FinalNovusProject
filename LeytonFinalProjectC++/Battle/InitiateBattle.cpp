@@ -290,7 +290,8 @@ public:
 			if (redraw && al_is_event_queue_empty(queue))
 			{
 
-
+				al_flip_display();
+				redraw = false;
 			}
 
 		}
