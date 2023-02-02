@@ -424,12 +424,14 @@ public:
 		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
-	void checkForTrainerBattle(PlayerCharacter& player){
+	void checkForTrainerBattle(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue){
 		std::list<Trainer>::reverse_iterator revIt;
 		for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
 		{
 			int isIn = revIt->isInLineOfSight(player.xTilePosition, player.yTilePosition);
-			cout << "is in line of sight : " << isIn << " \n";
+			if (isIn && revIt->hasBeenFought == false) {
+				revIt->interact(player, queue, screenWidth, screenHeight);
+			}
 
 		}
 	}
