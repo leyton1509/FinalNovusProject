@@ -261,6 +261,18 @@ public:
 				else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					switchPokemonButtonClicked = 6;
 				}
+				else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 1;
+				}
+				else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 2;
+				}
+				else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 3;
+				}
+				else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 4;
+				}
 
 
 				break;
