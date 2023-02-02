@@ -5,6 +5,7 @@
 class PokemonPC {
 
 	SwitchPokemonPCButton boxButtons[30];
+	SwitchPokemonPCButton currentPokemon[6];
 
 public:
 
@@ -14,6 +15,8 @@ public:
 		{
 			boxButtons[i].drawSprite(box[i]);
 		}
+
+		
 	}
 
 	void destroySprites() {
@@ -30,6 +33,9 @@ public:
 		int startXPositon = 10;
 		int startYPosition = 10;
 		int counter = 0;
+
+		int startXCurrentPokemo = 600;
+		int startYCurrentPokemo = 200;
 
 		// BG sprite
 		ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/Background.png");
@@ -98,7 +104,7 @@ public:
 						}
 						else {
 							Pokemon tempPokemon = player.box[highlightedPokemon];
-							
+							boxButtons[highlightedPokemon].isHighlighted = false;
 							player.box[highlightedPokemon] = player.box[i];
 							player.box[i] = tempPokemon;
 
