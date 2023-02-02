@@ -24,7 +24,7 @@ public :
 			Pokemon p1 = pm.getDefaultPokemon("Chimchar");
 			p1.setPokemonsLevel(5);
 			t1.addPokemon(p1);
-			t1.setPositions(15, 12, 0, 1);
+			t1.setPositions(15, 12, 0, 1, 1);
 			trainerList.push_front(t1);
 		}
 		
