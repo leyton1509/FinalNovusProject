@@ -123,6 +123,24 @@ public:
 		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2], 128, 64, 20, 520, 128, 64);
 		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3], 128, 64, 160, 520, 128, 64);
 
+		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(64, 64, 540, 435, 80, 80);
+		switchPokemonOneButton.isDisplayed = false;
+
+		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
+		switchPokemonTwoButton.isDisplayed = false;
+
+		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
+		switchPokemonThreeButton.isDisplayed = false;
+
+		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
+		switchPokemonFourButton.isDisplayed = false;
+
+		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
+		switchPokemonFiveButton.isDisplayed = false;
+
+		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
+		switchPokemonSixButton.isDisplayed = false;
+
 		
 	}
 
