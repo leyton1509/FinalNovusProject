@@ -38,6 +38,17 @@ public :
 		trainers.insert({ 8, Trainer("Joey", 1, 1, trainerStyleSheet, 21, 0) });
 		trainers.insert({ 9, Trainer("Bug Catcher", 1, 1, trainerStyleSheet, 24, 0) });
 		trainers.insert({ 10, Trainer("Young Man", 1, 1, trainerStyleSheet, 27, 0) });
+
+		trainers.insert({ 11, Trainer("Elm", 1, 1, trainerStyleSheet, 0, 0) });
+		trainers.insert({ 12, Trainer("Rival", 1, 1, trainerStyleSheet, 3, 0) });
+		trainers.insert({ 13, Trainer("Steven", 1, 1, trainerStyleSheet, 6, 0) });
+		trainers.insert({ 14, Trainer("Old Woman", 1, 1, trainerStyleSheet, 9, 0) });
+		trainers.insert({ 15, Trainer("Old Woman", 1, 1, trainerStyleSheet, 12, 0) });
+		trainers.insert({ 16, Trainer("Small Boy", 1, 1, trainerStyleSheet, 15, 0) });
+		trainers.insert({ 17, Trainer("Small Girl", 1, 1, trainerStyleSheet, 18, 0) });
+		trainers.insert({ 18, Trainer("Joey", 1, 1, trainerStyleSheet, 21, 0) });
+		trainers.insert({ 19, Trainer("Bug Catcher", 1, 1, trainerStyleSheet, 24, 0) });
+		trainers.insert({ 20, Trainer("Young Man", 1, 1, trainerStyleSheet, 27, 0) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
