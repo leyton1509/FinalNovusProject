@@ -148,6 +148,10 @@ public:
 			player.resetPlayer(7, 10);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
 			mapNumber = 10;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+
 		}
 		// Entrance to poke centre
 		else if (tile == 17) {
@@ -161,6 +165,9 @@ public:
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
 			mapNumber = 11;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
 
 		else if (tile == 18) {
@@ -174,6 +181,9 @@ public:
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
 			mapNumber = 12;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
 
 		else if (tile == 16) {
@@ -183,6 +193,9 @@ public:
 			player.resetPlayer(previousTileLocation[0], previousTileLocation[1]);
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 			mapNumber = 1;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
 
 		else if (tile == 21) {
@@ -196,6 +209,9 @@ public:
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt");
 			mapNumber = 2;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
 	}
 
