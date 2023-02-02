@@ -94,7 +94,8 @@ public:
 		// Facing left
 		int tempYTile = yTilePlayer + 1;
 		if (directionX == -1) {
-			if ((xTile) - (xTilePlayer - 1) > 0 && (xTile)-(xTilePlayer - 1)<=3  && ((tempYTile) == (yTile)) ) {
+			if ((xTile) - (xTilePlayer - 1) > 0 && (xTile)-(xTilePlayer - 1)<=5  && ((yTile) == (yTilePlayer)) ) {
+
 				return 1;
 			}
 
