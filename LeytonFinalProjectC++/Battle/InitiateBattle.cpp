@@ -114,8 +114,14 @@ public:
 
 		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
+		// Add conversion for trainer name
 		string textForTextBox[4] = { "Trainer appeared!", "", "", "" };
 
+
+		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
+		AttackButton attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1], 128, 64, 160, 450, 128, 64);
+		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2], 128, 64, 20, 520, 128, 64);
+		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3], 128, 64, 160, 520, 128, 64);
 
 		
 	}
