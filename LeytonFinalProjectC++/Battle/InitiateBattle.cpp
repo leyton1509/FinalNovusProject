@@ -296,6 +296,19 @@ public:
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
 				}
 
+				otherPokemonStatBox.drawSprite(opponent.trainersTeam[currentPokemonOpponent]);
+				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
+				backBox.drawSprite();
+				textBox.drawSprite();
+				attackButton1.drawSprite();
+				attackButton2.drawSprite();
+				attackButton3.drawSprite();
+				attackButton4.drawSprite();
+				healPokemonButton.drawSprite();
+				switchPokemonButton.drawSprite();
+				catchPokemonButton.drawSprite();
+				runPokemonButton.drawSprite();
+
 				al_flip_display();
 				redraw = false;
 			}
