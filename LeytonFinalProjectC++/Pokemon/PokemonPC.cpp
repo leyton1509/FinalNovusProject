@@ -149,7 +149,19 @@ public:
 							currentPokemon[i].isHighlighted = false;
 							highlightedPokemonParty = -1;
 						}
+						else if (highlightedPokemonParty != i) {
+							Pokemon tempPokemon = player.trainersParty[highlightedPokemonParty];
+							currentPokemon[highlightedPokemonParty].isHighlighted = false;
+							player.trainersParty[highlightedPokemonParty] = player.trainersParty[i];
+							player.trainersParty[i] = tempPokemon;
+
+							highlightedPokemonParty = -1;
+						}
 					}
+
+				}
+
+				if (highlightedPokemonParty != -1 && highlightedPokemonPC != -1;) {
 
 				}
 
