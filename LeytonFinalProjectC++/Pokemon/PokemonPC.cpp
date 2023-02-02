@@ -97,8 +97,8 @@ public:
 							highlightedPokemon = -1;
 						}
 						else {
-							Pokemon tempPokemon = player.box[i];
-
+							Pokemon tempPokemon = player.box[highlightedPokemon];
+							
 							player.box[highlightedPokemon] = player.box[i];
 							player.box[i] = tempPokemon;
 
