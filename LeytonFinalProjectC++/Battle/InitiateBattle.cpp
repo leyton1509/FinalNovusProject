@@ -314,7 +314,11 @@ public:
 					switchPokemonSixButton.drawSprite(player.trainersParty[5]);
 				}
 
-				
+				if (potionButtonOne.isDisplayed) {
+					potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
+					potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
+					potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
+				}
 
 				otherPokemonStatBox.drawSprite(opponent.trainersTeam[currentPokemonOpponent]);
 				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
