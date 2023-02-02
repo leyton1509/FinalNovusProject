@@ -27,7 +27,13 @@ public:
 		switch (locationNumber)
 		{
 		case 1:
-			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Bamboo.jpg");
+			break;
+		case 2:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Savanna.jpg");
+			break;
+		case 3:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Lavs.jpg");
 			break;
 		default:
 			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
