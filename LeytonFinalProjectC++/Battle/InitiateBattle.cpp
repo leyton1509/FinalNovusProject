@@ -24,12 +24,12 @@ public:
 	bool redraw = true;
 
 
-	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
+	// Takes the screen size and the queue for inputs, the current player and the current location, and the opponent
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, Trainer & opponent) {
 
 	}
 
-	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
+	// Takes the screen size and the queue for inputs, the current player and the current location
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
 
 		bool battleFinished = false;
