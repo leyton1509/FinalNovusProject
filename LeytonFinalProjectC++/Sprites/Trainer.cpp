@@ -123,7 +123,7 @@ public:
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
 		if (!hasBeenFought) {
-			InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, locationNumber, 1);
+			
 
 			hasBeenFought = true;
 		}
