@@ -9,11 +9,16 @@ class PokemonPC {
 
 public:
 
-	void displaySprites(Pokemon box[]) {
+	void displaySprites(Pokemon box[], Pokemon playersParty[]) {
 
 		for (int i = 0; i < 30; i++)
 		{
 			boxButtons[i].drawSprite(box[i]);
+		}
+
+		for (int i = 0; i < 6; i++)
+		{
+			boxButtons[i].drawSprite(playersParty[i]);
 		}
 
 		
