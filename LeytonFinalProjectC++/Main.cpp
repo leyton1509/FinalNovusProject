@@ -396,8 +396,6 @@ int main()
 
             if (framecounter == 3) {
 
-                worldMap.checkForTrainerBattle(player);
-
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 if (tilePlayerIsStandingOn == 5 || tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
@@ -421,6 +419,9 @@ int main()
                     }
                 }
                 
+            }
+            else if (framecounter == 19 || framecounter == 39 || framecounter == 59) {
+                worldMap.checkForTrainerBattle(player);
             }
 
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
