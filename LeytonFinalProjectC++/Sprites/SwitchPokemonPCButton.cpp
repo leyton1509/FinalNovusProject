@@ -37,6 +37,7 @@ public:
 
 	// Draws the button and pokemon attacthed to it
 	void drawSprite(Pokemon& pokemon) {
+		
 		if (isHighlighted) {
 			al_draw_scaled_bitmap(highlightedImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		}
@@ -44,7 +45,10 @@ public:
 			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		}
 		
-		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition - 2, spritewidth * 0.9, spriteHeight * 0.9, 0);
+		if (!(strcmp(pokemon.pokemonName.c_str(), "") == 0)) {
+			al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition - 2, spritewidth * 0.9, spriteHeight * 0.9, 0);
+
+		}
 	}
 
 	void destroySprite() {
