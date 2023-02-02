@@ -23,9 +23,15 @@ public:
 	bool done = false;
 	bool redraw = true;
 
-	ALLEGRO_BITMAP* getBackGroundFromLocationNumber() {
-		if () {
-
+	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
+		switch (locationNumber)
+		{
+		case 1:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
+			break;
+		default:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
+			break;
 		}
 	}
 
@@ -46,7 +52,7 @@ public:
 		ALLEGRO_EVENT event;
 
 		// BG sprite
-		ALLEGRO_BITMAP * background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Beach.jpg");
+		ALLEGRO_BITMAP * background = getBackGroundFromLocationNumber(locationNumber);
 
 		// Reset the camera
 		ALLEGRO_TRANSFORM trans;
