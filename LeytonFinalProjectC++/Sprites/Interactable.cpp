@@ -230,7 +230,7 @@ public:
 
 
 		else if (idOfInteractable == 100) {
-			
+			healAllPokemon(player);
 		}
 
 
