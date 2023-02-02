@@ -431,6 +431,7 @@ public:
 			if (trainer.isInLineOfSight(player.xTilePosition, player.yTilePosition)) {
 
 				InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, trainer.locationNumber, trainer);
+				trainer.hasBeenFought = true;
 				
 
 			}
