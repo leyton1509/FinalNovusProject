@@ -49,6 +49,17 @@ public :
 		trainers.insert({ 18, Trainer("Female Ace", 1, 1, trainerStyleSheet, 21, 4) });
 		trainers.insert({ 19, Trainer("Old Man Tom", 1, 1, trainerStyleSheet, 24, 4) });
 		trainers.insert({ 20, Trainer("Cook Sammy", 1, 1, trainerStyleSheet, 27, 4) });
+
+		trainers.insert({ 21, Trainer("Old Man Tom", 1, 1, trainerStyleSheet, 0, 8) });
+		trainers.insert({ 22, Trainer("Old Woman Jannet", 1, 1, trainerStyleSheet, 3, 8) });
+		trainers.insert({ 23, Trainer("Bob", 1, 1, trainerStyleSheet, 6, 8) });
+		trainers.insert({ 24, Trainer("Uryu", 1, 1, trainerStyleSheet, 9, 8) });
+		trainers.insert({ 25, Trainer("Looker", 1, 1, trainerStyleSheet, 12, 8) });
+		trainers.insert({ 26, Trainer("Swimmer Geoff", 1, 1, trainerStyleSheet, 15, 8) });
+		trainers.insert({ 27, Trainer("Swimmer Abi", 1, 1, trainerStyleSheet, 18, 8) });
+		trainers.insert({ 28, Trainer("Ajay", 1, 1, trainerStyleSheet, 21, 8) });
+		trainers.insert({ 29, Trainer("Blue", 1, 1, trainerStyleSheet, 24, 8) });
+		trainers.insert({ 30, Trainer("Purple", 1, 1, trainerStyleSheet, 27, 8) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
