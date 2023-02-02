@@ -382,7 +382,7 @@ public:
 								player.trainersParty[currentPokemon].gainExperience(expGained);
 
 								if (!opponent.isAllPokemonInPartyDead()) {
-									currentPokemon = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
+									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
 								}
 								else {
 									battleFinished = true;
