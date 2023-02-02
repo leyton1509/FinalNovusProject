@@ -161,7 +161,14 @@ public:
 
 				}
 
-				if (highlightedPokemonParty != -1 && highlightedPokemonPC != -1;) {
+				if (highlightedPokemonParty != -1 && highlightedPokemonPC != -1) {
+					currentPokemon[highlightedPokemonParty].isHighlighted = false;
+					boxButtons[highlightedPokemonPC].isHighlighted = false;
+					Pokemon tempPokemon = player.trainersParty[highlightedPokemonParty];
+					player.trainersParty[highlightedPokemonParty] = player.box[highlightedPokemonPC];
+					player.box[highlightedPokemonPC] = tempPokemon;
+					highlightedPokemonParty = -1;
+					highlightedPokemonPC = -1;
 
 				}
 
