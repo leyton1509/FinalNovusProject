@@ -231,6 +231,7 @@ public:
 
 		else if (idOfInteractable == 100) {
 			healAllPokemon(player);
+			cout << "Healed\n";
 		}
 
 
