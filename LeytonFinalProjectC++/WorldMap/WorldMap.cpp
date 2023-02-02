@@ -184,6 +184,19 @@ public:
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 			mapNumber = 1;
 		}
+
+		else if (tile == 21) {
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			previousTileLocation[0] = player.xTilePosition;
+			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.setAllPositions(0, 0);
+			player.resetPlayer(0, 0);
+			resetMapToZeros();
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt");
+			mapNumber = 2;
+		}
 	}
 
 
