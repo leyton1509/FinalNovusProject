@@ -36,6 +36,7 @@ public :
 		trainers.insert({ 6, Trainer("Small Boy", 1, 1, trainerStyleSheet, 15, 0) });
 		trainers.insert({ 7, Trainer("Small Girl", 1, 1, trainerStyleSheet, 18, 0) });
 		trainers.insert({ 8, Trainer("Joey", 1, 1, trainerStyleSheet, 21, 0) });
+		trainers.insert({ 9, Trainer("Bug Catcher", 1, 1, trainerStyleSheet, 24, 0) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
