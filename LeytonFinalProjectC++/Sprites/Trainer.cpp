@@ -28,6 +28,8 @@ public:
 	Pokemon trainersTeam[6];
 	int numberOfPokemonInParty = 0;
 
+
+
 	// Main constructor for loading a character 
 	Trainer(const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet) : Sprite(SpriteType::SpriteTypes::Player, _xTile * 32, _yTile * 32,0,0, 0,0, 32,32, stylesheet) {
 		name = _name;
@@ -116,6 +118,7 @@ public:
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
 		if (!hasBeenFought) {
+			InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, locationNumber, 0);
 
 			hasBeenFought = true;
 		}
