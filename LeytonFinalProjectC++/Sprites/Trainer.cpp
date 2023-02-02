@@ -69,6 +69,10 @@ public:
 			xTileForSpriteSheet = xTileOriginal;
 			yTileForSpriteSheet = yTileForOriginal;
 		}
+		else if (directionY == -1) {
+			xTileForSpriteSheet = xTileOriginal+2;
+			yTileForSpriteSheet = yTileForOriginal+1;
+		}
 
 	}
 
