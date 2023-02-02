@@ -8,7 +8,7 @@ class SwitchPokemonPCButton : public Button {
 
 public:
 
-	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+	ALLEGRO_BITMAP* otherPokemonSprite;
 	ALLEGRO_BITMAP* highlightedImage = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/HighlightedPokemon.png");
 
 	// The original x size of button image
@@ -20,7 +20,8 @@ public:
 
 
 	// Connstructor with the pokemon to add to the players party
-	SwitchPokemonPCButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/PCSprites/ChoosePokemon.png") {
+	SwitchPokemonPCButton(ALLEGRO_BITMAP* _otherPokemonSprite, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/PCSprites/ChoosePokemon.png") {
+		otherPokemonSprite = _otherPokemonSprite;
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 		isHighlighted = false;
@@ -28,6 +29,7 @@ public:
 
 	// Empty const
 	SwitchPokemonPCButton() : Button() {
+		otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/ChoosePokemon.png");
 		originalSizeX = 0;
 		originalSizeY = 0;
 		isHighlighted = false;
