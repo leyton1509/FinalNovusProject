@@ -8,6 +8,7 @@
 #include "../Sprites/SwitchPokemonButton.h"
 #include "../Sprites/ItemPokeBallButton.h"
 #include "../Sprites/ItemPotionButton.h"
+#include "../Sprites/Trainer.h"
 
 // Class when a pokemon battke is needed
 class InitiateBattle {
@@ -21,6 +22,12 @@ public:
 	// GUI info
 	bool done = false;
 	bool redraw = true;
+
+
+	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
+	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, Trainer & opponent) {
+
+	}
 
 	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
