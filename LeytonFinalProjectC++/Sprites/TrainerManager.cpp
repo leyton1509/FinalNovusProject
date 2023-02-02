@@ -93,6 +93,17 @@ public :
 		trainers.insert({ 58, Trainer("Swimmer Owen", 1, 1, trainerStyleSheet, 21, 20) });
 		trainers.insert({ 59, Trainer("Clown", 1, 1, trainerStyleSheet, 24, 20) });
 		trainers.insert({ 60, Trainer("Bicycle Rider", 1, 1, trainerStyleSheet, 27, 20) });
+
+		trainers.insert({ 61, Trainer("Kimono Girl", 1, 1, trainerStyleSheet, 0, 24) });
+		trainers.insert({ 62, Trainer("Liar Crossly", 1, 1, trainerStyleSheet, 3, 24) });
+		trainers.insert({ 63, Trainer("Train Driver Lee", 1, 1, trainerStyleSheet, 6, 24) });
+		trainers.insert({ 64, Trainer("Walker Danni", 1, 1, trainerStyleSheet, 9, 24) });
+		trainers.insert({ 65, Trainer("Runner Jude", 1, 1, trainerStyleSheet, 12, 24) });
+		trainers.insert({ 66, Trainer("Sam", 1, 1, trainerStyleSheet, 15, 24) });
+		trainers.insert({ 67, Trainer("Brick", 1, 1, trainerStyleSheet, 18, 24) });
+		trainers.insert({ 68, Trainer("James", 1, 1, trainerStyleSheet, 21, 24) });
+		trainers.insert({ 69, Trainer("Pink Floyd", 1, 1, trainerStyleSheet, 24, 24) });
+		trainers.insert({ 70, Trainer("Lime", 1, 1, trainerStyleSheet, 27, 24) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
