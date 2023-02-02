@@ -387,8 +387,6 @@ public:
 								else {
 									battleFinished = true;
 								}
-
-								
 							}
 
 							textForTextBox[0] = doTurn.textForTextBox[0];
@@ -421,6 +419,23 @@ public:
 						attackButtonClicked = 0;
 					}
 
+				}
+
+				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+
+					if (player.isAllPokemonInPartyDead()) {
+						// Add teleporting to nearest heal
+						cout << "All pokemon dead\n";
+						battleFinished = true;
+					}
+					pokemonIsDead = true;
+					textBox.isDisplayed = false;
+					switchPokemonOneButton.isDisplayed = true;
+					switchPokemonTwoButton.isDisplayed = true;
+					switchPokemonThreeButton.isDisplayed = true;
+					switchPokemonFourButton.isDisplayed = true;
+					switchPokemonFiveButton.isDisplayed = true;
+					switchPokemonSixButton.isDisplayed = true;
 				}
 
 
