@@ -104,6 +104,17 @@ public :
 		trainers.insert({ 68, Trainer("James", 1, 1, trainerStyleSheet, 21, 24) });
 		trainers.insert({ 69, Trainer("Pink Floyd", 1, 1, trainerStyleSheet, 24, 24) });
 		trainers.insert({ 70, Trainer("Lime", 1, 1, trainerStyleSheet, 27, 24) });
+
+		trainers.insert({ 71, Trainer("Marionette", 1, 1, trainerStyleSheet, 0, 28) });
+		trainers.insert({ 72, Trainer("Postman", 1, 1, trainerStyleSheet, 3, 28) });
+		trainers.insert({ 73, Trainer("Fancy Trainer", 1, 1, trainerStyleSheet, 6, 28) });
+		trainers.insert({ 74, Trainer("Carer Dave", 1, 1, trainerStyleSheet, 9, 28) });
+		trainers.insert({ 75, Trainer("Investigator Hoffman", 1, 1, trainerStyleSheet, 12, 28) });
+		trainers.insert({ 76, Trainer("Plain Looking Man", 1, 1, trainerStyleSheet, 15, 28) });
+		trainers.insert({ 77, Trainer("Roshi", 1, 1, trainerStyleSheet, 18, 28) });
+		trainers.insert({ 78, Trainer("Purple Delight", 1, 1, trainerStyleSheet, 21, 28) });
+		trainers.insert({ 79, Trainer("Trevor", 1, 1, trainerStyleSheet, 28, 28) });
+		trainers.insert({ 80, Trainer("Guard", 1, 1, trainerStyleSheet, 27, 28) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
