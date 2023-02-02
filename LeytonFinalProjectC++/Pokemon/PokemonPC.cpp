@@ -57,7 +57,45 @@ public:
 		al_identity_transform(&trans);
 		al_use_transform(&trans);
 
-		
+		bool finishedInPC = false;
+
+		while (!finishedInPC) {
+
+			al_wait_for_event(queue, &event);
+
+			switch (event.type)
+			{
+			case ALLEGRO_EVENT_MOUSE_AXES:
+				xMousePosition = event.mouse.x;
+				yMousePosition = event.mouse.y;
+				break;
+			case ALLEGRO_EVENT_TIMER:
+
+
+				redraw = true;
+				break;
+
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				finishedInPC = true;
+				break;
+			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+
+				break;
+			}
+
+			if (done)
+				break;
+
+			if (redraw && al_is_event_queue_empty(queue))
+			{
+				al_clear_to_color(al_map_rgb(0, 0, 0));
+				al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
+				al_flip_display();
+			}
+
+
+		}
 
 	}
 };
