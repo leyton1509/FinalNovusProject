@@ -235,8 +235,8 @@ int main()
     player.trainersParty[1].setPokemonsLevel(10);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
-    player.setAllPositions(15, 20);
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
+    player.setAllPositions(1, 1);
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt", 2);
     float cameraPosition[2] = { 0,0 };
 
     int framecounter = 1;
