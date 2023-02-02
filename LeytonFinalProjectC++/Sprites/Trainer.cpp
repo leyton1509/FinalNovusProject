@@ -52,6 +52,10 @@ public:
 
 	}
 
+	void mapDirectonToSpriteSheet() {
+
+	}
+
 	// Draws the current sprite
 	void drawSprite() {
 		//al_draw_scaled_bitmap(spriteImage, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
@@ -63,9 +67,6 @@ public:
 		cout << "hi\n";
 	}
 
-	void mapDirectonToSpriteSheet() {
-
-	}
 
 	bool isInLineOfSight(int xTilePlayer, int yTilePlayer) {
 
