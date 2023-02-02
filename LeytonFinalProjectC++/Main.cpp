@@ -395,6 +395,9 @@ int main()
             worldMap.checkToChangeMaps(player);
 
             if (framecounter == 3) {
+
+                worldMap.checkForTrainerBattle(player);
+
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 if (tilePlayerIsStandingOn == 5 || tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
@@ -416,8 +419,8 @@ int main()
                         }
                         
                     }
-
                 }
+                
             }
 
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
