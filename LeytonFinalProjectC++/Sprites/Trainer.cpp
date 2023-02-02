@@ -54,6 +54,10 @@ public:
 		cout << "hi\n";
 	}
 
+	void mapDirectonToSpriteSheet() {
+
+	}
+
 	bool isInLineOfSight(int xTilePlayer, int yTilePlayer) {
 
 		// Facing left
