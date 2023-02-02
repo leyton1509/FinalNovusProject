@@ -112,6 +112,10 @@ public:
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(opponent.trainersTeam[currentPokemonOpponent], 256, 96, 510, 20, 320, 75);
 		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75);
 
+		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
+
+		string textForTextBox[4] = { "Trainer appeared!", "", "", "" };
+
 
 		
 	}
