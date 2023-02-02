@@ -173,6 +173,7 @@
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\BasicHouseMap.txt" />
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
+    <Text Include="WorldMap\TextMaps\MapTwo.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle\InitiateBattle.h" />
