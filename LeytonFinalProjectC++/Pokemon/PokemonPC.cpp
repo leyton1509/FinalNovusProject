@@ -58,6 +58,8 @@ public:
 		al_identity_transform(&trans);
 		al_use_transform(&trans);
 
+		int highlightedPokemon = -1;
+
 		bool finishedInPC = false;
 
 		while (!finishedInPC) {
@@ -84,7 +86,13 @@ public:
 
 				for (int i = 0; i < 30; i++)
 				{
-					boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
+					bool hasBeenClicked = boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
+					if (hasBeenClicked) {
+						if (highlightedPokemon == -1) {
+							boxButtons[i].isHighlighted = true;
+							highlightedPokemon = i;
+						}
+					}
 				}
 
 
