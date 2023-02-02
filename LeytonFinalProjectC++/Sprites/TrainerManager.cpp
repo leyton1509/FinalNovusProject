@@ -29,6 +29,7 @@ public :
 	TrainerManager() {
 		// const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet
 		trainers.insert({ 1, Trainer("Elm", 10, 10, trainerStyleSheet, 0, 0) });
+		trainers.insert({ 2, Trainer("Rival", 10, 10, trainerStyleSheet, 3, 0) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
