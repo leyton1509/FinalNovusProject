@@ -25,6 +25,7 @@ public:
 	bool hasBeenFought = false;
 
 	Pokemon trainersTeam[6];
+	int numberOfPokemonInParty = 0;
 
 	// Main constructor for loading a character 
 	Trainer(const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet) : Sprite(SpriteType::SpriteTypes::Player, _xTile * 32, _yTile * 32,0,0, 0,0, 32,32, stylesheet) {
@@ -46,6 +47,17 @@ public:
 		xTileForSpriteSheet = 0;
 		yTileForSpriteSheet = 0;
 	}
+
+	// Adds a pokemon to the trainers party
+	// If the player has 6 pokemon it gets stored in the box
+	void addPokemon(Pokemon pokemonToAdd) {
+		if (numberOfPokemonInParty < 6) {
+			trainersTeam[numberOfPokemonInParty] = pokemonToAdd;
+			numberOfPokemonInParty++;
+		}
+	}
+
+	
 
 	void setPositions(int _xTile, int _yTile, int _directonX, int _directonY) {
 		xTile = _xTile;
