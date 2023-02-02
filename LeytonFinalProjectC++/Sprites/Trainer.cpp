@@ -47,7 +47,7 @@ public:
 	void drawSprite() {
 		//al_draw_scaled_bitmap(spriteImage, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
 
-		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet) + 6, (32 * yTileForSpriteSheet) +6, 32, 32, xPosition, yPosition, 64, 64, 0);
+		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet) + 6, (32 * yTileForSpriteSheet) +6, 32, 32, xPosition, yPosition, 32, 64, 0);
 	}
 
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
@@ -63,8 +63,8 @@ public:
 			int tempYTile = yTile + 1;
 			if (strcmp(keyPressed, "w") == 0) {
 				if (directionY == 1) {
-					if (tempYTile - 1 >= 0) {
-						if (xTile == (xPosition / 32) && ((tempYTile - 1) == (yPosition / 32))) {
+					if (tempYTile - 1 >= 0 || tempYTile - 2 >= 0) {
+						if (xTile == (xPosition / 32) && ((tempYTile - 1) == (yPosition / 32)) || xTile == (xPosition / 32) && ((tempYTile - 2) == (yPosition / 32))  ) {
 							return 1;
 						}
 						else {
@@ -82,8 +82,8 @@ public:
 
 			else if (strcmp(keyPressed, "s") == 0) {
 				if (directionY == -1) {
-					if (tempYTile + 1 < mapSizeY) {
-						if (xTile == (xPosition / 32) && ((tempYTile + 1) == (yPosition / 32))) {
+					if (tempYTile + 1 < mapSizeY || tempYTile + 2 < mapSizeY) {
+						if (xTile == (xPosition / 32) && ((tempYTile + 1) == (yPosition / 32)) || xTile == (xPosition / 32) && ((tempYTile + 2) == (yPosition / 32))) {
 							return 1;
 						}
 						else {
@@ -102,7 +102,7 @@ public:
 			else if (strcmp(keyPressed, "a") == 0) {
 				if (directionX == -1) {
 					if (xTile - 1 >= 0) {
-						if ((xTile - 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
+						if ((xTile - 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32)) || (xTile - 1) == (xPosition / 32) && ((tempYTile-1) == (yPosition / 32))) {
 							return 1;
 						}
 						else {
@@ -121,7 +121,7 @@ public:
 			else if (strcmp(keyPressed, "d") == 0) {
 				if (directionX == 1) {
 					if (xTile + 1 < mapSizeX) {
-						if ((xTile + 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32))) {
+						if ((xTile + 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32)) || (xTile + 1) == (xPosition / 32) && ((tempYTile-1) == (yPosition / 32))) {
 							return 1;
 						}
 						else {
