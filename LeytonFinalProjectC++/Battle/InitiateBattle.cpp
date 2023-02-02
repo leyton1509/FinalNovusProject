@@ -89,6 +89,10 @@ public:
 		al_use_transform(&trans);
 		al_draw_bitmap(background, 0, 0, 0);
 
+		// Sprites for the pokemon
+		ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+		ALLEGRO_BITMAP* trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+
 		
 	}
 
