@@ -57,7 +57,20 @@ public:
 		}
 	}
 
-	
+	// method for checking if all pokemon in the party are dead
+	// returns true if all dead
+	bool isAllPokemonInPartyDead() {
+
+		for (int i = 0; i < numberOfPokemonInParty; i++)
+		{
+			if (strcmp(trainersTeam[i].pokemonName.c_str(), "") != 0) {
+				if (trainersTeam[i].currentHealth > 0) {
+					return false;;
+				}
+			}
+		}
+		return true;
+	}
 
 	void setPositions(int _xTile, int _yTile, int _directonX, int _directonY) {
 		xTile = _xTile;
