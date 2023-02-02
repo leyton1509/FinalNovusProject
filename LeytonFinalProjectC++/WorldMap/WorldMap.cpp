@@ -428,7 +428,8 @@ public:
 		std::list<Trainer>::reverse_iterator revIt;
 		for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
 		{
-			revIt->isInLineOfSight(player.xTilePosition, player.yTilePosition);
+			int isIn = revIt->isInLineOfSight(player.xTilePosition, player.yTilePosition);
+			cout << "is in line of sight : " << isIn << " \n;"
 
 		}
 	}
