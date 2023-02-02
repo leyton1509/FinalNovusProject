@@ -56,6 +56,10 @@ public:
 
 		}
 
+		int playerCounter = 0;
+
+
+
 		double xMousePosition = 0;
 		double yMousePosition = 0;
 
@@ -129,7 +133,7 @@ public:
 			{
 				al_clear_to_color(al_map_rgb(0, 0, 0));
 				al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
-				displaySprites(player.box);
+				displaySprites(player.box, player.trainersParty);
 				al_flip_display();
 			}
 
