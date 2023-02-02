@@ -236,7 +236,7 @@ public:
 		}
 		else if (idOfInteractable == 101) {
 	
-			cout << "Swapping\n";
+			PokemonPC pc = PokemonPC(player, screenWidth, screenHeight);
 		}
 
 
