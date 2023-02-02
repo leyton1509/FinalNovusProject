@@ -9,7 +9,7 @@ class SwitchPokemonPCButton : public Button {
 public:
 
 	ALLEGRO_BITMAP* otherPokemonSprite;
-	ALLEGRO_BITMAP* highlightedImage = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/HighlightedPokemon.png");
+	ALLEGRO_BITMAP* highlightedImage = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png");
 
 	// The original x size of button image
 	int originalSizeX;
