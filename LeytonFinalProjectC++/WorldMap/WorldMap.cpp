@@ -425,7 +425,7 @@ public:
 		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
-	void checkForTrainerBattle(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue){
+	bool checkForTrainerBattle(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue){
 
 		for (Trainer& trainer : trainersForMap)
 		{
@@ -433,10 +433,11 @@ public:
 
 				InitiateBattle initiateBattle = InitiateBattle(trainer, screenWidth, screenHeight, queue, player, trainer.locationNumber);
 				trainer.hasBeenFought = true;
-				
+				return true;
 
 			}
 		}
+		return false;
 
 
 	}
