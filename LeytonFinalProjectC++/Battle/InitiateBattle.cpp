@@ -293,7 +293,7 @@ public:
 								switchPokemonFiveButton.isDisplayed = false;
 								switchPokemonSixButton.isDisplayed = false;
 
-								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
 
 
 							}
@@ -319,7 +319,7 @@ public:
 										pokemonIsDead = false;
 									}
 
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
 								}
 							}
 						}
