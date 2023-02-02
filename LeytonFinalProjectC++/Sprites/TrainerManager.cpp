@@ -4,6 +4,7 @@
 #include <map>
 #include "../Sprites/Trainer.h"
 #include <list>
+#include "../Pokemon/PokemonManager.h"
 
 class TrainerManager{
 
