@@ -31,6 +31,9 @@ public:
 		int startYPosition = 10;
 		int counter = 0;
 
+		// BG sprite
+		ALLEGRO_BITMAP* background = "";
+
 		for (int i = 0; i < 6; i++)
 		{
 			for (int j = 0; j < 5; j++)
