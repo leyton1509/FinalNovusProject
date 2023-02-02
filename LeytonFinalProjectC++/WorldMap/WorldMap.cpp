@@ -424,7 +424,7 @@ public:
 		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
-	int checkForTrainerBattle(PlayerCharacter& player){
+	void checkForTrainerBattle(PlayerCharacter& player){
 		std::list<Trainer>::reverse_iterator revIt;
 		for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
 		{
