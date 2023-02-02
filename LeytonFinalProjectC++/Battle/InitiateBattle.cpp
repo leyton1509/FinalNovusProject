@@ -327,6 +327,49 @@ public:
 					}
 					switchPokemonButtonClicked = 0;
 				}
+
+				else if (healItemButtonClicked != 0) {
+
+					int potionID = -1;
+
+					if (healItemButtonClicked == 1) {
+						if (player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID) > 0) {
+							potionID = potionButtonOne.potion.inividualItemID;
+						}
+
+					}
+					else if (healItemButtonClicked == 2) {
+						if (player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID) > 0) {
+							potionID = potionButtonTwo.potion.inividualItemID;
+						}
+
+					}
+					else if (healItemButtonClicked == 3) {
+						if (player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID) > 0) {
+							potionID = potionButtonThree.potion.inividualItemID;
+						}
+					}
+
+					if (potionID != -1) {
+						potionButtonOne.isDisplayed = false;
+						potionButtonTwo.isDisplayed = false;
+						potionButtonThree.isDisplayed = false;
+						shouldHealInSwitch = potionID;
+
+						switchPokemonOneButton.isDisplayed = true;
+						switchPokemonTwoButton.isDisplayed = true;
+						switchPokemonThreeButton.isDisplayed = true;
+						switchPokemonFourButton.isDisplayed = true;
+						switchPokemonFiveButton.isDisplayed = true;
+						switchPokemonSixButton.isDisplayed = true;
+					}
+
+
+					// Need to get which pokemon to heal
+					healItemButtonClicked = 0;
+				}
+
+
 				break;
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				done = true;
