@@ -238,6 +238,29 @@ public:
 				else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
 					healItemButtonClicked = 3;
 				}
+				else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 1;
+				}
+
+				else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 2;
+				}
+
+				else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 3;
+				}
+
+				else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 4;
+				}
+
+				else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 5;
+				}
+
+				else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 6;
+				}
 
 
 				break;
