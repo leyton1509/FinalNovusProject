@@ -24,6 +24,8 @@ public:
 
 	bool hasBeenFought = false;
 
+	Pokemon trainersTeam[6];
+
 	// Main constructor for loading a character 
 	Trainer(const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet) : Sprite(SpriteType::SpriteTypes::Player, _xTile * 32, _yTile * 32,0,0, 0,0, 32,32, stylesheet) {
 		name = _name;
