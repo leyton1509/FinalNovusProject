@@ -3,6 +3,7 @@
 #include "../Sprites/PlayerCharacter.h"
 #include "../Sprites/ChoosePokemonButton.h"
 #include "../Pokemon/PokemonManager.h"
+#include "../Pokemon/PokemonPC.h"
 
 class Interactable : public Sprite {
 
@@ -232,6 +233,10 @@ public:
 		else if (idOfInteractable == 100) {
 			healAllPokemon(player);
 			cout << "Healed\n";
+		}
+		else if (idOfInteractable == 101) {
+	
+			cout << "Swapping\n";
 		}
 
 
