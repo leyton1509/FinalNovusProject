@@ -57,7 +57,11 @@ public:
 	bool isInLineOfSight(int xTilePlayer, int yTilePlayer) {
 
 		// Facing left
+		int tempYTile = yTilePlayer + 1;
 		if (directionX == -1) {
+			if ((xTile) - (xTilePlayer - 1) > 0 && (xTile)-(xTilePlayer - 1)<=3  && ((tempYTile) == (yTile)) ) {
+				return 1;
+			}
 
 		}
 
