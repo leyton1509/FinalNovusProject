@@ -62,7 +62,7 @@ public:
 		{
 			for (int j = 0; j < 2; j++)
 			{
-				boxButtons[playerCounter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				currentPokemon[playerCounter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
 				playerCounter++;
 			}
 
@@ -139,6 +139,16 @@ public:
 
 				for (int i = 0; i < 6; i++)
 				{
+					bool hasBeenClicked = currentPokemon[i].hasBeenClicked(xMousePosition, yMousePosition);
+					if (hasBeenClicked) {
+						if (highlightedPokemonParty == -1) {
+							currentPokemon[i].isHighlighted = true;
+							highlightedPokemonParty = i;
+						}
+						else if (highlightedPokemonParty == i) {
+							currentPokemon[i].isHighlighted = false;
+							highlightedPokemonParty = -1;
+						}
 
 				}
 
