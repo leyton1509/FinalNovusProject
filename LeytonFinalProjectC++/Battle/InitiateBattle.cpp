@@ -83,6 +83,12 @@ public:
 		// BG sprite
 		ALLEGRO_BITMAP* background = getBackGroundFromLocationNumber(locationNumber);
 
+		// Reset the camera
+		ALLEGRO_TRANSFORM trans;
+		al_identity_transform(&trans);
+		al_use_transform(&trans);
+		al_draw_bitmap(background, 0, 0, 0);
+
 		
 	}
 
