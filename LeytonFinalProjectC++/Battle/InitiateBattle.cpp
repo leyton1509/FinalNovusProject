@@ -304,6 +304,18 @@ public:
 
 
 				}
+
+				if (switchPokemonOneButton.isDisplayed) {
+					switchPokemonOneButton.drawSprite(player.trainersParty[0]);
+					switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
+					switchPokemonThreeButton.drawSprite(player.trainersParty[2]);
+					switchPokemonFourButton.drawSprite(player.trainersParty[3]);
+					switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
+					switchPokemonSixButton.drawSprite(player.trainersParty[5]);
+				}
+
+				
+
 				otherPokemonStatBox.drawSprite(opponent.trainersTeam[currentPokemonOpponent]);
 				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
 				backBox.drawSprite();
