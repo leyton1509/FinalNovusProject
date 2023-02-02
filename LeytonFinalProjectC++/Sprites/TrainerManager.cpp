@@ -18,7 +18,7 @@ public :
 		std::list<Trainer> trainerList = {};
 		if (mapNumber==1) {
 			Trainer t1 = getTrainer(1);
-			t1.setPositions(15, 12);
+			t1.setPositions(15, 12, -1, 0);
 			trainerList.push_front(t1);
 		}
 		
