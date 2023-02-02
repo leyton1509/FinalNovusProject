@@ -23,7 +23,7 @@ public:
 	bool redraw = true;
 
 	// Takes the screen size and the queue for inputs, the current player and the current location, and what type of battle it is
-	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int battleType) {
+	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
 
 		bool battleFinished = false;
 
@@ -132,164 +132,185 @@ public:
 		bool pokemonIsDead = false;
 		int shouldHealInSwitch = -1;
 
-		if (battleType == 0) {
 			// Wild encounter
 
-			while (!battleFinished) {
+		while (!battleFinished) {
 
-				al_wait_for_event(queue, &event);
+			al_wait_for_event(queue, &event);
 
-				switch (event.type)
-				{
-				case ALLEGRO_EVENT_TIMER:
-					redraw = true;
-					break;
+			switch (event.type)
+			{
+			case ALLEGRO_EVENT_TIMER:
+				redraw = true;
+				break;
 
-				case ALLEGRO_EVENT_MOUSE_AXES:
-					xMousePosition = event.mouse.x;
-					yMousePosition = event.mouse.y;
-					break;
-				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+			case ALLEGRO_EVENT_MOUSE_AXES:
+				xMousePosition = event.mouse.x;
+				yMousePosition = event.mouse.y;
+				break;
+			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-					if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						battleFinished = true;
-					}
+				if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					battleFinished = true;
+				}
 
-					else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						if (textBox.isDisplayed) {
-							textBox.isDisplayed = false;
-							switchPokemonOneButton.isDisplayed = true;
-							switchPokemonTwoButton.isDisplayed = true;
-							switchPokemonThreeButton.isDisplayed = true;
-							switchPokemonFourButton.isDisplayed = true;
-							switchPokemonFiveButton.isDisplayed = true;
-							switchPokemonSixButton.isDisplayed = true;
+				else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					if (textBox.isDisplayed) {
+						textBox.isDisplayed = false;
+						switchPokemonOneButton.isDisplayed = true;
+						switchPokemonTwoButton.isDisplayed = true;
+						switchPokemonThreeButton.isDisplayed = true;
+						switchPokemonFourButton.isDisplayed = true;
+						switchPokemonFiveButton.isDisplayed = true;
+						switchPokemonSixButton.isDisplayed = true;
 							
 
+					}
+					else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
+						shouldHealInSwitch = -1;
+						textBox.isDisplayed = true;
+						switchPokemonOneButton.isDisplayed = false;
+						switchPokemonTwoButton.isDisplayed = false;
+						switchPokemonThreeButton.isDisplayed = false;
+						switchPokemonFourButton.isDisplayed = false;
+						switchPokemonFiveButton.isDisplayed = false;
+						switchPokemonSixButton.isDisplayed = false;
+
+					}
+
+
+				}
+
+				else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					if (textBox.isDisplayed) {
+						textBox.isDisplayed = false;
+						potionButtonOne.isDisplayed = true;
+						potionButtonTwo.isDisplayed = true;
+						potionButtonThree.isDisplayed = true;
+
+					}
+					else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
+						textBox.isDisplayed = true;
+						potionButtonOne.isDisplayed = false;
+						potionButtonOne.isDisplayed = false;
+						potionButtonOne.isDisplayed = false;
+						switchPokemonOneButton.isDisplayed = false;
+						switchPokemonTwoButton.isDisplayed = false;
+						switchPokemonThreeButton.isDisplayed = false;
+						switchPokemonFourButton.isDisplayed = false;
+						switchPokemonFiveButton.isDisplayed = false;
+						switchPokemonSixButton.isDisplayed = false;
+					}
+
+				}
+
+				else if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					if (textBox.isDisplayed) {
+						textBox.isDisplayed = false;
+						pokeballButtonOne.isDisplayed = true;
+						pokeballButtonTwo.isDisplayed = true;
+						pokeballButtonThree.isDisplayed = true;
+					}
+					else if(!textBox.isDisplayed && pokeballButtonOne.isDisplayed) {
+						textBox.isDisplayed = true;
+						pokeballButtonOne.isDisplayed = false;
+						pokeballButtonTwo.isDisplayed = false;
+						pokeballButtonThree.isDisplayed = false;
+					}
+
+				}
+
+				else if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+					catchItemButtonClicked = 1;
+				}
+				else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+					catchItemButtonClicked = 2;
+
+				}
+				else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+					catchItemButtonClicked = 3;
+
+				}
+
+
+				else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+					healItemButtonClicked = 1;
+				}
+				else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+					healItemButtonClicked = 2;
+
+				}
+				else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+					healItemButtonClicked = 3;
+				}
+
+
+				else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 1;
+				}
+
+				else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 2;
+				}
+
+				else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 3;
+				}
+
+				else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 4;
+				}
+
+				else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 5;
+				}
+
+				else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					switchPokemonButtonClicked = 6;
+				}
+
+				else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 1;
+				}
+				else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 2;
+				}
+				else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 3;
+				}
+				else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
+					attackButtonClicked = 4;
+				}
+
+				if (switchPokemonButtonClicked!=0) {
+					int pokemonNinArray = switchPokemonButtonClicked - 1;
+					if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
+						if (shouldHealInSwitch != -1) {
+							if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
+								player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
+								shouldHealInSwitch = -1;
+
+								textBox.isDisplayed = true;
+								switchPokemonOneButton.isDisplayed = false;
+								switchPokemonTwoButton.isDisplayed = false;
+								switchPokemonThreeButton.isDisplayed = false;
+								switchPokemonFourButton.isDisplayed = false;
+								switchPokemonFiveButton.isDisplayed = false;
+								switchPokemonSixButton.isDisplayed = false;
+
+								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+
+
+							}
 						}
-						else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
-							shouldHealInSwitch = -1;
-							textBox.isDisplayed = true;
-							switchPokemonOneButton.isDisplayed = false;
-							switchPokemonTwoButton.isDisplayed = false;
-							switchPokemonThreeButton.isDisplayed = false;
-							switchPokemonFourButton.isDisplayed = false;
-							switchPokemonFiveButton.isDisplayed = false;
-							switchPokemonSixButton.isDisplayed = false;
-
-						}
-
-
-					}
-
-					else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						if (textBox.isDisplayed) {
-							textBox.isDisplayed = false;
-							potionButtonOne.isDisplayed = true;
-							potionButtonTwo.isDisplayed = true;
-							potionButtonThree.isDisplayed = true;
-
-						}
-						else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
-							textBox.isDisplayed = true;
-							potionButtonOne.isDisplayed = false;
-							potionButtonOne.isDisplayed = false;
-							potionButtonOne.isDisplayed = false;
-							switchPokemonOneButton.isDisplayed = false;
-							switchPokemonTwoButton.isDisplayed = false;
-							switchPokemonThreeButton.isDisplayed = false;
-							switchPokemonFourButton.isDisplayed = false;
-							switchPokemonFiveButton.isDisplayed = false;
-							switchPokemonSixButton.isDisplayed = false;
-						}
-
-					}
-
-					else if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						if (textBox.isDisplayed) {
-							textBox.isDisplayed = false;
-							pokeballButtonOne.isDisplayed = true;
-							pokeballButtonTwo.isDisplayed = true;
-							pokeballButtonThree.isDisplayed = true;
-						}
-						else if(!textBox.isDisplayed && pokeballButtonOne.isDisplayed) {
-							textBox.isDisplayed = true;
-							pokeballButtonOne.isDisplayed = false;
-							pokeballButtonTwo.isDisplayed = false;
-							pokeballButtonThree.isDisplayed = false;
-						}
-
-					}
-
-					else if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
-						catchItemButtonClicked = 1;
-					}
-					else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
-						catchItemButtonClicked = 2;
-
-					}
-					else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
-						catchItemButtonClicked = 3;
-
-					}
-
-
-					else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
-						healItemButtonClicked = 1;
-					}
-					else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
-						healItemButtonClicked = 2;
-
-					}
-					else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
-						healItemButtonClicked = 3;
-					}
-
-
-					else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						switchPokemonButtonClicked = 1;
-					}
-
-					else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						switchPokemonButtonClicked = 2;
-					}
-
-					else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						switchPokemonButtonClicked = 3;
-					}
-
-					else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						switchPokemonButtonClicked = 4;
-					}
-
-					else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						switchPokemonButtonClicked = 5;
-					}
-
-					else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-						switchPokemonButtonClicked = 6;
-					}
-
-					else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButtonClicked = 1;
-					}
-					else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButtonClicked = 2;
-					}
-					else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButtonClicked = 3;
-					}
-					else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
-						attackButtonClicked = 4;
-					}
-
-					if (switchPokemonButtonClicked!=0) {
-						int pokemonNinArray = switchPokemonButtonClicked - 1;
-						if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
-							if (shouldHealInSwitch != -1) {
-								if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
-									player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
-									shouldHealInSwitch = -1;
+						else {
+							if (currentPokemon != pokemonNinArray) {
+								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									currentPokemon = pokemonNinArray;
+									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
 
 									textBox.isDisplayed = true;
 									switchPokemonOneButton.isDisplayed = false;
@@ -299,180 +320,135 @@ public:
 									switchPokemonFiveButton.isDisplayed = false;
 									switchPokemonSixButton.isDisplayed = false;
 
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
-
-
-								}
-							}
-							else {
-								if (currentPokemon != pokemonNinArray) {
-									if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
-										currentPokemon = pokemonNinArray;
-										attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
-										attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
-										attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
-										attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
-
-										textBox.isDisplayed = true;
-										switchPokemonOneButton.isDisplayed = false;
-										switchPokemonTwoButton.isDisplayed = false;
-										switchPokemonThreeButton.isDisplayed = false;
-										switchPokemonFourButton.isDisplayed = false;
-										switchPokemonFiveButton.isDisplayed = false;
-										switchPokemonSixButton.isDisplayed = false;
-
-										if (pokemonIsDead) {
-											pokemonIsDead = false;
-										}
-
-										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+									if (pokemonIsDead) {
+										pokemonIsDead = false;
 									}
+
+									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								}
 							}
-
 						}
-						switchPokemonButtonClicked = 0;
+
 					}
+					switchPokemonButtonClicked = 0;
+				}
 
-					else if (attackButtonClicked!=0) {
-						if (!pokemonIsDead) {
-							int attackButtonN = attackButtonClicked - 1;
-							if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
+				else if (attackButtonClicked!=0) {
+					if (!pokemonIsDead) {
+						int attackButtonN = attackButtonClicked - 1;
+						if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
 
-								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
-								if (otherPokemon.currentHealth <= 0) {
-									int expGained = otherPokemon.experienceUponKill();
-									player.trainersParty[currentPokemon].gainExperience(expGained);
-									battleFinished = true;
-								}
-
-								textForTextBox[0] = doTurn.textForTextBox[0];
-								textForTextBox[1] = doTurn.textForTextBox[1];
-								textForTextBox[2] = doTurn.textForTextBox[2];
-								textForTextBox[3] = doTurn.textForTextBox[3];
-
-								player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].useMove();
-
-
-								if (attackButtonClicked == 1) {
-									attackButton1.pokemonMove.useMove();
-								}
-								else if (attackButtonClicked == 2) {
-									attackButton2.pokemonMove.useMove();
-								}
-								else if (attackButtonClicked == 3) {
-									attackButton3.pokemonMove.useMove();
-								}
-								else if (attackButtonClicked == 4) {
-									attackButton4.pokemonMove.useMove();
-								}
-							}
-							else {
-								textForTextBox[0] = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveName + " is out of PP!";
-								textForTextBox[1] = "";
-								textForTextBox[2] = "";
-								textForTextBox[3] = "";
-							}
-							attackButtonClicked = 0;
-						}
-						
-					}
-					else if (catchItemButtonClicked!=0) {
-
-						int pokeBallID = -1;
-
-						if (catchItemButtonClicked == 1) {
-							if (player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID) > 0) {
-							    pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
-							}
-							
-						}
-						else if (catchItemButtonClicked == 2) {
-							if (player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID) > 0) {
-							    pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
-							}
-							
-						}
-						else if (catchItemButtonClicked == 3) {
-							if (player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID) > 0) {
-							    pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
-							}
-						}
-
-						if (pokeBallID!=-1) {
-							bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
-							if (caughtPokemon) {
-								player.addPokemon(otherPokemon);
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
+							if (otherPokemon.currentHealth <= 0) {
+								int expGained = otherPokemon.experienceUponKill();
+								player.trainersParty[currentPokemon].gainExperience(expGained);
 								battleFinished = true;
 							}
-							else {
-								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
-								textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
-								textForTextBox[1] = doTurn.textForTextBox[1];
-								textForTextBox[2] = "";
-								textForTextBox[3] = "";
-							}
-							textBox.isDisplayed = true;
-							pokeballButtonOne.isDisplayed = false;
-							pokeballButtonTwo.isDisplayed = false;
-							pokeballButtonThree.isDisplayed = false;
-						}
 
-						
-						catchItemButtonClicked = 0;
-						
+							textForTextBox[0] = doTurn.textForTextBox[0];
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = doTurn.textForTextBox[2];
+							textForTextBox[3] = doTurn.textForTextBox[3];
+
+							player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].useMove();
+
+
+							if (attackButtonClicked == 1) {
+								attackButton1.pokemonMove.useMove();
+							}
+							else if (attackButtonClicked == 2) {
+								attackButton2.pokemonMove.useMove();
+							}
+							else if (attackButtonClicked == 3) {
+								attackButton3.pokemonMove.useMove();
+							}
+							else if (attackButtonClicked == 4) {
+								attackButton4.pokemonMove.useMove();
+							}
+						}
+						else {
+							textForTextBox[0] = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveName + " is out of PP!";
+							textForTextBox[1] = "";
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
+						}
+						attackButtonClicked = 0;
 					}
-					else if (healItemButtonClicked != 0) {
+						
+				}
+				else if (catchItemButtonClicked!=0) {
 
-						int potionID = -1;
+					int pokeBallID = -1;
 
-						if (healItemButtonClicked == 1) {
-							if (player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID) > 0) {
-								potionID = potionButtonOne.potion.inividualItemID;
-							}
-
+					if (catchItemButtonClicked == 1) {
+						if (player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID) > 0) {
+							pokeBallID = pokeballButtonOne.pokeball.inividualItemID;
 						}
-						else if (healItemButtonClicked == 2) {
-							if (player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID) > 0) {
-								potionID = potionButtonTwo.potion.inividualItemID;
-							}
-
+							
+					}
+					else if (catchItemButtonClicked == 2) {
+						if (player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID) > 0) {
+							pokeBallID = pokeballButtonTwo.pokeball.inividualItemID;
 						}
-						else if (healItemButtonClicked == 3) {
-							if (player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID) > 0) {
-								potionID = potionButtonThree.potion.inividualItemID;
-							}
+							
+					}
+					else if (catchItemButtonClicked == 3) {
+						if (player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID) > 0) {
+							pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
 						}
-
-						if (potionID!=-1) {
-							potionButtonOne.isDisplayed = false;
-							potionButtonTwo.isDisplayed = false;
-							potionButtonThree.isDisplayed = false;
-							shouldHealInSwitch = potionID;
-
-							switchPokemonOneButton.isDisplayed = true;
-							switchPokemonTwoButton.isDisplayed = true;
-							switchPokemonThreeButton.isDisplayed = true;
-							switchPokemonFourButton.isDisplayed = true;
-							switchPokemonFiveButton.isDisplayed = true;
-							switchPokemonSixButton.isDisplayed = true;
-						}
-
-
-						// Need to get which pokemon to heal
-						healItemButtonClicked = 0;
 					}
 
-
-					if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-
-						if (player.isAllPokemonInPartyDead()) {
-							// Add teleporting to nearest heal
-							cout << "All pokemon dead\n";
+					if (pokeBallID!=-1) {
+						bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
+						if (caughtPokemon) {
+							player.addPokemon(otherPokemon);
 							battleFinished = true;
 						}
-						pokemonIsDead = true;
-						textBox.isDisplayed = false;
+						else {
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+							textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
+							textForTextBox[1] = doTurn.textForTextBox[1];
+							textForTextBox[2] = "";
+							textForTextBox[3] = "";
+						}
+						textBox.isDisplayed = true;
+						pokeballButtonOne.isDisplayed = false;
+						pokeballButtonTwo.isDisplayed = false;
+						pokeballButtonThree.isDisplayed = false;
+					}
+
+						
+					catchItemButtonClicked = 0;
+						
+				}
+				else if (healItemButtonClicked != 0) {
+
+					int potionID = -1;
+
+					if (healItemButtonClicked == 1) {
+						if (player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID) > 0) {
+							potionID = potionButtonOne.potion.inividualItemID;
+						}
+
+					}
+					else if (healItemButtonClicked == 2) {
+						if (player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID) > 0) {
+							potionID = potionButtonTwo.potion.inividualItemID;
+						}
+
+					}
+					else if (healItemButtonClicked == 3) {
+						if (player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID) > 0) {
+							potionID = potionButtonThree.potion.inividualItemID;
+						}
+					}
+
+					if (potionID!=-1) {
+						potionButtonOne.isDisplayed = false;
+						potionButtonTwo.isDisplayed = false;
+						potionButtonThree.isDisplayed = false;
+						shouldHealInSwitch = potionID;
+
 						switchPokemonOneButton.isDisplayed = true;
 						switchPokemonTwoButton.isDisplayed = true;
 						switchPokemonThreeButton.isDisplayed = true;
@@ -481,78 +457,95 @@ public:
 						switchPokemonSixButton.isDisplayed = true;
 					}
 
-					//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
-					break;
-				case ALLEGRO_EVENT_DISPLAY_CLOSE:
-					done = true;
-					battleFinished = true;
-					break;
+
+					// Need to get which pokemon to heal
+					healItemButtonClicked = 0;
 				}
 
-				if (done)
-					break;
 
-				if (redraw && al_is_event_queue_empty(queue))
-				{
-					al_clear_to_color(al_map_rgb(0, 0, 0));
-					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
-					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
-					if (!pokemonIsDead) {
-						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+
+					if (player.isAllPokemonInPartyDead()) {
+						// Add teleporting to nearest heal
+						cout << "All pokemon dead\n";
+						battleFinished = true;
 					}
-					otherPokemonStatBox.drawSprite(otherPokemon);
-					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
-					backBox.drawSprite();
-					textBox.drawSprite();
-					attackButton1.drawSprite();
-					attackButton2.drawSprite();
-					attackButton3.drawSprite();
-					attackButton4.drawSprite();
-					healPokemonButton.drawSprite();
-					switchPokemonButton.drawSprite();
-					catchPokemonButton.drawSprite();
-					runPokemonButton.drawSprite();
-					if (textBox.isDisplayed) {
-						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
-						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
-						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
-						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
-					}
-
-					if (switchPokemonOneButton.isDisplayed) {
-						switchPokemonOneButton.drawSprite(player.trainersParty[0]);
-						switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
-						switchPokemonThreeButton.drawSprite(player.trainersParty[2]);
-						switchPokemonFourButton.drawSprite(player.trainersParty[3]);
-						switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
-						switchPokemonSixButton.drawSprite(player.trainersParty[5]);
-					}
-
-					if (pokeballButtonOne.isDisplayed) {
-						pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
-						pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
-						pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
-
-					}
-
-					if (potionButtonOne.isDisplayed) {
-						potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
-						potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
-						potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
-
-					}
-					
-					al_flip_display();
-					redraw = false;
+					pokemonIsDead = true;
+					textBox.isDisplayed = false;
+					switchPokemonOneButton.isDisplayed = true;
+					switchPokemonTwoButton.isDisplayed = true;
+					switchPokemonThreeButton.isDisplayed = true;
+					switchPokemonFourButton.isDisplayed = true;
+					switchPokemonFiveButton.isDisplayed = true;
+					switchPokemonSixButton.isDisplayed = true;
 				}
 
+				//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
+				break;
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				battleFinished = true;
+				break;
 			}
-		}
 
-		
-		else if (battleType == 1) {
-			// Pokemon encounter
+			if (done)
+				break;
 
+			if (redraw && al_is_event_queue_empty(queue))
+			{
+				al_clear_to_color(al_map_rgb(0, 0, 0));
+				al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+				al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
+				if (!pokemonIsDead) {
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+				}
+				otherPokemonStatBox.drawSprite(otherPokemon);
+				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
+				backBox.drawSprite();
+				textBox.drawSprite();
+				attackButton1.drawSprite();
+				attackButton2.drawSprite();
+				attackButton3.drawSprite();
+				attackButton4.drawSprite();
+				healPokemonButton.drawSprite();
+				switchPokemonButton.drawSprite();
+				catchPokemonButton.drawSprite();
+				runPokemonButton.drawSprite();
+				if (textBox.isDisplayed) {
+					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
+					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
+					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
+					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+				}
+
+				if (switchPokemonOneButton.isDisplayed) {
+					switchPokemonOneButton.drawSprite(player.trainersParty[0]);
+					switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
+					switchPokemonThreeButton.drawSprite(player.trainersParty[2]);
+					switchPokemonFourButton.drawSprite(player.trainersParty[3]);
+					switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
+					switchPokemonSixButton.drawSprite(player.trainersParty[5]);
+				}
+
+				if (pokeballButtonOne.isDisplayed) {
+					pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
+					pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
+					pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
+
+				}
+
+				if (potionButtonOne.isDisplayed) {
+					potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
+					potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
+					potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
+
+				}
+					
+				al_flip_display();
+				redraw = false;
+			}
+
+			
 		}
 
 		otherPokemonStatBox.destroySprites();
