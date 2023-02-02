@@ -51,6 +51,7 @@ public:
 		yPosition = yTile * 32;
 		directionX = _directonX;
 		directionY = _directonY;
+		mapDirectonToSpriteSheet();
 	}
 
 	void mapDirectonToSpriteSheet() {
