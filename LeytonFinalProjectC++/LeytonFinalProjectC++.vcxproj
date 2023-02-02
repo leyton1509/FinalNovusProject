@@ -143,6 +143,7 @@
     <ClCompile Include="Pokemon\Moves\MoveCategory.cpp" />
     <ClCompile Include="Pokemon\Moves\Move.cpp" />
     <ClCompile Include="Pokemon\Moves\MoveManager.cpp" />
+    <ClCompile Include="Pokemon\PokemonPC.cpp" />
     <ClCompile Include="Pokemon\PokemonTypeChart.cpp" />
     <ClCompile Include="Pokemon\PokemonType.cpp" />
     <ClCompile Include="Battle\RouteMapping.cpp" />
@@ -198,6 +199,7 @@
     <ClInclude Include="Sprites\Items\PokeBall.h" />
     <ClInclude Include="Sprites\Items\Potion.h" />
     <ClInclude Include="Sprites\PlayerCharacter.h" />
+    <ClInclude Include="Pokemon\PokemonPC.h" />
     <ClInclude Include="Sprites\PokemonStatBox.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
     <ClInclude Include="Sprites\SwitchPokemonButton.h" />
