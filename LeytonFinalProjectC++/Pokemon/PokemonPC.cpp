@@ -58,9 +58,9 @@ public:
 
 		int playerCounter = 0;
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 2; i++)
 		{
-			for (int j = 0; j < 2; j++)
+			for (int j = 0; j < 3; j++)
 			{
 				currentPokemon[playerCounter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXCurrentPokemon + (i * 90), startYCurrentPokemon + (j * 90), 80, 80);
 				playerCounter++;
