@@ -39,7 +39,7 @@ public:
 		{
 			for (int j = 0; j < 5; j++)
 			{
-				boxButtons[counter] = SwitchPokemonPCButton(otherPokemonSprite, 64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				boxButtons[counter] = SwitchPokemonPCButton(otherPokemonSprite, 128, 128, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
 				counter++;
 			}
 
