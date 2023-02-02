@@ -51,6 +51,10 @@ public:
 	}
 
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
+		cout << "hi\n";
+	}
+
+	bool isInLineOfSight(int xTile, int yTile, int directionX, int directionY) {
 
 	}
 
