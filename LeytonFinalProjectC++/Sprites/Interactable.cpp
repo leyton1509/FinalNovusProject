@@ -178,12 +178,14 @@ public:
 		if (idOfInteractable == 1) {
 			choosePokemon(player, queue, screenWidth, screenHeight);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 		// Normal Potion
 		else if (idOfInteractable == 2) {
 			int amount = player.itemManager.getAmountOfItem(4) +1;
 			player.itemManager.setAmountOfItem(4, amount);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 
 		// Super Potion
@@ -191,6 +193,7 @@ public:
 			int amount = player.itemManager.getAmountOfItem(5) + 1;
 			player.itemManager.setAmountOfItem(5, amount);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 
 		// Hyper Potion
@@ -198,6 +201,7 @@ public:
 			int amount = player.itemManager.getAmountOfItem(6) + 1;
 			player.itemManager.setAmountOfItem(6, amount);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 
 		// Poke ball
@@ -205,6 +209,7 @@ public:
 			int amount = player.itemManager.getAmountOfItem(1) + 1;
 			player.itemManager.setAmountOfItem(1, amount);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 
 		// Great ball
@@ -212,6 +217,7 @@ public:
 			int amount = player.itemManager.getAmountOfItem(2) + 1;
 			player.itemManager.setAmountOfItem(2, amount);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 
 		// Ultra ball
@@ -219,11 +225,13 @@ public:
 			int amount = player.itemManager.getAmountOfItem(3) + 1;
 			player.itemManager.setAmountOfItem(3, amount);
 			isDisplayed = false;
+			alreadyInteractedWith = true;
 		}
 
 
 
-		alreadyInteractedWith = true;
+
+		
 	}
 
 
