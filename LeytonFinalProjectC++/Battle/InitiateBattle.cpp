@@ -59,6 +59,9 @@ public:
 		case 11:
 			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Snow.jpg");
 			break;
+		case 12:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Underwater.jpg");
+			break;
 		default:
 			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
 			break;
