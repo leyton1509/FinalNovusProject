@@ -80,6 +80,9 @@ public:
 
 		ALLEGRO_EVENT event;
 
+		// BG sprite
+		ALLEGRO_BITMAP* background = getBackGroundFromLocationNumber(locationNumber);
+
 		
 	}
 
