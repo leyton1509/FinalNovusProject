@@ -429,7 +429,7 @@ public:
 		for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
 		{
 			int isIn = revIt->isInLineOfSight(player.xTilePosition, player.yTilePosition);
-			cout << "is in line of sight : " << isIn << " \n;"
+			cout << "is in line of sight : " << isIn << " \n";
 
 		}
 	}
