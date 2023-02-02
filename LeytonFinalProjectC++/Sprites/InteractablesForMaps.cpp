@@ -24,7 +24,7 @@ public:
 			return interactbles;
 		}
 		else if (mapNumber == 11) {
-			Interactable hi = Interactable(100, false, 220, 165, 5 * 32, 4 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
+			Interactable hi = Interactable(100, false, 220, 165, 6 * 32, 4 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
 			interactbles.push_front(hi);
 		}
 
