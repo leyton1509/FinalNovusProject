@@ -33,12 +33,13 @@ public:
 
 		// BG sprite
 		ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/Background.png");
+		ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
 		for (int i = 0; i < 6; i++)
 		{
 			for (int j = 0; j < 5; j++)
 			{
-				boxButtons[counter] = SwitchPokemonPCButton(64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				boxButtons[counter] = SwitchPokemonPCButton(otherPokemonSprite, 64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
 				counter++;
 			}
 
