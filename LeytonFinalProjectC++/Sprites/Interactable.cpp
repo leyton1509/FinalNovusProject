@@ -229,10 +229,23 @@ public:
 		}
 
 
+		else if (idOfInteractable == 100) {
+			
+		}
+
 
 
 		
 	}
+
+	 void healAllPokemon(PlayerCharacter& player) {
+		 player.trainersParty[0].healPokemonToFull();
+		 player.trainersParty[1].healPokemonToFull();
+		 player.trainersParty[2].healPokemonToFull();
+		 player.trainersParty[3].healPokemonToFull();
+		 player.trainersParty[4].healPokemonToFull();
+		 player.trainersParty[5].healPokemonToFull();
+	 }
 
 
 
