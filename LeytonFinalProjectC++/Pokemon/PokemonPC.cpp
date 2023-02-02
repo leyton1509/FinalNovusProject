@@ -21,12 +21,14 @@ public:
 
 		int startXPositon = 10;
 		int startYPosition = 10;
+		int counter = 0;
 
 		for (int i = 0; i < 6; i++)
 		{
 			for (int j = 0; j < 5; j++)
 			{
-				boxButtons[i] = SwitchPokemonButton(64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				boxButtons[counter] = SwitchPokemonButton(64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				counter++;
 			}
 
 		}
