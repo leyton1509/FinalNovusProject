@@ -91,29 +91,30 @@ public:
 
 	bool isInLineOfSight(int xTilePlayer, int yTilePlayer) {
 
-		// Facing left
-		int tempYTile = yTilePlayer + 1;
-		if (directionX == -1) {
-			if ((xTile) - (xTilePlayer - 1) > 0 && (xTile)-(xTilePlayer - 1)<=5  && ((yTile) == (yTilePlayer)) ) {
-				return 1;
+		if (!hasBeenFought) {
+			// Facing left
+			int tempYTile = yTilePlayer + 1;
+			if (directionX == -1) {
+				if ((xTile)-(xTilePlayer - 1) > 0 && (xTile)-(xTilePlayer - 1) <= 5 && ((yTile) == (yTilePlayer))) {
+					return 1;
+				}
+			}
+			else if (directionX == 1) {
+				if ((xTilePlayer + 1) - (xTile) > 0 && (xTilePlayer + 1) - xTile <= 5 && ((yTile) == (yTilePlayer))) {
+					return 1;
+				}
+			}
+			else if (directionY == -1) {
+				if ((yTilePlayer + 1) - yTile > 0 && (yTilePlayer + 1) - yTile <= 5 && ((xTile) == (xTilePlayer))) {
+					return 1;
+				}
+			}
+			else if (directionY == 1) {
+				if (yTile - (yTilePlayer + 1) > 0 && yTile - (yTilePlayer + 1) <= 5 && ((xTile) == (xTilePlayer))) {
+					return 1;
+				}
 			}
 		}
-		else if (directionX == 1) {
-			if ((xTilePlayer + 1) - (xTile) > 0 && (xTilePlayer + 1) - xTile <= 5 && ((yTile) == (yTilePlayer))) {
-				return 1;
-			}
-		}
-		else if (directionY == -1) {
-			if ((yTilePlayer + 1) - yTile > 0 &&  (yTilePlayer + 1)-yTile <= 5 && ((xTile) == (xTilePlayer))) {
-				return 1;
-			}
-		}
-		else if (directionY == 1) {
-			if (yTile- (yTilePlayer + 1) > 0 && yTile - (yTilePlayer + 1) <= 5 && ((xTile) == (xTilePlayer))) {
-				return 1;
-			}
-		}
-
 		return 0;
 	}
 
