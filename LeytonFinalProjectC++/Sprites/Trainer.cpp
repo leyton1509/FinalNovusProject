@@ -28,6 +28,8 @@ public:
 	Pokemon trainersTeam[6];
 	int numberOfPokemonInParty = 0;
 
+	int locationNumber;
+
 
 
 	// Main constructor for loading a character 
@@ -39,6 +41,8 @@ public:
 		yTile = _yTile;
 		xTileForSpriteSheet = _xTileForSpriteSheet;
 		yTileForSpriteSheet = _yTileForSpriteSheet;
+		locationNumber = 0;
+
 	}
 
 	Trainer() : Sprite(SpriteType::SpriteTypes::Player, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
@@ -49,6 +53,7 @@ public:
 		yTileForOriginal = 0;
 		xTileForSpriteSheet = 0;
 		yTileForSpriteSheet = 0;
+		locationNumber = 0;
 	}
 
 	// Adds a pokemon to the trainers party
