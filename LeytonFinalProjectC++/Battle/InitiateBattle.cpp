@@ -380,7 +380,15 @@ public:
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
 								int expGained = opponent.trainersTeam[currentPokemonOpponent].experienceUponKill();
 								player.trainersParty[currentPokemon].gainExperience(expGained);
-								battleFinished = true;
+
+								if (!opponent.isAllPokemonInPartyDead()) {
+									currentPokemon = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
+								}
+								else {
+									battleFinished = true;
+								}
+
+								
 							}
 
 							textForTextBox[0] = doTurn.textForTextBox[0];
