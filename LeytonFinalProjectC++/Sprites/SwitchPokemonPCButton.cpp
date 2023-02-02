@@ -16,17 +16,21 @@ public:
 	// The original y size of button image
 	int originalSizeY;
 
+	bool isHighlighted;
+
 
 	// Connstructor with the pokemon to add to the players party
 	SwitchPokemonPCButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/PCSprites/ChoosePokemon.png") {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
+		isHighlighted = false;
 	}
 
 	// Empty const
 	SwitchPokemonPCButton() : Button() {
 		originalSizeX = 0;
 		originalSizeY = 0;
+		isHighlighted = false;
 	}
 
 	// Draws the button and pokemon attacthed to it
