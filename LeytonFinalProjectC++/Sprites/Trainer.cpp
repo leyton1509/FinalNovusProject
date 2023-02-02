@@ -103,6 +103,16 @@ public:
 				return 1;
 			}
 		}
+		else if (directionY == -1) {
+			if ((yTilePlayer + 1) - yTile > 0 &&  (yTilePlayer + 1)-yTile <= 5 && ((xTile) == (xTilePlayer))) {
+				return 1;
+			}
+		}
+		else if (directionY == 1) {
+			if (yTile- (yTilePlayer + 1) > 0 && yTile - (yTilePlayer + 1) <= 5 && ((xTile) == (xTilePlayer))) {
+				return 1;
+			}
+		}
 
 		return 0;
 	}
