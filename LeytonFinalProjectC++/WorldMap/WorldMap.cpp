@@ -425,15 +425,18 @@ public:
 	}
 
 	void checkForTrainerBattle(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue){
-		std::list<Trainer>::reverse_iterator revIt;
-		for (revIt = trainersForMap.rbegin(); revIt != trainersForMap.rend(); revIt++)
-		{
-			int isIn = revIt->isInLineOfSight(player.xTilePosition, player.yTilePosition);
-			if (isIn && revIt->hasBeenFought == false) {
-				revIt->interact(player, queue, screenWidth, screenHeight);
-			}
 
+		for (Trainer& trainer : trainersForMap)
+		{
+			if (trainer.isInLineOfSight(player.xTilePosition, player.yTilePosition)) {
+
+				InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, trainer.locationNumber, trainer);
+				
+
+			}
 		}
+
+
 	}
 
 
