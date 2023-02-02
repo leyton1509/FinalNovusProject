@@ -95,10 +95,13 @@ public:
 		int tempYTile = yTilePlayer + 1;
 		if (directionX == -1) {
 			if ((xTile) - (xTilePlayer - 1) > 0 && (xTile)-(xTilePlayer - 1)<=5  && ((yTile) == (yTilePlayer)) ) {
-
 				return 1;
 			}
-
+		}
+		else if (directionX == 1) {
+			if ((xTilePlayer + 1) - (xTile) > 0 && (xTilePlayer + 1) - xTile <= 5 && ((yTile) == (yTilePlayer))) {
+				return 1;
+			}
 		}
 
 		return 0;
