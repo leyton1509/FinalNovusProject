@@ -128,7 +128,7 @@ public:
 			if (strcmp(keyPressed, "w") == 0) {
 				if (directionY == 1) {
 					if (tempYTile - 1 >= 0 || tempYTile - 2 >= 0) {
-						if (xTile == (xPosition / 32) && ((tempYTile - 1) == (yPosition / 32)) || xTile == (xPosition / 32) && ((tempYTile - 2) == (yPosition / 32))  ) {
+						if ( xTile == (xPosition / 32) && ((tempYTile - 2) == (yPosition / 32))  ) {
 							return 1;
 						}
 						else {
@@ -147,7 +147,7 @@ public:
 			else if (strcmp(keyPressed, "s") == 0) {
 				if (directionY == -1) {
 					if (tempYTile + 1 < mapSizeY) {
-						if (xTile == (xPosition / 32) && ((tempYTile + 1) == (yPosition / 32))) {
+						if (xTile == (xPosition / 32) && ((tempYTile ) == (yPosition / 32))) {
 							return 1;
 						}
 						else {
@@ -166,7 +166,7 @@ public:
 			else if (strcmp(keyPressed, "a") == 0) {
 				if (directionX == -1) {
 					if (xTile - 1 >= 0) {
-						if ((xTile - 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32)) || (xTile - 1) == (xPosition / 32) && ((tempYTile-1) == (yPosition / 32))) {
+						if ((xTile - 1) == (xPosition / 32) && ((tempYTile-1) == (yPosition / 32))) {
 							return 1;
 						}
 						else {
@@ -185,7 +185,7 @@ public:
 			else if (strcmp(keyPressed, "d") == 0) {
 				if (directionX == 1) {
 					if (xTile + 1 < mapSizeX) {
-						if ((xTile + 1) == (xPosition / 32) && ((tempYTile) == (yPosition / 32)) || (xTile + 1) == (xPosition / 32) && ((tempYTile-1) == (yPosition / 32))) {
+						if ( (xTile + 1) == (xPosition / 32) && ((tempYTile-1) == (yPosition / 32))) {
 							return 1;
 						}
 						else {
