@@ -44,7 +44,13 @@ public:
 
 		}
 
+		double xMousePosition = 0;
+		double yMousePosition = 0;
 
+		// GUI info
+		bool done = false;
+		bool redraw = true;
+		ALLEGRO_EVENT event;
 
 		
 
