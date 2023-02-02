@@ -106,6 +106,11 @@ public:
 			return;
 		}
 
+		// Gets all the gui info
+		// The hp bars
+		// The buttons on screen
+		PokemonStatBox otherPokemonStatBox = PokemonStatBox(opponent.trainersTeam[currentPokemonOpponent], 256, 96, 510, 20, 320, 75);
+		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75);
 
 
 		
