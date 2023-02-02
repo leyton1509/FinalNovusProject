@@ -1,10 +1,10 @@
 #include "../Sprites/PlayerCharacter.h"
 
-#include "../Sprites/SwitchPokemonButton.h"
+#include "../Sprites/SwitchPokemonPCButton.h"
 
 class PokemonPC {
 
-	SwitchPokemonButton boxButtons[30];
+	SwitchPokemonPCButton boxButtons[30];
 
 public:
 
@@ -32,13 +32,13 @@ public:
 		int counter = 0;
 
 		// BG sprite
-		ALLEGRO_BITMAP* background = "";
+		ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/Background.png");
 
 		for (int i = 0; i < 6; i++)
 		{
 			for (int j = 0; j < 5; j++)
 			{
-				boxButtons[counter] = SwitchPokemonButton(64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
+				boxButtons[counter] = SwitchPokemonPCButton(64, 64, startXPositon + (i * 90), startYPosition + (j * 90), 80, 80);
 				counter++;
 			}
 
