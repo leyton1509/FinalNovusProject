@@ -274,8 +274,23 @@ public:
 					attackButtonClicked = 4;
 				}
 
+				// Add code for when the buttons are clicked
+
 
 				break;
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				battleFinished = true;
+				break;
+			}
+
+			if (done)
+				break;
+
+			if (redraw && al_is_event_queue_empty(queue))
+			{
+
+
 			}
 
 		}
