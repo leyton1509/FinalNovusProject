@@ -74,8 +74,6 @@ public:
 			xTileForSpriteSheet = xTileOriginal+2;
 			yTileForSpriteSheet = yTileForOriginal+1;
 		}
-		cout << "X " << xTileForSpriteSheet << " Y " << yTileForSpriteSheet<< "";
-		cout << "X " << xTileOriginal << " Y " << yTileForOriginal << " \n";
 
 	}
 
