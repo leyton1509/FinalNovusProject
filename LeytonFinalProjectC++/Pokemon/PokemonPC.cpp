@@ -52,6 +52,11 @@ public:
 		bool redraw = true;
 		ALLEGRO_EVENT event;
 
+		//Reset the camera
+		ALLEGRO_TRANSFORM trans;
+		al_identity_transform(&trans);
+		al_use_transform(&trans);
+
 		
 
 	}
