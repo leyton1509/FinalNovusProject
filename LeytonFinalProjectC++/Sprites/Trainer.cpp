@@ -55,6 +55,11 @@ public:
 
 	void mapDirectonToSpriteSheet() {
 
+		if (directionX == -1) {
+			xTileForSpriteSheet = xTileOriginal;
+			yTileForSpriteSheet = yTileForOriginal + 2;
+		}
+
 	}
 
 	// Draws the current sprite
