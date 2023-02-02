@@ -403,7 +403,7 @@ int main()
                 if (tilePlayerIsStandingOn == 5 || tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
-                        if (encounterRan == 2) {
+                        if (encounterRan == -2) {
                             keys[0] = false;
                             keys[1] = false;
                             keys[2] = false;
