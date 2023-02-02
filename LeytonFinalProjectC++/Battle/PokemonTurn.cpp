@@ -1,11 +1,17 @@
 #include "../Pokemon/Pokemon.h"
 #include "../Pokemon/Moves/MoveCategory.h"
 #include "../Pokemon/PokemonTypeChart.h"
+#include "../Sprites/Trainer.h"
 class PokemonTurn {
 	
 public:
 
 	string textForTextBox[4] = { "", "", "", "" };
+
+	int getNextPokemonForOpponent(Trainer trainer, int currentPokemon, Pokemon playersPokemon) {
+
+		return 0;
+	}
 
 	int calcDamageOfMove(Pokemon attackingPokemon, Pokemon DefendingPokemon, Move playerMoveUsed) {
 		int attack = 0;
