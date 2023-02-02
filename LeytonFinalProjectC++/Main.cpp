@@ -229,7 +229,10 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
-    player.addPokemon(pm.getDefaultPokemon("Blaziken"));
+    player.addPokemon(pm.getDefaultPokemon("Charmander"));
+    player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
+    player.trainersParty[0].setPokemonsLevel(10);
+    player.trainersParty[1].setPokemonsLevel(10);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(15, 20);
