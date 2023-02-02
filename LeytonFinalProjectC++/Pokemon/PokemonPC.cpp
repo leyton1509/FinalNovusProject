@@ -8,11 +8,11 @@ class PokemonPC {
 
 public:
 
-	void displaySprites(PlayerCharacter& player) {
+	void displaySprites(Pokemon box[]) {
 
 		for (int i = 0; i < 30; i++)
 		{
-			boxButtons[i].drawSprite(player.box[i]);
+			boxButtons[i].drawSprite(box[i]);
 		}
 	}
 
