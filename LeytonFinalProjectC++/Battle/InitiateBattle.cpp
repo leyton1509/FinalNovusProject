@@ -195,6 +195,28 @@ public:
 
 					}
 
+				}
+
+				else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					if (textBox.isDisplayed) {
+						textBox.isDisplayed = false;
+						potionButtonOne.isDisplayed = true;
+						potionButtonTwo.isDisplayed = true;
+						potionButtonThree.isDisplayed = true;
+
+					}
+					else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
+						textBox.isDisplayed = true;
+						potionButtonOne.isDisplayed = false;
+						potionButtonOne.isDisplayed = false;
+						potionButtonOne.isDisplayed = false;
+						switchPokemonOneButton.isDisplayed = false;
+						switchPokemonTwoButton.isDisplayed = false;
+						switchPokemonThreeButton.isDisplayed = false;
+						switchPokemonFourButton.isDisplayed = false;
+						switchPokemonFiveButton.isDisplayed = false;
+						switchPokemonSixButton.isDisplayed = false;
+					}
 
 				}
 
