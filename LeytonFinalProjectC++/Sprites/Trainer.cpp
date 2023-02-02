@@ -163,8 +163,6 @@ public:
 	// Checks the locaions to see if the character is interacting with the current object
 	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY, int mapSizeX, int mapSizeY) {
 		// std::cout << "Current X : " << xTile << " Current Y: " << yTile << " X : " << xPosition / 32 << " Y :" << yPosition / 32 << " \n";
-
-		if (!hasBeenFought) {
 			int tempYTile = yTile + 1;
 			if (strcmp(keyPressed, "w") == 0) {
 				if (directionY == 1) {
@@ -241,7 +239,7 @@ public:
 					return 0;
 				}
 			}
-		}
+		
 
 		return 0;
 	}
