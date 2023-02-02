@@ -93,6 +93,10 @@ public:
 		ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP* trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
+		int currentPokemonOpponent = 0;
+
+
+
 		
 	}
 
