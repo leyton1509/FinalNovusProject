@@ -141,6 +141,15 @@ public:
 		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
 		switchPokemonSixButton.isDisplayed = false;
 
+		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
+		potionButtonOne.isDisplayed = false;
+
+		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
+		potionButtonTwo.isDisplayed = false;
+
+		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
+		potionButtonThree.isDisplayed = false;
+
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
