@@ -81,7 +81,11 @@ public:
 		al_identity_transform(&trans);
 		al_use_transform(&trans);
 
-		int highlightedPokemon = -1;
+		int highlightedPokemonPC = -1;
+		int highlightedPokemonParty = -1;
+
+		int swapPokemonPC = -1;
+		int swapPokemonParty = -1;
 
 		bool finishedInPC = false;
 
@@ -111,14 +115,16 @@ public:
 				{
 					bool hasBeenClicked = boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
 					if (hasBeenClicked) {
-						if (highlightedPokemon == -1) {
+						if (highlightedPokemonPC == -1) {
 							boxButtons[i].isHighlighted = true;
-							highlightedPokemon = i;
+							highlightedPokemonPC = i;
 						}
-						else if (highlightedPokemon == i) {
+						else if (highlightedPokemonPC == i) {
 							boxButtons[i].isHighlighted = false;
-							highlightedPokemon = -1;
+							highlightedPokemonPC = -1;
 						}
+						/*
+						
 						else {
 							Pokemon tempPokemon = player.box[highlightedPokemon];
 							boxButtons[highlightedPokemon].isHighlighted = false;
@@ -127,7 +133,13 @@ public:
 
 							highlightedPokemon = -1;
 						}
+						*/
 					}
+				}
+
+				for (int i = 0; i < 6; i++)
+				{
+
 				}
 
 
