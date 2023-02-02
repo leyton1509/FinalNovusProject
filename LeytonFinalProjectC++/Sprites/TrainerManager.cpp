@@ -82,6 +82,17 @@ public :
 		trainers.insert({ 48, Trainer("Basic Bob", 1, 1, trainerStyleSheet, 21, 16) });
 		trainers.insert({ 49, Trainer("Fancy Hat Racheal", 1, 1, trainerStyleSheet, 24, 16) });
 		trainers.insert({ 50, Trainer("Laxus", 1, 1, trainerStyleSheet, 27, 16) });
+
+		trainers.insert({ 51, Trainer("Red", 1, 1, trainerStyleSheet, 0, 20) });
+		trainers.insert({ 52, Trainer("Black Operative", 1, 1, trainerStyleSheet, 3, 20) });
+		trainers.insert({ 53, Trainer("Bald Fighter", 1, 1, trainerStyleSheet, 6, 20) });
+		trainers.insert({ 54, Trainer("Team Fate Grunt", 1, 1, trainerStyleSheet, 9, 20) });
+		trainers.insert({ 55, Trainer("Team Fate Grunt", 1, 1, trainerStyleSheet, 12, 20) });
+		trainers.insert({ 56, Trainer("Team Fate Arthur", 1, 1, trainerStyleSheet, 15, 20) });
+		trainers.insert({ 57, Trainer("Team Fate Cyrus", 1, 1, trainerStyleSheet, 18, 20) });
+		trainers.insert({ 58, Trainer("Swimmer Owen", 1, 1, trainerStyleSheet, 21, 20) });
+		trainers.insert({ 59, Trainer("Clown", 1, 1, trainerStyleSheet, 24, 20) });
+		trainers.insert({ 60, Trainer("Bicycle Rider", 1, 1, trainerStyleSheet, 27, 20) });
 	}
 
 	Trainer getTrainer(int trainerNum) {
