@@ -50,6 +50,12 @@ public:
 		case 8:
 			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/DarkForest.jpg");
 			break;
+		case 9:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Swamp.jpg");
+			break;
+		case 10:
+			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Swamp2.jpg");
+			break;
 		default:
 			return  al_load_bitmap("../LeytonFinalProjectC++/Sprites/BattleSprites/Plains.jpg");
 			break;
