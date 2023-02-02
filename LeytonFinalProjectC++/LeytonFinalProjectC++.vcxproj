@@ -165,6 +165,7 @@
     <ClCompile Include="Sprites\PokemonStatBox.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
     <ClCompile Include="Sprites\SwitchPokemonButton.cpp" />
+    <ClCompile Include="Sprites\SwitchPokemonPCButton.cpp" />
     <ClCompile Include="Sprites\Trainer.cpp" />
     <ClCompile Include="Sprites\TrainerManager.cpp" />
     <ClCompile Include="TitleScreen\TitleScreen.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="Sprites\PokemonStatBox.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
     <ClInclude Include="Sprites\SwitchPokemonButton.h" />
+    <ClInclude Include="Sprites\SwitchPokemonPCButton.h" />
     <ClInclude Include="Sprites\Trainer.h" />
     <ClInclude Include="Sprites\TrainerManager.h" />
     <ClInclude Include="TitleScreen\TitleScreenHeader.h" />
