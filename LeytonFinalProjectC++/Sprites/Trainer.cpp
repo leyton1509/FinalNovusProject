@@ -1,7 +1,6 @@
 #include "../Sprites/Spriteheader.h"
 #include "../Sprites/PlayerCharacter.h"
 #include "../Pokemon/Pokemon.h"
-#include "../Battle/InitiateBattle.h"
 
 
 class Trainer : public Sprite{
