@@ -24,8 +24,8 @@ public:
 			return interactbles;
 		}
 		else if (mapNumber == 11) {
-			Interactable bf = Interactable(1, true, 220, 165, 15 * 32, 24 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Case.png");
-			interactbles.push_front(bf);
+			Interactable hi = Interactable(1, false, 220, 165, 5 * 32, 4 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
+			interactbles.push_front(hi);
 		}
 
 		return  interactbles;
