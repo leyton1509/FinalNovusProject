@@ -96,6 +96,10 @@ public:
 							boxButtons[i].isHighlighted = false;
 							highlightedPokemon = -1;
 						}
+						else {
+							Pokemon tempPokemon = player.box[i];
+							highlightedPokemon = -1;
+						}
 					}
 				}
 
