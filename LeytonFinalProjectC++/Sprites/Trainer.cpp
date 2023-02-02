@@ -85,6 +85,11 @@ public:
 	}
 
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
+
+		if (!hasBeenFought) {
+
+			hasBeenFought = true;
+		}
 		cout << "hi\n";
 	}
 
