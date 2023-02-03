@@ -182,7 +182,7 @@ public:
 			strings.push_back("Someone left a breif case here....");
 			strings.push_back("There appears to be some poke balls inside!");
 			strings.push_back("Taking one shouldn't hurt anyone...");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 			choosePokemon(player, queue, screenWidth, screenHeight);
 			isDisplayed = false;
 			alreadyInteractedWith = true;
@@ -195,7 +195,7 @@ public:
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
 			strings.push_back("You found a potion!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 		// Super Potion
@@ -206,7 +206,7 @@ public:
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
 			strings.push_back("You found a super potion!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 		// Hyper Potion
@@ -217,7 +217,7 @@ public:
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
 			strings.push_back("You found a hyper potion!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 		// Poke ball
@@ -228,7 +228,7 @@ public:
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
 			strings.push_back("You found a poke ball!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 		// Great ball
@@ -239,7 +239,7 @@ public:
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
 			strings.push_back("You found a great ball!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 		// Ultra ball
@@ -250,7 +250,7 @@ public:
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
 			strings.push_back("You found an ultra ball!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+			TextBox tb = TextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 
