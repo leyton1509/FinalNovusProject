@@ -95,7 +95,7 @@ public:
 	// Draws the sprite with the string
 	void drawSprite(std::string currentString) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
-		al_draw_text(font, al_map_rgb(255, 255, 255), (xPosition + 20), (yPosition + 10), 0, (currentString).c_str());
+		al_draw_text(font, al_map_rgb(255, 255, 255), (xPosition + 17), (yPosition + 15), 0, (currentString).c_str());
 
 	}
 
