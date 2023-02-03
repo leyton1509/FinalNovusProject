@@ -385,6 +385,9 @@ public:
 									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
 								}
 								else {
+
+									player.addMoney(100 * opponent.numberOfPokemonInParty);
+
 									battleFinished = true;
 								}
 							}
