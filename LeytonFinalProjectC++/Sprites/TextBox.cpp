@@ -70,7 +70,15 @@ public:
 
 			if (redraw && al_is_event_queue_empty(queue))
 			{
-				
+				int cString = 0;
+				for (const std::string& currentS : textToDisplay)
+				{
+					if (cString == currentString) {
+						drawSprite(currentS);
+						break;
+					}
+					cString++;
+				}
 				al_flip_display();
 			}
 		}
