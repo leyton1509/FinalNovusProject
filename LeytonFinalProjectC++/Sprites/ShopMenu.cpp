@@ -79,6 +79,9 @@ public:
 					done = true;
 					finishedInShop = true;
 				}
+				else if (buyButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.buyItem(pokeballButtonOne.pokeball.inividualItemID, buyButtonOne.buttonValue);
+				}
 				break;
 			}
 
