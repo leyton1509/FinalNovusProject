@@ -128,7 +128,6 @@ currentPokemon[i].drawSprite(playersParty[i]);
 						player.recalcNumberOfPokemon();
 					}else if (highlightedPokemonParty != -1) {
 						player.recalcNumberOfPokemon();
-						cout << "After recalc : " << player.numberOfPokemonInParty << "\n";
 						if (player.numberOfPokemonInParty > 1) {
 							player.trainersParty[highlightedPokemonParty] = Pokemon();
 							currentPokemon[highlightedPokemonParty].isHighlighted = false;
