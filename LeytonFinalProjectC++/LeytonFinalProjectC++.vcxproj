@@ -163,6 +163,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Sprites\PokemonGrass.cpp" />
     <ClCompile Include="Sprites\PokemonStatBox.cpp" />
+    <ClCompile Include="Sprites\ShopMenu.cpp" />
     <ClCompile Include="Sprites\SpriteType.cpp" />
     <ClCompile Include="Sprites\SwitchPokemonButton.cpp" />
     <ClCompile Include="Sprites\SwitchPokemonPCButton.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Pokemon\PokemonPC.h" />
     <ClInclude Include="Sprites\PokemonStatBox.h" />
+    <ClInclude Include="Sprites\ShopMenu.h" />
     <ClInclude Include="Sprites\SpriteHeader.h" />
     <ClInclude Include="Sprites\SwitchPokemonButton.h" />
     <ClInclude Include="Sprites\SwitchPokemonPCButton.h" />
