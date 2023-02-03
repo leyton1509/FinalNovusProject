@@ -11,6 +11,11 @@ public:
 	// Constructor for handling buying / selling items
 	ShopMenu(bool buy, PlayerCharacter & player, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
+		//Reset the camera
+		ALLEGRO_TRANSFORM trans;
+		al_identity_transform(&trans);
+		al_use_transform(&trans);
+
 		int startXPositon = 10;
 		int startYPosition = 10;
 		int counter = 0;
@@ -22,14 +27,16 @@ public:
 		int xMousePosition = 0;
 		int yMousePosition = 0;
 
-		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 10, 90, 80, 80);
-		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 10, 180, 80, 80);
-		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 10, 270, 80, 80);
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 10, 360, 80, 80);
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 10, 450, 80, 80);
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 100, 90, 80, 80);
+		ALLEGRO_BITMAP* background = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/Background.png");
 
-		Button exitButton = Button(128, 128, 10, 540, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
+		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64,10, 10, 80, 80);
+		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 10, 100, 80, 80);
+		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 10, 190, 80, 80);
+		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 10, 280, 80, 80);
+		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 10, 370, 80, 80);
+		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 10, 460, 80, 80);
+
+		Button exitButton = Button(128, 128, 190, 460, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 
 		bool finishedInShop = false;
 
@@ -68,13 +75,14 @@ public:
 
 			if (redraw && al_is_event_queue_empty(queue))
 			{
+				al_draw_scaled_bitmap(background, 0, 0, 800, 600, 0, 0, screenWidth, screenHeight, 0);
 				pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
 				pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
 				pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
 				potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
 				potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
 				potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
-				
+				exitButton.drawSprite();
 				al_flip_display();
 			}
 
