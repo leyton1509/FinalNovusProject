@@ -74,10 +74,19 @@ class PlayerCharacter : public Sprite{
 		playersMoney = playersMoney - subtract;
 	}
 
+	// Buys the item by adding it to the players inv
 	void buyItem(int itemId, int costOfItem) {
 		if (costOfItem >= playersMoney) {
 			itemManager.setAmountOfItem(itemId, (itemManager.getAmountOfItem(itemId)+1));
 			playersMoney = playersMoney - costOfItem;
+		}
+	}
+
+	// Sells the item by removing it to the players inv
+	void sellItem(int itemId, int costOfItem) {
+		if (itemManager.getAmountOfItem(itemId) > 0) {
+			itemManager.setAmountOfItem(itemId, (itemManager.getAmountOfItem(itemId) - 1));
+			playersMoney = playersMoney + costOfItem;
 		}
 	}
 
