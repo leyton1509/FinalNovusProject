@@ -79,19 +79,21 @@ class PlayerCharacter : public Sprite{
 			numberOfPokemonInParty++;
 		}
 		else {
+			int nextSpaceInBox = -1;
+			for (int i = 0; i < 6; i++)
+			{
+				if (strcmp(box[i].pokemonName.c_str(), "") == 0) {
+					nextSpaceInBox = i;
+					break;
+				}
+			}
 
-		}
-
-		if (numberOfPokemonInParty < 6) {
-			trainersParty[numberOfPokemonInParty] = pokemonToAdd;
-			numberOfPokemonInParty++;
-		}
-		else {
-			if (numberOfPokemonInBox < 30) {
+			if (nextSpaceInBox != -1) {
 				box[numberOfPokemonInBox] = pokemonToAdd;
 				numberOfPokemonInBox++;
 			}
 		}
+
 	}
 
 	// Returns the integer of the first pokemon alive
