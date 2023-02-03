@@ -20,6 +20,12 @@ public:
 		originalSizeY = 96;
 	}
 
+	void drawSprite(std::string currentString) {
+		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+		al_draw_text(font, al_map_rgb(255, 255, 255), (xPosition + 15), (yPosition + 5), 0, (currentString).c_str());
+
+	}
+
 	// Destroys all the sprites 
 	void destroySprites() {
 		al_destroy_bitmap(spriteImage);
