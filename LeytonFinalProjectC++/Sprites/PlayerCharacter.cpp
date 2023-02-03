@@ -45,6 +45,9 @@ class PlayerCharacter : public Sprite{
 	// Handles all the items
 	ItemManager itemManager = ItemManager();
 
+	// Money
+	int playersMoney;
+
 
 // The player character constructor
 	// Sets up the values for the variables in the class
@@ -58,6 +61,7 @@ class PlayerCharacter : public Sprite{
 		currentFrame = 0;
 		framerate = 60;
 		moveThisTurn = 1;
+		playersMoney = 10000;
 	}
 
 	void recalcNumberOfPokemon() {
