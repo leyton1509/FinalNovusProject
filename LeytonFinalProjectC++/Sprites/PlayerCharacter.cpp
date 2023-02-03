@@ -60,6 +60,10 @@ class PlayerCharacter : public Sprite{
 		moveThisTurn = 1;
 	}
 
+	void recalcNumberOfPokemon() {
+
+	}
+
 
 	// Adds a pokemon to the players party
 	// If the player has 6 pokemon it gets stored in the box
