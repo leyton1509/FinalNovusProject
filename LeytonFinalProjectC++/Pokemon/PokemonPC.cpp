@@ -130,7 +130,7 @@ currentPokemon[i].drawSprite(playersParty[i]);
 						player.recalcNumberOfPokemon();
 						if (player.numberOfPokemonInParty > 1) {
 							player.trainersParty[highlightedPokemonParty] = Pokemon();
-							currentPokemon[highlightedPokemonParty].isHighlighted = true;
+							currentPokemon[highlightedPokemonParty].isHighlighted = false;
 							highlightedPokemonParty = -1;
 						}
 						player.recalcNumberOfPokemon();
