@@ -231,17 +231,12 @@ int main()
     PlayerCharacter player = PlayerCharacter();
     player.addPokemon(pm.getDefaultPokemon("Charmander"));
     player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
-    player.addPokemon(pm.getDefaultPokemon("Charmander"));
-    player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
-    player.addPokemon(pm.getDefaultPokemon("Charmander"));
-    player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
-    player.addPokemon(pm.getDefaultPokemon("Charmander"));
-    player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
+    
     player.trainersParty[0].setPokemonsLevel(10);
     player.trainersParty[1].setPokemonsLevel(10);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
-    player.setAllPositions(1, 1);
+    player.setAllPositions(0, 3);
     WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt", 2);
     float cameraPosition[2] = { 0,0 };
 
