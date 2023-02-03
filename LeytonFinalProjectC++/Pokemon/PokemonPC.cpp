@@ -186,14 +186,30 @@ currentPokemon[i].drawSprite(playersParty[i]);
 				}
 
 				if (highlightedPokemonParty != -1 && highlightedPokemonPC != -1) {
-					currentPokemon[highlightedPokemonParty].isHighlighted = false;
-					boxButtons[highlightedPokemonPC].isHighlighted = false;
-					Pokemon tempPokemon = player.trainersParty[highlightedPokemonParty];
-					player.trainersParty[highlightedPokemonParty] = player.box[highlightedPokemonPC];
-					player.box[highlightedPokemonPC] = tempPokemon;
-					highlightedPokemonParty = -1;
-					highlightedPokemonPC = -1;
-					player.recalcNumberOfPokemon();
+					if (strcmp(player.trainersParty[highlightedPokemonParty].pokemonName.c_str(), "") == 0) {
+						currentPokemon[highlightedPokemonParty].isHighlighted = false;
+						boxButtons[highlightedPokemonPC].isHighlighted = false;
+						Pokemon tempPokemon = player.trainersParty[highlightedPokemonParty];
+						player.trainersParty[highlightedPokemonParty] = player.box[highlightedPokemonPC];
+						player.box[highlightedPokemonPC] = tempPokemon;
+						highlightedPokemonParty = -1;
+						highlightedPokemonPC = -1;
+						player.recalcNumberOfPokemon();
+					}
+					else {
+						player.recalcNumberOfPokemon();
+						if (player.numberOfPokemonInParty > 1) {
+							currentPokemon[highlightedPokemonParty].isHighlighted = false;
+							boxButtons[highlightedPokemonPC].isHighlighted = false;
+							Pokemon tempPokemon = player.trainersParty[highlightedPokemonParty];
+							player.trainersParty[highlightedPokemonParty] = player.box[highlightedPokemonPC];
+							player.box[highlightedPokemonPC] = tempPokemon;
+							highlightedPokemonParty = -1;
+							highlightedPokemonPC = -1;
+							player.recalcNumberOfPokemon();
+						}
+					}
+					
 
 				}
 
