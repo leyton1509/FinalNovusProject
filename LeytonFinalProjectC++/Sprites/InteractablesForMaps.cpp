@@ -29,6 +29,12 @@ public:
 			Interactable box = Interactable(101, false, 220, 165, 9 * 32, 2 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
 			interactbles.push_front(box);
 		}
+		else if (mapNumber == 12) {
+			Interactable buy = Interactable(102, false, 220, 165, 2 * 32, 4 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
+			interactbles.push_front(buy);
+			Interactable sell = Interactable(103, false, 220, 165, 1 * 32, 4 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
+			interactbles.push_front(sell);
+
 
 
 		return  interactbles;
