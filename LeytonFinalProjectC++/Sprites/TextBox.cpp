@@ -16,6 +16,7 @@ public:
 	// The font to display with
 	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
+
 	// Constructor for text box
 	TextBox(std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue) : Sprite (SpriteType::SpriteTypes::Button, 10, 360, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png"){
 		originalSizeX = 256;
@@ -63,6 +64,85 @@ public:
 				}
 				else {
 					if (currentString < stringCount-1) {
+						currentString++;
+					}
+					else {
+						done = true;
+						finishedStrings = true;
+						break;
+					}
+				}
+			}
+
+			if (done)
+				break;
+
+			if (redraw && al_is_event_queue_empty(queue))
+			{
+				int cString = 0;
+				for (const std::string& currentS : textToDisplay)
+				{
+					if (cString == currentString) {
+						drawSprite(currentS);
+						break;
+					}
+					cString++;
+				}
+				al_flip_display();
+			}
+		}
+	}
+
+
+	// Constructor for text box with the specified x and y pos
+	TextBox(int _xPosition, int _yPosition, std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue) : Sprite(SpriteType::SpriteTypes::Button, 10, 360, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png") {
+		originalSizeX = 256;
+		originalSizeY = 96;
+		xPosition = _xPosition;
+		yPosition = _yPosition;
+
+		// GUI info
+		bool done = false;
+		bool redraw = true;
+		ALLEGRO_EVENT event;
+
+		bool finishedStrings = false;
+
+		int stringCount = 0;
+		int currentString = 0;
+
+
+		for (const std::string& currentS : textToDisplay)
+		{
+			stringCount++;
+		}
+
+		int counter = 0;
+
+		while (!finishedStrings) {
+
+			al_wait_for_event(queue, &event);
+
+			switch (event.type)
+			{
+
+			case ALLEGRO_EVENT_TIMER:
+				redraw = true;
+				break;
+
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				finishedStrings = true;
+				break;
+
+
+			case ALLEGRO_EVENT_KEY_UP:
+				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
+				if (counter == 0) {
+					counter++;
+				}
+				else {
+					if (currentString < stringCount - 1) {
 						currentString++;
 					}
 					else {
