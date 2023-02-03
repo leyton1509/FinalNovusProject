@@ -42,7 +42,7 @@ public:
 				done = true;
 				finishedStrings = true;
 				break;
-			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+			case ALLEGRO_EVENT_MOUSE_BUTTON_UP || ALLEGRO_EVENT_KEY_UP:
 				break;
 			}
 
