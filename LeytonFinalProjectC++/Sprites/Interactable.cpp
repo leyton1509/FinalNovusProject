@@ -236,7 +236,7 @@ public:
 			std::list<string> strings = {};
 			strings.push_back("Welcome to the poke centre, I'm Nurse Joy!");
 			strings.push_back("I've healed your pokemon, be safe!");
-			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 6, queue);
+			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 			healAllPokemon(player);
 		}
 		else if (idOfInteractable == 101) {
