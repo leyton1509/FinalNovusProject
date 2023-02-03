@@ -100,11 +100,14 @@ class PlayerCharacter : public Sprite{
 	// Returns -1 if none are alive
 	int getFirstAlivePokemon() {
 
-		for (int i = 0; i < numberOfPokemonInParty; i++)
+		for (int i = 0; i < 6; i++)
 		{
-			if (trainersParty[i].currentHealth > 0) {
-				return i;
+			if (strcmp(trainersParty[i].pokemonName.c_str(), "") != 0) {
+				if (trainersParty[i].currentHealth > 0) {
+					return i;
+				}
 			}
+
 		}
 		return -1;
 	}
