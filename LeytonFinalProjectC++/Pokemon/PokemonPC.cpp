@@ -189,6 +189,7 @@ public:
 				al_clear_to_color(al_map_rgb(0, 0, 0));
 				al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
 				displaySprites(player.box, player.trainersParty);
+				exitButton.drawSprite();
 				al_flip_display();
 			}
 
