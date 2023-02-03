@@ -172,14 +172,12 @@ public:
 	}
 	
 
-	void gainExperience(int _experiencedGained) {
+	void gainExperience(int _experiencedGained, Pokemon p) {
 		experience = experience + _experiencedGained;
 		cout << "\n\nGained:" << _experiencedGained  << "Experience Total:" << experience << " nextExperienceNeeded : " << nextExperienceNeeded << "\n\n";
 		while(experience > nextExperienceNeeded){
 			level += 1;
-			if (level >= evolutionLevel) {
-				PokemonManager pm = pm.instance();
-				Pokemon p = pm.getDefaultPokemon(evolutionName);
+			if (level >= evolutionLevel && strcmp(evolutionName.c_str(), "No") !=0) {
 				// 	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string _evolutionName)  {
 				pokemonName = p.pokemonName;
 				healthBase = p.healthBase;
