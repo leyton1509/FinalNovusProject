@@ -342,15 +342,24 @@ public:
 			 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
 				 if (pokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					 std::list<string> strings = {};
+					 strings.push_back("You have chosen " + pokemon1.pokemonName + "!");
+					 TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 					 done = true;
 					 player.addPokemon(pokemon1);
 					 chosenPokemon = true;
 				 }
 				 else if (pokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					 std::list<string> strings = {};
+					 strings.push_back("You have chosen " + pokemon2.pokemonName + "!");
+					 TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 					 done = true;
 					 player.addPokemon(pokemon2);
 					 chosenPokemon = true;
 				 } else if (pokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					 std::list<string> strings = {};
+					 strings.push_back("You have chosen " + pokemon3.pokemonName + "!");
+					 TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 					 done = true;
 					 player.addPokemon(pokemon3);
 					 chosenPokemon = true;
