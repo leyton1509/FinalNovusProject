@@ -51,6 +51,7 @@ public:
 		al_destroy_font(font);
 		al_destroy_font(fontSmaller);
 		al_destroy_bitmap(whiteHealthBar);
+		al_destroy_bitmap(redHealthBar);
 	}
 
 };
