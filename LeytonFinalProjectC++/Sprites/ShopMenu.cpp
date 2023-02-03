@@ -31,9 +31,9 @@ public:
 
 		Button exitButton = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 
-		bool finishedInPC = false;
+		bool finishedInShop = false;
 
-		while (!finishedInPC) {
+		while (!finishedInShop) {
 
 			al_wait_for_event(queue, &event);
 
@@ -51,9 +51,13 @@ public:
 
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
 				done = true;
-				finishedInPC = true;
+				finishedInShop = true;
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+				if (exitButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					done = true;
+					finishedInShop = true;
+				}
 				break;
 			}
 
