@@ -13,10 +13,10 @@ public:
 	// Original Y Size of image
 	int originalSizeY;
 	// The font to display with
-	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 28, NULL);
+	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
 	// Constructor for text box
-	TextBox(std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue) : Sprite (SpriteType::SpriteTypes::Button, 10, 450, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png"){
+	TextBox(std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue) : Sprite (SpriteType::SpriteTypes::Button, 10, 300, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png"){
 		originalSizeX = 256;
 		originalSizeY = 96;
 
