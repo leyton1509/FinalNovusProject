@@ -61,7 +61,7 @@ class PlayerCharacter : public Sprite{
 		currentFrame = 0;
 		framerate = 60;
 		moveThisTurn = 1;
-		playersMoney = 10000;
+		playersMoney = 0;
 	}
 
 	// Method to add the money to the player
