@@ -28,6 +28,7 @@ public:
 		bool finishedStrings = false;
 
 		int stringCount = 0;
+		int currentString = 0;
 
 
 		for (const std::string& currentS : textToDisplay)
