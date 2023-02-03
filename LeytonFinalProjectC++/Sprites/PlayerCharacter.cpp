@@ -70,13 +70,13 @@ class PlayerCharacter : public Sprite{
 	}
 
 	// Method to take away money
-	void addMoney(int subtract) {
+	void subtractMoney(int subtract) {
 		playersMoney = playersMoney - subtract;
 	}
 
 	// Buys the item by adding it to the players inv
 	void buyItem(int itemId, int costOfItem) {
-		if (costOfItem >= playersMoney) {
+		if (costOfItem <= playersMoney) {
 			itemManager.setAmountOfItem(itemId, (itemManager.getAmountOfItem(itemId)+1));
 			playersMoney = playersMoney - costOfItem;
 		}
