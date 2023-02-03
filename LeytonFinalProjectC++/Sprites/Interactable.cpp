@@ -263,8 +263,15 @@ public:
 			healAllPokemon(player);
 		}
 		else if (idOfInteractable == 101) {
-	
 			PokemonPC pc = PokemonPC(player, screenWidth, screenHeight, queue);
+		}
+		// Buy in poke center
+		else if (idOfInteractable == 102) {
+
+		}
+		// Sell in poke center
+		else if (idOfInteractable == 103) {
+
 		}
 
 
