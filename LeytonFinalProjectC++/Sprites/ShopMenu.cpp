@@ -3,7 +3,7 @@ class ShopMenu {
 
 public:
 
-	ShopMenu() {
+	ShopMenu(bool buy) {
 
 	}
 };
