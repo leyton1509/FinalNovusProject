@@ -120,6 +120,8 @@ public:
 				if (exitButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					done = true;
 					finishedInPC = true;
+				}else if (binButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					binButtonClicked = 1;
 				}
 
 				for (int i = 0; i < 30; i++)
