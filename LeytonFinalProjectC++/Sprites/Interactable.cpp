@@ -4,6 +4,7 @@
 #include "../Sprites/ChoosePokemonButton.h"
 #include "../Pokemon/PokemonManager.h"
 #include "../Pokemon/PokemonPC.h"
+#include "../Sprites/TextBox.h"
 
 class Interactable : public Sprite {
 
