@@ -15,13 +15,18 @@ public:
 		int startYPosition = 10;
 		int counter = 0;
 
-		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80, 80);
-		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
-		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
+		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 10, 90, 80, 80);
+		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 10, 180, 80, 80);
+		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 10, 270, 80, 80);
+		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 360, 80, 80);
+		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 450, 80, 80);
+		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 540, 80, 80);
 
+
+		
+		pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
+		pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
+		pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
 		
 
 
