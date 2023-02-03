@@ -13,28 +13,40 @@ public:
 	// Whether or not the button should be on screen or not
 	bool isDisplayed = true;
 
+	bool hasText;
+	std::string text ;
+
 	// Constructor with the size and position parameters
 	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char * _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
+		hasText = false;
+		text = "";
 	}
 
 	// Constructor with the size and position parameters
-	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, std::string text) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
+	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, std::string _text) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
+		hasText = true;
+		text = _text;
 	}
 
 	// Empty constructor
 	Button() : Sprite(SpriteType::SpriteTypes::Button, 0,0,0,0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
 		originalSizeX = 0;
 		originalSizeY = 0;
+		hasText = false;
+		text = "";
 	}
 
 	// Draws the sprite at the correct position if it is displayed
 	void drawSprite() {
 		if (isDisplayed) {
 			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+			if () {
+
+			}
 		}
 	}
 
