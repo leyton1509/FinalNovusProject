@@ -19,6 +19,11 @@ public:
 	TextBox(std::list<std::string> textToDisplay, int _width, int _height) : Sprite (SpriteType::SpriteTypes::Button, 10, 450, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png"){
 		originalSizeX = 256;
 		originalSizeY = 96;
+
+		// GUI info
+		bool done = false;
+		bool redraw = true;
+		ALLEGRO_EVENT event;
 	}
 
 	// Draws the sprite with the string
