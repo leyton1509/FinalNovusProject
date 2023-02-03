@@ -115,6 +115,11 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
+				if (exitButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					done = true;
+					finishedInPC = true;
+				}
+
 				for (int i = 0; i < 30; i++)
 				{
 					bool hasBeenClicked = boxButtons[i].hasBeenClicked(xMousePosition, yMousePosition);
