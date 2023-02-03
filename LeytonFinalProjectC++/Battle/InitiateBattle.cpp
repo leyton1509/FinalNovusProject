@@ -379,7 +379,8 @@ public:
 							
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
 								int expGained = opponent.trainersTeam[currentPokemonOpponent].experienceUponKill();
-								player.trainersParty[currentPokemon].gainExperience(expGained);
+								PokemonManager pm = pm.instance();
+								player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].pokemonName));
 
 								if (!opponent.isAllPokemonInPartyDead()) {
 									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
@@ -824,7 +825,8 @@ public:
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
-								player.trainersParty[currentPokemon].gainExperience(expGained);
+								PokemonManager pm = pm.instance();
+								player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].pokemonName));
 								battleFinished = true;
 							}
 
