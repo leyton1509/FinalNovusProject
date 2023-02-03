@@ -1,0 +1,9 @@
+class ShopMenu {
+
+
+public:
+
+	ShopMenu() {
+
+	}
+};
