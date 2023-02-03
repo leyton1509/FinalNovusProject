@@ -27,6 +27,16 @@ public:
 
 		bool finishedStrings = false;
 
+		int stringCount = 0;
+
+
+		for (const std::string& currentS : textToDisplay)
+		{
+			stringCount++;
+		}
+
+		
+
 		while (!finishedStrings) {
 
 			al_wait_for_event(queue, &event);
