@@ -74,6 +74,14 @@ class PlayerCharacter : public Sprite{
 			}
 		}
 
+		if (nextSpace != -1) {
+			trainersParty[numberOfPokemonInParty] = pokemonToAdd;
+			numberOfPokemonInParty++;
+		}
+		else {
+
+		}
+
 		if (numberOfPokemonInParty < 6) {
 			trainersParty[numberOfPokemonInParty] = pokemonToAdd;
 			numberOfPokemonInParty++;
