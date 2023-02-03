@@ -64,6 +64,11 @@ class PlayerCharacter : public Sprite{
 		playersMoney = 10000;
 	}
 
+	// Method to add the money to the player
+	void addMoney(int add) {
+		playersMoney = playersMoney + add;
+	}
+
 	void recalcNumberOfPokemon() {
 		int nParty = 0;
 		int nBox = 0;
