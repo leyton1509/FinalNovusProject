@@ -76,6 +76,7 @@ class PlayerCharacter : public Sprite{
 
 	void buyItem(int itemId, int costOfItem) {
 		if (costOfItem >= playersMoney) {
+			itemManager.setAmountOfItem(itemId, (itemManager.getAmountOfItem(itemId)+1));
 			playersMoney = playersMoney - costOfItem;
 		}
 	}
