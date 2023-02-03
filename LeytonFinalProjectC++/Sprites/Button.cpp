@@ -1,4 +1,5 @@
 #include "../Sprites/Spriteheader.h"
+#include <allegro5/allegro_font.h>
 
 // Default button class that extends sprite
 // Has extra functionality for is clicked and a check for its displayed
@@ -12,6 +13,8 @@ public:
 	int originalSizeY;
 	// Whether or not the button should be on screen or not
 	bool isDisplayed = true;
+
+	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
 	bool hasText;
 	std::string text ;
@@ -44,8 +47,8 @@ public:
 	void drawSprite() {
 		if (isDisplayed) {
 			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
-			if () {
-
+			if (hasText) {
+				al_draw_text(fontSmaller, al_map_rgb(220, 20, 60), xPosition + 5, yPosition + 5, 0, text.c_str());
 			}
 		}
 	}
