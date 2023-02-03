@@ -77,6 +77,8 @@ class PlayerCharacter : public Sprite{
 			}
 		}
 
+		numberOfPokemonInParty = nParty;
+		numberOfPokemonInParty = nBox;
 	}
 
 
