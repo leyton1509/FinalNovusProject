@@ -1,9 +1,11 @@
+#include "../Sprites/PlayerCharacter.h"
+
 class ShopMenu {
 
 
 public:
 
-	ShopMenu(bool buy) {
+	ShopMenu(bool buy, PlayerCharacter & player) {
 
 	}
 };
