@@ -196,6 +196,7 @@ public:
 				al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
 				displaySprites(player.box, player.trainersParty);
 				exitButton.drawSprite();
+				binButton.drawSprite();
 				al_flip_display();
 			}
 
