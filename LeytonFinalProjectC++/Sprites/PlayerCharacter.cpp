@@ -69,6 +69,16 @@ class PlayerCharacter : public Sprite{
 		playersMoney = playersMoney + add;
 	}
 
+	// Method to take away money
+	void addMoney(int subtract) {
+		playersMoney = playersMoney - subtract;
+	}
+
+	void buyItem() {
+
+	}
+
+
 	void recalcNumberOfPokemon() {
 		int nParty = 0;
 		int nBox = 0;
