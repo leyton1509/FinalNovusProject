@@ -24,6 +24,30 @@ public:
 		bool done = false;
 		bool redraw = true;
 		ALLEGRO_EVENT event;
+
+		bool finishedStrings = false;
+
+		while (!finishedStrings) {
+
+			al_wait_for_event(queue, &event);
+
+			switch (event.type)
+			{
+			case ALLEGRO_EVENT_MOUSE_AXES:
+
+				break;
+			case ALLEGRO_EVENT_TIMER:
+				redraw = true;
+				break;
+
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				done = true;
+				finishedStrings = true;
+				break;
+			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+				break;
+			}
+
 	}
 
 	// Draws the sprite with the string
