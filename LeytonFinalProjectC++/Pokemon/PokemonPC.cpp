@@ -124,13 +124,14 @@ currentPokemon[i].drawSprite(playersParty[i]);
 					if(highlightedPokemonPC != -1){
 						player.box[highlightedPokemonPC] = Pokemon();
 						highlightedPokemonPC = -1;
+						player.recalcNumberOfPokemon();
 					}else if (highlightedPokemonParty != -1) {
 						player.recalcNumberOfPokemon();
 						if (player.numberOfPokemonInParty > 1) {
 							player.trainersParty[highlightedPokemonParty] = Pokemon();
 							highlightedPokemonParty = -1;
 						}
-						
+						player.recalcNumberOfPokemon();
 					}
 				}
 
