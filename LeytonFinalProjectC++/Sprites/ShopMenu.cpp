@@ -89,6 +89,17 @@ public:
 					player.buyItem(pokeballButtonThree.pokeball.inividualItemID, buyButtonThree.buttonValue);
 				}
 
+				else if (buyButtonFour.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.buyItem(potionButtonOne.potion.inividualItemID, buyButtonFour.buttonValue);
+				}
+				else if (buyButtonFive.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.buyItem(potionButtonTwo.potion.inividualItemID, buyButtonFive.buttonValue);
+				}
+				else if (buyButtonSix.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.buyItem(potionButtonThree.potion.inividualItemID, buyButtonSix.buttonValue);
+				}
+
+
 				break;
 			}
 
