@@ -33,9 +33,7 @@ public:
 
 			switch (event.type)
 			{
-			case ALLEGRO_EVENT_MOUSE_AXES:
-
-				break;
+			
 			case ALLEGRO_EVENT_TIMER:
 				redraw = true;
 				break;
