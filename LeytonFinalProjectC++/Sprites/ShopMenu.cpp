@@ -100,6 +100,27 @@ public:
 				}
 
 
+				else if (sellButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.sellItem(pokeballButtonOne.pokeball.inividualItemID, sellButtonOne.buttonValue);
+				}
+				else if (sellButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.sellItem(pokeballButtonTwo.pokeball.inividualItemID, sellButtonTwo.buttonValue);
+				}
+				else if (sellButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.sellItem(pokeballButtonThree.pokeball.inividualItemID, sellButtonThree.buttonValue);
+				}
+
+				else if (sellButtonFour.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.sellItem(potionButtonOne.potion.inividualItemID, sellButtonFour.buttonValue);
+				}
+				else if (sellButtonFive.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.sellItem(potionButtonTwo.potion.inividualItemID, sellButtonFive.buttonValue);
+				}
+				else if (sellButtonSix.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.sellItem(potionButtonThree.potion.inividualItemID, sellButtonSix.buttonValue);
+				}
+
+
 				break;
 			}
 
