@@ -64,6 +64,15 @@ public:
 					break;
 				}
 			}
+
+			if (done)
+				break;
+
+			if (redraw && al_is_event_queue_empty(queue))
+			{
+				
+				al_flip_display();
+			}
 		}
 	}
 
