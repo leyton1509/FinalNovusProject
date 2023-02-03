@@ -5,6 +5,7 @@
 #include "../Pokemon/PokemonManager.h"
 #include "../Pokemon/PokemonPC.h"
 #include "../Sprites/TextBox.h"
+#include "../Sprites/ShopMenu.h"
 
 class Interactable : public Sprite {
 
@@ -265,13 +266,13 @@ public:
 		else if (idOfInteractable == 101) {
 			PokemonPC pc = PokemonPC(player, screenWidth, screenHeight, queue);
 		}
-		// Buy in poke center
+		// Buy in poke mart
 		else if (idOfInteractable == 102) {
-
+			ShopMenu sm = ShopMenu();
 		}
-		// Sell in poke center
+		// Sell in poke mart
 		else if (idOfInteractable == 103) {
-
+			ShopMenu sm = ShopMenu();
 		}
 
 
