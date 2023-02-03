@@ -91,7 +91,6 @@ public:
 
 		int swapPokemonPC = -1;
 		int swapPokemonParty = -1;
-		int binButtonClicked = -1;
 
 		bool finishedInPC = false;
 
@@ -121,7 +120,7 @@ public:
 					done = true;
 					finishedInPC = true;
 				}else if (binButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					binButtonClicked = 1;
+					
 				}
 
 				for (int i = 0; i < 30; i++)
