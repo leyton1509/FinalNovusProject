@@ -74,8 +74,10 @@ class PlayerCharacter : public Sprite{
 		playersMoney = playersMoney - subtract;
 	}
 
-	void buyItem() {
-
+	void buyItem(int itemId, int costOfItem) {
+		if (costOfItem >= playersMoney) {
+			playersMoney = playersMoney - costOfItem;
+		}
 	}
 
 
