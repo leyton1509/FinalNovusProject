@@ -66,19 +66,21 @@ class PlayerCharacter : public Sprite{
 
 		for (int i = 0; i < 6; i++)
 		{
-			if (strcmp(trainersParty[i].pokemonName.c_str(), "") == 0) {
+			if (strcmp(trainersParty[i].pokemonName.c_str(), "") != 0) {
 				nParty++;
 			}
 		}
 		for (int i = 0; i < 30; i++)
 		{
-			if (strcmp(box[i].pokemonName.c_str(), "") == 0) {
+			if (strcmp(box[i].pokemonName.c_str(), "") != 0) {
 				nBox++;
 			}
 		}
 
+		cout << "N in Party " << nParty<< " \n";
+
 		numberOfPokemonInParty = nParty;
-		numberOfPokemonInParty = nBox;
+		numberOfPokemonInBox = nBox;
 	}
 
 
