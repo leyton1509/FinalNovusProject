@@ -116,7 +116,7 @@ class PlayerCharacter : public Sprite{
 	// returns true if all dead
 	bool isAllPokemonInPartyDead() {
 		
-		for (int i = 0; i < numberOfPokemonInParty; i++)
+		for (int i = 0; i < 6; i++)
 		{
 			if (strcmp(trainersParty[i].pokemonName.c_str(), "")!=0) {
 				if (trainersParty[i].currentHealth > 0) {
