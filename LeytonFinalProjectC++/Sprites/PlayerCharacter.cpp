@@ -75,7 +75,7 @@ class PlayerCharacter : public Sprite{
 		}
 
 		if (nextSpace != -1) {
-			trainersParty[numberOfPokemonInParty] = pokemonToAdd;
+			trainersParty[nextSpace] = pokemonToAdd;
 			numberOfPokemonInParty++;
 		}
 		else {
@@ -89,7 +89,7 @@ class PlayerCharacter : public Sprite{
 			}
 
 			if (nextSpaceInBox != -1) {
-				box[numberOfPokemonInBox] = pokemonToAdd;
+				box[nextSpaceInBox] = pokemonToAdd;
 				numberOfPokemonInBox++;
 			}
 		}
