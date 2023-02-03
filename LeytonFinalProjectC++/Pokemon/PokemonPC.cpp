@@ -20,22 +20,22 @@ public:
 
 		for (int i = 0; i < 6; i++)
 		{
-			currentPokemon[i].drawSprite(playersParty[i]);
+currentPokemon[i].drawSprite(playersParty[i]);
 		}
 
-		
+
 	}
 
 	void destroySprites() {
 
 
 		for (int i = 0; i < 30; i++)
-		{			
+		{
 			boxButtons[i].destroySprite();
 		}
 	}
 
-	PokemonPC(PlayerCharacter & player, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
+	PokemonPC(PlayerCharacter& player, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
 		int startXPositon = 10;
 		int startYPosition = 10;
@@ -71,7 +71,7 @@ public:
 		}
 
 
-		Button exitButton = Button(128, 128, 10, 480, 80,80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
+		Button exitButton = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 		Button binButton = Button(128, 128, 100, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Bin.png");
 		double xMousePosition = 0;
 		double yMousePosition = 0;
@@ -119,8 +119,12 @@ public:
 				if (exitButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					done = true;
 					finishedInPC = true;
-				}else if (binButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					
+				}
+				else if (binButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					if(highlightedPokemonPC != -1){
+						player.box[highlightedPokemonPC] = Pokemon();
+						highlightedPokemonPC = -1;
+					}
 				}
 
 				for (int i = 0; i < 30; i++)
