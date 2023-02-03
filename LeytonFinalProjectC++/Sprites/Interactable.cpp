@@ -268,11 +268,11 @@ public:
 		}
 		// Buy in poke mart
 		else if (idOfInteractable == 102) {
-			ShopMenu sm = ShopMenu();
+			ShopMenu sm = ShopMenu(1);
 		}
 		// Sell in poke mart
 		else if (idOfInteractable == 103) {
-			ShopMenu sm = ShopMenu();
+			ShopMenu sm = ShopMenu(0);
 		}
 
 
