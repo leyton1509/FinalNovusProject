@@ -38,6 +38,8 @@ public:
 
 		Button exitButton = Button(128, 128, 280, 460, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 
+		Button playersMoney = Button(128, 128, screenWidth - 90, 10, 80, 30, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png");
+
 		Button buyButtonOne = Button(128, 128, 100, 10, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Buy.png", 200);
 		Button buyButtonTwo = Button(128, 128, 100, 100, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Buy.png", 400);
 		Button buyButtonThree = Button(128, 128, 100, 190, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Buy.png", 800);
@@ -153,6 +155,8 @@ public:
 				sellButtonFour.drawSprite();
 				sellButtonFive.drawSprite();
 				sellButtonSix.drawSprite();
+
+				playersMoney.drawSprite(player.playersMoney);
 
 				al_flip_display();
 			}
