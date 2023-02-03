@@ -123,12 +123,14 @@ currentPokemon[i].drawSprite(playersParty[i]);
 				else if (binButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					if(highlightedPokemonPC != -1){
 						player.box[highlightedPokemonPC] = Pokemon();
+						boxButtons[highlightedPokemonPC].isHighlighted = false;
 						highlightedPokemonPC = -1;
 						player.recalcNumberOfPokemon();
 					}else if (highlightedPokemonParty != -1) {
 						player.recalcNumberOfPokemon();
 						if (player.numberOfPokemonInParty > 1) {
 							player.trainersParty[highlightedPokemonParty] = Pokemon();
+							currentPokemon[highlightedPokemonParty].isHighlighted = true;
 							highlightedPokemonParty = -1;
 						}
 						player.recalcNumberOfPokemon();
