@@ -401,7 +401,7 @@ int main()
             if (framecounter == 3) {
 
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
-                if (tilePlayerIsStandingOn == 5 || tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7) {
+                if (tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7 || tilePlayerIsStandingOn == 8) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
                         if (encounterRan == -2) {
