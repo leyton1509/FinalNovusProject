@@ -177,6 +177,10 @@ public:
 		cout << "\n\nGained:" << _experiencedGained  << "Experience Total:" << experience << " nextExperienceNeeded : " << nextExperienceNeeded << "\n\n";
 		while(experience > nextExperienceNeeded){
 			level += 1;
+			if (level >= evolutionLevel) {
+				PokemonManager pm = pm.instance();
+				Pokemon p = pm.getDefaultPokemon(evolutionName);
+			}
 			calculateNextLevelExperienceNeeded();
 		}
 		calculateActualStatistics();
