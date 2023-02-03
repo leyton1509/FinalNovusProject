@@ -54,24 +54,7 @@ public:
 				done = true;
 				finishedStrings = true;
 				break;
-			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
-
-				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
-				if (counter == 0) {
-					counter++;
-				}
-				else {
-					if (currentString < stringCount) {
-						currentString++;
-					}
-					else {
-						done = true;
-						finishedStrings = true;
-						break;
-					}
-				}
 				
-
 			case ALLEGRO_EVENT_KEY_UP:	
 				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
 				if(counter == 0) {
