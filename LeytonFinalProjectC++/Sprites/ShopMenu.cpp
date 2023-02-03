@@ -25,11 +25,11 @@ public:
 		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 10, 90, 80, 80);
 		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 10, 180, 80, 80);
 		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 10, 270, 80, 80);
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 360, 80, 80);
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 450, 80, 80);
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 540, 80, 80);
+		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 10, 360, 80, 80);
+		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 10, 450, 80, 80);
+		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 100, 90, 80, 80);
 
-		Button exitButton = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
+		Button exitButton = Button(128, 128, 10, 540, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 
 		bool finishedInShop = false;
 
