@@ -228,6 +228,9 @@ public:
 			player.itemManager.setAmountOfItem(3, amount);
 			isDisplayed = false;
 			alreadyInteractedWith = true;
+			std::list<string> strings = {};
+			strings.push_back("You found an ultraball!");
+			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 
