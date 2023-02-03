@@ -307,7 +307,7 @@ public:
 		 pokemon1.setPokemonsLevel(5);
 		 Pokemon pokemon2 = pm.getDefaultPokemon("Turtwig");
 		 pokemon2.setPokemonsLevel(5);
-		 Pokemon pokemon3 = pm.getDefaultPokemon("Charmander");
+		 Pokemon pokemon3 = pm.getDefaultPokemon("Torchic");
 		 pokemon3.setPokemonsLevel(5);
 
 
