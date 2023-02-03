@@ -35,7 +35,7 @@ public:
 			Interactable sell = Interactable(103, false, 220, 165, 1 * 32, 4 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
 			interactbles.push_front(sell);
 
-
+		}
 
 		return  interactbles;
 
