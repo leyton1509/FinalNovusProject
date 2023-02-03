@@ -169,6 +169,7 @@ public:
 					player.box[highlightedPokemonPC] = tempPokemon;
 					highlightedPokemonParty = -1;
 					highlightedPokemonPC = -1;
+					player.recalcNumberOfPokemon();
 
 				}
 
