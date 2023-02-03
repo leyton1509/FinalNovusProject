@@ -114,6 +114,9 @@
     <ClCompile Include="Sprites\SwitchPokemonPCButton.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sprites\TextBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -215,6 +218,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Sprites\SwitchPokemonPCButton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites\TextBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
