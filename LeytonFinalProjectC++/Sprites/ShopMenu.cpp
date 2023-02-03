@@ -85,6 +85,10 @@ public:
 				else if (buyButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
 					player.buyItem(pokeballButtonTwo.pokeball.inividualItemID, buyButtonTwo.buttonValue);
 				}
+				else if (buyButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+					player.buyItem(pokeballButtonThree.pokeball.inividualItemID, buyButtonThree.buttonValue);
+				}
+
 				break;
 			}
 
