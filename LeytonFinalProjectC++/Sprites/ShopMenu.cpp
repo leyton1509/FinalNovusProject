@@ -45,6 +45,13 @@ public:
 		Button buyButtonTwo = Button(128, 128, 100, 370, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 450);
 		Button buyButtonThree = Button(128, 128, 100, 460, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 850);
 
+		Button sellButtonOne = Button(128, 128, 190, 10, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 200);
+		Button sellButtonTwo = Button(128, 128, 190, 100, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 400);
+		Button sellButtonThree = Button(128, 128, 190, 190, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 800);
+		Button sellButtonOne = Button(128, 128, 190, 280, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 250);
+		Button sellButtonTwo = Button(128, 128, 190, 370, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 450);
+		Button sellButtonThree = Button(128, 128, 190, 460, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png", 850);
+
 		bool finishedInShop = false;
 
 		while (!finishedInShop) {
