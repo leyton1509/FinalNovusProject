@@ -1,4 +1,6 @@
 #include "../Sprites/PlayerCharacter.h"
+#include "../Sprites/ItemPokeBallButton.h"
+#include "../Sprites/ItemPotionButton.h"
 
 // Menu for handling buying / selling items
 class ShopMenu {
@@ -13,15 +15,14 @@ public:
 		int startYPosition = 10;
 		int counter = 0;
 
-		// Gets the number of items
-		int nOfItems = player.itemManager.getNumberOfItems();
-		// Work out how many columns to displau
-		int nOfColumns = (nOfItems / 8) + 1;
+		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80, 80);
+		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
+		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
+		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
+		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
+		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
 
-		for (int i = 0; i < nOfColumns; i++)
-		{
-
-		}
+		
 
 
 	}
