@@ -54,6 +54,13 @@ public:
 				finishedStrings = true;
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP || ALLEGRO_EVENT_KEY_UP:
+
+				if (currentString < stringCount) {
+					currentString++;
+				}
+				else{
+					done = true;
+					finishedStrings = true;
 				break;
 			}
 
