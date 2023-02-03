@@ -1,6 +1,8 @@
 #include "../Sprites/PlayerCharacter.h"
 
 #include "../Sprites/SwitchPokemonPCButton.h"
+#include "../Sprites/Button.h"
+
 
 class PokemonPC {
 
@@ -68,6 +70,8 @@ public:
 
 		}
 
+
+		Button exitButton = Button(128, 128, 100, 600, 80,80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 		double xMousePosition = 0;
 		double yMousePosition = 0;
 
