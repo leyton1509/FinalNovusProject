@@ -77,7 +77,6 @@ class PlayerCharacter : public Sprite{
 			}
 		}
 
-		cout << "N in Party " << nParty<< " \n";
 
 		numberOfPokemonInParty = nParty;
 		numberOfPokemonInBox = nBox;
