@@ -303,11 +303,11 @@ public:
 
 		 PokemonManager pm = pm.instance();
 
-		 Pokemon pokemon1 = pm.getDefaultPokemon("Gible");
+		 Pokemon pokemon1 = pm.getDefaultPokemon("Totodile");
 		 pokemon1.setPokemonsLevel(5);
-		 Pokemon pokemon2 = pm.getDefaultPokemon("Dratini");
+		 Pokemon pokemon2 = pm.getDefaultPokemon("Turtwig");
 		 pokemon2.setPokemonsLevel(5);
-		 Pokemon pokemon3 = pm.getDefaultPokemon("Bagon");
+		 Pokemon pokemon3 = pm.getDefaultPokemon("Charmander");
 		 pokemon3.setPokemonsLevel(5);
 
 
