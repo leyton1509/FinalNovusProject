@@ -61,6 +61,15 @@ class PlayerCharacter : public Sprite{
 	}
 
 	void recalcNumberOfPokemon() {
+		int nParty = 0;
+		int nBox = 0;
+
+		for (int i = 0; i < 6; i++)
+		{
+			if (strcmp(trainersParty[i].pokemonName.c_str(), "") == 0) {
+				nParty++;
+			}
+		}
 
 	}
 
