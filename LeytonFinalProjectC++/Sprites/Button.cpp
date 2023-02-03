@@ -17,22 +17,22 @@ public:
 	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
 	bool hasText;
-	std::string text ;
+	float buttonValue;
 
 	// Constructor with the size and position parameters
 	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char * _filepath) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 		hasText = false;
-		text = "";
+		buttonValue = 0;
 	}
 
 	// Constructor with the size and position parameters
-	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, std::string _text) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
+	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, float _value) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 		hasText = true;
-		text = _text;
+		buttonValue = _value;
 	}
 
 	// Empty constructor
@@ -40,7 +40,7 @@ public:
 		originalSizeX = 0;
 		originalSizeY = 0;
 		hasText = false;
-		text = "";
+		buttonValue = 0;
 	}
 
 	// Draws the sprite at the correct position if it is displayed
@@ -48,7 +48,7 @@ public:
 		if (isDisplayed) {
 			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 			if (hasText) {
-				al_draw_text(fontSmaller, al_map_rgb(220, 20, 60), xPosition + 5, yPosition + 5, 0, text.c_str());
+				al_draw_text(fontSmaller, al_map_rgb(220, 20, 60), xPosition + 5, yPosition + 5, 0, std::to_string(buttonValue).c_str());
 			}
 		}
 	}
