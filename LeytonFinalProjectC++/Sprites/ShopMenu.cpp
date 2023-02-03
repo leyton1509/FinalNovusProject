@@ -29,6 +29,8 @@ public:
 		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 450, 80, 80);
 		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 540, 80, 80);
 
+		Button exitButton = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
+
 		bool finishedInPC = false;
 
 		while (!finishedInPC) {
