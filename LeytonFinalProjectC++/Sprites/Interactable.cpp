@@ -232,8 +232,11 @@ public:
 
 
 		else if (idOfInteractable == 100) {
+			// std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue
+			std::list<string> strings = {};
+			strings.push_front("Welcome! I have healed your pokemon for you!");
+			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 6, queue);
 			healAllPokemon(player);
-			cout << "Healed\n";
 		}
 		else if (idOfInteractable == 101) {
 	
