@@ -46,6 +46,16 @@ public:
 		
 	}
 
+	// Loops through each pair in the map and adds one to the total
+	int getNumberOfItems() {
+		int nItems = 0;
+		for (std::pair<int, int> item : itemAmounts)
+		{
+			nItems++;
+		}
+		return nItems;
+	}
+
 	
 
 	
