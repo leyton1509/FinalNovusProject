@@ -220,6 +220,9 @@ public:
 			player.itemManager.setAmountOfItem(2, amount);
 			isDisplayed = false;
 			alreadyInteractedWith = true;
+			std::list<string> strings = {};
+			strings.push_back("You found an great ball!");
+			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
 		// Ultra ball
@@ -229,7 +232,7 @@ public:
 			isDisplayed = false;
 			alreadyInteractedWith = true;
 			std::list<string> strings = {};
-			strings.push_back("You found an ultraball!");
+			strings.push_back("You found an ultra ball!");
 			TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 		}
 
