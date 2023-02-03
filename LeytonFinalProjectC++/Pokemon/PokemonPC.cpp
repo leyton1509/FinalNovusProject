@@ -91,6 +91,7 @@ public:
 
 		int swapPokemonPC = -1;
 		int swapPokemonParty = -1;
+		int binButtonClicked = -1;
 
 		bool finishedInPC = false;
 
