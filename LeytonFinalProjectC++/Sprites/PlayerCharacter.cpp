@@ -64,6 +64,16 @@ class PlayerCharacter : public Sprite{
 	// Adds a pokemon to the players party
 	// If the player has 6 pokemon it gets stored in the box
 	void addPokemon(Pokemon pokemonToAdd) {
+
+		int nextSpace = -1;
+		for (int i = 0; i < 6; i++)
+		{
+			if (strcmp(trainersParty[i].pokemonName.c_str(), "") == 0) {
+				nextSpace = i;
+				break;
+			}
+		}
+
 		if (numberOfPokemonInParty < 6) {
 			trainersParty[numberOfPokemonInParty] = pokemonToAdd;
 			numberOfPokemonInParty++;
