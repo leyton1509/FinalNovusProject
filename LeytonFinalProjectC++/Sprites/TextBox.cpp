@@ -19,4 +19,10 @@ public:
 		originalSizeX = 256;
 		originalSizeY = 96;
 	}
+
+	// Destroys all the sprites 
+	void destroySprites() {
+		al_destroy_bitmap(spriteImage);
+		al_destroy_font(font);
+	}
 };
