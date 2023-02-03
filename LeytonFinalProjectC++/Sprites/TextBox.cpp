@@ -2,6 +2,7 @@
 #include <list>
 #include <string>
 #include "../Sprites/Spriteheader.h"
+#include <iostream>
 
 // Class to display text to the user in the over world
 class TextBox : public Sprite {
@@ -53,8 +54,20 @@ public:
 				done = true;
 				finishedStrings = true;
 				break;
-			case ALLEGRO_EVENT_MOUSE_BUTTON_UP || ALLEGRO_EVENT_KEY_UP:
+			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
+				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
+				if (currentString < stringCount) {
+					currentString++;
+				}
+				else {
+					done = true;
+					finishedStrings = true;
+					break;
+				}
+
+			case ALLEGRO_EVENT_KEY_UP:
+				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
 				if (currentString < stringCount) {
 					currentString++;
 				}
