@@ -44,7 +44,7 @@ public:
 
 			switch (event.type)
 			{
-			
+
 			case ALLEGRO_EVENT_TIMER:
 				redraw = true;
 				break;
@@ -58,12 +58,13 @@ public:
 				if (currentString < stringCount) {
 					currentString++;
 				}
-				else{
+				else {
 					done = true;
 					finishedStrings = true;
-				break;
+					break;
+				}
 			}
-
+		}
 	}
 
 	// Draws the sprite with the string
