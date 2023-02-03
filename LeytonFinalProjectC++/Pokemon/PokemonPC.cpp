@@ -71,7 +71,7 @@ public:
 		}
 
 
-		Button exitButton = Button(128, 128, 100, 480, 80,80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
+		Button exitButton = Button(128, 128, 10, 480, 80,80, "../LeytonFinalProjectC++/Sprites/PCSprites/Exit.png");
 		double xMousePosition = 0;
 		double yMousePosition = 0;
 
