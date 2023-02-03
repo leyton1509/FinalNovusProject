@@ -180,6 +180,22 @@ public:
 			if (level >= evolutionLevel) {
 				PokemonManager pm = pm.instance();
 				Pokemon p = pm.getDefaultPokemon(evolutionName);
+				// 	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string _evolutionName)  {
+				pokemonName = p.pokemonName;
+				healthBase = p.healthBase;
+				physcialAttackBase = p.physcialAttackBase;
+				physicalDefenceBase = p.physicalDefenceBase;
+				specialAttackBase = p.specialAttackBase;
+				specialDefenceBase = p.specialDefenceBase;
+				speedBase = p.speedBase;
+				xPositionOnSpriteSheet = p.xPositionOnSpriteSheet;
+				yPositionOnSpriteSheet = p.yPositionOnSpriteSheet;
+				pokemonTypeOne = p.pokemonTypeOne;
+				pokemonTypeTwo = p.pokemonTypeTwo;
+				levelUpMoveSet = p.levelUpMoveSet;
+				evolutionLevel = p.evolutionLevel;
+				evolutionName = p.evolutionName;
+
 			}
 			calculateNextLevelExperienceNeeded();
 		}
