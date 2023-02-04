@@ -62,7 +62,9 @@ public:
 					for (int i = 0; i < numberOfOptions; i++)
 					{
 						if (buttonOptions[i].hasBeenClicked(xMousePosition, yMousePosition)) {
-
+							valueOfResult = i;
+							done = true;
+							selectedVal = true;
 						}
 					}
 					break;
