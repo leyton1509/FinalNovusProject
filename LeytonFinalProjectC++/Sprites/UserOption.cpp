@@ -31,6 +31,28 @@ public:
 
 			while (!selectedVal) {
 
+				al_wait_for_event(queue, &event);
+
+				switch (event.type)
+				{
+				case ALLEGRO_EVENT_MOUSE_AXES:
+					xMousePosition = event.mouse.x;
+					yMousePosition = event.mouse.y;
+					break;
+				case ALLEGRO_EVENT_TIMER:
+
+
+					redraw = true;
+					break;
+
+				case ALLEGRO_EVENT_DISPLAY_CLOSE:
+					done = true;
+					selectedVal = true;
+					break;
+				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+
+				}
+
 			}
 
 		}
