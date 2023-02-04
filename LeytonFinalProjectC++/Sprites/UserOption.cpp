@@ -1,0 +1,8 @@
+class UserOption {
+
+public:
+
+	UserOption() {
+
+	}
+};
