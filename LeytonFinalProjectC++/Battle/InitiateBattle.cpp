@@ -402,8 +402,12 @@ public:
 
 								pair<int, int> moveInfo = experienceInfo.second;
 
-								if (moveInfo.first != -1) {
+								MoveManager mm = mm.instance();
 
+								if (moveInfo.first != -1) {
+									Move move = mm.getMoveDetails(moveInfo.first);
+									int positionToPutMove = 0;
+									player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
 								}
 
 								if (!opponent.isAllPokemonInPartyDead()) {
