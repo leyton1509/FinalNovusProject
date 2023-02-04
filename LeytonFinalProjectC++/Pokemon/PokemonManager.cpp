@@ -90,7 +90,16 @@ private:
 
                             // Removes status moves, remove if to insert them again
                             if (mm.getMoveDetails(moveID).typeOfMove != mc.Status) {
-                                levelUpMoveSet.insert({ moveID, levelOfMove });
+                                // Checks to see if the move is already in the list
+                                bool addMove = true;
+                                for (const pair<int, int>& p : levelUpMoveSet) {
+                                    if (p.first == moveID) {
+                                        addMove = false;
+                                    }
+                                    
+                                }
+                                if (addMove) { levelUpMoveSet.insert({ moveID, levelOfMove }); }
+                                
                             }
                             
                             // Update the current place in file
