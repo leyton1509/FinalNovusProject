@@ -229,15 +229,15 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
-    player.addPokemon(pm.getDefaultPokemon("Charmander"));
+    player.addPokemon(pm.getDefaultPokemon("Charmeleon"));
     player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
     
-    player.trainersParty[0].setPokemonsLevel(10);
+    player.trainersParty[0].setPokemonsLevel(35);
     player.trainersParty[1].setPokemonsLevel(10);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
-    player.setAllPositions(0, 3);
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt", 2);
+    player.setAllPositions(13, 10);
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
     float cameraPosition[2] = { 0,0 };
 
     int framecounter = 1;
@@ -404,7 +404,7 @@ int main()
                 if (tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7 || tilePlayerIsStandingOn == 8) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
-                        if (encounterRan == -2) {
+                        if (encounterRan == 2) {
                             keys[0] = false;
                             keys[1] = false;
                             keys[2] = false;
