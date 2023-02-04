@@ -1,5 +1,6 @@
 #include <allegro5/allegro_font.h>
 #include "../Sprites/Button.h"
+#include <list>
 
 // A class which will allow the user to press an option
 class UserOption {
@@ -13,7 +14,7 @@ public:
 
 	int valueOfResult;
 
-	UserOption(int numberOfOptions, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
+	UserOption(std::list<std::string> onButtonString, int numberOfOptions, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
 		valueOfResult = -1;
 
