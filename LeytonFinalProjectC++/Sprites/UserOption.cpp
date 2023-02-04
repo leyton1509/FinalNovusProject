@@ -11,7 +11,7 @@ public:
 	// The font to write with
 	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
-	UserOption() {
-
+	UserOption(int _numberOfOptions) {
+		
 	}
 };
