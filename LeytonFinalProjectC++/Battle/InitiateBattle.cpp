@@ -884,7 +884,63 @@ public:
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
 								PokemonManager pm = pm.instance();
-								player.trainersParty[currentPokemon].gainExperience(expGained);
+								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained);
+
+								if (experienceInfo.first) {
+									Pokemon p = pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName);
+									player.trainersParty[currentPokemon].pokemonName = p.pokemonName;
+									player.trainersParty[currentPokemon].healthBase = p.healthBase;
+									player.trainersParty[currentPokemon].physcialAttackBase = p.physcialAttackBase;
+									player.trainersParty[currentPokemon].physicalDefenceBase = p.physicalDefenceBase;
+									player.trainersParty[currentPokemon].specialAttackBase = p.specialAttackBase;
+									player.trainersParty[currentPokemon].specialDefenceBase = p.specialDefenceBase;
+									player.trainersParty[currentPokemon].speedBase = p.speedBase;
+									player.trainersParty[currentPokemon].xPositionOnSpriteSheet = p.xPositionOnSpriteSheet;
+									player.trainersParty[currentPokemon].yPositionOnSpriteSheet = p.yPositionOnSpriteSheet;
+									player.trainersParty[currentPokemon].pokemonTypeOne = p.pokemonTypeOne;
+									player.trainersParty[currentPokemon].pokemonTypeTwo = p.pokemonTypeTwo;
+									player.trainersParty[currentPokemon].levelUpMoveSet = p.levelUpMoveSet;
+									player.trainersParty[currentPokemon].evolutionLevel = p.evolutionLevel;
+									player.trainersParty[currentPokemon].evolutionName = p.evolutionName;
+								}
+
+								pair<int, int> moveInfo = experienceInfo.second;
+
+								MoveManager mm = mm.instance();
+
+								if (moveInfo.first != -1) {
+									Move move = mm.getMoveDetails(moveInfo.first);
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
+									std::list<std::string> buttonStrings = {};
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[2].moveName);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[3].moveName);
+									buttonStrings.push_back("Don't learn!");
+									UserOption us = UserOption(headerText, buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
+									int positionToPutMove = us.valueOfResult;
+									cout << "Result of poll: " << positionToPutMove << "\n";
+									if (positionToPutMove != -1 && positionToPutMove < 4) {
+										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
+										if (positionToPutMove == 0) {
+											attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+										}
+
+										else if (positionToPutMove == 1) {
+											attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+										}
+
+										else if (positionToPutMove == 2) {
+											attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+										}
+										else if (positionToPutMove == 3) {
+											attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
+										}
+
+
+									}
+
+								}
 								battleFinished = true;
 							}
 
