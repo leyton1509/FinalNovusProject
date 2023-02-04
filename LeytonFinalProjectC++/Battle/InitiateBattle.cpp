@@ -420,6 +420,10 @@ public:
 									cout << "Result of poll: " << positionToPutMove << "\n";
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
+										attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
+										attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
+										attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
+										attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
 									}
 									
 								}
