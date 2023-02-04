@@ -170,6 +170,7 @@
     <ClCompile Include="Sprites\TextBox.cpp" />
     <ClCompile Include="Sprites\Trainer.cpp" />
     <ClCompile Include="Sprites\TrainerManager.cpp" />
+    <ClCompile Include="Sprites\UserOption.cpp" />
     <ClCompile Include="TitleScreen\TitleScreen.cpp" />
     <ClCompile Include="Sprites\Interactable.cpp" />
     <ClCompile Include="WorldMap\WorldMap.cpp" />
@@ -211,6 +212,7 @@
     <ClInclude Include="Sprites\TextBox.h" />
     <ClInclude Include="Sprites\Trainer.h" />
     <ClInclude Include="Sprites\TrainerManager.h" />
+    <ClInclude Include="Sprites\UserOption.h" />
     <ClInclude Include="TitleScreen\TitleScreenHeader.h" />
     <ClInclude Include="Sprites\Interactable.h" />
     <ClInclude Include="WorldMap\WorldMap.h" />
