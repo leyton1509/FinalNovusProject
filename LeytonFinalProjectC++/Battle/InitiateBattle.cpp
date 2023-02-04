@@ -9,6 +9,8 @@
 #include "../Sprites/ItemPokeBallButton.h"
 #include "../Sprites/ItemPotionButton.h"
 #include "../Sprites/Trainer.h"
+#include "../Sprites/UserOption.h"
+
 
 // Class when a pokemon battke is needed
 class InitiateBattle {
