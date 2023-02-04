@@ -13,6 +13,11 @@ public:
 
 	UserOption(int numberOfOptions, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
+		// GUI info
+		bool done = false;
+		bool redraw = true;
+		ALLEGRO_EVENT event;
+
 		if (numberOfOptions < 6) {
 
 			for (int i = 0; i < numberOfOptions; i++)
