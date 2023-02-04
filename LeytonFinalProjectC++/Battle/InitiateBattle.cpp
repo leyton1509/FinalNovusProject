@@ -385,7 +385,7 @@ public:
 								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained);
 
 								if (experienceInfo.first) {
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into  " + player.trainersParty[currentPokemon].evolutionName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into " + player.trainersParty[currentPokemon].evolutionName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Evolve ");
 									buttonStrings.push_back("Don't Evolve ");
@@ -416,7 +416,7 @@ public:
 
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning    " + move.moveName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
@@ -896,7 +896,7 @@ public:
 
 								if (experienceInfo.first) {
 
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into  " + player.trainersParty[currentPokemon].evolutionName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into " + player.trainersParty[currentPokemon].evolutionName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Evolve ");
 									buttonStrings.push_back("Don't Evolve ");
@@ -928,7 +928,7 @@ public:
 
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning    " + move.moveName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
