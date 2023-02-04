@@ -199,8 +199,6 @@ public:
 				evolutionName = p.evolutionName;
 
 			}
-
-			MoveManager mm = mm.instance();
 		   
 
 			for (const pair<int, int>& p : levelUpMoveSet) {
