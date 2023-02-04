@@ -20,6 +20,9 @@ public:
 
 		if (numberOfOptions < 6) {
 
+			int xStartPos = screenWidth - 120;
+			int yStartPos = screenHeight / 2 - (90 * numberOfOptions);
+
 			// GUI info
 			bool done = false;
 			bool redraw = true;
@@ -31,7 +34,7 @@ public:
 
 			for (int i = 0; i < numberOfOptions; i++)
 			{
-				buttonOptions[i] = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
+				buttonOptions[i] = Button(128, 128, xStartPos, yStartPos + (90 * i), 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
 
 			}
 
