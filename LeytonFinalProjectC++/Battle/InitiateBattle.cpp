@@ -382,6 +382,10 @@ public:
 								PokemonManager pm = pm.instance();
 								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName));
 
+								if (experienceInfo.first) {
+
+								}
+
 								if (!opponent.isAllPokemonInPartyDead()) {
 									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
 								}
