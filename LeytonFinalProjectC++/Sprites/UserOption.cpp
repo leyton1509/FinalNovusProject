@@ -12,6 +12,12 @@ public:
 	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
 	UserOption(int _numberOfOptions, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
+
+		if (_numberOfOptions < 6) {
+
+
+
+		}
 		
 	}
 };
