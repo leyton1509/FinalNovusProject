@@ -20,7 +20,7 @@ public:
 
 		if (numberOfOptions < 6) {
 
-			int xStartPos = screenWidth - buttonWidth * 1.05;
+			int xStartPos = 10;
 			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions);
 
 
