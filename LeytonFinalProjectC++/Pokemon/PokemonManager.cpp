@@ -88,6 +88,7 @@ private:
                             int levelOfMove = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[3]);
                             int moveID = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[1]);
 
+                            // Removes status moves, remove if to insert them again
                             if (mm.getMoveDetails(moveID).typeOfMove != mc.Status) {
                                 levelUpMoveSet.insert({ moveID, levelOfMove });
                             }
