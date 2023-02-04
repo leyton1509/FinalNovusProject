@@ -400,6 +400,12 @@ public:
 									player.trainersParty[currentPokemon].evolutionName = p.evolutionName;
 								}
 
+								pair<int, int> moveInfo = experienceInfo.second;
+
+								if (moveInfo.first != -1) {
+
+								}
+
 								if (!opponent.isAllPokemonInPartyDead()) {
 									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
 								}
