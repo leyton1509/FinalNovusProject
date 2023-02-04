@@ -72,6 +72,8 @@ private:
             // Creates a boolean for if the move is for this pokemon
             bool moveNextIsForThisPokemon = true;
 
+            MoveManager mm = mm.instance();
+
             // Creates a loop for if the moves are for this pokemon
             while (moveNextIsForThisPokemon) {
                 // If its not the last pokemon+1
@@ -85,7 +87,11 @@ private:
                             // Get the level and move and insert it into the map
                             int levelOfMove = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[3]);
                             int moveID = std::stoi(pokemonMoveList.at(currentPlaceInMoveListFile)[1]);
-                            levelUpMoveSet.insert({ moveID, levelOfMove });
+
+                            if (mm.getMoveDetails(moveID).typeOfMove != mc.Status) {
+                                levelUpMoveSet.insert({ moveID, levelOfMove });
+                            }
+                            
                             // Update the current place in file
                             currentPlaceInMoveListFile++;
                         }
