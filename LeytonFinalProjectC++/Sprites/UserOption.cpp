@@ -14,7 +14,7 @@ public:
 
 	int valueOfResult;
 
-	UserOption(std::list<std::string> onButtonString, int numberOfOptions, int buttonWidth, int buttonHeight , int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
+	UserOption(std:: string header , std::list<std::string> onButtonString, int numberOfOptions, int buttonWidth, int buttonHeight , int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
 		valueOfResult = -1;
 
@@ -22,6 +22,9 @@ public:
 
 			int xStartPos = screenWidth - buttonWidth * 1.05;
 			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions);
+
+
+			Button header =  Button(128, 128, xStartPos, yStartPos - 10 - buttonHeight, buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
 
 			// GUI info
 			bool done = false;
