@@ -380,10 +380,10 @@ public:
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
 								int expGained = opponent.trainersTeam[currentPokemonOpponent].experienceUponKill();
 								PokemonManager pm = pm.instance();
-								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName));
+								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained);
 
 								if (experienceInfo.first) {
-									Pokemon p = pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName;
+									Pokemon p = pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName);
 									player.trainersParty[currentPokemon].pokemonName = p.pokemonName;
 									player.trainersParty[currentPokemon].healthBase = p.healthBase;
 									player.trainersParty[currentPokemon].physcialAttackBase = p.physcialAttackBase;
@@ -854,7 +854,7 @@ public:
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
 								PokemonManager pm = pm.instance();
-								player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName));
+								player.trainersParty[currentPokemon].gainExperience(expGained);
 								battleFinished = true;
 							}
 
