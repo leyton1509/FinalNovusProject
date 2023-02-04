@@ -633,7 +633,7 @@ public:
 	}
 
 	// Takes the screen size and the queue for inputs, the current player and the current location
-	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
+	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int routeNumber) {
 
 		bool battleFinished = false;
 
@@ -653,11 +653,11 @@ public:
 		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 
 		// Get the pokemon to fight against
-		// Needs changing to a routing map
 		PokemonManager pm = pm.instance();
 
+		// Gets the route mapping 
 		RouteMapping routeMapping = RouteMapping();
-		Pokemon otherPokemon = routeMapping.getSinglePokemonFromRoute(1);
+		Pokemon otherPokemon = routeMapping.getSinglePokemonFromRoute(routeNumber);
 
 		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
