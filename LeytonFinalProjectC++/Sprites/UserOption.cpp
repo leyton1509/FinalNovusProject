@@ -55,7 +55,13 @@ public:
 					selectedVal = true;
 					break;
 				case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+					for (int i = 0; i < numberOfOptions; i++)
+					{
+						if (buttonOptions[i].hasBeenClicked(xMousePosition, yMousePosition)) {
 
+						}
+					}
+					break;
 				}
 
 			}
