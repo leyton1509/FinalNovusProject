@@ -10,7 +10,7 @@ public:
 	// The buttons for the options. Max of 6 options
 	Button buttonOptions[6];
 	// The font to write with
-	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 20, NULL);
+	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 22, NULL);
 
 	int valueOfResult;
 
@@ -79,7 +79,7 @@ public:
 
 				if (redraw && al_is_event_queue_empty(queue))
 				{
-					al_draw_text(font, al_map_rgb(255, 255, 255), xStartPos, yStartPos - 10 - buttonHeight, 0, (headerText).c_str());
+					al_draw_text(font, al_map_rgb(255, 255, 255), xStartPos, yStartPos - 5 - buttonHeight, 0, (headerText).c_str());
 
 
 					for (int i = 0; i < numberOfOptions; i++)
