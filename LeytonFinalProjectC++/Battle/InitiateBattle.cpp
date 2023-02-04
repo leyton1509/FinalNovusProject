@@ -25,6 +25,7 @@ public:
 	bool done = false;
 	bool redraw = true;
 
+	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
 		{
