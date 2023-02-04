@@ -385,7 +385,7 @@ public:
 								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained);
 
 								if (experienceInfo.first) {
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is trying to evolve into  " + player.trainersParty[currentPokemon].evolutionName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into  " + player.trainersParty[currentPokemon].evolutionName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Evolve ");
 									buttonStrings.push_back("Don't Evolve ");
@@ -896,7 +896,7 @@ public:
 
 								if (experienceInfo.first) {
 
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is trying to evolve into  " + player.trainersParty[currentPokemon].evolutionName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into  " + player.trainersParty[currentPokemon].evolutionName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Evolve ");
 									buttonStrings.push_back("Don't Evolve ");
