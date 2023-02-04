@@ -24,7 +24,7 @@ public:
 			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions);
 
 
-			Button header =  Button(128, 128, xStartPos, yStartPos - 10 - buttonHeight, buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
+			Button header =  Button(128, 128, xStartPos, yStartPos - 10 - buttonHeight, buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png");
 
 			// GUI info
 			bool done = false;
