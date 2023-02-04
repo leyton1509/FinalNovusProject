@@ -23,9 +23,6 @@ public:
 			int xStartPos = 10;
 			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions);
 
-
-			Button header =  Button(128, 128, xStartPos, yStartPos - 10 - buttonHeight, buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png");
-
 			// GUI info
 			bool done = false;
 			bool redraw = true;
@@ -82,7 +79,8 @@ public:
 
 				if (redraw && al_is_event_queue_empty(queue))
 				{
-					header.drawSprite(headerText);
+					al_draw_text(font, al_map_rgb(255, 255, 255), xStartPos, yStartPos - 10 - buttonHeight, 0, (headerText).c_str());
+
 
 					for (int i = 0; i < numberOfOptions; i++)
 					{
