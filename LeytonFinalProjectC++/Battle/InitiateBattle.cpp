@@ -416,7 +416,7 @@ public:
 
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning    " + move.moveName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
@@ -928,7 +928,7 @@ public:
 
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
-									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
+									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning    " + move.moveName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
