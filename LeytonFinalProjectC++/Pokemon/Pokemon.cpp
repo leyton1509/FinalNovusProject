@@ -139,19 +139,19 @@ public:
 		MoveManager mm = mm.instance();
 		for (const pair<int, int>& p : levelUpMoveSet) {
 
-				if (p.second <= level){
-					if (numberOfLastStoredMove < 4) {
-						pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
-						numberOfLastStoredMove++;
-						if (numberOfMoves < 4) {
-							numberOfMoves++;
-						}
-					}
-					else {
-						numberOfLastStoredMove = 0;
-						pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
+			if (p.second <= level && p.first != 0){
+				if (numberOfLastStoredMove < 4) {
+					pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
+					numberOfLastStoredMove++;
+					if (numberOfMoves < 4) {
+						numberOfMoves++;
 					}
 				}
+				else {
+					numberOfLastStoredMove = 0;
+					pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
+				}
+			}
 			
 		}
 	}
