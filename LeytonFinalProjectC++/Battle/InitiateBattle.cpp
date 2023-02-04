@@ -380,7 +380,7 @@ public:
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
 								int expGained = opponent.trainersTeam[currentPokemonOpponent].experienceUponKill();
 								PokemonManager pm = pm.instance();
-								player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName));
+								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName));
 
 								if (!opponent.isAllPokemonInPartyDead()) {
 									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
