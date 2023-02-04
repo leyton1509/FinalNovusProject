@@ -34,7 +34,7 @@ public:
 
 			for (int i = 0; i < numberOfOptions; i++)
 			{
-				buttonOptions[i] = Button(128, 128, xStartPos, yStartPos + (90 * i), buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
+				buttonOptions[i] = Button(128, 128, xStartPos, yStartPos + (buttonHeight + (buttonHeight * 0.1) * i), buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
 
 			}
 
