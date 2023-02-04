@@ -383,7 +383,21 @@ public:
 								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained, pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName));
 
 								if (experienceInfo.first) {
-
+									Pokemon p = pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName;
+									player.trainersParty[currentPokemon].pokemonName = p.pokemonName;
+									player.trainersParty[currentPokemon].healthBase = p.healthBase;
+									player.trainersParty[currentPokemon].physcialAttackBase = p.physcialAttackBase;
+									player.trainersParty[currentPokemon].physicalDefenceBase = p.physicalDefenceBase;
+									player.trainersParty[currentPokemon].specialAttackBase = p.specialAttackBase;
+									player.trainersParty[currentPokemon].specialDefenceBase = p.specialDefenceBase;
+									player.trainersParty[currentPokemon].speedBase = p.speedBase;
+									player.trainersParty[currentPokemon].xPositionOnSpriteSheet = p.xPositionOnSpriteSheet;
+									player.trainersParty[currentPokemon].yPositionOnSpriteSheet = p.yPositionOnSpriteSheet;
+									player.trainersParty[currentPokemon].pokemonTypeOne = p.pokemonTypeOne;
+									player.trainersParty[currentPokemon].pokemonTypeTwo = p.pokemonTypeTwo;
+									player.trainersParty[currentPokemon].levelUpMoveSet = p.levelUpMoveSet;
+									player.trainersParty[currentPokemon].evolutionLevel = p.evolutionLevel;
+									player.trainersParty[currentPokemon].evolutionName = p.evolutionName;
 								}
 
 								if (!opponent.isAllPokemonInPartyDead()) {
