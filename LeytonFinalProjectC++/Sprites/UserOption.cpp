@@ -14,7 +14,7 @@ public:
 
 	int valueOfResult;
 
-	UserOption(std:: string header , std::list<std::string> onButtonString, int numberOfOptions, int buttonWidth, int buttonHeight , int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
+	UserOption(std:: string headerText , std::list<std::string> onButtonString, int numberOfOptions, int buttonWidth, int buttonHeight , int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
 		valueOfResult = -1;
 
@@ -82,6 +82,7 @@ public:
 
 				if (redraw && al_is_event_queue_empty(queue))
 				{
+					header.drawSprite(headerText);
 
 					for (int i = 0; i < numberOfOptions; i++)
 					{
