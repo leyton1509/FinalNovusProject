@@ -414,7 +414,7 @@ public:
 									buttonStrings.push_back("Replace Move 2");
 									buttonStrings.push_back("Replace Move 3");
 									buttonStrings.push_back("Replace Move 4");
-									UserOption us = UserOption(buttonStrings, 4, screenWidth, screenHeight, queue);
+									UserOption us = UserOption(buttonStrings, 4, 120, 70,  screenWidth, screenHeight, queue);
 									int positionToPutMove = us.valueOfResult;
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
