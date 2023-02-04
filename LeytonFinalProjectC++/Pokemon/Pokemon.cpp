@@ -8,16 +8,18 @@
 
 using namespace std;
 
-
+// Class to repreesnt a Pokemon
 class Pokemon
 {
 
 public:
 
+	// The name of the pokemon 
 	string pokemonName;
-
+	// The current health of program
 	int currentHealth;
-
+	
+	// The base stats of the pokemon
 	int healthBase;
 	int physcialAttackBase;
 	int physicalDefenceBase;
@@ -25,6 +27,7 @@ public:
 	int specialDefenceBase;
 	int speedBase;
 
+	// The actual stats of the pokemon calculated from the base stats
 	int healthActual;
 	int physcialAttackActual;
 	int physicalDefenceActual;
@@ -32,30 +35,42 @@ public:
 	int specialDefenceActual;
 	int speedActual;
 
+	// A random number to determine how good the pokemon is
 	int iv;
+	// The level of pokwmon
 	int level;
+	// The current experience
 	double experience;
+	// How much experience is needed for the next level
 	double nextExperienceNeeded;
 
+	// The x and y position on the sprite sheet
 	int xPositionOnSpriteSheet; 
 	int yPositionOnSpriteSheet;
 
+	// The type of pokemon
 	PokemonType::PokemonTypes pokemonTypeOne;
 	PokemonType::PokemonTypes pokemonTypeTwo;
 
+	// The level and name of evolution
 	int evolutionLevel;
 	string evolutionName;
 
+	// The number of last stored move and the number of moves the pokemon has
 	int numberOfLastStoredMove = 0;
 	int numberOfMoves = 0;
 
+	// A list of pokemon moves
 	Move pokemonsMoves[4];
 
+	// THe pokemons move set
 	map<int, int> levelUpMoveSet;
 
+	// If the pokemon is dead
 	bool isPokemonDead = false;
 
-
+	// Empty Constructor
+	// Needed for not returned in map
 	Pokemon(){
 		pokemonName = "";
 		healthBase = 0;
@@ -79,7 +94,8 @@ public:
 		evolutionName = "";
 	}
 
-
+	// Constructor that takes the pokemon info to store
+	// Name, base stats, level, style sheet locs, types, moves and evolution info
 	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string _evolutionName)  {
 		pokemonName = _pokemonName;
 		healthBase = _healthBase;
@@ -89,21 +105,28 @@ public:
 		specialDefenceBase = _specialDefenceBase;
 		speedBase = _speedBase;
 		level = _level;
+		// Generates a randon iv
 		iv = generateRandomIV();
 		experience = 0;
+		// Calculates the next experience needed from the level
 		calculateNextLevelExperienceNeeded();
+		// Calculates the actual stats from the base stats
 		calculateActualStatistics();
 		xPositionOnSpriteSheet = _xPositionOnSpriteSheet;
 		yPositionOnSpriteSheet = _yPositionOnSpriteSheet;
 		pokemonTypeOne = _pokemonTypeOne;
 		pokemonTypeTwo = _pokemonTypeTwo;
 		levelUpMoveSet = _levelUpMoveSet;
+		// Updates the pokemons move set
 		updateMoveSet();
 		currentHealth = healthActual;
 		evolutionLevel = _evolutionLevel;
 		evolutionName = _evolutionName;
 	}
 
+	// Heals the pokemon to full
+	// Puts health to full and sets the powerpoints to full
+	// Sets dead to full
 	void healPokemonToFull() {
 		currentHealth = healthActual;
 		for (int i = 0; i < numberOfMoves; i++)
@@ -114,6 +137,8 @@ public:
 	}
 
 	// returns true if pokemon is dead
+	// Decreases the pokemon health
+	// Will set health to zero, no lower
 	bool decreasePokemonHealth(int amountToDecreaseBy) {
 		if (currentHealth - amountToDecreaseBy > 0) {
 			currentHealth = currentHealth - amountToDecreaseBy;
@@ -126,6 +151,8 @@ public:
 		}
 	}
 
+	// Will set health to + the increased amount
+	// Wont set higher than actual health
 	void increasePokemonHealth(int amountToIncreaseBy) {
 		if (currentHealth + amountToIncreaseBy > healthActual) {
 			currentHealth = healthActual;
@@ -135,6 +162,10 @@ public:
 		}
 	}
 
+	// Updates the move set of the pokemon
+	// Loops through the pairs
+	// If the pokemon level is above learned levels
+	// Loops through the moves in order 0-> 4 -> 0 when setting
 	void updateMoveSet() {
 		MoveManager mm = mm.instance();
 		for (const pair<int, int>& p : levelUpMoveSet) {
@@ -156,11 +187,13 @@ public:
 		}
 	}
 
+	// Calculates the next experience level needed
 	void calculateNextLevelExperienceNeeded() {
 		nextExperienceNeeded = pow(level, 3);
 	}
 
 	// This code should be used either for setting trainers or wild pokemon or testing
+	// Sets the lvel abd calcualtes the stats and experience needed and updates move set
 	void setPokemonsLevel(int newLevel) {
 		level = newLevel;
 		calculateActualStatistics();
@@ -170,44 +203,45 @@ public:
 
 	}
 	
-
+	//  Increases the pokemon experience
+	// Returns a pair of if the pokemon needs to evolve, and the moveID / level
 	pair<bool, pair<int, int>> gainExperience(int _experiencedGained) {
 
 		pair<int, int> pairReturn = { -1, -1 };
 		bool shouldEvolve = false;
 		experience = experience + _experiencedGained;
-		cout << "\n\nGained:" << _experiencedGained  << "Experience Total:" << experience << " nextExperienceNeeded : " << nextExperienceNeeded << "\n\n";
+		// Checks to see if the pokemon should level
 		while(experience > nextExperienceNeeded){
 			level += 1;
+			// If the level is above the evolution name and the name != no
 			if (level >= evolutionLevel && strcmp(evolutionName.c_str(), "No") !=0) {
-				// 	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string _evolutionName)  {
 				shouldEvolve = true;
 			}
 		   
-
+			// Loops through the moveset to see if there is a new move at thus level
 			for (const pair<int, int>& p : levelUpMoveSet) {
-
-				//cout << "Move " << p.first << " at level " << p.second << "\n";
 				if (p.second != 0) {
 					if (p.second == level) {
-						cout << "Found a new move " << p.first << " at level " << p.second << "\n";
 						pairReturn = p;
 					}
 				}
 			}
 
-
+			// Calc the new experience
 			calculateNextLevelExperienceNeeded();
 		}
+		// Calculate the new stats
 		calculateActualStatistics();
 		pair<bool, pair<int, int>> returnPair = { shouldEvolve, pairReturn  };
 		return returnPair;
 	}
+
+	// Returns the amount exp on kill
 	int experienceUponKill() {
 		return floor((pow(level, 3)) + 2);
 	}
 
-
+	// Calculates the actual statistic of each stat from the formulas
 	void calculateActualStatistics() {
 		healthActual = healthFormula(healthBase);
 		physcialAttackActual = otherStatisticFormula(physcialAttackBase);
@@ -217,18 +251,23 @@ public:
 		speedActual = otherStatisticFormula(speedBase);
 	}
 
+	// The formula for health, takes a stat
 	int healthFormula(int stat) {
 		return floor(((((2* stat)+iv )* level) / 100) + level + 10);
 	}
-
+	
+	// The fornula for the other stat
 	int otherStatisticFormula(int stat) {
 		return floor(((((2 * stat) + iv) * level) / 100) + 5);
 	}
 
+	// Generates a random iv fron 10 to 31
 	int generateRandomIV() {
 		return (rand() % 31) + 10;
 	}
 
+
+	// Prints out all the details of the pokemon
 	void printMonsterDetails() {
 		PokemonType pt = PokemonType();
 		std::cout << "|---------------------------------------------------------------------------------;\n";
