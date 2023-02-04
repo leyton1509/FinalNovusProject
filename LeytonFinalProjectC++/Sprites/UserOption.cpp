@@ -13,15 +13,16 @@ public:
 
 	UserOption(int numberOfOptions, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
 
-		// GUI info
-		bool done = false;
-		bool redraw = true;
-		ALLEGRO_EVENT event;
-
-		double xMousePosition = 0;
-		double yMousePosition = 0;
-
 		if (numberOfOptions < 6) {
+
+			// GUI info
+			bool done = false;
+			bool redraw = true;
+			ALLEGRO_EVENT event;
+
+			// Position of moise
+			double xMousePosition = 0;
+			double yMousePosition = 0;
 
 			for (int i = 0; i < numberOfOptions; i++)
 			{
