@@ -82,17 +82,17 @@ public:
 
 					for (int i = 0; i < numberOfOptions; i++)
 					{
-						if (buttonOptions[i].hasBeenClicked(xMousePosition, yMousePosition)) {
-							int cString = 0;
-							for (const std::string& currentS : onButtonString)
-							{
-								if (cString == i) {
-									buttonOptions[i].drawSprite(currentS);
-									break;
-								}
-								cString++;
+						
+						int cString = 0;
+						for (const std::string& currentS : onButtonString)
+						{
+							if (cString == i) {
+								buttonOptions[i].drawSprite(currentS);
+								break;
 							}
+							cString++;
 						}
+						
 					}
 					
 					al_flip_display();
