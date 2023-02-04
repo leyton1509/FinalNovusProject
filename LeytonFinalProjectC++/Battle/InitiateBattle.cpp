@@ -100,6 +100,8 @@ public:
 		// The number of the pokemon to use
 		int currentPokemon = 0;
 
+		// Gets the first valid pokemon
+		// Breaks if there is no valid
 		if (!player.isAllPokemonInPartyDead()) {
 			currentPokemon = player.getFirstAlivePokemon();
 
@@ -108,23 +110,24 @@ public:
 			return;
 		}
 
-		// Gets all the gui info
-		// The hp bars
-		// The buttons on screen
+
+		// The stat boxes for each pokemon
 		PokemonStatBox otherPokemonStatBox = PokemonStatBox(opponent.trainersTeam[currentPokemonOpponent], 256, 96, 510, 20, 320, 75);
 		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(player.trainersParty[currentPokemon], 256, 96, 70, 20, 320, 75);
 
+		// The font to use
 		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
-		// Add conversion for trainer name
+		// The text to display
 		string textForTextBox[4] = { "Trainer appeared!", "", "", "" };
 
-
+		// The attack buttons with the pokemons attacks
 		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
 		AttackButton attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1], 128, 64, 160, 450, 128, 64);
 		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2], 128, 64, 20, 520, 128, 64);
 		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3], 128, 64, 160, 520, 128, 64);
 
+		// The switch buttons for each pokemon
 		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(64, 64, 540, 435, 80, 80);
 		switchPokemonOneButton.isDisplayed = false;
 
@@ -143,6 +146,8 @@ public:
 		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
 		switchPokemonSixButton.isDisplayed = false;
 
+		// The potion buttons for each potion
+
 		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
 		potionButtonOne.isDisplayed = false;
 
@@ -152,20 +157,28 @@ public:
 		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
 		potionButtonThree.isDisplayed = false;
 
+		// The options to choose buttons, heal, switch, catch and run
+
 		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
 		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
 		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
 		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
+		// The back box for the buttons
 		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
+		// The text box
 		Button textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
 
+		// Sets an int for which button has been clicked
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
 		int healItemButtonClicked = 0;
 		bool pokemonIsDead = false;
+		// If the switch should heal the pokemon not switch pokemon
 		int shouldHealInSwitch = -1;
 
+		// Loops until the battle is finished
+		// ALLEGRO control loop
 		while (!battleFinished) {
 
 			al_wait_for_event(queue, &event);
@@ -182,6 +195,7 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
+				// Checks to see if the switch pokemon has been clicked and displays the switched pokemon
 				if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					if (textBox.isDisplayed) {
 						textBox.isDisplayed = false;
@@ -194,6 +208,7 @@ public:
 
 
 					}
+					// Turns off the switched pokemon buttons
 					else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
 						shouldHealInSwitch = -1;
 						textBox.isDisplayed = true;
@@ -208,7 +223,9 @@ public:
 
 				}
 
+				// Checks to see if the heal button has been clicked
 				else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+					// If its displayed, un display it, if its not display them
 					if (textBox.isDisplayed) {
 						textBox.isDisplayed = false;
 						potionButtonOne.isDisplayed = true;
@@ -230,6 +247,9 @@ public:
 					}
 
 				}
+
+				// Checks to see which option button has been clicked
+				// Sets it to the value of that button
 				else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
 					healItemButtonClicked = 1;
 				}
@@ -276,17 +296,22 @@ public:
 					attackButtonClicked = 4;
 				}
 
-				// Add code for when the buttons are clicked
+				// If the button has been clicked
 
-
+				// If its the switch button
 				if (switchPokemonButtonClicked != 0) {
+					// Gets the pokemon n in array
 					int pokemonNinArray = switchPokemonButtonClicked - 1;
+					// Checks if the pokemon is not empty
 					if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
+						// If it should be a heal
 						if (shouldHealInSwitch != -1) {
+							// Makes sure that the health is not full
 							if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
+								// Uses the potion
 								player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
 								shouldHealInSwitch = -1;
-
+								// Undisplays the switch options
 								textBox.isDisplayed = true;
 								switchPokemonOneButton.isDisplayed = false;
 								switchPokemonTwoButton.isDisplayed = false;
@@ -295,20 +320,23 @@ public:
 								switchPokemonFiveButton.isDisplayed = false;
 								switchPokemonSixButton.isDisplayed = false;
 
+								// Runs the opponents turn
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
-
-
 							}
 						}
 						else {
+							// If its not the current pokemon
 							if (currentPokemon != pokemonNinArray) {
+								// If the pokemon isnt dead
 								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									// Sets the current pokemon and the attack buttons
 									currentPokemon = pokemonNinArray;
 									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
 									attackButton3.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[2];
 									attackButton4.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[3];
 
+									// Turns off the switch info
 									textBox.isDisplayed = true;
 									switchPokemonOneButton.isDisplayed = false;
 									switchPokemonTwoButton.isDisplayed = false;
@@ -320,7 +348,7 @@ public:
 									if (pokemonIsDead) {
 										pokemonIsDead = false;
 									}
-
+									// Runs the opponents turn
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
 								}
 							}
@@ -330,10 +358,13 @@ public:
 					switchPokemonButtonClicked = 0;
 				}
 
+				// If the heal button is clicked
 				else if (healItemButtonClicked != 0) {
 
 					int potionID = -1;
 
+					// Gets the id of the potion used
+					// Only returns if the player has enough of the item
 					if (healItemButtonClicked == 1) {
 						if (player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID) > 0) {
 							potionID = potionButtonOne.potion.inividualItemID;
@@ -352,6 +383,8 @@ public:
 						}
 					}
 
+					// Ifs its valid
+					// Sets the potions to false, should heal in switch to the id, and brings up the pokemon to use it on
 					if (potionID != -1) {
 						potionButtonOne.isDisplayed = false;
 						potionButtonTwo.isDisplayed = false;
@@ -371,14 +404,20 @@ public:
 					healItemButtonClicked = 0;
 				}
 
+				// If the attack button is clicked
 				else if (attackButtonClicked != 0) {
+					// Checks to see if its not dead
 					if (!pokemonIsDead) {
+						// Gets which attack to use
 						int attackButtonN = attackButtonClicked - 1;
+						// Gets if the current power points is > 0
 						if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
 
+							// Does the pokemon turn
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent], player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
 							
-							
+							// If the opponent dies
+							// Gain exoeruence, check for evolution 
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
 								int expGained = opponent.trainersTeam[currentPokemonOpponent].experienceUponKill();
 								PokemonManager pm = pm.instance();
@@ -391,6 +430,7 @@ public:
 									buttonStrings.push_back("Don't Evolve ");
 									UserOption us = UserOption(headerText, buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
 									int result = us.valueOfResult;
+									// Evolves the pokemon if it evolves and the user says yes
 									if (result != -1 && result == 0) {
 										Pokemon p = pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName);
 										player.trainersParty[currentPokemon].pokemonName = p.pokemonName;
@@ -414,6 +454,7 @@ public:
 
 								MoveManager mm = mm.instance();
 
+								// If the move is valid, then give the user the option to select wghuch move to replace
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
 									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
@@ -426,6 +467,7 @@ public:
 									UserOption us = UserOption(headerText, buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
 									int positionToPutMove = us.valueOfResult;
 									cout << "Result of poll: " << positionToPutMove << "\n";
+									// Puts the move in the correct position
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
 										if (positionToPutMove == 0) {
@@ -448,6 +490,8 @@ public:
 									
 								}
 
+								// If all the opponents pokemon are not dead, then get the next pokemon
+								// if they are then add some money to player and finish
 								if (!opponent.isAllPokemonInPartyDead()) {
 									currentPokemonOpponent = doTurn.getNextPokemonForOpponent(opponent, currentPokemonOpponent, player.trainersParty[currentPokemon]);
 								}
@@ -459,13 +503,17 @@ public:
 								}
 							}
 
+							// Updates the text from do turn
+
 							textForTextBox[0] = doTurn.textForTextBox[0];
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = doTurn.textForTextBox[2];
 							textForTextBox[3] = doTurn.textForTextBox[3];
 
+							// Uses the move
 							player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].useMove();
 
+							// Uses the move inside the button
 
 							if (attackButtonClicked == 1) {
 								attackButton1.pokemonMove.useMove();
@@ -481,6 +529,7 @@ public:
 							}
 						}
 						else {
+							// Sets the text to say PP is out
 							textForTextBox[0] = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveName + " is out of PP!";
 							textForTextBox[1] = "";
 							textForTextBox[2] = "";
@@ -491,13 +540,14 @@ public:
 
 				}
 
-				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+				// Checks to see if the players pokemon is dead
 
+				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
+					// If all pokemon are dead then set battle finished to true
 					if (player.isAllPokemonInPartyDead()) {
-						// Add teleporting to nearest heal
-						cout << "All pokemon dead\n";
 						battleFinished = true;
 					}
+					// Brings up the switching if not every pokemon is dead
 					pokemonIsDead = true;
 					textBox.isDisplayed = false;
 					switchPokemonOneButton.isDisplayed = true;
@@ -516,19 +566,24 @@ public:
 				break;
 			}
 
-			if (done)
+			// Breaks if done
+			if (done) {
 				break;
+			}
 
+			// Draws the screen
 			if (redraw && al_is_event_queue_empty(queue))
 			{
 				al_clear_to_color(al_map_rgb(0, 0, 0));
+				// Draws the background
 				al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+				// Drwas the trainer and opponent pokemon
 				al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[currentPokemonOpponent].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[currentPokemonOpponent].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 				if (!pokemonIsDead) {
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
 				}
 
-
+				// If the switch pokemon should be displayed, display all
 				if (switchPokemonOneButton.isDisplayed) {
 					switchPokemonOneButton.drawSprite(player.trainersParty[0]);
 					switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
@@ -538,16 +593,19 @@ public:
 					switchPokemonSixButton.drawSprite(player.trainersParty[5]);
 				}
 
+				// If the potion buttons should be displayed, display them
 				if (potionButtonOne.isDisplayed) {
 					potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
 					potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
 					potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
 				}
 
+				// Draws the stat boxes for each pokemon
 				otherPokemonStatBox.drawSprite(opponent.trainersTeam[currentPokemonOpponent]);
 				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
 				backBox.drawSprite();
 				textBox.drawSprite();
+				// Drwas the rest of the buttons
 				attackButton1.drawSprite();
 				attackButton2.drawSprite();
 				attackButton3.drawSprite();
@@ -557,6 +615,7 @@ public:
 				catchPokemonButton.drawSprite();
 				runPokemonButton.drawSprite();
 
+				// If the text box is displayed, display the text
 				if (textBox.isDisplayed) {
 					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
 					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
