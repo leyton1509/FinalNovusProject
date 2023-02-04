@@ -35,6 +35,8 @@ public:
 		buttonValue = _value;
 	}
 
+
+
 	// Empty constructor
 	Button() : Sprite(SpriteType::SpriteTypes::Button, 0,0,0,0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
 		originalSizeX = 0;
@@ -53,13 +55,23 @@ public:
 		}
 	}
 
-	// Draws the sprite at the correct position if it is displayed
+	// Draws the sprite at the correct position if it is displayed with an int value
 	void drawSprite(int value) {
 		
 		if (isDisplayed) {
 			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 30, yPosition + 5, 0, std::to_string(value).c_str());
 			
+		}
+	}
+
+	// Draws the sprite at the correct position if it is displayed with a string value
+	void drawSprite(std::string value) {
+
+		if (isDisplayed) {
+			al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
+			al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), xPosition + 30, yPosition + 5, 0, (value).c_str());
+
 		}
 	}
 
