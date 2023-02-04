@@ -410,11 +410,11 @@ public:
 									Move move = mm.getMoveDetails(moveInfo.first);
 									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
 									std::list<std::string> buttonStrings = {};
-									buttonStrings.push_back("Replace Move 1");
-									buttonStrings.push_back("Replace Move 2");
-									buttonStrings.push_back("Replace Move 3");
-									buttonStrings.push_back("Replace Move 4");
-									UserOption us = UserOption(headerText,buttonStrings, 4, 120, 30, screenWidth, screenHeight, queue);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[2].moveName);
+									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[3].moveName);
+									UserOption us = UserOption(headerText,buttonStrings, 4, 180, 30, screenWidth, screenHeight, queue);
 									int positionToPutMove = us.valueOfResult;
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
