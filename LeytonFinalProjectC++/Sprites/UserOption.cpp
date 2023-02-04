@@ -11,7 +11,11 @@ public:
 	// The font to write with
 	ALLEGRO_FONT* font = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 
+	int valueOfResult;
+
 	UserOption(int numberOfOptions, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue) {
+
+		valueOfResult = -1;
 
 		if (numberOfOptions < 6) {
 
