@@ -18,6 +18,9 @@ public:
 		bool redraw = true;
 		ALLEGRO_EVENT event;
 
+		double xMousePosition = 0;
+		double yMousePosition = 0;
+
 		if (numberOfOptions < 6) {
 
 			for (int i = 0; i < numberOfOptions; i++)
@@ -25,6 +28,7 @@ public:
 				buttonOptions[i] = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
 
 			}
+
 
 
 			bool selectedVal = false;
