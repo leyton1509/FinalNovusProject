@@ -20,7 +20,7 @@ public:
 
 		if (numberOfOptions < 6) {
 
-			int xStartPos = screenWidth - buttonWidth * 1.4;
+			int xStartPos = screenWidth - buttonWidth * 1.05;
 			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions);
 
 			// GUI info
@@ -34,7 +34,7 @@ public:
 
 			for (int i = 0; i < numberOfOptions; i++)
 			{
-				buttonOptions[i] = Button(128, 128, xStartPos, yStartPos + ((buttonHeight * i) + ((buttonHeight * 0.3))), buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
+				buttonOptions[i] = Button(128, 128, xStartPos, yStartPos + (buttonHeight * i) + (i * 10), buttonWidth, buttonHeight, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
 
 			}
 
