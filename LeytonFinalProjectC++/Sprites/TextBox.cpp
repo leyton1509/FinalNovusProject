@@ -19,6 +19,9 @@ public:
 
 	// Constructor for text box
 	TextBox(std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue) : Sprite (SpriteType::SpriteTypes::Button, 10, 360, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png"){
+			
+		// The size of sprite
+		
 		originalSizeX = 256;
 		originalSizeY = 96;
 
@@ -27,19 +30,24 @@ public:
 		bool redraw = true;
 		ALLEGRO_EVENT event;
 
+		// Whether the loop has finihed
 		bool finishedStrings = false;
 
+		// The number of strings in the list
 		int stringCount = 0;
+		// The current string
 		int currentString = 0;
 
-
+		// Calcs the num of strings
 		for (const std::string& currentS : textToDisplay)
 		{
 			stringCount++;
 		}
 
+		// Counter for how many clicks
 		int counter = 0;
 
+		// ALLEGRO control loop
 		while (!finishedStrings) {
 
 			al_wait_for_event(queue, &event);
@@ -58,7 +66,7 @@ public:
 				
 
 			case ALLEGRO_EVENT_KEY_UP:	
-				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
+				// The counter var, need to interact once before it increases the string 
 				if(counter == 0) {
 					counter++;
 				}
@@ -67,6 +75,7 @@ public:
 						currentString++;
 					}
 					else {
+						// Finishes when it gets to the end of the strings
 						done = true;
 						finishedStrings = true;
 						break;
@@ -79,6 +88,7 @@ public:
 
 			if (redraw && al_is_event_queue_empty(queue))
 			{
+				// Draws a text box with the current string
 				int cString = 0;
 				for (const std::string& currentS : textToDisplay)
 				{
@@ -93,7 +103,7 @@ public:
 		}
 	}
 
-
+	// Works the exact same as the other but specifies the x and y pos
 	// Constructor for text box with the specified x and y pos
 	TextBox(int _xPosition, int _yPosition, std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue) : Sprite(SpriteType::SpriteTypes::Button, 10, 360, _width, _height, "../LeytonFinalProjectC++/Sprites/TextBox/TextBox.png") {
 		originalSizeX = 256;
@@ -106,8 +116,10 @@ public:
 		bool redraw = true;
 		ALLEGRO_EVENT event;
 
+		// If all strings have been displayed or not
 		bool finishedStrings = false;
 
+		// Current string and string count
 		int stringCount = 0;
 		int currentString = 0;
 
@@ -119,6 +131,7 @@ public:
 
 		int counter = 0;
 
+		// Basic allegro control loop
 		while (!finishedStrings) {
 
 			al_wait_for_event(queue, &event);
@@ -137,7 +150,6 @@ public:
 
 
 			case ALLEGRO_EVENT_KEY_UP:
-				std::cout << "Current string : " << currentString << " Max : " << stringCount << "\n";
 				if (counter == 0) {
 					counter++;
 				}
@@ -156,6 +168,7 @@ public:
 			if (done)
 				break;
 
+			// Draws the srites
 			if (redraw && al_is_event_queue_empty(queue))
 			{
 				int cString = 0;
