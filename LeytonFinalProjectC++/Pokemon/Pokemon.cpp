@@ -172,7 +172,7 @@ public:
 	}
 	
 
-	pair<bool, pair<int, int>> gainExperience(int _experiencedGained, Pokemon p) {
+	pair<bool, pair<int, int>> gainExperience(int _experiencedGained) {
 
 		pair<int, int> pairReturn = { -1, -1 };
 		bool shouldEvolve = false;
