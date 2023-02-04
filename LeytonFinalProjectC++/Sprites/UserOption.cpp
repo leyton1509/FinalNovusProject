@@ -15,6 +15,12 @@ public:
 
 		if (numberOfOptions < 6) {
 
+			for (int i = 0; i < numberOfOptions; i++)
+			{
+				buttonOptions[i] = Button(128, 128, 10, 480, 80, 80, "../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png", i);
+
+			}
+
 
 
 		}
