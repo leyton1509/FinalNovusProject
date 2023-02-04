@@ -408,6 +408,13 @@ public:
 
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
+					
+									std::list<std::string> buttonStrings = {};
+									buttonStrings.push_back("Replace Move 1");
+									buttonStrings.push_back("Replace Move 2");
+									buttonStrings.push_back("Replace Move 3");
+									buttonStrings.push_back("Replace Move 4");
+									UserOption us = UserOption(buttonStrings, 4, screenWidth, screenHeight, queue);
 									int positionToPutMove = 0;
 									player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
 								}
