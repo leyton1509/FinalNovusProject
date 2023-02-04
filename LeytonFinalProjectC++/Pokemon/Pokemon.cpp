@@ -172,14 +172,17 @@ public:
 	}
 	
 
-	pair<int, int> gainExperience(int _experiencedGained, Pokemon p) {
+	pair<bool, pair<int, int>> gainExperience(int _experiencedGained, Pokemon p) {
 
+		pair<int, int> pairReturn = { -1, -1 };
+		bool shouldEvolve = false;
 		experience = experience + _experiencedGained;
 		cout << "\n\nGained:" << _experiencedGained  << "Experience Total:" << experience << " nextExperienceNeeded : " << nextExperienceNeeded << "\n\n";
 		while(experience > nextExperienceNeeded){
 			level += 1;
 			if (level >= evolutionLevel && strcmp(evolutionName.c_str(), "No") !=0) {
 				// 	Pokemon(string _pokemonName, int _healthBase, int _physcialAttackBase, int _physicalDefenceBase, int _specialAttackBase, int _specialDefenceBase, int _speedBase, int _level, int _xPositionOnSpriteSheet, int _yPositionOnSpriteSheet, PokemonType::PokemonTypes _pokemonTypeOne, PokemonType::PokemonTypes _pokemonTypeTwo, map<int, int> _levelUpMoveSet, int _evolutionLevel, string _evolutionName)  {
+				shouldEvolve = true;
 				pokemonName = p.pokemonName;
 				healthBase = p.healthBase;
 				physcialAttackBase = p.physcialAttackBase;
@@ -198,7 +201,7 @@ public:
 			}
 
 			MoveManager mm = mm.instance();
-			 pair<int, int> pairReturn = { -1, -1 };
+		   
 
 			for (const pair<int, int>& p : levelUpMoveSet) {
 
@@ -214,8 +217,8 @@ public:
 			calculateNextLevelExperienceNeeded();
 		}
 		calculateActualStatistics();
-		
-		return pairReturn;
+		pair<bool, pair<int, int>> returnPair = { shouldEvolve, pairReturn  };
+		return returnPair;
 	}
 	int experienceUponKill() {
 		return floor((pow(level, 3)) + 2);
