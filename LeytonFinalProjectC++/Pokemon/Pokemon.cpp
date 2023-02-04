@@ -172,7 +172,8 @@ public:
 	}
 	
 
-	void gainExperience(int _experiencedGained, Pokemon p) {
+	pair<int, int> gainExperience(int _experiencedGained, Pokemon p) {
+
 		experience = experience + _experiencedGained;
 		cout << "\n\nGained:" << _experiencedGained  << "Experience Total:" << experience << " nextExperienceNeeded : " << nextExperienceNeeded << "\n\n";
 		while(experience > nextExperienceNeeded){
@@ -197,23 +198,14 @@ public:
 			}
 
 			MoveManager mm = mm.instance();
+			 pair<int, int> pairReturn = { -1, -1 };
 
 			for (const pair<int, int>& p : levelUpMoveSet) {
 
 				
 				if (p.second != 0) {
 					if (p.second == level) {
-						if (numberOfLastStoredMove < 4) {
-							pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
-							numberOfLastStoredMove++;
-							if (numberOfMoves < 4) {
-								numberOfMoves++;
-							}
-						}
-						else {
-							numberOfLastStoredMove = 0;
-							pokemonsMoves[numberOfLastStoredMove] = mm.getMoveDetails(p.first);
-						}
+						pairReturn = p;
 					}
 				}
 			}
@@ -222,6 +214,8 @@ public:
 			calculateNextLevelExperienceNeeded();
 		}
 		calculateActualStatistics();
+		
+		return pairReturn;
 	}
 	int experienceUponKill() {
 		return floor((pow(level, 3)) + 2);
