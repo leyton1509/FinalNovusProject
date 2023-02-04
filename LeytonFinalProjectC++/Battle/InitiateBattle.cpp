@@ -414,8 +414,10 @@ public:
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[1].moveName);
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[2].moveName);
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[3].moveName);
-									UserOption us = UserOption(headerText,buttonStrings, 4, 180, 30, screenWidth, screenHeight, queue);
+									buttonStrings.push_back("Don't learn!");
+									UserOption us = UserOption(headerText,buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
 									int positionToPutMove = us.valueOfResult;
+									cout << "Result of poll: " << positionToPutMove << "\n";
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
 									}
