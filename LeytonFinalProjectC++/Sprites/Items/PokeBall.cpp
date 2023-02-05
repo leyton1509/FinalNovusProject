@@ -1,25 +1,31 @@
 #include "../../Sprites/Items/Item.h"
 #include <string>
 #include "../../Pokemon/Pokemon.h"
-// #include "../../Pokemon/Pokemon.h"
-// #include "../../Sprites/PlayerCharacter.h"
 
 using namespace std;
 
+// A pokeball item that is used to catch pokemon
+// Extends item
 class PokeBall : public Item{
 
 
 public:
 
+	// The name of the poke ball
 	string pokeballName;
+	// The catch rate of the pokeball
 	int catchRate;
+	// The individual item id
 	int inividualItemID;
 
+	// Constructor empty
 	PokeBall() : Item(1,0,0,0,0){
 		catchRate = 0;
 		inividualItemID = 0;
 	}
 
+
+	// Constructor with the id of the pokeball
 	PokeBall(int id) : Item(1, 0, 0,0,0) {
 
 		if (id == 1) {
@@ -51,16 +57,13 @@ public:
 		}
 	}
 
+	// Generates a random number
 	int random(int from, int to) {
 		return rand() % (to - from + 1) + from;
 	}
 
-
-
-	
-	
-	
-	bool catchPokemon(Pokemon& pokemon) {
+	// Uses the pokeball with the pokemons details to determine true if it was caught
+	bool useItem(Pokemon& pokemon) {
 		int n = random(1, catchRate);
 		int max = pokemon.healthActual + n;
 		int min = pokemon.currentHealth;
