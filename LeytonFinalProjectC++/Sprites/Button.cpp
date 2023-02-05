@@ -13,10 +13,11 @@ public:
 	int originalSizeY;
 	// Whether or not the button should be on screen or not
 	bool isDisplayed = true;
-
+	// The font to use
 	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-
+	// Whether the button has text
 	bool hasText;
+	// The value of the button
 	float buttonValue;
 
 	// Constructor with the size and position parameters
@@ -27,15 +28,13 @@ public:
 		buttonValue = 0;
 	}
 
-	// Constructor with the size and position parameters
+	// Constructor with the size and position parameters and the vlaue of button
 	Button(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height, const char* _filepath, float _value) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, _filepath) {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 		hasText = true;
 		buttonValue = _value;
 	}
-
-
 
 	// Empty constructor
 	Button() : Sprite(SpriteType::SpriteTypes::Button, 0,0,0,0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
@@ -85,8 +84,10 @@ public:
 		return false;
 	}
 
+	// Destroys the sprite
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
+		al_destroy_font(fontSmaller)l
 	}
 
 
