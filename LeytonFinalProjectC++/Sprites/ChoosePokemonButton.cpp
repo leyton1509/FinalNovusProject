@@ -8,8 +8,6 @@ class ChoosePokemonButton : public Button {
 
 public:
 
-	//ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
-
 	// The pokemon attatched to this button
 	Pokemon pokemon;
 
@@ -34,12 +32,6 @@ public:
 
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
-		//al_destroy_bitmap(otherPokemonSprite);
 	}
-
-
-
-
-
 
 };
