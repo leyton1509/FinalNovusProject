@@ -2,20 +2,17 @@
 #include "../Pokemon/Pokemon.h"
 #include <allegro5/allegro_font.h>
 
-// A specific attack button
+// A button for displaying a pokemon in the pc
 // Inherits from Button which inherits from Sprite
 class SwitchPokemonPCButton : public Button {
 
 public:
 
+	// The pointer to the other pokemon sprite sheet
 	ALLEGRO_BITMAP* otherPokemonSprite;
+	// Loads the highlighetd pokemon image
 	ALLEGRO_BITMAP* highlightedImage = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PCSprites/HighlightedPokemon.png");
-
-	// The original x size of button image
-	int originalSizeX;
-	// The original y size of button image
-	int originalSizeY;
-
+	// Whether or not the pokemon has been selected
 	bool isHighlighted;
 
 
