@@ -2,18 +2,27 @@
 #include "../Pokemon/Moves/MoveCategory.h"
 #include "../Pokemon/PokemonTypeChart.h"
 #include "../Sprites/Trainer.h"
+
+// Class which represents a single pokemon turn
 class PokemonTurn {
 	
 public:
 
+	// An array of strings to display back what happened
 	string textForTextBox[4] = { "", "", "", "" };
 
 	int getNextPokemonForOpponent(Trainer& trainer, int currentPokemon, Pokemon playersPokemon) {
 
+		// Gets the pokemon type char
 		PokemonTypeChart ptc = PokemonTypeChart();
+		// The effectiveness of the pokemon againt the players pokemon
 		double highestEffectiveness = -1;
+		// Which pokemon number to choose
 		int numberToChoose = 0;
 
+		// Loops through the trainers party
+		// Checks its not the current pokemon and if its valid
+		// Works out the effectiveness and sets the number pokemon to the best effective pokemon
 		for (int i = 0; i < trainer.numberOfPokemonInParty; i++)
 		{
 			if (i != currentPokemon) {
@@ -21,7 +30,6 @@ public:
 					if (trainer.trainersTeam[i].currentHealth > 0) {
 						double effectiveness = ptc.returnEffectivenessOfMove(trainer.trainersTeam[i].pokemonTypeOne, playersPokemon.pokemonTypeOne, playersPokemon.pokemonTypeTwo);
 						effectiveness = effectiveness * ptc.returnEffectivenessOfMove(trainer.trainersTeam[i].pokemonTypeTwo, playersPokemon.pokemonTypeOne, playersPokemon.pokemonTypeTwo);
-
 						if (effectiveness > highestEffectiveness) {
 							numberToChoose = i;
 							highestEffectiveness = effectiveness;
