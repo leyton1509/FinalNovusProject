@@ -24,7 +24,7 @@ public:
 
 	// The constructor with takes the pokemon to display info for
 	// and the standard size info
-	PokemonStatBox(Pokemon& _pokemonToRepresent, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png") {
+	PokemonStatBox(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Sprite(SpriteType::SpriteTypes::Button, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokemonStatBox.png") {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
 	}
