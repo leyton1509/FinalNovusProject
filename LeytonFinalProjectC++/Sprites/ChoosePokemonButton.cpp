@@ -8,7 +8,7 @@ class ChoosePokemonButton : public Button {
 
 public:
 
-	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+	//ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
 	// The pokemon attatched to this button
 	Pokemon pokemon;
@@ -27,14 +27,14 @@ public:
 	}
 
 	// Draws the button and pokemon attacthed to it
-	void drawSprite() {
+	void drawSprite(ALLEGRO_BITMAP* otherPokemonSprite) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 7, yPosition + 5, spritewidth * 0.9, spriteHeight * 0.9, 0);
 	}
 
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
-		al_destroy_bitmap(otherPokemonSprite);
+		//al_destroy_bitmap(otherPokemonSprite);
 	}
 
 
