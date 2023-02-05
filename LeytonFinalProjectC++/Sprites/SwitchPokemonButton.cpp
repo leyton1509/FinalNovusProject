@@ -2,13 +2,13 @@
 #include "../Pokemon/Pokemon.h"
 #include <allegro5/allegro_font.h>
 
-// A specific attack button
+// A button for displaying a button with a pokemon  and health attatched
 // Inherits from Button which inherits from Sprite
 class SwitchPokemonButton : public Button {
 
 public:
 
-	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+	//ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
 	// Connstructor with the pokemon to add to the players party
 	SwitchPokemonButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
@@ -23,7 +23,7 @@ public:
 	}
 
 	// Draws the button and pokemon attacthed to it
-	void drawSprite(Pokemon& pokemon) {
+	void drawSprite(Pokemon& pokemon, ALLEGRO_BITMAP* otherPokemonSprite) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		if (!(strcmp(pokemon.pokemonName.c_str(), "") == 0)) {
 			al_draw_scaled_bitmap(otherPokemonSprite, (80 * pokemon.xPositionOnSpriteSheet), (80 * pokemon.yPositionOnSpriteSheet), 80, 80, xPosition + 4, yPosition-2, spritewidth * 0.9, spriteHeight * 0.9, 0);
@@ -45,7 +45,7 @@ public:
 
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
-		al_destroy_bitmap(otherPokemonSprite);
+		//al_destroy_bitmap(otherPokemonSprite);
 		al_destroy_font(fontSmaller);
 	}
 
