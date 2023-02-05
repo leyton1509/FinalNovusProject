@@ -44,7 +44,6 @@ class PlayerCharacter : public Sprite{
 	Pokemon box[30];
 	// Handles all the items
 	ItemManager itemManager = ItemManager();
-
 	// Money
 	int playersMoney;
 
@@ -90,7 +89,7 @@ class PlayerCharacter : public Sprite{
 		}
 	}
 
-
+	// Reclauclates the number of pokemon in the party and pc
 	void recalcNumberOfPokemon() {
 		int nParty = 0;
 		int nBox = 0;
@@ -313,6 +312,7 @@ class PlayerCharacter : public Sprite{
 	
 	}
 
+	// Resets the position and state of the player
 	void resetPlayer(int x, int y) {
 		state = 0;
 		currentFrame = 0;
