@@ -10,10 +10,6 @@ public:
 
 	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
-	// The original x size of button image
-	int originalSizeX;
-	// The original y size of button image
-	int originalSizeY;
 	// The pokemon attatched to this button
 	Pokemon pokemon;
 
