@@ -77,7 +77,7 @@ class PokemonType {
         }
 
         // Converts the string to enum
-        PokemonType::PokemonTypes getEnumFromStringMove(std::string typeString) {
+        PokemonType::PokemonTypes getEnumFromStringType(std::string typeString) {
             if (typeString.compare("Normal") == 0) {
                 return PokemonType::PokemonTypes::Normal;
             }
