@@ -16,22 +16,20 @@ public:
 	int xTileForSpriteSheet;
 	// Y tile for the style sheet position
 	int yTileForSpriteSheet;
-
 	// original x for tile
 	int xTileOriginal;
 	// original y for tile
 	int yTileForOriginal;
-
+	// Bool for if the trainer has been fought or mot
 	bool hasBeenFought = false;
-
+	// The trainers team
 	Pokemon trainersTeam[6];
+	// The number of pokemon in the party
 	int numberOfPokemonInParty = 0;
-
+	// The location number of the trainer
 	int locationNumber;
 
-
-
-	// Main constructor for loading a character 
+	// Main constructor for loading a trainer, with name, pos, stylesheet and styelsheet position 
 	Trainer(const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet) : Sprite(SpriteType::SpriteTypes::Player, _xTile * 32, _yTile * 32,0,0, 0,0, 32,32, stylesheet) {
 		name = _name;
 		xTileOriginal = _xTileForSpriteSheet;
@@ -44,6 +42,7 @@ public:
 
 	}
 
+	// Empty const
 	Trainer() : Sprite(SpriteType::SpriteTypes::Player, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
 		name = "";
 		xTile = 0;
@@ -79,6 +78,7 @@ public:
 		return true;
 	}
 
+	// Sets the position of the trainer, as well as the direction and location number
 	void setPositions(int _xTile, int _yTile, int _directonX, int _directonY, int locationNumber) {
 		xTile = _xTile;
 		yTile = _yTile;
@@ -89,6 +89,7 @@ public:
 		mapDirectonToSpriteSheet();
 	}
 
+	// Turns the trainer sprite based on the direction
 	void mapDirectonToSpriteSheet() {
 
 		if (directionX == -1) {
@@ -119,6 +120,7 @@ public:
 		al_draw_scaled_bitmap(spriteImage, (32 * xTileForSpriteSheet), (32 * yTileForSpriteSheet), 32, 32, xPosition-14, yPosition, 64, 64, 0);
 	}
 
+	// If the trainer has been interacted
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
 		if (!hasBeenFought) {
@@ -126,10 +128,13 @@ public:
 
 			hasBeenFought = true;
 		}
-		cout << "hi\n";
+		
 	}
 
-
+	// Code for detecting if the player is in the line of sight of the trainer
+	// Works for up to 5 tiles 
+	// Gets the direction
+	// Then compares the tile of the trainer to the player
 	bool isInLineOfSight(int xTilePlayer, int yTilePlayer) {
 
 		if (!hasBeenFought) {
@@ -161,8 +166,8 @@ public:
 
 	
 	// Checks the locaions to see if the character is interacting with the current object
+	// Returns true if interacting, false if not
 	bool isInteracting(const char* keyPressed, int xTile, int yTile, int directionX, int directionY, int mapSizeX, int mapSizeY) {
-		// std::cout << "Current X : " << xTile << " Current Y: " << yTile << " X : " << xPosition / 32 << " Y :" << yPosition / 32 << " \n";
 			int tempYTile = yTile + 1;
 			if (strcmp(keyPressed, "w") == 0) {
 				if (directionY == 1) {
