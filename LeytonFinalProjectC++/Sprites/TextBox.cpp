@@ -144,12 +144,14 @@ public:
 				break;
 
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				// Finish the loop
 				done = true;
 				finishedStrings = true;
 				break;
 
 
 			case ALLEGRO_EVENT_KEY_UP:
+				// Checks to see if to progress in current string or finish the loop
 				if (counter == 0) {
 					counter++;
 				}
@@ -169,6 +171,7 @@ public:
 				break;
 
 			// Draws the srites
+			// Draws the correct string in the textbox
 			if (redraw && al_is_event_queue_empty(queue))
 			{
 				int cString = 0;
