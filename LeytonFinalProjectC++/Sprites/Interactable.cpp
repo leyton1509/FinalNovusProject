@@ -323,7 +323,8 @@ public:
 		 ChoosePokemonButton pokemonTwoButton = ChoosePokemonButton(pokemon2, 128, 128, 385, 100, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 		 ChoosePokemonButton pokemonThreeButton = ChoosePokemonButton(pokemon3, 128, 128, 565, 30, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 			 
-		
+		 ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+
 
 		 bool chosenPokemon = false;
 
@@ -377,13 +378,15 @@ public:
 			 if (done)
 				 break;
 
+
+
 			 if (redraw && al_is_event_queue_empty(queue))
 			 {
 				 al_clear_to_color(al_map_rgb(0, 0, 0));
 				 al_draw_scaled_bitmap(background, 0, 0, 321, 240, 0, 0, screenWidth, screenHeight, 0);
-				 pokemonOneButton.drawSprite();
-				 pokemonTwoButton.drawSprite();
-				 pokemonThreeButton.drawSprite();
+				 pokemonOneButton.drawSprite(otherPokemonSprite);
+				 pokemonTwoButton.drawSprite(otherPokemonSprite);
+				 pokemonThreeButton.drawSprite(otherPokemonSprite);
 				 al_flip_display();
 			 }
 			 
