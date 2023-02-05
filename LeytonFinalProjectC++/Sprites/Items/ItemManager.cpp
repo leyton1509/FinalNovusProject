@@ -78,7 +78,7 @@ public:
 		PokeBall pokeball = PokeBall(pokeballID);
 		int cAmount = getAmountOfItem(pokeball.inividualItemID);
 		if (cAmount > 0) {
-			bool catchP = pokeball.catchPokemon(pokemon);
+			bool catchP = pokeball.useItem(pokemon);
 			setAmountOfItem(pokeball.inividualItemID, (cAmount - 1));
 			return catchP;
 		}
