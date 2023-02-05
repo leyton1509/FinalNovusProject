@@ -16,7 +16,7 @@ public:
 	bool isHighlighted;
 
 
-	// Connstructor with the pokemon to add to the players party
+	// Connstructor with positions and sizes along with the sprite sheet
 	SwitchPokemonPCButton(ALLEGRO_BITMAP* _otherPokemonSprite, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/PCSprites/ChoosePokemon.png") {
 		otherPokemonSprite = _otherPokemonSprite;
 		originalSizeX = _originalSizeX;
@@ -33,6 +33,8 @@ public:
 	}
 
 	// Draws the button and pokemon attacthed to it
+	// Draws the blue square if not highlighted, red if highlighted
+	// Only draws valid pokemon
 	void drawSprite(Pokemon& pokemon) {
 		
 		if (isHighlighted) {
@@ -48,6 +50,8 @@ public:
 		}
 	}
 
+
+	// Destroys the sprites
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
 		al_destroy_bitmap(otherPokemonSprite);
