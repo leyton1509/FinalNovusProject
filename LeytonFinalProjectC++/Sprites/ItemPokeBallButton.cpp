@@ -3,7 +3,7 @@
 #include <allegro5/allegro_font.h>
 #include "../Sprites/Items/PokeBall.h"
 
-// A specific attack button
+// A button with the image of a pokeball and the amount of them
 // Inherits from Button which inherits from Sprite
 class ItemPokeBallButton : public Button {
 
@@ -29,7 +29,7 @@ public:
 		originalSizeY = 0;
 	}
 
-	// Draws the button 
+	// Draws the button with the pokeball and amount
 	void drawSprite(int amountOfItem) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		pokeball.drawSprite();
@@ -43,6 +43,7 @@ public:
 
 	}
 
+	// Destroys all the sprites
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
 		al_destroy_font(fontSmaller);
