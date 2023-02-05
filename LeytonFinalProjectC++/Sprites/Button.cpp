@@ -87,7 +87,7 @@ public:
 	// Destroys the sprite
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
-		al_destroy_font(fontSmaller)l
+		al_destroy_font(fontSmaller);
 	}
 
 
