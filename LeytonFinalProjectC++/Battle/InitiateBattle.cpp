@@ -586,12 +586,12 @@ public:
 
 				// If the switch pokemon should be displayed, display all
 				if (switchPokemonOneButton.isDisplayed) {
-					switchPokemonOneButton.drawSprite(player.trainersParty[0]);
-					switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
-					switchPokemonThreeButton.drawSprite(player.trainersParty[2]);
-					switchPokemonFourButton.drawSprite(player.trainersParty[3]);
-					switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
-					switchPokemonSixButton.drawSprite(player.trainersParty[5]);
+					switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
+					switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
+					switchPokemonThreeButton.drawSprite(player.trainersParty[2], otherPokemonSprite);
+					switchPokemonFourButton.drawSprite(player.trainersParty[3], otherPokemonSprite);
+					switchPokemonFiveButton.drawSprite(player.trainersParty[4], otherPokemonSprite);
+					switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
 				}
 
 				// If the potion buttons should be displayed, display them
@@ -1196,12 +1196,12 @@ public:
 				}
 
 				if (switchPokemonOneButton.isDisplayed) {
-					switchPokemonOneButton.drawSprite(player.trainersParty[0]);
-					switchPokemonTwoButton.drawSprite(player.trainersParty[1]);
-					switchPokemonThreeButton.drawSprite(player.trainersParty[2]);
-					switchPokemonFourButton.drawSprite(player.trainersParty[3]);
-					switchPokemonFiveButton.drawSprite(player.trainersParty[4]);
-					switchPokemonSixButton.drawSprite(player.trainersParty[5]);
+					switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
+					switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
+					switchPokemonThreeButton.drawSprite(player.trainersParty[2], otherPokemonSprite);
+					switchPokemonFourButton.drawSprite(player.trainersParty[3], otherPokemonSprite);
+					switchPokemonFiveButton.drawSprite(player.trainersParty[4], otherPokemonSprite);
+					switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
 				}
 
 				if (pokeballButtonOne.isDisplayed) {
