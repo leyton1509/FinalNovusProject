@@ -8,8 +8,6 @@ class AttackButton : public Button {
 
 public:
 
-	// The font to draw with
-	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 	// The move attatched to this button
 	Move pokemonMove;
 
