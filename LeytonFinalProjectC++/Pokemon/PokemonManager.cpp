@@ -42,9 +42,9 @@ private:
             // The name of the pokemon from file
             string pokemonName = pokemonList.at(i)[1];
             // The type of the pokemon from file
-            PokemonType::PokemonTypes typeOne = pt.getEnumFromStringMove(pokemonList.at(i)[2]);
+            PokemonType::PokemonTypes typeOne = pt.getEnumFromStringType(pokemonList.at(i)[2]);
             // The type 2 of the pokemon from file
-            PokemonType::PokemonTypes typeTwo = pt.getEnumFromStringMove(pokemonList.at(i)[3]);
+            PokemonType::PokemonTypes typeTwo = pt.getEnumFromStringType(pokemonList.at(i)[3]);
             // The health stat of the pokemon from file
             int healthStat = std::stoi(pokemonList.at(i)[4]);
             // The attack stat of the pokemon from file
