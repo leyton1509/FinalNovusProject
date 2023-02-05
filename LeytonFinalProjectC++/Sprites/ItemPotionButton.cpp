@@ -3,7 +3,7 @@
 #include <allegro5/allegro_font.h>
 #include "../Sprites/Items/Potion.h"
 
-// A specific attack button
+// A button with the image of a potion and the amount of them
 // Inherits from Button which inherits from Sprite
 class ItemPotionButton : public Button {
 
@@ -13,7 +13,7 @@ public:
 	// The potion attacthed to this button
 	Potion potion;
 
-	// ItemPokeBallButton with the pokemon to add to the players party
+	// Item potion button with the potion to add / remove
 	ItemPotionButton(int potionID, int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
 		potion = Potion(potionID);
 		potion.xPosition = _xStart;
@@ -29,7 +29,7 @@ public:
 		originalSizeY = 0;
 	}
 
-	// Draws the button 
+	// Draws the button with the pokeball and amount
 	void drawSprite(int amountOfItem) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		potion.drawSprite();
