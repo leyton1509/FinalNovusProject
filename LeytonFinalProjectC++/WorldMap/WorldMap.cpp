@@ -30,9 +30,11 @@ public:
 	int screenWidth;
 	int screenHeight;
 	int locationNumber = 0;
+	int routeNumber = 0;
 	int mapNumber;
 	int previousTileLocation[2];
 	int closestHealLocation[2];
+
 
 	TrainerManager trainerManager;
 
