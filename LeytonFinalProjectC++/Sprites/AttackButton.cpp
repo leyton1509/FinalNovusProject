@@ -10,10 +10,6 @@ public:
 
 	// The font to draw with
 	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-	// The original x size of button image
-	int originalSizeX;
-	// The original y size of button image
-	int originalSizeY;
 	// The move attatched to this button
 	Move pokemonMove;
 
