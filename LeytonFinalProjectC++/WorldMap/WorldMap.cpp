@@ -95,6 +95,7 @@ public:
 		closestHealLocation[0] = 15;
 		closestHealLocation[1] = 10;
 		InteractablesForMaps im;
+		routeNumber = _mapNumber;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		trainersForMap = trainerManager.getTrainersForMap(_mapNumber);
 		loadMap(mapFP);
