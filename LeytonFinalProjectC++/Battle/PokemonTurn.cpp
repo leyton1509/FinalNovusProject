@@ -80,13 +80,18 @@ public:
 		return rand() % (to - from + 1) + from;
 	}
 
+	// There are currently 2 level of ai
+	// level 0 which picks a random move
+	// Level 1 which gets the highest damaging move
 	Move getEnemyMoveUsed(Pokemon playersPokemon, Pokemon otherPokemon, int aiLevel) {
 
+		// Pick a random move for the enemy
 		if (aiLevel == 0) {
 			int numberOfMoves = otherPokemon.numberOfMoves-1;
 			int ran = random(0, (numberOfMoves-1));
 			return otherPokemon.pokemonsMoves[ran];
 		}
+		// Work out the highest damaging move and return that move
 		else if (aiLevel == 1) {
 			int highestDamage = 0;
 			Move moveToReturn;
@@ -111,11 +116,19 @@ public:
 
 	}
 
+	// Method for status move
+	// Takes the pokemon using move, the other pokemon and the status move
 	void statusMove(Pokemon& pokemonUsingMove, Pokemon& otherPokemon, Move statusMoveUsed) {
 		cout << "\n" << pokemonUsingMove.pokemonName << " used : " << statusMoveUsed.moveName << "\n";
 
 	}
 
+	// The enemies attack
+	// Takes the playerspokemon
+	// And the other pokemon
+	// The ai is dependent on the pokemons level
+	// Sets the text in the textbox
+	// Either uses a status move or the attacking move
 	void enemyAttack(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		if (otherPokemon.level > 15) {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
@@ -160,6 +173,7 @@ public:
 		}
 	}
 
+	// The pokemon turn when the player has an attack
 	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon, Move& playerMoveUsed) 
 	{
 		// First of all, check who goes first
@@ -167,8 +181,11 @@ public:
 		playersPokemon.printMonsterDetails();
 		otherPokemon.printMonsterDetails();
 
+		// Player goes first
 		if (playersPokemon.speedActual >= otherPokemon.speedActual) {
 			textForTextBox[0] = playersPokemon.pokemonName + " used " + playerMoveUsed.moveName + "!";
+			// Checks to see if its a status move
+			// Otherwise works the damage out and decreases the enemy healt
 			if (playerMoveUsed.typeOfMove == MoveCategory::Status) {
 				statusMove(otherPokemon, playersPokemon, playerMoveUsed);
 			}
@@ -184,9 +201,12 @@ public:
 				textForTextBox[1] = otherPokemon.pokemonName + " fainted!";
 			}
 		}
+		// Enemy goes first
 		else {
+			// Does the enemy attack
 			enemyAttack(playersPokemon, otherPokemon);
 
+			// if the players pokemon doesnt die, do their move
 			if (playersPokemon.currentHealth != 0) {
 				textForTextBox[1] = playersPokemon.pokemonName + " used " + playerMoveUsed.moveName + "!";
 				if (playerMoveUsed.typeOfMove == MoveCategory::Status) {
@@ -204,6 +224,7 @@ public:
 
 	}
 
+	// A turn when only the opponents pokemon has their attack
 	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		enemyAttack(playersPokemon, otherPokemon);
 	}
