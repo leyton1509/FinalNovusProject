@@ -410,7 +410,7 @@ int main()
                             keys[2] = false;
                             keys[3] = false;
                             keys[4] = false;
-                            InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, worldMap.locationNumber);
+                            InitiateBattle initiateBattle = InitiateBattle(screenWidth, screenHeight, queue, player, worldMap.locationNumber, worldMap.routeNumber);
                             if (player.isAllPokemonInPartyDead()) {
                                 worldMap.returnPlayerToClosestHeal(player);
                                 player.resetPlayer(player.xTilePosition, player.yTilePosition);
