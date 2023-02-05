@@ -6,14 +6,18 @@
 #include <list>
 #include "../Pokemon/PokemonManager.h"
 
+// Handles all the creating and getting of trainers
 class TrainerManager{
 
 public :
 
+	// The style sheet of trainers
 	ALLEGRO_BITMAP * trainerStyleSheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PlayerSprites/Trainers.png");
 
+	// A map of trainers
 	std::map<int, Trainer> trainers = {};
 
+	// Gets the trainers for the map number
 	std::list<Trainer> getTrainersForMap(int mapNumber) {
 
 		PokemonManager pm = pm.instance();
@@ -30,15 +34,14 @@ public :
 			Pokemon p3 = pm.getDefaultPokemon("Piplup");
 			p3.setPokemonsLevel(5);
 			t1.addPokemon(p3);
-
 			t1.setPositions(15, 12, 0, 1, 1);
 			trainerList.push_front(t1);
 		}
-		
 
 		return trainerList;
 	}
 
+	// Inserts all the trainers into the trainers map
 	TrainerManager() {
 		// const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet
 		trainers.insert({ 1, Trainer("Elm", 1, 1, trainerStyleSheet, 0, 0) });
@@ -130,6 +133,7 @@ public :
 		trainers.insert({ 80, Trainer("Guard", 1, 1, trainerStyleSheet, 27, 28) });
 	}
 
+	// Gets a trainer from the trainer number
 	Trainer getTrainer(int trainerNum) {
 
 		auto getter = trainers.find(trainerNum);
