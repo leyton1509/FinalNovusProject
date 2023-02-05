@@ -10,9 +10,7 @@ class ItemPotionButton : public Button {
 public:
 	// Name of item
 	string itemName;
-	// The font to draw with
-	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-
+	// The potion attacthed to this button
 	Potion potion;
 
 	// ItemPokeBallButton with the pokemon to add to the players party
