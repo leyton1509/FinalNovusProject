@@ -42,10 +42,14 @@ public:
 		return numberToChoose;
 	}
 
+	// Returns an int for the damage of the move on the defending pokemon from the attacking pokemoon
 	int calcDamageOfMove(Pokemon attackingPokemon, Pokemon DefendingPokemon, Move playerMoveUsed) {
+
+		// The attack and defence of pokemon
 		int attack = 0;
 		int defence = 0;
 
+		// Gets the physical attack or the special attack depending on the move 
 		if (playerMoveUsed.typeOfMove == MoveCategory::Special) {
 			attack = attackingPokemon.specialAttackActual;
 			defence = DefendingPokemon.specialDefenceActual;
@@ -55,19 +59,23 @@ public:
 			defence = DefendingPokemon.physicalDefenceActual;
 		}
 
+		// Gets the effectiveness of the move on the defending pokemon
 		PokemonTypeChart ptc = PokemonTypeChart();
 		double effectivenessOfMove = ptc.returnEffectivenessOfMove(playerMoveUsed.pokemonTypeOfMove, DefendingPokemon.pokemonTypeOne, DefendingPokemon.pokemonTypeTwo);
 
+		// Same type attack bonus, 1.5 if the attacking pokemon ahs the same type as the attack
 		int stab = 1;
 
 		if (attackingPokemon.pokemonTypeOne == playerMoveUsed.pokemonTypeOfMove || attackingPokemon.pokemonTypeTwo == playerMoveUsed.pokemonTypeOfMove) {
 			stab = 1.5;
 		}
 		//int ranModifier = ((rand()%85) + 100);
+		// Works out the damagge
 		float damage = ((((((static_cast<float>(2) * attackingPokemon.level) / 5) + 2) * playerMoveUsed.power * attack / defence) / 50) + 2) * stab * effectivenessOfMove;
 		return damage;
 	}
 
+	// Generates a random number between range
 	int random(int from, int to) {
 		return rand() % (to - from + 1) + from;
 	}
