@@ -2,7 +2,6 @@
 #include <iostream>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
-#include "../Sprites/PokemonGrass.cpp"
 #include "../Sprites/PlayerCharacter.h"
 #include "../Sprites/InteractablesForMaps.h"
 #include <list>
@@ -44,7 +43,8 @@ public:
 		screenWidth = _screenWidth;
 		screenHeight = _screenHeight;
 		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
-		PokemonGrass grass = PokemonGrass();
+
+
 		// Unwalkable black square
 		mapTiles[0] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		// Walkable black square
@@ -58,11 +58,11 @@ public:
 		// Reserved for other colour tile
 		mapTiles[5] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
 		// Pokemon Grass
-		mapTiles[6] = grass.spriteImage;
+		mapTiles[6] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokemonGrass.png");
 		// Pokemon Grass reserved for different sprite
-		mapTiles[7] = grass.spriteImage;
+		mapTiles[7] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokemonGrass.png");
 		// Pokemon Grass reserved for different sprite
-		mapTiles[8] = grass.spriteImage;
+		mapTiles[8] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PokemonGrass.png");
 		// Entrance to small building
 		mapTiles[9] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		// Poke centre draw tile
