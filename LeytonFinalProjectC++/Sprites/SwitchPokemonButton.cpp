@@ -10,7 +10,7 @@ public:
 
 	//ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
-	// Connstructor with the pokemon to add to the players party
+	// Connstructor with the sizes and position
 	SwitchPokemonButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
 		originalSizeX = _originalSizeX;
 		originalSizeY = _originalSizeY;
@@ -23,6 +23,7 @@ public:
 	}
 
 	// Draws the button and pokemon attacthed to it
+	// Draws the heaolth in different colours
 	void drawSprite(Pokemon& pokemon, ALLEGRO_BITMAP* otherPokemonSprite) {
 		al_draw_scaled_bitmap(spriteImage, 0, 0, originalSizeX, originalSizeY, xPosition, yPosition, spritewidth, spriteHeight, 0);
 		if (!(strcmp(pokemon.pokemonName.c_str(), "") == 0)) {
@@ -43,6 +44,8 @@ public:
 
 	}
 
+
+	// Destroys the sprites
 	void destroySprite() {
 		al_destroy_bitmap(spriteImage);
 		//al_destroy_bitmap(otherPokemonSprite);
