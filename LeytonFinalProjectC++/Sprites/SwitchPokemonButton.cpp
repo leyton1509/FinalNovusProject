@@ -10,14 +10,6 @@ public:
 
 	ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
-	// The font to draw with
-	ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-	// The original x size of button image
-	int originalSizeX;
-	// The original y size of button image
-	int originalSizeY;
-
-
 	// Connstructor with the pokemon to add to the players party
 	SwitchPokemonButton(int _originalSizeX, int _originalSizeY, float _xStart, float _yStart, float _width, float _height) : Button(_originalSizeX, _originalSizeY, _xStart, _yStart, _width, _height, "../LeytonFinalProjectC++/Sprites/BattleSprites/SwitchPokemonButton.png") {
 		originalSizeX = _originalSizeX;
