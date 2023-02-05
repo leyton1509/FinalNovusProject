@@ -1,22 +1,30 @@
 #include "../../Sprites/Items/Item.h"
 #include <string>
 #include "../../Pokemon/Pokemon.h"
-// #include "../../Pokemon/Pokemon.h"
 
 using namespace std;
+
+// Class to represent a potion
+// Extends item
 class Potion : public Item {
 
 public:
 
+	// The name of the potion
 	string potionName;
+	// The value to heal the pokemon by
 	int healPokemonBy;
+	// The int id of the item
 	int inividualItemID;
 
+	// empty constructor
 	Potion() : Item(2, 0, 0, 0, 0) {
 		healPokemonBy = 0;
 		inividualItemID = 0;
 	}
 
+	// Constructor with the id of the potion
+	// The id changes the name of the potion and how much it heals by
 	Potion(int id): Item(2,0, 0, 0, 0){
 
 		if (id == 4) {
@@ -47,9 +55,7 @@ public:
 
 	}
 	
-	
-	
-	
+	// Increases the pokemons health by potion val
 	void useItem(Pokemon & pokemon) {
 		pokemon.increasePokemonHealth(healPokemonBy);
 		
