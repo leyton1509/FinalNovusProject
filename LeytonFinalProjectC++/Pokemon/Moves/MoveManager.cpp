@@ -22,7 +22,7 @@ private:
         for (int i = 0; i < cs.size(); i++) {
             int moveID = std::stoi(cs.at(i)[0]);
             string moveName = cs.at(i)[1];
-            PokemonType::PokemonTypes type = pt.getEnumFromStringMove(cs.at(i)[2]);
+            PokemonType::PokemonTypes type = pt.getEnumFromStringType(cs.at(i)[2]);
             MoveCategory::Categories moveC = mc.getEnumFromStringCategory(cs.at(i)[3]);
             int powerpoints = std::stoi(cs.at(i)[4]);
             int power = std::stoi(cs.at(i)[5]);
