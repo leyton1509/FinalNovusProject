@@ -18,10 +18,10 @@ private:
     PokemonManager() {
         // Reads the csv file info for pokemon and moves
         CSVFileManager csvm = CSVFileManager();
-        //std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/Pokemon.csv");
-        //std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSetsOut.csv");
-        std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/CSVs/Pokemon.csv");
-        std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSetsOut.csv");
+        std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/Pokemon.csv");
+        std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/leyto/source/repos/LeytonFinalProjectC++/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSetsOut.csv");
+        //std::vector<std::vector<std::string> > pokemonList = csvm.parseCSV("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/CSVs/Pokemon.csv");
+        //std::vector<std::vector<std::string> > pokemonMoveList = csvm.parseCSV("C:/Users/Owner/source/repos/FinalNovusProject/LeytonFinalProjectC++/CSVs/PokemonLevelUpMoveSetsOut.csv");
         // Declares the pokemon type and move category for conversions between string and enum
         PokemonType pt = PokemonType();
         MoveCategory mc = MoveCategory();
