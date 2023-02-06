@@ -94,6 +94,9 @@ public:
 
 	bool isInAnimation;
 
+	int playerAttackName;
+	int opponentAttackName;
+
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
@@ -473,6 +476,7 @@ public:
 
 								// Runs the opponents turn
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+								opponentAttackName = doTurn.attackUsedOpponent;
 							}
 						}
 						else {
@@ -501,6 +505,7 @@ public:
 									}
 									// Runs the opponents turn
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+									opponentAttackName = doTurn.attackUsedOpponent;
 								}
 							}
 						}
@@ -566,7 +571,8 @@ public:
 
 							// Does the pokemon turn
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent], player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
-							
+							opponentAttackName = doTurn.attackUsedOpponent;
+							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
 							// If the opponent dies
 							// Gain exoeruence, check for evolution 
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
