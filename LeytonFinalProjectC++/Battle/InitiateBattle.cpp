@@ -34,6 +34,11 @@ public:
 	ALLEGRO_BITMAP* otherPokemonSprite;
 	ALLEGRO_BITMAP* trainsersPokemonSprite;
 
+	int currentPokemon;
+
+
+
+
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
@@ -87,7 +92,7 @@ public:
 	}
 
 
-	void loadInititalParts(int locationNumber) {
+	void loadInititalParts(PlayerCharacter & player , int locationNumber) {
 		 battleFinished = false;
 		 // BG sprite
 		 background = getBackGroundFromLocationNumber(locationNumber);
@@ -96,8 +101,22 @@ public:
 		 al_identity_transform(&trans);
 		 al_use_transform(&trans);
 		 al_draw_bitmap(background, 0, 0, 0);
+		 // Sprites for the pokemon
 		 otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		 trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+
+		 // The number of the pokemon to use
+		 currentPokemon = 0;
+
+		 // Gets the first valid pokemon
+		 // Breaks if there is no valid
+		 if (!player.isAllPokemonInPartyDead()) {
+			 currentPokemon = player.getFirstAlivePokemon();
+
+		 }
+		 else {
+			 return;
+		 }
 		 
 	}
 
@@ -105,27 +124,12 @@ public:
 	InitiateBattle(Trainer& opponent, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
 		
 
-		loadInititalParts(locationNumber);
-		
-
-		
-		// Sprites for the pokemon
+		loadInititalParts(player, locationNumber);
 		
 
 		int currentPokemonOpponent = 0;
 
-		// The number of the pokemon to use
-		int currentPokemon = 0;
-
-		// Gets the first valid pokemon
-		// Breaks if there is no valid
-		if (!player.isAllPokemonInPartyDead()) {
-			currentPokemon = player.getFirstAlivePokemon();
-
-		}
-		else {
-			return;
-		}
+		
 
 
 		// The stat boxes for each pokemon
