@@ -228,6 +228,10 @@ public:
 
 	}
 
+	bool doesAttackHit(int accuracyOfMove) {
+
+	}
+
 	// A turn when only the opponents pokemon has their attack
 	PokemonTurn(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		enemyAttack(playersPokemon, otherPokemon);
