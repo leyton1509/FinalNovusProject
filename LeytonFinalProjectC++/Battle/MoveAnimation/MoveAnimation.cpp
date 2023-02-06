@@ -40,10 +40,10 @@ class MoveAnimation{
 		Move move = moveManager.getMoveDetails(moveID);
 
 		if (move.pokemonTypeOfMove == PokemonType::Normal) {
-
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
 		}
 		else {
-
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
 		}
 	}
 
