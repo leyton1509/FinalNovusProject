@@ -60,6 +60,10 @@ public:
 	SwitchPokemonButton switchPokemonFiveButton;
 	SwitchPokemonButton switchPokemonSixButton;
 
+	// The potion Buttons
+	ItemPotionButton potionButtonOne;
+	ItemPotionButton potionButtonTwo;
+	ItemPotionButton potionButtonThree;
 
 
 	// Returns the map bitmp from the location number
@@ -166,6 +170,17 @@ public:
 		  switchPokemonFiveButton.isDisplayed = false;
 		   switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
 		  switchPokemonSixButton.isDisplayed = false;
+
+		  // The potion buttons for each potion
+
+		  potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
+		  potionButtonOne.isDisplayed = false;
+
+		  potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
+		  potionButtonTwo.isDisplayed = false;
+
+		  potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
+		  potionButtonThree.isDisplayed = false;
 		 
 	}
 
@@ -186,16 +201,7 @@ public:
 
 		
 
-		// The potion buttons for each potion
-
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
-		potionButtonOne.isDisplayed = false;
-
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
-		potionButtonTwo.isDisplayed = false;
-
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
-		potionButtonThree.isDisplayed = false;
+		
 
 		// The options to choose buttons, heal, switch, catch and run
 
