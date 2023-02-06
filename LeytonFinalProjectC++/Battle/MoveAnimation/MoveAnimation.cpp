@@ -5,6 +5,7 @@
 // A class to control a single move animation
 class MoveAnimation{
 
+public :
 	// The id of the move
 	int moveID;
 	// The current frame of the animation
