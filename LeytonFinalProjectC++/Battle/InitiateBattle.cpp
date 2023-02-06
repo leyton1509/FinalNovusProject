@@ -933,6 +933,7 @@ public:
 						else {
 							if (currentPokemon != pokemonNinArray) {
 								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									int oldPokemon = currentPokemon;
 									currentPokemon = pokemonNinArray;
 									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
@@ -951,7 +952,13 @@ public:
 										pokemonIsDead = false;
 									}
 
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+									if (player.trainersParty[oldPokemon].currentHealth != 0) {
+										// Runs the opponents turn
+										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+										opponentAttackName = doTurn.attackUsedOpponent;
+										isInAnimation = true;
+									}
 								}
 							}
 						}
