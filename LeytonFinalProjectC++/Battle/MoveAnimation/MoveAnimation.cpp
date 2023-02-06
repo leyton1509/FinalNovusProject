@@ -20,8 +20,6 @@ public :
 	int destinationX;
 	// The destination Y position of the animation
 	int destinationY;
-	// The state of the animation
-	int state;
 	// The xtile for the style sheet
 	int xTileForStyleSheet;
 	// The ytile for the style sheet
@@ -81,7 +79,6 @@ public :
 			destinationX = _opponentPokemonX;
 			destinationY = _opponentPokemonY;
 		}
-		state = 1;
 		currentFrame = 0;
 		xTileForStyleSheet = 0;
 		yTileForSyleSheet = 0;
@@ -93,57 +90,58 @@ public :
 	}
 
 	void drawAnimation() {
-		if (state != 0) {
+		
 
-			if (currentFrame != duration) {
-				
-				if (lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet)> currentFrame) {
-					if (xTileForStyleSheet < xMaxStyleSheet) {
-						xTileForStyleSheet++;
-					}
-					else {
-						if (yTileForSyleSheet < yMaxStyleSheet) {
-							xTileForStyleSheet = 0;
-							yTileForSyleSheet++;
-						}
-						else {
-							state = 0;
-						}
-					}
+		if (currentFrame != duration) {
+			cout <<  "Length: " << lengthOfEachSprite << " Current Frame " << currentFrame <<  " X tile " << xTileForStyleSheet << " Y tile" << yTileForSyleSheet << " | ";
+			cout << "Calc : " << lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet) << "\n";
+			if (lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet)> currentFrame) {
+				if (xTileForStyleSheet < xMaxStyleSheet) {
+					xTileForStyleSheet++;
 				}
-
+				else {
+					if (yTileForSyleSheet < yMaxStyleSheet) {
+						xTileForStyleSheet = 0;
+						yTileForSyleSheet++;
+					}
+					
+				}
 			}
 
-			else {
-				state = 0;
-				currentFrame = 0;
-				isAnimationFinished = true;
-			}
-			currentFrame++;
 		}
+
+		else {
+
+			currentFrame = 0;
+			isAnimationFinished = true;
+		}
+			
+		
 
 		if (startX != destinationX) {
 
 			if (startX < destinationX) {
-				startX + (differenceInX / duration);
+				startX = startX + (differenceInX / duration);
 			}
 			else {
-				startX - (differenceInX / duration);
+				startX = startX - (differenceInX / duration);
 			}
 		}
 
 		if (startY != destinationY) {
 
 			if (startY < destinationY) {
-				startY + (destinationY / duration);
+				startY = startY + (destinationY / duration);
 			}
 			else {
-				startY - (destinationY / duration);
+				startY = startY - (destinationY / duration);
 			}
 		}
 
 
-		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 64, 64, startX, startY, 0);
+
+		currentFrame++;
+		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, startX, startY, 0);
 
 	}
 
