@@ -151,7 +151,11 @@ public :
 
 			break;
 		case PokemonType::Bug:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/poison3.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 3;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Rock:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8PrecipiceBlades.png");
