@@ -1,0 +1,6 @@
+class MoveAnimationHandler {
+
+	MoveAnimationHandler() {
+
+	}
+};
