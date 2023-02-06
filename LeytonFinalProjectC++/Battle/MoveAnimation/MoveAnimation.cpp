@@ -23,7 +23,7 @@ class MoveAnimation {
 
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
-
+		return false;
 	}
 
 	// Default creation of move animation
