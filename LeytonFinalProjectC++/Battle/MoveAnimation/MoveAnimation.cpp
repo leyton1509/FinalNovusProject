@@ -88,8 +88,8 @@ public :
 		xTileForStyleSheet = 0;
 		yTileForSyleSheet = 0;
 		isAnimationFinished = false;
-		duration = 60;
-	    lengthOfEachSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
+		duration = 90;
+	    lengthOfEachSprite = duration / (xMaxStyleSheet * yMaxStyleSheet);
 		differenceInX = (destinationX - startX) / duration;
 		differenceInY = (destinationY - startY) / duration;
 		currentXPos = startX;
@@ -100,9 +100,9 @@ public :
 		
 
 		if (currentFrame != duration) {
-			cout <<  "Length: " << lengthOfEachSprite << " Current Frame " << currentFrame <<  " X tile " << xTileForStyleSheet << " Y tile" << yTileForSyleSheet << " | ";
-			cout << "Calc : " << lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet) << "\n";
-			if (lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet)> currentFrame) {
+
+			// cout << "Left : " << currentFrame  << " Right : " << lengthOfEachSprite * xTileForStyleSheet  << "\n";
+			if (currentFrame  > lengthOfEachSprite * xTileForStyleSheet+1) {
 				if (xTileForStyleSheet < xMaxStyleSheet) {
 					xTileForStyleSheet++;
 				}
@@ -111,7 +111,6 @@ public :
 						xTileForStyleSheet = 0;
 						yTileForSyleSheet++;
 					}
-					
 				}
 			}
 
@@ -123,10 +122,7 @@ public :
 			isAnimationFinished = true;
 		}
 
-		cout << "SX   " << startX << " SY   " << startY << " DX   " << destinationX << " DY   " << destinationY << "\n";
-			
 		
-	
 		if (currentXPos != destinationX) {
 			currentXPos = currentXPos + differenceInX;
 		}
