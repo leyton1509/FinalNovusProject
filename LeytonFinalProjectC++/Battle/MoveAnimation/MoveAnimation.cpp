@@ -55,10 +55,12 @@ public :
 
 		switch (move.pokemonTypeOfMove)
 		{
+		case PokemonType::Grass:
+			return true;
 		default:
-			break;
+			return false;
 		}
-		return false;
+		
 	}
 
 	// Initialises the style sheet for the move used
