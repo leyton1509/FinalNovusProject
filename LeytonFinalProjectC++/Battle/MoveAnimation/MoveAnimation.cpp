@@ -59,6 +59,8 @@ public :
 			return true;
 		case PokemonType::Ice:
 			return true;
+		case PokemonType::Water:
+			return true;
 		default:
 			return false;
 		}
