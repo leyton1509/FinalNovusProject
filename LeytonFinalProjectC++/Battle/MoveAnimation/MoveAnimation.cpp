@@ -59,11 +59,15 @@ public :
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
 			xMaxStyleSheet = 5;
 			yMaxStyleSheet = 1;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 		}
 		else {
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
 			xMaxStyleSheet = 5;
 			yMaxStyleSheet = 1;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 		}
 	}
 
@@ -85,8 +89,7 @@ public :
 			destinationY = _opponentPokemonY;
 		}
 		currentFrame = 0;
-		xTileForStyleSheet = 0;
-		yTileForSyleSheet = 0;
+		
 		isAnimationFinished = false;
 		duration = 90;
 	    lengthOfEachSprite = duration / (xMaxStyleSheet * yMaxStyleSheet);
