@@ -90,8 +90,8 @@ public :
 		isAnimationFinished = false;
 		duration = 60;
 	    lengthOfEachSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
-		differenceInX = destinationX - startX;
-		differenceInY = destinationY - startY;
+		differenceInX = (destinationX - startX) / duration;
+		differenceInY = (destinationY - startY) / duration;
 		currentXPos = startX;
 		currentYPos = startY;
 	}
@@ -125,11 +125,17 @@ public :
 
 		cout << "SX   " << startX << " SY   " << startY << " DX   " << destinationX << " DY   " << destinationY << "\n";
 			
-		currentXPos = currentXPos * (1 - 0.03) + destinationX * 0.03;
-		currentYPos = currentYPos * (1 - 0.03) + destinationY * 0.03;
-
-
+		
 	
+		if (currentXPos != destinationX) {
+			currentXPos = currentXPos + differenceInX;
+		}
+
+		if (currentYPos != destinationY) {
+			currentYPos = currentYPos + differenceInY;
+		}
+		
+		
 
 		currentFrame++;
 		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, currentXPos, currentYPos, 0);
