@@ -355,10 +355,42 @@ public:
 		checkForPotionButtonClicked();
 		checkForSwitchPokemonButtonClicked();
 		checkForAttackButtonClicked();
-		// Checks to see which option button has been clicked
-		// Sets it to the value of that button
-	    
+	}
+
+	void checkForCatchButtonClicked() {
+		if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			if (textBox.isDisplayed) {
+				textBox.isDisplayed = false;
+				pokeballButtonOne.isDisplayed = true;
+				pokeballButtonTwo.isDisplayed = true;
+				pokeballButtonThree.isDisplayed = true;
+			}
+			else if (!textBox.isDisplayed && pokeballButtonOne.isDisplayed) {
+				textBox.isDisplayed = true;
+				pokeballButtonOne.isDisplayed = false;
+				pokeballButtonTwo.isDisplayed = false;
+				pokeballButtonThree.isDisplayed = false;
+			}
+		}
+	}
+
+	void checkForPokeBallButtonClicked() {
+		if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+			catchItemButtonClicked = 1;
+		}
+		else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+			catchItemButtonClicked = 2;
+
+		}
+		else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+			catchItemButtonClicked = 3;
+
+		}
+	}
+
+	void checkForButtonsClickedWild() {
 		
+
 		
 	}
 
