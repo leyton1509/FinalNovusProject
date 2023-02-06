@@ -117,6 +117,7 @@ public :
 			yMaxStyleSheet = 1;
 			xTileForStyleSheet = 0;
 			yTileForSyleSheet = 0;
+			duration = 50;
 			break;
 		case PokemonType::Electric:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8FusionBolt.png");
