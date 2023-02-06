@@ -16,7 +16,9 @@ class MoveAnimationHandler {
 		for (MoveAnimation& moveAni : animations)
 		{
 			moveAni.drawAnimation();
-			
+			if (moveAni.isAnimationFinished) {
+				animations.remove(moveAni);
+			}
 			break;
 		}
 	}
