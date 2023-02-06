@@ -76,58 +76,61 @@ void cameraUpdate(float* cameraPosition, float x, float y, int width, int height
 int main()
 {
 
- 
+    // Sets up the pokemon in pokemon manager
     PokemonManager pm = pm.instance();
-   
-
-    
-
-    
-  
-    
-
-
+ 
+    // Inits allegro, keyboard and mouse
     must_init(al_init(), "allegro");
     must_init(al_install_keyboard(), "keyboard");
     must_init(al_install_mouse(), "mouse");
 
+    // Initialise the timer
     ALLEGRO_TIMER* timer = al_create_timer(1.0 / 60.0);
     must_init(timer, "timer");
 
+    // Initialise the queue
     ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
     must_init(queue, "queue");
 
+    // Initialise the display
     ALLEGRO_DISPLAY* disp = al_create_display(screenWidth, screenHeight);
     must_init(disp, "display");
 
+    // Initialse primitives
     must_init(al_init_primitives_addon(), "primitives");
 
+    // Initialise fonts
     ALLEGRO_FONT* font = al_create_builtin_font();
     must_init(font, "font");
 
+    // Has to initialse addons for fonts, ttfs and images
     must_init(al_init_font_addon(), "fonts");
-
     must_init(al_init_ttf_addon(), "ttfs");
-
     must_init(al_init_image_addon(), "image addon");
 
+    // Adds the mouse, keyboard, display and timer events
     al_register_event_source(queue, al_get_mouse_event_source());
     al_register_event_source(queue, al_get_keyboard_event_source());
     al_register_event_source(queue, al_get_display_event_source(disp));
     al_register_event_source(queue, al_get_timer_event_source(timer));
 
-    
+    // The camera
     ALLEGRO_TRANSFORM camera;
 
+    // Simple GUI info
     bool done = false;
     bool redraw = true;
     ALLEGRO_EVENT event;
 
+    // Title screen class
     TitleScreen gameTitleScreen = TitleScreen(screenWidth, screenHeight);
-
+    //Whether to run title screen
     bool runTitleScreen = true;
+    //Whether to run overworld screen
     bool runOverWorld = false;
+    // If its a new game
     bool newGame = false;
+    // Mouse position
     double xMousePosition = 0;
     double yMousePosition = 0;
 
