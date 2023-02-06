@@ -91,7 +91,18 @@ class MoveAnimation{
 			if (currentFrame != duration) {
 				
 				if (lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet)> currentFrame) {
-
+					if (xTileForStyleSheet < xMaxStyleSheet) {
+						xTileForStyleSheet++;
+					}
+					else {
+						if (yTileForSyleSheet < yMaxStyleSheet) {
+							xTileForStyleSheet = 0;
+							yTileForSyleSheet++;
+						}
+						else {
+							state = 0;
+						}
+					}
 				}
 
 			}
