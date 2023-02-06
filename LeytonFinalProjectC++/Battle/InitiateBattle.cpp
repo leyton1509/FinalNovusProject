@@ -725,13 +725,7 @@ public:
 		// The hp bars
 		// The buttons on screen
 		
-
-		int attackButtonClicked = 0;
-		int switchPokemonButtonClicked = 0;
-		int healItemButtonClicked = 0;
 		int catchItemButtonClicked = 0;
-		bool pokemonIsDead = false;
-		int shouldHealInSwitch = -1;
 
 			// Wild encounter
 
