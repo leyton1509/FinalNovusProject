@@ -100,12 +100,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Fire:
-			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASFusionFlare.png");
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/Fire3.png");
 			xMaxStyleSheet = 5;
-			yMaxStyleSheet = 4;
+			yMaxStyleSheet = 6;
 			xTileForStyleSheet = 0;
 			yTileForSyleSheet = 0;
-			duration = 240;
 			break;
 		case PokemonType::Water:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/water3.png");
