@@ -27,7 +27,19 @@ class MoveAnimation {
 	}
 
 	// Default creation of move animation
-	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int opponentPokemonX, int opponentPokemonY) {
+	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY) {
 		moveID = _moveID;
+		if (isStartDestination(moveID)) {
+			startX = _opponentPokemonX;
+			startY = _opponentPokemonY;
+			destinationX = _opponentPokemonX;
+			destinationY = _opponentPokemonY;
+		}
+		else {
+			startX = _playerPokemonX;
+			startY = _playerPokemonY;
+			destinationX = _opponentPokemonX;
+			destinationY = _opponentPokemonY;
+		}
 	}
 };
