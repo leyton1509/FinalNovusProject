@@ -8,9 +8,10 @@ public :
 	// A list of all move animations in order
 	std::list<MoveAnimation> animations = {};
 
+
 	// Adds an animation to the list
-	void startAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY) {
-		MoveAnimation ani = MoveAnimation(_moveID, _playerPokemonX, _playerPokemonY,_opponentPokemonX, _opponentPokemonY);
+	void startAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY, int _opponentPokemonNum, int _playerPokemonNum) {
+		MoveAnimation ani = MoveAnimation(_moveID, _playerPokemonX, _playerPokemonY,_opponentPokemonX, _opponentPokemonY, _opponentPokemonNum, _playerPokemonNum);
 		animations.push_back(ani);
 	}
 
