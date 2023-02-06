@@ -9,6 +9,8 @@ class MoveAnimation{
 	int moveID;
 	// The current frame of the animation
 	int currentFrame;
+	// Duration of animation in frames
+	int duration;
 	// The starting X position of the animation
 	int startX;
 	// The starting X position of the animation
@@ -77,10 +79,11 @@ class MoveAnimation{
 		xTileForStyleSheet = 0;
 		yStileForSyleSheet = 0;
 		isAnimationFinished = false;
+		duration = 120;
 	}
 
 	void drawAnimation() {
-
+		
 	}
 
 };
