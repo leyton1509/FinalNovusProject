@@ -482,7 +482,7 @@ public:
 								// Runs the opponents turn
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
 								opponentAttackName = doTurn.attackUsedOpponent;
-								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
 								isInAnimation = true;
 							}
 						}
@@ -512,7 +512,7 @@ public:
 									}
 									// Runs the opponents turn
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
-									moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
+									moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
 									opponentAttackName = doTurn.attackUsedOpponent;
 									isInAnimation = true;
 								}
@@ -585,12 +585,12 @@ public:
 
 
 							if (player.trainersParty[currentPokemon].speedActual >= opponent.trainersTeam[currentPokemonOpponent].speedActual) {
-								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25);
-								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, currentPokemonOpponent, currentPokemon);
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
 							}
 							else {
-								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
-								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25);
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, currentPokemonOpponent, currentPokemon);
 
 							}
 
@@ -759,9 +759,17 @@ public:
 					// Draws the background
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 					// Drwas the trainer and opponent pokemon
-					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[currentPokemonOpponent].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[currentPokemonOpponent].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
+					int oppNumber = currentPokemonOpponent;
+					int trainerNum = currentPokemon;
+					for (MoveAnimation& moveAni : moveAnimationHandler.animations)
+					{
+						oppNumber = moveAni.opponentPokemonNum;
+						trainerNum = moveAni.playerPokemonNum;
+						break;
+					}
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[oppNumber].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[oppNumber].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
 					
 					moveAnimationHandler.drawAnimation();
 					if (moveAnimationHandler.finishedAllAnimations()) {
