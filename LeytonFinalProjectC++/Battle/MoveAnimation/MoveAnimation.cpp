@@ -177,8 +177,6 @@ public :
 			yMaxStyleSheet = 1;
 			xTileForStyleSheet = 0;
 			yTileForSyleSheet = 0;
-			
-			
 			break;
 		case PokemonType::Ghost:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8EerieSpell.png");
@@ -202,7 +200,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Steel:
-		
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/Sword5.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 5;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Fairy:
 			
