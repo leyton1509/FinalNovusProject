@@ -77,7 +77,7 @@ class MoveAnimation{
 		state = 0;
 		currentFrame = 0;
 		xTileForStyleSheet = 0;
-		yStileForSyleSheet = 0;
+		yTileForSyleSheet = 0;
 		isAnimationFinished = false;
 		duration = 120;
 	}
@@ -85,21 +85,12 @@ class MoveAnimation{
 	void drawAnimation() {
 		if (state != 0) {
 
-			if (currentFrame <= framerate / 6 && currentFrame >= 0) {
-				state = 1;
-				currentFrame++;
-			}
-		
-
-			else {
-				state = 0;
-				currentFrame = 0;
-			}
+			
 		}
 
 
-		//al_draw_bitmap_region(spriteImage, (64 * state) + 16, yValueForStyleSheet +12, 42, 48, xPosition, yPosition, 0);
-		al_draw_scaled_bitmap(stylesheet, (64 * state) + 16, yStileForSyleSheet, 42, 48, xPosition, yPosition, 48, 48, 0);
+		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 64, 64, startX, startY, 0);
+
 	}
 
 };
