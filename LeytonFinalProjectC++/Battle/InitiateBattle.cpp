@@ -954,8 +954,8 @@ public:
 
 									if (player.trainersParty[oldPokemon].currentHealth != 0) {
 										// Runs the opponents turn
-										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
-										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
 										opponentAttackName = doTurn.attackUsedOpponent;
 										isInAnimation = true;
 									}
