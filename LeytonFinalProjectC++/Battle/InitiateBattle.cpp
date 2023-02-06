@@ -736,7 +736,25 @@ public:
 			{
 
 				if (isInAnimation) {
+					al_clear_to_color(al_map_rgb(0, 0, 0));
+					// Draws the background
+					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+					// Drwas the trainer and opponent pokemon
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[currentPokemonOpponent].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[currentPokemonOpponent].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					
+					backBox.drawSprite();
+					textBox.drawSprite();
+					// Drwas the rest of the buttons
+					attackButton1.drawSprite();
+					attackButton2.drawSprite();
+					attackButton3.drawSprite();
+					attackButton4.drawSprite();
+					healPokemonButton.drawSprite();
+					switchPokemonButton.drawSprite();
+					catchPokemonButton.drawSprite();
+					runPokemonButton.drawSprite();
 				}
 				else {
 					al_clear_to_color(al_map_rgb(0, 0, 0));
@@ -788,10 +806,9 @@ public:
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
 					}
-
-					al_flip_display();
-					redraw = false;
 				}
+				al_flip_display();
+				redraw = false;
 
 				
 			}
