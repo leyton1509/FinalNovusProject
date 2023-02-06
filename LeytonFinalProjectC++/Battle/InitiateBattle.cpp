@@ -92,6 +92,8 @@ public:
 
 	ItemPokeBallButton pokeballButtonThree;
 
+	bool isInAnimation;
+
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
@@ -236,6 +238,8 @@ public:
 
 			 pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
 			pokeballButtonThree.isDisplayed = false;
+
+			isInAnimation = false;
 		 
 	}
 
@@ -404,6 +408,8 @@ public:
 		checkForSwitchPokemonButtonClicked();
 		checkForAttackButtonClicked();
 	}
+
+	
 
 	// Takes the screen size and the queue for inputs, the current player and the current location, and the opponent
 	InitiateBattle(Trainer& opponent, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
