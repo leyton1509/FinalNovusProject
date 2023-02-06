@@ -28,8 +28,9 @@ public:
 				else {
 					al_draw_circle((startX * i + 10), startY, (radius * 0.8), al_map_rgb(24, 24, 24), 1);
 				}
-
+				al_draw_circle((startX * i + 10), startY, (radius * 0.1), al_map_rgb(255, 25, 255), 1);
 			}
+
 			
 		}
 	}
