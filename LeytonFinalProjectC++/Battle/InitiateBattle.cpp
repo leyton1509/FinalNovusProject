@@ -85,6 +85,12 @@ public:
 	// If the switch should heal the pokemon not switch pokemon
 	int shouldHealInSwitch;
 
+	ItemPokeBallButton pokeballButtonOne;
+
+	ItemPokeBallButton pokeballButtonTwo;
+
+	ItemPokeBallButton pokeballButtonThree;
+
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
@@ -219,6 +225,15 @@ public:
 		    healItemButtonClicked = 0;
 		    // If the switch should heal the pokemon not switch pokemon
 		    shouldHealInSwitch = -1;
+
+			 pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80, 80);
+			pokeballButtonOne.isDisplayed = false;
+
+			 pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
+			pokeballButtonTwo.isDisplayed = false;
+
+			 pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
+			pokeballButtonThree.isDisplayed = false;
 		 
 	}
 
@@ -692,22 +707,7 @@ public:
 	// Takes the screen size and the queue for inputs, the current player and the current location
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int routeNumber) {
 
-		bool battleFinished = false;
-
-		ALLEGRO_EVENT event;
-
-		// BG sprite
-		ALLEGRO_BITMAP * background = getBackGroundFromLocationNumber(locationNumber);
-
-		// Reset the camera
-		ALLEGRO_TRANSFORM trans;
-		al_identity_transform(&trans);
-		al_use_transform(&trans);
-		al_draw_bitmap(background, 0, 0, 0);
-
-		// Sprites for the pokemon
-		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
-		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+		loadInititalParts(player, locationNumber);
 
 		// Get the pokemon to fight against
 		PokemonManager pm = pm.instance();
@@ -718,79 +718,13 @@ public:
 
 		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
-		// The number of the pokemon to use
-		int currentPokemon = 0;
-
-		if (!player.isAllPokemonInPartyDead()) {
-			currentPokemon = player.getFirstAlivePokemon();
-			
-		}
-		else {
-			return;
-		}
-		
-
 		//otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
 
 		// Gets all the gui info
 		// The hp bars
 		// The buttons on screen
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
-
-		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
-		Button textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
-
-		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-
-		string textForTextBox[4] = { "A wild " + otherPokemon.pokemonName + " appeared!", "", "", ""};
-
-		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
-		AttackButton attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1],128, 64, 160, 450, 128, 64);
-		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2],128, 64, 20, 520, 128, 64);
-		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3],128, 64, 160, 520, 128, 64);
-
-		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton( 64, 64, 540, 435, 80, 80);
-		switchPokemonOneButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
-		switchPokemonTwoButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
-		switchPokemonThreeButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
-		switchPokemonFourButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
-		switchPokemonFiveButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
-		switchPokemonSixButton.isDisplayed = false;
-
-		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
-		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
-		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
-		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
-
-		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80,80);
-		pokeballButtonOne.isDisplayed = false;
-
-		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
-		pokeballButtonTwo.isDisplayed = false;
-
-		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
-		pokeballButtonThree.isDisplayed = false;
-
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
-		potionButtonOne.isDisplayed = false;
-
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
-		potionButtonTwo.isDisplayed = false;
-
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
-		potionButtonThree.isDisplayed = false;
+		
 
 		int attackButtonClicked = 0;
 		int switchPokemonButtonClicked = 0;
