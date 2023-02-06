@@ -137,20 +137,7 @@ public :
 			break;
 		}
 
-		if (move.pokemonTypeOfMove == PokemonType::Normal) {
-			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
-			xMaxStyleSheet = 5;
-			yMaxStyleSheet = 1;
-			xTileForStyleSheet = 0;
-			yTileForSyleSheet = 0;
-		}
-		else {
-			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
-			xMaxStyleSheet = 5;
-			yMaxStyleSheet = 1;
-			xTileForStyleSheet = 0;
-			yTileForSyleSheet = 0;
-		}
+
 	}
 
 	// Default creation of move animation
