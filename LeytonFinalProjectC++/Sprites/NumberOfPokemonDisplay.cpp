@@ -1,3 +1,4 @@
+#include "../Pokemon/Pokemon.h"
 class NumberOfPokemonDisplay {
 
 public:
@@ -11,6 +12,10 @@ public:
 		startX = _startX;
 		startY = _startY;
 		radius = _radius;
+	}
+
+	void drawDisplay(Pokemon party[]) {
+
 	}
 
 
