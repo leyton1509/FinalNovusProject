@@ -792,7 +792,7 @@ public:
 					}
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[oppNumber].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[oppNumber].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
 					
 					moveAnimationHandler.drawAnimation();
 					if (moveAnimationHandler.finishedAllAnimations()) {
@@ -819,7 +819,7 @@ public:
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[currentPokemonOpponent].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[currentPokemonOpponent].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 
 					if (!pokemonIsDead) {
-						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
 					}
 
 					// If the switch pokemon should be displayed, display all
@@ -1260,7 +1260,7 @@ public:
 					}
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
 
 					moveAnimationHandler.drawAnimation();
 					if (moveAnimationHandler.finishedAllAnimations()) {
@@ -1286,7 +1286,7 @@ public:
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					if (!pokemonIsDead) {
-						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
 					}
 					otherPokemonStatBox.drawSprite(otherPokemon);
 					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
