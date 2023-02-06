@@ -71,6 +71,8 @@ public :
 			return true;
 		case PokemonType::Steel:
 			return true;
+		case PokemonType::Fighting:
+			return true;
 		default:
 			return false;
 		}
