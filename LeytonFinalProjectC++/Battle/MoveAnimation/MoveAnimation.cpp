@@ -90,7 +90,7 @@ class MoveAnimation{
 
 			if (currentFrame != duration) {
 				
-				if (lengthOfEachSprite * xTileForStyleSheet> currentFrame) {
+				if (lengthOfEachSprite * (xTileForStyleSheet + yTileForSyleSheet)> currentFrame) {
 
 				}
 
