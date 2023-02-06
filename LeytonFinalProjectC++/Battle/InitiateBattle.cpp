@@ -239,7 +239,7 @@ public:
 		 
 	}
 
-	void checkForButtonsClickedTrainer() {
+	void checkForSwitchButtonClicked() {
 		if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			if (textBox.isDisplayed) {
 				textBox.isDisplayed = false;
@@ -266,9 +266,11 @@ public:
 			}
 
 		}
+	}
 
+	void checkForHealButtonClicked() {
 		// Checks to see if the heal button has been clicked
-		else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+		if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			// If its displayed, un display it, if its not display them
 			if (textBox.isDisplayed) {
 				textBox.isDisplayed = false;
@@ -291,10 +293,10 @@ public:
 			}
 
 		}
+	}
 
-		// Checks to see which option button has been clicked
-		// Sets it to the value of that button
-		else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+	void checkForPotionButtonClicked() {
+		if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
 			healItemButtonClicked = 1;
 		}
 		else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -304,7 +306,10 @@ public:
 		else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
 			healItemButtonClicked = 3;
 		}
-		else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+	}
+
+	void checkForSwitchPokemonButtonClicked() {
+		if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			switchPokemonButtonClicked = 1;
 		}
 
@@ -327,7 +332,10 @@ public:
 		else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			switchPokemonButtonClicked = 6;
 		}
-		else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+	}
+
+	void checkForAttackButtonClicked() {
+		if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 			attackButtonClicked = 1;
 		}
 		else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -339,6 +347,19 @@ public:
 		else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
 			attackButtonClicked = 4;
 		}
+	}
+
+	void checkForButtonsClickedTrainer() {
+		checkForSwitchButtonClicked();
+		checkForHealButtonClicked();
+		checkForPotionButtonClicked();
+		checkForSwitchPokemonButtonClicked();
+		checkForAttackButtonClicked();
+		// Checks to see which option button has been clicked
+		// Sets it to the value of that button
+	    
+		
+		
 	}
 
 	// Takes the screen size and the queue for inputs, the current player and the current location, and the opponent
