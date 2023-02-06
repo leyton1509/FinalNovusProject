@@ -972,7 +972,31 @@ public:
 						int attackButtonN = attackButtonClicked - 1;
 						if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
 
-							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
+
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon],otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
+							opponentAttackName = doTurn.attackUsedOpponent;
+							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
+
+
+							if (player.trainersParty[currentPokemon].speedActual >= otherPokemon.speedActual) {
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, -1, currentPokemon);
+								if (otherPokemon.currentHealth != 0) {
+									moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+								}
+
+							}
+							else {
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+								if (player.trainersParty[currentPokemon].currentHealth != 0) {
+									moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, -1, currentPokemon);
+
+								}
+
+							}
+
+							isInAnimation = true;
+
+
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
 								PokemonManager pm = pm.instance();
