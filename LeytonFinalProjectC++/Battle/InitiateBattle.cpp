@@ -10,6 +10,7 @@
 #include "../Sprites/ItemPotionButton.h"
 #include "../Sprites/Trainer.h"
 #include "../Sprites/UserOption.h"
+#include "../Battle/MoveAnimation/MoveAnimationHandler.h"
 
 
 // Class when a pokemon battke is needed
@@ -96,6 +97,10 @@ public:
 
 	int playerAttackName;
 	int opponentAttackName;
+
+	MoveAnimationHandler moveAnimationHandler;
+
+	
 
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
