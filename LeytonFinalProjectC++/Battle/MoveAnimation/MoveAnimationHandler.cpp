@@ -4,6 +4,7 @@
 // Class to handle all move animation creation and finishing
 class MoveAnimationHandler {
 
+public :
 	// A list of all move animations in order
 	std::list<MoveAnimation> animations = {};
 
