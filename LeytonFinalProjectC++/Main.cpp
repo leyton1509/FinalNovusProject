@@ -223,6 +223,7 @@ int main()
     // w a s d e
     bool keys[5] = {false, false ,false ,false, false};
 
+    // Runs while the run overworld option is true
     while (runOverWorld) {
 
         al_wait_for_event(queue, &event);
@@ -245,13 +246,14 @@ int main()
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
             break;
 
-
+            // Sets the done to true when closed
         case ALLEGRO_EVENT_DISPLAY_CLOSE:
             done = true;
             runOverWorld = false;
             break;
 
         case ALLEGRO_EVENT_KEY_UP:
+            // Upon key up, set the key in the array to false
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
                 keys[0] = false;
             }
@@ -269,6 +271,7 @@ int main()
             }
             break;
         case ALLEGRO_EVENT_KEY_DOWN:
+            // Upon key down, set the key in the array to true
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
                 keys[0] = true;
             }
@@ -288,14 +291,18 @@ int main()
             }
         }
 
+        // Break if done
         if (done)
             break;
 
         if (redraw && al_is_event_queue_empty(queue))
         {
-
+            // Checks for interaction
             if (keys[4]) {
                 
+                // Has the different checks for the interactions based on the players direction
+                // Passed in the player, queue, key pressed, player position information and screen size
+                // Does this for each direction
                 if (player.directionY == 1) {
                     int interacted = worldMap.interact(player, queue, "w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition, screenWidth, screenHeight);
                     keys[4] = false;
@@ -343,6 +350,9 @@ int main()
                 }
             }
 
+            // If not interacting, checks to see if w a s d has been pressed
+            // gets the tile the playerr is standing on - can be removed
+            /// Checks to see if the player can move and if they can calls player. move character based on their direction and tile
             else if (keys[0] && !keys[1] && !keys[2] && !keys[3]) {
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
@@ -371,12 +381,23 @@ int main()
                 }
             }
 
+            // Clears the background
             al_clear_to_color(al_map_rgb(0, 0, 0));
 
+            // Drwas the map first
             worldMap.drawMap();
+            // Then the player
             player.drawSprite();
+            // Checks to see if the player has walked onto a change map tile
             worldMap.checkToChangeMaps(player);
 
+            // On the third frame of every turn
+            // Check to see if the player is on pokemon grass
+            // Generates a random number if they are and if the num is 2 initate a wild pokemon battle
+            // Based on the location
+            // Sets the keys to false to make sure the player isnt moving after battle
+            // Sets the new encounter location
+            // If all the pokemon are dead it returns the player to the nearest heal spot
             if (framecounter == 3) {
 
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
@@ -403,6 +424,7 @@ int main()
                 }
                 
             }
+            // On frames 19, 39 and 59, check to see if a player walks in front of any of the trainers on the map
             else if (framecounter == 19 || framecounter == 39 || framecounter == 59) {
                bool battleHappened = worldMap.checkForTrainerBattle(player, queue);
                if (battleHappened) {
@@ -414,16 +436,20 @@ int main()
                }
             }
 
+            // Updates the camera based on player position
+
             cameraUpdate(cameraPosition, player.xPosition, player.yPosition, player.spritewidth, player.spriteHeight);
             al_identity_transform(&camera);
             al_translate_transform(&camera, -cameraPosition[0], -cameraPosition[1]);
             al_use_transform(&camera);
 
+            // Must call flip display
             al_flip_display();
-
+            // Redraw false when completed
             redraw = false;
         }
 
+        // If it gets to frame 60, set it back to frame 1 otherwise ++
         if (framecounter == 60) {
             framecounter = 1;
         }
@@ -437,9 +463,12 @@ int main()
     //////////////////////////////////////////
 
 
-
+    // Destroy all sprites on map
     worldMap.destroyAllSprites();
 
+    // Destroy the player image 
+    // Drop controls of move and keyboard
+    // Clean up queues
     al_destroy_bitmap(player.spriteImage);
     al_uninstall_keyboard();
     al_destroy_font(font);
