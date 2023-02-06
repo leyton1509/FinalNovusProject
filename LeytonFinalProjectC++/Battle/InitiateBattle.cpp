@@ -584,7 +584,16 @@ public:
 							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
 
 
-							
+							if (player.trainersParty[currentPokemon].speedActual >= opponent.trainersTeam[currentPokemonOpponent].speedActual) {
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25);
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
+							}
+							else {
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25);
+
+							}
+
 
 
 							isInAnimation = true;
