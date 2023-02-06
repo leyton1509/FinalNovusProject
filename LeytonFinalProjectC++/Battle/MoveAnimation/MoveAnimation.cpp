@@ -100,7 +100,7 @@ public :
 		case PokemonType::Poison:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/poison4.png");
 			xMaxStyleSheet = 5;
-			yMaxStyleSheet = 3;
+			yMaxStyleSheet = 2;
 			xTileForStyleSheet = 0;
 			yTileForSyleSheet = 0;
 			break;
@@ -111,7 +111,12 @@ public :
 			
 			break;
 		case PokemonType::Psychic:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASPsychoBoost.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 3;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
+
 			break;
 		case PokemonType::Bug:
 			
