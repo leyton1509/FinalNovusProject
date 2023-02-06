@@ -26,7 +26,7 @@ public:
 					al_draw_circle((startX * i + 10), startY, (radius * 0.8), al_map_rgb(238, 64, 86), 1);
 				}
 				else {
-					al_draw_circle((startX * i + 10), startY, (radius * 0.8), al_map_rgb(238, 64, 86), 1);
+					al_draw_circle((startX * i + 10), startY, (radius * 0.8), al_map_rgb(24, 24, 24), 1);
 				}
 
 			}
