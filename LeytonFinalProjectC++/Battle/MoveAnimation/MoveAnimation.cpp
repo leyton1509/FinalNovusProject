@@ -258,7 +258,7 @@ public :
 		currentFrame = 0;
 		
 		isAnimationFinished = false;
-		duration = 90;
+		duration = 150;
 	    lengthOfEachSprite = duration / (xMaxStyleSheet * yMaxStyleSheet);
 		differenceInX = (destinationX - startX) / duration;
 		differenceInY = (destinationY - startY) / duration;
