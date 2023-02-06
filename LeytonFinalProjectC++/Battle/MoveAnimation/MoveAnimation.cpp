@@ -20,7 +20,7 @@ class MoveAnimation {
 	int yStileForSyleSheet;
 
 	// Default creation of move animation
-	MoveAnimation() {
+	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int opponentPokemonX, int opponentPokemonY) {
 
 	}
 };
