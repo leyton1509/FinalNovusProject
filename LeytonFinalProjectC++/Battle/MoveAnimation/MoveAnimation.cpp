@@ -141,7 +141,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Ground:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8LandsWrath.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 2;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Flying:
 			
