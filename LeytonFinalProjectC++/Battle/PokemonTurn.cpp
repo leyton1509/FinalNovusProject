@@ -234,7 +234,11 @@ public:
 	}
 
 	bool doesAttackHit(int accuracyOfMove) {
-
+		int ranN = random(0, 100);
+		if (ranN <= accuracyOfMove) {
+			return true;
+		}
+		return false;
 	}
 
 	// A turn when only the opponents pokemon has their attack
