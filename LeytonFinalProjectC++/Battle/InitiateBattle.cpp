@@ -1083,7 +1083,7 @@ public:
 									}
 
 								}
-								battleFinished = true;
+								battleIsOver = true;
 							}
 
 							textForTextBox[0] = doTurn.textForTextBox[0];
@@ -1213,7 +1213,7 @@ public:
 					if (player.isAllPokemonInPartyDead()) {
 						// Add teleporting to nearest heal
 						cout << "All pokemon dead\n";
-						battleFinished = true;
+						battleIsOver = true;
 					}
 					pokemonIsDead = true;
 					textBox.isDisplayed = false;
@@ -1238,6 +1238,10 @@ public:
 
 			if (redraw && al_is_event_queue_empty(queue))
 			{
+				if (!isInAnimation && battleIsOver) {
+					battleFinished = true;
+					break;
+				}
 
 				if (isInAnimation) {
 					al_clear_to_color(al_map_rgb(0, 0, 0));
