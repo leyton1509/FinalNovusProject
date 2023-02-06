@@ -19,7 +19,7 @@ public:
 	void drawDisplay(Pokemon party[]) {
 		for (int i = 0; i < 6; i++)
 		{
-			
+			al_draw_circle((startX * i + 10), startY, radius, al_map_rgb(211,211,211), 1);
 			party[i];
 		}
 	}
