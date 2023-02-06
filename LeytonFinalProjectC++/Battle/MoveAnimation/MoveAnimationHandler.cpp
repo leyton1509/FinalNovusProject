@@ -25,13 +25,17 @@ public :
 
 	// Draws the first animation in the list
 	void drawAnimation() {
+
+		bool isFinished = false;
 		for (MoveAnimation& moveAni : animations)
 		{
 			moveAni.drawAnimation();
-			if (moveAni.isAnimationFinished) {
-				animations.remove(moveAni);
-			}
+			isFinished = moveAni.isAnimationFinished;
 			break;
+		}
+		
+		if (isFinished) {
+			animations.pop_front();
 		}
 	}
 

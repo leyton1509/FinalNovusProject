@@ -115,6 +115,8 @@ public :
 			currentFrame = 0;
 			isAnimationFinished = true;
 		}
+
+		cout << "SX " << startX << " SY" << startY << " DX " << destinationX << " DY" << destinationY << "\n";
 			
 		
 
