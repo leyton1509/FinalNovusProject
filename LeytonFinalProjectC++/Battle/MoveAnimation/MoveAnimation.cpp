@@ -40,6 +40,7 @@ class MoveAnimation{
 	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY){
 	
 		moveID = _moveID;
+		initialiseStyleSheet(moveID);
 		if (isStartDestination(moveID)) {
 			startX = _opponentPokemonX;
 			startY = _opponentPokemonY;
