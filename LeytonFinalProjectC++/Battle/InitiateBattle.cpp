@@ -914,9 +914,12 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				if (!isInAnimation) {
-					checkForButtonsClickedWild();
+				if (!battleIsOver) {
+					if (!isInAnimation) {
+						checkForButtonsClickedWild();
+					}
 				}
+				
 				
 
 				if (switchPokemonButtonClicked!=0) {
