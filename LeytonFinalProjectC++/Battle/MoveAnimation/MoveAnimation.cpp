@@ -20,6 +20,8 @@ class MoveAnimation {
 	int xTileForStyleSheet;
 	// The ytile for the style sheet
 	int yStileForSyleSheet;
+	// If the animation is finished
+	bool isAnimationFinished;
 
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
@@ -45,5 +47,6 @@ class MoveAnimation {
 		currentFrame = 0;
 		xTileForStyleSheet = 0;
 		yStileForSyleSheet = 0;
+		isAnimationFinished = false;
 	}
 };
