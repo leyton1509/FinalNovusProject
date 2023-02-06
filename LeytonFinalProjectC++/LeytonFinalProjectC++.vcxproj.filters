@@ -120,7 +120,7 @@
     <ClCompile Include="Sprites\UserOption.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Battle\MoveAnimationHandler.cpp">
+    <ClCompile Include="Battle\MoveAnimation\MoveAnimationHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -235,7 +235,7 @@
     <ClInclude Include="Sprites\UserOption.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Battle\MoveAnimationHandler.h">
+    <ClInclude Include="Battle\MoveAnimation\MoveAnimationHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
