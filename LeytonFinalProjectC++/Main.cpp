@@ -17,9 +17,11 @@
 #include "Pokemon/PokemonTypeChart.h"
 
 
-
+// The width of the screen
 int screenWidth = 900;
+// The height of the screen
 int screenHeight = 600;
+// If the camera has been initialised
 bool initalisedCamera = false;
 
 //MonsterManager availableMonsters;
@@ -29,6 +31,7 @@ bool initalisedCamera = false;
 // The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
 //al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
+// A must init function that ensures a certain module is initialised
 void must_init(bool test, const char* description)
 {
     if (test) return;
@@ -37,6 +40,7 @@ void must_init(bool test, const char* description)
     exit(1);
 }
 
+// Updates the camera based on the position of the player
 void cameraUpdate(float* cameraPosition, float x, float y, int width, int height) {
     
     if (!initalisedCamera) {
