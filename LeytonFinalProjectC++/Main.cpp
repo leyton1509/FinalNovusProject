@@ -24,13 +24,6 @@ int screenHeight = 600;
 // If the camera has been initialised
 bool initalisedCamera = false;
 
-//MonsterManager availableMonsters;
-
-//Monster charizard = availableMonsters.getDefaultMonster("Charizard");
-// charizard.printMonsterDetails();
-// The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
-//al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
-
 // A must init function that ensures a certain module is initialised
 void must_init(bool test, const char* description)
 {
