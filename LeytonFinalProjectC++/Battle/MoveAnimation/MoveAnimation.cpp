@@ -211,7 +211,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Fairy:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8MistyExplosion.png");
+			xMaxStyleSheet = 4;
+			yMaxStyleSheet = 3;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::None:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
