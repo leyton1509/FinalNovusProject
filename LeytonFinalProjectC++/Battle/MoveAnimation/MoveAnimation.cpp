@@ -43,10 +43,11 @@ public :
 	int currentXPos;
 	// Current y pos
 	int currentYPos;
-
+	// The number in the party of the pokemon that used the move
 	int opponentPokemonNum;
+	// The number in the party of the pokemon that used the move
 	int playerPokemonNum;
-
+	// The sprite number regardless of x and y
 	int totalSpritePos;
 
 	
