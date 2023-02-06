@@ -138,6 +138,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Battle\InitiateBattle.cpp" />
+    <ClCompile Include="Battle\MoveAnimation\MoveAnimation.cpp" />
     <ClCompile Include="Battle\MoveAnimation\MoveAnimationHandler.cpp" />
     <ClCompile Include="Battle\PokemonTurn.cpp" />
     <ClCompile Include="File\CSVFileManager.cpp" />
@@ -182,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Battle\InitiateBattle.h" />
+    <ClInclude Include="Battle\MoveAnimation\MoveAnimation.h" />
     <ClInclude Include="Battle\MoveAnimation\MoveAnimationHandler.h" />
     <ClInclude Include="Battle\PokemonTurn.h" />
     <ClInclude Include="File\CSVFileManager.h" />
