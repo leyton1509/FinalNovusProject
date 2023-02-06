@@ -594,8 +594,6 @@ public:
 
 							}
 
-
-
 							isInAnimation = true;
 							// If the opponent dies
 							// Gain exoeruence, check for evolution 
@@ -765,6 +763,11 @@ public:
 					
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
 					
+					moveAnimationHandler.drawAnimation();
+					if (moveAnimationHandler.finishedAllAnimations()) {
+						isInAnimation = false;
+					}
+
 					backBox.drawSprite();
 					textBox.drawSprite();
 					// Drwas the rest of the buttons
