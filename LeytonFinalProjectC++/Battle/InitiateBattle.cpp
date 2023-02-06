@@ -886,6 +886,8 @@ public:
 
 		loadInititalParts(player, locationNumber);
 
+		NumberOfPokemonDisplay playerDisplay = NumberOfPokemonDisplay(70, 115, 10);
+
 		// Get the pokemon to fight against
 		PokemonManager pm = pm.instance();
 
