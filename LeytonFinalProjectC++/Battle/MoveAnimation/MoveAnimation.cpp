@@ -2,6 +2,7 @@
 #include <allegro5/allegro_image.h>
 #include "../../Pokemon/Moves/MoveManager.h"
 #include "../../Pokemon/PokemonType.h"
+#include <math.h>   
 // A class to control a single move animation
 class MoveAnimation{
 
@@ -38,7 +39,11 @@ public :
 	int differenceInX;
 	// The difference in positions for each sprite at the start
 	int differenceInY;
-
+	// Current x pos
+	int currentXPos;
+	// Current y pos
+	int currentYPos;
+	
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
 		return false;
@@ -87,6 +92,8 @@ public :
 	    lengthOfEachSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
 		differenceInX = destinationX - startX;
 		differenceInY = destinationY - startY;
+		currentXPos = startX;
+		currentYPos = startY;
 	}
 
 	void drawAnimation() {
@@ -116,34 +123,16 @@ public :
 			isAnimationFinished = true;
 		}
 
-		cout << "SX " << startX << " SY" << startY << " DX " << destinationX << " DY" << destinationY << "\n";
+		cout << "SX   " << startX << " SY   " << startY << " DX   " << destinationX << " DY   " << destinationY << "\n";
 			
-		
-
-		if (startX != destinationX) {
-
-			if (startX < destinationX) {
-				startX = startX + (differenceInX / duration);
-			}
-			else {
-				startX = startX - (differenceInX / duration);
-			}
-		}
-
-		if (startY != destinationY) {
-
-			if (startY < destinationY) {
-				startY = startY + (destinationY / duration);
-			}
-			else {
-				startY = startY - (destinationY / duration);
-			}
-		}
+		currentXPos = currentXPos * (1 - 0.03) + destinationX * 0.03;
+		currentYPos = currentYPos * (1 - 0.03) + destinationY * 0.03;
 
 
+	
 
 		currentFrame++;
-		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, startX, startY, 0);
+		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, currentXPos, currentYPos, 0);
 
 	}
 
