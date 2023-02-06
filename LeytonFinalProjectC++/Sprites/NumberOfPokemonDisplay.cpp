@@ -1,4 +1,6 @@
 #include "../Pokemon/Pokemon.h"
+#include <allegro5/allegro_primitives.h>
+
 class NumberOfPokemonDisplay {
 
 public:
@@ -15,7 +17,11 @@ public:
 	}
 
 	void drawDisplay(Pokemon party[]) {
-
+		for (int i = 0; i < 6; i++)
+		{
+			
+			party[i];
+		}
 	}
 
 
