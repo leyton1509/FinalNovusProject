@@ -61,6 +61,8 @@ public :
 			return true;
 		case PokemonType::Water:
 			return true;
+		case PokemonType::Rock:
+			return true;
 		default:
 			return false;
 		}
