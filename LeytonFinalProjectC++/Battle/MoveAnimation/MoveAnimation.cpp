@@ -148,7 +148,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Flying:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASAeroblast.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 2;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Psychic:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASPsychoBoost.png");
