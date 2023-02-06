@@ -118,7 +118,11 @@ public :
 			
 			break;
 		case PokemonType::None:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 1;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		default:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
