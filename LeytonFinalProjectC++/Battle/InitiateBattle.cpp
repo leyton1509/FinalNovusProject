@@ -65,6 +65,13 @@ public:
 	ItemPotionButton potionButtonTwo;
 	ItemPotionButton potionButtonThree;
 
+	// The options to choose buttons, heal, switch, catch and run
+
+	Button healPokemonButton;
+	Button switchPokemonButton;
+	Button catchPokemonButton;
+	Button runPokemonButton;
+
 
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
@@ -181,6 +188,13 @@ public:
 
 		  potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
 		  potionButtonThree.isDisplayed = false;
+
+		  // The options to choose buttons, heal, switch, catch and run
+
+		   healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
+		   switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
+		   catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
+		   runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 		 
 	}
 
@@ -196,19 +210,8 @@ public:
 		// The text to display
 		textForTextBox[0] = "Trainer appeared!|";
 
-		// The attack buttons with the pokemons attacks
-		
 
 		
-
-		
-
-		// The options to choose buttons, heal, switch, catch and run
-
-		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
-		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
-		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
-		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
 
 		// The back box for the buttons
 		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
