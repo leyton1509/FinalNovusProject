@@ -131,7 +131,15 @@ class MoveAnimation{
 			}
 		}
 
-		
+		if (startY != destinationY) {
+
+			if (startY < destinationY) {
+				startY + (destinationY / duration);
+			}
+			else {
+				startY - (destinationY / duration);
+			}
+		}
 
 
 		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 64, 64, startX, startY, 0);
