@@ -32,7 +32,7 @@ public:
 			if (!(strcmp(party[i].pokemonName.c_str(), "") == 0)) {
 
 				if (party[i].currentHealth > 0) {
-					al_draw_filled_circle(x, startY, (radius * 0.), al_map_rgb(238, 64, 86));
+					al_draw_filled_circle(x, startY, (radius * 0.9), al_map_rgb(224, 17, 95));
 				}
 				else {
 					al_draw_filled_circle(x, startY, (radius * 0.9), al_map_rgb(90, 90, 90));
