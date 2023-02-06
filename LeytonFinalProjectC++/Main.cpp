@@ -176,44 +176,50 @@ int main()
             gameTitleScreen.hasClicked = true;
             break;
         case ALLEGRO_EVENT_DISPLAY_CLOSE:
+            // Finishes the loop upon close
             done = true;
             break;
-
         }
 
         if (done)
             break;
 
+        // Draw loop
+        // Draws the title screen
         if (redraw && al_is_event_queue_empty(queue))
         {
             al_clear_to_color(al_map_rgb(0, 0, 0));
-
             gameTitleScreen.drawScreen();
-
             al_flip_display();
             redraw = false;
         }
 
     }
 
-    gameTitleScreen.destroyAllSprites();
+    // Destroys the sprites for the title screen
 
+    gameTitleScreen.destroyAllSprites();
 
     ////////////////////////////////////////////////
 
+    // The player character 
     PlayerCharacter player = PlayerCharacter();
+
+    // Add any test pokemon here, can be removed later
     player.addPokemon(pm.getDefaultPokemon("Groudon"));
     player.addPokemon(pm.getDefaultPokemon("Kyogre"));
-    
     player.trainersParty[0].setPokemonsLevel(1);
     player.trainersParty[1].setPokemonsLevel(25);
-    //player.xPosition = screenWidth / 2;
-    //player.yPosition = screenHeight / 2;
-    player.setAllPositions(13, 10);
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
-    float cameraPosition[2] = { 0,0 };
 
+    // Sets the players pos position
+    player.setAllPositions(13, 10);
+    // Creates a world map, with height width and text file name
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
+    // Creates a camera position at 0,0
+    float cameraPosition[2] = { 0,0 };
+    // How many frames have passed
     int framecounter = 1;
+    // Keys array for different key presses
     // w a s d e
     bool keys[5] = {false, false ,false ,false, false};
 
