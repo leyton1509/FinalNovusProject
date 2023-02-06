@@ -65,6 +65,8 @@ public :
 			return true;
 		case PokemonType::Bug:
 			return true;
+		case PokemonType::Dark:
+			return true;
 		default:
 			return false;
 		}
@@ -172,7 +174,11 @@ public :
 			
 			break;
 		case PokemonType::Dark:
-
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASBrutalSwing.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 3;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Dragon:
 			
