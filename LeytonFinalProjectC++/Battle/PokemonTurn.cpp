@@ -167,10 +167,10 @@ public:
 				statusMove(otherPokemon, playersPokemon, enemyMove);
 			}
 			else {
-				cout << "\nUsed : " << enemyMove.moveName << "\n";
+	
 				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
 				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
-				cout << "\nPlayer health : " << playersPokemon.currentHealth << " taken " << damageOfEnemyMove << "\n";
+	
 			}
 
 			
