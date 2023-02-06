@@ -452,9 +452,12 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				if (!isInAnimation) {
-					checkForButtonsClickedTrainer();
+				if (!battleIsOver) {
+					if (!isInAnimation) {
+						checkForButtonsClickedTrainer();
+					}
 				}
+				
 				
 
 				// If the button has been clicked
