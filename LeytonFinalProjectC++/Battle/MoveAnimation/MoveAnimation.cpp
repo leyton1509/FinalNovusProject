@@ -79,7 +79,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Water:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/water3.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 2;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Grass:
 			
