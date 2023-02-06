@@ -1309,6 +1309,8 @@ public:
 					switchPokemonButton.drawSprite();
 					catchPokemonButton.drawSprite();
 					runPokemonButton.drawSprite();
+
+					playerDisplay.drawDisplay(player.trainersParty);
 					if (textBox.isDisplayed) {
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
