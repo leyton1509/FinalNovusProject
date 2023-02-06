@@ -47,6 +47,8 @@ public :
 	int opponentPokemonNum;
 	int playerPokemonNum;
 
+	int totalSpritePos;
+
 	
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
@@ -103,6 +105,7 @@ public :
 			yMaxStyleSheet = 4;
 			xTileForStyleSheet = 0;
 			yTileForSyleSheet = 0;
+			duration = 240;
 			break;
 		case PokemonType::Water:
 			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/water3.png");
@@ -198,7 +201,7 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Dragon:
-			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8DragonEnergy.png");
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8AstralBarrage.png");
 			xMaxStyleSheet = 5;
 			yMaxStyleSheet = 3;
 			xTileForStyleSheet = 0;
@@ -241,8 +244,9 @@ public :
 	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY, int _opponentPokemonNum, int _playerPokemonNum){
 		opponentPokemonNum = _opponentPokemonNum;
 		playerPokemonNum = _playerPokemonNum;
-		duration = 150;
+		duration = 80;
 		moveID = _moveID;
+		totalSpritePos = 0;
 		initialiseStyleSheet(moveID);
 		if (isStartDestination(moveID)) {
 			startX = _opponentPokemonX;
@@ -268,10 +272,9 @@ public :
 	void drawAnimation() {
 		
 
-		if (currentFrame != duration) {
+		if (currentFrame <= duration) {
 
-			// cout << "Left : " << currentFrame  << " Right : " << lengthOfEachSprite * xTileForStyleSheet  << "\n";
-			if (currentFrame  > lengthOfEachSprite * xTileForStyleSheet+1) {
+			if (currentFrame  > (lengthOfEachSprite * totalSpritePos-1)) {
 				if (xTileForStyleSheet < xMaxStyleSheet) {
 					xTileForStyleSheet++;
 				}
@@ -281,16 +284,14 @@ public :
 						yTileForSyleSheet++;
 					}
 				}
+				totalSpritePos++;
 			}
-
+			
 		}
 
 		else {
-
-			currentFrame = 0;
 			isAnimationFinished = true;
 		}
-
 		
 		if (currentXPos != destinationX) {
 			currentXPos = currentXPos + differenceInX;
@@ -299,7 +300,6 @@ public :
 		if (currentYPos != destinationY) {
 			currentYPos = currentYPos + differenceInY;
 		}
-		
 		
 
 		currentFrame++;
