@@ -136,7 +136,7 @@ public:
 	void enemyAttack(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		if (otherPokemon.level > 15) {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
-
+			attackUsedOpponent = enemyMove.moveName;
 			if (strcmp(textForTextBox[1].c_str(), "")) {
 				textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
 			}
@@ -155,7 +155,7 @@ public:
 		}
 		else {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
-
+			attackUsedOpponent = enemyMove.moveName;
 			if (strcmp(textForTextBox[1].c_str(), "")) {
 				textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
 			}
