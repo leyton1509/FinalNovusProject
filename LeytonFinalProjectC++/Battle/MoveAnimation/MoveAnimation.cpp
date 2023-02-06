@@ -27,6 +27,10 @@ class MoveAnimation{
 	bool isAnimationFinished;
 	// The style sheet to use
 	ALLEGRO_BITMAP* stylesheet;
+	// max number of x on the style sheet
+	int xMaxStyleSheet;
+	// max number to y on the style sheet
+	int yMaxStyleSheet;
 
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
