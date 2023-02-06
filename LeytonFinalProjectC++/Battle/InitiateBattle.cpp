@@ -858,6 +858,9 @@ public:
 					catchPokemonButton.drawSprite();
 					runPokemonButton.drawSprite();
 
+					trainerDisplay.drawDisplay(opponent.trainersTeam);
+					playerDisplay.drawDisplay(player.trainersParty);
+
 					// If the text box is displayed, display the text
 					if (textBox.isDisplayed) {
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
