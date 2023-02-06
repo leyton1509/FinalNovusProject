@@ -1,5 +1,6 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
+#include "../../Pokemon/Moves/MoveManager.h"
 
 // A class to control a single move animation
 class MoveAnimation{
@@ -33,6 +34,8 @@ class MoveAnimation{
 	}
 
 	void initialiseStyleSheet(int moveID) {
+
+		MoveManager moveManager = moveManager.instance();
 
 	}
 
