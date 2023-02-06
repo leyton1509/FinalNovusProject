@@ -35,7 +35,9 @@ class MoveAnimation{
 
 	void initialiseStyleSheet(int moveID) {
 
+		// Uses the move move manager to get the details of the move
 		MoveManager moveManager = moveManager.instance();
+		Move move = moveManager.getMoveDetails(moveID);
 
 	}
 
