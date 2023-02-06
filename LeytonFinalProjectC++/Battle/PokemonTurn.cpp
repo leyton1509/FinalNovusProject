@@ -228,6 +228,11 @@ public:
 
 	}
 
+	// Generates a random number
+	int random(int from, int to) {
+		return rand() % (to - from + 1) + from;
+	}
+
 	bool doesAttackHit(int accuracyOfMove) {
 
 	}
