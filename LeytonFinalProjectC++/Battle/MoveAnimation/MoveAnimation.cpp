@@ -131,7 +131,7 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Fighting:
-			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/Sword6.png");
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASForcePalm.png");
 			xMaxStyleSheet = 5;
 			yMaxStyleSheet = 3;
 			xTileForStyleSheet = 0;
