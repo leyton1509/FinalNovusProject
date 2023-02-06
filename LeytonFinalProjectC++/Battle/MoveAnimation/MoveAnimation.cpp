@@ -53,6 +53,8 @@ public :
 		return false;
 	}
 
+	// Initialises the style sheet for the move used
+	// Currently based off move type
 	void initialiseStyleSheet(int moveID) {
 
 		// Uses the move move manager to get the details of the move
@@ -119,6 +121,11 @@ public :
 			
 			break;
 		default:
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/003-Attack01.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 1;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		}
 
