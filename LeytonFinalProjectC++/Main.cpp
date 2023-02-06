@@ -134,11 +134,11 @@ int main()
     double xMousePosition = 0;
     double yMousePosition = 0;
 
-
-
+    // Start the timer
     al_start_timer(timer);
     ////////////////////////////////////////////////
 
+    // Title screen loop
     while (runTitleScreen) {
         al_wait_for_event(queue, &event);
 
@@ -158,6 +158,8 @@ int main()
 
             // Handle mouse click
         case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
+            // Checks to see if the has clicked for title screen has been clicked
+            // Checks to see its load or new game when clicked again
             if (gameTitleScreen.hasClicked = true) {
                 int resultOfClick = gameTitleScreen.handleButtonClick(xMousePosition, yMousePosition);
                 if (resultOfClick == 1) {
