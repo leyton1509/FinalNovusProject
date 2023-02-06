@@ -482,6 +482,7 @@ public:
 								// Runs the opponents turn
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
 								opponentAttackName = doTurn.attackUsedOpponent;
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
 								isInAnimation = true;
 							}
 						}
@@ -511,6 +512,7 @@ public:
 									}
 									// Runs the opponents turn
 									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+									moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42);
 									opponentAttackName = doTurn.attackUsedOpponent;
 									isInAnimation = true;
 								}
@@ -580,6 +582,11 @@ public:
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent], player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
 							opponentAttackName = doTurn.attackUsedOpponent;
 							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
+
+
+							
+
+
 							isInAnimation = true;
 							// If the opponent dies
 							// Gain exoeruence, check for evolution 
