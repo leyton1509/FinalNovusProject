@@ -1,4 +1,4 @@
-
+#include "../../Battle/MoveAnimation/MoveAnimation.h"
 
 class MoveAnimationHandler {
 
