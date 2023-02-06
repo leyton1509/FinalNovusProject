@@ -189,7 +189,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Dragon:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8DragonEnergy.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 3;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Steel:
 		
