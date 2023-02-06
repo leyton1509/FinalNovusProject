@@ -194,8 +194,10 @@ public:
 				statusMove(otherPokemon, playersPokemon, playerMoveUsed);
 			}
 			else {
-				int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
-				otherPokemon.decreasePokemonHealth(damageOfMove);
+				if (doesAttackHit(playerMoveUsed.accuracy)) {
+					int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
+					otherPokemon.decreasePokemonHealth(damageOfMove);
+				}
 			}
 			
 			if (otherPokemon.currentHealth != 0) {
@@ -217,8 +219,11 @@ public:
 					statusMove(otherPokemon, playersPokemon, playerMoveUsed);
 				}
 				else {
-					int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
-					otherPokemon.decreasePokemonHealth(damageOfMove);
+					if (doesAttackHit(playerMoveUsed.accuracy)) {
+						int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
+						otherPokemon.decreasePokemonHealth(damageOfMove);
+					}
+					
 				}
 			}
 			else {
