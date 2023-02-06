@@ -148,8 +148,18 @@ public:
 				statusMove(otherPokemon, playersPokemon, enemyMove);
 			}
 			else {
-				int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
-				playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
+				if (doesAttackHit(enemyMove.accuracy)) {
+					int damageOfEnemyMove = calcDamageOfMove(otherPokemon, playersPokemon, enemyMove);
+					playersPokemon.decreasePokemonHealth(damageOfEnemyMove);
+				}
+				else {
+					if (strcmp(textForTextBox[1].c_str(), "")) {
+						textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "! It missed!";
+					}
+					else {
+						textForTextBox[1] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "! It missed!";
+					}
+				}
 			}
 			
 		}
