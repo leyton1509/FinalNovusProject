@@ -83,7 +83,7 @@ public :
 		xTileForStyleSheet = 0;
 		yTileForSyleSheet = 0;
 		isAnimationFinished = false;
-		duration = 120;
+		duration = 60;
 	    lengthOfEachSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
 		differenceInX = destinationX - startX;
 		differenceInY = destinationY - startY;
