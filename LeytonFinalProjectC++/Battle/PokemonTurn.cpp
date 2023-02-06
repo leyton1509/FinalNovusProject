@@ -11,9 +11,9 @@ public:
 	// An array of strings to display back what happened
 	string textForTextBox[4] = { "", "", "", "" };
 
-	// Strings for which attacks were used
-	string attackUsedOne;
-	string attackUsedTwo;
+	// Strings for which attack were used
+	string attackUsedOpponent;
+
 
 	int getNextPokemonForOpponent(Trainer& trainer, int currentPokemon, Pokemon playersPokemon) {
 
