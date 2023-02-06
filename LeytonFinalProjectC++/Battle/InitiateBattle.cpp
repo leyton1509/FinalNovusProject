@@ -72,6 +72,18 @@ public:
 	Button catchPokemonButton;
 	Button runPokemonButton;
 
+	// The back box for the buttons
+	Button backBox;
+	// The text box
+	Button textBox;
+
+	// Sets an int for which button has been clicked
+	int attackButtonClicked;
+	int switchPokemonButtonClicked;
+	int healItemButtonClicked;
+	bool pokemonIsDead;
+	// If the switch should heal the pokemon not switch pokemon
+	int shouldHealInSwitch;
 
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
@@ -195,6 +207,18 @@ public:
 		   switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
 		   catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
 		   runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
+
+		   // The back box for the buttons
+		   backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
+		   // The text box
+		   textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
+
+		   // Sets an int for which button has been clicked
+		    attackButtonClicked = 0;
+		    switchPokemonButtonClicked = 0;
+		    healItemButtonClicked = 0;
+		    // If the switch should heal the pokemon not switch pokemon
+		    shouldHealInSwitch = -1;
 		 
 	}
 
@@ -210,22 +234,7 @@ public:
 		// The text to display
 		textForTextBox[0] = "Trainer appeared!|";
 
-
 		
-
-		// The back box for the buttons
-		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
-		// The text box
-		Button textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
-
-		// Sets an int for which button has been clicked
-		int attackButtonClicked = 0;
-		int switchPokemonButtonClicked = 0;
-		int healItemButtonClicked = 0;
-		bool pokemonIsDead = false;
-		// If the switch should heal the pokemon not switch pokemon
-		int shouldHealInSwitch = -1;
-
 		// Loops until the battle is finished
 		// ALLEGRO control loop
 		while (!battleFinished) {
