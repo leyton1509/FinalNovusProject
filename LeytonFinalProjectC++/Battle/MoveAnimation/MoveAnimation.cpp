@@ -32,6 +32,10 @@ class MoveAnimation{
 		return false;
 	}
 
+	void initialiseStyleSheet(int moveID) {
+
+	}
+
 	// Default creation of move animation
 	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY){
 	
