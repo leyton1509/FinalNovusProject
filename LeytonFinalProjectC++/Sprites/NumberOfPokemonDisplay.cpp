@@ -26,16 +26,18 @@ public:
 	void drawDisplay(Pokemon party[]) {
 		for (int i = 0; i < 6; i++)
 		{
-			al_draw_filled_circle((startX * i + 3), startY, radius, al_map_rgb(211,211,211));
+			int x = startX + (i * 30) + 10;
+			al_draw_filled_circle(x, startY, radius, al_map_rgb(211,211,211));
+
 			if (!(strcmp(party[i].pokemonName.c_str(), "") == 0)) {
 
 				if (party[i].currentHealth > 0) {
-					al_draw_filled_circle((startX * i + 3), startY, (radius * 0.8), al_map_rgb(238, 64, 86));
+					al_draw_filled_circle(x, startY, (radius * 0.8), al_map_rgb(238, 64, 86));
 				}
 				else {
-					al_draw_filled_circle((startX * i + 3), startY, (radius * 0.8), al_map_rgb(24, 24, 24));
+					al_draw_filled_circle(x, startY, (radius * 0.8), al_map_rgb(24, 24, 24));
 				}
-				al_draw_filled_circle((startX * i + 3), startY, (radius * 0.3), al_map_rgb(255, 25, 255));
+				al_draw_filled_circle(x, startY, (radius * 0.3), al_map_rgb(255, 25, 255));
 			}
 
 			
