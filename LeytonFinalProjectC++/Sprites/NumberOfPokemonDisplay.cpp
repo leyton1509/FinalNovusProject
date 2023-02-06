@@ -37,7 +37,7 @@ public:
 				else {
 					al_draw_filled_circle(x, startY, (radius * 0.8), al_map_rgb(24, 24, 24));
 				}
-				al_draw_filled_circle(x, startY, (radius * 0.3), al_map_rgb(255, 25, 255));
+				al_draw_filled_circle(x, startY, (radius * 0.3), al_map_rgb(255, 255, 255));
 			}
 
 			
