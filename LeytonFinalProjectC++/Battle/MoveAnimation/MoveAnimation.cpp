@@ -72,7 +72,11 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Fire:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/PRASFusionFlare.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 4;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Water:
 			
@@ -119,7 +123,7 @@ public :
 			
 			break;
 		case PokemonType::Dark:
-			
+
 			break;
 		case PokemonType::Dragon:
 			
