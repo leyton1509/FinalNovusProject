@@ -1,3 +1,5 @@
+#include <allegro5/allegro5.h>
+#include <allegro5/allegro_image.h>
 
 // A class to control a single move animation
 class MoveAnimation{
@@ -22,6 +24,8 @@ class MoveAnimation{
 	int yStileForSyleSheet;
 	// If the animation is finished
 	bool isAnimationFinished;
+	// The style sheet to use
+	ALLEGRO_BITMAP* stylesheet;
 
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
