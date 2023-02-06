@@ -40,6 +40,9 @@ public:
 	PokemonStatBox otherPokemonStatBox;
 	PokemonStatBox trainersPokemonStatBox;
 
+	// The font to use
+	ALLEGRO_FONT* fontSmaller;
+
 
 
 
@@ -125,6 +128,9 @@ public:
 		 // The stat boxes for each pokemon
 		 otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
 		 trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
+
+		 // The font to use
+		 fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
 		 
 	}
 
@@ -140,8 +146,7 @@ public:
 		
 		
 
-		// The font to use
-		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
+		
 
 		// The text to display
 		string textForTextBox[4] = { "Trainer appeared!", "", "", "" };
