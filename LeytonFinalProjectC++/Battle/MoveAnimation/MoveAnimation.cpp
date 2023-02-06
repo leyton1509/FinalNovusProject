@@ -98,6 +98,7 @@ class MoveAnimation{
 				currentFrame = 0;
 				isAnimationFinished = true;
 			}
+			currentFrame++;
 		}
 
 
