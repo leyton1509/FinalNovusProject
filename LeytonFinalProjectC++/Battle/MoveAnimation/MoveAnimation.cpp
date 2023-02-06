@@ -24,7 +24,7 @@ class MoveAnimation{
 	// The xtile for the style sheet
 	int xTileForStyleSheet;
 	// The ytile for the style sheet
-	int yStileForSyleSheet;
+	int yTileForSyleSheet;
 	// If the animation is finished
 	bool isAnimationFinished;
 	// The style sheet to use
@@ -83,7 +83,23 @@ class MoveAnimation{
 	}
 
 	void drawAnimation() {
+		if (state != 0) {
+
+			if (currentFrame <= framerate / 6 && currentFrame >= 0) {
+				state = 1;
+				currentFrame++;
+			}
 		
+
+			else {
+				state = 0;
+				currentFrame = 0;
+			}
+		}
+
+
+		//al_draw_bitmap_region(spriteImage, (64 * state) + 16, yValueForStyleSheet +12, 42, 48, xPosition, yPosition, 0);
+		al_draw_scaled_bitmap(stylesheet, (64 * state) + 16, yStileForSyleSheet, 42, 48, xPosition, yPosition, 48, 48, 0);
 	}
 
 };
