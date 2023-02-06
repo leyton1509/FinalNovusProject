@@ -198,6 +198,9 @@ public:
 					int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
 					otherPokemon.decreasePokemonHealth(damageOfMove);
 				}
+				else {
+					textForTextBox[0] = playersPokemon.pokemonName + " used " + playerMoveUsed.moveName + "! It missed!";
+				}
 			}
 			
 			if (otherPokemon.currentHealth != 0) {
@@ -222,6 +225,9 @@ public:
 					if (doesAttackHit(playerMoveUsed.accuracy)) {
 						int damageOfMove = calcDamageOfMove(playersPokemon, otherPokemon, playerMoveUsed);
 						otherPokemon.decreasePokemonHealth(damageOfMove);
+					}
+					else {
+						textForTextBox[1] = playersPokemon.pokemonName + " used " + playerMoveUsed.moveName + "! It missed!";
 					}
 					
 				}
