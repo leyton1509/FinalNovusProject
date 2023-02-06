@@ -83,21 +83,22 @@ public:
 	int switchPokemonButtonClicked;
 	int healItemButtonClicked;
 	bool pokemonIsDead;
+	int catchItemButtonClicked;
 	// If the switch should heal the pokemon not switch pokemon
 	int shouldHealInSwitch;
-	int catchItemButtonClicked;
 
+	// The pokeball buttons
 	ItemPokeBallButton pokeballButtonOne;
-
 	ItemPokeBallButton pokeballButtonTwo;
-
 	ItemPokeBallButton pokeballButtonThree;
 
+	// Whether or not an animation is playing
 	bool isInAnimation;
 
-
+	// The animation handler
 	MoveAnimationHandler moveAnimationHandler;
 
+	// If the battle is over or not, different to is finished as is battle over will still play animations
 	bool battleIsOver = false;
 
 	
@@ -154,7 +155,8 @@ public:
 		}
 	}
 
-
+	// Loads all the initial parts shared by the two constructors
+	// Creates all the buttons
 	void loadInititalParts(PlayerCharacter & player , int locationNumber) {
 		 battleFinished = false;
 		 // BG sprite
