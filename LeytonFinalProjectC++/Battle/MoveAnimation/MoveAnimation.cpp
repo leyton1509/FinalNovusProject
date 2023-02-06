@@ -50,6 +50,14 @@ public :
 	
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
+		MoveManager moveManager = moveManager.instance();
+		Move move = moveManager.getMoveDetails(moveID);
+
+		switch (move.pokemonTypeOfMove)
+		{
+		default:
+			break;
+		}
 		return false;
 	}
 
