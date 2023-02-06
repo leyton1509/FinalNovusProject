@@ -25,6 +25,12 @@ public:
 	bool done = false;
 	bool redraw = true;
 
+	bool battleFinished;
+	ALLEGRO_EVENT event;
+
+	// BG sprite
+	ALLEGRO_BITMAP* background;
+
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
@@ -77,21 +83,27 @@ public:
 		}
 	}
 
+
+	void loadInititalParts(int locationNumber) {
+		 battleFinished = false;
+		 // BG sprite
+		 background = getBackGroundFromLocationNumber(locationNumber);
+		 // Reset the camera
+		 ALLEGRO_TRANSFORM trans;
+		 al_identity_transform(&trans);
+		 al_use_transform(&trans);
+		 al_draw_bitmap(background, 0, 0, 0);
+		 
+	}
+
 	// Takes the screen size and the queue for inputs, the current player and the current location, and the opponent
 	InitiateBattle(Trainer& opponent, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
-		bool battleFinished = false;
+		
 
-		ALLEGRO_EVENT event;
+		loadInititalParts(locationNumber);
+		
 
-		// BG sprite
-		ALLEGRO_BITMAP* background = getBackGroundFromLocationNumber(locationNumber);
-
-		// Reset the camera
-		ALLEGRO_TRANSFORM trans;
-		al_identity_transform(&trans);
-		al_use_transform(&trans);
-		al_draw_bitmap(background, 0, 0, 0);
-
+		
 		// Sprites for the pokemon
 		ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 		ALLEGRO_BITMAP* trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
