@@ -163,13 +163,11 @@ int main()
             if (gameTitleScreen.hasClicked = true) {
                 int resultOfClick = gameTitleScreen.handleButtonClick(xMousePosition, yMousePosition);
                 if (resultOfClick == 1) {
-                    cout << "Clicked :" << resultOfClick << " at " << xMousePosition << " " << yMousePosition << "\n";
                     runTitleScreen = false;
                     newGame = true;
                     runOverWorld = true;
                 }
                 else if (resultOfClick == 2) {
-                    cout << "Clicked :" << resultOfClick << " at " << xMousePosition << " " << yMousePosition << "\n";
                     runTitleScreen = false;
                     newGame = false;
                     runOverWorld = true;
