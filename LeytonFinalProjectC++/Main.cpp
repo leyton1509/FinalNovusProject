@@ -83,13 +83,7 @@ int main()
     
 
     
-    //MoveManager mm = mm.instance();
-    //cout << "////";
-    //Move m = mm.getMoveDetails(1);
-    //cout << m.moveID << "\n";
-    //m.printMove();
-   
-    
+  
     
 
 
