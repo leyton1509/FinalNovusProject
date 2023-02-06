@@ -22,7 +22,12 @@ public:
 			al_draw_circle((startX * i + 10), startY, radius, al_map_rgb(211,211,211), 1);
 			if (!(strcmp(party[i].pokemonName.c_str(), "") == 0)) {
 
-
+				if (party[i].currentHealth > 0) {
+					al_draw_circle((startX * i + 10), startY, (radius * 0.8), al_map_rgb(238, 64, 86), 1);
+				}
+				else {
+					al_draw_circle((startX * i + 10), startY, (radius * 0.8), al_map_rgb(238, 64, 86), 1);
+				}
 
 			}
 			
