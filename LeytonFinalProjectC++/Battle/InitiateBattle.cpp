@@ -36,6 +36,10 @@ public:
 
 	int currentPokemon;
 
+	// The stat boxes for each pokemon
+	PokemonStatBox otherPokemonStatBox;
+	PokemonStatBox trainersPokemonStatBox;
+
 
 
 
@@ -117,6 +121,10 @@ public:
 		 else {
 			 return;
 		 }
+
+		 // The stat boxes for each pokemon
+		 otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
+		 trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
 		 
 	}
 
@@ -130,11 +138,7 @@ public:
 		int currentPokemonOpponent = 0;
 
 		
-
-
-		// The stat boxes for each pokemon
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
+		
 
 		// The font to use
 		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
