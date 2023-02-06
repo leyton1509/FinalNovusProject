@@ -61,6 +61,7 @@ public :
 		MoveManager moveManager = moveManager.instance();
 		Move move = moveManager.getMoveDetails(moveID);
 
+		// Switches the style sheet and images based on the move type
 		switch (move.pokemonTypeOfMove)
 		{
 		case PokemonType::Normal:
@@ -80,7 +81,11 @@ public :
 			
 			break;
 		case PokemonType::Electric:
-			
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8FusionBolt.png");
+			xMaxStyleSheet = 5;
+			yMaxStyleSheet = 3;
+			xTileForStyleSheet = 0;
+			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Ice:
 			
