@@ -1,7 +1,7 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_image.h>
 #include "../../Pokemon/Moves/MoveManager.h"
-
+#include "../../Pokemon/PokemonType.h"
 // A class to control a single move animation
 class MoveAnimation{
 
@@ -39,6 +39,12 @@ class MoveAnimation{
 		MoveManager moveManager = moveManager.instance();
 		Move move = moveManager.getMoveDetails(moveID);
 
+		if (move.pokemonTypeOfMove == PokemonType::Normal) {
+
+		}
+		else {
+
+		}
 	}
 
 	// Default creation of move animation
