@@ -442,7 +442,10 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				checkForButtonsClickedTrainer();
+				if (!isInAnimation) {
+					checkForButtonsClickedTrainer();
+				}
+				
 
 				// If the button has been clicked
 
@@ -822,7 +825,10 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				checkForButtonsClickedWild();
+				if (!isInAnimation) {
+					checkForButtonsClickedWild();
+				}
+				
 
 				if (switchPokemonButtonClicked!=0) {
 					int pokemonNinArray = switchPokemonButtonClicked - 1;
