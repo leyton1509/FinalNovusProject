@@ -50,4 +50,9 @@ class MoveAnimation{
 		yStileForSyleSheet = 0;
 		isAnimationFinished = false;
 	}
+
+	void drawSprite() {
+
+	}
+
 };
