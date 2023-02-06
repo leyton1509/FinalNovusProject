@@ -41,5 +41,9 @@ class MoveAnimation {
 			destinationX = _opponentPokemonX;
 			destinationY = _opponentPokemonY;
 		}
+		state = 0;
+		currentFrame = 0;
+		xTileForStyleSheet = 0;
+		yStileForSyleSheet = 0;
 	}
 };
