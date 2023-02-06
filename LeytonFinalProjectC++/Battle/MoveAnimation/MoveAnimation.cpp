@@ -67,6 +67,8 @@ public :
 			return true;
 		case PokemonType::Dark:
 			return true;
+		case PokemonType::Ghost:
+			return true;
 		default:
 			return false;
 		}
