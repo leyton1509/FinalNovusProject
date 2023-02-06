@@ -78,17 +78,7 @@ int main()
 
  
     PokemonManager pm = pm.instance();
-    //cout << "Finised creating pm 1";
-    //PokemonManager pm2 = pm.instance();
-    //cout << "Finised creating pm 2";
-    //PokemonManager pm3 = pm.instance();
-    //cout << "Finised creating pm 3";
-    //Pokemon p = pm3.getDefaultPokemon("Sceptile");
-    //p.printMonsterDetails();
    
-// charizard.printMonsterDetails();
-// The first two are the position in the file, x -> y, then width and height, then x pos y pos, then another 0?
-//al_draw_bitmap_region(playerTest, 0, 0, 64, 64, 100, 100, 0);
 
     
 
