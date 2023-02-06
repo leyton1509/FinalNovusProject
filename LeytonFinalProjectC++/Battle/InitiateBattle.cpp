@@ -388,6 +388,12 @@ public:
 		}
 	}
 
+	void checkForRunButtonClicked() {
+		if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			battleFinished = true;
+		}
+	}
+
 	void checkForButtonsClickedWild() {
 		
 
