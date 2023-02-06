@@ -27,7 +27,7 @@ public:
 		for (int i = 0; i < 6; i++)
 		{
 			int x = startX + (i * 30) + 10;
-			al_draw_filled_circle(x, startY, radius, al_map_rgb(211,211,211));
+			al_draw_filled_circle(x, startY, radius, al_map_rgb(255, 255, 255));
 
 			if (!(strcmp(party[i].pokemonName.c_str(), "") == 0)) {
 
