@@ -1,0 +1,8 @@
+class NumberOfPokemonDisplay {
+
+public:
+
+	NumberOfPokemonDisplay() {
+
+	}
+};
