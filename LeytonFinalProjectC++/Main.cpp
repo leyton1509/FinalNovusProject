@@ -76,18 +76,7 @@ void cameraUpdate(float* cameraPosition, float x, float y, int width, int height
 int main()
 {
 
-    //std::vector<std::pair<std::string, std::vector<int>>> csvInfo = read_csv("c:/Users/leyto/Downloads/Test.csv");
-
-    //std::vector<std::vector<std::string> > cs = parseCSV();
-    //cout << cs.size() << "\n";
-    //for (int i = 0; i < cs.size(); i++) {
-        //cout << cs.at(i)[2] << "\n";
-    //}
-
-    //cout << "\n----";
-
-    
-       
+ 
     PokemonManager pm = pm.instance();
     //cout << "Finised creating pm 1";
     //PokemonManager pm2 = pm.instance();
@@ -232,7 +221,7 @@ int main()
     player.addPokemon(pm.getDefaultPokemon("Groudon"));
     player.addPokemon(pm.getDefaultPokemon("Kyogre"));
     
-    player.trainersParty[0].setPokemonsLevel(25);
+    player.trainersParty[0].setPokemonsLevel(1);
     player.trainersParty[1].setPokemonsLevel(25);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
