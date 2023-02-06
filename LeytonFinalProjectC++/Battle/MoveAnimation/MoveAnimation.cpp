@@ -79,7 +79,7 @@ class MoveAnimation{
 		isAnimationFinished = false;
 	}
 
-	void drawSprite() {
+	void drawAnimation() {
 
 	}
 
