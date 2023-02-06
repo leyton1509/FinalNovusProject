@@ -240,7 +240,7 @@ public :
 	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY, int _opponentPokemonNum, int _playerPokemonNum){
 		opponentPokemonNum = _opponentPokemonNum;
 		playerPokemonNum = _playerPokemonNum;
-
+		duration = 150;
 		moveID = _moveID;
 		initialiseStyleSheet(moveID);
 		if (isStartDestination(moveID)) {
@@ -256,9 +256,7 @@ public :
 			destinationY = _opponentPokemonY;
 		}
 		currentFrame = 0;
-		
 		isAnimationFinished = false;
-		duration = 150;
 	    lengthOfEachSprite = duration / (xMaxStyleSheet * yMaxStyleSheet);
 		differenceInX = (destinationX - startX) / duration;
 		differenceInY = (destinationY - startY) / duration;
