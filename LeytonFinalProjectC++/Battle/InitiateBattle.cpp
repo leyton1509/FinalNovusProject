@@ -428,8 +428,8 @@ public:
 
 		loadInititalParts(player, locationNumber);
 
-		NumberOfPokemonDisplay trainerDisplay = NumberOfPokemonDisplay(510, 360, 10);
-		NumberOfPokemonDisplay playerDisplay = NumberOfPokemonDisplay(70, 360, 10);
+		NumberOfPokemonDisplay trainerDisplay = NumberOfPokemonDisplay(510, 115, 10);
+		NumberOfPokemonDisplay playerDisplay = NumberOfPokemonDisplay(70, 115, 10);
 		
 
 		int currentPokemonOpponent = 0;
