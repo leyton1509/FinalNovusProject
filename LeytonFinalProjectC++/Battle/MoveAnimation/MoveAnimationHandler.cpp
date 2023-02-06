@@ -12,6 +12,14 @@ class MoveAnimationHandler {
 		animations.push_back(ani);
 	}
 
+	bool finishedAllAnimations() {
+		for (MoveAnimation& moveAni : animations)
+		{
+			return false;
+		}
+		return true;
+	}
+
 	void drawAnimation() {
 		for (MoveAnimation& moveAni : animations)
 		{
