@@ -1,6 +1,6 @@
-
+#include "../../Sprites/SpriteHeader.h"
 // A class to control a single move animation
-class MoveAnimation {
+class MoveAnimation : public Sprite{
 
 	// The id of the move
 	int moveID;
