@@ -112,7 +112,7 @@ public :
 			yTileForSyleSheet = 0;
 			break;
 		case PokemonType::Ice:
-			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/icewater.png");
+			stylesheet = al_load_bitmap("../LeytonFinalProjectC++/Sprites/AttackAnimations/GEN8GlacialLance.png");
 			xMaxStyleSheet = 5;
 			yMaxStyleSheet = 3;
 			xTileForStyleSheet = 0;
