@@ -926,6 +926,9 @@ public:
 								switchPokemonSixButton.isDisplayed = false;
 
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+								opponentAttackName = doTurn.attackUsedOpponent;
+								isInAnimation = true;
 
 
 							}
@@ -1131,6 +1134,10 @@ public:
 						}
 						else {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+							moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+							opponentAttackName = doTurn.attackUsedOpponent;
+							isInAnimation = true;
+
 							textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = "";
