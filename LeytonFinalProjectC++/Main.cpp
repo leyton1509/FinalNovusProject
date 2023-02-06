@@ -229,11 +229,11 @@ int main()
     ////////////////////////////////////////////////
 
     PlayerCharacter player = PlayerCharacter();
-    player.addPokemon(pm.getDefaultPokemon("Charmander"));
-    player.addPokemon(pm.getDefaultPokemon("Bulbasaur"));
+    player.addPokemon(pm.getDefaultPokemon("Groudon"));
+    player.addPokemon(pm.getDefaultPokemon("Kyogre"));
     
-    player.trainersParty[0].setPokemonsLevel(1);
-    player.trainersParty[1].setPokemonsLevel(10);
+    player.trainersParty[0].setPokemonsLevel(25);
+    player.trainersParty[1].setPokemonsLevel(25);
     //player.xPosition = screenWidth / 2;
     //player.yPosition = screenHeight / 2;
     player.setAllPositions(13, 10);

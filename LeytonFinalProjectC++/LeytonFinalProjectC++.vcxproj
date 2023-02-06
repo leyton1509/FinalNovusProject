@@ -159,6 +159,7 @@
     <ClCompile Include="Sprites\Items\ItemManager.cpp" />
     <ClCompile Include="Sprites\Items\PokeBall.cpp" />
     <ClCompile Include="Sprites\Items\Potion.cpp" />
+    <ClCompile Include="Sprites\NumberOfPokemonDisplay.cpp" />
     <ClCompile Include="Sprites\PlayerCharacter.cpp">
       <DeploymentContent>true</DeploymentContent>
     </ClCompile>
@@ -205,6 +206,7 @@
     <ClInclude Include="Sprites\Items\ItemManager.h" />
     <ClInclude Include="Sprites\Items\PokeBall.h" />
     <ClInclude Include="Sprites\Items\Potion.h" />
+    <ClInclude Include="Sprites\NumberOfPokemonDisplay.h" />
     <ClInclude Include="Sprites\PlayerCharacter.h" />
     <ClInclude Include="Pokemon\PokemonPC.h" />
     <ClInclude Include="Sprites\PokemonStatBox.h" />
