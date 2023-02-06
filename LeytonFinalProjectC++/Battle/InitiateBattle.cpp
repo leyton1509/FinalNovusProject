@@ -31,6 +31,9 @@ public:
 	// BG sprite
 	ALLEGRO_BITMAP* background;
 
+	ALLEGRO_BITMAP* otherPokemonSprite;
+	ALLEGRO_BITMAP* trainsersPokemonSprite;
+
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
 		switch (locationNumber)
@@ -93,6 +96,8 @@ public:
 		 al_identity_transform(&trans);
 		 al_use_transform(&trans);
 		 al_draw_bitmap(background, 0, 0, 0);
+		 otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+		 trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
 		 
 	}
 
@@ -105,8 +110,7 @@ public:
 
 		
 		// Sprites for the pokemon
-		ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
-		ALLEGRO_BITMAP* trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+		
 
 		int currentPokemonOpponent = 0;
 
