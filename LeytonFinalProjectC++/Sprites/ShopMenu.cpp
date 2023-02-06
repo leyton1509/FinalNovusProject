@@ -16,9 +16,10 @@ public:
 		al_identity_transform(&trans);
 		al_use_transform(&trans);
 
+		// Sets the initial positions 
 		int startXPositon = 10;
 		int startYPosition = 10;
-		int counter = 0;
+	
 
 		// GUI info
 		bool done = false;
