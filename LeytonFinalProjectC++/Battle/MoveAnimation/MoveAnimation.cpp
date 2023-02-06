@@ -33,6 +33,8 @@ class MoveAnimation{
 	int xMaxStyleSheet;
 	// max number to y on the style sheet
 	int yMaxStyleSheet;
+	// The length of each sprite
+	int lengthOfEachSprite;
 
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
@@ -80,14 +82,15 @@ class MoveAnimation{
 		yTileForSyleSheet = 0;
 		isAnimationFinished = false;
 		duration = 120;
+	    lengthOfEachSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
 	}
 
 	void drawAnimation() {
 		if (state != 0) {
 
 			if (currentFrame != duration) {
-				int lengthOfEchSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
-				if () {
+				
+				if (lengthOfEachSprite * xTileForStyleSheet> currentFrame) {
 
 				}
 
