@@ -63,6 +63,8 @@ public :
 			return true;
 		case PokemonType::Rock:
 			return true;
+		case PokemonType::Bug:
+			return true;
 		default:
 			return false;
 		}
