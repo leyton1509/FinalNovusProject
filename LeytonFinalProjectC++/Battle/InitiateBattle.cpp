@@ -11,6 +11,7 @@
 #include "../Sprites/Trainer.h"
 #include "../Sprites/UserOption.h"
 #include "../Battle/MoveAnimation/MoveAnimationHandler.h"
+#include "../Sprites/NumberOfPokemonDisplay.h"
 
 
 // Class when a pokemon battke is needed
@@ -426,6 +427,9 @@ public:
 		
 
 		loadInititalParts(player, locationNumber);
+
+		NumberOfPokemonDisplay trainerDisplay = NumberOfPokemonDisplay(510, 360, 10);
+		NumberOfPokemonDisplay playerDisplay = NumberOfPokemonDisplay(70, 360, 10);
 		
 
 		int currentPokemonOpponent = 0;
