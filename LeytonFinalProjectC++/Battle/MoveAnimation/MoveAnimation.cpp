@@ -57,6 +57,8 @@ public :
 		{
 		case PokemonType::Grass:
 			return true;
+		case PokemonType::Ice:
+			return true;
 		default:
 			return false;
 		}
