@@ -43,6 +43,9 @@ public:
 	// The font to use
 	ALLEGRO_FONT* fontSmaller;
 
+	// The text to display
+	string textForTextBox[4];
+
 
 
 
@@ -143,13 +146,8 @@ public:
 
 		int currentPokemonOpponent = 0;
 
-		
-		
-
-		
-
 		// The text to display
-		string textForTextBox[4] = { "Trainer appeared!", "", "", "" };
+		textForTextBox[0] = "Trainer appeared!|";
 
 		// The attack buttons with the pokemons attacks
 		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
