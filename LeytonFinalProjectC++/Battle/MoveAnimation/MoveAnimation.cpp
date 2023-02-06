@@ -115,6 +115,16 @@ class MoveAnimation{
 			currentFrame++;
 		}
 
+		if (startX != destinationX) {
+
+			if (startX < destinationX) {
+
+			}
+			else {
+
+			}
+		}
+
 
 		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 64, 64, startX, startY, 0);
 
