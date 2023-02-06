@@ -74,7 +74,7 @@ class MoveAnimation{
 			destinationX = _opponentPokemonX;
 			destinationY = _opponentPokemonY;
 		}
-		state = 0;
+		state = 1;
 		currentFrame = 0;
 		xTileForStyleSheet = 0;
 		yTileForSyleSheet = 0;
@@ -85,7 +85,19 @@ class MoveAnimation{
 	void drawAnimation() {
 		if (state != 0) {
 
-			
+			if (currentFrame != duration) {
+				int lengthOfEchSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
+				if () {
+
+				}
+
+			}
+
+			else {
+				state = 0;
+				currentFrame = 0;
+				isAnimationFinished = true;
+			}
 		}
 
 
