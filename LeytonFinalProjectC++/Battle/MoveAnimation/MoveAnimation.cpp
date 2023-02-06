@@ -2,6 +2,8 @@
 // A class to control a single move animation
 class MoveAnimation {
 
+	// The id of the move
+	int moveID;
 	// The current frame of the animation
 	int currentFrame;
 	// The starting X position of the animation
