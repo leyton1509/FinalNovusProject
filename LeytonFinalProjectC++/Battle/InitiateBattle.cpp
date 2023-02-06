@@ -52,6 +52,14 @@ public:
 	AttackButton attackButton3;
 	AttackButton attackButton4;
 
+	// The switch buttons for each pokemon
+	SwitchPokemonButton switchPokemonOneButton;
+	SwitchPokemonButton switchPokemonTwoButton;
+	SwitchPokemonButton switchPokemonThreeButton;
+	SwitchPokemonButton switchPokemonFourButton;
+	SwitchPokemonButton switchPokemonFiveButton;
+	SwitchPokemonButton switchPokemonSixButton;
+
 
 
 	// Returns the map bitmp from the location number
@@ -144,6 +152,20 @@ public:
 		  attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1], 128, 64, 160, 450, 128, 64);
 		  attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2], 128, 64, 20, 520, 128, 64);
 		  attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3], 128, 64, 160, 520, 128, 64);
+
+		  // The switch buttons for each pokemon
+		   switchPokemonOneButton = SwitchPokemonButton(64, 64, 540, 435, 80, 80);
+		  switchPokemonOneButton.isDisplayed = false;
+		   switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
+		  switchPokemonTwoButton.isDisplayed = false;
+		   switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
+		  switchPokemonThreeButton.isDisplayed = false;
+		   switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
+		  switchPokemonFourButton.isDisplayed = false;
+		   switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
+		  switchPokemonFiveButton.isDisplayed = false;
+		   switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
+		  switchPokemonSixButton.isDisplayed = false;
 		 
 	}
 
@@ -162,24 +184,7 @@ public:
 		// The attack buttons with the pokemons attacks
 		
 
-		// The switch buttons for each pokemon
-		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(64, 64, 540, 435, 80, 80);
-		switchPokemonOneButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
-		switchPokemonTwoButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
-		switchPokemonThreeButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
-		switchPokemonFourButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
-		switchPokemonFiveButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
-		switchPokemonSixButton.isDisplayed = false;
+		
 
 		// The potion buttons for each potion
 
