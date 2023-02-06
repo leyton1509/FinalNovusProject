@@ -11,6 +11,10 @@ public:
 	// An array of strings to display back what happened
 	string textForTextBox[4] = { "", "", "", "" };
 
+	// Strings for which attack were used
+	int attackUsedOpponent;
+
+
 	int getNextPokemonForOpponent(Trainer& trainer, int currentPokemon, Pokemon playersPokemon) {
 
 		// Gets the pokemon type char
@@ -132,7 +136,7 @@ public:
 	void enemyAttack(Pokemon& playersPokemon, Pokemon& otherPokemon) {
 		if (otherPokemon.level > 15) {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 1);
-
+			attackUsedOpponent = enemyMove.moveID;
 			if (strcmp(textForTextBox[1].c_str(), "")) {
 				textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
 			}
@@ -151,7 +155,7 @@ public:
 		}
 		else {
 			Move enemyMove = getEnemyMoveUsed(playersPokemon, otherPokemon, 0);
-
+			attackUsedOpponent = enemyMove.moveID;
 			if (strcmp(textForTextBox[1].c_str(), "")) {
 				textForTextBox[0] = otherPokemon.pokemonName + " used " + enemyMove.moveName + "!";
 			}

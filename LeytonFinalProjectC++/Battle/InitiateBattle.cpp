@@ -10,6 +10,7 @@
 #include "../Sprites/ItemPotionButton.h"
 #include "../Sprites/Trainer.h"
 #include "../Sprites/UserOption.h"
+#include "../Battle/MoveAnimation/MoveAnimationHandler.h"
 
 
 // Class when a pokemon battke is needed
@@ -24,6 +25,84 @@ public:
 	// GUI info
 	bool done = false;
 	bool redraw = true;
+
+	bool battleFinished;
+	ALLEGRO_EVENT event;
+
+	// BG sprite
+	ALLEGRO_BITMAP* background;
+
+	ALLEGRO_BITMAP* otherPokemonSprite;
+	ALLEGRO_BITMAP* trainsersPokemonSprite;
+
+	int currentPokemon;
+
+	// The stat boxes for each pokemon
+	PokemonStatBox otherPokemonStatBox;
+	PokemonStatBox trainersPokemonStatBox;
+
+	// The font to use
+	ALLEGRO_FONT* fontSmaller;
+
+	// The text to display
+	string textForTextBox[4];
+
+	// The attack buttons for each move
+	AttackButton attackButton1 ;
+	AttackButton attackButton2 ;
+	AttackButton attackButton3;
+	AttackButton attackButton4;
+
+	// The switch buttons for each pokemon
+	SwitchPokemonButton switchPokemonOneButton;
+	SwitchPokemonButton switchPokemonTwoButton;
+	SwitchPokemonButton switchPokemonThreeButton;
+	SwitchPokemonButton switchPokemonFourButton;
+	SwitchPokemonButton switchPokemonFiveButton;
+	SwitchPokemonButton switchPokemonSixButton;
+
+	// The potion Buttons
+	ItemPotionButton potionButtonOne;
+	ItemPotionButton potionButtonTwo;
+	ItemPotionButton potionButtonThree;
+
+	// The options to choose buttons, heal, switch, catch and run
+
+	Button healPokemonButton;
+	Button switchPokemonButton;
+	Button catchPokemonButton;
+	Button runPokemonButton;
+
+	// The back box for the buttons
+	Button backBox;
+	// The text box
+	Button textBox;
+
+	// Sets an int for which button has been clicked
+	int attackButtonClicked;
+	int switchPokemonButtonClicked;
+	int healItemButtonClicked;
+	bool pokemonIsDead;
+	// If the switch should heal the pokemon not switch pokemon
+	int shouldHealInSwitch;
+	int catchItemButtonClicked;
+
+	ItemPokeBallButton pokeballButtonOne;
+
+	ItemPokeBallButton pokeballButtonTwo;
+
+	ItemPokeBallButton pokeballButtonThree;
+
+	bool isInAnimation;
+
+	int playerAttackName;
+	int opponentAttackName;
+
+	MoveAnimationHandler moveAnimationHandler;
+
+	bool battleIsOver = false;
+
+	
 
 	// Returns the map bitmp from the location number
 	ALLEGRO_BITMAP* getBackGroundFromLocationNumber(int locationNumber) {
@@ -77,107 +156,284 @@ public:
 		}
 	}
 
+
+	void loadInititalParts(PlayerCharacter & player , int locationNumber) {
+		 battleFinished = false;
+		 // BG sprite
+		 background = getBackGroundFromLocationNumber(locationNumber);
+		 // Reset the camera
+		 ALLEGRO_TRANSFORM trans;
+		 al_identity_transform(&trans);
+		 al_use_transform(&trans);
+		 al_draw_bitmap(background, 0, 0, 0);
+		 // Sprites for the pokemon
+		 otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
+		 trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+
+		 // The number of the pokemon to use
+		 currentPokemon = 0;
+
+		 // Gets the first valid pokemon
+		 // Breaks if there is no valid
+		 if (!player.isAllPokemonInPartyDead()) {
+			 currentPokemon = player.getFirstAlivePokemon();
+
+		 }
+		 else {
+			 return;
+		 }
+
+		 // The stat boxes for each pokemon
+		 otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
+		 trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
+
+		 // The font to use
+		 fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
+
+		  attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
+		  attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1], 128, 64, 160, 450, 128, 64);
+		  attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2], 128, 64, 20, 520, 128, 64);
+		  attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3], 128, 64, 160, 520, 128, 64);
+
+		  // The switch buttons for each pokemon
+		   switchPokemonOneButton = SwitchPokemonButton(64, 64, 540, 435, 80, 80);
+		  switchPokemonOneButton.isDisplayed = false;
+		   switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
+		  switchPokemonTwoButton.isDisplayed = false;
+		   switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
+		  switchPokemonThreeButton.isDisplayed = false;
+		   switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
+		  switchPokemonFourButton.isDisplayed = false;
+		   switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
+		  switchPokemonFiveButton.isDisplayed = false;
+		   switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
+		  switchPokemonSixButton.isDisplayed = false;
+
+		  // The potion buttons for each potion
+
+		  potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
+		  potionButtonOne.isDisplayed = false;
+
+		  potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
+		  potionButtonTwo.isDisplayed = false;
+
+		  potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
+		  potionButtonThree.isDisplayed = false;
+
+		  // The options to choose buttons, heal, switch, catch and run
+
+		   healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
+		   switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
+		   catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
+		   runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
+
+		   // The back box for the buttons
+		   backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
+		   // The text box
+		   textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
+
+		   // Sets an int for which button has been clicked
+		    attackButtonClicked = 0;
+		    switchPokemonButtonClicked = 0;
+		    healItemButtonClicked = 0;
+		    // If the switch should heal the pokemon not switch pokemon
+		    shouldHealInSwitch = -1;
+			 catchItemButtonClicked = 0;
+
+			 pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80, 80);
+			pokeballButtonOne.isDisplayed = false;
+
+			 pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
+			pokeballButtonTwo.isDisplayed = false;
+
+			 pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
+			pokeballButtonThree.isDisplayed = false;
+
+			isInAnimation = false;
+		 
+	}
+
+	void checkForSwitchButtonClicked() {
+		if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			if (textBox.isDisplayed) {
+				textBox.isDisplayed = false;
+				switchPokemonOneButton.isDisplayed = true;
+				switchPokemonTwoButton.isDisplayed = true;
+				switchPokemonThreeButton.isDisplayed = true;
+				switchPokemonFourButton.isDisplayed = true;
+				switchPokemonFiveButton.isDisplayed = true;
+				switchPokemonSixButton.isDisplayed = true;
+
+
+			}
+			// Turns off the switched pokemon buttons
+			else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
+				shouldHealInSwitch = -1;
+				textBox.isDisplayed = true;
+				switchPokemonOneButton.isDisplayed = false;
+				switchPokemonTwoButton.isDisplayed = false;
+				switchPokemonThreeButton.isDisplayed = false;
+				switchPokemonFourButton.isDisplayed = false;
+				switchPokemonFiveButton.isDisplayed = false;
+				switchPokemonSixButton.isDisplayed = false;
+
+			}
+
+		}
+	}
+
+	void checkForHealButtonClicked() {
+		// Checks to see if the heal button has been clicked
+		if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			// If its displayed, un display it, if its not display them
+			if (textBox.isDisplayed) {
+				textBox.isDisplayed = false;
+				potionButtonOne.isDisplayed = true;
+				potionButtonTwo.isDisplayed = true;
+				potionButtonThree.isDisplayed = true;
+
+			}
+			else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
+				textBox.isDisplayed = true;
+				potionButtonOne.isDisplayed = false;
+				potionButtonOne.isDisplayed = false;
+				potionButtonOne.isDisplayed = false;
+				switchPokemonOneButton.isDisplayed = false;
+				switchPokemonTwoButton.isDisplayed = false;
+				switchPokemonThreeButton.isDisplayed = false;
+				switchPokemonFourButton.isDisplayed = false;
+				switchPokemonFiveButton.isDisplayed = false;
+				switchPokemonSixButton.isDisplayed = false;
+			}
+
+		}
+	}
+
+	void checkForPotionButtonClicked() {
+		if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+			healItemButtonClicked = 1;
+		}
+		else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+			healItemButtonClicked = 2;
+
+		}
+		else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+			healItemButtonClicked = 3;
+		}
+	}
+
+	void checkForSwitchPokemonButtonClicked() {
+		if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 1;
+		}
+
+		else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 2;
+		}
+
+		else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 3;
+		}
+
+		else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 4;
+		}
+
+		else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 5;
+		}
+
+		else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 6;
+		}
+	}
+
+	void checkForAttackButtonClicked() {
+		if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 1;
+		}
+		else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 2;
+		}
+		else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 3;
+		}
+		else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 4;
+		}
+	}
+
+	void checkForButtonsClickedTrainer() {
+		checkForSwitchButtonClicked();
+		checkForHealButtonClicked();
+		checkForPotionButtonClicked();
+		checkForSwitchPokemonButtonClicked();
+		checkForAttackButtonClicked();
+	}
+
+	void checkForCatchButtonClicked() {
+		if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			if (textBox.isDisplayed) {
+				textBox.isDisplayed = false;
+				pokeballButtonOne.isDisplayed = true;
+				pokeballButtonTwo.isDisplayed = true;
+				pokeballButtonThree.isDisplayed = true;
+			}
+			else if (!textBox.isDisplayed && pokeballButtonOne.isDisplayed) {
+				textBox.isDisplayed = true;
+				pokeballButtonOne.isDisplayed = false;
+				pokeballButtonTwo.isDisplayed = false;
+				pokeballButtonThree.isDisplayed = false;
+			}
+		}
+	}
+
+	void checkForPokeBallButtonClicked() {
+		if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+			catchItemButtonClicked = 1;
+		}
+		else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+			catchItemButtonClicked = 2;
+
+		}
+		else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+			catchItemButtonClicked = 3;
+
+		}
+	}
+
+	void checkForRunButtonClicked() {
+		if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			battleFinished = true;
+		}
+	}
+
+	void checkForButtonsClickedWild() {
+		checkForRunButtonClicked();
+		checkForSwitchButtonClicked();
+		checkForHealButtonClicked();
+		checkForCatchButtonClicked();
+		checkForPokeBallButtonClicked();
+		checkForPotionButtonClicked();
+		checkForSwitchPokemonButtonClicked();
+		checkForAttackButtonClicked();
+	}
+
+	
+
 	// Takes the screen size and the queue for inputs, the current player and the current location, and the opponent
 	InitiateBattle(Trainer& opponent, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber) {
-		bool battleFinished = false;
+		
 
-		ALLEGRO_EVENT event;
-
-		// BG sprite
-		ALLEGRO_BITMAP* background = getBackGroundFromLocationNumber(locationNumber);
-
-		// Reset the camera
-		ALLEGRO_TRANSFORM trans;
-		al_identity_transform(&trans);
-		al_use_transform(&trans);
-		al_draw_bitmap(background, 0, 0, 0);
-
-		// Sprites for the pokemon
-		ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
-		ALLEGRO_BITMAP* trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+		loadInititalParts(player, locationNumber);
+		
 
 		int currentPokemonOpponent = 0;
 
-		// The number of the pokemon to use
-		int currentPokemon = 0;
-
-		// Gets the first valid pokemon
-		// Breaks if there is no valid
-		if (!player.isAllPokemonInPartyDead()) {
-			currentPokemon = player.getFirstAlivePokemon();
-
-		}
-		else {
-			return;
-		}
-
-
-		// The stat boxes for each pokemon
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
-
-		// The font to use
-		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-
 		// The text to display
-		string textForTextBox[4] = { "Trainer appeared!", "", "", "" };
+		textForTextBox[0] = "Trainer appeared!|";
 
-		// The attack buttons with the pokemons attacks
-		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
-		AttackButton attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1], 128, 64, 160, 450, 128, 64);
-		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2], 128, 64, 20, 520, 128, 64);
-		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3], 128, 64, 160, 520, 128, 64);
-
-		// The switch buttons for each pokemon
-		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton(64, 64, 540, 435, 80, 80);
-		switchPokemonOneButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
-		switchPokemonTwoButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
-		switchPokemonThreeButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
-		switchPokemonFourButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
-		switchPokemonFiveButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
-		switchPokemonSixButton.isDisplayed = false;
-
-		// The potion buttons for each potion
-
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
-		potionButtonOne.isDisplayed = false;
-
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
-		potionButtonTwo.isDisplayed = false;
-
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
-		potionButtonThree.isDisplayed = false;
-
-		// The options to choose buttons, heal, switch, catch and run
-
-		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
-		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
-		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
-		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
-
-		// The back box for the buttons
-		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
-		// The text box
-		Button textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
-
-		// Sets an int for which button has been clicked
-		int attackButtonClicked = 0;
-		int switchPokemonButtonClicked = 0;
-		int healItemButtonClicked = 0;
-		bool pokemonIsDead = false;
-		// If the switch should heal the pokemon not switch pokemon
-		int shouldHealInSwitch = -1;
-
+		
 		// Loops until the battle is finished
 		// ALLEGRO control loop
 		while (!battleFinished) {
@@ -196,106 +452,13 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				// Checks to see if the switch pokemon has been clicked and displays the switched pokemon
-				if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						switchPokemonOneButton.isDisplayed = true;
-						switchPokemonTwoButton.isDisplayed = true;
-						switchPokemonThreeButton.isDisplayed = true;
-						switchPokemonFourButton.isDisplayed = true;
-						switchPokemonFiveButton.isDisplayed = true;
-						switchPokemonSixButton.isDisplayed = true;
-
-
+				if (!battleIsOver) {
+					if (!isInAnimation) {
+						checkForButtonsClickedTrainer();
 					}
-					// Turns off the switched pokemon buttons
-					else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
-						shouldHealInSwitch = -1;
-						textBox.isDisplayed = true;
-						switchPokemonOneButton.isDisplayed = false;
-						switchPokemonTwoButton.isDisplayed = false;
-						switchPokemonThreeButton.isDisplayed = false;
-						switchPokemonFourButton.isDisplayed = false;
-						switchPokemonFiveButton.isDisplayed = false;
-						switchPokemonSixButton.isDisplayed = false;
-
-					}
-
 				}
-
-				// Checks to see if the heal button has been clicked
-				else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					// If its displayed, un display it, if its not display them
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						potionButtonOne.isDisplayed = true;
-						potionButtonTwo.isDisplayed = true;
-						potionButtonThree.isDisplayed = true;
-
-					}
-					else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
-						textBox.isDisplayed = true;
-						potionButtonOne.isDisplayed = false;
-						potionButtonOne.isDisplayed = false;
-						potionButtonOne.isDisplayed = false;
-						switchPokemonOneButton.isDisplayed = false;
-						switchPokemonTwoButton.isDisplayed = false;
-						switchPokemonThreeButton.isDisplayed = false;
-						switchPokemonFourButton.isDisplayed = false;
-						switchPokemonFiveButton.isDisplayed = false;
-						switchPokemonSixButton.isDisplayed = false;
-					}
-
-				}
-
-				// Checks to see which option button has been clicked
-				// Sets it to the value of that button
-				else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 1;
-				}
-				else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 2;
-
-				}
-				else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 3;
-				}
-				else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 1;
-				}
-
-				else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 2;
-				}
-
-				else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 3;
-				}
-
-				else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 4;
-				}
-
-				else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 5;
-				}
-
-				else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 6;
-				}
-				else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 1;
-				}
-				else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 2;
-				}
-				else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 3;
-				}
-				else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 4;
-				}
+				
+				
 
 				// If the button has been clicked
 
@@ -323,6 +486,9 @@ public:
 
 								// Runs the opponents turn
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+								opponentAttackName = doTurn.attackUsedOpponent;
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+								isInAnimation = true;
 							}
 						}
 						else {
@@ -331,6 +497,8 @@ public:
 								// If the pokemon isnt dead
 								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
 									// Sets the current pokemon and the attack buttons
+									
+									int oldPokemon = currentPokemon;
 									currentPokemon = pokemonNinArray;
 									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
@@ -349,8 +517,15 @@ public:
 									if (pokemonIsDead) {
 										pokemonIsDead = false;
 									}
-									// Runs the opponents turn
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+
+									if (player.trainersParty[oldPokemon].currentHealth != 0) {
+										// Runs the opponents turn
+										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+										opponentAttackName = doTurn.attackUsedOpponent;
+										isInAnimation = true;
+									}
+									
 								}
 							}
 						}
@@ -416,7 +591,27 @@ public:
 
 							// Does the pokemon turn
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent], player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
-							
+							opponentAttackName = doTurn.attackUsedOpponent;
+							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
+
+
+							if (player.trainersParty[currentPokemon].speedActual >= opponent.trainersTeam[currentPokemonOpponent].speedActual) {
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, currentPokemonOpponent, currentPokemon);
+								if (opponent.trainersTeam[currentPokemonOpponent].currentHealth != 0) {
+									moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+								}
+								
+							}
+							else {
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
+								if (player.trainersParty[currentPokemon].currentHealth != 0) {
+									moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, currentPokemonOpponent, currentPokemon);
+
+								}
+
+							}
+
+							isInAnimation = true;
 							// If the opponent dies
 							// Gain exoeruence, check for evolution 
 							if (opponent.trainersTeam[currentPokemonOpponent].currentHealth <= 0) {
@@ -500,7 +695,7 @@ public:
 
 									player.addMoney(100 * opponent.numberOfPokemonInParty);
 
-									battleFinished = true;
+									battleIsOver = true;
 								}
 							}
 
@@ -546,7 +741,7 @@ public:
 				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 					// If all pokemon are dead then set battle finished to true
 					if (player.isAllPokemonInPartyDead()) {
-						battleFinished = true;
+						battleIsOver = true;
 					}
 					// Brings up the switching if not every pokemon is dead
 					pokemonIsDead = true;
@@ -575,82 +770,113 @@ public:
 			// Draws the screen
 			if (redraw && al_is_event_queue_empty(queue))
 			{
-				al_clear_to_color(al_map_rgb(0, 0, 0));
-				// Draws the background
-				al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
-				// Drwas the trainer and opponent pokemon
-				al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[currentPokemonOpponent].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[currentPokemonOpponent].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
-				if (!pokemonIsDead) {
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+
+				if (!isInAnimation && battleIsOver) {
+					battleFinished = true;
+					break;
 				}
 
-				// If the switch pokemon should be displayed, display all
-				if (switchPokemonOneButton.isDisplayed) {
-					switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
-					switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
-					switchPokemonThreeButton.drawSprite(player.trainersParty[2], otherPokemonSprite);
-					switchPokemonFourButton.drawSprite(player.trainersParty[3], otherPokemonSprite);
-					switchPokemonFiveButton.drawSprite(player.trainersParty[4], otherPokemonSprite);
-					switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
+				if (isInAnimation) {
+					al_clear_to_color(al_map_rgb(0, 0, 0));
+					// Draws the background
+					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+					// Drwas the trainer and opponent pokemon
+					int oppNumber = currentPokemonOpponent;
+					int trainerNum = currentPokemon;
+					for (MoveAnimation& moveAni : moveAnimationHandler.animations)
+					{
+						oppNumber = moveAni.opponentPokemonNum;
+						trainerNum = moveAni.playerPokemonNum;
+						break;
+					}
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[oppNumber].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[oppNumber].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
+					
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					
+					moveAnimationHandler.drawAnimation();
+					if (moveAnimationHandler.finishedAllAnimations()) {
+						isInAnimation = false;
+					}
+
+					backBox.drawSprite();
+					textBox.drawSprite();
+					// Drwas the rest of the buttons
+					attackButton1.drawSprite();
+					attackButton2.drawSprite();
+					attackButton3.drawSprite();
+					attackButton4.drawSprite();
+					healPokemonButton.drawSprite();
+					switchPokemonButton.drawSprite();
+					catchPokemonButton.drawSprite();
+					runPokemonButton.drawSprite();
 				}
+				else {
+					al_clear_to_color(al_map_rgb(0, 0, 0));
+					// Draws the background
+					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+					// Drwas the trainer and opponent pokemon
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[currentPokemonOpponent].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[currentPokemonOpponent].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 
-				// If the potion buttons should be displayed, display them
-				if (potionButtonOne.isDisplayed) {
-					potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
-					potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
-					potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
+					if (!pokemonIsDead) {
+						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					}
+
+					// If the switch pokemon should be displayed, display all
+					if (switchPokemonOneButton.isDisplayed) {
+						switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
+						switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
+						switchPokemonThreeButton.drawSprite(player.trainersParty[2], otherPokemonSprite);
+						switchPokemonFourButton.drawSprite(player.trainersParty[3], otherPokemonSprite);
+						switchPokemonFiveButton.drawSprite(player.trainersParty[4], otherPokemonSprite);
+						switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
+					}
+
+					// If the potion buttons should be displayed, display them
+					if (potionButtonOne.isDisplayed) {
+						potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
+						potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
+						potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
+					}
+
+					// Draws the stat boxes for each pokemon
+					otherPokemonStatBox.drawSprite(opponent.trainersTeam[currentPokemonOpponent]);
+					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
+					backBox.drawSprite();
+					textBox.drawSprite();
+					// Drwas the rest of the buttons
+					attackButton1.drawSprite();
+					attackButton2.drawSprite();
+					attackButton3.drawSprite();
+					attackButton4.drawSprite();
+					healPokemonButton.drawSprite();
+					switchPokemonButton.drawSprite();
+					catchPokemonButton.drawSprite();
+					runPokemonButton.drawSprite();
+
+					// If the text box is displayed, display the text
+					if (textBox.isDisplayed) {
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+					}
 				}
-
-				// Draws the stat boxes for each pokemon
-				otherPokemonStatBox.drawSprite(opponent.trainersTeam[currentPokemonOpponent]);
-				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
-				backBox.drawSprite();
-				textBox.drawSprite();
-				// Drwas the rest of the buttons
-				attackButton1.drawSprite();
-				attackButton2.drawSprite();
-				attackButton3.drawSprite();
-				attackButton4.drawSprite();
-				healPokemonButton.drawSprite();
-				switchPokemonButton.drawSprite();
-				catchPokemonButton.drawSprite();
-				runPokemonButton.drawSprite();
-
-				// If the text box is displayed, display the text
-				if (textBox.isDisplayed) {
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
-				}
-
 				al_flip_display();
 				redraw = false;
+
+				
 			}
 
 		}
 		
 	}
 
+	
+
 	// Takes the screen size and the queue for inputs, the current player and the current location
 	InitiateBattle(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE* queue, PlayerCharacter& player, int locationNumber, int routeNumber) {
 
-		bool battleFinished = false;
-
-		ALLEGRO_EVENT event;
-
-		// BG sprite
-		ALLEGRO_BITMAP * background = getBackGroundFromLocationNumber(locationNumber);
-
-		// Reset the camera
-		ALLEGRO_TRANSFORM trans;
-		al_identity_transform(&trans);
-		al_use_transform(&trans);
-		al_draw_bitmap(background, 0, 0, 0);
-
-		// Sprites for the pokemon
-		ALLEGRO_BITMAP * otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
-		ALLEGRO_BITMAP * trainsersPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/backSprites.png");
+		loadInititalParts(player, locationNumber);
 
 		// Get the pokemon to fight against
 		PokemonManager pm = pm.instance();
@@ -661,86 +887,14 @@ public:
 
 		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
 
-		// The number of the pokemon to use
-		int currentPokemon = 0;
-
-		if (!player.isAllPokemonInPartyDead()) {
-			currentPokemon = player.getFirstAlivePokemon();
-			
-		}
-		else {
-			return;
-		}
-		
-
 		//otherPokemon.setPokemonsLevel(50);
 		//playerPokemon.setPokemonsLevel(50);
 
 		// Gets all the gui info
 		// The hp bars
 		// The buttons on screen
-		PokemonStatBox otherPokemonStatBox = PokemonStatBox(256, 96, 510, 20, 320, 75);
-		PokemonStatBox trainersPokemonStatBox = PokemonStatBox(256, 96, 70, 20, 320, 75);
-
-		Button backBox = Button(256, 128, 5, 435, 445, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/BackBox.png");
-		Button textBox = Button(256, 128, 500, 470, 345, 165, "../LeytonFinalProjectC++/Sprites/BattleSprites/TextBox.png");
-
-		ALLEGRO_FONT* fontSmaller = al_load_font("MagzoSemiBold-GOraO.otf", 16, NULL);
-
-		string textForTextBox[4] = { "A wild " + otherPokemon.pokemonName + " appeared!", "", "", ""};
-
-		AttackButton attackButton1 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[0], 128, 64, 20, 450, 128, 64);
-		AttackButton attackButton2 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[1],128, 64, 160, 450, 128, 64);
-		AttackButton attackButton3 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[2],128, 64, 20, 520, 128, 64);
-		AttackButton attackButton4 = AttackButton(player.trainersParty[currentPokemon].pokemonsMoves[3],128, 64, 160, 520, 128, 64);
-
-		SwitchPokemonButton switchPokemonOneButton = SwitchPokemonButton( 64, 64, 540, 435, 80, 80);
-		switchPokemonOneButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonTwoButton = SwitchPokemonButton(64, 64, 630, 435, 80, 80);
-		switchPokemonTwoButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonThreeButton = SwitchPokemonButton(64, 64, 720, 435, 80, 80);
-		switchPokemonThreeButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFourButton = SwitchPokemonButton(64, 64, 540, 520, 80, 80);
-		switchPokemonFourButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonFiveButton = SwitchPokemonButton(64, 64, 630, 520, 80, 80);
-		switchPokemonFiveButton.isDisplayed = false;
-
-		SwitchPokemonButton switchPokemonSixButton = SwitchPokemonButton(64, 64, 720, 520, 80, 80);
-		switchPokemonSixButton.isDisplayed = false;
-
-		Button healPokemonButton = Button(64, 64, 300, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/HealingItemsButton.png");
-		Button switchPokemonButton = Button(64, 64, 300, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/ChangePokemonButton.png");
-		Button catchPokemonButton = Button(64, 64, 370, 450, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/PokeballsButton.png");
-		Button runPokemonButton = Button(64, 64, 370, 520, 64, 64, "../LeytonFinalProjectC++/Sprites/BattleSprites/RunButton.png");
-
-		ItemPokeBallButton pokeballButtonOne = ItemPokeBallButton(1, 64, 64, 540, 435, 80,80);
-		pokeballButtonOne.isDisplayed = false;
-
-		ItemPokeBallButton pokeballButtonTwo = ItemPokeBallButton(2, 64, 64, 630, 435, 80, 80);
-		pokeballButtonTwo.isDisplayed = false;
-
-		ItemPokeBallButton pokeballButtonThree = ItemPokeBallButton(3, 64, 64, 720, 435, 80, 80);
-		pokeballButtonThree.isDisplayed = false;
-
-		ItemPotionButton potionButtonOne = ItemPotionButton(4, 64, 64, 540, 435, 80, 80);
-		potionButtonOne.isDisplayed = false;
-
-		ItemPotionButton potionButtonTwo = ItemPotionButton(5, 64, 64, 630, 435, 80, 80);
-		potionButtonTwo.isDisplayed = false;
-
-		ItemPotionButton potionButtonThree = ItemPotionButton(6, 64, 64, 720, 435, 80, 80);
-		potionButtonThree.isDisplayed = false;
-
-		int attackButtonClicked = 0;
-		int switchPokemonButtonClicked = 0;
-		int healItemButtonClicked = 0;
-		int catchItemButtonClicked = 0;
-		bool pokemonIsDead = false;
-		int shouldHealInSwitch = -1;
+		
+		
 
 			// Wild encounter
 
@@ -760,137 +914,13 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					battleFinished = true;
-				}
-
-				else if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						switchPokemonOneButton.isDisplayed = true;
-						switchPokemonTwoButton.isDisplayed = true;
-						switchPokemonThreeButton.isDisplayed = true;
-						switchPokemonFourButton.isDisplayed = true;
-						switchPokemonFiveButton.isDisplayed = true;
-						switchPokemonSixButton.isDisplayed = true;
-							
-
+				if (!battleIsOver) {
+					if (!isInAnimation) {
+						checkForButtonsClickedWild();
 					}
-					else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
-						shouldHealInSwitch = -1;
-						textBox.isDisplayed = true;
-						switchPokemonOneButton.isDisplayed = false;
-						switchPokemonTwoButton.isDisplayed = false;
-						switchPokemonThreeButton.isDisplayed = false;
-						switchPokemonFourButton.isDisplayed = false;
-						switchPokemonFiveButton.isDisplayed = false;
-						switchPokemonSixButton.isDisplayed = false;
-
-					}
-
-
 				}
-
-				else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						potionButtonOne.isDisplayed = true;
-						potionButtonTwo.isDisplayed = true;
-						potionButtonThree.isDisplayed = true;
-
-					}
-					else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
-						textBox.isDisplayed = true;
-						potionButtonOne.isDisplayed = false;
-						potionButtonOne.isDisplayed = false;
-						potionButtonOne.isDisplayed = false;
-						switchPokemonOneButton.isDisplayed = false;
-						switchPokemonTwoButton.isDisplayed = false;
-						switchPokemonThreeButton.isDisplayed = false;
-						switchPokemonFourButton.isDisplayed = false;
-						switchPokemonFiveButton.isDisplayed = false;
-						switchPokemonSixButton.isDisplayed = false;
-					}
-
-				}
-
-				else if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						pokeballButtonOne.isDisplayed = true;
-						pokeballButtonTwo.isDisplayed = true;
-						pokeballButtonThree.isDisplayed = true;
-					}
-					else if(!textBox.isDisplayed && pokeballButtonOne.isDisplayed) {
-						textBox.isDisplayed = true;
-						pokeballButtonOne.isDisplayed = false;
-						pokeballButtonTwo.isDisplayed = false;
-						pokeballButtonThree.isDisplayed = false;
-					}
-
-				}
-
-				else if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
-					catchItemButtonClicked = 1;
-				}
-				else if (pokeballButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
-					catchItemButtonClicked = 2;
-
-				}
-				else if (pokeballButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
-					catchItemButtonClicked = 3;
-
-				}
-
-
-				else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 1;
-				}
-				else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 2;
-
-				}
-				else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 3;
-				}
-
-
-				else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 1;
-				}
-
-				else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 2;
-				}
-
-				else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 3;
-				}
-
-				else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 4;
-				}
-
-				else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 5;
-				}
-
-				else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 6;
-				}
-
-				else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 1;
-				}
-				else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 2;
-				}
-				else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 3;
-				}
-				else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 4;
-				}
+				
+				
 
 				if (switchPokemonButtonClicked!=0) {
 					int pokemonNinArray = switchPokemonButtonClicked - 1;
@@ -909,6 +939,9 @@ public:
 								switchPokemonSixButton.isDisplayed = false;
 
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+								opponentAttackName = doTurn.attackUsedOpponent;
+								isInAnimation = true;
 
 
 							}
@@ -916,6 +949,7 @@ public:
 						else {
 							if (currentPokemon != pokemonNinArray) {
 								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									int oldPokemon = currentPokemon;
 									currentPokemon = pokemonNinArray;
 									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
 									attackButton2.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[1];
@@ -934,7 +968,13 @@ public:
 										pokemonIsDead = false;
 									}
 
-									PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+									if (player.trainersParty[oldPokemon].currentHealth != 0) {
+										// Runs the opponents turn
+										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+										opponentAttackName = doTurn.attackUsedOpponent;
+										isInAnimation = true;
+									}
 								}
 							}
 						}
@@ -948,7 +988,31 @@ public:
 						int attackButtonN = attackButtonClicked - 1;
 						if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
 
-							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
+
+							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon],otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
+							opponentAttackName = doTurn.attackUsedOpponent;
+							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
+
+
+							if (player.trainersParty[currentPokemon].speedActual >= otherPokemon.speedActual) {
+								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, -1, currentPokemon);
+								if (otherPokemon.currentHealth != 0) {
+									moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+								}
+
+							}
+							else {
+								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+								if (player.trainersParty[currentPokemon].currentHealth != 0) {
+									moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, -1, currentPokemon);
+
+								}
+
+							}
+
+							isInAnimation = true;
+
+
 							if (otherPokemon.currentHealth <= 0) {
 								int expGained = otherPokemon.experienceUponKill();
 								PokemonManager pm = pm.instance();
@@ -1019,7 +1083,7 @@ public:
 									}
 
 								}
-								battleFinished = true;
+								battleIsOver = true;
 							}
 
 							textForTextBox[0] = doTurn.textForTextBox[0];
@@ -1083,6 +1147,10 @@ public:
 						}
 						else {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+							moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
+							opponentAttackName = doTurn.attackUsedOpponent;
+							isInAnimation = true;
+
 							textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = "";
@@ -1145,7 +1213,7 @@ public:
 					if (player.isAllPokemonInPartyDead()) {
 						// Add teleporting to nearest heal
 						cout << "All pokemon dead\n";
-						battleFinished = true;
+						battleIsOver = true;
 					}
 					pokemonIsDead = true;
 					textBox.isDisplayed = false;
@@ -1170,52 +1238,93 @@ public:
 
 			if (redraw && al_is_event_queue_empty(queue))
 			{
-				al_clear_to_color(al_map_rgb(0, 0, 0));
-				al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
-				al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet),       80, 80,    screenWidth*0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
-				if (!pokemonIsDead) {
-					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
-				}
-				otherPokemonStatBox.drawSprite(otherPokemon);
-				trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
-				backBox.drawSprite();
-				textBox.drawSprite();
-				attackButton1.drawSprite();
-				attackButton2.drawSprite();
-				attackButton3.drawSprite();
-				attackButton4.drawSprite();
-				healPokemonButton.drawSprite();
-				switchPokemonButton.drawSprite();
-				catchPokemonButton.drawSprite();
-				runPokemonButton.drawSprite();
-				if (textBox.isDisplayed) {
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
-					al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+				if (!isInAnimation && battleIsOver) {
+					battleFinished = true;
+					break;
 				}
 
-				if (switchPokemonOneButton.isDisplayed) {
-					switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
-					switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
-					switchPokemonThreeButton.drawSprite(player.trainersParty[2], otherPokemonSprite);
-					switchPokemonFourButton.drawSprite(player.trainersParty[3], otherPokemonSprite);
-					switchPokemonFiveButton.drawSprite(player.trainersParty[4], otherPokemonSprite);
-					switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
+				if (isInAnimation) {
+					al_clear_to_color(al_map_rgb(0, 0, 0));
+					// Draws the background
+					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+					// Drwas the trainer and opponent pokemon
+					int trainerNum = currentPokemon;
+					for (MoveAnimation& moveAni : moveAnimationHandler.animations)
+					{
+						trainerNum = moveAni.playerPokemonNum;
+						break;
+					}
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
+
+					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+
+					moveAnimationHandler.drawAnimation();
+					if (moveAnimationHandler.finishedAllAnimations()) {
+						isInAnimation = false;
+					}
+
+					backBox.drawSprite();
+					textBox.drawSprite();
+					// Drwas the rest of the buttons
+					attackButton1.drawSprite();
+					attackButton2.drawSprite();
+					attackButton3.drawSprite();
+					attackButton4.drawSprite();
+					healPokemonButton.drawSprite();
+					switchPokemonButton.drawSprite();
+					catchPokemonButton.drawSprite();
+					runPokemonButton.drawSprite();
 				}
+				else {
 
-				if (pokeballButtonOne.isDisplayed) {
-					pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
-					pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
-					pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
 
-				}
+					al_clear_to_color(al_map_rgb(0, 0, 0));
+					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
+					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
+					if (!pokemonIsDead) {
+						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.25, screenWidth * 0.25, 0);
+					}
+					otherPokemonStatBox.drawSprite(otherPokemon);
+					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
+					backBox.drawSprite();
+					textBox.drawSprite();
+					attackButton1.drawSprite();
+					attackButton2.drawSprite();
+					attackButton3.drawSprite();
+					attackButton4.drawSprite();
+					healPokemonButton.drawSprite();
+					switchPokemonButton.drawSprite();
+					catchPokemonButton.drawSprite();
+					runPokemonButton.drawSprite();
+					if (textBox.isDisplayed) {
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 65), 0, (textForTextBox[2]).c_str());
+						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
+					}
 
-				if (potionButtonOne.isDisplayed) {
-					potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
-					potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
-					potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
+					if (switchPokemonOneButton.isDisplayed) {
+						switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
+						switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
+						switchPokemonThreeButton.drawSprite(player.trainersParty[2], otherPokemonSprite);
+						switchPokemonFourButton.drawSprite(player.trainersParty[3], otherPokemonSprite);
+						switchPokemonFiveButton.drawSprite(player.trainersParty[4], otherPokemonSprite);
+						switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
+					}
 
+					if (pokeballButtonOne.isDisplayed) {
+						pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
+						pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
+						pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
+
+					}
+
+					if (potionButtonOne.isDisplayed) {
+						potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
+						potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
+						potionButtonThree.drawSprite(player.itemManager.getAmountOfItem(potionButtonThree.potion.inividualItemID));
+
+					}
 				}
 					
 				al_flip_display();
