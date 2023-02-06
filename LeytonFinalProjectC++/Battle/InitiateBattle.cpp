@@ -268,106 +268,7 @@ public:
 				break;
 			case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
-				// Checks to see if the switch pokemon has been clicked and displays the switched pokemon
-				if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						switchPokemonOneButton.isDisplayed = true;
-						switchPokemonTwoButton.isDisplayed = true;
-						switchPokemonThreeButton.isDisplayed = true;
-						switchPokemonFourButton.isDisplayed = true;
-						switchPokemonFiveButton.isDisplayed = true;
-						switchPokemonSixButton.isDisplayed = true;
-
-
-					}
-					// Turns off the switched pokemon buttons
-					else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
-						shouldHealInSwitch = -1;
-						textBox.isDisplayed = true;
-						switchPokemonOneButton.isDisplayed = false;
-						switchPokemonTwoButton.isDisplayed = false;
-						switchPokemonThreeButton.isDisplayed = false;
-						switchPokemonFourButton.isDisplayed = false;
-						switchPokemonFiveButton.isDisplayed = false;
-						switchPokemonSixButton.isDisplayed = false;
-
-					}
-
-				}
-
-				// Checks to see if the heal button has been clicked
-				else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					// If its displayed, un display it, if its not display them
-					if (textBox.isDisplayed) {
-						textBox.isDisplayed = false;
-						potionButtonOne.isDisplayed = true;
-						potionButtonTwo.isDisplayed = true;
-						potionButtonThree.isDisplayed = true;
-
-					}
-					else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
-						textBox.isDisplayed = true;
-						potionButtonOne.isDisplayed = false;
-						potionButtonOne.isDisplayed = false;
-						potionButtonOne.isDisplayed = false;
-						switchPokemonOneButton.isDisplayed = false;
-						switchPokemonTwoButton.isDisplayed = false;
-						switchPokemonThreeButton.isDisplayed = false;
-						switchPokemonFourButton.isDisplayed = false;
-						switchPokemonFiveButton.isDisplayed = false;
-						switchPokemonSixButton.isDisplayed = false;
-					}
-
-				}
-
-				// Checks to see which option button has been clicked
-				// Sets it to the value of that button
-				else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 1;
-				}
-				else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 2;
-
-				}
-				else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
-					healItemButtonClicked = 3;
-				}
-				else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 1;
-				}
-
-				else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 2;
-				}
-
-				else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 3;
-				}
-
-				else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 4;
-				}
-
-				else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 5;
-				}
-
-				else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
-					switchPokemonButtonClicked = 6;
-				}
-				else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 1;
-				}
-				else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 2;
-				}
-				else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 3;
-				}
-				else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
-					attackButtonClicked = 4;
-				}
+				checkForButtonsClickedTrainer();
 
 				// If the button has been clicked
 
@@ -702,6 +603,108 @@ public:
 
 		}
 		
+	}
+
+	void checkForButtonsClickedTrainer() {
+		if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			if (textBox.isDisplayed) {
+				textBox.isDisplayed = false;
+				switchPokemonOneButton.isDisplayed = true;
+				switchPokemonTwoButton.isDisplayed = true;
+				switchPokemonThreeButton.isDisplayed = true;
+				switchPokemonFourButton.isDisplayed = true;
+				switchPokemonFiveButton.isDisplayed = true;
+				switchPokemonSixButton.isDisplayed = true;
+
+
+			}
+			// Turns off the switched pokemon buttons
+			else if (!textBox.isDisplayed && switchPokemonOneButton.isDisplayed) {
+				shouldHealInSwitch = -1;
+				textBox.isDisplayed = true;
+				switchPokemonOneButton.isDisplayed = false;
+				switchPokemonTwoButton.isDisplayed = false;
+				switchPokemonThreeButton.isDisplayed = false;
+				switchPokemonFourButton.isDisplayed = false;
+				switchPokemonFiveButton.isDisplayed = false;
+				switchPokemonSixButton.isDisplayed = false;
+
+			}
+
+		}
+
+		// Checks to see if the heal button has been clicked
+		else if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			// If its displayed, un display it, if its not display them
+			if (textBox.isDisplayed) {
+				textBox.isDisplayed = false;
+				potionButtonOne.isDisplayed = true;
+				potionButtonTwo.isDisplayed = true;
+				potionButtonThree.isDisplayed = true;
+
+			}
+			else if (!textBox.isDisplayed && potionButtonOne.isDisplayed) {
+				textBox.isDisplayed = true;
+				potionButtonOne.isDisplayed = false;
+				potionButtonOne.isDisplayed = false;
+				potionButtonOne.isDisplayed = false;
+				switchPokemonOneButton.isDisplayed = false;
+				switchPokemonTwoButton.isDisplayed = false;
+				switchPokemonThreeButton.isDisplayed = false;
+				switchPokemonFourButton.isDisplayed = false;
+				switchPokemonFiveButton.isDisplayed = false;
+				switchPokemonSixButton.isDisplayed = false;
+			}
+
+		}
+
+		// Checks to see which option button has been clicked
+		// Sets it to the value of that button
+		else if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
+			healItemButtonClicked = 1;
+		}
+		else if (potionButtonTwo.hasBeenClicked(xMousePosition, yMousePosition)) {
+			healItemButtonClicked = 2;
+
+		}
+		else if (potionButtonThree.hasBeenClicked(xMousePosition, yMousePosition)) {
+			healItemButtonClicked = 3;
+		}
+		else if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 1;
+		}
+
+		else if (switchPokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 2;
+		}
+
+		else if (switchPokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 3;
+		}
+
+		else if (switchPokemonFourButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 4;
+		}
+
+		else if (switchPokemonFiveButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 5;
+		}
+
+		else if (switchPokemonSixButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+			switchPokemonButtonClicked = 6;
+		}
+		else if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 1;
+		}
+		else if (attackButton2.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 2;
+		}
+		else if (attackButton3.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 3;
+		}
+		else if (attackButton4.hasBeenClicked(xMousePosition, yMousePosition)) {
+			attackButtonClicked = 4;
+		}
 	}
 
 	// Takes the screen size and the queue for inputs, the current player and the current location
