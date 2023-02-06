@@ -43,6 +43,10 @@ public :
 	int currentXPos;
 	// Current y pos
 	int currentYPos;
+
+	int opponentPokemonNum;
+	int playerPokemonNum;
+
 	
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
@@ -72,8 +76,10 @@ public :
 	}
 
 	// Default creation of move animation
-	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY){
-	
+	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY, int _opponentPokemonNum, int _playerPokemonNum){
+		opponentPokemonNum = _opponentPokemonNum;
+		playerPokemonNum = _playerPokemonNum;
+
 		moveID = _moveID;
 		initialiseStyleSheet(moveID);
 		if (isStartDestination(moveID)) {
