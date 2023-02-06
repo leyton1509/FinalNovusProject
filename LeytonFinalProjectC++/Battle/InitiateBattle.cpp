@@ -95,8 +95,6 @@ public:
 
 	bool isInAnimation;
 
-	int playerAttackName;
-	int opponentAttackName;
 
 	MoveAnimationHandler moveAnimationHandler;
 
@@ -486,7 +484,7 @@ public:
 
 								// Runs the opponents turn
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
-								opponentAttackName = doTurn.attackUsedOpponent;
+								int opponentAttackName = doTurn.attackUsedOpponent;
 								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
 								isInAnimation = true;
 							}
@@ -521,6 +519,7 @@ public:
 									if (player.trainersParty[oldPokemon].currentHealth != 0) {
 										// Runs the opponents turn
 										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent]);
+										int opponentAttackName = doTurn.attackUsedOpponent;
 										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, currentPokemonOpponent, currentPokemon);
 										opponentAttackName = doTurn.attackUsedOpponent;
 										isInAnimation = true;
@@ -591,8 +590,8 @@ public:
 
 							// Does the pokemon turn
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], opponent.trainersTeam[currentPokemonOpponent], player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
-							opponentAttackName = doTurn.attackUsedOpponent;
-							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
+							int opponentAttackName = doTurn.attackUsedOpponent;
+							int playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
 
 
 							if (player.trainersParty[currentPokemon].speedActual >= opponent.trainersTeam[currentPokemonOpponent].speedActual) {
@@ -939,6 +938,7 @@ public:
 								switchPokemonSixButton.isDisplayed = false;
 
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+								int opponentAttackName = doTurn.attackUsedOpponent;
 								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
 								opponentAttackName = doTurn.attackUsedOpponent;
 								isInAnimation = true;
@@ -971,6 +971,7 @@ public:
 									if (player.trainersParty[oldPokemon].currentHealth != 0) {
 										// Runs the opponents turn
 										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+										int opponentAttackName = doTurn.attackUsedOpponent;
 										moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
 										opponentAttackName = doTurn.attackUsedOpponent;
 										isInAnimation = true;
@@ -990,8 +991,8 @@ public:
 
 
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon],otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
-							opponentAttackName = doTurn.attackUsedOpponent;
-							playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
+							int opponentAttackName = doTurn.attackUsedOpponent;
+							int playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
 
 
 							if (player.trainersParty[currentPokemon].speedActual >= otherPokemon.speedActual) {
@@ -1147,8 +1148,9 @@ public:
 						}
 						else {
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
+							int opponentAttackName = doTurn.attackUsedOpponent;
 							moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
-							opponentAttackName = doTurn.attackUsedOpponent;
+							
 							isInAnimation = true;
 
 							textForTextBox[0] = otherPokemon.pokemonName + " broke free!";
