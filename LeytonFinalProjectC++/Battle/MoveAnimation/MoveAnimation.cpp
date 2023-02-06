@@ -35,6 +35,10 @@ class MoveAnimation{
 	int yMaxStyleSheet;
 	// The length of each sprite
 	int lengthOfEachSprite;
+	// The difference in positions for each sprite at the start
+	int differenceInX;
+	// The difference in positions for each sprite at the start
+	int differenceInY;
 
 	// Some moves go from player pokemon to opponent, some just loop through at the opponent
 	bool isStartDestination(int moveID) {
@@ -83,6 +87,8 @@ class MoveAnimation{
 		isAnimationFinished = false;
 		duration = 120;
 	    lengthOfEachSprite = duration / (xMaxStyleSheet + yMaxStyleSheet);
+		differenceInX = destinationX - startX;
+		differenceInY = destinationY - startY;
 	}
 
 	void drawAnimation() {
@@ -118,12 +124,14 @@ class MoveAnimation{
 		if (startX != destinationX) {
 
 			if (startX < destinationX) {
-
+				startX + (differenceInX / duration);
 			}
 			else {
-
+				startX - (differenceInX / duration);
 			}
 		}
+
+		
 
 
 		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 64, 64, startX, startY, 0);
