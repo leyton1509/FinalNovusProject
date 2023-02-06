@@ -69,6 +69,8 @@ public :
 			return true;
 		case PokemonType::Ghost:
 			return true;
+		case PokemonType::Steel:
+			return true;
 		default:
 			return false;
 		}
