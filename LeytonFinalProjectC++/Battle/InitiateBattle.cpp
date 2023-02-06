@@ -100,6 +100,8 @@ public:
 
 	MoveAnimationHandler moveAnimationHandler;
 
+	bool battleIsOver = false;
+
 	
 
 	// Returns the map bitmp from the location number
@@ -690,7 +692,7 @@ public:
 
 									player.addMoney(100 * opponent.numberOfPokemonInParty);
 
-									battleFinished = true;
+									battleIsOver = true;
 								}
 							}
 
@@ -736,7 +738,7 @@ public:
 				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
 					// If all pokemon are dead then set battle finished to true
 					if (player.isAllPokemonInPartyDead()) {
-						battleFinished = true;
+						battleIsOver = true;
 					}
 					// Brings up the switching if not every pokemon is dead
 					pokemonIsDead = true;
@@ -765,6 +767,11 @@ public:
 			// Draws the screen
 			if (redraw && al_is_event_queue_empty(queue))
 			{
+
+				if (!isInAnimation && battleIsOver) {
+					battleFinished = true;
+					break;
+				}
 
 				if (isInAnimation) {
 					al_clear_to_color(al_map_rgb(0, 0, 0));
