@@ -21,8 +21,13 @@ class MoveAnimation {
 	// The ytile for the style sheet
 	int yStileForSyleSheet;
 
+	// Some moves go from player pokemon to opponent, some just loop through at the opponent
+	bool isStartDestination(int moveID) {
+
+	}
+
 	// Default creation of move animation
 	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int opponentPokemonX, int opponentPokemonY) {
-
+		moveID = _moveID;
 	}
 };
