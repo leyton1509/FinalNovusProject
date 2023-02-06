@@ -1,6 +1,6 @@
-#include "../../Sprites/SpriteHeader.h"
+
 // A class to control a single move animation
-class MoveAnimation : public Sprite{
+class MoveAnimation{
 
 	// The id of the move
 	int moveID;
@@ -29,7 +29,8 @@ class MoveAnimation : public Sprite{
 	}
 
 	// Default creation of move animation
-	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY) {
+	MoveAnimation(int _moveID, int _playerPokemonX, int _playerPokemonY, int _opponentPokemonX, int _opponentPokemonY){
+	
 		moveID = _moveID;
 		if (isStartDestination(moveID)) {
 			startX = _opponentPokemonX;
