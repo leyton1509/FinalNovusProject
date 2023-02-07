@@ -209,9 +209,10 @@ int main()
     player.trainersParty[1].setPokemonsLevel(25);
 
     // Sets the players pos position
-    player.setAllPositions(13, 10);
+    // player.setAllPositions(13, 10);
+      player.setAllPositions(15, 16);
     // Creates a world map, with height width and text file name
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt", 2);
     // Creates a camera position at 0,0
     float cameraPosition[2] = { 0,0 };
     // How many frames have passed
@@ -401,7 +402,7 @@ int main()
                 if (tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7 || tilePlayerIsStandingOn == 8) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
-                        if (encounterRan == -2) {
+                        if (encounterRan == 2) {
                             keys[0] = false;
                             keys[1] = false;
                             keys[2] = false;
