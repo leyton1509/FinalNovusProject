@@ -63,6 +63,24 @@ public :
 
 			t3.setPositions(15, 58, 1, 0, 1);
 			trainerList.push_front(t3);
+
+
+			Trainer t4 = getTrainer(11);
+
+			Pokemon p1 = pm.getDefaultPokemon("Corphish");
+			p1.setPokemonsLevel(9);
+			t4.addPokemon(p1);
+
+			Pokemon p2 = pm.getDefaultPokemon("Ralts");
+			p2.setPokemonsLevel(10);
+			t4.addPokemon(p2);
+
+			Pokemon p3 = pm.getDefaultPokemon("Larvitar");
+			p3.setPokemonsLevel(9);
+			t4.addPokemon(p3);
+
+			t4.setPositions(40, 62, -1, 0, 1);
+			trainerList.push_front(t4);
 		}
 
 		return trainerList;
