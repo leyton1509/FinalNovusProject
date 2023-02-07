@@ -24,7 +24,7 @@ public:
 
 			// Starting position of options
 			int xStartPos = 10;
-			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions);
+			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions) + 10;
 
 			// GUI info
 			bool done = false;
@@ -85,7 +85,7 @@ public:
 				if (redraw && al_is_event_queue_empty(queue))
 				{
 					// Draws the text
-					al_draw_text(font, al_map_rgb(255, 255, 255), xStartPos, yStartPos - 5 - buttonHeight, 0, (headerText).c_str());
+					al_draw_text(font, al_map_rgb(255, 255, 255), xStartPos, yStartPos - buttonHeight, 0, (headerText).c_str());
 
 					// Draws the buttons with the correct string
 					for (int i = 0; i < numberOfOptions; i++)
