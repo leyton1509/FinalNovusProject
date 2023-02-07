@@ -288,26 +288,24 @@ public :
 				totalSpritePos++;
 			}
 
+			if (currentXPos != destinationX) {
+				currentXPos = currentXPos + differenceInX;
+			}
 
+			if (currentYPos != destinationY) {
+				currentYPos = currentYPos + differenceInY;
+			}
 
-			
+			currentFrame++;
+			al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, currentXPos, currentYPos, 0);
+
 		}
 
 		else {
 			isAnimationFinished = true;
 		}
 		
-		if (currentXPos != destinationX) {
-			currentXPos = currentXPos + differenceInX;
-		}
-
-		if (currentYPos != destinationY) {
-			currentYPos = currentYPos + differenceInY;
-		}
 		
-
-		currentFrame++;
-		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, currentXPos, currentYPos, 0);
 
 		
 
