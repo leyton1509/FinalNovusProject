@@ -219,6 +219,21 @@ public:
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
+		else if (tile == 22) {
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			previousTileLocation[0] = player.xTilePosition;
+			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.setAllPositions(75, 40);
+			player.resetPlayer(0, 0);
+			resetMapToZeros();
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			mapNumber = 1;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+		}
 	}
 
 
