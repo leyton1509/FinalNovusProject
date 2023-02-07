@@ -876,6 +876,7 @@ public:
 			}
 
 		}
+		destroySprites();
 		
 	}
 
