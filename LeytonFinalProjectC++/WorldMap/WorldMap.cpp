@@ -210,7 +210,6 @@ public:
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
-			// player.setAllPositions(15, 12);
 			player.resetPlayer(15, 12);
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt");
@@ -227,7 +226,6 @@ public:
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			// player.setAllPositions(75, 40);
-			player.resetPlayer(0, 0);
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
 			player.resetPlayer(28, 72);
