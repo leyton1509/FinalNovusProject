@@ -175,7 +175,7 @@ public:
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
-
+		// Entrance to poke mart
 		else if (tile == 18) {
 			once = false;
 			loadCounterX = 0;
@@ -191,7 +191,7 @@ public:
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
-
+		// entrance to map one from buildings 
 		else if (tile == 16) {
 			once = false;
 			loadCounterX = 0;
@@ -203,15 +203,15 @@ public:
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
-
+		// entrance to map two
 		else if (tile == 21) {
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
-			player.setAllPositions(15, 16);
-			player.resetPlayer(0, 0);
+			// player.setAllPositions(15, 12);
+			player.resetPlayer(15, 12);
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt");
 			mapNumber = 2;
@@ -219,20 +219,23 @@ public:
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
+		// entrance to map one from map 2
 		else if (tile == 22) {
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) + 1;
-			player.setAllPositions(75, 40);
+			// player.setAllPositions(75, 40);
 			player.resetPlayer(0, 0);
 			resetMapToZeros();
 			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			player.resetPlayer(28, 72);
 			mapNumber = 1;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+
 		}
 	}
 
