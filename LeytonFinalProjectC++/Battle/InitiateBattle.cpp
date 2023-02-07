@@ -1349,44 +1349,49 @@ public:
 			
 		}
 
-		
+		destroySprites();
 
 	}
 
+
+	// Destroys all the sprites created
 	void destroySprites() {
+		// Destroy stat boxes
 		otherPokemonStatBox.destroySprites();
 		trainersPokemonStatBox.destroySprites();
-		switchPokemonButton.destroySprite();
+		// Destroy back boxes
 		textBox.destroySprite();
 		backBox.destroySprite();
+		// Destroy image sprites
 		al_destroy_bitmap(background);
 		al_destroy_bitmap(otherPokemonSprite);
 		al_destroy_bitmap(trainsersPokemonSprite);
+		// Destroy attack buttons
 		attackButton1.destroySprite();
 		attackButton2.destroySprite();
 		attackButton3.destroySprite();
 		attackButton4.destroySprite();
-
+		// Destroy option buttons
 		runPokemonButton.destroySprite();
 		healPokemonButton.destroySprite();
 		catchPokemonButton.destroySprite();
 		switchPokemonButton.destroySprite();
-
+		// Destroy switch pokemon buttons
 		switchPokemonOneButton.destroySprite();
 		switchPokemonTwoButton.destroySprite();
 		switchPokemonThreeButton.destroySprite();
 		switchPokemonFourButton.destroySprite();
 		switchPokemonFiveButton.destroySprite();
 		switchPokemonSixButton.destroySprite();
-
+		// Destroy pokeball buttons
 		pokeballButtonOne.destroySprite();
 		pokeballButtonTwo.destroySprite();
 		pokeballButtonThree.destroySprite();
-
+		// Destroy potion buttons
 		potionButtonOne.destroySprite();
 		potionButtonTwo.destroySprite();
 		potionButtonThree.destroySprite();
-
+		// Destroy fonts
 		al_destroy_font(fontSmaller);
 	}
 
