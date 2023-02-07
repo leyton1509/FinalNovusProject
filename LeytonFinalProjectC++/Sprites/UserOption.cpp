@@ -24,7 +24,7 @@ public:
 
 			// Starting position of options
 			int xStartPos = 10;
-			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions) + 10;
+			int yStartPos = screenHeight / 2 - (buttonHeight * numberOfOptions) + (screenHeight * 0.05);
 
 			// GUI info
 			bool done = false;
