@@ -92,6 +92,8 @@ public:
 		mapTiles[21] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
 		// Entrance to map one from map two
 		mapTiles[22] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		// Entrance to map one from map two
+		mapTiles[23] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/water.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
