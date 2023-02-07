@@ -25,12 +25,26 @@ public :
 		std::list<Trainer> trainerList = {};
 		if (mapNumber==1) {
 			Trainer t1 = getTrainer(8);
+
 			Pokemon p1 = pm.getDefaultPokemon("Starly");
 			p1.setPokemonsLevel(4);
-			t1.addPokemon(p1);
 
+			t1.addPokemon(p1);
 			t1.setPositions(14, 44, 1, 0, 1);
 			trainerList.push_front(t1);
+
+			Trainer t2 = getTrainer(9);
+
+			Pokemon p1 = pm.getDefaultPokemon("Weedle");
+			p1.setPokemonsLevel(6);
+			t2.addPokemon(p1);
+
+			Pokemon p2 = pm.getDefaultPokemon("Caterpie");
+			p2.setPokemonsLevel(6);
+			t2.addPokemon(p2);
+
+			t2.setPositions(14, 44, -1, 0, 1);
+			trainerList.push_front(t2);
 		}
 
 		return trainerList;
