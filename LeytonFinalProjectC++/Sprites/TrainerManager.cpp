@@ -65,7 +65,7 @@ public :
 			trainerList.push_front(t3);
 
 
-			Trainer t4 = getTrainer(11);
+			Trainer t4 = getTrainer(28);
 
 			Pokemon p1 = pm.getDefaultPokemon("Corphish");
 			p1.setPokemonsLevel(9);
@@ -83,7 +83,7 @@ public :
 			trainerList.push_front(t4);
 
 
-			Trainer t5 = getTrainer(11);
+			Trainer t5 = getTrainer(15);
 
 			Pokemon p1 = pm.getDefaultPokemon("Dratini");
 			p1.setPokemonsLevel(11);
