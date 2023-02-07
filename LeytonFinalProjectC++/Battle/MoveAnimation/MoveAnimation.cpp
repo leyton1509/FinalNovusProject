@@ -303,6 +303,7 @@ public :
 
 		else {
 			isAnimationFinished = true;
+			destroySprite();
 		}
 		
 		
