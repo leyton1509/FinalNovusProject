@@ -14,7 +14,7 @@ class WorldMap {
 public:
 
 	ALLEGRO_BITMAP* mapBuffer;
-	ALLEGRO_BITMAP* mapTiles[25];
+	ALLEGRO_BITMAP* mapTiles[35];
 
 	std::list<Interactable> interactablesForMap;
 	std::list<Trainer> trainersForMap;
@@ -92,8 +92,26 @@ public:
 		mapTiles[21] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
 		// Entrance to map one from map two
 		mapTiles[22] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
-		// Entrance to map one from map two
+		// Water top left image
 		mapTiles[23] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterTopLeft.png");
+		// water top middle image
+		mapTiles[24] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterTopMiddle.png");
+		// water top middle image
+		mapTiles[25] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterTopRight.png");
+
+		// Water top left image
+		mapTiles[26] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleLeft.png");
+		// water top middle image
+		mapTiles[27] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleMiddle.png");
+		// water top middle image
+		mapTiles[28] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleRight.png");
+
+		// Water top left image
+		mapTiles[26] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomLeft.png");
+		// water top middle image
+		mapTiles[27] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomMiddle.png");
+		// water top middle image
+		mapTiles[28] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomRight.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
