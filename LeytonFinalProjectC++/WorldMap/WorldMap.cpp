@@ -92,6 +92,7 @@ public:
 		mapTiles[21] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
 		// Entrance to map one from map two
 		mapTiles[22] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+
 		// Water top left image
 		mapTiles[23] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterTopLeft.png");
 		// water top middle image
@@ -107,11 +108,11 @@ public:
 		mapTiles[28] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleRight.png");
 
 		// Water bottom left image
-		mapTiles[26] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomLeft.png");
+		mapTiles[29] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomLeft.png");
 		// water bottom middle image
-		mapTiles[27] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomMiddle.png");
+		mapTiles[30] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomMiddle.png");
 		// water bottom middle image
-		mapTiles[28] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomRight.png");
+		mapTiles[31] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomRight.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
@@ -293,6 +294,30 @@ public:
 					else if (textMap[xTile][tempYTile - 1] == 23) {
 						return 0;
 					}
+					else if (textMap[xTile][tempYTile - 1] == 24) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 25) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 26) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 27) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 28) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 29) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 30) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile - 1] == 31) {
+						return 0;
+					}
 					std::list<Interactable>::reverse_iterator revIt;
 					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
 					{
@@ -348,6 +373,30 @@ public:
 					else if (textMap[xTile][tempYTile + 1] == 23) {
 						return 0;
 					}
+					else if (textMap[xTile][tempYTile + 1] == 24) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 25) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 26) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 27) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 28) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 29) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 30) {
+						return 0;
+					}
+					else if (textMap[xTile][tempYTile + 1] == 31) {
+						return 0;
+					}
 					std::list<Interactable>::reverse_iterator revIt;
 					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
 					{
@@ -400,6 +449,30 @@ public:
 					else if (textMap[xTile - 1][tempYTile] == 23) {
 						return 0;
 					}
+					else if (textMap[xTile - 1][tempYTile] == 24) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 25) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 26) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 27) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 28) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 29) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 30) {
+						return 0;
+					}
+					else if (textMap[xTile - 1][tempYTile] == 31) {
+						return 0;
+					}
 					std::list<Interactable>::reverse_iterator revIt;
 					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
 					{
@@ -450,6 +523,30 @@ public:
 						return 0;
 					}
 					else if (textMap[xTile + 1][tempYTile] == 23) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 24) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 25) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 26) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 27) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 28) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 29) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 30) {
+						return 0;
+					}
+					else if (textMap[xTile + 1][tempYTile] == 31) {
 						return 0;
 					}
 					std::list<Interactable>::reverse_iterator revIt;
