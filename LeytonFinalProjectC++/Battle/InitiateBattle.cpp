@@ -1351,20 +1351,38 @@ public:
 
 		otherPokemonStatBox.destroySprites();
 		trainersPokemonStatBox.destroySprites();
+		switchPokemonButton.destroySprite();
+		textBox.destroySprite();
+		backBox.destroySprite();
 		al_destroy_bitmap(background);
 		al_destroy_bitmap(otherPokemonSprite);
 		al_destroy_bitmap(trainsersPokemonSprite);
-		al_destroy_bitmap(backBox.spriteImage);
-		al_destroy_bitmap(attackButton1.spriteImage);
-		al_destroy_bitmap(attackButton2.spriteImage);
-		al_destroy_bitmap(attackButton3.spriteImage);
-		al_destroy_bitmap(attackButton4.spriteImage);
-		al_destroy_bitmap(runPokemonButton.spriteImage);
-		al_destroy_bitmap(healPokemonButton.spriteImage);
-		al_destroy_bitmap(catchPokemonButton.spriteImage);
-		al_destroy_bitmap(switchPokemonButton.spriteImage);
-		al_destroy_bitmap(textBox.spriteImage);
+		attackButton1.destroySprite();
+		attackButton2.destroySprite();
+		attackButton3.destroySprite();
+		attackButton4.destroySprite();
 
+		runPokemonButton.destroySprite();
+		healPokemonButton.destroySprite();
+		catchPokemonButton.destroySprite();
+		switchPokemonButton.destroySprite();
+
+		switchPokemonOneButton.destroySprite();
+		switchPokemonTwoButton.destroySprite();
+		switchPokemonThreeButton.destroySprite();
+		switchPokemonFourButton.destroySprite();
+		switchPokemonFiveButton.destroySprite();
+		switchPokemonSixButton.destroySprite();
+
+		pokeballButtonOne.destroySprite();
+		pokeballButtonTwo.destroySprite();
+		pokeballButtonThree.destroySprite();
+
+		potionButtonOne.destroySprite();
+		potionButtonTwo.destroySprite();
+		potionButtonThree.destroySprite();
+
+		al_destroy_font(fontSmaller);
 
 	}
 
