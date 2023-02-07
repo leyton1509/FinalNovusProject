@@ -203,9 +203,9 @@ int main()
     PlayerCharacter player = PlayerCharacter();
 
     // Add any test pokemon here, can be removed later
-    player.addPokemon(pm.getDefaultPokemon("Groudon"));
+    player.addPokemon(pm.getDefaultPokemon("Totodile"));
     player.addPokemon(pm.getDefaultPokemon("Kyogre"));
-    player.trainersParty[0].setPokemonsLevel(1);
+    player.trainersParty[0].setPokemonsLevel(5);
     player.trainersParty[1].setPokemonsLevel(25);
 
     // Sets the players pos position
@@ -401,7 +401,7 @@ int main()
                 if (tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7 || tilePlayerIsStandingOn == 8) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
                         int encounterRan =  (rand() % 3) + 1;
-                        if (encounterRan == 2) {
+                        if (encounterRan == -2) {
                             keys[0] = false;
                             keys[1] = false;
                             keys[2] = false;
@@ -422,7 +422,7 @@ int main()
                 
             }
             // On frames 19, 39 and 59, check to see if a player walks in front of any of the trainers on the map
-            else if (framecounter == 19 || framecounter == 39 || framecounter == 59) {
+            else if (framecounter == 29 || framecounter == 33 || framecounter == 38) {
                bool battleHappened = worldMap.checkForTrainerBattle(player, queue);
                if (battleHappened) {
                    keys[0] = false;
