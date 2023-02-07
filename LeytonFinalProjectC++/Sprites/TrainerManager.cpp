@@ -35,7 +35,7 @@ public :
 
 			Trainer t2 = getTrainer(9);
 
-			Pokemon p1 = pm.getDefaultPokemon("Weedle");
+			p1 = pm.getDefaultPokemon("Weedle");
 			p1.setPokemonsLevel(6);
 			t2.addPokemon(p1);
 
@@ -43,17 +43,17 @@ public :
 			p2.setPokemonsLevel(6);
 			t2.addPokemon(p2);
 
-			t2.setPositions(14, 44, -1, 0, 1);
+			t2.setPositions(30, 49, -1, 0, 1);
 			trainerList.push_front(t2);
 
 
 			Trainer t3 = getTrainer(11);
 
-			Pokemon p1 = pm.getDefaultPokemon("Murkrow");
+			p1 = pm.getDefaultPokemon("Murkrow");
 			p1.setPokemonsLevel(8);
 			t3.addPokemon(p1);
 
-			Pokemon p2 = pm.getDefaultPokemon("Budew");
+			p2 = pm.getDefaultPokemon("Budew");
 			p2.setPokemonsLevel(9);
 			t3.addPokemon(p2);
 
@@ -67,15 +67,15 @@ public :
 
 			Trainer t4 = getTrainer(28);
 
-			Pokemon p1 = pm.getDefaultPokemon("Corphish");
+			p1 = pm.getDefaultPokemon("Corphish");
 			p1.setPokemonsLevel(9);
 			t4.addPokemon(p1);
 
-			Pokemon p2 = pm.getDefaultPokemon("Ralts");
+			p2 = pm.getDefaultPokemon("Ralts");
 			p2.setPokemonsLevel(10);
 			t4.addPokemon(p2);
 
-			Pokemon p3 = pm.getDefaultPokemon("Larvitar");
+			p3 = pm.getDefaultPokemon("Larvitar");
 			p3.setPokemonsLevel(9);
 			t4.addPokemon(p3);
 
@@ -85,29 +85,29 @@ public :
 
 			Trainer t5 = getTrainer(15);
 
-			Pokemon p1 = pm.getDefaultPokemon("Dratini");
+			p1 = pm.getDefaultPokemon("Dratini");
 			p1.setPokemonsLevel(11);
 			t5.addPokemon(p1);
 
-			Pokemon p2 = pm.getDefaultPokemon("Bagon");
+			p2 = pm.getDefaultPokemon("Bagon");
 			p2.setPokemonsLevel(12);
 			t5.addPokemon(p2);
 
-			t5.setPositions(23, 70, 0,-1, 1);
+			t5.setPositions(23, 70, 0,1, 1);
 			trainerList.push_front(t5);
 
 
 			Trainer t6 = getTrainer(29);
 
-			Pokemon p1 = pm.getDefaultPokemon("Aron");
+			p1 = pm.getDefaultPokemon("Aron");
 			p1.setPokemonsLevel(11);
 			t6.addPokemon(p1);
 
-			Pokemon p2 = pm.getDefaultPokemon("Beldum");
+			p2 = pm.getDefaultPokemon("Beldum");
 			p2.setPokemonsLevel(12);
 			t6.addPokemon(p2);
 
-			t6.setPositions(32, 70, 0, -1, 1);
+			t6.setPositions(32, 70, 0, 1, 1);
 			trainerList.push_front(t6);
 		}
 
