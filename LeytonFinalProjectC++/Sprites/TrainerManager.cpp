@@ -45,6 +45,24 @@ public :
 
 			t2.setPositions(14, 44, -1, 0, 1);
 			trainerList.push_front(t2);
+
+
+			Trainer t3 = getTrainer(11);
+
+			Pokemon p1 = pm.getDefaultPokemon("Murkrow");
+			p1.setPokemonsLevel(8);
+			t3.addPokemon(p1);
+
+			Pokemon p2 = pm.getDefaultPokemon("Budew");
+			p2.setPokemonsLevel(9);
+			t3.addPokemon(p2);
+
+			Pokemon p3 = pm.getDefaultPokemon("Numel");
+			p3.setPokemonsLevel(9);
+			t3.addPokemon(p3);
+
+			t3.setPositions(15, 58, 1, 0, 1);
+			trainerList.push_front(t3);
 		}
 
 		return trainerList;
