@@ -99,18 +99,18 @@ public:
 		// water top middle image
 		mapTiles[25] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterTopRight.png");
 
-		// Water top left image
+		// Water middle left image
 		mapTiles[26] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleLeft.png");
-		// water top middle image
+		// water middle middle image
 		mapTiles[27] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleMiddle.png");
-		// water top middle image
+		// water middle middle image
 		mapTiles[28] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterMiddleRight.png");
 
-		// Water top left image
+		// Water bottom left image
 		mapTiles[26] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomLeft.png");
-		// water top middle image
+		// water bottom middle image
 		mapTiles[27] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomMiddle.png");
-		// water top middle image
+		// water bottom middle image
 		mapTiles[28] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomRight.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
