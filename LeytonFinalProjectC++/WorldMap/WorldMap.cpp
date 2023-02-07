@@ -45,6 +45,7 @@ public:
 		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
 
 
+
 		// Unwalkable black square
 		mapTiles[0] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		// Walkable black square
@@ -89,6 +90,8 @@ public:
 		mapTiles[20] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/InsidePokeMart.png");
 		// Entrance to pokecentre
 		mapTiles[21] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
+		// Entrance to map one from map two
+		mapTiles[22] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/PlainColourGreen.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
