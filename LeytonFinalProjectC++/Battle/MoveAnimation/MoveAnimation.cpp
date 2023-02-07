@@ -269,6 +269,7 @@ public :
 		currentYPos = startY;
 	}
 
+	// Drwas the current state of the animation
 	void drawAnimation() {
 		
 
@@ -286,6 +287,9 @@ public :
 				}
 				totalSpritePos++;
 			}
+
+
+
 			
 		}
 
@@ -305,6 +309,12 @@ public :
 		currentFrame++;
 		al_draw_bitmap_region(stylesheet, (192 * xTileForStyleSheet), (192 * yTileForSyleSheet), 192, 192, currentXPos, currentYPos, 0);
 
+		
+
+	}
+
+	void destroySprite() {
+		al_destroy_bitmap(stylesheet);
 	}
 
 };
