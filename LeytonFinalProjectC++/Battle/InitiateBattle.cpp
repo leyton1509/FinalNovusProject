@@ -1349,6 +1349,11 @@ public:
 			
 		}
 
+		
+
+	}
+
+	void destroySprites() {
 		otherPokemonStatBox.destroySprites();
 		trainersPokemonStatBox.destroySprites();
 		switchPokemonButton.destroySprite();
@@ -1383,7 +1388,6 @@ public:
 		potionButtonThree.destroySprite();
 
 		al_destroy_font(fontSmaller);
-
 	}
 
 };
