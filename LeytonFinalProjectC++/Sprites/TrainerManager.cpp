@@ -95,6 +95,20 @@ public :
 
 			t5.setPositions(23, 70, 0,-1, 1);
 			trainerList.push_front(t5);
+
+
+			Trainer t6 = getTrainer(29);
+
+			Pokemon p1 = pm.getDefaultPokemon("Aron");
+			p1.setPokemonsLevel(11);
+			t6.addPokemon(p1);
+
+			Pokemon p2 = pm.getDefaultPokemon("Beldum");
+			p2.setPokemonsLevel(12);
+			t6.addPokemon(p2);
+
+			t6.setPositions(32, 70, 0, -1, 1);
+			trainerList.push_front(t6);
 		}
 
 		return trainerList;
