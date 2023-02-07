@@ -81,6 +81,20 @@ public :
 
 			t4.setPositions(40, 62, -1, 0, 1);
 			trainerList.push_front(t4);
+
+
+			Trainer t5 = getTrainer(11);
+
+			Pokemon p1 = pm.getDefaultPokemon("Dratini");
+			p1.setPokemonsLevel(11);
+			t5.addPokemon(p1);
+
+			Pokemon p2 = pm.getDefaultPokemon("Bagon");
+			p2.setPokemonsLevel(12);
+			t5.addPokemon(p2);
+
+			t5.setPositions(23, 70, 0,-1, 1);
+			trainerList.push_front(t5);
 		}
 
 		return trainerList;
