@@ -44,6 +44,10 @@ public:
 			stringCount++;
 		}
 
+		if (stringCount == 0) {
+			finishedStrings = true;
+		}
+
 		// Counter for how many clicks
 		int counter = 0;
 
