@@ -213,7 +213,7 @@ public:
 			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt";
 			loadMap(currentMap);
 
-			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") {
+			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
 
 			}
 			
