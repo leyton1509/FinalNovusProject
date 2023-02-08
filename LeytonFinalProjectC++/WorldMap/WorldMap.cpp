@@ -184,7 +184,9 @@ public:
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) +1;
 			player.resetPlayer(7, 10);
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt");
+			previousMap = currentMap;
+			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt";
+			loadMap(currentMap);
 			mapNumber = 10;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
@@ -201,7 +203,9 @@ public:
 			player.setAllPositions(6, 8);
 			player.resetPlayer(6, 8); 
 			resetMapToZeros();
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt");
+			previousMap = currentMap;
+			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/PokeCentreMap.txt";
+			loadMap(currentMap);
 			mapNumber = 11;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
@@ -217,20 +221,30 @@ public:
 			player.setAllPositions(2, 6);
 			player.resetPlayer(2, 6);
 			resetMapToZeros();
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt");
+			previousMap = currentMap;
+			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/PokeMartMap.txt";
+			loadMap(currentMap);
 			mapNumber = 12;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 		}
-		// entrance to map one from buildings 
+		// entrance to map from buildings 
 		else if (tile == 16) {
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
 			player.resetPlayer(previousTileLocation[0], previousTileLocation[1]);
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
-			mapNumber = 1;
+
+			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
+				mapNumber = 1;
+			}else if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt") == 0) {
+				mapNumber = 2;
+			}
+			loadMap(previousMap);
+			currentMap = previousMap;
+			previousMap = "";
+
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
@@ -244,7 +258,9 @@ public:
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			player.resetPlayer(15, 7);
 			resetMapToZeros();
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt");
+			previousMap = currentMap;
+			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt";
+			loadMap(currentMap);
 			mapNumber = 2;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
@@ -259,7 +275,9 @@ public:
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			// player.setAllPositions(75, 40);
 			resetMapToZeros();
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt");
+			previousMap = currentMap;
+			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt";
+			loadMap(currentMap);
 			player.resetPlayer(28, 72);
 			mapNumber = 1;
 			InteractablesForMaps im;
@@ -277,7 +295,9 @@ public:
 			previousTileLocation[1] = (player.yTilePosition) + 1;
 			player.resetPlayer(8, 20);
 			resetMapToZeros();
-			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/Gym.txt");
+			previousMap = currentMap;
+			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/Gym.txt";
+			loadMap(currentMap);
 			mapNumber = 13;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
