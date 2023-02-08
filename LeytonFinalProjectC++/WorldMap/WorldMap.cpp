@@ -113,6 +113,9 @@ public:
 		mapTiles[30] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomMiddle.png");
 		// water bottom middle image
 		mapTiles[31] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/waterBottomRight.png");
+
+		// gym tile image
+		mapTiles[32] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/gym.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
