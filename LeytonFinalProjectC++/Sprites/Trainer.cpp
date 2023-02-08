@@ -138,6 +138,23 @@ public:
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
 		if (!hasBeenFought) {
+
+			// Makes sure the sprite faces the player when interacting
+			if (player.directionX == 1) {
+				directionX == -1;
+				mapDirectonToSpriteSheet();
+			}else if (player.directionX == -1) {
+				directionX == 1;
+				mapDirectonToSpriteSheet();
+			}
+			else if (player.directionY == 1) {
+				directionY == -1;
+				mapDirectonToSpriteSheet();
+			}
+			else if (player.directionY == -1) {
+				directionY == 1;
+				mapDirectonToSpriteSheet();
+			}
 			
 
 			
