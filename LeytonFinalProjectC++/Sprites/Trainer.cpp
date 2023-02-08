@@ -32,6 +32,8 @@ public:
 	int locationNumber;
 	// The list of strings to disply in textbox
 	std::list<string> strings = {};
+	// Bool for if the trainer should fight via line of sight
+	bool shouldFightWithSight;
 	
 
 	// Main constructor for loading a trainer, with name, pos, stylesheet and styelsheet position 
@@ -44,6 +46,7 @@ public:
 		xTileForSpriteSheet = _xTileForSpriteSheet;
 		yTileForSpriteSheet = _yTileForSpriteSheet;
 		locationNumber = 0;
+		shouldFightWithSight = true;
 
 	}
 
@@ -57,6 +60,7 @@ public:
 		xTileForSpriteSheet = 0;
 		yTileForSpriteSheet = 0;
 		locationNumber = 0;
+		shouldFightWithSight = true;
 	}
 
 	// Method for displaying a text box
