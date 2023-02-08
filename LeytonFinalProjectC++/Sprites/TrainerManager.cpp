@@ -245,6 +245,19 @@ public :
 			trainerList.push_front(t1);
 		}
 		else if (mapNumber == 23) {
+			std::list<string> strings = {};
+			strings.push_back("Pokemon can evolve and learn new moves at certain levels.");
+			strings.push_back("There are some very strong pokemon in this region, be careful.");
+			strings.push_back("Though the pokemon are the least of your concerns.");
+			Trainer t1 = getTrainer(13);
+			t1.strings = strings;
+			t1.isBattlingTrainer = false;
+			t1.shouldFightWithSight = false;
+			strings.pop_front();
+			strings.pop_front();
+			strings.pop_front();
+			t1.setPositions(3, 3, 0, -1, 1);
+			trainerList.push_front(t1);
 		}
 
 		return trainerList;
