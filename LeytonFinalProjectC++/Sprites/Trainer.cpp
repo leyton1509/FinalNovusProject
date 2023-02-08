@@ -142,22 +142,25 @@ public:
 	// If the trainer has been interacted
 	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
-		
 
 		// Makes sure the sprite faces the player when interacting
 		if (player.directionX == 1) {
-			directionX == -1;
+			directionX = -1;
+			directionY = 0;
 			mapDirectonToSpriteSheet();
 		}else if (player.directionX == -1) {
-			directionX == 1;
+			directionX = 1;
+			directionY = 0;
 			mapDirectonToSpriteSheet();
 		}
 		else if (player.directionY == 1) {
-			directionY == -1;
+			directionY = -1;
+			directionX = 0;
 			mapDirectonToSpriteSheet();
 		}
 		else if (player.directionY == -1) {
-			directionY == 1;
+			directionY = 1;
+			directionX = 0;
 			mapDirectonToSpriteSheet();
 		}
 
