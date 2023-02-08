@@ -217,6 +217,19 @@ public :
 			trainerList.push_front(t1);
 		}
 		else if (mapNumber == 21) {
+			std::list<string> strings = {};
+			strings.push_back("You look young, i don't know if you should be here.");
+			strings.push_back("Get strong.");
+			strings.push_back("Quick.");
+			Trainer t1 = getTrainer(23);
+			t1.strings = strings;
+			t1.isBattlingTrainer = false;
+			t1.shouldFightWithSight = false;
+			strings.pop_front();
+			strings.pop_front();
+			strings.pop_front();
+			t1.setPositions(2, 8, 1, 0, 1);
+			trainerList.push_front(t1);
 		}
 		else if (mapNumber == 22) {
 		}
