@@ -712,7 +712,8 @@ public:
 		for (Trainer& trainer : trainersForMap)
 		{
 			if (trainer.isInLineOfSight(player.xTilePosition, player.yTilePosition)) {
-
+				
+				trainer.displayTextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, screenWidth, screenHeight, queue);
 				InitiateBattle initiateBattle = InitiateBattle(trainer, screenWidth, screenHeight, queue, player, trainer.locationNumber);
 				trainer.hasBeenFought = true;
 				return true;
