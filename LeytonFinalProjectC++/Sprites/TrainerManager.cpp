@@ -232,6 +232,17 @@ public :
 			trainerList.push_front(t1);
 		}
 		else if (mapNumber == 22) {
+			std::list<string> strings = {};
+			strings.push_back("I heard the first battle leader Gale is a water trainer.");
+			strings.push_back("I'd catch something along the way to help.");
+			Trainer t1 = getTrainer(13);
+			t1.strings = strings;
+			t1.isBattlingTrainer = false;
+			t1.shouldFightWithSight = false;
+			strings.pop_front();
+			strings.pop_front();
+			t1.setPositions(8, 5, 0, 1, 1);
+			trainerList.push_front(t1);
 		}
 		else if (mapNumber == 23) {
 		}
