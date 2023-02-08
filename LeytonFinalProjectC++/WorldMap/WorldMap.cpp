@@ -215,16 +215,16 @@ public:
 
 			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
 				if (player.xTilePosition == 9 && player.yTilePosition == 9) {
-
+					mapNumber = 20;
 				}
 				else if (player.xTilePosition == 19 && player.yTilePosition == 9) {
-
+					mapNumber = 21;
 				} 
 				else if (player.xTilePosition == 9 && player.yTilePosition == 16) {
-
+					mapNumber = 22;
 				} 
 				else if (player.xTilePosition == 19 && player.yTilePosition == 16) {
-
+					mapNumber = 23;
 				}
 			}
 			
