@@ -1,6 +1,8 @@
 #include "../Sprites/Spriteheader.h"
 #include "../Sprites/PlayerCharacter.h"
 #include "../Pokemon/Pokemon.h"
+#include <list>
+#include "TextBox.h"
 
 
 class Trainer : public Sprite{
@@ -28,6 +30,9 @@ public:
 	int numberOfPokemonInParty = 0;
 	// The location number of the trainer
 	int locationNumber;
+	// The list of strings to disply in textbox
+	std::list<string> strings = {};
+	
 
 	// Main constructor for loading a trainer, with name, pos, stylesheet and styelsheet position 
 	Trainer(const char * _name, int _xTile, int _yTile, ALLEGRO_BITMAP * stylesheet, int _xTileForSpriteSheet, int _yTileForSpriteSheet) : Sprite(SpriteType::SpriteTypes::Player, _xTile * 32, _yTile * 32,0,0, 0,0, 32,32, stylesheet) {
@@ -52,6 +57,11 @@ public:
 		xTileForSpriteSheet = 0;
 		yTileForSpriteSheet = 0;
 		locationNumber = 0;
+	}
+
+	// Method for displaying a text box
+	void displayTextBox(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE *  queue) {
+		TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
 	}
 
 	// Adds a pokemon to the trainers party
