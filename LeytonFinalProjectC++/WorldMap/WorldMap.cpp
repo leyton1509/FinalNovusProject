@@ -216,6 +216,9 @@ public:
 					mapNumber = 23;
 				}
 			}
+			else {
+				mapNumber == 99;
+			}
 
 			// Reloads rthe map
 			// Sets the previous positions
