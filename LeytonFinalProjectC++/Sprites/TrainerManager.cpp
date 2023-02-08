@@ -24,7 +24,12 @@ public :
 
 		std::list<Trainer> trainerList = {};
 		if (mapNumber==1) {
+
+			std::list<string> strings = {};
+			strings.push_back("I hope you choose a good starter!");
+
 			Trainer t1 = getTrainer(8);
+			t1.strings = strings;
 
 			Pokemon p1 = pm.getDefaultPokemon("Starly");
 			p1.setPokemonsLevel(4);
