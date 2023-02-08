@@ -140,7 +140,7 @@ public:
 		if (!hasBeenFought) {
 			
 
-			hasBeenFought = true;
+			
 		}
 		
 	}
