@@ -152,7 +152,7 @@ public :
 
 			t1.addPokemon(p1);
 			t1.addPokemon(p2);
-			t1.setPositions(7, 14, 1, 0, 1);
+			t1.setPositions(7, 14, 1, 0, 12);
 			trainerList.push_front(t1);
 
 
@@ -169,7 +169,7 @@ public :
 
 			t2.addPokemon(p1);
 			t2.addPokemon(p2);
-			t2.setPositions(11, 9, -1, 0, 1);
+			t2.setPositions(11, 9, -1, 0, 12);
 			trainerList.push_front(t2);
 
 			Trainer t3 = getTrainer(58);
@@ -194,7 +194,7 @@ public :
 			t3.addPokemon(p1);
 			t3.addPokemon(p2);
 			t3.addPokemon(p3);
-			t3.setPositions(8, 2, 0, -1, 1);
+			t3.setPositions(8, 2, 0, -1, 12);
 			trainerList.push_front(t3);
 
 
