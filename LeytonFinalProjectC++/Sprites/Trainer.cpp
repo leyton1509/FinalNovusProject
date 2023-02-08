@@ -128,6 +128,7 @@ public:
 	}
 
 	// Draws the current sprite
+	// returns true if it should battle
 	void drawSprite() {
 		//al_draw_scaled_bitmap(spriteImage, (64 * state) + 16, yValueForStyleSheet + 12, 42, 48, xPosition, yPosition, 48, 48, 0);
 
@@ -137,28 +138,25 @@ public:
 	// If the trainer has been interacted
 	bool interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
-		if (!hasBeenFought) {
+		
 
-			// Makes sure the sprite faces the player when interacting
-			if (player.directionX == 1) {
-				directionX == -1;
-				mapDirectonToSpriteSheet();
-			}else if (player.directionX == -1) {
-				directionX == 1;
-				mapDirectonToSpriteSheet();
-			}
-			else if (player.directionY == 1) {
-				directionY == -1;
-				mapDirectonToSpriteSheet();
-			}
-			else if (player.directionY == -1) {
-				directionY == 1;
-				mapDirectonToSpriteSheet();
-			}
-			
-
-			
+		// Makes sure the sprite faces the player when interacting
+		if (player.directionX == 1) {
+			directionX == -1;
+			mapDirectonToSpriteSheet();
+		}else if (player.directionX == -1) {
+			directionX == 1;
+			mapDirectonToSpriteSheet();
 		}
+		else if (player.directionY == 1) {
+			directionY == -1;
+			mapDirectonToSpriteSheet();
+		}
+		else if (player.directionY == -1) {
+			directionY == 1;
+			mapDirectonToSpriteSheet();
+		}
+
 		
 	}
 
