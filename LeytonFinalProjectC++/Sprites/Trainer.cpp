@@ -34,6 +34,9 @@ public:
 	std::list<string> strings = {};
 	// Bool for if the trainer should fight via line of sight
 	bool shouldFightWithSight;
+	// If the trainer is a fighting trainer
+	bool isBattlingTrainer;
+
 	
 
 	// Main constructor for loading a trainer, with name, pos, stylesheet and styelsheet position 
@@ -47,7 +50,7 @@ public:
 		yTileForSpriteSheet = _yTileForSpriteSheet;
 		locationNumber = 0;
 		shouldFightWithSight = true;
-
+		isBattlingTrainer = true;
 	}
 
 	// Empty const
@@ -61,6 +64,7 @@ public:
 		yTileForSpriteSheet = 0;
 		locationNumber = 0;
 		shouldFightWithSight = true;
+		isBattlingTrainer = true;
 	}
 
 	// Method for displaying a text box
@@ -157,6 +161,12 @@ public:
 			mapDirectonToSpriteSheet();
 		}
 
+		// Makes the player fight on interact
+		if (!shouldFightWithSight) {
+			shouldFightWithSight = true;
+		}
+
+		return hasBeenFought;
 		
 	}
 
