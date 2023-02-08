@@ -200,6 +200,23 @@ public:
 		int tile = getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 		// Entrance to basic house
 		if (tile == 9) {
+
+			if (strcmp(currentMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
+				cout << "Prev : " << previousMap << " | " << "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt";
+				if (player.xTilePosition == 9 && player.yTilePosition == 9) {
+					mapNumber = 20;
+				}
+				else if (player.xTilePosition == 19 && player.yTilePosition == 9) {
+					mapNumber = 21;
+				}
+				else if (player.xTilePosition == 9 && player.yTilePosition == 16) {
+					mapNumber = 22;
+				}
+				else if (player.xTilePosition == 19 && player.yTilePosition == 16) {
+					mapNumber = 23;
+				}
+			}
+
 			// Reloads rthe map
 			// Sets the previous positions
 			once = false;
@@ -213,23 +230,6 @@ public:
 			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt";
 			loadMap(currentMap);
 
-			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
-				if (player.xTilePosition == 9 && player.yTilePosition == 9) {
-					mapNumber = 20;
-				}
-				else if (player.xTilePosition == 19 && player.yTilePosition == 9) {
-					mapNumber = 21;
-				} 
-				else if (player.xTilePosition == 9 && player.yTilePosition == 16) {
-					mapNumber = 22;
-				} 
-				else if (player.xTilePosition == 19 && player.yTilePosition == 16) {
-					mapNumber = 23;
-				}
-			}
-			
-
-			mapNumber = 10;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
