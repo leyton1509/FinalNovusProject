@@ -33,6 +33,7 @@ public:
 	int mapNumber;
 	int previousTileLocation[2];
 	int closestHealLocation[2];
+	const char* previousMap;
 
 
 	TrainerManager trainerManager;
