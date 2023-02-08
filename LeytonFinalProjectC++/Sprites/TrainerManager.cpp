@@ -145,10 +145,10 @@ public :
 			strings.pop_front();
 
 			Pokemon p1 = pm.getDefaultPokemon("Staryu");
-			p1.setPokemonsLevel(10);
+			p1.setPokemonsLevel(11);
 
 			Pokemon p2 = pm.getDefaultPokemon("Dewgong");
-			p2.setPokemonsLevel(11);
+			p2.setPokemonsLevel(12);
 
 			t1.addPokemon(p1);
 			t1.addPokemon(p2);
@@ -156,23 +156,48 @@ public :
 			trainerList.push_front(t1);
 
 
-			std::list<string> strings = {};
-			strings.push_back("This gym is for water pokemon only!");
-
 			Trainer t2 = getTrainer(58);
+			strings.push_back("This gym is for water pokemon only!");
 			t2.strings = strings;
 			strings.pop_front();
 
 			p1 = pm.getDefaultPokemon("Piplup");
-			p1.setPokemonsLevel(12);
+			p1.setPokemonsLevel(13);
 
 			p2 = pm.getDefaultPokemon("Horsea");
-			p2.setPokemonsLevel(13);
+			p2.setPokemonsLevel(14);
 
 			t2.addPokemon(p1);
 			t2.addPokemon(p2);
 			t2.setPositions(11, 9, -1, 0, 1);
 			trainerList.push_front(t2);
+
+			Trainer t3 = getTrainer(58);
+			t3.shouldFightWithSight = false;
+			strings.push_back("Welcome to the Water Gym!");
+			strings.push_back("My name is Gail, and i'm excited to be your first gym leader!");
+			strings.push_back("Good luck!");
+			t3.strings = strings;
+			strings.pop_front();
+			strings.pop_front();
+			strings.pop_front();
+
+			p1 = pm.getDefaultPokemon("Buizel");
+			p1.setPokemonsLevel(15);
+
+			p2 = pm.getDefaultPokemon("Lombre");
+			p2.setPokemonsLevel(15);
+
+			Pokemon p3 = pm.getDefaultPokemon("Gyarados");
+			p3.setPokemonsLevel(17);
+
+			t3.addPokemon(p1);
+			t3.addPokemon(p2);
+			t3.addPokemon(p3);
+			t3.setPositions(8, 2, 0, -1, 1);
+			trainerList.push_front(t3);
+
+
 		}
 
 		return trainerList;
