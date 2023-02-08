@@ -137,7 +137,23 @@ public :
 			trainerList.push_front(t6);
 		}
 		else if (mapNumber == 13) {
+			std::list<string> strings = {};
+			strings.push_back("Good luck getting passed me!");
 
+			Trainer t1 = getTrainer(26);
+			t1.strings = strings;
+			strings.pop_front();
+
+			Pokemon p1 = pm.getDefaultPokemon("Staryu");
+			p1.setPokemonsLevel(10);
+
+			Pokemon p2 = pm.getDefaultPokemon("Dewgong");
+			p2.setPokemonsLevel(11);
+
+			t1.addPokemon(p1);
+			t1.addPokemon(p2);
+			t1.setPositions(7, 14, 1, 0, 1);
+			trainerList.push_front(t1);
 		}
 
 		return trainerList;
