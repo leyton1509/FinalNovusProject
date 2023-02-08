@@ -36,7 +36,7 @@ public :
 			p1.setPokemonsLevel(4);
 
 			t1.addPokemon(p1);
-			t1.setPositions(14, 44, 1, 0, 1);
+			t1.setPositions(14, 44, 1, 0, 5);
 			trainerList.push_front(t1);
 
 			Trainer t2 = getTrainer(9);
@@ -53,7 +53,7 @@ public :
 			p2.setPokemonsLevel(6);
 			t2.addPokemon(p2);
 
-			t2.setPositions(30, 49, -1, 0, 1);
+			t2.setPositions(30, 49, -1, 0, 8);
 			trainerList.push_front(t2);
 
 
@@ -75,7 +75,7 @@ public :
 			p3.setPokemonsLevel(9);
 			t3.addPokemon(p3);
 
-			t3.setPositions(15, 58, 1, 0, 1);
+			t3.setPositions(15, 58, 1, 0, 5);
 			trainerList.push_front(t3);
 
 
@@ -97,7 +97,7 @@ public :
 			p3.setPokemonsLevel(9);
 			t4.addPokemon(p3);
 
-			t4.setPositions(40, 62, -1, 0, 1);
+			t4.setPositions(40, 62, -1, 0, 5);
 			trainerList.push_front(t4);
 
 
