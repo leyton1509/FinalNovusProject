@@ -261,6 +261,22 @@ public:
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
 
 		}
+
+		// Entrance to gym
+		else if (tile == 33) {
+			once = false;
+			loadCounterX = 0;
+			loadCounterY = 0;
+			previousTileLocation[0] = player.xTilePosition;
+			previousTileLocation[1] = (player.yTilePosition) + 1;
+			player.resetPlayer(0, 0);
+			resetMapToZeros();
+			loadMap("../LeytonFinalProjectC++/WorldMap/TextMaps/Gym.txt");
+			mapNumber = 13;
+			InteractablesForMaps im;
+			interactablesForMap = im.getInteractablesForMap(mapNumber);
+			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+		}
 	}
 
 
