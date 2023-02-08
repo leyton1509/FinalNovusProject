@@ -34,6 +34,7 @@ public:
 	int previousTileLocation[2];
 	int closestHealLocation[2];
 	const char* previousMap;
+	const char* currentMap;
 
 
 	TrainerManager trainerManager;
@@ -130,6 +131,7 @@ public:
 		routeNumber = _mapNumber;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		trainersForMap = trainerManager.getTrainersForMap(_mapNumber);
+		previousMap = "";
 		loadMap(mapFP);
 		
 	}
