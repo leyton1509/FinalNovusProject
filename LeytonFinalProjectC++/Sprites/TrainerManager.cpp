@@ -30,6 +30,7 @@ public :
 
 			Trainer t1 = getTrainer(8);
 			t1.strings = strings;
+			strings.pop_front();
 
 			Pokemon p1 = pm.getDefaultPokemon("Starly");
 			p1.setPokemonsLevel(4);
@@ -39,6 +40,10 @@ public :
 			trainerList.push_front(t1);
 
 			Trainer t2 = getTrainer(9);
+
+			strings.push_back("The power of the bug knows no bounds!");
+			t2.strings = strings;
+			strings.pop_front();
 
 			p1 = pm.getDefaultPokemon("Weedle");
 			p1.setPokemonsLevel(6);
@@ -53,6 +58,10 @@ public :
 
 
 			Trainer t3 = getTrainer(11);
+
+			strings.push_back("This route is beautiful!");
+			t3.strings = strings;
+			strings.pop_front();
 
 			p1 = pm.getDefaultPokemon("Murkrow");
 			p1.setPokemonsLevel(8);
@@ -72,6 +81,10 @@ public :
 
 			Trainer t4 = getTrainer(28);
 
+			strings.push_back("Lets see whose stronger!");
+			t4.strings = strings;
+			strings.pop_front();
+
 			p1 = pm.getDefaultPokemon("Corphish");
 			p1.setPokemonsLevel(9);
 			t4.addPokemon(p1);
@@ -90,6 +103,10 @@ public :
 
 			Trainer t5 = getTrainer(15);
 
+			strings.push_back("Lets see how you candle some dragons!");
+			t5.strings = strings;
+			strings.pop_front();
+
 			p1 = pm.getDefaultPokemon("Dratini");
 			p1.setPokemonsLevel(11);
 			t5.addPokemon(p1);
@@ -103,6 +120,10 @@ public :
 
 
 			Trainer t6 = getTrainer(29);
+
+			strings.push_back("My steel pokemon never lose!");
+			t6.strings = strings;
+			strings.pop_front();
 
 			p1 = pm.getDefaultPokemon("Aron");
 			p1.setPokemonsLevel(11);
