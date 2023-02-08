@@ -132,6 +132,7 @@ public:
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		trainersForMap = trainerManager.getTrainersForMap(_mapNumber);
 		previousMap = "";
+		currentMap = mapFP;
 		loadMap(mapFP);
 		
 	}
