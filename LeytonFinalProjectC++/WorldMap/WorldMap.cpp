@@ -735,8 +735,11 @@ public:
 				if (trainer.isBattlingTrainer) {
 					InitiateBattle initiateBattle = InitiateBattle(trainer, screenWidth, screenHeight, queue, player, trainer.locationNumber);
 				}
+
+				if (!player.isAllPokemonInPartyDead() && trainer.isAllPokemonInPartyDead()) {
+					trainer.hasBeenFought = true;
+				}
 				
-				trainer.hasBeenFought = true;
 				return true;
 
 			}
