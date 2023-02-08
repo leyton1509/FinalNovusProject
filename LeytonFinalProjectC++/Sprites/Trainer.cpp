@@ -60,8 +60,8 @@ public:
 	}
 
 	// Method for displaying a text box
-	void displayTextBox(int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE *  queue) {
-		TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
+	void displayTextBox(int xPos, int yPos, int screenWidth, int screenHeight, ALLEGRO_EVENT_QUEUE *  queue) {
+		TextBox tb = TextBox(xPos , yPos, strings, screenWidth / 2, screenHeight / 8, queue);
 	}
 
 	// Adds a pokemon to the trainers party
