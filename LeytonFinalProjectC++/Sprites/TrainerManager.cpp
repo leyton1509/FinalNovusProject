@@ -136,6 +136,9 @@ public :
 			t6.setPositions(32, 70, 0, 1, 1);
 			trainerList.push_front(t6);
 		}
+		else if (mapNumber == 13) {
+
+		}
 
 		return trainerList;
 	}
