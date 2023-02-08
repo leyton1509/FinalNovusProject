@@ -166,11 +166,11 @@ public:
 		}
 
 		// Makes the player fight on interact
-		if (isBattlingTrainer) {
-			if (!shouldFightWithSight) {
-				shouldFightWithSight = true;
-			}
+		
+		if (!shouldFightWithSight) {
+			shouldFightWithSight = true;
 		}
+		
 		
 	}
 
