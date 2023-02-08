@@ -154,6 +154,25 @@ public :
 			t1.addPokemon(p2);
 			t1.setPositions(7, 14, 1, 0, 1);
 			trainerList.push_front(t1);
+
+
+			std::list<string> strings = {};
+			strings.push_back("This gym is for water pokemon only!");
+
+			Trainer t2 = getTrainer(58);
+			t2.strings = strings;
+			strings.pop_front();
+
+			p1 = pm.getDefaultPokemon("Piplup");
+			p1.setPokemonsLevel(12);
+
+			p2 = pm.getDefaultPokemon("Horsea");
+			p2.setPokemonsLevel(13);
+
+			t2.addPokemon(p1);
+			t2.addPokemon(p2);
+			t2.setPositions(11, 9, -1, 0, 1);
+			trainerList.push_front(t2);
 		}
 
 		return trainerList;
