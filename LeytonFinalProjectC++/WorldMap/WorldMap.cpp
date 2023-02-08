@@ -118,6 +118,8 @@ public:
 		mapTiles[32] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/gym.png");
 		// Entrance to gym gym tile image
 		mapTiles[33] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
+		// inside gym one image
+		mapTiles[34] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/firstGymInside.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
