@@ -116,6 +116,8 @@ public:
 
 		// gym tile image
 		mapTiles[32] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/gym.png");
+		// Entrance to gym gym tile image
+		mapTiles[33] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
@@ -688,7 +690,7 @@ public:
 					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 159, 145, (0), (0), (32 * 12), (32 * 8), 0);
 				}
 				else if (textMap[i][j] == 32) {
-					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 86, 65, (i * 32), (j * 32), (32 * 5), (32 * 4), 0);
+					al_draw_scaled_bitmap(mapTiles[textMap[i][j]], 0, 0, 100, 93, (i * 32), (j * 32), (32 * 5), (32 * 4), 0);
 				}
 				else {
 					al_draw_bitmap(mapTiles[textMap[i][j]], i * 32, j * 32, 0);
