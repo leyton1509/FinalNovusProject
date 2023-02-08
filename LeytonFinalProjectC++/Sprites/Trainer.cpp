@@ -97,13 +97,14 @@ public:
 	}
 
 	// Sets the position of the trainer, as well as the direction and location number
-	void setPositions(int _xTile, int _yTile, int _directonX, int _directonY, int locationNumber) {
+	void setPositions(int _xTile, int _yTile, int _directonX, int _directonY, int _locationNumber) {
 		xTile = _xTile;
 		yTile = _yTile;
 		xPosition = xTile * 32;
 		yPosition = yTile * 32;
 		directionX = _directonX;
 		directionY = _directonY;
+		locationNumber = _locationNumber;
 		mapDirectonToSpriteSheet();
 	}
 
