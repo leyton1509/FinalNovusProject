@@ -205,12 +205,19 @@ public:
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
+			cout << "Tile  L : " << player.xTilePosition << " " << player.yTilePosition << " \n";
 			previousTileLocation[0] = player.xTilePosition;
 			previousTileLocation[1] = (player.yTilePosition) +1;
 			player.resetPlayer(7, 10);
 			previousMap = currentMap;
 			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/BasicHouseMap.txt";
 			loadMap(currentMap);
+
+			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") {
+
+			}
+			
+
 			mapNumber = 10;
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
