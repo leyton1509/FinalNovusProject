@@ -199,6 +199,29 @@ public :
 
 
 		}
+		else if (mapNumber == 20) {
+			std::list<string> strings = {};
+			strings.push_back("I heard you're new around here.");
+			strings.push_back("You should be careful, this region is cursed.");
+			strings.push_back("The time god Dialga cursed this region when cultists tried to summon it.");
+			strings.push_back("Leave, while you can.");
+			Trainer t1 = getTrainer(19);
+			t1.strings = strings;
+			t1.isBattlingTrainer = false;
+			t1.shouldFightWithSight = false;
+			strings.pop_front();
+			strings.pop_front();
+			strings.pop_front();
+			strings.pop_front();
+			t1.setPositions(9, 8, 0, 1, 1);
+			trainerList.push_front(t1);
+		}
+		else if (mapNumber == 21) {
+		}
+		else if (mapNumber == 22) {
+		}
+		else if (mapNumber == 23) {
+		}
 
 		return trainerList;
 	}
