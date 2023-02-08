@@ -140,7 +140,7 @@ public :
 			std::list<string> strings = {};
 			strings.push_back("Good luck getting passed me!");
 
-			Trainer t1 = getTrainer(26);
+			Trainer t1 = getTrainer(42);
 			t1.strings = strings;
 			strings.pop_front();
 
@@ -156,7 +156,7 @@ public :
 			trainerList.push_front(t1);
 
 
-			Trainer t2 = getTrainer(58);
+			Trainer t2 = getTrainer(17);
 			strings.push_back("This gym is for water pokemon only!");
 			t2.strings = strings;
 			strings.pop_front();
@@ -172,7 +172,7 @@ public :
 			t2.setPositions(11, 9, -1, 0, 12);
 			trainerList.push_front(t2);
 
-			Trainer t3 = getTrainer(58);
+			Trainer t3 = getTrainer(3);
 			t3.shouldFightWithSight = false;
 			strings.push_back("Welcome to the Water Gym!");
 			strings.push_back("My name is Gail, and i'm excited to be your first gym leader!");
