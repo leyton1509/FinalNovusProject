@@ -140,7 +140,7 @@ public:
 	}
 
 	// If the trainer has been interacted
-	bool interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
+	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
 		
 
@@ -162,11 +162,11 @@ public:
 		}
 
 		// Makes the player fight on interact
-		if (!shouldFightWithSight) {
-			shouldFightWithSight = true;
+		if (isBattlingTrainer) {
+			if (!shouldFightWithSight) {
+				shouldFightWithSight = true;
+			}
 		}
-
-		return hasBeenFought;
 		
 	}
 
