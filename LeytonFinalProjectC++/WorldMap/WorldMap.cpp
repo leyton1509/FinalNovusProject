@@ -8,45 +8,61 @@
 #include "../Sprites/TrainerManager.h"
 #include "../Battle/InitiateBattle.h"
 using namespace std;
+// A class to represent the world
+// Loads the map from the map text files
 class WorldMap {
 
 
 public:
 
+	// A buffer for the map
 	ALLEGRO_BITMAP* mapBuffer;
+	// The map images
 	ALLEGRO_BITMAP* mapTiles[35];
-
+	// A list of interactables for map
 	std::list<Interactable> interactablesForMap;
+	// A list of the trainers for map
 	std::list<Trainer> trainersForMap;
-
-
+	// An array for the map
 	int textMap[100][100];
+	// Counter for x in loading map
 	int loadCounterX = 0;
+	// Counter for y in loading map
 	int loadCounterY = 0;
+	// how wide is the map
 	int mapSizeX = 0;
+	// How long is the map
 	int mapSizeY = 0;
+	// When to load the map size
 	bool once = false;
+	// Width of screen
 	int screenWidth;
+	// height of screen
 	int screenHeight;
+	// which location number it is
 	int locationNumber = 0;
+	// what route number is it
 	int routeNumber = 0;
+	// What map number it is
 	int mapNumber;
+	// The previous location of the player before loading map
 	int previousTileLocation[2];
+	// The position of the closest heal
 	int closestHealLocation[2];
+	// Filename of the previous map
 	const char* previousMap;
+	// File name of the current map
 	const char* currentMap;
-
-
+	// Class to manage the trainers
 	TrainerManager trainerManager;
 
-
+	// Constructor for world map
+	// Creates the map with the width and height and file path
 	WorldMap(int _screenWidth, int _screenHeight, const char * mapFP, int _mapNumber) {
 		cout << "Creating new world map\n";
 		screenWidth = _screenWidth;
 		screenHeight = _screenHeight;
 		mapBuffer = al_create_bitmap(screenWidth, screenHeight);
-
-
 
 		// Unwalkable black square
 		mapTiles[0] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
@@ -122,26 +138,31 @@ public:
 		mapTiles[33] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/BlackSquare.png");
 		// inside gym one image
 		mapTiles[34] = al_load_bitmap("../LeytonFinalProjectC++/Sprites/MapSprites/firstGymInside.png");
+		// Sets the map info up
 		mapNumber = mapNumber;
 		previousTileLocation[0] = 0;
 		previousTileLocation[1] = 0;
 		closestHealLocation[0] = 15;
 		closestHealLocation[1] = 10;
+		// Sets up the interactables
 		InteractablesForMaps im;
 		routeNumber = _mapNumber;
 		interactablesForMap = im.getInteractablesForMap(_mapNumber);
 		trainersForMap = trainerManager.getTrainersForMap(_mapNumber);
+		// Sets up the map names
 		previousMap = "";
 		currentMap = mapFP;
 		loadMap(mapFP);
 		
 	}
 
+	// Destroys all sprites on map
 	void destroyAllSprites() {
 
 		
 	}
 
+	// Resets the array of maps to 0's
 	void resetMapToZeros() {
 		for (int i = 0; i < 100; i++)
 		{
@@ -153,7 +174,7 @@ public:
 	}
 
 
-
+	// Loops through all the interactbales to see if anything is interacting
 	int interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, const char* keyPressed, int directionX, int directionY, int xTile, int yTile, int screenWidth, int screenHeight) {
 
 		for (Interactable& inter : interactablesForMap)
@@ -174,10 +195,13 @@ public:
 		return 0;
 	}
 
+	// Checks to see if the map needs to be changed
 	void checkToChangeMaps(PlayerCharacter& player) {
 		int tile = getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
 		// Entrance to basic house
 		if (tile == 9) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -195,6 +219,8 @@ public:
 		}
 		// Entrance to poke centre
 		else if (tile == 17) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -213,6 +239,8 @@ public:
 		}
 		// Entrance to poke mart
 		else if (tile == 18) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -231,6 +259,8 @@ public:
 		}
 		// entrance to map from buildings 
 		else if (tile == 16) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -251,6 +281,8 @@ public:
 		}
 		// entrance to map two
 		else if (tile == 21) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -268,6 +300,8 @@ public:
 		}
 		// entrance to map one from map 2
 		else if (tile == 22) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -288,6 +322,8 @@ public:
 
 		// Entrance to gym
 		else if (tile == 33) {
+			// Reloads rthe map
+			// Sets the previous positions
 			once = false;
 			loadCounterX = 0;
 			loadCounterY = 0;
@@ -307,13 +343,11 @@ public:
 
 
 
-
+	// Checks to see if the player can move
+	// Different tiles will be movable
 	int canPlayerMove(const char* keyPressed, int directionX, int directionY, int xTile, int yTile) {
 		int tempYTile = yTile + 1;
-
 		cout << "X : " <<xTile << " Y : " << yTile << " Tile N : " << getWhatPlayerIsStandingOn(xTile, yTile) << "\n";
-
-		
 		if (strcmp(keyPressed, "w") == 0) {
 			if (directionY == 1) {
 
@@ -368,6 +402,7 @@ public:
 					else if (textMap[xTile][tempYTile - 1] == 32) {
 						return 0;
 					}
+					// checks the interactbles too
 					std::list<Interactable>::reverse_iterator revIt;
 					for (revIt = interactablesForMap.rbegin(); revIt != interactablesForMap.rend(); revIt++)
 					{
@@ -636,15 +671,18 @@ public:
 		return 0;
 	}
 
-
+	// Lopads the map from the file name
 	void loadMap(const char * filename) {
 		ifstream openfile(filename);
+		// Opens the file
 		if (openfile.is_open()) {
 			while (!openfile.eof()) {
 				if (once == false) {
+					// Sets the sizes
 					openfile >> mapSizeX >> mapSizeY;
 					once = true;
 				}
+				// puts the value into text map
 				openfile >> textMap[loadCounterX][loadCounterY];
 				loadCounterX++;
 				if (loadCounterX >= mapSizeX) {
@@ -658,6 +696,7 @@ public:
 		}
 	}
 
+	// returns the player back to the closest heal when dead
 	void returnPlayerToClosestHeal(PlayerCharacter &player) {
 		for (int i = 0; i < player.numberOfPokemonInParty; i++)
 		{
@@ -666,6 +705,8 @@ public:
 		player.setAllPositions(closestHealLocation[0], closestHealLocation[1]);
 	}
 
+	// Checks through the trainers to see if the player is within their line of sight
+	// Initiates battle if true
 	bool checkForTrainerBattle(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue){
 
 		for (Trainer& trainer : trainersForMap)
@@ -679,12 +720,9 @@ public:
 			}
 		}
 		return false;
-
-
 	}
 
-
-
+	// returns what tile the player is standing on
 	int getWhatPlayerIsStandingOn(int xTile, int yTile) {
 
 		int tempYTile = yTile + 1;
@@ -701,7 +739,8 @@ public:
 
 
 
-
+	// Draws the different parts of the map
+	// AS well as interactbales and trainers
 	void drawMap() {
 
 		for (int i = 0; i < mapSizeX; i++)
