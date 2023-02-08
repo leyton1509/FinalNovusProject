@@ -135,7 +135,7 @@ public:
 	}
 
 	// If the trainer has been interacted
-	void interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
+	bool interact(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
 
 		if (!hasBeenFought) {
 
