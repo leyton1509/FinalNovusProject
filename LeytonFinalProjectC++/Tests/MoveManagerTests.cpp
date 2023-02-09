@@ -29,3 +29,14 @@ TEST_F(MoveManagerTests, CheckSecondToLastMove) {
 	ASSERT_EQ(testM.typeOfMove, MoveCategory::Special);
 	ASSERT_EQ(testM.pokemonTypeOfMove, PokemonType::Ghost);
 }
+
+// Checks to see if the last move is loaded correctly
+TEST_F(MoveManagerTests, CheckoLastMove) {
+	Move testM = moveManager.getMoveDetails(467);
+	ASSERT_EQ(testM.moveName, "Shadow Force");
+	ASSERT_EQ(testM.power, 120);
+	ASSERT_EQ(testM.accuracy, 100);
+	ASSERT_EQ(testM.powerpoints, 5);
+	ASSERT_EQ(testM.typeOfMove, MoveCategory::Physical);
+	ASSERT_EQ(testM.pokemonTypeOfMove, PokemonType::Ghost);
+}
