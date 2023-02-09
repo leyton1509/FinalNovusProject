@@ -289,8 +289,10 @@ public:
 
 			if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
 				mapNumber = 1;
+				routeNumber = 1;
 			}else if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt") == 0) {
 				mapNumber = 2;
+				routeNumber = 2;
 			}
 			loadMap(previousMap);
 			currentMap = previousMap;
@@ -313,6 +315,7 @@ public:
 			resetMapToZeros();
 			previousMap = currentMap;
 			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt";
+			routeNumber = 2;
 			loadMap(currentMap);
 			mapNumber = 2;
 			InteractablesForMaps im;
@@ -333,6 +336,7 @@ public:
 			previousMap = currentMap;
 			currentMap = "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt";
 			loadMap(currentMap);
+			routeNumber = 1;
 			player.resetPlayer(28, 72);
 			mapNumber = 1;
 			InteractablesForMaps im;
