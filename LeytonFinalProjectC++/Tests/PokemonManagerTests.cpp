@@ -1,16 +1,15 @@
 #include "gtest/gtest.h"
 #include "../Pokemon/PokemonManager.h"
+// Class for testing pokemon manager
 class PokemonManagerTests : public ::testing::Test
 {
 
 protected:
 	PokemonManager pokemonManager = pokemonManager.instance();
-
-
 };
 
 
-
+// Checks to see if the first pokemon is loaded correctly
 TEST_F(PokemonManagerTests, CheckFirstPokemon) {
 	Pokemon testP =  pokemonManager.getDefaultPokemon("Bulbasaur");
 	ASSERT_EQ(testP.pokemonName, "Bulbasaur");
@@ -25,6 +24,7 @@ TEST_F(PokemonManagerTests, CheckFirstPokemon) {
 	ASSERT_EQ(testP.speedBase, 45);
 }
 
+// Checks to see if the second to last pokemon is loaded correctly
 TEST_F(PokemonManagerTests, CheckSecondToLastPokemon) {
 	Pokemon testP = pokemonManager.getDefaultPokemon("Shaymin");
 	ASSERT_EQ(testP.pokemonName, "Shaymin");
@@ -39,6 +39,7 @@ TEST_F(PokemonManagerTests, CheckSecondToLastPokemon) {
 	ASSERT_EQ(testP.speedBase, 100);
 }
 
+// Checks to see if the last pokemon is loaded correctly
 TEST_F(PokemonManagerTests, CheckToLastPokemon) {
 	Pokemon testP = pokemonManager.getDefaultPokemon("Arceus");
 	ASSERT_EQ(testP.pokemonName, "Arceus");
