@@ -15,7 +15,7 @@
 #include "TitleScreen/TitleScreenHeader.h"
 #include "Battle/InitiateBattle.h"
 #include "Pokemon/PokemonTypeChart.h"
-
+#include <gtest/gtest.h>
 
 // The width of the screen
 int screenWidth = 900;
@@ -70,11 +70,15 @@ void cameraUpdate(float* cameraPosition, float x, float y, int width, int height
 }
 
 
-int main()
+int main(int argc, char* argv[])
 {
+
+
 
     // Sets up the pokemon in pokemon manager
     PokemonManager pm = pm.instance();
+
+   // MyTest myTest;
  
     // Inits allegro, keyboard and mouse
     must_init(al_init(), "allegro");
@@ -130,6 +134,9 @@ int main()
     // Mouse position
     double xMousePosition = 0;
     double yMousePosition = 0;
+
+    testing::InitGoogleTest(&argc, argv);
+   
 
     // Start the timer
     al_start_timer(timer);
@@ -474,5 +481,5 @@ int main()
     al_destroy_timer(timer);
     al_destroy_event_queue(queue);
 
-    return 0;
+    return RUN_ALL_TESTS();
 }
