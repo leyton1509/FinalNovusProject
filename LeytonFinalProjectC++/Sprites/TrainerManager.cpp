@@ -273,7 +273,7 @@ public :
 			strings.pop_front();
 			strings.pop_front();
 			strings.pop_front();
-			t1.setPositions(5, 7, 0, -1, 2);
+			t1.setPositions(5, 9, 0, -1, 2);
 			trainerList.push_front(t1);
 		}
 
