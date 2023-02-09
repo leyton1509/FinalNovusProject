@@ -202,7 +202,6 @@ public:
 		if (tile == 9) {
 
 			if (strcmp(currentMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
-				cout << "Prev : " << previousMap << " | " << "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt";
 				if (player.xTilePosition == 9 && player.yTilePosition == 9) {
 					mapNumber = 20;
 				}
@@ -215,6 +214,15 @@ public:
 				else if (player.xTilePosition == 19 && player.yTilePosition == 16) {
 					mapNumber = 23;
 				}
+			}
+			else if (strcmp(currentMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt") == 0) {
+				if (player.xTilePosition == 14 && player.yTilePosition == 56) {
+					mapNumber = 24;
+				}
+				else if (player.xTilePosition == 21 && player.yTilePosition == 52) {
+					mapNumber = 25;
+				}
+				
 			}
 			else {
 				mapNumber == 99;
