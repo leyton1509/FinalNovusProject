@@ -126,6 +126,9 @@
     <ClCompile Include="Battle\MoveAnimation\MoveAnimation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sprites\NumberOfPokemonDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
@@ -242,6 +245,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Battle\MoveAnimation\MoveAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites\NumberOfPokemonDisplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
