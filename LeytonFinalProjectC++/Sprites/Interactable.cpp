@@ -7,6 +7,7 @@
 #include "../Sprites/TextBox.h"
 #include "../Sprites/ShopMenu.h"
 
+// Class for anything that can be interacted with by clicking E
 class Interactable : public Sprite {
 
 public:
@@ -48,7 +49,7 @@ public:
 		xTileStyleSheet = _xTileStyleSheet;
 		yTileStyleSheet = _yTileStyleSheet;
 	}
-
+	// Empty constructor
 	Interactable() : Sprite(SpriteType::SpriteTypes::Button, 0, 0, 0, 0, "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg") {
 		originalSizeX = 0;
 		originalSizeY = 0;
@@ -256,7 +257,6 @@ public:
 
 
 		else if (idOfInteractable == 100) {
-			// std::list<std::string> textToDisplay, int _width, int _height, ALLEGRO_EVENT_QUEUE* queue
 			std::list<string> strings = {};
 			strings.push_back("Welcome to the poke centre, I'm Nurse Joy!");
 			strings.push_back("I've healed your pokemon, be safe!");
@@ -275,11 +275,9 @@ public:
 			ShopMenu sm = ShopMenu(0, player, screenWidth, screenHeight, queue);
 		}
 
-
-
-		
 	}
 
+	// Heals all the pokemon in the players party
 	 void healAllPokemon(PlayerCharacter& player) {
 		 player.trainersParty[0].healPokemonToFull();
 		 player.trainersParty[1].healPokemonToFull();
@@ -290,8 +288,9 @@ public:
 	 }
 
 
-
+	 // Creates the choose pokemon display
 	 void choosePokemon(PlayerCharacter& player, ALLEGRO_EVENT_QUEUE* queue, int screenWidth, int screenHeight) {
+		// Mouse pos
 		 double xMousePosition = 0;
 		 double yMousePosition = 0;
 
@@ -309,8 +308,8 @@ public:
 		 al_use_transform(&trans);
 		 //al_draw_bitmap(background, 0, 0, 0);
 
+		// Gets the 3 pokemon to choose from
 		 PokemonManager pm = pm.instance();
-
 		 Pokemon pokemon1 = pm.getDefaultPokemon("Totodile");
 		 pokemon1.setPokemonsLevel(5);
 		 Pokemon pokemon2 = pm.getDefaultPokemon("Turtwig");
@@ -318,14 +317,15 @@ public:
 		 Pokemon pokemon3 = pm.getDefaultPokemon("Torchic");
 		 pokemon3.setPokemonsLevel(5);
 
-
+		 // Creates the buttons
 		 ChoosePokemonButton pokemonOneButton = ChoosePokemonButton(pokemon1, 128, 128, 200, 30, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 		 ChoosePokemonButton pokemonTwoButton = ChoosePokemonButton(pokemon2, 128, 128, 385, 100, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
 		 ChoosePokemonButton pokemonThreeButton = ChoosePokemonButton(pokemon3, 128, 128, 565, 30, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
-			 
+
+		// Draws the background
 		 ALLEGRO_BITMAP* otherPokemonSprite = al_load_bitmap("../LeytonFinalProjectC++/Sprites/PokemonSprites/frontSprites.png");
 
-
+		 // While not chosen
 		 bool chosenPokemon = false;
 
 		 while (!chosenPokemon) {
@@ -350,6 +350,8 @@ public:
 				 break;
 			 case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 
+				 // checks to see which button has been clicked
+				 // Creates a text box telling user which pokemon they chose
 				 if (pokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					 std::list<string> strings = {};
 					 strings.push_back("You have chosen " + pokemon1.pokemonName + "!");
@@ -358,6 +360,8 @@ public:
 					 player.addPokemon(pokemon1);
 					 chosenPokemon = true;
 				 }
+				 // checks to see which button has been clicked
+				 // Creates a text box telling user which pokemon they chose
 				 else if (pokemonTwoButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					 std::list<string> strings = {};
 					 strings.push_back("You have chosen " + pokemon2.pokemonName + "!");
@@ -365,7 +369,10 @@ public:
 					 done = true;
 					 player.addPokemon(pokemon2);
 					 chosenPokemon = true;
-				 } else if (pokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
+				 }
+				 // checks to see which button has been clicked
+				 // Creates a text box telling user which pokemon they chose
+			 	else if (pokemonThreeButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 					 std::list<string> strings = {};
 					 strings.push_back("You have chosen " + pokemon3.pokemonName + "!");
 					 TextBox tb = TextBox(strings, screenWidth / 2, screenHeight / 8, queue);
@@ -379,7 +386,7 @@ public:
 				 break;
 
 
-
+			 // Draws the sprites
 			 if (redraw && al_is_event_queue_empty(queue))
 			 {
 				 al_clear_to_color(al_map_rgb(0, 0, 0));
@@ -393,6 +400,7 @@ public:
 
 		 }
 
+		// Destroys buttons
 		 pokemonOneButton.destroySprite();
 		 pokemonTwoButton.destroySprite();
 		 pokemonThreeButton.destroySprite();
