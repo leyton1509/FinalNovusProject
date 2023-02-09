@@ -10,9 +10,7 @@ protected:
 };
 
 
-TEST_F(PokemonManagerTests, CheckPokemonManagerInstance) {
-	ASSERT_NE(pokemonManager, NULL);
-}
+
 TEST_F(PokemonManagerTests, CheckFirstPokemon) {
 	Pokemon testP =  pokemonManager.getDefaultPokemon("Bulbasaur");
 	ASSERT_EQ(testP.pokemonName, "Bulbasaur");
