@@ -260,9 +260,4 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\FinalProject.vpd (1).jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
 </Project>
