@@ -400,7 +400,7 @@ int main()
                 int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 if (tilePlayerIsStandingOn == 6 || tilePlayerIsStandingOn == 7 || tilePlayerIsStandingOn == 8) {
                     if (!player.isTheSameSquareAsLastEncounter()) {
-                        int encounterRan =  (rand() % 3) + 1;
+                        int encounterRan =  (rand() % 4) + 1;
                         if (encounterRan == 2) {
                             keys[0] = false;
                             keys[1] = false;
