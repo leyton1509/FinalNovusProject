@@ -17,6 +17,15 @@ TEST_F(MoveManagerTests, CheckFirstMove) {
 	ASSERT_EQ(testM.powerpoints, 35);
 	ASSERT_EQ(testM.typeOfMove,MoveCategory::Physical);
 	ASSERT_EQ(testM.pokemonTypeOfMove, PokemonType::Normal);
+}
 
-
+// Checks to see if the first move is loaded correctly
+TEST_F(MoveManagerTests, CheckSecondToLastMove) {
+	Move testM = moveManager.getMoveDetails(466);
+	ASSERT_EQ(testM.moveName, "Ominous Wind");
+	ASSERT_EQ(testM.power, 60);
+	ASSERT_EQ(testM.accuracy, 100);
+	ASSERT_EQ(testM.powerpoints, 5);
+	ASSERT_EQ(testM.typeOfMove, MoveCategory::Special);
+	ASSERT_EQ(testM.pokemonTypeOfMove, PokemonType::Ghost);
 }
