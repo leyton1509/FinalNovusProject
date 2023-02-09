@@ -3,23 +3,33 @@
 #include <allegro5/allegro_image.h>
 #include "../Sprites/Button.h"
 
+// Class to handle the title screen
 class TitleScreen {
 
 public:
 
+	// Bitmap for the name of game
 	ALLEGRO_BITMAP * pokemonText;
+	// Bitmap for pokemon
 	ALLEGRO_BITMAP * dialgaBasic;
+	// Bitmap for pokemon glowing
 	ALLEGRO_BITMAP * dialgaGlowing;
+	// Bitmap for background
 	ALLEGRO_BITMAP * background;
-
+	// Button for creating new game
 	Button newGameButton;
+	// Button for loading game
 	Button loadGameButton;
-
+	// The current frame
 	int currentFrame;
+	// Width of screen
 	int screenWidth;
+	// Height of screen
 	int screenHeight;
-	bool hasClicked = NULL;
-	bool hasLoadedButtons = NULL;
+	// whether the screen has been clicked
+	bool hasClicked;
+	// Bool for if the screen has loaded the buttons
+	bool hasLoadedButtons;
 
 	TitleScreen(int _screenWidth, int _screenHeight){
 		currentFrame = 0;
