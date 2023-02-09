@@ -1,13 +1,17 @@
 
 #include <list>
 #include "../Sprites/Interactable.h"
+
+// Handles the getting of the interactbales for the map
 class InteractablesForMaps {
 
 public:
 
+	// Gets the list of interactbales from the map number
 	std::list<Interactable> getInteractablesForMap(int mapNumber) {
 		std::list<Interactable> interactbles;
 
+		// Map one has items e.g potion pokeball greatball
 		if (mapNumber == 1) {
 			Interactable bf = Interactable(1, true, 220, 165, 15 * 32, 24 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Case.png");
 			interactbles.push_front(bf);
@@ -34,12 +38,14 @@ public:
 
 			return interactbles;
 		}
+		// Map 11 is for healing and the box of pokemon
 		else if (mapNumber == 11) {
 			Interactable hi = Interactable(100, false, 220, 165, 6 * 32, 4 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
 			interactbles.push_front(hi);
 			Interactable box = Interactable(101, false, 220, 165, 9 * 32, 2 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
 			interactbles.push_front(box);
 		}
+		// Map 12 is the poke mart so its the buy or sell menu
 		else if (mapNumber == 12) {
 			Interactable buy = Interactable(102, false, 220, 165, 2 * 32, 4 * 32, 0, 0, "../LeytonFinalProjectC++/Sprites/MapSprites/Heal.png");
 			interactbles.push_front(buy);
