@@ -160,10 +160,10 @@ public:
 	// chnages the locaiton number based on the map
 	void changeLocationNumber()
 	{
-		if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
+		if (strcmp(currentMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
 			locationNumber =  5;
 		}
-		else if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt") == 0) {
+		else if (strcmp(currentMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt") == 0) {
 			locationNumber = 7;
 		}
 	}
@@ -317,10 +317,10 @@ public:
 			loadMap(previousMap);
 			currentMap = previousMap;
 			previousMap = "";
-			changeLocationNumber();
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+			changeLocationNumber();
 		}
 		// entrance to map two
 		else if (tile == 21) {
