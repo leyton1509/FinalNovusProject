@@ -209,10 +209,9 @@ int main(int argc, char* argv[])
     PlayerCharacter player = PlayerCharacter();
 
     // Sets the players pos position
-    // player.setAllPositions(15, 10);
-      player.setAllPositions(12, 63);
+    player.setAllPositions(15, 10);
     // Creates a world map, with height width and text file name3
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt", 2);
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
     // Creates a camera position at 0,0
     float cameraPosition[2] = { 0,0 };
     // How many frames have passed
