@@ -4,7 +4,7 @@ class PokemonManagerTests : public ::testing::Test
 {
 
 protected:
-	PokemonManager pokemonManager;
+	PokemonManager pokemonManager = pokemonManager.instance();
 
 
 };
