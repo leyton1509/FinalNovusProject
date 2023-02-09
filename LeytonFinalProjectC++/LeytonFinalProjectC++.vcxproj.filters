@@ -132,6 +132,9 @@
     <ClCompile Include="Tests\PokemonManagerTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tests\MoveManagerTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="WorldMap\TextMaps\MapOne.txt" />
