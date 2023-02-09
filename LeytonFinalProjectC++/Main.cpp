@@ -9,12 +9,10 @@
 
 #include "Pokemon/PokemonManager.h"
 #include "Sprites/PlayerCharacter.h"
-#include "Pokemon/Moves/MoveManager.h"
 #include <iostream>  
 #include "WorldMap/WorldMap.h"
 #include "TitleScreen/TitleScreenHeader.h"
 #include "Battle/InitiateBattle.h"
-#include "Pokemon/PokemonTypeChart.h"
 #include <gtest/gtest.h>
 
 // The width of the screen
