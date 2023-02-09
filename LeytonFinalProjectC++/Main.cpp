@@ -208,12 +208,6 @@ int main(int argc, char* argv[])
     // The player character 
     PlayerCharacter player = PlayerCharacter();
 
-    // Add any test pokemon here, can be removed later
-    player.addPokemon(pm.getDefaultPokemon("Palkia"));
-    player.addPokemon(pm.getDefaultPokemon("Kyogre"));
-    player.trainersParty[0].setPokemonsLevel(23);
-    player.trainersParty[1].setPokemonsLevel(25);
-
     // Sets the players pos position
     // player.setAllPositions(15, 10);
       player.setAllPositions(12, 63);
