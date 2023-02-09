@@ -225,7 +225,7 @@ public:
 				
 			}
 			else {
-				mapNumber == 99;
+				mapNumber = 99;
 			}
 
 			// Reloads rthe map
