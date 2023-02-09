@@ -906,18 +906,7 @@ public:
 		RouteMapping routeMapping = RouteMapping();
 		Pokemon otherPokemon = routeMapping.getSinglePokemonFromRoute(routeNumber);
 
-		//Pokemon otherPokemon = pm.getDefaultPokemon("Shaymin");
-
-		//otherPokemon.setPokemonsLevel(50);
-		//playerPokemon.setPokemonsLevel(50);
-
-		// Gets all the gui info
-		// The hp bars
-		// The buttons on screen
-		
-		
-
-			// Wild encounter
+		// Wild encounter
 
 		while (!battleFinished) {
 
