@@ -173,6 +173,7 @@
     <ClCompile Include="Sprites\Trainer.cpp" />
     <ClCompile Include="Sprites\TrainerManager.cpp" />
     <ClCompile Include="Sprites\UserOption.cpp" />
+    <ClCompile Include="Tests\PokemonManagerTests.cpp" />
     <ClCompile Include="TitleScreen\TitleScreen.cpp" />
     <ClCompile Include="Sprites\Interactable.cpp" />
     <ClCompile Include="WorldMap\WorldMap.cpp" />
