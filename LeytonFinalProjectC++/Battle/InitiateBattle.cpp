@@ -609,7 +609,7 @@ public:
 							int opponentAttackName = doTurn.attackUsedOpponent;
 							int playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
 
-
+							// adds the nimations depending on who is faster
 							if (player.trainersParty[currentPokemon].speedActual >= opponent.trainersTeam[currentPokemonOpponent].speedActual) {
 								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, currentPokemonOpponent, currentPokemon);
 								if (opponent.trainersTeam[currentPokemonOpponent].currentHealth != 0) {
@@ -661,6 +661,7 @@ public:
 									}
 								}
 
+								// checks for move updates
 								pair<int, int> moveInfo = experienceInfo.second;
 
 								MoveManager mm = mm.instance();
@@ -668,6 +669,7 @@ public:
 								// If the move is valid, then give the user the option to select wghuch move to replace
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
+									// Creates a poll for the user to decide which move to replace
 									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
@@ -677,7 +679,7 @@ public:
 									buttonStrings.push_back("Don't learn!");
 									UserOption us = UserOption(headerText, buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
 									int positionToPutMove = us.valueOfResult;
-									cout << "Result of poll: " << positionToPutMove << "\n";
+									
 									// Puts the move in the correct position
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
@@ -798,17 +800,21 @@ public:
 					// Drwas the trainer and opponent pokemon
 					int oppNumber = currentPokemonOpponent;
 					int trainerNum = currentPokemon;
+					// Gets the pokemon that used the move incase they died
 					for (MoveAnimation& moveAni : moveAnimationHandler.animations)
 					{
 						oppNumber = moveAni.opponentPokemonNum;
 						trainerNum = moveAni.playerPokemonNum;
 						break;
 					}
+					// Draws the pokemon
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * opponent.trainersTeam[oppNumber].xPositionOnSpriteSheet), (80 * opponent.trainersTeam[oppNumber].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
-					
+
+					// Draws animation
 					moveAnimationHandler.drawAnimation();
+					// If all animations are over, set is in animation to false
 					if (moveAnimationHandler.finishedAllAnimations()) {
 						isInAnimation = false;
 					}
@@ -931,10 +937,12 @@ public:
 				}
 				
 				
-
+				// Checks to see if the switch button has been clicked
 				if (switchPokemonButtonClicked!=0) {
 					int pokemonNinArray = switchPokemonButtonClicked - 1;
+					// Checks to see if its a valid pokemon
 					if (!(strcmp(player.trainersParty[pokemonNinArray].pokemonName.c_str(), "") == 0)) {
+						// If its a heal choice then heal the pokemon
 						if (shouldHealInSwitch != -1) {
 							if (player.trainersParty[pokemonNinArray].currentHealth < player.trainersParty[pokemonNinArray].healthActual) {
 								player.itemManager.usePotion(player.trainersParty[pokemonNinArray], shouldHealInSwitch);
@@ -948,6 +956,7 @@ public:
 								switchPokemonFiveButton.isDisplayed = false;
 								switchPokemonSixButton.isDisplayed = false;
 
+								// Do the pokemons turn and its animation
 								PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 								int opponentAttackName = doTurn.attackUsedOpponent;
 								moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
@@ -958,8 +967,11 @@ public:
 							}
 						}
 						else {
+							// Checks to see if its the same pokemon as this is switching them
 							if (currentPokemon != pokemonNinArray) {
+								// Checks to see if the pokemon is alove
 								if (player.trainersParty[pokemonNinArray].currentHealth != 0) {
+									// Switches the pokemon
 									int oldPokemon = currentPokemon;
 									currentPokemon = pokemonNinArray;
 									attackButton1.pokemonMove = player.trainersParty[currentPokemon].pokemonsMoves[0];
@@ -979,6 +991,8 @@ public:
 										pokemonIsDead = false;
 									}
 
+									// Does the turn on the enemy
+
 									if (player.trainersParty[oldPokemon].currentHealth != 0) {
 										// Runs the opponents turn
 										PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
@@ -994,18 +1008,21 @@ public:
 					}
 					switchPokemonButtonClicked = 0;
 				}
-
+				// checks to see if any of the attack buttons are clicked
 				else if (attackButtonClicked!=0) {
+					// If it isnt dead
 					if (!pokemonIsDead) {
 						int attackButtonN = attackButtonClicked - 1;
+						// Checks to see if the move has an PP left
 						if (player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].currentPowerPoints != 0) {
 
-
+							// Does the turn
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon],otherPokemon, player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN]);
 							int opponentAttackName = doTurn.attackUsedOpponent;
 							int playerAttackName = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveID;
 
 
+							// Plays the animation depending on who is faster
 							if (player.trainersParty[currentPokemon].speedActual >= otherPokemon.speedActual) {
 								moveAnimationHandler.startAnimation(playerAttackName, screenWidth * 0.15, screenHeight * 0.42, screenWidth * 0.6, screenHeight * 0.25, -1, currentPokemon);
 								if (otherPokemon.currentHealth != 0) {
@@ -1022,22 +1039,26 @@ public:
 
 							}
 
+							// Is now in animation
 							isInAnimation = true;
 
-
+							// Checks to see if the other pokemon died
 							if (otherPokemon.currentHealth <= 0) {
+								// Gains xp
 								int expGained = otherPokemon.experienceUponKill();
 								PokemonManager pm = pm.instance();
 								pair<bool, pair<int, int>> experienceInfo = player.trainersParty[currentPokemon].gainExperience(expGained);
 
+								// Checks to see if the pokemon should evolve
 								if (experienceInfo.first) {
-
+									// ASks the user for if they want the pokemon to evolve
 									string headerText = player.trainersParty[currentPokemon].pokemonName + " is evolving into " + player.trainersParty[currentPokemon].evolutionName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Evolve ");
 									buttonStrings.push_back("Don't Evolve ");
 									UserOption us = UserOption(headerText, buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
 									int result = us.valueOfResult;
+									// If yes then evolve pokemon
 									if (result != -1 && result == 0) {
 										Pokemon p = pm.getDefaultPokemon(player.trainersParty[currentPokemon].evolutionName);
 										player.trainersParty[currentPokemon].pokemonName = p.pokemonName;
@@ -1058,12 +1079,12 @@ public:
 									
 								}
 
+								// checks for a move
 								pair<int, int> moveInfo = experienceInfo.second;
-
 								MoveManager mm = mm.instance();
-
 								if (moveInfo.first != -1) {
 									Move move = mm.getMoveDetails(moveInfo.first);
+									// Sets up a user option for if the player wants to learn the move
 									string headerText = player.trainersParty[currentPokemon].pokemonName + " is learning " + move.moveName;
 									std::list<std::string> buttonStrings = {};
 									buttonStrings.push_back("Replace " + player.trainersParty[currentPokemon].pokemonsMoves[0].moveName);
@@ -1073,7 +1094,8 @@ public:
 									buttonStrings.push_back("Don't learn!");
 									UserOption us = UserOption(headerText, buttonStrings, 5, 180, 30, screenWidth, screenHeight, queue);
 									int positionToPutMove = us.valueOfResult;
-									cout << "Result of poll: " << positionToPutMove << "\n";
+
+									// replaces the move the user choose with the new move
 									if (positionToPutMove != -1 && positionToPutMove < 4) {
 										player.trainersParty[currentPokemon].pokemonsMoves[positionToPutMove] = move;
 										if (positionToPutMove == 0) {
@@ -1097,15 +1119,15 @@ public:
 								}
 								battleIsOver = true;
 							}
-
+							// Updates text
 							textForTextBox[0] = doTurn.textForTextBox[0];
 							textForTextBox[1] = doTurn.textForTextBox[1];
 							textForTextBox[2] = doTurn.textForTextBox[2];
 							textForTextBox[3] = doTurn.textForTextBox[3];
-
+							// use move
 							player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].useMove();
 
-
+							// Uses the move on the button too
 							if (attackButtonClicked == 1) {
 								attackButton1.pokemonMove.useMove();
 							}
@@ -1120,6 +1142,7 @@ public:
 							}
 						}
 						else {
+							// Move is out of PP
 							textForTextBox[0] = player.trainersParty[currentPokemon].pokemonsMoves[attackButtonN].moveName + " is out of PP!";
 							textForTextBox[1] = "";
 							textForTextBox[2] = "";
@@ -1129,9 +1152,12 @@ public:
 					}
 						
 				}
+				// If the catch button was clicked
 				else if (catchItemButtonClicked!=0) {
 
 					int pokeBallID = -1;
+
+					// Go ahead and get the pokeball id
 
 					if (catchItemButtonClicked == 1) {
 						if (player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID) > 0) {
@@ -1150,14 +1176,16 @@ public:
 							pokeBallID = pokeballButtonThree.pokeball.inividualItemID;
 						}
 					}
-
+					// If the id is valid and trainer has enough
 					if (pokeBallID!=-1) {
+						// Uses the pokeball and sees if the pokemon gets caught
 						bool caughtPokemon = player.itemManager.usePokeball(otherPokemon, pokeBallID);
 						if (caughtPokemon) {
 							player.addPokemon(otherPokemon);
 							battleFinished = true;
 						}
 						else {
+							// if it doesnt get caught then do the opponents turn
 							PokemonTurn doTurn = PokemonTurn(player.trainersParty[currentPokemon], otherPokemon);
 							int opponentAttackName = doTurn.attackUsedOpponent;
 							moveAnimationHandler.startAnimation(opponentAttackName, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.15, screenHeight * 0.42, -1, currentPokemon);
@@ -1179,10 +1207,12 @@ public:
 					catchItemButtonClicked = 0;
 						
 				}
+				// checks to see if the heal button was clicked
 				else if (healItemButtonClicked != 0) {
 
 					int potionID = -1;
 
+					// Gets the id of the potion used
 					if (healItemButtonClicked == 1) {
 						if (player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID) > 0) {
 							potionID = potionButtonOne.potion.inividualItemID;
@@ -1201,6 +1231,8 @@ public:
 						}
 					}
 
+					// If the id is valid and trainer has enough, set the heal id for should heal in switch
+					// Bring up pokemon
 					if (potionID!=-1) {
 						potionButtonOne.isDisplayed = false;
 						potionButtonTwo.isDisplayed = false;
@@ -1220,14 +1252,13 @@ public:
 					healItemButtonClicked = 0;
 				}
 
-
+				// If the curernt pokemon is dead
 				if (player.trainersParty[currentPokemon].currentHealth <= 0) {
-
+					// check to see if all are dead
 					if (player.isAllPokemonInPartyDead()) {
-						// Add teleporting to nearest heal
-						cout << "All pokemon dead\n";
 						battleIsOver = true;
 					}
+					// Display other pokemon
 					pokemonIsDead = true;
 					textBox.isDisplayed = false;
 					switchPokemonOneButton.isDisplayed = true;
@@ -1241,6 +1272,7 @@ public:
 				//cout << "Other poke : " << otherPokemon.healthActual<< "\n";
 				break;
 			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+				// Upon close finish battle
 				done = true;
 				battleFinished = true;
 				break;
@@ -1248,29 +1280,35 @@ public:
 
 			if (done)
 				break;
-
+			// Drawing loop
 			if (redraw && al_is_event_queue_empty(queue))
 			{
+				// Break if battle is over
 				if (!isInAnimation && battleIsOver) {
 					battleFinished = true;
 					break;
 				}
 
+				// if it is animation
 				if (isInAnimation) {
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					// Draws the background
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
-					// Drwas the trainer and opponent pokemon
+					// Draws the trainer and opponent pokemon
 					int trainerNum = currentPokemon;
+					// Gets the num of the pokemon the player used the move
 					for (MoveAnimation& moveAni : moveAnimationHandler.animations)
 					{
 						trainerNum = moveAni.playerPokemonNum;
 						break;
 					}
+					// Draws the pokemon
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 
 					al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[trainerNum].xPositionOnSpriteSheet), (80 * player.trainersParty[trainerNum].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
 
+					// Draws animation
+					// If the list is empty, then finish animations
 					moveAnimationHandler.drawAnimation();
 					if (moveAnimationHandler.finishedAllAnimations()) {
 						isInAnimation = false;
@@ -1278,7 +1316,7 @@ public:
 
 					backBox.drawSprite();
 					textBox.drawSprite();
-					// Drwas the rest of the buttons
+					// Draws the rest of the buttons
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
 					attackButton3.drawSprite();
@@ -1290,17 +1328,19 @@ public:
 				}
 				else {
 
-
+					// Draws the background and poke sprites
 					al_clear_to_color(al_map_rgb(0, 0, 0));
 					al_draw_scaled_bitmap(background, 0, 0, 400, 225, 0, 0, screenWidth, screenHeight, 0);
 					al_draw_scaled_bitmap(otherPokemonSprite, (80 * otherPokemon.xPositionOnSpriteSheet), (80 * otherPokemon.yPositionOnSpriteSheet), 80, 80, screenWidth * 0.6, screenHeight * 0.25, screenWidth * 0.3, screenWidth * 0.3, 0);
 					if (!pokemonIsDead) {
 						al_draw_scaled_bitmap(trainsersPokemonSprite, (80 * player.trainersParty[currentPokemon].xPositionOnSpriteSheet), (80 * player.trainersParty[currentPokemon].yPositionOnSpriteSheet), 80, 80, screenWidth * 0.15, screenHeight * 0.46, screenWidth * 0.25, screenWidth * 0.25, 0);
 					}
+					// Draws the stat boxes
 					otherPokemonStatBox.drawSprite(otherPokemon);
 					trainersPokemonStatBox.drawSprite(player.trainersParty[currentPokemon]);
 					backBox.drawSprite();
 					textBox.drawSprite();
+					// Draws the buttons
 					attackButton1.drawSprite();
 					attackButton2.drawSprite();
 					attackButton3.drawSprite();
@@ -1309,8 +1349,9 @@ public:
 					switchPokemonButton.drawSprite();
 					catchPokemonButton.drawSprite();
 					runPokemonButton.drawSprite();
-
+					// Draw number of pokemon
 					playerDisplay.drawDisplay(player.trainersParty);
+					// Draw textbox if shown
 					if (textBox.isDisplayed) {
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 15), 0, (textForTextBox[0]).c_str());
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 40), 0, (textForTextBox[1]).c_str());
@@ -1318,6 +1359,7 @@ public:
 						al_draw_text(fontSmaller, al_map_rgb(255, 255, 255), (500 + 15), (470 + 90), 0, (textForTextBox[3]).c_str());
 					}
 
+					// Draw switched pokemon if shown
 					if (switchPokemonOneButton.isDisplayed) {
 						switchPokemonOneButton.drawSprite(player.trainersParty[0], otherPokemonSprite);
 						switchPokemonTwoButton.drawSprite(player.trainersParty[1], otherPokemonSprite);
@@ -1327,13 +1369,14 @@ public:
 						switchPokemonSixButton.drawSprite(player.trainersParty[5], otherPokemonSprite);
 					}
 
+					// Draw pokeballs if shown
 					if (pokeballButtonOne.isDisplayed) {
 						pokeballButtonOne.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonOne.pokeball.inividualItemID));
 						pokeballButtonTwo.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonTwo.pokeball.inividualItemID));
 						pokeballButtonThree.drawSprite(player.itemManager.getAmountOfItem(pokeballButtonThree.pokeball.inividualItemID));
 
 					}
-
+					// Draw potions if shown
 					if (potionButtonOne.isDisplayed) {
 						potionButtonOne.drawSprite(player.itemManager.getAmountOfItem(potionButtonOne.potion.inividualItemID));
 						potionButtonTwo.drawSprite(player.itemManager.getAmountOfItem(potionButtonTwo.potion.inividualItemID));
