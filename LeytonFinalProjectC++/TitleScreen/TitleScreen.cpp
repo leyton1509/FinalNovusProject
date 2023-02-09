@@ -31,6 +31,7 @@ public:
 	// Bool for if the screen has loaded the buttons
 	bool hasLoadedButtons;
 
+	// Constructor to set up variables, takes width and height
 	TitleScreen(int _screenWidth, int _screenHeight){
 		currentFrame = 0;
 		pokemonText = al_load_bitmap("../LeytonFinalProjectC++/Sprites/TitleScreenSprites/PokemonTitle.png");
@@ -43,13 +44,15 @@ public:
 		hasLoadedButtons = false;
 	}
 
-	
-
+	// Draws the screen
 	void drawScreen() {
+		// if it hasnt been clicked yet
+		// Draw background text, and the pokemon
 		if (hasClicked == false) {
 			al_draw_scaled_bitmap(background, 0, 0, 728, 410, 0, 0, screenWidth, screenHeight, 0);
 			al_draw_scaled_bitmap(pokemonText, 0, 0, 493, 225, screenWidth / 2 - screenWidth * 0.4, screenHeight * 0.1, screenWidth * 0.8, screenHeight * 0.4, 0);
 
+			// Make pokemon glow
 			if (currentFrame >= 200) {
 				al_draw_scaled_bitmap(dialgaGlowing, 0, 0, 600, 600, screenWidth * 0.3, screenHeight * 0.5, screenWidth / 1.9, screenHeight / 2, 0);
 				currentFrame++;
@@ -63,6 +66,8 @@ public:
 			}
 		}
 		else {
+			// if it has been clicked
+			// Then make sure buttons have been loaded
 			if (hasLoadedButtons == false) {
 
 				newGameButton = Button(281, 60, (screenWidth * 0.5 - screenWidth * 0.35), (screenHeight * 0.3), (screenWidth * 0.7), (screenHeight * 0.2), "../LeytonFinalProjectC++/Sprites/TitleScreenSprites/NewGameButton.jpg");
@@ -75,6 +80,7 @@ public:
 				
 			}
 
+			// Draws the buttons
 			al_draw_scaled_bitmap(background, 0, 0, 728, 410, 0, 0, screenWidth, screenHeight, 0);
 			newGameButton.drawSprite();
 			loadGameButton.drawSprite();
@@ -84,6 +90,8 @@ public:
 		
 	}
 
+	// Code to handle the button has been clicked
+	// 1 for new game 2 for load game
 	int handleButtonClick(float mousePositionX, float mousePositionY) {
 		if (hasLoadedButtons == true) {
 			if (newGameButton.hasBeenClicked(mousePositionX, mousePositionY)){
@@ -96,6 +104,7 @@ public:
 		return 0;
 	}
 
+	// Destroys all the sprites
 	void destroyAllSprites() {
 		 al_destroy_bitmap(pokemonText);
 		 al_destroy_bitmap(background);
