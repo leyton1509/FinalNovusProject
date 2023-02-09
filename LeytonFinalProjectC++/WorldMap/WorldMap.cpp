@@ -153,7 +153,19 @@ public:
 		previousMap = "";
 		currentMap = mapFP;
 		loadMap(mapFP);
+		changeLocationNumber();
 		
+	}
+
+	// chnages the locaiton number based on the map
+	void changeLocationNumber()
+	{
+		if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt") == 0) {
+			locationNumber =  5;
+		}
+		else if (strcmp(previousMap, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt") == 0) {
+			locationNumber = 7;
+		}
 	}
 
 	// Destroys all sprites on map
@@ -305,7 +317,7 @@ public:
 			loadMap(previousMap);
 			currentMap = previousMap;
 			previousMap = "";
-
+			changeLocationNumber();
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
@@ -329,6 +341,7 @@ public:
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+			changeLocationNumber();
 		}
 		// entrance to map one from map 2
 		else if (tile == 22) {
@@ -350,6 +363,7 @@ public:
 			InteractablesForMaps im;
 			interactablesForMap = im.getInteractablesForMap(mapNumber);
 			trainersForMap = trainerManager.getTrainersForMap(mapNumber);
+			changeLocationNumber();
 
 		}
 
@@ -727,6 +741,7 @@ public:
 		else {
 			cout << "\nfile not open\n";
 		}
+
 	}
 
 	// returns the player back to the closest heal when dead
