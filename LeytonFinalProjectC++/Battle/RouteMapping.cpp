@@ -29,6 +29,13 @@ public:
 			string pokemonName = availablePokemon[nameLoc];
 			int level = random(levelRange[0], levelRange[1]);
 			return getPokemon(pokemonName, level);
+		}else if (routeNumber == 2) {
+			string availablePokemon[5] = { "Abra", "Tentacool", "Mareep", "Gligar", "Shroomish" };
+			int levelRange[2] = { 8,13 };
+			int nameLoc = random(0, (sizeof(availablePokemon) / sizeof(availablePokemon[0]) - 1));
+			string pokemonName = availablePokemon[nameLoc];
+			int level = random(levelRange[0], levelRange[1]);
+			return getPokemon(pokemonName, level);
 		}
 
 		string availablePokemon[5] = { "Bulbasaur", "Pidgey", "Bidoof", "Charmander", "Squirtle" };
