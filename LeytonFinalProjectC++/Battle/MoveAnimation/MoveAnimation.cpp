@@ -248,6 +248,7 @@ public :
 		moveID = _moveID;
 		totalSpritePos = 0;
 		initialiseStyleSheet(moveID);
+		// Checks to see if the sprite needs to move
 		if (isStartDestination(moveID)) {
 			startX = _opponentPokemonX;
 			startY = _opponentPokemonY;
@@ -262,9 +263,11 @@ public :
 		}
 		currentFrame = 0;
 		isAnimationFinished = false;
+		// works out the duration and length the sprite has to move
 	    lengthOfEachSprite = duration / (xMaxStyleSheet * yMaxStyleSheet);
 		differenceInX = (destinationX - startX) / duration;
 		differenceInY = (destinationY - startY) / duration;
+		// The current pos of sprite
 		currentXPos = startX;
 		currentYPos = startY;
 	}
@@ -272,7 +275,7 @@ public :
 	// Drwas the current state of the animation
 	void drawAnimation() {
 		
-
+		// Updates the style sheet based on the current frame
 		if (currentFrame <= duration) {
 
 			if (currentFrame  > (lengthOfEachSprite * totalSpritePos-1)) {
@@ -287,6 +290,8 @@ public :
 				}
 				totalSpritePos++;
 			}
+
+			// Updates the sprites position if it is not at destination
 
 			if (currentXPos != destinationX) {
 				currentXPos = currentXPos + differenceInX;
