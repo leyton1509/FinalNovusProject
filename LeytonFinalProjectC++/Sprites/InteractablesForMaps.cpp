@@ -18,7 +18,7 @@ public:
 			interactbles.push_front(bf);
 
 			// Potion
-			Interactable item = Interactable(2, true, 6 * 32, 5 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 15,0);
+			Interactable item = Interactable(2, true, 6 * 32, 6 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 15,0);
 			interactbles.push_front(item);
 
 			// Pokeball
