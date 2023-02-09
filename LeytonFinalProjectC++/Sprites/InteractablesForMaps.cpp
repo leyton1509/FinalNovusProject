@@ -12,14 +12,25 @@ public:
 			Interactable bf = Interactable(1, true, 220, 165, 15 * 32, 24 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/MapSprites/Case.png");
 			interactbles.push_front(bf);
 
-			//Interactable potion = Interactable(2, true, 15 * 32, 22 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 15,0);
-			//interactbles.push_front(potion);
+			Interactable item = Interactable(2, true, 6 * 32, 5 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 15,0);
+			interactbles.push_front(item);
 
-			//Interactable superPotion = Interactable(3, true, 15 * 32, 20 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 24, 0);
-			//interactbles.push_front(superPotion);
+			item = Interactable(5, true, 20 * 32, 22 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			interactbles.push_front(item);
 
-			//Interactable pokeball = Interactable(5, true, 15 * 32, 20 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
-			//interactbles.push_front(pokeball);
+			item = Interactable(3, true, 18 * 32, 28 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 24, 0);
+			interactbles.push_front(item);
+
+			item = Interactable(5, true, 14 * 32, 44 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			interactbles.push_front(item);
+
+			item = Interactable(6, true, 14 * 32, 44 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			interactbles.push_front(item);
+
+			item = Interactable(6, true, 19 * 32, 56 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			interactbles.push_front(item);
+
+		
 
 			return interactbles;
 		}

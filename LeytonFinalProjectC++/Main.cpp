@@ -198,21 +198,20 @@ int main()
     gameTitleScreen.destroyAllSprites();
 
     ////////////////////////////////////////////////
-
     // The player character 
     PlayerCharacter player = PlayerCharacter();
 
     // Add any test pokemon here, can be removed later
-    player.addPokemon(pm.getDefaultPokemon("Totodile"));
+    player.addPokemon(pm.getDefaultPokemon("Palkia"));
     player.addPokemon(pm.getDefaultPokemon("Kyogre"));
-    player.trainersParty[0].setPokemonsLevel(5);
+    player.trainersParty[0].setPokemonsLevel(23);
     player.trainersParty[1].setPokemonsLevel(25);
 
     // Sets the players pos position
-    // player.setAllPositions(13, 10);
-      player.setAllPositions(15, 16);
-    // Creates a world map, with height width and text file name
-    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapTwo.txt", 2);
+     player.setAllPositions(15, 10);
+      //player.setAllPositions(12, 63);
+    // Creates a world map, with height width and text file name3
+    WorldMap worldMap = WorldMap(screenWidth, screenHeight, "../LeytonFinalProjectC++/WorldMap/TextMaps/MapOne.txt", 1);
     // Creates a camera position at 0,0
     float cameraPosition[2] = { 0,0 };
     // How many frames have passed
