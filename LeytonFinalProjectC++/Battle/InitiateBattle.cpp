@@ -253,7 +253,8 @@ public:
 			isInAnimation = false;
 		 
 	}
-
+	// Checks for if the switch button has been clicked
+	// either shows the pokemon to switch or reverses it
 	void checkForSwitchButtonClicked() {
 		if (switchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			if (textBox.isDisplayed) {
@@ -283,6 +284,7 @@ public:
 		}
 	}
 
+	// checks to see if the heal button has been clicked
 	void checkForHealButtonClicked() {
 		// Checks to see if the heal button has been clicked
 		if (healPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
@@ -310,6 +312,7 @@ public:
 		}
 	}
 
+	// Checks to see if any of the potion buttons have been clicked
 	void checkForPotionButtonClicked() {
 		if (potionButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
 			healItemButtonClicked = 1;
@@ -323,6 +326,7 @@ public:
 		}
 	}
 
+	// Checks to see if any of the switch pokemon buttons have been clicked
 	void checkForSwitchPokemonButtonClicked() {
 		if (switchPokemonOneButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			switchPokemonButtonClicked = 1;
@@ -349,6 +353,7 @@ public:
 		}
 	}
 
+	// Checks to see if the attack buttons have been clicked
 	void checkForAttackButtonClicked() {
 		if (attackButton1.hasBeenClicked(xMousePosition, yMousePosition)) {
 			attackButtonClicked = 1;
@@ -364,6 +369,7 @@ public:
 		}
 	}
 
+	// checks the available buttons when battling a trainer
 	void checkForButtonsClickedTrainer() {
 		checkForSwitchButtonClicked();
 		checkForHealButtonClicked();
@@ -372,6 +378,7 @@ public:
 		checkForAttackButtonClicked();
 	}
 
+	// checks to see if the ctach button has been clicked
 	void checkForCatchButtonClicked() {
 		if (catchPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			if (textBox.isDisplayed) {
@@ -389,6 +396,7 @@ public:
 		}
 	}
 
+	// Checks to see if any of the poke ball  buttons have been clicked
 	void checkForPokeBallButtonClicked() {
 		if (pokeballButtonOne.hasBeenClicked(xMousePosition, yMousePosition)) {
 			catchItemButtonClicked = 1;
@@ -403,12 +411,14 @@ public:
 		}
 	}
 
+	// Checks to see if the run button has been clicked
 	void checkForRunButtonClicked() {
 		if (runPokemonButton.hasBeenClicked(xMousePosition, yMousePosition)) {
 			battleFinished = true;
 		}
 	}
 
+	// Checks the buttons for a wild pokemon encounter
 	void checkForButtonsClickedWild() {
 		checkForRunButtonClicked();
 		checkForSwitchButtonClicked();
