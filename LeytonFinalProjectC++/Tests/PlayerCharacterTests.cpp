@@ -119,4 +119,21 @@ TEST_F(PlayerCharacterTests, AddPokemon) {
 }
 
 TEST_F(PlayerCharacterTests, CalculatingNumberOfPokemon) {
+	playerCharacter.recalcNumberOfPokemon();
+	ASSERT_EQ(playerCharacter.numberOfPokemonInParty, 0);
+	ASSERT_EQ(playerCharacter.numberOfPokemonInBox, 0);
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.recalcNumberOfPokemon();
+	ASSERT_EQ(playerCharacter.numberOfPokemonInParty, 1);
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.recalcNumberOfPokemon();
+	ASSERT_EQ(playerCharacter.numberOfPokemonInParty, 3);
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+	playerCharacter.recalcNumberOfPokemon();
+	ASSERT_EQ(playerCharacter.numberOfPokemonInParty, 6);
+	ASSERT_EQ(playerCharacter.numberOfPokemonInBox, 1);
 }
