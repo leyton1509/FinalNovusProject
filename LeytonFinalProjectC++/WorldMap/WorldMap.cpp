@@ -769,6 +769,10 @@ public:
 				if (!player.isAllPokemonInPartyDead() && trainer.isAllPokemonInPartyDead()) {
 					trainer.hasBeenFought = true;
 				}
+				else if(player.isAllPokemonInPartyDead())
+				{
+					returnPlayerToClosestHeal(player);
+				}
 				
 				return true;
 
