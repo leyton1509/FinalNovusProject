@@ -90,7 +90,25 @@ TEST_F(PlayerCharacterTests, CheckBuyItem) {
 	ASSERT_EQ(playerCharacter.playersMoney, 100);
 }
 
-// Test sell item method
+// Test to see if adding pokemon works
 TEST_F(PlayerCharacterTests, AddPokemon) {
+
+	ASSERT_EQ(playerCharacter.trainersParty[0].pokemonName, "");
+
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Piplup"));
+
+	ASSERT_EQ(playerCharacter.trainersParty[0].pokemonName, "Piplup");
+
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Shaymin"));
+
+	ASSERT_EQ(playerCharacter.trainersParty[0].pokemonName, "Piplup");
+	ASSERT_EQ(playerCharacter.trainersParty[1].pokemonName, "Shaymin");
+
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Darkrai"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Palkia"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Dialga"));
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Chimchar"));
+
+	ASSERT_EQ(playerCharacter.trainersParty[5].pokemonName, "Chimchar");
 	
 }
