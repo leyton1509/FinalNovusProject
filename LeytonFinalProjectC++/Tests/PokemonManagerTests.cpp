@@ -80,6 +80,7 @@ TEST_F(PokemonManagerTests, CheckBaseStatisticCalc) {
 	
 }
 
+// Checks to see if experience is dependent on level
 TEST_F(PokemonManagerTests, ExperienceGainCalc) {
 
 	Pokemon defeatedP = pokemonManager.getDefaultPokemon("Charizard");
