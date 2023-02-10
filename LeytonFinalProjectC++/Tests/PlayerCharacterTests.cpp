@@ -1,11 +1,13 @@
 #include "gtest/gtest.h"
 #include "../Sprites/PlayerCharacter.h"
+#include "../Pokemon/PokemonManager.h"
 // Class for testing pokemon move manager
 class PlayerCharacterTests : public ::testing::Test
 {
 
 protected:
 	PlayerCharacter playerCharacter = PlayerCharacter();
+	PokemonManager pm = pm.instance();
 };
 
 // Checks to see if the players tile location is changed when moved
@@ -86,4 +88,9 @@ TEST_F(PlayerCharacterTests, CheckBuyItem) {
 	playerCharacter.sellItem(1, 100);
 	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 0);
 	ASSERT_EQ(playerCharacter.playersMoney, 100);
+}
+
+// Test sell item method
+TEST_F(PlayerCharacterTests, AddPokemon) {
+	
 }
