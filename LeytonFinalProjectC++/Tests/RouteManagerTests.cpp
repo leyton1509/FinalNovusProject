@@ -8,6 +8,7 @@ class RouteManagerTests : public ::testing::Test
 protected:
 	RouteMapping routeMap = RouteMapping();
 
+	// Generates a random pokemon and checks its on the pokemon that can be generated
 	bool checkPokemonFromRouteRandom()
 	{
 		Pokemon p = routeMap.getSinglePokemonFromRoute(1);
@@ -23,6 +24,7 @@ protected:
 		return false;
 	}
 
+	// checks to see if the level is generated within the correct range
 	bool checkPokemonFromRouteRandomLevel()
 	{
 		Pokemon p = routeMap.getSinglePokemonFromRoute(1);
@@ -46,5 +48,8 @@ TEST_F(RouteManagerTests, CheckPokemonFromRoute) {
 
 // Checks to see if a random pokemon is got from the route and is a random level
 TEST_F(RouteManagerTests, CheckPokemonFromRouteRandomLevel) {
-
+	ASSERT_TRUE(checkPokemonFromRouteRandomLevel());
+	ASSERT_TRUE(checkPokemonFromRouteRandomLevel());
+	ASSERT_TRUE(checkPokemonFromRouteRandomLevel());
+	ASSERT_TRUE(checkPokemonFromRouteRandomLevel());
 }
