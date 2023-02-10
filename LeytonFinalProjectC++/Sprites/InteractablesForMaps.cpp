@@ -25,10 +25,6 @@ public:
 			item = Interactable(5, true, 20 * 32, 22 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
 			interactbles.push_front(item);
 
-			// Super potion
-			item = Interactable(3, true, 18 * 32, 28 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 24, 0);
-			interactbles.push_front(item);
-
 			// Pokeball
 			item = Interactable(5, true, 14 * 32, 44 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
 			interactbles.push_front(item);
