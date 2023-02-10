@@ -764,15 +764,17 @@ public:
 				trainer.displayTextBox(player.xPosition - (screenWidth / 4), player.yPosition + 170, screenWidth, screenHeight, queue);
 				if (trainer.isBattlingTrainer) {
 					InitiateBattle initiateBattle = InitiateBattle(trainer, screenWidth, screenHeight, queue, player, trainer.locationNumber);
+
+					if (!player.isAllPokemonInPartyDead() && trainer.isAllPokemonInPartyDead()) {
+						trainer.hasBeenFought = true;
+					}
+					else if (player.isAllPokemonInPartyDead())
+					{
+						returnPlayerToClosestHeal(player);
+					}
 				}
 
-				if (!player.isAllPokemonInPartyDead() && trainer.isAllPokemonInPartyDead()) {
-					trainer.hasBeenFought = true;
-				}
-				else if(player.isAllPokemonInPartyDead())
-				{
-					returnPlayerToClosestHeal(player);
-				}
+				
 				
 				return true;
 
