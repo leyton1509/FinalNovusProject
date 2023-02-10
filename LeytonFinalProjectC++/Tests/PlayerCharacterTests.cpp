@@ -118,6 +118,7 @@ TEST_F(PlayerCharacterTests, AddPokemon) {
 
 }
 
+// Checks the recalculation of number of pokemon in trainers party and box
 TEST_F(PlayerCharacterTests, CalculatingNumberOfPokemon) {
 	playerCharacter.recalcNumberOfPokemon();
 	ASSERT_EQ(playerCharacter.numberOfPokemonInParty, 0);
