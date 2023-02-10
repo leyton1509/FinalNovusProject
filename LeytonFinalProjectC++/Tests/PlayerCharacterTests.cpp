@@ -117,3 +117,6 @@ TEST_F(PlayerCharacterTests, AddPokemon) {
 	ASSERT_EQ(playerCharacter.box[1].pokemonName, "Kyogre");
 
 }
+
+TEST_F(PlayerCharacterTests, CalculatingNumberOfPokemon) {
+}
