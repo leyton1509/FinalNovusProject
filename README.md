@@ -1,6 +1,6 @@
-My take on a Generation 4 Pokemon Game
-Final project for Novus Training Program
-Developed in C++
+My take on a Generation 4 Pokemon Game                                                                                     
+Final project for Novus Training Program                                                                    
+Developed in C++                                                                           
 
 Controls:
 
