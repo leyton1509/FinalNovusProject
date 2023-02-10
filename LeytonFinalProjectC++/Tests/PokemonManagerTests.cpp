@@ -91,3 +91,17 @@ TEST_F(PokemonManagerTests, ExperienceGainCalc) {
 
 	ASSERT_GT(expAfter, expBefore);
 }
+
+// Checks to see if pokemon levels up
+TEST_F(PokemonManagerTests, ExperienceGainedCheck) {
+	Pokemon testP = pokemonManager.getDefaultPokemon("PipLup");
+	Pokemon defeatedP = pokemonManager.getDefaultPokemon("Charizard");
+	defeatedP.setPokemonsLevel(11);
+	int exp = defeatedP.experienceUponKill();
+
+	int levelBefore = testP.level;
+	testP.gainExperience(exp);
+	int levelAfter = testP.level;
+
+	ASSERT_GT(levelAfter, levelBefore);
+}
