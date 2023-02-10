@@ -28,5 +28,5 @@ TEST_F(TrainerTests, CheckGetTrainer) {
 
 // Added method for checking trainer get for map
 TEST_F(TrainerTests, CheckGetTrainerForMap) {
-	
+	ASSERT_TRUE(mapHasTrainer(1));
 }
