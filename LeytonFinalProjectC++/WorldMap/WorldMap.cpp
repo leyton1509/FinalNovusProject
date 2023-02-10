@@ -774,6 +774,11 @@ public:
 					}
 				}
 
+				if(!trainer.isBattlingTrainer)
+				{
+					trainer.hasBeenFought = true;
+				}
+
 				
 				
 				return true;
