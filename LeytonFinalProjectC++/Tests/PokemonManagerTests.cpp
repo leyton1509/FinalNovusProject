@@ -53,3 +53,29 @@ TEST_F(PokemonManagerTests, CheckToLastPokemon) {
 	ASSERT_EQ(testP.specialDefenceBase, 120);
 	ASSERT_EQ(testP.speedBase, 120);
 }
+
+// Checks to see if the first pokemon is loaded correctly
+TEST_F(PokemonManagerTests, CheckBaseStatisticCalc) {
+	Pokemon testP = pokemonManager.getDefaultPokemon("Bulbasaur");
+	testP.setPokemonsLevel(5);
+	ASSERT_GT(testP.healthActual, 19);
+	ASSERT_LT(testP.healthActual, 22);
+
+	ASSERT_GT(testP.physcialAttackActual, 10);
+	ASSERT_LT(testP.physcialAttackActual, 12);
+
+	ASSERT_GT(testP.physicalDefenceActual, 10);
+	ASSERT_LT(testP.physicalDefenceActual, 12);
+
+	ASSERT_GT(testP.specialAttackActual, 12);
+	ASSERT_LT(testP.specialAttackActual, 14);
+
+	ASSERT_GT(testP.specialDefenceActual, 12);
+	ASSERT_LT(testP.specialDefenceActual, 14);
+
+	ASSERT_GT(testP.speedActual, 10);
+	ASSERT_LT(testP.speedActual, 12);
+
+
+}
+
