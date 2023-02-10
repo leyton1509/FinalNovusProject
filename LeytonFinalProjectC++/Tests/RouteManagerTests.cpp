@@ -12,7 +12,6 @@ protected:
 	{
 		Pokemon p = routeMap.getSinglePokemonFromRoute(1);
 		string availablePokemon[5] = { "Bulbasaur", "Pidgey", "Bidoof", "Charmander", "Squirtle" };
-		bool found = false;
 		for (string& s : availablePokemon)
 		{
 			if (strcmp(s.c_str(), p.pokemonName.c_str()) == 0)
