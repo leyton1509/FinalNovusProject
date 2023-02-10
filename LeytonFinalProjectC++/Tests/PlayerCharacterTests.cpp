@@ -35,3 +35,17 @@ TEST_F(PlayerCharacterTests, CheckMoveS) {
 	ASSERT_EQ(beforeXLoc, afterXLoc);
 	ASSERT_EQ((beforeYLoc +1), afterYLoc);
 }
+
+// Checks to see if the players tile location is changed when moved
+TEST_F(PlayerCharacterTests, CheckMoveD) {
+	int beforeXLoc = playerCharacter.xTilePosition;
+	int beforeYLoc = playerCharacter.yTilePosition;
+	playerCharacter.directionX = 1;
+	playerCharacter.directionY = 0;
+	playerCharacter.moveCharacter("d");
+	playerCharacter.updateTile();
+	int afterXLoc = playerCharacter.xTilePosition;
+	int afterYLoc = playerCharacter.yTilePosition;
+	ASSERT_EQ(beforeXLoc, afterXLoc);
+	ASSERT_EQ((beforeYLoc), afterYLoc+1);
+}
