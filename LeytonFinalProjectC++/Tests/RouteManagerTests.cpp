@@ -22,6 +22,16 @@ protected:
 
 		return false;
 	}
+
+	bool checkPokemonFromRouteRandomLevel()
+	{
+		Pokemon p = routeMap.getSinglePokemonFromRoute(1);
+		if(p.level <= 7 && p.level >= 3)
+		{
+			return true;
+		}
+		return false;
+	}
 };
 
 
@@ -32,5 +42,9 @@ TEST_F(RouteManagerTests, CheckPokemonFromRoute) {
 	ASSERT_TRUE(checkPokemonFromRouteRandom());
 	ASSERT_TRUE(checkPokemonFromRouteRandom());
 	ASSERT_TRUE(checkPokemonFromRouteRandom());
-	
+}
+
+// Checks to see if a random pokemon is got from the route and is a random level
+TEST_F(RouteManagerTests, CheckPokemonFromRouteRandomLevel) {
+
 }
