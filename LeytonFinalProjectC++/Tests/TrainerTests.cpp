@@ -7,6 +7,17 @@ class TrainerTests : public ::testing::Test
 
 protected:
 	TrainerManager trainerManager = TrainerManager();
+
+	bool mapHasTrainer(int mapN)
+	{
+		std::list<Trainer> trainers = trainerManager.getTrainersForMap(mapN);
+		bool hasTrainer = false;
+		for (Trainer& t : trainers)
+		{
+			return true;
+		}
+		return false;
+	}
 };
 
 // Added method for checking trainer get
