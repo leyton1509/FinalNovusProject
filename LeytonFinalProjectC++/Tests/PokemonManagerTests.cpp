@@ -58,8 +58,6 @@ TEST_F(PokemonManagerTests, CheckToLastPokemon) {
 TEST_F(PokemonManagerTests, CheckBaseStatisticCalc) {
 	Pokemon testP = pokemonManager.getDefaultPokemon("Bulbasaur");
 	testP.setPokemonsLevel(5);
-
-	testP.printMonsterDetails();
 	
 	ASSERT_GT(testP.healthActual, 19);
 	ASSERT_LT(testP.healthActual, 22);
@@ -82,4 +80,13 @@ TEST_F(PokemonManagerTests, CheckBaseStatisticCalc) {
 	
 }
 
+TEST_F(PokemonManagerTests, ExperienceGainCalc) {
 
+	Pokemon defeatedP = pokemonManager.getDefaultPokemon("Charizard");
+	defeatedP.setPokemonsLevel(10);
+	int expBefore = defeatedP.experienceUponKill();
+	defeatedP.setPokemonsLevel(11);
+	int expAfter = defeatedP.experienceUponKill();
+
+	ASSERT_GT(expAfter, expBefore);
+}
