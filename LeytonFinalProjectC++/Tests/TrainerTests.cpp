@@ -11,6 +11,7 @@ protected:
 
 // Added method for checking trainer get
 TEST_F(TrainerTests, CheckGetTrainer) {
-	
+	Trainer t = trainerManager.getTrainer(1);
+	ASSERT_EQ(t.name, "Elm");
 }
 
