@@ -73,5 +73,17 @@ TEST_F(PlayerCharacterTests, CheckRestMethod) {
 	ASSERT_EQ(playerCharacter.currentFrame, 0);
 	ASSERT_EQ(playerCharacter.xPosition, 10 * 32);
 	ASSERT_EQ(playerCharacter.yPosition, 22 * 32);
-	
+}
+
+// Test buy item method
+TEST_F(PlayerCharacterTests, CheckBuyItem) {
+	playerCharacter.playersMoney = 100;
+	playerCharacter.itemManager.setAmountOfItem(1, 0);
+	playerCharacter.buyItem(1, 100);
+	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 1);
+	ASSERT_EQ(playerCharacter.playersMoney, 0);
+
+	playerCharacter.buyItem(1, 100);
+	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 1);
+	ASSERT_EQ(playerCharacter.playersMoney, 0);
 }
