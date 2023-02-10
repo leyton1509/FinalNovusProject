@@ -361,27 +361,23 @@ int main(int argc, char* argv[])
             // gets the tile the playerr is standing on - can be removed
             /// Checks to see if the player can move and if they can calls player. move character based on their direction and tile
             else if (keys[0] && !keys[1] && !keys[2] && !keys[3]) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("w", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("w");
                 }
             } else if (keys[1] && !keys[0] && !keys[2] && !keys[3]) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("s", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("s");
                 }
             }
             else if (keys[2] && !keys[1] && !keys[0] && !keys[3]) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("a", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("a");
                 }
             }
             else if (keys[3] && !keys[1] && !keys[2] && !keys[0]) {
-                int tilePlayerIsStandingOn = worldMap.getWhatPlayerIsStandingOn(player.xTilePosition, player.yTilePosition);
                 int canPlayerMove = worldMap.canPlayerMove("d", player.directionX, player.directionY, player.xTilePosition, player.yTilePosition);
                 if (canPlayerMove == 1) {
                     player.moveCharacter("d");
