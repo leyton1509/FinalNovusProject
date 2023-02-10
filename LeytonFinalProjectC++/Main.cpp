@@ -15,6 +15,8 @@
 #include "Battle/InitiateBattle.h"
 #include <gtest/gtest.h>
 
+#include <chrono>
+
 // The width of the screen
 int screenWidth = 900;
 // The height of the screen
@@ -70,7 +72,8 @@ void cameraUpdate(float* cameraPosition, float x, float y, int width, int height
 int main(int argc, char* argv[])
 {
 
-
+    // Added a start for timer loading time
+    auto start = std::chrono::high_resolution_clock::now();
 
     // Sets up the pokemon in pokemon manager
     PokemonManager pm = pm.instance();
@@ -138,6 +141,11 @@ int main(int argc, char* argv[])
     // Start the timer
     al_start_timer(timer);
     ////////////////////////////////////////////////
+    
+    // End of loading 
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(finish - start).count() << "ns\n";
+
 
     // Title screen loop
     while (runTitleScreen) {
@@ -221,6 +229,7 @@ int main(int argc, char* argv[])
     while (runOverWorld) {
 
         al_wait_for_event(queue, &event);
+        
 
         switch (event.type)
         {
@@ -265,6 +274,7 @@ int main(int argc, char* argv[])
             }
             break;
         case ALLEGRO_EVENT_KEY_DOWN:
+
             // Upon key down, set the key in the array to true
             if (event.keyboard.keycode == ALLEGRO_KEY_W) {
                 keys[0] = true;
@@ -291,6 +301,9 @@ int main(int argc, char* argv[])
 
         if (redraw && al_is_event_queue_empty(queue))
         {
+            // Start of key input
+            // Input time start
+            auto startNow = std::chrono::high_resolution_clock::now();
             // Checks for interaction
             if (keys[4]) {
                 
@@ -441,6 +454,10 @@ int main(int argc, char* argv[])
             al_flip_display();
             // Redraw false when completed
             redraw = false;
+
+            // Code to test input time
+            //auto finishNow = std::chrono::high_resolution_clock::now();
+           // std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(finishNow - startNow).count() << "ns\n";
         }
 
         // If it gets to frame 60, set it back to frame 1 otherwise ++
@@ -450,6 +467,9 @@ int main(int argc, char* argv[])
         else {
             framecounter++;
         }
+
+        // End of key input
+       
 
         
     }
