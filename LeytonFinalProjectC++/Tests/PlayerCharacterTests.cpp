@@ -108,7 +108,12 @@ TEST_F(PlayerCharacterTests, AddPokemon) {
 	playerCharacter.addPokemon(pm.getDefaultPokemon("Palkia"));
 	playerCharacter.addPokemon(pm.getDefaultPokemon("Dialga"));
 	playerCharacter.addPokemon(pm.getDefaultPokemon("Chimchar"));
-
 	ASSERT_EQ(playerCharacter.trainersParty[5].pokemonName, "Chimchar");
-	
+
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Groudon"));
+	ASSERT_EQ(playerCharacter.box[0].pokemonName, "Groudon");
+
+	playerCharacter.addPokemon(pm.getDefaultPokemon("Kyogre"));
+	ASSERT_EQ(playerCharacter.box[1].pokemonName, "Kyogre");
+
 }
