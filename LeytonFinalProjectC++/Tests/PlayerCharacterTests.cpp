@@ -75,15 +75,15 @@ TEST_F(PlayerCharacterTests, CheckRestMethod) {
 	ASSERT_EQ(playerCharacter.yPosition, 22 * 32);
 }
 
-// Test buy item method
+// Test sell item method
 TEST_F(PlayerCharacterTests, CheckBuyItem) {
-	playerCharacter.playersMoney = 100;
-	playerCharacter.itemManager.setAmountOfItem(1, 0);
-	playerCharacter.buyItem(1, 100);
-	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 1);
-	ASSERT_EQ(playerCharacter.playersMoney, 0);
+	playerCharacter.playersMoney = 0;
+	playerCharacter.itemManager.setAmountOfItem(1, 1);
+	playerCharacter.sellItem(1, 100);
+	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 0);
+	ASSERT_EQ(playerCharacter.playersMoney, 100);
 
-	playerCharacter.buyItem(1, 100);
-	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 1);
-	ASSERT_EQ(playerCharacter.playersMoney, 0);
+	playerCharacter.sellItem(1, 100);
+	ASSERT_EQ(playerCharacter.itemManager.getAmountOfItem(1), 0);
+	ASSERT_EQ(playerCharacter.playersMoney, 100);
 }
