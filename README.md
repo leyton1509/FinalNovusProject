@@ -4,7 +4,7 @@ Developed in C++
 
 Controls:
 
-W - Move Up
+W - Move Up                                                           
 A - Move Left
 S - Move Down
 D - Move Right
