@@ -8,3 +8,9 @@ class TrainerTests : public ::testing::Test
 protected:
 	TrainerManager trainerManager = TrainerManager();
 };
+
+// Added method for checking trainer get
+TEST_F(TrainerTests, CheckGetTrainer) {
+	
+}
+
