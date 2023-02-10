@@ -176,6 +176,7 @@
     <ClCompile Include="Tests\MoveManagerTests.cpp" />
     <ClCompile Include="Tests\PlayerCharacterTests.cpp" />
     <ClCompile Include="Tests\PokemonManagerTests.cpp" />
+    <ClCompile Include="Tests\RouteManagerTests.cpp" />
     <ClCompile Include="TitleScreen\TitleScreen.cpp" />
     <ClCompile Include="Sprites\Interactable.cpp" />
     <ClCompile Include="WorldMap\WorldMap.cpp" />
