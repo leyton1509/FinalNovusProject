@@ -185,22 +185,22 @@ public:
 				// Facing left
 				int tempYTile = yTilePlayer + 1;
 				if (directionX == -1) {
-					if ((xTile)-(xTilePlayer - 1) >= 0 && (xTile)-(xTilePlayer - 1) <= 4 && ((yTile) == (yTilePlayer))) {
+					if ((xTile)-(xTilePlayer - 1) >= 0 && (xTile)-(xTilePlayer - 1) <= 5 && ((yTile) == (yTilePlayer))) {
 						return 1;
 					}
 				}
 				else if (directionX == 1) {
-					if ((xTilePlayer + 1) - (xTile) >= 0 && (xTilePlayer + 1) - xTile <= 4 && ((yTile) == (yTilePlayer))) {
+					if ((xTilePlayer + 1) - (xTile) >= 0 && (xTilePlayer + 1) - xTile <= 5 && ((yTile) == (yTilePlayer))) {
 						return 1;
 					}
 				}
 				else if (directionY == -1) {
-					if ((yTilePlayer + 1) - yTile >= 0 && (yTilePlayer + 1) - yTile <=4  && ((xTile) == (xTilePlayer))) {
+					if ((yTilePlayer + 1) - yTile >= 0 && (yTilePlayer + 1) - yTile <= 5 && ((xTile) == (xTilePlayer))) {
 						return 1;
 					}
 				}
 				else if (directionY == 1) {
-					if (yTile - (yTilePlayer + 1) >= 0 && yTile - (yTilePlayer + 1) <=4  && ((xTile) == (xTilePlayer))) {
+					if (yTile - (yTilePlayer + 1) >= 0 && yTile - (yTilePlayer + 1) <= 5 && ((xTile) == (xTilePlayer))) {
 						return 1;
 					}
 				}
