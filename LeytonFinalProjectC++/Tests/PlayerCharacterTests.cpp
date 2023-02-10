@@ -63,3 +63,15 @@ TEST_F(PlayerCharacterTests, CheckMoveA) {
 	ASSERT_EQ((beforeXLoc -1), afterXLoc);
 	ASSERT_EQ(beforeYLoc, afterYLoc);
 }
+
+// Checks to see if the players rest method resets all vals
+TEST_F(PlayerCharacterTests, CheckRestMethod) {
+	playerCharacter.resetPlayer(10, 22);
+	ASSERT_EQ(playerCharacter.xTilePosition, 10);
+	ASSERT_EQ(playerCharacter.yTilePosition, 22);
+	ASSERT_EQ(playerCharacter.state, 0);
+	ASSERT_EQ(playerCharacter.currentFrame, 0);
+	ASSERT_EQ(playerCharacter.xPosition, 10 * 32);
+	ASSERT_EQ(playerCharacter.yPosition, 22 * 32);
+	
+}
