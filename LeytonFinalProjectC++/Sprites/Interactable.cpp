@@ -311,11 +311,11 @@ public:
 		// Gets the 3 pokemon to choose from
 		 PokemonManager pm = pm.instance();
 		 Pokemon pokemon1 = pm.getDefaultPokemon("Totodile");
-		 pokemon1.setPokemonsLevel(8);
+		 pokemon1.setPokemonsLevel(6);
 		 Pokemon pokemon2 = pm.getDefaultPokemon("Turtwig");
-		 pokemon2.setPokemonsLevel(8);
+		 pokemon2.setPokemonsLevel(6);
 		 Pokemon pokemon3 = pm.getDefaultPokemon("Torchic");
-		 pokemon3.setPokemonsLevel(8);
+		 pokemon3.setPokemonsLevel(6);
 
 		 // Creates the buttons
 		 ChoosePokemonButton pokemonOneButton = ChoosePokemonButton(pokemon1, 128, 128, 200, 30, 128, 128, "../LeytonFinalProjectC++/Sprites/MapSprites/ChoosePokemon.png");
