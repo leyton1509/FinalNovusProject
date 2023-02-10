@@ -25,15 +25,12 @@ public:
 			item = Interactable(5, true, 20 * 32, 22 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
 			interactbles.push_front(item);
 
-			// Pokeball
-			item = Interactable(5, true, 14 * 32, 45 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
-			interactbles.push_front(item);
 
 			// Great ball
-			item = Interactable(6, true, 14 * 32, 44 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			item = Interactable(6, true, 14 * 32, 45 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 2, 0);
 			interactbles.push_front(item);
 			// Great ball
-			item = Interactable(6, true, 19 * 32, 56 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 3, 0);
+			item = Interactable(6, true, 19 * 32, 56 * 32, 32, 32, "../LeytonFinalProjectC++/Sprites/Items/Items.png", 2, 0);
 			interactbles.push_front(item);
 
 		
