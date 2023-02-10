@@ -15,3 +15,7 @@ TEST_F(TrainerTests, CheckGetTrainer) {
 	ASSERT_EQ(t.name, "Elm");
 }
 
+// Added method for checking trainer get for map
+TEST_F(TrainerTests, CheckGetTrainerForMap) {
+	
+}
